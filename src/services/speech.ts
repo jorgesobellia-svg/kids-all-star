@@ -1,6 +1,7 @@
 import * as Speech from 'expo-speech';
 import { Platform } from 'react-native';
 import { SPEECH_LANG, type Locale } from '@/i18n';
+import { playSfx } from './sfx';
 
 // Voz de la mascota. Por ahora usa la voz del sistema en el idioma elegido
 // (es-US, en-US, zh-CN, ja-JP). Cuando existan las grabaciones con voces infantiles,
@@ -144,10 +145,15 @@ export function stopSpeaking(): void {
 }
 
 /**
- * Voz del umpire: "Safe!" si acierta, "You're out!" si falla. En béisbol se canta en inglés
- * en todos los países (en Japón también: セーフ y アウト suenan igual), por eso no se traduce.
- * Voz grave y fuerte; después sigue la mascota con la retroalimentación (onDone).
+ * Voz del umpire: "Safe!" si acierta, "You're out!" si falla. Es un archivo de audio
+ * (suena igual en todos los teléfonos). En béisbol se canta en inglés en todos los países,
+ * por eso no se traduce. Cuando termina, sigue la mascota con la retroalimentación (onDone).
  */
-export function umpireCall(kind: 'safe' | 'out', locale: Locale, onDone?: () => void): void {
-  speak(kind === 'safe' ? 'Safe!' : "You're out!", locale, onDone, { lang: 'en-US', pitch: 0.6, rate: kind === 'safe' ? 0.85 : 0.95 });
+export function umpireCall(kind: 'safe' | 'out', _locale: Locale, onDone?: () => void): void {
+  stopSpeaking();
+  const id = current;
+  playSfx(kind);
+  setTimeout(() => {
+    if (id === current) onDone?.();
+  }, kind === 'safe' ? 1000 : 1150);
 }

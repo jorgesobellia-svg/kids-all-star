@@ -2,14 +2,20 @@ import { createAudioPlayer, setAudioModeAsync, type AudioPlayer } from 'expo-aud
 import { Platform } from 'react-native';
 
 // Efectos de sonido originales (generados para la app, sin derechos de terceros):
-//   bat.wav -> golpe de bate de madera contra la pelota al elegir una opción
+//   bat.wav          -> golpe de bate de madera contra la pelota al elegir una opción
+//   umpire-safe.wav  -> el umpire canta "Safe!" (respuesta correcta)
+//   umpire-out.wav   -> el umpire canta "You're out!" (respuesta incorrecta)
+// Las voces del umpire se generaron con Kokoro (licencia Apache 2.0). Para usar una
+// grabación real, basta reemplazar estos archivos con el mismo nombre.
 
 const SOURCES = {
   bat: require('../../assets/sfx/bat.wav'),
+  safe: require('../../assets/sfx/umpire-safe.wav'),
+  out: require('../../assets/sfx/umpire-out.wav'),
 };
 
 type Sfx = keyof typeof SOURCES;
-const VOLUME: Record<Sfx, number> = { bat: 1 };
+const VOLUME: Record<Sfx, number> = { bat: 1, safe: 1, out: 1 };
 const players: Partial<Record<Sfx, AudioPlayer>> = {};
 let modeSet = false;
 
@@ -30,6 +36,8 @@ function player(name: Sfx): AudioPlayer | null {
   }
 }
 
+export type { Sfx };
+
 export function playSfx(name: Sfx): void {
   const p = player(name);
   if (!p) return;
@@ -44,4 +52,6 @@ export function playSfx(name: Sfx): void {
 /** Carga los sonidos con anticipación para que el primer "clac" no se retrase. */
 export function preloadSfx(): void {
   player('bat');
+  player('safe');
+  player('out');
 }
