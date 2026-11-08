@@ -1,0 +1,23 @@
+{
+  "diamond": "Diamond / field",
+  "infield": "Infield",
+  "outfield": "Outfield",
+  "foulLine": "Foul line",
+  "home": "Home plate",
+  "first": "First base",
+  "second": "Second base",
+  "third": "Third base",
+  "run": "Run",
+  "dugout": "Dugout",
+  "onDeck": "On-deck circle",
+  "bat": "Bat",
+  "glove": "Glove",
+  "helmet": "Helmet",
+  "ball": "Ball",
+  "pitcher": "Pitcher",
+  "catcher": "Catcher",
+  "out": "Out",
+  "strike": "Strike",
+  "umpire": "Umpire",
+  "foulBall": "Foul ball"
+}

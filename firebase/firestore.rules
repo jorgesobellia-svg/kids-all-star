@@ -1,0 +1,36 @@
+rules_version = '2';
+
+// Scoreboard de Kids All Star.
+// Cada documento players/{playerId} guarda SOLO: apodo, país, liga, semana y XP.
+// Nada de nombres reales, correos ni datos del niño (COPPA).
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /players/{playerId} {
+      // Cualquier jugador (sesión anónima) puede leer el scoreboard.
+      allow read: if request.auth != null;
+
+      // Solo el dueño del documento lo crea o lo actualiza, con campos y valores válidos.
+      allow create: if request.auth != null
+        && request.resource.data.uid == request.auth.uid
+        && validPlayer(request.resource.data);
+      allow update: if request.auth != null
+        && resource.data.uid == request.auth.uid
+        && request.resource.data.uid == request.auth.uid
+        && validPlayer(request.resource.data)
+        // los XP solo suben, y como mucho 200 por envío (una lección da hasta 65; el examen 50)
+        && (request.resource.data.weekId != resource.data.weekId
+            || request.resource.data.weeklyXp - resource.data.weeklyXp <= 200);
+      allow delete: if false;
+    }
+  }
+
+  function validPlayer(d) {
+    return d.keys().hasOnly(['uid', 'nickname', 'country', 'league', 'weekId', 'weeklyXp', 'totalXp', 'updatedAt'])
+      && d.nickname is string && d.nickname.matches('^[A-Za-z0-9_ÁÉÍÓÚÜÑáéíóúüñ]{3,15}$')
+      && d.country is string && d.country.size() == 2
+      && d.league is int && d.league >= 0 && d.league <= 3
+      && d.weekId is string && d.weekId.matches('^[0-9]{4}-W[0-9]{2}$')
+      && d.weeklyXp is int && d.weeklyXp >= 0
+      && d.totalXp is int && d.totalXp >= 0;
+  }
+}

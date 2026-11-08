@@ -1,0 +1,376 @@
+import { router, useLocalSearchParams } from 'expo-router';
+import React, { useEffect, useMemo, useState } from 'react';
+import { Pressable, ScrollView, Text, useWindowDimensions, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import ActivityView, { isCorrect, type Answer } from '@/components/Activity';
+import { CheckIcon, CoinBall, Mascot, SpeakerIcon } from '@/components/Art';
+import Diamond from '@/components/Diamond';
+import Gear from '@/components/Gear';
+import { Btn, Label, ProgressBar } from '@/components/ui';
+import { getLesson } from '@/content/levels';
+import type { DemoSegment, GearTarget, Target } from '@/content/types';
+import { content } from '@/i18n';
+import { speak, stopSpeaking } from '@/services/speech';
+import { submitScore } from '@/services/scoreboard';
+import { dayKey, useStore, weekKey, type LessonReward } from '@/state/store';
+import { C, F } from '@/theme';
+
+type LessonText = {
+  title: string;
+  objective: string;
+  demo: string[];
+  acts: Record<string, { q: string; ok: string; ko: string; opts?: Record<string, string>; answer?: string }>;
+};
+
+/** Escena del diamante o del equipo con lo que se resalta en ese pedazo del guion. */
+function Scene({ seg, width, runKey }: { seg: DemoSegment; width: number; runKey: number }) {
+  if (seg.scene === 'gear') return <Gear width={width} highlight={seg.highlight as GearTarget[]} />;
+  return <Diamond width={width} highlight={seg.highlight as Target[]} run={seg.run ?? null} runKey={runKey} />;
+}
+
+function readTime(text: string) {
+  return Math.max(2600, text.length * 60);
+}
+
+export default function LessonScreen() {
+  const { id } = useLocalSearchParams<{ id: string }>();
+  const lesson = getLesson(String(id));
+  const { t, locale, completeLesson, p } = useStore();
+  const insets = useSafeAreaInsets();
+  const { width: winW } = useWindowDimensions();
+  const W = Math.min(winW, 520) - 40;
+  const text = (content(locale).lessons as Record<string, LessonText>)[String(id)];
+
+  const [phase, setPhase] = useState<'demo' | 'acts' | 'replay' | 'result'>('demo');
+  const [segIdx, setSegIdx] = useState(0);
+  const [demoDone, setDemoDone] = useState(false);
+  const [replayCount, setReplayCount] = useState(0);
+  const [queue, setQueue] = useState<number[]>(() => (lesson ? lesson.activities.map((_, i) => i) : []));
+  const [attempt, setAttempt] = useState(0);
+  const [picked, setPicked] = useState<string | null>(null);
+  const [answer, setAnswer] = useState<Answer | null>(null);
+  const [correctCount, setCorrectCount] = useState(0);
+  const [firstTry, setFirstTry] = useState<Set<number>>(new Set());
+  const [missed, setMissed] = useState<Set<number>>(new Set());
+  const [replaySeg, setReplaySeg] = useState(0);
+  const [reward, setReward] = useState<LessonReward | null>(null);
+  const [playing, setPlaying] = useState(true);
+  const [plays, setPlays] = useState(0);
+
+  // Narración de la demostración: cada pedazo con su voz y avanza solo al terminar.
+  useEffect(() => {
+    if (phase !== 'demo' || !playing || !text) return;
+    let done = false;
+    const advance = () => {
+      if (done) return;
+      done = true;
+      if (segIdx + 1 < text.demo.length) setSegIdx(segIdx + 1);
+      else {
+        setPlaying(false);
+        setDemoDone(true);
+      }
+    };
+    speak(text.demo[segIdx], locale, advance);
+    // Respaldo por si el teléfono no tiene voz para ese idioma.
+    const timer = setTimeout(advance, readTime(text.demo[segIdx]) + 2500);
+    return () => {
+      done = true;
+      clearTimeout(timer);
+    };
+  }, [phase, playing, segIdx, text, locale, plays]);
+
+  useEffect(() => () => stopSpeaking(), []);
+
+  if (!lesson || !text) {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: C.bg }}>
+        <Btn label={t('common.back')} onPress={() => router.back()} />
+      </View>
+    );
+  }
+
+  const total = lesson.activities.length;
+  const curIdx = queue[0];
+  const act = lesson.activities[curIdx];
+  const at = act ? text.acts[String(act.n)] : null;
+  const progress = phase === 'demo' ? 0 : correctCount / total;
+  const answered = answer !== null;
+  const right = answered && act ? isCorrect(act, answer!) : false;
+
+  const startActs = () => {
+    setPlaying(false);
+    stopSpeaking();
+    setPhase('acts');
+    if (at) speak(at.q, locale);
+  };
+
+  const submit = (a: Answer) => {
+    if (!act || answered) return;
+    setAnswer(a);
+    const ok = isCorrect(act, a);
+    if (ok) {
+      setCorrectCount((c) => c + 1);
+      if (!missed.has(curIdx)) setFirstTry((s) => new Set(s).add(curIdx));
+    } else {
+      setMissed((s) => new Set(s).add(curIdx));
+    }
+    const fb = ok ? at?.ok : at?.ko;
+    if (fb) speak(fb, locale);
+  };
+
+  const finish = () => {
+    const perfect = missed.size === 0;
+    const r = completeLesson(lesson.id, correctCount, total, perfect);
+    setReward(r);
+    setPhase('result');
+    const wk = weekKey();
+    submitScore({
+      playerId: p.playerId,
+      nickname: p.nickname ?? '',
+      country: p.country,
+      league: p.league,
+      weeklyXp: (p.weekId === wk ? p.weeklyXp : 0) + r.xp,
+      totalXp: p.xp + r.xp,
+      weekId: wk,
+    });
+  };
+
+  const next = () => {
+    stopSpeaking();
+    if (!act) return;
+    if (!right) {
+      // Se repite el pedazo clave de la demostración y la pregunta vuelve al final.
+      setReplaySeg(act.seg);
+      setPhase('replay');
+      setReplayCount((k) => k + 1);
+      speak(text.demo[act.seg], locale);
+      return;
+    }
+    const rest = queue.slice(1);
+    setQueue(rest);
+    setAnswer(null);
+    setPicked(null);
+    setAttempt((x) => x + 1);
+    if (rest.length === 0) finish();
+    else {
+      const na = lesson.activities[rest[0]];
+      speak(text.acts[String(na.n)].q, locale);
+    }
+  };
+
+  const afterReplay = () => {
+    stopSpeaking();
+    const rest = [...queue.slice(1), curIdx];
+    setQueue(rest);
+    setAnswer(null);
+    setPicked(null);
+    setAttempt((x) => x + 1);
+    setPhase('acts');
+    const na = lesson.activities[rest[0]];
+    speak(text.acts[String(na.n)].q, locale);
+  };
+
+  const exit = () => {
+    stopSpeaking();
+    router.back();
+  };
+
+  // ------------------------------------------------------------------ Resultado
+  if (phase === 'result' && reward) {
+    return <ResultView reward={reward} firstTry={firstTry.size} total={total} onDone={() => router.back()} />;
+  }
+
+  const autoCheck = act && (act.type === 'tap' || act.type === 'drag');
+
+  return (
+    <View style={{ flex: 1, backgroundColor: C.white }}>
+      <View style={{ paddingTop: insets.top + 10, paddingHorizontal: 16, flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+        <Pressable testID="lesson-exit" accessibilityRole="button" accessibilityLabel={t('lesson.exit')} onPress={exit} style={{ width: 44, height: 44, alignItems: 'center', justifyContent: 'center' }}>
+          <Text style={{ fontSize: 24, color: C.muted, fontFamily: F.bodyBold }}>✕</Text>
+        </Pressable>
+        <ProgressBar value={progress} />
+      </View>
+
+      {phase === 'demo' || phase === 'replay' ? (
+        <>
+          <ScrollView contentContainerStyle={{ padding: 20, gap: 16, alignItems: 'center' }}>
+            <Label style={{ alignSelf: 'flex-start' }}>{phase === 'demo' ? t('lesson.watch') : t('lesson.rewatch')}</Label>
+            {phase === 'demo' ? <Text style={{ alignSelf: 'flex-start', fontFamily: F.display, fontSize: 28, color: C.ink }}>{text.title}</Text> : null}
+            <Scene seg={lesson.demo[phase === 'demo' ? segIdx : replaySeg]} width={W} runKey={phase === 'demo' ? plays * 100 + segIdx : 10000 + replayCount} />
+            <View style={{ flexDirection: 'row', alignItems: 'flex-start', gap: 10, width: W }}>
+              <Mascot size={72} />
+              <View style={{ flex: 1, backgroundColor: C.bg, borderRadius: 16, borderTopLeftRadius: 4, padding: 14 }}>
+                <Text testID="demo-text" style={{ fontFamily: F.bodySemi, fontSize: 18, lineHeight: 25, color: C.ink }}>
+                  {text.demo[phase === 'demo' ? segIdx : replaySeg]}
+                </Text>
+              </View>
+            </View>
+            {phase === 'demo' ? (
+              <View style={{ flexDirection: 'row', gap: 6 }}>
+                {text.demo.map((_, i) => (
+                  <View key={i} style={{ width: i === segIdx ? 22 : 8, height: 8, borderRadius: 4, backgroundColor: i <= segIdx ? C.red : C.line }} />
+                ))}
+              </View>
+            ) : null}
+          </ScrollView>
+          <View style={{ paddingHorizontal: 20, paddingBottom: insets.bottom + 20, gap: 10, borderTopWidth: 2, borderTopColor: C.line, paddingTop: 14 }}>
+            {phase === 'demo' ? (
+              <>
+                <Pressable
+                  accessibilityRole="button"
+                  testID="demo-replay"
+                  onPress={() => {
+                    setDemoDone(false);
+                    setSegIdx(0);
+                    setPlays((n) => n + 1);
+                    setPlaying(true);
+                  }}
+                  style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, minHeight: 44 }}
+                >
+                  <SpeakerIcon />
+                  <Text style={{ fontFamily: F.bodyHeavy, fontSize: 16, color: C.navy }}>{t('lesson.replay')}</Text>
+                </Pressable>
+                <Btn testID="demo-ready" label={t('lesson.ready')} variant={demoDone ? 'red' : 'disabled'} onPress={demoDone ? startActs : undefined} />
+              </>
+            ) : (
+              <Btn testID="replay-continue" label={t('common.continue')} onPress={afterReplay} />
+            )}
+          </View>
+        </>
+      ) : act && at ? (
+        <>
+          <ScrollView contentContainerStyle={{ padding: 20, gap: 14 }}>
+            <Label>{t(`lesson.type_${act.type}`)}</Label>
+            <Text testID="act-question" style={{ fontFamily: F.display, fontSize: 26, lineHeight: 30, color: C.ink }}>
+              {at.q}
+            </Text>
+            <ActivityView
+              key={`${curIdx}-${attempt}`}
+              act={act}
+              width={W}
+              optText={(o) => at.opts?.[o] ?? o}
+              trueLabel={t('common.true')}
+              falseLabel={t('common.false')}
+              dragHint={t('lesson.dragHint')}
+              retryLabel={t('lesson.retryRoute')}
+              locked={answer}
+              picked={picked}
+              onPick={setPicked}
+              onAnswer={submit}
+            />
+          </ScrollView>
+          {answered ? (
+            <View testID="feedback" style={{ backgroundColor: right ? C.greenSoft : C.wrongSoft, paddingHorizontal: 22, paddingTop: 16, paddingBottom: insets.bottom + 20, gap: 10 }}>
+              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+                {right ? (
+                  <View style={{ width: 32, height: 32, borderRadius: 16, backgroundColor: C.green, alignItems: 'center', justifyContent: 'center' }}>
+                    <CheckIcon size={20} />
+                  </View>
+                ) : null}
+                <Text style={{ fontFamily: F.display, fontSize: 26, color: right ? '#166534' : '#991B1B' }}>{right ? t('lesson.right') : t('lesson.almost')}</Text>
+              </View>
+              <Text style={{ fontFamily: F.bodySemi, fontSize: 16, lineHeight: 22, color: right ? '#166534' : '#991B1B' }}>{right ? at.ok : at.ko}</Text>
+              {!right && at.answer ? (
+                <Text style={{ fontFamily: F.bodyBold, fontSize: 15, color: '#991B1B' }}>{t('lesson.answerWas', { a: at.answer })}</Text>
+              ) : null}
+              <Btn testID="feedback-continue" label={t('common.continue')} variant={right ? 'green' : 'wrong'} onPress={next} />
+            </View>
+          ) : !autoCheck ? (
+            <View style={{ paddingHorizontal: 20, paddingTop: 14, paddingBottom: insets.bottom + 20, borderTopWidth: 2, borderTopColor: C.line }}>
+              <Btn
+                testID="check"
+                label={t('common.check')}
+                variant={picked ? 'red' : 'disabled'}
+                onPress={picked ? () => submit({ kind: 'option', id: picked }) : undefined}
+              />
+            </View>
+          ) : null}
+        </>
+      ) : null}
+    </View>
+  );
+}
+
+function Tile({ head, value, color }: { head: string; value: string; color: string }) {
+  return (
+    <View style={{ flex: 1, borderWidth: 2, borderColor: color, borderRadius: 16, overflow: 'hidden', alignItems: 'center' }}>
+      <Text style={{ backgroundColor: color, color: C.navy, width: '100%', textAlign: 'center', fontFamily: F.bodyHeavy, fontSize: 12, paddingVertical: 4 }}>{head}</Text>
+      <Text style={{ fontFamily: F.display, fontSize: 28, color: C.white, paddingVertical: 8 }}>{value}</Text>
+    </View>
+  );
+}
+
+function ResultView({ reward, firstTry, total, onDone }: { reward: LessonReward; firstTry: number; total: number; onDone: () => void }) {
+  const { t, p } = useStore();
+  const insets = useSafeAreaInsets();
+  const labels = t('result.weekdays').split(',');
+  const week = useMemo(() => {
+    const now = new Date();
+    const dow = (now.getDay() + 6) % 7; // lunes = 0
+    return labels.map((l, i) => {
+      const d = new Date(now);
+      d.setDate(now.getDate() - dow + i);
+      const k = dayKey(d);
+      return { l, played: p.streak.days.includes(k), today: i === dow, future: i > dow };
+    });
+  }, [labels, p.streak.days]);
+
+
+  return (
+    <View style={{ flex: 1, backgroundColor: C.navy, paddingTop: insets.top + 36, paddingBottom: insets.bottom + 24, paddingHorizontal: 24 }}>
+      <ScrollView contentContainerStyle={{ alignItems: 'center', gap: 18 }}>
+        <Mascot size={140} mood="cheer" />
+        <View style={{ alignItems: 'center' }}>
+          <Text testID="result-title" style={{ fontFamily: F.display, fontSize: 36, color: C.gold, textAlign: 'center' }}>
+            {reward.perfect ? t('result.perfect') : t('result.title')}
+          </Text>
+        </View>
+        <View style={{ flexDirection: 'row', gap: 10, width: '100%' }}>
+          <Tile head={t('result.xp')} value={`+${reward.xp}`} color={C.gold} />
+          <Tile head={t('result.correct')} value={`${firstTry}/${total}`} color="#22C55E" />
+          <Tile head={t('result.streak')} value={t(reward.streak === 1 ? 'result.day1' : 'result.days', { n: reward.streak })} color={C.orange} />
+        </View>
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+          <CoinBall size={26} />
+          <Text style={{ fontFamily: F.bodyHeavy, fontSize: 18, color: C.white }}>{t('result.coinsWon', { n: reward.coins })}</Text>
+        </View>
+        <View style={{ width: '100%', backgroundColor: 'rgba(255,255,255,0.08)', borderRadius: 20, padding: 16, gap: 12 }}>
+          <Text style={{ fontFamily: F.bodyHeavy, fontSize: 15, color: C.white }}>{t('result.week')}</Text>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+            {week.map((d, i) => (
+              <View key={i} style={{ alignItems: 'center', gap: 6 }}>
+                <Text style={{ fontFamily: d.today ? F.bodyHeavy : F.body, fontSize: 13, color: d.today ? C.white : '#CBD5E1' }}>{d.l}</Text>
+                <View
+                  style={{
+                    width: 34,
+                    height: 34,
+                    borderRadius: 17,
+                    backgroundColor: d.played ? C.orange : 'transparent',
+                    borderWidth: d.played ? (d.today ? 3 : 0) : 2,
+                    borderColor: d.played ? C.gold : '#64748B',
+                    borderStyle: d.played ? 'solid' : 'dashed',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  {d.played ? <CheckIcon size={16} /> : null}
+                </View>
+              </View>
+            ))}
+          </View>
+        </View>
+        {reward.milestone ? (
+          <View style={{ width: '100%', backgroundColor: C.gold, borderRadius: 20, padding: 16 }}>
+            <Text style={{ fontFamily: F.display, fontSize: 22, color: C.navy }}>{t('result.milestone', { n: reward.milestone })}</Text>
+          </View>
+        ) : null}
+        {reward.newCard ? (
+          <View style={{ width: '100%', backgroundColor: 'rgba(255,184,28,0.15)', borderWidth: 2, borderColor: C.gold, borderRadius: 16, padding: 12 }}>
+            <Text style={{ fontFamily: F.bodyBold, fontSize: 15, color: C.gold, textAlign: 'center' }}>{t('result.cardWon')}</Text>
+          </View>
+        ) : null}
+      </ScrollView>
+      <Btn testID="result-continue" label={t('common.continue')} onPress={onDone} />
+    </View>
+  );
+}

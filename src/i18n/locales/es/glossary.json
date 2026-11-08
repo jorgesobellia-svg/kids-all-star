@@ -1,0 +1,23 @@
+{
+  "diamond": "El diamante / el campo",
+  "infield": "El cuadro",
+  "outfield": "Los jardines",
+  "foulLine": "Línea de foul",
+  "home": "Home / plato",
+  "first": "Primera base",
+  "second": "Segunda base",
+  "third": "Tercera base",
+  "run": "Carrera",
+  "dugout": "El dugout",
+  "onDeck": "Círculo de espera",
+  "bat": "El bate",
+  "glove": "El guante",
+  "helmet": "El casco",
+  "ball": "La pelota",
+  "pitcher": "Lanzador",
+  "catcher": "Receptor",
+  "out": "Out",
+  "strike": "Strike",
+  "umpire": "Árbitro",
+  "foulBall": "Foul"
+}

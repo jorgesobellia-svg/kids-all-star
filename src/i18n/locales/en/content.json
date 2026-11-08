@@ -1,0 +1,434 @@
+{
+  "levels": {
+    "1": {
+      "title": "Welcome to the diamond",
+      "badge": "Rookie Diamond"
+    },
+    "2": {
+      "title": "The positions",
+      "badge": "Field Guardian"
+    },
+    "3": {
+      "title": "How the game works",
+      "badge": "Game Brain"
+    },
+    "4": {
+      "title": "The count",
+      "badge": "Eagle Eye"
+    }
+  },
+  "lessonTitles": {
+    "1.1": "The diamond and the field",
+    "1.2": "The bases in order",
+    "1.3": "Home plate: where it all starts and ends",
+    "1.4": "The dugout and waiting your turn",
+    "1.5": "My baseball gear",
+    "2.1": "Pitcher and catcher: the battery",
+    "2.2": "First and third: the corners",
+    "2.3": "Second and shortstop: the middle",
+    "2.4": "The three outfielders",
+    "2.5": "The 9 positions and their numbers",
+    "3.1": "The inning: top and bottom",
+    "3.2": "Three outs and switch",
+    "3.3": "How to score a run",
+    "3.4": "The batting order",
+    "3.5": "Who wins the game",
+    "4.1": "Ball and strike",
+    "4.2": "The strike zone",
+    "4.3": "The foul ball",
+    "4.4": "Strikeout and walk",
+    "4.5": "Hit by pitch and full count"
+  },
+  "lessons": {
+    "1.1": {
+      "title": "The diamond and the field",
+      "objective": "Recognize the whole field: the infield, the outfield and the foul lines.",
+      "demo": [
+        "Welcome to the diamond! That's what we call a baseball field: the diamond.",
+        "Look: the dirt part with the four corners is the infield.",
+        "The big green part in the back is the outfield.",
+        "And these two white lines going out to the sides are the foul lines: they separate the good part of the field from the bad part."
+      ],
+      "acts": {
+        "1": {
+          "q": "Tap the dirt part where the bases are",
+          "ok": "That's it! That's where the bases are.",
+          "ko": "Almost: look for the dirt part in the middle.",
+          "answer": "The infield"
+        },
+        "2": {
+          "q": "What's the big green part behind the infield called?",
+          "ok": "Correct! The outfield.",
+          "ko": "Look again: it's the green part farthest from home plate.",
+          "opts": {
+            "outfield": "The outfield",
+            "dugout": "The dugout",
+            "home": "Home plate"
+          }
+        },
+        "3": {
+          "q": "The white lines on the sides are called foul lines",
+          "ok": "Yes! Foul lines.",
+          "ko": "It's true: that's what those lines are called."
+        },
+        "4": {
+          "q": "Tap a foul line",
+          "ok": "Nice tap!",
+          "ko": "Not that one: the foul lines go out from home plate to the sides.",
+          "answer": "Foul line"
+        },
+        "5": {
+          "q": "Why is the field called a diamond?",
+          "ok": "That's it! The diamond.",
+          "ko": "Look at the shape of the infield: it looks like a diamond.",
+          "opts": {
+            "shape": "Because of its shape, like a turned diamond",
+            "money": "Because it's worth a lot of money",
+            "glass": "Because it's made of glass"
+          }
+        },
+        "6": {
+          "q": "Where do you play defense when the ball goes really far?",
+          "ok": "Correct! Far away, in the outfield.",
+          "ko": "Far from home plate: in the outfield.",
+          "opts": {
+            "outfield": "In the outfield",
+            "dugout": "In the dugout",
+            "home": "At home plate"
+          }
+        }
+      }
+    },
+    "1.2": {
+      "title": "The bases in order",
+      "objective": "Run to first, second and third in the right order, always in the same direction.",
+      "demo": [
+        "When you hit the ball, you don't run just anywhere: you run in order.",
+        "First, first base.",
+        "Then, second base.",
+        "Then, third base.",
+        "Always going around the same way, like a square. Watch me run it!"
+      ],
+      "acts": {
+        "1": {
+          "q": "You hit the ball. Tap the first base you run to",
+          "ok": "That's it! Always to first base first.",
+          "ko": "No: your first stop is always first base.",
+          "answer": "First base"
+        },
+        "2": {
+          "q": "After first base, which base is next?",
+          "ok": "Correct! Second base.",
+          "ko": "The order is 1, 2, 3: second base comes first.",
+          "opts": {
+            "second": "To second base",
+            "third": "To third base",
+            "home": "To home plate"
+          }
+        },
+        "3": {
+          "q": "Drag the runner around the bases in order, all the way to third",
+          "ok": "Perfect route!",
+          "ko": "You can't skip the order: first, second, then third.",
+          "answer": "First, second, third"
+        },
+        "4": {
+          "q": "A runner can run from first straight to third, skipping second",
+          "ok": "Good! You have to touch every base.",
+          "ko": "False: the runner has to touch second base on the way."
+        },
+        "5": {
+          "q": "What shape does the path around the bases make?",
+          "ok": "That's it! That's why it's called a diamond.",
+          "ko": "Four corners: it's a turned square.",
+          "opts": {
+            "square": "A square",
+            "circle": "A circle",
+            "triangle": "A triangle"
+          }
+        },
+        "6": {
+          "q": "Tap third base",
+          "ok": "Good! That's the last one before home plate.",
+          "ko": "Third base is on the other side, right before home plate.",
+          "answer": "Third base"
+        }
+      }
+    },
+    "1.3": {
+      "title": "Home plate: where it all starts and ends",
+      "objective": "Understand that you bat at home plate, you start running from home plate, and you score a run by touching home plate.",
+      "demo": [
+        "This special corner isn't a base like the others: it's home plate.",
+        "This is where you stand to bat. This is where you start running.",
+        "And if you make it all the way around and touch home plate again, you scored a run!"
+      ],
+      "acts": {
+        "1": {
+          "q": "Tap home plate",
+          "ok": "That's it! The corner shaped like a little house.",
+          "ko": "Home plate is the bottom corner, where you bat.",
+          "answer": "Home plate"
+        },
+        "2": {
+          "q": "What do you do standing at home plate when your turn starts?",
+          "ok": "Correct! That's where your turn starts.",
+          "ko": "At home plate, it's your turn to bat.",
+          "opts": {
+            "bat": "Bat",
+            "pitch": "Pitch",
+            "wait": "Wait in the dugout"
+          }
+        },
+        "3": {
+          "q": "When do you score a run?",
+          "ok": "That's it! Run scored.",
+          "ko": "It only counts when you go all the way around and touch home plate.",
+          "opts": {
+            "lap": "When you touch home plate after going all the way around",
+            "second": "When you get to second base",
+            "hit": "When you hit the ball"
+          }
+        },
+        "4": {
+          "q": "Home plate is a square cushion like the other bases",
+          "ok": "Good! Home plate is flat and pointed, like a little house.",
+          "ko": "False: home plate is different, it's a flat plate."
+        },
+        "5": {
+          "q": "The runner touched home plate. What was scored?",
+          "ok": "Run! That's how you get a point in baseball.",
+          "ko": "Touching home plate scores a run, not an out.",
+          "opts": {
+            "run": "A run",
+            "out": "An out",
+            "strike": "A strike"
+          }
+        },
+        "6": {
+          "q": "What are points called in baseball?",
+          "ok": "Correct! In baseball they're runs.",
+          "ko": "There are no goals in baseball: there are runs.",
+          "opts": {
+            "runs": "Runs",
+            "goals": "Goals",
+            "baskets": "Baskets"
+          }
+        }
+      }
+    },
+    "1.4": {
+      "title": "The dugout and waiting your turn",
+      "objective": "Know where the batting team waits, and that one player gets ready to bat next.",
+      "demo": [
+        "And where does your team wait while it's batting? In the dugout: the long bench next to the field.",
+        "That's where players sit while they wait for their turn, with their helmet ready.",
+        "And the player who's up after the batter gets ready near home plate, in the on-deck circle."
+      ],
+      "acts": {
+        "1": {
+          "q": "Tap the dugout",
+          "ok": "That's it! That's where the team waits.",
+          "ko": "The dugout is the bench next to the field.",
+          "answer": "The dugout"
+        },
+        "2": {
+          "q": "Who is in the dugout?",
+          "ok": "Correct! The defense is out on the field.",
+          "ko": "The team at bat waits in the dugout.",
+          "opts": {
+            "batting": "The team that's batting",
+            "defending": "The team that's on defense",
+            "umps": "The umpires"
+          }
+        },
+        "3": {
+          "q": "In the dugout you can take off your helmet and relax without paying attention to the game",
+          "ok": "Good! Always pay attention: a foul ball can fly in.",
+          "ko": "False: in the dugout you still pay attention to the game."
+        },
+        "4": {
+          "q": "Who gets ready in the on-deck circle?",
+          "ok": "That's it! On deck.",
+          "ko": "The next batter gets ready there, helmet on.",
+          "opts": {
+            "next": "The next batter",
+            "pitcher": "The pitcher",
+            "catcher": "The catcher"
+          }
+        },
+        "5": {
+          "q": "What should you have ready in the dugout before your turn?",
+          "ok": "Correct! Ready to go without making anyone wait.",
+          "ko": "Your turn comes fast: helmet and bat ready.",
+          "opts": {
+            "gear": "Your helmet and bat",
+            "snack": "Your snack",
+            "phone": "Your phone"
+          }
+        },
+        "6": {
+          "q": "A team's turn at bat ends. What happens to that team?",
+          "ok": "That's it! The teams take turns.",
+          "ko": "When a team finishes batting, it goes out to play defense.",
+          "opts": {
+            "defend": "It goes out to play defense",
+            "home": "It goes home",
+            "keep": "It keeps batting"
+          }
+        }
+      }
+    },
+    "1.5": {
+      "title": "My baseball gear",
+      "objective": "Tell apart the bat, glove, helmet and ball, and the golden rule: helmet on to bat and run the bases.",
+      "demo": [
+        "To play, you need your gear.",
+        "The bat is for hitting the ball.",
+        "The glove is for catching it without it hurting.",
+        "The ball.",
+        "And the most important thing to keep you safe: the helmet. No helmet, no batting and no running the bases. Safety first!"
+      ],
+      "acts": {
+        "1": {
+          "q": "What do you hit the ball with?",
+          "ok": "Correct! The bat.",
+          "ko": "You hit the ball with the bat.",
+          "opts": {
+            "bat": "The bat",
+            "glove": "The glove",
+            "helmet": "The helmet"
+          }
+        },
+        "2": {
+          "q": "What do you catch the ball with?",
+          "ok": "That's it! The glove.",
+          "ko": "You catch with the glove, on the hand you don't throw with.",
+          "opts": {
+            "glove": "The glove",
+            "bat": "The bat",
+            "home": "Home plate"
+          }
+        },
+        "3": {
+          "q": "The helmet protects your head when you bat and run the bases",
+          "ok": "Yes! That's why you never take it off halfway.",
+          "ko": "True: the helmet is protection, not decoration."
+        },
+        "4": {
+          "q": "You're about to bat and you don't have a helmet. What do you do?",
+          "ok": "Great! No helmet, no batting.",
+          "ko": "Never bat without a helmet: ask for one first.",
+          "opts": {
+            "ask": "Ask for a helmet before batting",
+            "anyway": "Bat anyway",
+            "cap": "Bat with your cap on backwards"
+          }
+        },
+        "5": {
+          "q": "Tap the ball in the picture of the gear",
+          "ok": "Good! White, with red stitches.",
+          "ko": "The round one with stitches is the ball.",
+          "answer": "The ball"
+        },
+        "6": {
+          "q": "Which hand does the glove go on if you throw with your right?",
+          "ok": "Correct! You throw with one and catch with the other.",
+          "ko": "The glove goes on the hand you don't throw with.",
+          "opts": {
+            "left": "On the left",
+            "right": "On the right",
+            "both": "On both"
+          }
+        }
+      }
+    }
+  },
+  "exams": {
+    "1": {
+      "1": {
+        "q": "What's the dirt part where the bases are called?",
+        "opts": {
+          "infield": "The infield",
+          "outfield": "The outfield",
+          "dugout": "The dugout"
+        }
+      },
+      "2": {
+        "q": "Tap home plate on the diagram",
+        "answer": "Home plate"
+      },
+      "3": {
+        "q": "What's the right order of the bases?",
+        "opts": {
+          "o123": "First, second, third",
+          "o312": "Third, first, second",
+          "o213": "Second, first, third"
+        }
+      },
+      "4": {
+        "q": "Where does the batting team wait?",
+        "opts": {
+          "dugout": "In the dugout",
+          "outfield": "In the outfield",
+          "behind": "Behind home plate"
+        }
+      },
+      "5": {
+        "q": "What do you score when you touch home plate after going around?",
+        "opts": {
+          "run": "A run",
+          "strike": "A strike",
+          "out": "An out"
+        }
+      },
+      "6": {
+        "q": "What's the big green part in the back called?",
+        "opts": {
+          "outfield": "The outfield",
+          "infield": "The infield",
+          "ondeck": "The on-deck circle"
+        }
+      },
+      "7": {
+        "q": "True or false: the lines on the sides are called foul lines"
+      },
+      "8": {
+        "q": "What do you catch the ball with?",
+        "opts": {
+          "glove": "The glove",
+          "bat": "The bat",
+          "helmet": "The helmet"
+        }
+      },
+      "9": {
+        "q": "What must you always wear to bat?",
+        "opts": {
+          "helmet": "The helmet",
+          "cap": "Your cap on backwards",
+          "nothing": "Nothing"
+        }
+      },
+      "10": {
+        "q": "Who gets ready in the on-deck circle?",
+        "opts": {
+          "next": "The next batter",
+          "pitcher": "The pitcher",
+          "ump": "The umpire"
+        }
+      },
+      "11": {
+        "q": "Tap second base on the diagram",
+        "answer": "Second base"
+      },
+      "12": {
+        "q": "What are points called in baseball?",
+        "opts": {
+          "runs": "Runs",
+          "goals": "Goals",
+          "hoops": "Basketball points"
+        }
+      }
+    }
+  }
+}

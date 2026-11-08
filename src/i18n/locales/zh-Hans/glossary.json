@@ -1,0 +1,23 @@
+{
+  "diamond": "棒球场",
+  "infield": "内野",
+  "outfield": "外野",
+  "foulLine": "界外线",
+  "home": "本垒",
+  "first": "一垒",
+  "second": "二垒",
+  "third": "三垒",
+  "run": "得分",
+  "dugout": "休息区",
+  "onDeck": "待打区",
+  "bat": "球棒",
+  "glove": "手套",
+  "helmet": "头盔",
+  "ball": "棒球",
+  "pitcher": "投手",
+  "catcher": "捕手",
+  "out": "出局",
+  "strike": "好球",
+  "umpire": "裁判",
+  "foulBall": "界外球"
+}

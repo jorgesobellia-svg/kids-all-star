@@ -1,0 +1,179 @@
+import { router } from 'expo-router';
+import React, { useEffect, useState } from 'react';
+import { ActivityIndicator, Linking, Pressable, ScrollView, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { AppIcon, CheckIcon } from '@/components/Art';
+import { Body, Btn, H1 } from '@/components/ui';
+import { getPrices, manageSubscription, purchase, restore, TEST_MODE, type Plan } from '@/services/billing';
+import { useStore } from '@/state/store';
+import { C, F } from '@/theme';
+
+// Puerta para papás: una multiplicación que un niño de 6 años no resuelve por accidente.
+// Detrás de la puerta está la única pantalla con pagos de toda la app.
+
+const PRIVACY_URL = 'https://kidsallstar.app/privacy';
+const TERMS_URL = 'https://kidsallstar.app/terms';
+
+function Gate({ onPass }: { onPass: () => void }) {
+  const { t } = useStore();
+  const insets = useSafeAreaInsets();
+  const [[a, b]] = useState(() => [6 + Math.floor(Math.random() * 4), 12 + Math.floor(Math.random() * 8)]);
+  const [val, setVal] = useState('');
+  const [wrong, setWrong] = useState(false);
+  const keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '⌫', '0', 'ok'];
+  const press = (k: string) => {
+    setWrong(false);
+    if (k === '⌫') setVal((v) => v.slice(0, -1));
+    else if (k === 'ok') {
+      if (Number(val) === a * b) onPass();
+      else {
+        setWrong(true);
+        setVal('');
+      }
+    } else if (val.length < 4) setVal((v) => v + k);
+  };
+  return (
+    <View style={{ flex: 1, backgroundColor: C.navy, paddingTop: insets.top + 12, paddingBottom: insets.bottom + 20, paddingHorizontal: 24 }}>
+      <Pressable accessibilityRole="button" accessibilityLabel={t('common.close')} onPress={() => router.back()} style={{ width: 44, height: 44, justifyContent: 'center' }}>
+        <Text style={{ fontSize: 24, color: C.white }}>✕</Text>
+      </Pressable>
+      <View style={{ alignItems: 'center', gap: 12, marginTop: 10 }}>
+        <Text style={{ fontFamily: F.display, fontSize: 30, color: C.white, textAlign: 'center' }}>{t('parents.gateTitle')}</Text>
+        <Text style={{ fontFamily: F.body, fontSize: 16, color: '#CBD5E1', textAlign: 'center' }}>{t('parents.gateQuestion')}</Text>
+        <Text testID="gate-question" style={{ fontFamily: F.display, fontSize: 44, color: C.gold }}>
+          {a} × {b} = {val || '?'}
+        </Text>
+        {wrong ? <Text style={{ fontFamily: F.bodyBold, fontSize: 15, color: '#FCA5A5' }}>{t('parents.gateWrong')}</Text> : <Text style={{ fontSize: 15 }}> </Text>}
+      </View>
+      <View style={{ flex: 1 }} />
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 10, justifyContent: 'center' }}>
+        {keys.map((k) => (
+          <Pressable
+            key={k}
+            testID={`key-${k}`}
+            accessibilityRole="button"
+            accessibilityLabel={k === 'ok' ? t('parents.gateOk') : k}
+            onPress={() => press(k)}
+            style={{ width: '30%', height: 64, borderRadius: 16, backgroundColor: k === 'ok' ? C.red : 'rgba(255,255,255,0.12)', alignItems: 'center', justifyContent: 'center' }}
+          >
+            <Text style={{ fontFamily: F.bodyHeavy, fontSize: k === 'ok' ? 18 : 26, color: C.white }}>{k === 'ok' ? t('parents.gateOk') : k}</Text>
+          </Pressable>
+        ))}
+      </View>
+    </View>
+  );
+}
+
+function PlanCard({ id, title, price, per, on, onPick, recommended }: { id: Plan; title: string; price: string; per: string; on: boolean; onPick: (p: Plan) => void; recommended: string }) {
+    return (
+      <Pressable
+        testID={`plan-${id}`}
+        accessibilityRole="radio"
+        accessibilityState={{ selected: on }}
+        onPress={() => onPick(id)}
+        style={{ flex: 1, borderRadius: 18, borderWidth: 3, borderColor: on ? C.red : C.lineDark, backgroundColor: on ? C.redSoft : C.white, padding: 14, gap: 4, minHeight: 120 }}
+      >
+        {id === 'annual' ? (
+          <View style={{ alignSelf: 'flex-start', backgroundColor: C.gold, borderRadius: 6, paddingHorizontal: 6, paddingVertical: 2 }}>
+            <Text style={{ fontFamily: F.bodyHeavy, fontSize: 11, color: C.navy }}>{recommended}</Text>
+          </View>
+        ) : (
+          <View style={{ height: 19 }} />
+        )}
+        <Text style={{ fontFamily: F.bodyHeavy, fontSize: 16, color: C.ink }}>{title}</Text>
+        <Text style={{ fontFamily: F.display, fontSize: 24, color: C.ink }}>{price}</Text>
+        <Text style={{ fontFamily: F.bodyBold, fontSize: 14, color: C.muted }}>{per}</Text>
+      </Pressable>
+    );
+  }
+
+export default function ParentsScreen() {
+  const { t, p, setPlus, locale } = useStore();
+  const insets = useSafeAreaInsets();
+  const [open, setOpen] = useState(false);
+  const [plan, setPlan] = useState<Plan>('annual');
+  const [prices, setPrices] = useState({ monthly: 'USD 4.99', annual: 'USD 39.99' });
+  const [busy, setBusy] = useState(false);
+  const [msg, setMsg] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (open) getPrices().then(setPrices);
+  }, [open]);
+
+  if (!open) return <Gate onPass={() => setOpen(true)} />;
+
+  const buy = async () => {
+    setBusy(true);
+    setMsg(null);
+    const r = await purchase(plan);
+    setBusy(false);
+    if (r === 'active') setPlus(true);
+    else if (r === 'error') setMsg(t('parents.error'));
+  };
+
+  const doRestore = async () => {
+    setBusy(true);
+    const ok = await restore();
+    setBusy(false);
+    if (ok) setPlus(true);
+    setMsg(ok ? t('parents.restored') : t('parents.nothingToRestore'));
+  };
+
+
+  return (
+    <View style={{ flex: 1, backgroundColor: C.bg }}>
+      <ScrollView contentContainerStyle={{ paddingTop: insets.top + 12, paddingHorizontal: 20, paddingBottom: 24, gap: 16 }}>
+        <Pressable accessibilityRole="button" accessibilityLabel={t('common.close')} onPress={() => router.back()} style={{ width: 44, height: 44, justifyContent: 'center' }}>
+          <Text style={{ fontSize: 24, color: C.muted }}>✕</Text>
+        </Pressable>
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
+          <AppIcon size={64} />
+          <H1 style={{ flex: 1 }}>{t('parents.title')}</H1>
+        </View>
+        {p.plus ? (
+          <View style={{ backgroundColor: C.greenSoft, borderRadius: 16, padding: 16 }}>
+            <Text testID="plus-active" style={{ fontFamily: F.bodyHeavy, fontSize: 16, color: '#166534' }}>{t('parents.active')}</Text>
+          </View>
+        ) : (
+          <>
+            <Body>{t('parents.intro')}</Body>
+            <View style={{ gap: 10 }}>
+              {['parents.benefit1', 'parents.benefit2', 'parents.benefit3'].map((k) => (
+                <View key={k} style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+                  <View style={{ width: 26, height: 26, borderRadius: 13, backgroundColor: C.green, alignItems: 'center', justifyContent: 'center' }}>
+                    <CheckIcon size={16} />
+                  </View>
+                  <Text style={{ fontFamily: F.bodySemi, fontSize: 16, color: C.ink, flex: 1 }}>{t(k)}</Text>
+                </View>
+              ))}
+            </View>
+            <View style={{ flexDirection: 'row', gap: 12 }}>
+              <PlanCard id="monthly" title={t('parents.monthly')} price={prices.monthly} per={t('parents.perMonth')} on={plan === 'monthly'} onPick={setPlan} recommended={t('parents.recommended')} />
+              <PlanCard id="annual" title={t('parents.annual')} price={prices.annual} per={t('parents.perYear')} on={plan === 'annual'} onPick={setPlan} recommended={t('parents.recommended')} />
+            </View>
+            {busy ? <ActivityIndicator color={C.red} /> : <Btn testID="subscribe" label={t('parents.subscribe')} onPress={buy} />}
+          </>
+        )}
+        {msg ? <Text style={{ fontFamily: F.bodyBold, fontSize: 15, color: C.muted, textAlign: 'center' }}>{msg}</Text> : null}
+        <View style={{ gap: 4 }}>
+          <Pressable accessibilityRole="button" testID="restore" onPress={doRestore} style={{ minHeight: 44, justifyContent: 'center' }}>
+            <Text style={{ fontFamily: F.bodyHeavy, fontSize: 16, color: C.blue, textAlign: 'center' }}>{t('parents.restore')}</Text>
+          </Pressable>
+          <Pressable accessibilityRole="button" onPress={() => manageSubscription()} style={{ minHeight: 44, justifyContent: 'center' }}>
+            <Text style={{ fontFamily: F.bodyHeavy, fontSize: 16, color: C.blue, textAlign: 'center' }}>{t('parents.manage')}</Text>
+          </Pressable>
+        </View>
+        <Text style={{ fontFamily: F.body, fontSize: 12, lineHeight: 17, color: C.muted }}>{t('parents.legal')}</Text>
+        <View style={{ flexDirection: 'row', justifyContent: 'center', gap: 20 }}>
+          <Pressable accessibilityRole="link" onPress={() => Linking.openURL(`${PRIVACY_URL}?lang=${locale}`)} style={{ minHeight: 44, justifyContent: 'center' }}>
+            <Text style={{ fontFamily: F.bodyBold, fontSize: 13, color: C.muted, textDecorationLine: 'underline' }}>{t('parents.privacy')}</Text>
+          </Pressable>
+          <Pressable accessibilityRole="link" onPress={() => Linking.openURL(`${TERMS_URL}?lang=${locale}`)} style={{ minHeight: 44, justifyContent: 'center' }}>
+            <Text style={{ fontFamily: F.bodyBold, fontSize: 13, color: C.muted, textDecorationLine: 'underline' }}>{t('parents.terms')}</Text>
+          </Pressable>
+        </View>
+        {TEST_MODE ? <Text style={{ fontFamily: F.bodyBold, fontSize: 12, color: C.brown, textAlign: 'center' }}>{t('parents.testMode')}</Text> : null}
+      </ScrollView>
+    </View>
+  );
+}

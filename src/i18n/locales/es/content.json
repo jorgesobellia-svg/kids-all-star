@@ -1,0 +1,434 @@
+{
+  "levels": {
+    "1": {
+      "title": "Bienvenido al diamante",
+      "badge": "Diamante Novato"
+    },
+    "2": {
+      "title": "Las posiciones",
+      "badge": "Guardián del Campo"
+    },
+    "3": {
+      "title": "Cómo se juega",
+      "badge": "Cerebro del Juego"
+    },
+    "4": {
+      "title": "El conteo",
+      "badge": "Ojo de Águila"
+    }
+  },
+  "lessonTitles": {
+    "1.1": "El diamante y el campo",
+    "1.2": "Las bases en orden",
+    "1.3": "Home: donde todo empieza y termina",
+    "1.4": "El dugout y la espera",
+    "1.5": "Mi equipo para jugar",
+    "2.1": "Pitcher y catcher: la batería",
+    "2.2": "Primera y tercera: las esquinas",
+    "2.3": "Segunda y campocorto: el medio",
+    "2.4": "Los tres jardineros",
+    "2.5": "Las 9 posiciones y sus números",
+    "3.1": "La entrada: alta y baja",
+    "3.2": "Tres outs y cambia el turno",
+    "3.3": "Cómo se anota una carrera",
+    "3.4": "El orden al bate",
+    "3.5": "Quién gana el juego",
+    "4.1": "Bola y strike",
+    "4.2": "La zona de strike",
+    "4.3": "El foul",
+    "4.4": "Ponche y base por bolas",
+    "4.5": "Golpeado y conteo completo"
+  },
+  "lessons": {
+    "1.1": {
+      "title": "El diamante y el campo",
+      "objective": "Reconocer el campo completo: el cuadro (infield), los jardines (outfield) y las líneas de foul.",
+      "demo": [
+        "¡Bienvenido al diamante! Así se llama el campo de béisbol en inglés: diamond.",
+        "Mira: la parte de tierra con las cuatro esquinas es el cuadro, en inglés infield.",
+        "La parte verde y grande de atrás son los jardines, en inglés outfield.",
+        "Y estas dos líneas blancas que salen hacia los lados son las líneas de foul: separan el campo bueno del malo."
+      ],
+      "acts": {
+        "1": {
+          "q": "Toca la parte de tierra donde están las bases",
+          "ok": "¡Eso es! Ahí están las bases.",
+          "ko": "Casi: busca la parte de tierra, en el centro.",
+          "answer": "El cuadro (infield)"
+        },
+        "2": {
+          "q": "¿Cómo se llama la parte verde y grande detrás del cuadro?",
+          "ok": "¡Correcto! Outfield en inglés.",
+          "ko": "Mira de nuevo: es la parte verde más lejos de home.",
+          "opts": {
+            "outfield": "Los jardines (outfield)",
+            "dugout": "El dugout",
+            "home": "Home"
+          }
+        },
+        "3": {
+          "q": "Las líneas blancas de los lados se llaman líneas de foul",
+          "ok": "¡Sí! Foul lines en inglés.",
+          "ko": "Sí es verdadero: así se llaman esas líneas."
+        },
+        "4": {
+          "q": "Toca una línea de foul",
+          "ok": "¡Bien tocada!",
+          "ko": "Esa no: las líneas de foul salen de home hacia los lados.",
+          "answer": "Línea de foul (foul line)"
+        },
+        "5": {
+          "q": "¿Por qué al campo se le dice diamante?",
+          "ok": "¡Eso es! Diamond en inglés.",
+          "ko": "Fíjate en la forma del cuadro: parece un diamante.",
+          "opts": {
+            "shape": "Por su forma, como un diamante girado",
+            "money": "Porque vale mucho dinero",
+            "glass": "Porque es de cristal"
+          }
+        },
+        "6": {
+          "q": "¿Dónde se juega en defensa cuando la bola va muy lejos?",
+          "ok": "¡Correcto! Lejos, en el outfield.",
+          "ko": "Lejos de home: en los jardines.",
+          "opts": {
+            "outfield": "En los jardines",
+            "dugout": "En el dugout",
+            "home": "En home"
+          }
+        }
+      }
+    },
+    "1.2": {
+      "title": "Las bases en orden",
+      "objective": "Recorrer primera, segunda y tercera en el orden correcto, siempre en el mismo sentido.",
+      "demo": [
+        "Cuando bateas, no corres a cualquier lado: corres en orden.",
+        "Primero primera base, first base.",
+        "Después segunda base, second base.",
+        "Después tercera base, third base.",
+        "Siempre dando la vuelta en el mismo sentido, como un cuadrado. ¡Mírame correrlo!"
+      ],
+      "acts": {
+        "1": {
+          "q": "Bateaste. Toca la primera base a la que corres",
+          "ok": "¡Eso es! Siempre a primera primero.",
+          "ko": "No: la primera parada siempre es primera base.",
+          "answer": "Primera base (first base)"
+        },
+        "2": {
+          "q": "Después de primera, ¿a qué base sigues?",
+          "ok": "¡Correcto! Second base.",
+          "ko": "El orden es 1, 2, 3: primero va segunda.",
+          "opts": {
+            "second": "A segunda",
+            "third": "A tercera",
+            "home": "A home"
+          }
+        },
+        "3": {
+          "q": "Arrastra al corredor por las bases en orden hasta tercera",
+          "ok": "¡Ruta perfecta!",
+          "ko": "El orden no se salta: primera, segunda y después tercera.",
+          "answer": "Primera, segunda, tercera"
+        },
+        "4": {
+          "q": "Un corredor puede correr de primera directo a tercera saltándose segunda",
+          "ok": "¡Bien! Hay que pisar todas.",
+          "ko": "Falso: tiene que pisar segunda en el camino."
+        },
+        "5": {
+          "q": "¿Qué forma hace el recorrido de las bases?",
+          "ok": "¡Eso es! Por eso se le dice diamante.",
+          "ko": "Cuatro esquinas: es un cuadrado girado.",
+          "opts": {
+            "square": "Un cuadrado",
+            "circle": "Un círculo",
+            "triangle": "Un triángulo"
+          }
+        },
+        "6": {
+          "q": "Toca la tercera base",
+          "ok": "¡Bien! Esa es la última antes de home.",
+          "ko": "Tercera está al otro lado, antes de llegar a home.",
+          "answer": "Tercera base (third base)"
+        }
+      }
+    },
+    "1.3": {
+      "title": "Home: donde todo empieza y termina",
+      "objective": "Entender que en home se batea, de home se sale y pisando home se anota la carrera.",
+      "demo": [
+        "Esta esquina especial no es una base como las demás: es home, en inglés home plate.",
+        "Aquí te paras a batear. De aquí sales corriendo.",
+        "Y si logras dar toda la vuelta y pisar home otra vez, ¡anotaste una carrera! En inglés: run."
+      ],
+      "acts": {
+        "1": {
+          "q": "Toca home",
+          "ok": "¡Eso es! La esquina con forma de casita.",
+          "ko": "Home es la esquina de abajo, donde se batea.",
+          "answer": "Home (home plate)"
+        },
+        "2": {
+          "q": "¿Qué haces parado en home al empezar tu turno?",
+          "ok": "¡Correcto! Ahí empieza tu turno.",
+          "ko": "En home te toca batear.",
+          "opts": {
+            "bat": "Batear",
+            "pitch": "Lanzar",
+            "wait": "Esperar en el dugout"
+          }
+        },
+        "3": {
+          "q": "¿Cuándo anotas una carrera?",
+          "ok": "¡Eso es! Run anotada.",
+          "ko": "Solo cuenta cuando completas la vuelta y pisas home.",
+          "opts": {
+            "lap": "Cuando pisas home después de dar la vuelta",
+            "second": "Cuando llegas a segunda",
+            "hit": "Cuando bateas la bola"
+          }
+        },
+        "4": {
+          "q": "Home tiene forma de almohadilla cuadrada como las demás bases",
+          "ok": "¡Bien! Home es plano y tiene punta, como una casita.",
+          "ko": "Falso: home es diferente, es una placa plana."
+        },
+        "5": {
+          "q": "El corredor pisó home. ¿Qué se anotó?",
+          "ok": "¡Carrera! Así se suma un punto en béisbol.",
+          "ko": "Al pisar home se anota una carrera, no un out.",
+          "opts": {
+            "run": "Una carrera (run)",
+            "out": "Un out",
+            "strike": "Un strike"
+          }
+        },
+        "6": {
+          "q": "¿Cómo se llaman los puntos en béisbol?",
+          "ok": "¡Correcto! En béisbol son carreras, runs.",
+          "ko": "En béisbol no hay goles: hay carreras.",
+          "opts": {
+            "runs": "Carreras",
+            "goals": "Goles",
+            "baskets": "Canastas"
+          }
+        }
+      }
+    },
+    "1.4": {
+      "title": "El dugout y la espera",
+      "objective": "Saber dónde espera el equipo que está bateando y que hay un jugador preparándose para seguir.",
+      "demo": [
+        "¿Y dónde espera tu equipo mientras batea? En el dugout: la banca larga al lado del campo.",
+        "Ahí se sientan los que esperan su turno, con su casco listo.",
+        "Y el que sigue después del bateador se va preparando cerca de home, en el círculo de espera. En inglés: on-deck circle."
+      ],
+      "acts": {
+        "1": {
+          "q": "Toca el dugout",
+          "ok": "¡Eso es! Ahí espera el equipo.",
+          "ko": "El dugout es la banca al lado del campo.",
+          "answer": "El dugout"
+        },
+        "2": {
+          "q": "¿Quiénes están en el dugout?",
+          "ok": "¡Correcto! Los que defienden están en el campo.",
+          "ko": "En el dugout espera el equipo al bate.",
+          "opts": {
+            "batting": "El equipo que está bateando",
+            "defending": "El equipo que defiende",
+            "umps": "Los árbitros"
+          }
+        },
+        "3": {
+          "q": "En el dugout te puedes quitar el casco y relajarte sin prestar atención al juego",
+          "ok": "¡Bien! Siempre atento: una bola de foul puede llegar.",
+          "ko": "Falso: en el dugout también se está atento al juego."
+        },
+        "4": {
+          "q": "¿Quién se prepara en el círculo de espera?",
+          "ok": "¡Eso es! On-deck en inglés.",
+          "ko": "El que sigue se prepara ahí, casco puesto.",
+          "opts": {
+            "next": "El bateador que sigue",
+            "pitcher": "El pitcher",
+            "catcher": "El catcher"
+          }
+        },
+        "5": {
+          "q": "¿Qué debes tener listo en el dugout antes de tu turno?",
+          "ok": "¡Correcto! Listo para salir sin hacer esperar.",
+          "ko": "Tu turno llega rápido: casco y bate listos.",
+          "opts": {
+            "gear": "El casco y el bate",
+            "snack": "La merienda",
+            "phone": "El teléfono"
+          }
+        },
+        "6": {
+          "q": "Termina un turno al bate. ¿Qué pasa con ese equipo?",
+          "ok": "¡Eso es! Los equipos se turnan.",
+          "ko": "Cuando termina de batear, ese equipo sale a defender.",
+          "opts": {
+            "defend": "Sale a defender al campo",
+            "home": "Se va a su casa",
+            "keep": "Sigue bateando"
+          }
+        }
+      }
+    },
+    "1.5": {
+      "title": "Mi equipo para jugar",
+      "objective": "Distinguir bate, guante, casco y pelota, y la regla de oro: casco puesto para batear y correr las bases.",
+      "demo": [
+        "Para jugar necesitas tu equipo.",
+        "El bate, bat, es para pegarle a la bola.",
+        "El guante, glove, es para atraparla sin que duela.",
+        "La pelota, ball.",
+        "Y lo más importante para cuidarte: el casco, helmet. Sin casco no se batea y no se corren las bases. ¡Primero la seguridad!"
+      ],
+      "acts": {
+        "1": {
+          "q": "¿Con qué le pegas a la bola?",
+          "ok": "¡Correcto! Bat en inglés.",
+          "ko": "A la bola se le pega con el bate.",
+          "opts": {
+            "bat": "El bate (bat)",
+            "glove": "El guante",
+            "helmet": "El casco"
+          }
+        },
+        "2": {
+          "q": "¿Con qué atrapas la bola?",
+          "ok": "¡Eso es! Glove en inglés.",
+          "ko": "Atrapas con el guante, en tu mano contraria a la que lanza.",
+          "opts": {
+            "glove": "El guante (glove)",
+            "bat": "El bate",
+            "home": "Home"
+          }
+        },
+        "3": {
+          "q": "El casco protege tu cabeza cuando bateas y corres las bases",
+          "ok": "¡Sí! Por eso nunca se quita a mitad de camino.",
+          "ko": "Verdadero: el casco es protección, no adorno."
+        },
+        "4": {
+          "q": "Vas a batear y no tienes casco. ¿Qué haces?",
+          "ok": "¡Muy bien! Sin casco, no se batea.",
+          "ko": "Nunca batees sin casco: pide uno primero.",
+          "opts": {
+            "ask": "Pides un casco antes de batear",
+            "anyway": "Bateas así mismo",
+            "cap": "Bateas con la gorra al revés"
+          }
+        },
+        "5": {
+          "q": "Toca la pelota en la imagen del equipo",
+          "ok": "¡Bien! Blanca, con costuras rojas.",
+          "ko": "Esa redonda con costuras es la pelota.",
+          "answer": "La pelota (ball)"
+        },
+        "6": {
+          "q": "¿En qué mano va el guante si lanzas con la derecha?",
+          "ok": "¡Correcto! Lanzas con una y atrapas con la otra.",
+          "ko": "El guante va en la mano que no lanza.",
+          "opts": {
+            "left": "En la izquierda",
+            "right": "En la derecha",
+            "both": "En las dos"
+          }
+        }
+      }
+    }
+  },
+  "exams": {
+    "1": {
+      "1": {
+        "q": "¿Cómo se llama la parte de tierra donde están las bases?",
+        "opts": {
+          "infield": "El cuadro (infield)",
+          "outfield": "Los jardines",
+          "dugout": "El dugout"
+        }
+      },
+      "2": {
+        "q": "Toca home en el diagrama",
+        "answer": "Home"
+      },
+      "3": {
+        "q": "¿Cuál es el orden correcto de las bases?",
+        "opts": {
+          "o123": "Primera, segunda, tercera",
+          "o312": "Tercera, primera, segunda",
+          "o213": "Segunda, primera, tercera"
+        }
+      },
+      "4": {
+        "q": "¿Dónde espera el equipo que está bateando?",
+        "opts": {
+          "dugout": "En el dugout",
+          "outfield": "En los jardines",
+          "behind": "Detrás de home"
+        }
+      },
+      "5": {
+        "q": "¿Qué anotas cuando pisas home después de dar la vuelta?",
+        "opts": {
+          "run": "Una carrera (run)",
+          "strike": "Un strike",
+          "out": "Un out"
+        }
+      },
+      "6": {
+        "q": "¿Cómo se llama la parte verde y grande de atrás?",
+        "opts": {
+          "outfield": "Los jardines (outfield)",
+          "infield": "El cuadro",
+          "ondeck": "El círculo de espera"
+        }
+      },
+      "7": {
+        "q": "Verdadero o falso: las líneas de los lados se llaman líneas de foul"
+      },
+      "8": {
+        "q": "¿Con qué atrapas la bola?",
+        "opts": {
+          "glove": "El guante (glove)",
+          "bat": "El bate",
+          "helmet": "El casco"
+        }
+      },
+      "9": {
+        "q": "¿Qué debes ponerte siempre para batear?",
+        "opts": {
+          "helmet": "El casco (helmet)",
+          "cap": "La gorra al revés",
+          "nothing": "Nada"
+        }
+      },
+      "10": {
+        "q": "¿Quién se prepara en el círculo de espera?",
+        "opts": {
+          "next": "El bateador que sigue",
+          "pitcher": "El pitcher",
+          "ump": "El umpire"
+        }
+      },
+      "11": {
+        "q": "Toca la segunda base en el diagrama",
+        "answer": "Segunda base"
+      },
+      "12": {
+        "q": "¿Cómo se llaman los puntos en béisbol?",
+        "opts": {
+          "runs": "Carreras",
+          "goals": "Goles",
+          "hoops": "Puntos de canasta"
+        }
+      }
+    }
+  }
+}
