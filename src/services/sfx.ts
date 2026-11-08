@@ -2,16 +2,14 @@ import { createAudioPlayer, setAudioModeAsync, type AudioPlayer } from 'expo-aud
 import { Platform } from 'react-native';
 
 // Efectos de sonido originales (generados para la app, sin derechos de terceros):
-//   bat.wav   -> "clac" del bate al elegir una opción
-//   cheer.wav -> ovación del estadio cuando la respuesta es correcta
+//   bat.wav -> golpe de bate de madera contra la pelota al elegir una opción
 
 const SOURCES = {
   bat: require('../../assets/sfx/bat.wav'),
-  cheer: require('../../assets/sfx/cheer.wav'),
 };
 
 type Sfx = keyof typeof SOURCES;
-const VOLUME: Record<Sfx, number> = { bat: 1, cheer: 0.55 };
+const VOLUME: Record<Sfx, number> = { bat: 1 };
 const players: Partial<Record<Sfx, AudioPlayer>> = {};
 let modeSet = false;
 
@@ -46,5 +44,4 @@ export function playSfx(name: Sfx): void {
 /** Carga los sonidos con anticipación para que el primer "clac" no se retrase. */
 export function preloadSfx(): void {
   player('bat');
-  player('cheer');
 }

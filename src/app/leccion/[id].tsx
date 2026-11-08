@@ -10,8 +10,7 @@ import { Btn, Label, ProgressBar } from '@/components/ui';
 import { getLesson } from '@/content/levels';
 import type { DemoSegment, GearTarget, Target } from '@/content/types';
 import { content } from '@/i18n';
-import { playSfx } from '@/services/sfx';
-import { speak, stopSpeaking } from '@/services/speech';
+import { speak, stopSpeaking, umpireCall } from '@/services/speech';
 import { submitScore } from '@/services/scoreboard';
 import { dayKey, useStore, weekKey, type LessonReward } from '@/state/store';
 import { C, F } from '@/theme';
@@ -110,14 +109,16 @@ export default function LessonScreen() {
     setAnswer(a);
     const ok = isCorrect(act, a);
     if (ok) {
-      playSfx('cheer');
       setCorrectCount((c) => c + 1);
       if (!missed.has(curIdx)) setFirstTry((s) => new Set(s).add(curIdx));
     } else {
       setMissed((s) => new Set(s).add(curIdx));
     }
     const fb = ok ? at?.ok : at?.ko;
-    if (fb) speak(fb, locale);
+    // Primero canta el umpire; después la mascota explica.
+    umpireCall(ok ? 'safe' : 'out', locale, () => {
+      if (fb) speak(fb, locale);
+    });
   };
 
   const finish = () => {

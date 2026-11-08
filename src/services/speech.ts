@@ -58,7 +58,13 @@ function pickVoice(s: WebSynth, lang: string) {
   );
 }
 
-function speakWeb(s: WebSynth, text: string, locale: Locale, id: number, onDone?: () => void) {
+interface VoiceOpts {
+  lang?: string;
+  pitch?: number;
+  rate?: number;
+}
+
+function speakWeb(s: WebSynth, text: string, locale: Locale, id: number, onDone?: () => void, o: VoiceOpts = {}) {
   try {
     s.cancel();
   } catch {
@@ -79,10 +85,11 @@ function speakWeb(s: WebSynth, text: string, locale: Locale, id: number, onDone?
         };
       };
       const u = new W.SpeechSynthesisUtterance(text);
-      u.lang = SPEECH_LANG[locale];
-      u.rate = locale === 'ja' || locale === 'zh-Hans' ? 0.9 : 0.95;
-      u.pitch = 1.15;
-      const v = pickVoice(s, SPEECH_LANG[locale]);
+      const lang = o.lang ?? SPEECH_LANG[locale];
+      u.lang = lang;
+      u.rate = o.rate ?? (locale === 'ja' || locale === 'zh-Hans' ? 0.9 : 0.95);
+      u.pitch = o.pitch ?? 1.15;
+      const v = pickVoice(s, lang);
       if (v) u.voice = v;
       u.onend = () => id === current && onDone?.();
       u.onerror = () => id === current && onDone?.();
@@ -94,20 +101,20 @@ function speakWeb(s: WebSynth, text: string, locale: Locale, id: number, onDone?
   }, 80);
 }
 
-export function speak(text: string, locale: Locale, onDone?: () => void): void {
+export function speak(text: string, locale: Locale, onDone?: () => void, o: VoiceOpts = {}): void {
   const id = ++current;
   const s = webSynth();
   if (Platform.OS === 'web') {
-    if (s) speakWeb(s, text, locale, id, onDone);
+    if (s) speakWeb(s, text, locale, id, onDone, o);
     else onDone?.();
     return;
   }
   Speech.stop();
   try {
     Speech.speak(text, {
-      language: SPEECH_LANG[locale],
-      rate: locale === 'ja' || locale === 'zh-Hans' ? 0.9 : 0.95,
-      pitch: 1.15,
+      language: o.lang ?? SPEECH_LANG[locale],
+      rate: o.rate ?? (locale === 'ja' || locale === 'zh-Hans' ? 0.9 : 0.95),
+      pitch: o.pitch ?? 1.15,
       onDone: () => {
         if (id === current) onDone?.();
       },
@@ -134,4 +141,13 @@ export function stopSpeaking(): void {
     return;
   }
   Speech.stop();
+}
+
+/**
+ * Voz del umpire: "Safe!" si acierta, "You're out!" si falla. En béisbol se canta en inglés
+ * en todos los países (en Japón también: セーフ y アウト suenan igual), por eso no se traduce.
+ * Voz grave y fuerte; después sigue la mascota con la retroalimentación (onDone).
+ */
+export function umpireCall(kind: 'safe' | 'out', locale: Locale, onDone?: () => void): void {
+  speak(kind === 'safe' ? 'Safe!' : "You're out!", locale, onDone, { lang: 'en-US', pitch: 0.6, rate: kind === 'safe' ? 0.85 : 0.95 });
 }

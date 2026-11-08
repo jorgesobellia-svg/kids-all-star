@@ -9,8 +9,7 @@ import { getLevel, REWARDS } from '@/content/levels';
 import type { Activity } from '@/content/types';
 import { content } from '@/i18n';
 import { submitScore } from '@/services/scoreboard';
-import { playSfx } from '@/services/sfx';
-import { speak, stopSpeaking } from '@/services/speech';
+import { speak, stopSpeaking, umpireCall } from '@/services/speech';
 import { useStore, weekKey } from '@/state/store';
 import { C, F } from '@/theme';
 
@@ -55,10 +54,12 @@ export default function ExamScreen() {
     if (answered) return;
     setAnswer(a);
     if (isCorrect(act, a)) {
-      playSfx('cheer');
+      umpireCall('safe', locale);
       setScore((s) => s + 1);
+    } else {
+      umpireCall('out', locale);
+      setWrong((w) => [...w, i]);
     }
-    else setWrong((w) => [...w, i]);
   };
 
   const next = () => {
