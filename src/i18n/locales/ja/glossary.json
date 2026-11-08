@@ -28,5 +28,16 @@
   "shortstop": "遊撃手 / ショート",
   "leftFielder": "左翼手 / レフト",
   "centerFielder": "中堅手 / センター",
-  "rightFielder": "右翼手 / ライト"
+  "rightFielder": "右翼手 / ライト",
+  "inning": "イニング / 回",
+  "topHalf": "表",
+  "bottomHalf": "裏",
+  "lineup": "打順 / ラインナップ",
+  "extraInning": "延長戦",
+  "ballPitch": "ボール",
+  "strikeZone": "ストライクゾーン",
+  "strikeout": "三振",
+  "walk": "四球 / フォアボール",
+  "hbp": "死球 / デッドボール",
+  "fullCount": "フルカウント"
 }

@@ -5,6 +5,7 @@ import { C, F } from '@/theme';
 import { OptionArt } from './Art';
 import Diamond, { hitMatches, P, VB, type Hit } from './Diamond';
 import Gear from './Gear';
+import Zone from './Zone';
 import PlaceAct from './PlaceAct';
 import { playSfx } from '@/services/sfx';
 import { tapFeedback } from './ui';
@@ -170,6 +171,17 @@ function TapAct({ act, width, locked, onAnswer }: Props) {
         good={done ? (act.target as GearTarget) : null}
         bad={done && !correct ? (done.hit as GearTarget) : null}
         onTap={done ? undefined : (t) => { tapFeedback(); playSfx('bat'); onAnswer({ kind: 'tap', hit: t }); }}
+      />
+    );
+  }
+  if (act.scene === 'zone') {
+    return (
+      <Zone
+        width={width}
+        good={done ? (act.target as Target) : null}
+        bad={done && !correct ? (done.hit as Hit) : null}
+        showZone={!!done}
+        onTap={done ? undefined : (h) => { tapFeedback(); playSfx('bat'); onAnswer({ kind: 'tap', hit: h }); }}
       />
     );
   }

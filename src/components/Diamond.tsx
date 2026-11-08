@@ -54,13 +54,15 @@ interface Props {
   numbers?: boolean;
   /** Lugares vacíos (círculos punteados) para colocar fichas. */
   slots?: Target[];
+  /** Batazo de foul por la línea de tercera: cae al suelo o lo atrapan en el aire. */
+  foulHit?: 'ground' | 'caught';
   children?: React.ReactNode;
 }
 
 const ALL = { ...P, ...POS } as Record<string, { x: number; y: number }>;
 export const pt = (t: Target) => ALL[t] ?? P.home;
 
-export default function Diamond({ width, highlight = [], good, bad, onTap, run, runKey, trail, players, numbers, slots, children }: Props) {
+export default function Diamond({ width, highlight = [], good, bad, onTap, run, runKey, trail, players, numbers, slots, foulHit, children }: Props) {
   const s = width / VB.w;
   const height = VB.h * s;
   const hl = (t: Target) => highlight.includes(t) || highlight.includes('all');
@@ -181,6 +183,14 @@ export default function Diamond({ width, highlight = [], good, bad, onTap, run, 
           {homeGlow ? <Circle cx={P.home.x} cy={P.home.y} r={17} fill={homeGlow} fillOpacity={0.35} stroke={homeGlow} strokeWidth={3} /> : null}
           <Polygon points={`172,256 188,256 188,264 180,271 172,264`} fill={C.white} stroke="#8a6a44" strokeWidth={1} />
         </G>
+        {foulHit ? (
+          <G>
+            {/* Vuelo de la pelota: sale de home y cruza la línea de tercera hacia territorio de foul */}
+            <Path d={foulHit === 'ground' ? 'M180 258 Q110 150 46 172' : 'M180 258 Q112 146 74 194'} fill="none" stroke={C.white} strokeWidth={3} strokeDasharray="3 6" strokeLinecap="round" />
+            {foulHit === 'ground' ? <Circle cx={46} cy={180} r={6} fill="#1F5E22" /> : null}
+            <Circle testID="foul-ball" cx={foulHit === 'ground' ? 46 : 74} cy={foulHit === 'ground' ? 172 : 194} r={7} fill={C.white} stroke={C.red} strokeWidth={1.5} />
+          </G>
+        ) : null}
         {slots?.map((id) => (
           <Circle key={`slot-${id}`} cx={pt(id).x} cy={pt(id).y} r={17} fill={C.white} fillOpacity={0.18} stroke={C.white} strokeWidth={2.5} strokeDasharray="4 4" />
         ))}

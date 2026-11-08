@@ -657,6 +657,679 @@
           "answer": "Pitcher 1, catcher 2, first 3, second 4"
         }
       }
+    },
+    "3.1": {
+      "title": "The inning: top and bottom",
+      "objective": "Understand that an inning has two halves: in the top the visiting team bats, and in the bottom the home team bats.",
+      "demo": [
+        "A game is split into little pieces called innings.",
+        "Every inning has two halves.",
+        "In the top of the inning, the visiting team bats.",
+        "When they get three outs, the bottom of the inning comes, and the home team bats.",
+        "Top and bottom: that is one whole inning."
+      ],
+      "acts": {
+        "1": {
+          "q": "What is each big piece of the game called?",
+          "ok": "That's it! An inning.",
+          "ko": "Those pieces are called innings.",
+          "opts": {
+            "inning": "Inning",
+            "run": "Run",
+            "strike": "Strike"
+          }
+        },
+        "2": {
+          "q": "How many halves does an inning have?",
+          "ok": "Correct! Top and bottom.",
+          "ko": "An inning is two turns, one for each team.",
+          "opts": {
+            "two": "Two: top and bottom",
+            "one": "One",
+            "three": "Three"
+          }
+        },
+        "3": {
+          "q": "Who bats in the top of the inning?",
+          "ok": "That's it! The visitors go first.",
+          "ko": "In the top, the visiting team bats.",
+          "opts": {
+            "away": "The visiting team",
+            "home": "The home team",
+            "ump": "The umpire"
+          }
+        },
+        "4": {
+          "q": "Who bats in the bottom of the inning?",
+          "ok": "Correct! That's why they sometimes decide the game at the end.",
+          "ko": "In the bottom, it's the home team's turn.",
+          "opts": {
+            "home": "The home team",
+            "away": "The visiting team",
+            "nobody": "Nobody"
+          }
+        },
+        "5": {
+          "q": "If only the top half has been played, the inning is over",
+          "ok": "Good! The bottom half is still missing.",
+          "ko": "False: the inning ends when both teams have batted."
+        },
+        "6": {
+          "q": "The top of the third inning is over. What comes next?",
+          "ok": "That's it! Now the home team bats.",
+          "ko": "Next is the bottom of that same inning.",
+          "opts": {
+            "bottom3": "The bottom of the third",
+            "first": "The first inning again",
+            "over": "The game is over"
+          }
+        }
+      }
+    },
+    "3.2": {
+      "title": "Three outs and switch",
+      "objective": "Know that a team's turn at bat ends when the defense gets three outs, and then the teams switch places.",
+      "demo": [
+        "How long does a turn at bat last? Until you get three outs.",
+        "One,",
+        "two,",
+        "three outs, and switch:",
+        "the team that was batting goes out to play defense, and the team that was on defense comes in to bat.",
+        "That's why in baseball nobody keeps batting the whole game."
+      ],
+      "acts": {
+        "1": {
+          "q": "How many outs end a team's turn?",
+          "ok": "That's it! Three and switch.",
+          "ko": "It takes three outs per turn.",
+          "opts": {
+            "three": "3 outs",
+            "one": "1 out",
+            "five": "5 outs"
+          }
+        },
+        "2": {
+          "q": "There are already 2 outs and they make the third. What happens?",
+          "ok": "Correct! Time to play defense.",
+          "ko": "Third out: the turn is over.",
+          "opts": {
+            "switch": "The teams switch",
+            "keep": "They keep batting",
+            "run": "A run is scored"
+          }
+        },
+        "3": {
+          "q": "The outs from one half don't add to the other half: every turn starts at zero",
+          "ok": "Yes! Every turn is a new count.",
+          "ko": "True: each team counts its own three outs in its turn."
+        },
+        "4": {
+          "q": "Your team was on the field playing defense and you got the 3 outs. Where do you go?",
+          "ok": "That's it! Now it's your turn to bat.",
+          "ko": "Defense is over: your turn at bat begins.",
+          "opts": {
+            "dugout": "To the dugout, to get ready to bat",
+            "house": "Home to your house",
+            "outfield": "To the outfield to keep waiting"
+          }
+        },
+        "5": {
+          "q": "A team has 0 outs. How many more batters can it have, at least, before it has to play defense?",
+          "ok": "Correct! With no outs, the turn is still alive.",
+          "ko": "The turn has no clock: it ends with the third out.",
+          "opts": {
+            "untilThree": "It keeps batting until it gets 3 outs",
+            "oneMore": "Just one more",
+            "none": "None"
+          }
+        },
+        "6": {
+          "q": "Third out in the top of the inning. What does the game announce now?",
+          "ok": "That's it! The teams switch.",
+          "ko": "Third out in the top: switch, here comes the bottom.",
+          "opts": {
+            "change": "Switch: here comes the bottom of the inning",
+            "hr": "Home run",
+            "walk": "Walk"
+          }
+        }
+      }
+    },
+    "3.3": {
+      "title": "How to score a run",
+      "objective": "Explain that a run only counts when the runner goes around all the bases in order and touches home plate without being put out.",
+      "demo": [
+        "You already know how to get to home plate.",
+        "Now the whole rule: to score a run you start as the batter, touch first, second and third in order, and touch home plate without being put out along the way.",
+        "If you're put out before you get there, there is no run.",
+        "In English it is called a run."
+      ],
+      "acts": {
+        "1": {
+          "q": "What does a runner need to score?",
+          "ok": "That's it! The whole trip.",
+          "ko": "Without the whole trip, there is no run.",
+          "opts": {
+            "all": "Touch all the bases in order and reach home plate",
+            "third": "Just reach third base",
+            "hard": "Hit the ball really hard"
+          }
+        },
+        "2": {
+          "q": "If the runner is put out between third and home, the run still counts",
+          "ok": "Good! Out before home plate means no run.",
+          "ko": "False: the runner has to touch home plate without being out."
+        },
+        "3": {
+          "q": "Drag the runner along the path to score",
+          "ok": "Run scored!",
+          "ko": "The trip is complete: the three bases and back to home plate.",
+          "answer": "Start at home and come back to home through all three bases"
+        },
+        "4": {
+          "q": "A runner is on third base. What is left to score?",
+          "ok": "Correct! One more step.",
+          "ko": "From third, all that is left is touching home plate.",
+          "opts": {
+            "home": "Touch home plate",
+            "back": "Go back to second",
+            "helmet": "Take off the helmet"
+          }
+        },
+        "5": {
+          "q": "Who can score during a turn at bat?",
+          "ok": "That's it! Every runner who completes the trip adds a run.",
+          "ko": "Every runner who touches home plate scores a run.",
+          "opts": {
+            "runners": "The runners who reach home plate",
+            "batter": "Only the one who is batting",
+            "first": "Only the first batter"
+          }
+        },
+        "6": {
+          "q": "The score is 4 to 2. Your team scores another run. What is the score now?",
+          "ok": "Correct! Every run adds one.",
+          "ko": "4 plus 1 run: 5 to 2.",
+          "opts": {
+            "s52": "5 to 2",
+            "s43": "4 to 3",
+            "s62": "6 to 2"
+          }
+        }
+      }
+    },
+    "3.4": {
+      "title": "The batting order",
+      "objective": "Understand that batters follow a list in order (the lineup), that nobody can be skipped, and that the order picks up where it left off in the next inning.",
+      "demo": [
+        "Nobody bats whenever they want: there is a list called the lineup.",
+        "The first one bats, then the second, then the third, and so on.",
+        "If the turn ended with batter number four in one inning, number five starts the next inning.",
+        "The order is never skipped."
+      ],
+      "acts": {
+        "1": {
+          "q": "What is the list of batters in order called?",
+          "ok": "That's it! The lineup.",
+          "ko": "That ordered list is the lineup.",
+          "opts": {
+            "lineup": "The lineup",
+            "dugout": "The dugout",
+            "zone": "The strike zone"
+          }
+        },
+        "2": {
+          "q": "A player can bat twice in a row if they are the best on the team",
+          "ok": "Good! The order is always followed.",
+          "ko": "False: the next one on the list bats, whoever it is."
+        },
+        "3": {
+          "q": "The turn ended with batter 4. Who leads off the next inning?",
+          "ok": "Correct! The order continues where it left off.",
+          "ko": "You don't go back to 1: number 5 is next.",
+          "opts": {
+            "b5": "Batter 5",
+            "b1": "Batter 1",
+            "coach": "Whoever the coach wants"
+          }
+        },
+        "4": {
+          "q": "Number 7 just batted. The turn isn't over. Who is next?",
+          "ok": "That's it! One after another.",
+          "ko": "After 7 comes 8.",
+          "opts": {
+            "n8": "Number 8",
+            "n1": "Number 1",
+            "n6": "Number 6 again"
+          }
+        },
+        "5": {
+          "q": "What happens when the list reaches the last batter and the turn keeps going?",
+          "ok": "Correct! The wheel goes around again.",
+          "ko": "The list is a wheel: after the last one comes the first.",
+          "opts": {
+            "restart": "It starts again with number 1",
+            "over": "The game ends",
+            "pitcher": "The other team's pitcher bats"
+          }
+        },
+        "6": {
+          "q": "A team sent up someone to bat whose turn it wasn't. What is wrong?",
+          "ok": "That's it! The order is a rule, not a suggestion.",
+          "ko": "Batting out of turn is against the rules.",
+          "opts": {
+            "skipped": "They skipped the batting order",
+            "ok": "Nothing, that's allowed",
+            "run": "They scored a run"
+          }
+        }
+      }
+    },
+    "3.5": {
+      "title": "Who wins the game",
+      "objective": "Explain that the team with more runs when the innings are done wins, and that the number of innings depends on the league and the age group.",
+      "demo": [
+        "So who wins? Easy: when the innings are over, the team with more runs wins.",
+        "Watch out for this: not every game lasts the same.",
+        "In many kids leagues they play 6 innings,",
+        "and in grown-up baseball, 9.",
+        "Your coach will tell you how many your league plays.",
+        "And if it's tied at the end, in many cases they play an extra inning to break the tie, depending on the league's rules."
+      ],
+      "acts": {
+        "1": {
+          "q": "Who wins the game?",
+          "ok": "That's it! Runs decide it.",
+          "ko": "Not outs, not hits: runs win.",
+          "opts": {
+            "moreRuns": "The team with more runs at the end",
+            "moreOuts": "The team that makes more outs",
+            "morePlayers": "The team with more players"
+          }
+        },
+        "2": {
+          "q": "Every baseball game lasts exactly 9 innings",
+          "ok": "Good! Kids leagues usually play fewer, like 6.",
+          "ko": "False: the length changes by league and by age."
+        },
+        "3": {
+          "q": "End of the game: 6 runs to 4. Who won?",
+          "ok": "Correct! 6 is more than 4.",
+          "ko": "The one with more wins: the team with 6.",
+          "opts": {
+            "six": "The team with 6 runs",
+            "four": "The team with 4 runs",
+            "tie": "Nobody, it's a tie"
+          }
+        },
+        "4": {
+          "q": "It is tied when the planned innings are over. What can happen, depending on the league?",
+          "ok": "That's it! An extra inning to break the tie.",
+          "ko": "Many leagues break the tie with one more inning.",
+          "opts": {
+            "extra": "Play an extra inning",
+            "allbat": "Everyone bats again at the same time",
+            "repeat": "Always replay the game another day"
+          }
+        },
+        "5": {
+          "q": "Your kids league team is going to play. Who tells you for sure how many innings the game lasts?",
+          "ok": "Correct! Every league has its own number.",
+          "ko": "Ask your coach: it depends on your league.",
+          "opts": {
+            "coach": "Your coach, based on your league",
+            "rival": "The other team",
+            "batter": "The first batter"
+          }
+        },
+        "6": {
+          "q": "The last out was made and one team is winning by 1 run. What comes next?",
+          "ok": "That's it! Game over.",
+          "ko": "Last out with a lead: the game is over.",
+          "opts": {
+            "over": "The game is over: that team won",
+            "untilTie": "They play until it is tied",
+            "cancel": "The last inning is canceled"
+          }
+        }
+      }
+    },
+    "4.1": {
+      "title": "Ball and strike",
+      "objective": "Tell a strike (a good pitch, in the zone or swung at) from a ball (a pitch outside the zone that the batter doesn't swing at).",
+      "demo": [
+        "Watch every pitch closely, because the umpire calls one of two things.",
+        "If the ball goes through the good zone, or if you swing and miss, it's a strike.",
+        "If it goes far from the zone and you didn't swing, it's a ball.",
+        "A ball is bad for the pitcher and good for you.",
+        "The count of balls and strikes is the score of your turn at bat."
+      ],
+      "acts": {
+        "1": {
+          "q": "The pitch went through the middle of the zone and the batter didn't swing",
+          "ok": "Called strike! Even without a swing, if it's in the zone it's a strike.",
+          "ko": "It went through the good zone: that's a strike.",
+          "opts": {
+            "strike": "Strike",
+            "ball": "Ball",
+            "foul": "Foul"
+          }
+        },
+        "2": {
+          "q": "The pitch was way too high and the batter didn't swing",
+          "ok": "Ball! Same word in English.",
+          "ko": "Way too high and no swing: it's a ball.",
+          "opts": {
+            "ball": "Ball",
+            "strike": "Strike",
+            "out": "Out"
+          }
+        },
+        "3": {
+          "q": "The batter swung and missed the ball",
+          "ok": "Swinging strike! Swinging and missing is a strike too.",
+          "ko": "If you swing and miss, it's a strike even if the pitch was bad.",
+          "opts": {
+            "strike": "Strike",
+            "ball": "Ball",
+            "run": "Run"
+          }
+        },
+        "4": {
+          "q": "If the pitch is outside the zone but the batter swings and misses, it's a ball",
+          "ok": "Good! A swing and a miss is always a strike.",
+          "ko": "False: a missed swing turns any pitch into a strike."
+        },
+        "5": {
+          "q": "Who calls whether it was a ball or a strike?",
+          "ok": "That's it! The umpire.",
+          "ko": "The umpire stands behind the catcher and makes the call.",
+          "opts": {
+            "ump": "The umpire",
+            "coach": "The coach",
+            "catcher": "The catcher"
+          }
+        },
+        "6": {
+          "q": "The pitch goes straight into the dirt and the batter doesn't swing. What is it?",
+          "ok": "Correct! Way outside the zone.",
+          "ko": "Into the dirt and no swing: ball.",
+          "opts": {
+            "ball": "Ball",
+            "strike": "Strike",
+            "foul": "Foul"
+          }
+        }
+      }
+    },
+    "4.2": {
+      "title": "The strike zone",
+      "objective": "Recognize the strike zone: the imaginary rectangle over home plate, between the batter's knees and chest in their normal stance.",
+      "demo": [
+        "Imagine an invisible rectangle floating over home plate: that is the strike zone.",
+        "It is as wide as home plate,",
+        "and about as tall as from the batter's knees to their chest, standing normally.",
+        "If the ball crosses through that rectangle, it's a strike.",
+        "If it goes outside, it's a ball.",
+        "It's imaginary, but the umpire sees it."
+      ],
+      "acts": {
+        "1": {
+          "q": "Tap where the strike zone is",
+          "ok": "That's it! It floats over home plate.",
+          "ko": "The zone is over home plate, not over first base or the mound.",
+          "answer": "Over home plate, in front of the batter"
+        },
+        "2": {
+          "q": "How wide is the strike zone?",
+          "ok": "Correct! Exactly as wide as home plate.",
+          "ko": "The zone is the same width as home plate.",
+          "opts": {
+            "plate": "As wide as home plate",
+            "field": "As wide as the whole field",
+            "meters": "Two meters wide"
+          }
+        },
+        "3": {
+          "q": "The height of the zone goes roughly from",
+          "ok": "That's it! In their normal batting stance.",
+          "ko": "Knees to chest: that is about how tall it is.",
+          "opts": {
+            "kneesChest": "The batter's knees to their chest",
+            "groundHead": "The ground to the head",
+            "feetKnees": "The feet to the knees"
+          }
+        },
+        "4": {
+          "q": "The ball crossed inside the rectangle, at waist height",
+          "ok": "Strike! It crossed the zone.",
+          "ko": "Inside the rectangle is a strike.",
+          "opts": {
+            "strike": "Strike",
+            "ball": "Ball",
+            "foul": "Foul"
+          }
+        },
+        "5": {
+          "q": "The ball went past the outside of the rectangle and the batter didn't swing",
+          "ok": "Ball! Outside the zone.",
+          "ko": "Outside the rectangle and no swing: ball.",
+          "opts": {
+            "ball": "Ball",
+            "strike": "Strike",
+            "out": "Out"
+          }
+        },
+        "6": {
+          "q": "The strike zone changes a little with how tall each batter is",
+          "ok": "Yes! A tall kid has a higher zone than a short kid.",
+          "ko": "True: it fits each batter's body."
+        }
+      }
+    },
+    "4.3": {
+      "title": "The foul ball",
+      "objective": "Understand that a ball hit outside the lines before it passes the bases is a foul: it counts as a strike, but with two strikes it doesn't end the turn, and if a fielder catches it in the air it's an out.",
+      "demo": [
+        "When you hit the ball and it leaves the good part of the field, crossing the lines to the sides, it's a foul.",
+        "A foul counts as a strike,",
+        "but listen to the trick: if you already have two strikes and you hit a foul, you don't strike out.",
+        "You keep batting.",
+        "And watch out: if a fielder catches that foul in the air, before it lands, it is an out."
+      ],
+      "acts": {
+        "1": {
+          "q": "What is a foul?",
+          "ok": "That's it! A foul ball.",
+          "ko": "A foul is a ball that goes outside the fair area.",
+          "opts": {
+            "outside": "A ball hit outside the good part of the field",
+            "high": "A high pitch",
+            "run": "A run"
+          }
+        },
+        "2": {
+          "q": "The batted ball landed outside the third-base line",
+          "ok": "Foul! Outside the line.",
+          "ko": "It landed in foul territory: foul.",
+          "opts": {
+            "foul": "Foul",
+            "hr": "Home run",
+            "ball": "Ball"
+          }
+        },
+        "3": {
+          "q": "A foul that lands on the ground counts as",
+          "ok": "Correct! It adds a strike.",
+          "ko": "A foul on the ground is one more strike in the count.",
+          "opts": {
+            "strike": "Strike",
+            "ball": "Ball",
+            "nothing": "Nothing"
+          }
+        },
+        "4": {
+          "q": "With two strikes, a foul that lands on the ground is the third strike and you strike out",
+          "ok": "Good! A foul doesn't strike you out: you keep batting.",
+          "ko": "False, and it's the key trick: a foul with 2 strikes is not a strikeout."
+        },
+        "5": {
+          "q": "The third baseman caught the foul in the air, before it landed. What happens?",
+          "ok": "That's it! Caught in the air: out.",
+          "ko": "A foul caught in the air is an out, wherever it is.",
+          "opts": {
+            "out": "It's an out",
+            "strikeOnly": "It's only a strike",
+            "none": "It doesn't count"
+          }
+        },
+        "6": {
+          "q": "The count is 3 balls and 2 strikes, and the batter hits a foul that lands on the ground. What is the count now?",
+          "ok": "Exactly! The famous full count stays alive.",
+          "ko": "Foul with 2 strikes: the count doesn't change, it stays 3-2.",
+          "opts": {
+            "still32": "Still 3 and 2",
+            "k": "It's a strikeout",
+            "walk": "The batter walks to first"
+          }
+        }
+      }
+    },
+    "4.4": {
+      "title": "Strikeout and walk",
+      "objective": "Know that three strikes end the batter's turn with a strikeout, and four balls send them walking to first base (a walk, or base on balls).",
+      "demo": [
+        "The count has two endings without hitting the ball.",
+        "If you get three strikes, you struck out: that's a strikeout, and you're out.",
+        "But if the pitcher throws four balls first, you win the turn: you walk to first base and they can't put you out.",
+        "That's called a walk, or base on balls.",
+        "The count is always said with balls first and then strikes: 3 and 2 means three balls and two strikes."
+      ],
+      "acts": {
+        "1": {
+          "q": "How many strikes does it take to strike out?",
+          "ok": "That's it! A strikeout.",
+          "ko": "Three strikes: strikeout, and out.",
+          "opts": {
+            "n3": "3",
+            "n4": "4",
+            "n2": "2"
+          }
+        },
+        "2": {
+          "q": "How many balls does it take for the batter to walk to first?",
+          "ok": "Correct! A walk: time to walk.",
+          "ko": "Four balls: a walk.",
+          "opts": {
+            "n4": "4",
+            "n3": "3",
+            "n5": "5"
+          }
+        },
+        "3": {
+          "q": "The count is 3 balls and 0 strikes. Another pitch comes outside the zone. What happens?",
+          "ok": "That's it! Ball four: walk to first.",
+          "ko": "That was ball four: a walk.",
+          "opts": {
+            "walk": "Walks to first",
+            "k": "Strikes out",
+            "foul": "Hits a foul"
+          }
+        },
+        "4": {
+          "q": "The count is 0 balls and 2 strikes. A called strike comes in. What happens?",
+          "ok": "Strikeout! Strike three.",
+          "ko": "That was strike three: out on a strikeout.",
+          "opts": {
+            "k": "Struck out, it is an out",
+            "walk": "Walks to first",
+            "keep": "Keeps batting"
+          }
+        },
+        "5": {
+          "q": "The count is said with strikes first and then balls",
+          "ok": "Good! Balls come first: 3 and 2 means 3 balls and 2 strikes.",
+          "ko": "False: balls first, strikes second."
+        },
+        "6": {
+          "q": "Ball four in this turn, way outside. What does the batter get to do?",
+          "ok": "Walk! Off to first, nice and easy.",
+          "ko": "Four balls: the batter goes to first without being out.",
+          "opts": {
+            "walk": "Walk to first base",
+            "dugout": "Go back to the dugout as an out",
+            "again": "Bat again"
+          }
+        }
+      }
+    },
+    "4.5": {
+      "title": "Hit by pitch and full count",
+      "objective": "Understand that if a pitch hits the batter when they didn't try to get hit and didn't swing, they go to first base (hit by pitch), and review the full count, 3-2.",
+      "demo": [
+        "Last lesson about the count.",
+        "If the pitch hits the batter (and they didn't swing or step into it on purpose), it's not an out and they don't keep batting: they go to first base.",
+        "In English it is called hit by pitch.",
+        "Now put it all together: the most exciting count is 3 balls and 2 strikes, the full count.",
+        "The next pitch almost always decides it: a ball and you walk, a strike and you strike out."
+      ],
+      "acts": {
+        "1": {
+          "q": "The pitch hit the batter on the leg and they didn't swing. What happens?",
+          "ok": "That's it! Hit by pitch.",
+          "ko": "Hit without a swing: to first base.",
+          "opts": {
+            "first": "Goes to first base",
+            "out": "It's an out",
+            "strike": "It's a strike and they keep batting"
+          }
+        },
+        "2": {
+          "q": "If the batter swings, it doesn't count as hit by pitch even if the ball hits them",
+          "ok": "Good! With a swing, it's a strike.",
+          "ko": "True: the swing turns the play into a strike."
+        },
+        "3": {
+          "q": "What is the count of 3 balls and 2 strikes called?",
+          "ok": "That's it! A full count.",
+          "ko": "3 and 2: a full count, everything is on the line.",
+          "opts": {
+            "full": "Full count",
+            "empty": "Empty count",
+            "new": "New count"
+          }
+        },
+        "4": {
+          "q": "Full count and a pitch comes in outside",
+          "ok": "Walk! Ball four on a full count.",
+          "ko": "That was ball four: to first.",
+          "opts": {
+            "walk": "Walks to first",
+            "k": "Strikeout",
+            "foul": "Foul"
+          }
+        },
+        "5": {
+          "q": "Full count, the batter swings and misses",
+          "ok": "Strikeout! Swinging strike three.",
+          "ko": "Swung and missed strike three: strikeout.",
+          "opts": {
+            "k": "Strikeout, it is an out",
+            "walk": "Walks to first",
+            "keep": "The count stays the same"
+          }
+        },
+        "6": {
+          "q": "Full count and the batter hits a foul that lands on the ground",
+          "ok": "Perfect! A foul with 2 strikes doesn't decide anything.",
+          "ko": "Just like in Lesson 4.3: the foul keeps the turn alive.",
+          "opts": {
+            "keep": "Still a full count: bat again",
+            "k": "Strikeout",
+            "walk": "Walk"
+          }
+        }
+      }
     }
   },
   "exams": {
@@ -827,6 +1500,192 @@
           "n7": "7",
           "n4": "4",
           "n1": "1"
+        }
+      }
+    },
+    "3": {
+      "1": {
+        "q": "How many halves does an inning have?",
+        "opts": {
+          "two": "Two: top and bottom",
+          "one": "One",
+          "four": "Four"
+        }
+      },
+      "2": {
+        "q": "Who bats in the bottom of the inning?",
+        "opts": {
+          "home": "The home team",
+          "away": "The visitors",
+          "ump": "The umpire"
+        }
+      },
+      "3": {
+        "q": "How many outs end a team's turn?",
+        "opts": {
+          "n3": "3",
+          "n2": "2",
+          "n4": "4"
+        }
+      },
+      "4": {
+        "q": "What is needed for a run to count?",
+        "opts": {
+          "home": "The runner touches home plate without being out",
+          "goal": "The runner shouts \"goal\"",
+          "third": "The runner only reaches third"
+        }
+      },
+      "5": {
+        "q": "The list of batters in order is called",
+        "opts": {
+          "lineup": "The lineup",
+          "battery": "The battery",
+          "dugout": "The dugout"
+        }
+      },
+      "6": {
+        "q": "The turn ended with batter 6. Who is up next inning?",
+        "opts": {
+          "b7": "Number 7",
+          "b1": "Number 1",
+          "b6": "Number 6 again"
+        }
+      },
+      "7": {
+        "q": "True or false: in kids leagues many games last 6 innings"
+      },
+      "8": {
+        "q": "Who wins if the final score is 3 runs to 5?",
+        "opts": {
+          "five": "The team with 5",
+          "three": "The team with 3",
+          "tie": "It's a tie"
+        }
+      },
+      "9": {
+        "q": "They made the third out in the top of the inning. What comes next?",
+        "opts": {
+          "bottom": "The bottom of that inning",
+          "over": "The game is always over",
+          "top": "The same top half keeps going"
+        }
+      },
+      "10": {
+        "q": "Can a player skip their turn because someone else wants to bat?",
+        "opts": {
+          "no": "No",
+          "coach": "Yes, if the coach says so right then",
+          "once": "Yes, once per game"
+        }
+      },
+      "11": {
+        "q": "A runner on second touches third and then home plate without being out. What happened?",
+        "opts": {
+          "run": "A run scored",
+          "out": "It's an automatic out",
+          "foul": "It's a foul"
+        }
+      },
+      "12": {
+        "q": "What is the English word for entrada?",
+        "opts": {
+          "inning": "Inning",
+          "dugout": "Dugout",
+          "glove": "Glove"
+        }
+      }
+    },
+    "4": {
+      "1": {
+        "q": "The pitch crosses the zone and the batter doesn't swing. What is it?",
+        "opts": {
+          "strike": "Strike",
+          "ball": "Ball",
+          "foul": "Foul"
+        }
+      },
+      "2": {
+        "q": "The pitch is way outside and the batter doesn't swing. What is it?",
+        "opts": {
+          "ball": "Ball",
+          "strike": "Strike",
+          "out": "Out"
+        }
+      },
+      "3": {
+        "q": "Where is the strike zone?",
+        "opts": {
+          "plate": "Over home plate, from the batter's knees to their chest",
+          "first": "Over first base",
+          "field": "All over the field"
+        }
+      },
+      "4": {
+        "q": "How many strikes does it take to strike out?",
+        "opts": {
+          "n3": "3",
+          "n4": "4",
+          "n2": "2"
+        }
+      },
+      "5": {
+        "q": "How many balls to walk to first?",
+        "opts": {
+          "n4": "4",
+          "n3": "3",
+          "n6": "6"
+        }
+      },
+      "6": {
+        "q": "The count is 3-2 and a foul lands on the ground. What happens?",
+        "opts": {
+          "keep": "The count stays 3-2",
+          "k": "Strikeout",
+          "walk": "Walk"
+        }
+      },
+      "7": {
+        "q": "True or false: a foul caught in the air is an out"
+      },
+      "8": {
+        "q": "The pitch hits the batter, who didn't swing. What happens?",
+        "opts": {
+          "first": "Goes to first base",
+          "out": "It's an out",
+          "foul": "It's a foul"
+        }
+      },
+      "9": {
+        "q": "How do you say the count: balls first or strikes first?",
+        "opts": {
+          "balls": "Balls first",
+          "strikes": "Strikes first",
+          "whatever": "It doesn't matter and nobody understands it"
+        }
+      },
+      "10": {
+        "q": "What is the count of 3 balls and 2 strikes called?",
+        "opts": {
+          "full": "Full count",
+          "closed": "Closed count",
+          "first": "First count"
+        }
+      },
+      "11": {
+        "q": "The batter swings at a bad pitch and misses. What is it?",
+        "opts": {
+          "strike": "Strike",
+          "ball": "Ball",
+          "nothing": "Nothing"
+        }
+      },
+      "12": {
+        "q": "Who decides whether it was a ball or a strike?",
+        "opts": {
+          "ump": "The umpire",
+          "pitcher": "The pitcher",
+          "crowd": "The crowd"
         }
       }
     }

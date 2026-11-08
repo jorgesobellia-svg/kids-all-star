@@ -158,9 +158,25 @@ export default function ExamScreen() {
               <Text style={{ fontFamily: F.bodyBold, fontSize: 16, color: C.white }}>
                 +{REWARDS.examXp} XP · {t('result.coinsWon', { n: REWARDS.examCoins })}
               </Text>
-              <Text style={{ fontFamily: F.body, fontSize: 15, color: '#CBD5E1' }}>{t('exam.nextUnlocked')}</Text>
+              {level.n === 4 ? null : <Text style={{ fontFamily: F.body, fontSize: 15, color: '#CBD5E1' }}>{t('exam.nextUnlocked')}</Text>}
             </View>
-          ) : (
+          ) : null}
+          {passed && level.n === 4 ? (
+            // Cierre de la etapa Novato: diploma y mensaje del guion.
+            <View testID="stage-diploma" style={{ width: '100%', backgroundColor: C.white, borderRadius: 20, padding: 18, gap: 10, alignItems: 'center', borderWidth: 4, borderColor: C.gold }}>
+              <Text style={{ fontFamily: F.bodyHeavy, fontSize: 13, color: C.red, letterSpacing: 1 }}>{t('exam.stageDiploma')}</Text>
+              <Text style={{ fontFamily: F.display, fontSize: 28, color: C.navy, textAlign: 'center' }}>{t('exam.stageTitle')}</Text>
+              <Text style={{ fontFamily: F.display, fontSize: 24, color: C.gold }}>{p.nickname ?? ''}</Text>
+              <View style={{ flexDirection: 'row', gap: 6 }}>
+                {[1, 2, 3, 4].map((n) => (
+                  <BadgeMedal key={n} size={40} earned level={n} />
+                ))}
+              </View>
+              <Text style={{ fontFamily: F.bodySemi, fontSize: 16, lineHeight: 22, color: C.ink, textAlign: 'center' }}>{t('exam.stageText')}</Text>
+              <Text style={{ fontFamily: F.body, fontSize: 14, lineHeight: 20, color: C.muted, textAlign: 'center' }}>{t('exam.stageNext')}</Text>
+            </View>
+          ) : null}
+          {passed ? null : (
             <View style={{ width: '100%', gap: 10 }}>
               <Text style={{ fontFamily: F.bodyBold, fontSize: 16, color: C.white }}>{t('exam.reviewThese')}</Text>
               {toReview.map((id) => (

@@ -28,5 +28,16 @@
   "shortstop": "游击手",
   "leftFielder": "左外野手",
   "centerFielder": "中外野手",
-  "rightFielder": "右外野手"
+  "rightFielder": "右外野手",
+  "inning": "一局",
+  "topHalf": "上半局",
+  "bottomHalf": "下半局",
+  "lineup": "打击顺序",
+  "extraInning": "延长局",
+  "ballPitch": "坏球",
+  "strikeZone": "好球带",
+  "strikeout": "三振",
+  "walk": "四坏球保送",
+  "hbp": "触身球",
+  "fullCount": "满球数"
 }

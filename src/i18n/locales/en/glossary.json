@@ -28,5 +28,16 @@
   "shortstop": "Shortstop",
   "leftFielder": "Left fielder",
   "centerFielder": "Center fielder",
-  "rightFielder": "Right fielder"
+  "rightFielder": "Right fielder",
+  "inning": "Inning",
+  "topHalf": "Top of the inning",
+  "bottomHalf": "Bottom of the inning",
+  "lineup": "Lineup / batting order",
+  "extraInning": "Extra inning",
+  "ballPitch": "Ball",
+  "strikeZone": "Strike zone",
+  "strikeout": "Strikeout",
+  "walk": "Walk / base on balls",
+  "hbp": "Hit by pitch",
+  "fullCount": "Full count"
 }

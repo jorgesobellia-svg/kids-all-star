@@ -28,5 +28,16 @@
   "shortstop": "Campocorto",
   "leftFielder": "Jardinero izquierdo",
   "centerFielder": "Jardinero central",
-  "rightFielder": "Jardinero derecho"
+  "rightFielder": "Jardinero derecho",
+  "inning": "Entrada",
+  "topHalf": "Parte alta",
+  "bottomHalf": "Parte baja",
+  "lineup": "Alineación / orden al bate",
+  "extraInning": "Entrada extra",
+  "ballPitch": "Bola (lanzamiento malo)",
+  "strikeZone": "Zona de strike",
+  "strikeout": "Ponche",
+  "walk": "Base por bolas",
+  "hbp": "Golpeado por el lanzamiento",
+  "fullCount": "Conteo completo"
 }

@@ -657,6 +657,679 @@
           "answer": "Pitcher 1, catcher 2, primera 3, segunda 4"
         }
       }
+    },
+    "3.1": {
+      "title": "La entrada: alta y baja",
+      "objective": "Entender que una entrada (inning) tiene dos mitades: en la alta batea el visitante y en la baja batea el equipo de casa.",
+      "demo": [
+        "Un juego se divide en pedacitos llamados entradas, en inglés innings.",
+        "Cada entrada tiene dos mitades.",
+        "En la parte alta batea el equipo visitante.",
+        "Cuando les hacen tres outs, viene la parte baja, y batea el equipo de casa.",
+        "Alta y baja: eso es una entrada completa."
+      ],
+      "acts": {
+        "1": {
+          "q": "¿Cómo se llama cada pedazo grande del juego?",
+          "ok": "¡Eso es! Inning en inglés.",
+          "ko": "Esos pedazos se llaman entradas.",
+          "opts": {
+            "inning": "Entrada (inning)",
+            "run": "Carrera",
+            "strike": "Strike"
+          }
+        },
+        "2": {
+          "q": "¿Cuántas mitades tiene una entrada?",
+          "ok": "¡Correcto! Alta y baja.",
+          "ko": "Una entrada son dos turnos, uno por equipo.",
+          "opts": {
+            "two": "Dos: alta y baja",
+            "one": "Una",
+            "three": "Tres"
+          }
+        },
+        "3": {
+          "q": "¿Quién batea en la parte alta?",
+          "ok": "¡Eso es! El visitante abre.",
+          "ko": "En la alta batea el visitante.",
+          "opts": {
+            "away": "El equipo visitante",
+            "home": "El equipo de casa",
+            "ump": "El umpire"
+          }
+        },
+        "4": {
+          "q": "¿Quién batea en la parte baja?",
+          "ok": "¡Correcto! Y por eso a veces define al final.",
+          "ko": "En la baja le toca al de casa.",
+          "opts": {
+            "home": "El equipo de casa",
+            "away": "El equipo visitante",
+            "nobody": "Nadie"
+          }
+        },
+        "5": {
+          "q": "Si solo se jugó la parte alta, ya terminó la entrada",
+          "ok": "¡Bien! Falta la baja para completarla.",
+          "ko": "Falso: la entrada termina cuando batearon los dos."
+        },
+        "6": {
+          "q": "Terminó la parte alta de la tercera entrada. ¿Qué sigue?",
+          "ok": "¡Eso es! Ahora batea el de casa.",
+          "ko": "Sigue la baja de esa misma entrada.",
+          "opts": {
+            "bottom3": "La parte baja de la tercera",
+            "first": "La primera entrada otra vez",
+            "over": "Se acabó el juego"
+          }
+        }
+      }
+    },
+    "3.2": {
+      "title": "Tres outs y cambia el turno",
+      "objective": "Saber que el turno al bate de un equipo termina cuando la defensa le hace tres outs, y entonces los equipos cambian de lugar.",
+      "demo": [
+        "¿Cuánto dura un turno bateando? Hasta que te hagan tres outs.",
+        "Uno,",
+        "dos,",
+        "tres outs, y a cambiar:",
+        "el equipo que bateaba sale a defender, y el que defendía entra a batear.",
+        "Por eso en el béisbol nadie se queda bateando todo el juego."
+      ],
+      "acts": {
+        "1": {
+          "q": "¿Con cuántos outs se termina el turno de un equipo?",
+          "ok": "¡Eso es! Tres y a cambiar.",
+          "ko": "Son tres outs por turno.",
+          "opts": {
+            "three": "3 outs",
+            "one": "1 out",
+            "five": "5 outs"
+          }
+        },
+        "2": {
+          "q": "Ya van 2 outs y hacen el tercero. ¿Qué pasa?",
+          "ok": "¡Correcto! A defender.",
+          "ko": "Tercer out: se acabó el turno.",
+          "opts": {
+            "switch": "Cambia el turno",
+            "keep": "Siguen bateando",
+            "run": "Se anota una carrera"
+          }
+        },
+        "3": {
+          "q": "Los outs de una mitad no se suman con los de la otra: cada turno empieza en cero",
+          "ok": "¡Sí! Cada turno es una cuenta nueva.",
+          "ko": "Verdadero: cada equipo cuenta sus tres outs en su turno."
+        },
+        "4": {
+          "q": "Tu equipo estaba en el campo defendiendo y ya hicieron los 3 outs. ¿A dónde vas?",
+          "ok": "¡Eso es! Ahora les toca batear.",
+          "ko": "Termina la defensa: entra tu turno al bate.",
+          "opts": {
+            "dugout": "Al dugout, a prepararte para batear",
+            "house": "A tu casa",
+            "outfield": "A los jardines a seguir esperando"
+          }
+        },
+        "5": {
+          "q": "Un equipo lleva 0 outs. ¿Cuántos bateadores más puede tener como mínimo antes de que le toque defender?",
+          "ok": "¡Correcto! Sin outs, el turno sigue vivo.",
+          "ko": "El turno no tiene reloj: termina con el tercer out.",
+          "opts": {
+            "untilThree": "Sigue bateando hasta que le hagan 3 outs",
+            "oneMore": "Solo uno más",
+            "none": "Ninguno"
+          }
+        },
+        "6": {
+          "q": "Tercer out de la parte alta. ¿Qué anuncia el juego ahora?",
+          "ok": "¡Eso es! Cambio de turno.",
+          "ko": "Tercer out arriba: cambio, viene la baja.",
+          "opts": {
+            "change": "Cambio: viene la parte baja",
+            "hr": "Jonrón",
+            "walk": "Base por bolas"
+          }
+        }
+      }
+    },
+    "3.3": {
+      "title": "Cómo se anota una carrera",
+      "objective": "Explicar que la carrera solo cuenta cuando el corredor recorre todas las bases en orden y pisa home sin que lo pongan out.",
+      "demo": [
+        "Ya sabes llegar a home.",
+        "Ahora la regla completa: para anotar una carrera tienes que salir de bateador, pisar primera, segunda y tercera en orden, y pisar home sin que te pongan out en el camino.",
+        "Si te hacen out antes de llegar, no hay carrera.",
+        "Carrera en inglés se dice run."
+      ],
+      "acts": {
+        "1": {
+          "q": "¿Qué necesita un corredor para anotar?",
+          "ok": "¡Eso es! Recorrido completo.",
+          "ko": "Sin el recorrido completo no hay carrera.",
+          "opts": {
+            "all": "Pisar todas las bases en orden y llegar a home",
+            "third": "Solo llegar a tercera",
+            "hard": "Batear muy fuerte"
+          }
+        },
+        "2": {
+          "q": "Si ponen out al corredor entre tercera y home, la carrera cuenta igual",
+          "ok": "¡Bien! Out antes de home, no hay carrera.",
+          "ko": "Falso: tiene que pisar home sin ser out."
+        },
+        "3": {
+          "q": "Arrastra al corredor en su recorrido para anotar",
+          "ok": "¡Carrera anotada!",
+          "ko": "El recorrido es completo: las tres bases y de vuelta a home.",
+          "answer": "Sale de home y vuelve a home pasando por las tres bases"
+        },
+        "4": {
+          "q": "Un corredor está en tercera. ¿Qué le falta para anotar?",
+          "ok": "¡Correcto! Un paso más.",
+          "ko": "De tercera solo falta pisar home.",
+          "opts": {
+            "home": "Pisar home",
+            "back": "Volver a segunda",
+            "helmet": "Quitarse el casco"
+          }
+        },
+        "5": {
+          "q": "¿Quiénes pueden anotar en un turno?",
+          "ok": "¡Eso es! Cada corredor que complete la vuelta suma.",
+          "ko": "Todo corredor que pise home anota su carrera.",
+          "opts": {
+            "runners": "Los corredores que lleguen a home",
+            "batter": "Solo el que batea",
+            "first": "Solo el primer bateador"
+          }
+        },
+        "6": {
+          "q": "El marcador va 4 a 2. Tu equipo anota otra carrera. ¿Cómo queda?",
+          "ok": "¡Correcto! Cada carrera suma uno.",
+          "ko": "4 más 1 carrera: 5 a 2.",
+          "opts": {
+            "s52": "5 a 2",
+            "s43": "4 a 3",
+            "s62": "6 a 2"
+          }
+        }
+      }
+    },
+    "3.4": {
+      "title": "El orden al bate",
+      "objective": "Entender que los bateadores siguen una lista en orden (la alineación), que no se puede saltar a nadie y que el orden sigue donde quedó en la entrada siguiente.",
+      "demo": [
+        "Nadie batea cuando quiere: hay una lista llamada alineación, en inglés lineup.",
+        "Batea el primero, después el segundo, después el tercero, y así.",
+        "Si en una entrada el turno se acabó con el bateador número cuatro, en la entrada siguiente empieza el número cinco.",
+        "El orden nunca se salta."
+      ],
+      "acts": {
+        "1": {
+          "q": "¿Cómo se llama la lista de bateadores en orden?",
+          "ok": "¡Eso es! Lineup en inglés.",
+          "ko": "Esa lista ordenada es la alineación.",
+          "opts": {
+            "lineup": "La alineación (lineup)",
+            "dugout": "El dugout",
+            "zone": "La zona de strike"
+          }
+        },
+        "2": {
+          "q": "Un jugador puede batear dos veces seguidas si es el mejor del equipo",
+          "ok": "¡Bien! El orden se respeta siempre.",
+          "ko": "Falso: sigue el que toca en la lista, sea quien sea."
+        },
+        "3": {
+          "q": "El turno se terminó con el bateador 4. ¿Quién abre la entrada siguiente?",
+          "ok": "¡Correcto! El orden continúa donde quedó.",
+          "ko": "No se vuelve al 1: sigue el 5.",
+          "opts": {
+            "b5": "El bateador 5",
+            "b1": "El bateador 1",
+            "coach": "El que el coach quiera"
+          }
+        },
+        "4": {
+          "q": "Bateó el número 7. Sin que se acabe el turno, ¿quién sigue?",
+          "ok": "¡Eso es! Uno tras otro.",
+          "ko": "Después del 7 viene el 8.",
+          "opts": {
+            "n8": "El número 8",
+            "n1": "El número 1",
+            "n6": "El número 6 otra vez"
+          }
+        },
+        "5": {
+          "q": "¿Qué pasa cuando la lista llega al último bateador y el turno sigue?",
+          "ok": "¡Correcto! La rueda gira de nuevo.",
+          "ko": "La lista es una rueda: después del último, el primero.",
+          "opts": {
+            "restart": "Vuelve a empezar con el número 1",
+            "over": "Se acaba el juego",
+            "pitcher": "Batea el pitcher contrario"
+          }
+        },
+        "6": {
+          "q": "Un equipo mandó a batear a quien no le tocaba. ¿Qué está mal?",
+          "ok": "¡Eso es! El orden es regla, no sugerencia.",
+          "ko": "Batear fuera de turno está contra las reglas.",
+          "opts": {
+            "skipped": "Se saltaron el orden al bate",
+            "ok": "Nada, eso se vale",
+            "run": "Anotaron una carrera"
+          }
+        }
+      }
+    },
+    "3.5": {
+      "title": "Quién gana el juego",
+      "objective": "Explicar que gana el equipo con más carreras al completar las entradas y que el número de entradas depende de la liga y la edad.",
+      "demo": [
+        "¿Y quién gana? Fácil: al terminar las entradas, gana el que tenga más carreras.",
+        "Ojo con esto: no todos los juegos duran lo mismo.",
+        "En muchas ligas de niños se juegan 6 entradas,",
+        "y en el béisbol de grandes, 9.",
+        "Tu coach te dice cuántas juega tu liga.",
+        "Y si al final van empatados, en muchos casos se juega una entrada extra para desempatar, según las reglas de la liga."
+      ],
+      "acts": {
+        "1": {
+          "q": "¿Quién gana el juego?",
+          "ok": "¡Eso es! Carreras mandan.",
+          "ko": "Ni outs ni hits: ganan las carreras.",
+          "opts": {
+            "moreRuns": "El que tenga más carreras al final",
+            "moreOuts": "El que haga más outs",
+            "morePlayers": "El que tenga más jugadores"
+          }
+        },
+        "2": {
+          "q": "Todos los juegos de béisbol duran exactamente 9 entradas",
+          "ok": "¡Bien! Las ligas de niños suelen jugar menos, como 6.",
+          "ko": "Falso: la duración cambia por liga y por edad."
+        },
+        "3": {
+          "q": "Final del juego: 6 carreras contra 4. ¿Quién ganó?",
+          "ok": "¡Correcto! 6 es más que 4.",
+          "ko": "Gana el que tenga más: el de 6.",
+          "opts": {
+            "six": "El de 6 carreras",
+            "four": "El de 4 carreras",
+            "tie": "Nadie, es empate"
+          }
+        },
+        "4": {
+          "q": "Van empatados al terminar las entradas acordadas. ¿Qué puede pasar según la liga?",
+          "ok": "¡Eso es! Entrada extra para desempatar.",
+          "ko": "Muchas ligas desempatan con una entrada más.",
+          "opts": {
+            "extra": "Jugar una entrada extra",
+            "allbat": "Batear todos otra vez al mismo tiempo",
+            "repeat": "Repetir el juego otro día siempre"
+          }
+        },
+        "5": {
+          "q": "Tu equipo de liga infantil va a jugar. ¿Quién te confirma cuántas entradas dura el juego?",
+          "ok": "¡Correcto! Cada liga tiene su número.",
+          "ko": "Pregúntale a tu coach: depende de tu liga.",
+          "opts": {
+            "coach": "Tu coach, según tu liga",
+            "rival": "El equipo contrario",
+            "batter": "El primer bateador"
+          }
+        },
+        "6": {
+          "q": "Se hizo el último out y un equipo va ganando por 1 carrera. ¿Qué sigue?",
+          "ok": "¡Eso es! Juego terminado.",
+          "ko": "Último out con ventaja: el juego se acabó.",
+          "opts": {
+            "over": "Se acabó el juego: ganó ese equipo",
+            "untilTie": "Se juega hasta que empaten",
+            "cancel": "Se anula la última entrada"
+          }
+        }
+      }
+    },
+    "4.1": {
+      "title": "Bola y strike",
+      "objective": "Distinguir un strike (lanzamiento bueno, en la zona o abanicado) de una bola (lanzamiento fuera de la zona al que no se le tira).",
+      "demo": [
+        "Mira bien cada lanzamiento, porque el umpire canta una de dos cosas.",
+        "Si la bola pasa por la zona buena, o si le tiras y no le das, es strike.",
+        "Si pasa lejos de la zona y no le tiraste, es bola, en inglés ball.",
+        "Bola mala para el pitcher, buena para ti.",
+        "El conteo de bolas y strikes es la cuenta del turno."
+      ],
+      "acts": {
+        "1": {
+          "q": "El lanzamiento pasó por el medio de la zona y el bateador no tiró",
+          "ok": "¡Strike cantado! Aunque no tire, si va en la zona es strike.",
+          "ko": "Pasó por la zona buena: eso es strike.",
+          "opts": {
+            "strike": "Strike",
+            "ball": "Bola",
+            "foul": "Foul"
+          }
+        },
+        "2": {
+          "q": "El lanzamiento pasó muy alto y el bateador no tiró",
+          "ok": "¡Bola! Ball en inglés.",
+          "ko": "Muy alto y sin tirar: es bola.",
+          "opts": {
+            "ball": "Bola",
+            "strike": "Strike",
+            "out": "Out"
+          }
+        },
+        "3": {
+          "q": "El bateador abanicó (hizo swing) y no tocó la bola",
+          "ok": "¡Strike por swing! Tirarle y fallar también es strike.",
+          "ko": "Si le tiras y no le das, es strike aunque vaya mala.",
+          "opts": {
+            "strike": "Strike",
+            "ball": "Bola",
+            "run": "Carrera"
+          }
+        },
+        "4": {
+          "q": "Si el lanzamiento va fuera de la zona pero el bateador le tira y falla, es bola",
+          "ok": "¡Bien! Al tirar y fallar, siempre es strike.",
+          "ko": "Falso: el swing fallado convierte cualquier lanzamiento en strike."
+        },
+        "5": {
+          "q": "¿Quién canta si fue bola o strike?",
+          "ok": "¡Eso es! Umpire en inglés también.",
+          "ko": "El umpire está detrás del catcher y él decide.",
+          "opts": {
+            "ump": "El umpire",
+            "coach": "El coach",
+            "catcher": "El catcher"
+          }
+        },
+        "6": {
+          "q": "El lanzamiento va directo al suelo y el bateador no tira. ¿Qué es?",
+          "ok": "¡Correcto! Muy fuera de la zona.",
+          "ko": "Al suelo y sin swing: bola.",
+          "opts": {
+            "ball": "Bola",
+            "strike": "Strike",
+            "foul": "Foul"
+          }
+        }
+      }
+    },
+    "4.2": {
+      "title": "La zona de strike",
+      "objective": "Reconocer la zona de strike: el rectángulo imaginario sobre home, entre las rodillas y el pecho del bateador en su postura normal.",
+      "demo": [
+        "Imagina un rectángulo invisible flotando sobre home: ese es la zona de strike, strike zone.",
+        "Va de ancho como home,",
+        "y de alto más o menos desde las rodillas hasta el pecho del bateador parado normal.",
+        "Si la bola cruza por ese rectángulo, es strike.",
+        "Si pasa por fuera, es bola.",
+        "Es imaginario, pero el umpire lo ve."
+      ],
+      "acts": {
+        "1": {
+          "q": "Toca dónde está la zona de strike",
+          "ok": "¡Eso es! Flota sobre home.",
+          "ko": "La zona está sobre home, no sobre primera ni el montículo.",
+          "answer": "Sobre home, frente al bateador"
+        },
+        "2": {
+          "q": "¿De qué ancho es la zona de strike?",
+          "ok": "¡Correcto! Ni más ni menos que home.",
+          "ko": "La zona mide lo mismo que home de ancho.",
+          "opts": {
+            "plate": "Del ancho de home",
+            "field": "Del ancho de todo el campo",
+            "meters": "De dos metros"
+          }
+        },
+        "3": {
+          "q": "El alto de la zona va más o menos de",
+          "ok": "¡Eso es! En su postura normal de bateo.",
+          "ko": "Rodillas a pecho: ese es el alto aproximado.",
+          "opts": {
+            "kneesChest": "Las rodillas al pecho del bateador",
+            "groundHead": "El suelo a la cabeza",
+            "feetKnees": "Los pies a las rodillas"
+          }
+        },
+        "4": {
+          "q": "La bola cruzó por dentro del rectángulo, a la altura de la cintura",
+          "ok": "¡Strike! Cruzó la zona.",
+          "ko": "Dentro del rectángulo es strike.",
+          "opts": {
+            "strike": "Strike",
+            "ball": "Bola",
+            "foul": "Foul"
+          }
+        },
+        "5": {
+          "q": "La bola pasó por el lado de afuera del rectángulo y el bateador no tiró",
+          "ok": "¡Bola! Fuera de la zona.",
+          "ko": "Por fuera del rectángulo y sin swing: bola.",
+          "opts": {
+            "ball": "Bola",
+            "strike": "Strike",
+            "out": "Out"
+          }
+        },
+        "6": {
+          "q": "La zona de strike cambia un poco con la estatura de cada bateador",
+          "ok": "¡Sí! Un niño alto tiene una zona más alta que uno bajito.",
+          "ko": "Verdadero: se ajusta al cuerpo de cada bateador."
+        }
+      }
+    },
+    "4.3": {
+      "title": "El foul",
+      "objective": "Entender que una bola bateada fuera de las líneas antes de pasar las bases es foul: cuenta como strike, pero con dos strikes no pone fin al turno, y si un defensor la atrapa en el aire es out.",
+      "demo": [
+        "Cuando bateas y la bola sale del campo bueno, cruzando las líneas hacia los lados, es foul.",
+        "El foul cuenta como strike,",
+        "pero escucha el truco: si ya tienes dos strikes y das foul, no te ponchas.",
+        "Sigues bateando.",
+        "Y cuidado: si un defensor atrapa ese foul en el aire, sin que caiga, sí es out."
+      ],
+      "acts": {
+        "1": {
+          "q": "¿Qué es un foul?",
+          "ok": "¡Eso es! Foul ball.",
+          "ko": "Foul es la bola que sale de lo válido.",
+          "opts": {
+            "outside": "Una bola bateada fuera del campo bueno",
+            "high": "Un lanzamiento alto",
+            "run": "Una carrera"
+          }
+        },
+        "2": {
+          "q": "La bola bateada cayó fuera de la línea de tercera",
+          "ok": "¡Foul! Fuera de la línea.",
+          "ko": "Cayó en territorio malo: foul.",
+          "opts": {
+            "foul": "Foul",
+            "hr": "Jonrón",
+            "ball": "Bola"
+          }
+        },
+        "3": {
+          "q": "Un foul que cae al suelo cuenta como",
+          "ok": "¡Correcto! Suma un strike.",
+          "ko": "El foul al suelo es un strike más en la cuenta.",
+          "opts": {
+            "strike": "Strike",
+            "ball": "Bola",
+            "nothing": "Nada"
+          }
+        },
+        "4": {
+          "q": "Con dos strikes, un foul que cae al suelo es el tercer strike y te ponchas",
+          "ok": "¡Bien! Con foul no te ponchas: sigues bateando.",
+          "ko": "Falso, y es el truco clave: el foul con 2 strikes no poncha."
+        },
+        "5": {
+          "q": "El tercera base atrapó el foul en el aire, sin que cayera. ¿Qué pasa?",
+          "ok": "¡Eso es! Atrapada en el aire, out.",
+          "ko": "Foul atrapado de aire sí es out, caiga donde caiga.",
+          "opts": {
+            "out": "Es out",
+            "strikeOnly": "Es strike solamente",
+            "none": "No cuenta"
+          }
+        },
+        "6": {
+          "q": "Conteo 3 bolas y 2 strikes, y el bateador da un foul al suelo. ¿Cómo sigue el conteo?",
+          "ok": "¡Exacto! El famoso conteo completo sigue vivo.",
+          "ko": "Foul con 2 strikes: el conteo no cambia, sigue 3-2.",
+          "opts": {
+            "still32": "Sigue 3 y 2",
+            "k": "Es ponche",
+            "walk": "Camina a primera"
+          }
+        }
+      }
+    },
+    "4.4": {
+      "title": "Ponche y base por bolas",
+      "objective": "Saber que tres strikes terminan el turno del bateador en ponche (strikeout) y que cuatro bolas lo mandan caminando a primera base (base por bolas, walk).",
+      "demo": [
+        "La cuenta tiene dos finales sin batear la bola.",
+        "Si juntas tres strikes, te ponchaste: ponche en inglés es strikeout, y eres out.",
+        "Pero si el pitcher junta cuatro bolas antes, ganaste el turno: caminas a primera base sin que te puedan hacer out.",
+        "Eso es base por bolas, en inglés walk, que significa caminar.",
+        "El conteo siempre se dice primero las bolas y después los strikes: 3 y 2 son tres bolas y dos strikes."
+      ],
+      "acts": {
+        "1": {
+          "q": "¿Con cuántos strikes se poncha un bateador?",
+          "ok": "¡Eso es! Strikeout.",
+          "ko": "Tres strikes: ponche y out.",
+          "opts": {
+            "n3": "3",
+            "n4": "4",
+            "n2": "2"
+          }
+        },
+        "2": {
+          "q": "¿Con cuántas bolas camina el bateador a primera?",
+          "ok": "¡Correcto! Walk, a caminar.",
+          "ko": "Cuatro bolas: base por bolas.",
+          "opts": {
+            "n4": "4",
+            "n3": "3",
+            "n5": "5"
+          }
+        },
+        "3": {
+          "q": "El conteo va 3 bolas y 0 strikes. Llega otra bola fuera de la zona. ¿Qué pasa?",
+          "ok": "¡Eso es! Cuarta bola: a primera caminando.",
+          "ko": "Era la cuarta bola: base por bolas.",
+          "opts": {
+            "walk": "Camina a primera",
+            "k": "Se poncha",
+            "foul": "Da foul"
+          }
+        },
+        "4": {
+          "q": "El conteo va 0 bolas y 2 strikes. Llega un strike cantado. ¿Qué pasa?",
+          "ok": "¡Ponche! Tercer strike.",
+          "ko": "Ese era el tercer strike: out por ponche.",
+          "opts": {
+            "k": "Se ponchó, es out",
+            "walk": "Camina a primera",
+            "keep": "Sigue bateando"
+          }
+        },
+        "5": {
+          "q": "El conteo se dice primero los strikes y después las bolas",
+          "ok": "¡Bien! Primero las bolas: 3 y 2 son 3 bolas y 2 strikes.",
+          "ko": "Falso: bolas primero, strikes después."
+        },
+        "6": {
+          "q": "Cuarta bola del turno, muy afuera. ¿Qué le toca al bateador?",
+          "ok": "¡Walk! A primera, tranquilo.",
+          "ko": "Cuatro bolas: se va a primera sin ser out.",
+          "opts": {
+            "walk": "Caminar a primera base",
+            "dugout": "Volver al dugout como out",
+            "again": "Batear otra vez"
+          }
+        }
+      }
+    },
+    "4.5": {
+      "title": "Golpeado y conteo completo",
+      "objective": "Entender que si el lanzamiento golpea al bateador sin que él lo busque ni haga swing, va a primera base (hit by pitch), y repasar el conteo completo 3-2.",
+      "demo": [
+        "Última de conteo.",
+        "Si el lanzamiento pega en el bateador (y él no hizo swing ni se metió a propósito), no es out ni sigue bateando: se va a primera base.",
+        "En inglés le dicen hit by pitch.",
+        "Y ahora junta todo: el conteo más emocionante es 3 bolas y 2 strikes, el conteo completo, full count.",
+        "El siguiente lanzamiento casi siempre decide: bola y caminas, strike y te ponchas."
+      ],
+      "acts": {
+        "1": {
+          "q": "El lanzamiento golpeó al bateador en la pierna y él no hizo swing. ¿Qué pasa?",
+          "ok": "¡Eso es! Hit by pitch.",
+          "ko": "Golpeado sin swing: a primera base.",
+          "opts": {
+            "first": "Va a primera base",
+            "out": "Es out",
+            "strike": "Es un strike y sigue"
+          }
+        },
+        "2": {
+          "q": "Si el bateador hace swing, ya no vale como golpeado aunque la bola le pegue",
+          "ok": "¡Bien! Con swing, es strike.",
+          "ko": "Verdadero: el swing cambia la jugada a strike."
+        },
+        "3": {
+          "q": "¿Cómo se le dice al conteo de 3 bolas y 2 strikes?",
+          "ok": "¡Eso es! Full count en inglés.",
+          "ko": "3 y 2: conteo completo, todo se decide.",
+          "opts": {
+            "full": "Conteo completo (full count)",
+            "empty": "Conteo vacío",
+            "new": "Conteo nuevo"
+          }
+        },
+        "4": {
+          "q": "Conteo completo y llega una bola afuera",
+          "ok": "¡Walk! Cuarta bola en conteo completo.",
+          "ko": "Era la cuarta bola: a primera.",
+          "opts": {
+            "walk": "Camina a primera",
+            "k": "Ponche",
+            "foul": "Foul"
+          }
+        },
+        "5": {
+          "q": "Conteo completo, el bateador abanica y falla",
+          "ok": "¡Strikeout! Tercer strike por swing.",
+          "ko": "Abanicó el tercero: ponche.",
+          "opts": {
+            "k": "Ponche, es out",
+            "walk": "Camina a primera",
+            "keep": "Sigue el conteo"
+          }
+        },
+        "6": {
+          "q": "Conteo completo y el bateador da foul al suelo",
+          "ok": "¡Perfecto! El foul con 2 strikes no decide nada.",
+          "ko": "Como en la Lección 4.3: el foul mantiene vivo el turno.",
+          "opts": {
+            "keep": "Sigue el conteo completo: a batear otra vez",
+            "k": "Ponche",
+            "walk": "Base por bolas"
+          }
+        }
+      }
     }
   },
   "exams": {
@@ -827,6 +1500,192 @@
           "n7": "7",
           "n4": "4",
           "n1": "1"
+        }
+      }
+    },
+    "3": {
+      "1": {
+        "q": "¿Cuántas mitades tiene una entrada?",
+        "opts": {
+          "two": "Dos: alta y baja",
+          "one": "Una",
+          "four": "Cuatro"
+        }
+      },
+      "2": {
+        "q": "¿Quién batea en la parte baja?",
+        "opts": {
+          "home": "El equipo de casa",
+          "away": "El visitante",
+          "ump": "El umpire"
+        }
+      },
+      "3": {
+        "q": "¿Con cuántos outs termina el turno de un equipo?",
+        "opts": {
+          "n3": "3",
+          "n2": "2",
+          "n4": "4"
+        }
+      },
+      "4": {
+        "q": "¿Qué falta para que una carrera cuente?",
+        "opts": {
+          "home": "Que el corredor pise home sin ser out",
+          "goal": "Que grite gol",
+          "third": "Que llegue solo a tercera"
+        }
+      },
+      "5": {
+        "q": "La lista de bateadores en orden se llama",
+        "opts": {
+          "lineup": "Alineación (lineup)",
+          "battery": "Batería",
+          "dugout": "Dugout"
+        }
+      },
+      "6": {
+        "q": "El turno terminó con el bateador 6. ¿Quién sigue la próxima entrada?",
+        "opts": {
+          "b7": "El 7",
+          "b1": "El 1",
+          "b6": "El 6 otra vez"
+        }
+      },
+      "7": {
+        "q": "Verdadero o falso: en las ligas infantiles muchos juegos duran 6 entradas"
+      },
+      "8": {
+        "q": "¿Quién gana si el final es 3 carreras contra 5?",
+        "opts": {
+          "five": "El de 5",
+          "three": "El de 3",
+          "tie": "Es empate"
+        }
+      },
+      "9": {
+        "q": "Hicieron el tercer out de la parte alta. ¿Qué sigue?",
+        "opts": {
+          "bottom": "La parte baja de esa entrada",
+          "over": "El juego se acabó siempre",
+          "top": "La misma parte alta sigue"
+        }
+      },
+      "10": {
+        "q": "¿Se puede un jugador saltar su turno porque otro quiere batear?",
+        "opts": {
+          "no": "No",
+          "coach": "Sí, si el coach lo dice en el momento",
+          "once": "Sí, una vez por juego"
+        }
+      },
+      "11": {
+        "q": "Un corredor en segunda pisa tercera y después home sin ser out. ¿Qué pasó?",
+        "opts": {
+          "run": "Anotó una carrera",
+          "out": "Es out automático",
+          "foul": "Es foul"
+        }
+      },
+      "12": {
+        "q": "¿Cómo se dice entrada en inglés?",
+        "opts": {
+          "inning": "Inning",
+          "dugout": "Dugout",
+          "glove": "Glove"
+        }
+      }
+    },
+    "4": {
+      "1": {
+        "q": "El lanzamiento cruza la zona y el bateador no tira. ¿Qué es?",
+        "opts": {
+          "strike": "Strike",
+          "ball": "Bola",
+          "foul": "Foul"
+        }
+      },
+      "2": {
+        "q": "El lanzamiento va muy afuera y el bateador no tira. ¿Qué es?",
+        "opts": {
+          "ball": "Bola",
+          "strike": "Strike",
+          "out": "Out"
+        }
+      },
+      "3": {
+        "q": "¿Dónde está la zona de strike?",
+        "opts": {
+          "plate": "Sobre home, de las rodillas al pecho del bateador",
+          "first": "Sobre primera base",
+          "field": "En todo el campo"
+        }
+      },
+      "4": {
+        "q": "¿Con cuántos strikes se poncha el bateador?",
+        "opts": {
+          "n3": "3",
+          "n4": "4",
+          "n2": "2"
+        }
+      },
+      "5": {
+        "q": "¿Con cuántas bolas camina a primera?",
+        "opts": {
+          "n4": "4",
+          "n3": "3",
+          "n6": "6"
+        }
+      },
+      "6": {
+        "q": "Conteo 3-2 y foul al suelo. ¿Qué pasa?",
+        "opts": {
+          "keep": "Sigue el conteo 3-2",
+          "k": "Ponche",
+          "walk": "Walk"
+        }
+      },
+      "7": {
+        "q": "Verdadero o falso: un foul atrapado en el aire es out"
+      },
+      "8": {
+        "q": "El lanzamiento golpea al bateador, que no hizo swing. ¿Qué pasa?",
+        "opts": {
+          "first": "Va a primera base",
+          "out": "Es out",
+          "foul": "Es foul"
+        }
+      },
+      "9": {
+        "q": "¿Cómo se dice el conteo: primero las bolas o primero los strikes?",
+        "opts": {
+          "balls": "Primero las bolas",
+          "strikes": "Primero los strikes",
+          "whatever": "Da igual y nadie lo entiende"
+        }
+      },
+      "10": {
+        "q": "¿Cómo se llama el conteo 3 bolas y 2 strikes?",
+        "opts": {
+          "full": "Conteo completo (full count)",
+          "closed": "Conteo cerrado",
+          "first": "Primera cuenta"
+        }
+      },
+      "11": {
+        "q": "El bateador hace swing a un lanzamiento malo y falla. ¿Qué es?",
+        "opts": {
+          "strike": "Strike",
+          "ball": "Bola",
+          "nothing": "Nada"
+        }
+      },
+      "12": {
+        "q": "¿Quién decide si fue bola o strike?",
+        "opts": {
+          "ump": "El umpire",
+          "pitcher": "El pitcher",
+          "crowd": "El público"
         }
       }
     }

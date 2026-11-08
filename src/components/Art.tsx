@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import Svg, { Circle, G, Path, Polygon, Rect } from 'react-native-svg';
+import Svg, { Circle, G, Line, Path, Polygon, Rect, Text as SvgText } from 'react-native-svg';
 import type { OptionImage } from '@/content/types';
 import { C, F } from '@/theme';
 import { BallShape, BatShape, GloveShape, HelmetShape } from './Gear';
@@ -117,6 +117,53 @@ function Person({ hold }: { hold: 'bat' | 'ball' | 'mitt' }) {
   );
 }
 
+
+// Diamante pequeño para corredores (Niveles 3 y 4).
+function MiniDiamond({ children, hot }: { children?: React.ReactNode; hot?: 'home' | 'first' }) {
+  return (
+    <G>
+      <Rect x={0} y={0} width={72} height={60} rx={10} fill="#2A6E2D" />
+      <Polygon points="36,56 58,34 36,12 14,34" fill={C.dirt} />
+      <Polygon points="36,48 50,34 36,20 22,34" fill={C.grass} />
+      <Rect x={55} y={31} width={6} height={6} fill={hot === 'first' ? C.gold : C.white} transform="rotate(45 58 34)" />
+      <Rect x={33} y={9} width={6} height={6} fill={C.white} transform="rotate(45 36 12)" />
+      <Rect x={11} y={31} width={6} height={6} fill={C.white} transform="rotate(45 14 34)" />
+      <Polygon points="32,52 40,52 40,55 36,58 32,55" fill={hot === 'home' ? C.gold : C.white} />
+      {children}
+    </G>
+  );
+}
+
+function MiniJersey({ n }: { n: number }) {
+  return (
+    <G>
+      <Path d="M24 6 L36 10 L48 6 L64 16 L58 28 L52 25 L52 56 L20 56 L20 25 L14 28 L8 16 Z" fill={C.navy} stroke={C.white} strokeWidth={2} strokeLinejoin="round" />
+      <SvgText x={36} y={47} fontSize={24} fontWeight="bold" fill={C.white} textAnchor="middle">
+        {String(n)}
+      </SvgText>
+    </G>
+  );
+}
+
+// Zona de strike en miniatura con un lanzamiento.
+function MiniZone({ ball }: { ball: 'in' | 'ground' }) {
+  return (
+    <G>
+      <Rect x={0} y={0} width={72} height={60} rx={10} fill="#E8EEF7" />
+      <Rect x={24} y={8} width={24} height={30} fill={C.gold} fillOpacity={0.2} stroke={C.navy} strokeWidth={2} strokeDasharray="4 3" />
+      <Polygon points="24,46 48,46 48,49 36,53 24,49" fill={C.white} stroke={C.navy} strokeWidth={1} />
+      <Rect x={0} y={54} width={72} height={6} fill={C.dirt} />
+      {ball === 'in' ? <Circle cx={36} cy={22} r={6} fill={C.white} stroke={C.red} strokeWidth={2} /> : null}
+      {ball === 'ground' ? (
+        <G>
+          <Path d="M56 14 L60 52" stroke={C.faint} strokeWidth={1.5} strokeDasharray="2 3" />
+          <Circle cx={60} cy={50} r={5} fill={C.white} stroke={C.red} strokeWidth={2} />
+        </G>
+      ) : null}
+    </G>
+  );
+}
+
 /** Dibujo de cada opción en "Selección con imágenes". */
 export function OptionArt({ image, size = 64 }: { image: OptionImage; size?: number }) {
   let el: React.ReactNode = null;
@@ -161,6 +208,116 @@ export function OptionArt({ image, size = 64 }: { image: OptionImage; size?: num
     case 'pos-rf': el = <MiniPositions on={['posRF']} />; break;
     case 'pos-outfielder': el = <MiniPositions on={['posLF', 'posCF', 'posRF']} />; break;
     case 'pos-1b': el = <MiniPositions on={['pos1b']} />; break;
+    case 'house':
+      el = (
+        <G>
+          <Polygon points="36,6 64,28 8,28" fill={C.red} />
+          <Rect x={14} y={28} width={44} height={28} fill={C.white} stroke={C.navy} strokeWidth={2} />
+          <Rect x={31} y={38} width={10} height={18} fill={C.brown} />
+          <Rect x={18} y={34} width={9} height={8} fill="#BFDBFE" stroke={C.navy} strokeWidth={1} />
+          <Rect x={45} y={34} width={9} height={8} fill="#BFDBFE" stroke={C.navy} strokeWidth={1} />
+        </G>
+      );
+      break;
+    case 'runners-home':
+      el = (
+        <MiniDiamond hot="home">
+          <Path d="M14 34 L33 53" stroke={C.gold} strokeWidth={2.5} strokeDasharray="3 2" />
+          <Path d="M58 34 L39 53" stroke={C.gold} strokeWidth={2.5} strokeDasharray="3 2" />
+          <Circle cx={18} cy={38} r={4} fill={C.red} stroke={C.white} strokeWidth={1} />
+          <Circle cx={54} cy={38} r={4} fill={C.red} stroke={C.white} strokeWidth={1} />
+          <Circle cx={36} cy={16} r={4} fill={C.red} stroke={C.white} strokeWidth={1} />
+        </MiniDiamond>
+      );
+      break;
+    case 'leadoff':
+    case 'jersey-1': el = <MiniJersey n={1} />; break;
+    case 'jersey-8': el = <MiniJersey n={8} />; break;
+    case 'jersey-6': el = <MiniJersey n={6} />; break;
+    case 'inning-extra':
+      el = (
+        <G>
+          <Rect x={0} y={8} width={72} height={44} rx={8} fill={C.navy} />
+          {[0, 1, 2, 3, 4, 5].map((i) => (
+            <Rect key={i} x={5 + i * 8.5} y={22} width={7} height={16} rx={2} fill={C.gold} />
+          ))}
+          <Rect x={57} y={18} width={12} height={24} rx={3} fill={C.red} stroke={C.white} strokeWidth={1.5} />
+          <SvgText x={63} y={35} fontSize={13} fontWeight="bold" fill={C.white} textAnchor="middle">
+            {'+'}
+          </SvgText>
+        </G>
+      );
+      break;
+    case 'bats-all':
+      el = (
+        <G>
+          <G transform="translate(2 0) scale(0.8)"><BatShape /></G>
+          <G transform="translate(14 2) scale(0.8)"><BatShape /></G>
+          <G transform="translate(26 4) scale(0.8)"><BatShape /></G>
+        </G>
+      );
+      break;
+    case 'calendar':
+      el = (
+        <G>
+          <Rect x={12} y={10} width={48} height={44} rx={6} fill={C.white} stroke={C.navy} strokeWidth={2.5} />
+          <Rect x={12} y={10} width={48} height={12} rx={6} fill={C.red} />
+          <Line x1={24} y1={6} x2={24} y2={14} stroke={C.navy} strokeWidth={3} strokeLinecap="round" />
+          <Line x1={48} y1={6} x2={48} y2={14} stroke={C.navy} strokeWidth={3} strokeLinecap="round" />
+          {[0, 1, 2, 3].map((c) => [0, 1, 2].map((r) => (
+            <Rect key={`${c}-${r}`} x={18 + c * 10} y={27 + r * 8} width={6} height={5} fill={c === 2 && r === 1 ? C.gold : C.lineDark} />
+          )))}
+        </G>
+      );
+      break;
+    case 'pitch-strike': el = <MiniZone ball="in" />; break;
+    case 'pitch-ground': el = <MiniZone ball="ground" />; break;
+    case 'pitch-foul':
+      el = (
+        <G>
+          <Rect x={0} y={0} width={72} height={60} rx={10} fill="#2A6E2D" />
+          <Path d="M36 56 L4 24 A 45 45 0 0 1 68 24 Z" fill={C.grass} />
+          <Line x1={36} y1={56} x2={4} y2={24} stroke={C.white} strokeWidth={2} />
+          <Line x1={36} y1={56} x2={68} y2={24} stroke={C.white} strokeWidth={2} />
+          <Path d="M36 54 Q16 30 6 40" fill="none" stroke={C.gold} strokeWidth={2} strokeDasharray="3 2" />
+          <Circle cx={6} cy={40} r={4.5} fill={C.white} stroke={C.red} strokeWidth={1.5} />
+        </G>
+      );
+      break;
+    case 'count-32':
+      el = (
+        <G>
+          <Rect x={4} y={10} width={64} height={40} rx={8} fill={C.navy} />
+          <SvgText x={22} y={40} fontSize={26} fontWeight="bold" fill="#4ADE80" textAnchor="middle">
+            {'3'}
+          </SvgText>
+          <SvgText x={36} y={38} fontSize={20} fontWeight="bold" fill={C.white} textAnchor="middle">
+            {'-'}
+          </SvgText>
+          <SvgText x={50} y={40} fontSize={26} fontWeight="bold" fill="#F87171" textAnchor="middle">
+            {'2'}
+          </SvgText>
+        </G>
+      );
+      break;
+    case 'strikeout-k':
+      el = (
+        <G>
+          <Circle cx={36} cy={30} r={26} fill={C.red} />
+          <SvgText x={36} y={42} fontSize={34} fontWeight="bold" fill={C.white} textAnchor="middle">
+            {'K'}
+          </SvgText>
+        </G>
+      );
+      break;
+    case 'walk-first':
+      el = (
+        <MiniDiamond hot="first">
+          <Path d="M38 54 L56 36" stroke={C.gold} strokeWidth={3} strokeDasharray="3 2" />
+          <Circle cx={50} cy={42} r={4.5} fill={C.red} stroke={C.white} strokeWidth={1} />
+        </MiniDiamond>
+      );
+      break;
   }
   return (
     <Svg width={size * 1.2} height={size} viewBox="0 0 72 60">

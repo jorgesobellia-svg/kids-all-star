@@ -4,8 +4,10 @@ import { Pressable, ScrollView, Text, useWindowDimensions, View } from 'react-na
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import ActivityView, { isCorrect, type Answer } from '@/components/Activity';
 import { CheckIcon, CoinBall, Mascot, SpeakerIcon } from '@/components/Art';
+import { Board, CallBanner, Lineup } from '@/components/Board';
 import Diamond from '@/components/Diamond';
 import Gear from '@/components/Gear';
+import Zone from '@/components/Zone';
 import { Btn, Label, ProgressBar } from '@/components/ui';
 import { getLesson } from '@/content/levels';
 import type { DemoSegment, GearTarget, Target } from '@/content/types';
@@ -24,8 +26,29 @@ type LessonText = {
 
 /** Escena del diamante o del equipo con lo que se resalta en ese pedazo del guion. */
 function Scene({ seg, width, runKey }: { seg: DemoSegment; width: number; runKey: number }) {
+  const hl = seg.highlight as string[];
   if (seg.scene === 'gear') return <Gear width={width} highlight={seg.highlight as GearTarget[]} />;
-  return <Diamond width={width} highlight={seg.highlight as Target[]} run={seg.run ?? null} runKey={runKey} players={seg.scene === 'field9'} numbers={seg.numbers} />;
+  // Marcador y alineación: el letrero del umpire va arriba, sin tapar el tablero.
+  if (seg.scene === 'board' || seg.scene === 'lineup') {
+    return (
+      <View style={{ gap: 10, alignItems: 'center' }}>
+        {seg.call ? <View style={{ height: 52, width }}><CallBanner call={seg.call} /></View> : null}
+        {seg.scene === 'board' && seg.board ? <Board width={width} state={seg.board} highlight={hl} /> : <Lineup width={width} batter={seg.batter} marked={seg.marked} />}
+      </View>
+    );
+  }
+  const scene =
+    seg.scene === 'zone' ? (
+      <Zone width={width} highlight={hl} showZone={seg.showZone} pitch={seg.pitch} swing={seg.swing} count={seg.count} />
+    ) : (
+      <Diamond width={width} highlight={seg.highlight as Target[]} run={seg.run ?? null} runKey={runKey} players={seg.scene === 'field9'} numbers={seg.numbers} foulHit={seg.foulHit} />
+    );
+  return (
+    <View>
+      {scene}
+      {seg.call ? <CallBanner call={seg.call} /> : null}
+    </View>
+  );
 }
 
 function readTime(text: string) {
