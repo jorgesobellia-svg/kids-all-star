@@ -80,6 +80,27 @@ function MiniField({ zone }: { zone: 'outfield' | 'dugout' | 'home' | 'ondeck' }
   );
 }
 
+// Campo en miniatura con los 9 jugadores; los de "on" se marcan en dorado.
+const MINI_POS: Record<string, [number, number]> = {
+  mound: [36, 38.8], posC: [36, 56.8], pos1b: [48.8, 33.2], pos2b: [43.2, 28], posSS: [28.8, 28],
+  pos3b: [23.2, 33.2], posLF: [16.4, 19.2], posCF: [36, 10.8], posRF: [55.6, 19.2],
+};
+function MiniPositions({ on, base }: { on: string[]; base?: 'first' | 'behind' }) {
+  return (
+    <G>
+      <Rect x={0} y={0} width={72} height={60} rx={10} fill="#2A6E2D" />
+      <Path d="M36 52.4 L2.8 19.2 A 47 47 0 0 1 69.2 19.2 Z" fill={C.grass} />
+      <Polygon points="36,56 53.6,38.4 36,20.8 18.4,38.4" fill={C.dirt} />
+      <Rect x={47} y={36.4} width={4} height={4} fill={base === 'first' ? C.gold : C.white} transform="rotate(45 49 38.4)" />
+      {base === 'first' ? <Circle cx={49} cy={38.4} r={5.5} fill="none" stroke={C.gold} strokeWidth={2} /> : null}
+      {base === 'behind' ? <Circle cx={36} cy={56.8} r={5.5} fill="none" stroke={C.gold} strokeWidth={2.5} /> : null}
+      {Object.entries(MINI_POS).map(([id, [x, y]]) => (
+        <Circle key={id} cx={x} cy={y} r={on.includes(id) ? 3.6 : 2.4} fill={on.includes(id) ? C.gold : C.navy} stroke={C.white} strokeWidth={0.8} />
+      ))}
+    </G>
+  );
+}
+
 function Person({ hold }: { hold: 'bat' | 'ball' | 'mitt' }) {
   return (
     <G>
@@ -133,6 +154,13 @@ export function OptionArt({ image, size = 64 }: { image: OptionImage; size?: num
     case 'player-batter': el = <Person hold="bat" />; break;
     case 'player-pitcher': el = <Person hold="ball" />; break;
     case 'player-catcher': el = <Person hold="mitt" />; break;
+    case 'zone-behindhome': el = <MiniPositions on={[]} base="behind" />; break;
+    case 'zone-first': el = <MiniPositions on={[]} base="first" />; break;
+    case 'pos-middle': el = <MiniPositions on={['pos2b', 'posSS']} />; break;
+    case 'pos-catcher': el = <MiniPositions on={['posC']} />; break;
+    case 'pos-rf': el = <MiniPositions on={['posRF']} />; break;
+    case 'pos-outfielder': el = <MiniPositions on={['posLF', 'posCF', 'posRF']} />; break;
+    case 'pos-1b': el = <MiniPositions on={['pos1b']} />; break;
   }
   return (
     <Svg width={size * 1.2} height={size} viewBox="0 0 72 60">

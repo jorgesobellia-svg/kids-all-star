@@ -85,7 +85,8 @@
     "answerWas": "Answer: {a}",
     "rewatch": "Watch this part again. The question comes back at the end.",
     "dragHint": "Drag the runner from base to base",
-    "retryRoute": "Try again"
+    "retryRoute": "Try again",
+    "placeHint": "Drag each card to its place"
   },
   "result": {
     "title": "Lesson complete!",

@@ -19,5 +19,14 @@
   "out": "出局",
   "strike": "好球",
   "umpire": "裁判",
-  "foulBall": "界外球"
+  "foulBall": "界外球",
+  "battery": "投捕搭档",
+  "mound": "投手丘",
+  "firstBaseman": "一垒手",
+  "secondBaseman": "二垒手",
+  "thirdBaseman": "三垒手",
+  "shortstop": "游击手",
+  "leftFielder": "左外野手",
+  "centerFielder": "中外野手",
+  "rightFielder": "右外野手"
 }

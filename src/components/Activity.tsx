@@ -5,16 +5,22 @@ import { C, F } from '@/theme';
 import { OptionArt } from './Art';
 import Diamond, { hitMatches, P, VB, type Hit } from './Diamond';
 import Gear from './Gear';
+import PlaceAct from './PlaceAct';
 import { playSfx } from '@/services/sfx';
 import { tapFeedback } from './ui';
 
 export type Answer =
   | { kind: 'option'; id: string }
   | { kind: 'tap'; hit: Hit | GearTarget }
-  | { kind: 'route'; route: Target[] };
+  | { kind: 'route'; route: Target[] }
+  | { kind: 'place'; place: Record<string, string> };
 
-export function isCorrect(a: Act | { type: string; correct?: string; target?: string; route?: Target[] }, ans: Answer): boolean {
+export function isCorrect(a: Act | { type: string; correct?: string; target?: string; route?: Target[]; place?: Record<string, string> }, ans: Answer): boolean {
   if (ans.kind === 'option') return ans.id === a.correct;
+  if (ans.kind === 'place') {
+    const want = a.place ?? {};
+    return Object.keys(want).every((k) => ans.place[k] === want[k]);
+  }
   if (ans.kind === 'tap') {
     if (!a.target) return false;
     if (['bat', 'glove', 'helmet', 'ball'].includes(a.target)) return ans.hit === a.target;
@@ -41,6 +47,8 @@ interface Props {
   trueLabel: string;
   falseLabel: string;
   dragHint: string;
+  /** Texto de ayuda para colocar jugadores o tarjetas. */
+  placeHint?: string;
   retryLabel: string;
   /** null = sin responder; si hay respuesta, se muestra el resultado y se bloquea. */
   locked: Answer | null;
@@ -53,6 +61,19 @@ interface Props {
 export default function ActivityView(props: Props) {
   const { act } = props;
   if (act.type === 'tap') return <TapAct {...props} />;
+  if (act.type === 'drag' && act.place) {
+    return (
+      <PlaceAct
+        act={act}
+        width={props.width}
+        locked={!!props.locked}
+        tokenText={props.optText}
+        hint={props.placeHint ?? props.dragHint}
+        retryLabel={props.retryLabel}
+        onAnswer={(place) => props.onAnswer({ kind: 'place', place })}
+      />
+    );
+  }
   if (act.type === 'drag') return <DragAct {...props} />;
   if (act.type === 'choiceImg') return <ImageChoices {...props} />;
   return <TextChoices {...props} />;
@@ -155,6 +176,7 @@ function TapAct({ act, width, locked, onAnswer }: Props) {
   return (
     <Diamond
       width={width}
+      players={act.scene === 'field9'}
       good={done ? (act.target as Target) : null}
       bad={done && !correct ? (done.hit as Hit) : null}
       onTap={done ? undefined : (h) => { tapFeedback(); playSfx('bat'); onAnswer({ kind: 'tap', hit: h }); }}
@@ -205,6 +227,9 @@ function DragAct({ act, width, locked, onAnswer, dragHint, retryLabel }: Props) 
     PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponder: () => true,
+      onStartShouldSetPanResponderCapture: () => true,
+      onMoveShouldSetPanResponderCapture: () => true,
+      onPanResponderTerminationRequest: () => false,
       onPanResponderGrant: () => {
         start.current = { ...runnerRef.current };
       },

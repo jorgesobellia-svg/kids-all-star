@@ -85,7 +85,8 @@
     "answerWas": "答案：{a}",
     "rewatch": "再看一次这一段。这道题最后还会出现。",
     "dragHint": "把跑垒员从一个垒拖到下一个垒",
-    "retryRoute": "再试一次"
+    "retryRoute": "再试一次",
+    "placeHint": "把每张卡片拖到正确的位置"
   },
   "result": {
     "title": "课程完成！",

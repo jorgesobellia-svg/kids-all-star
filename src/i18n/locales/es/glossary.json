@@ -19,5 +19,14 @@
   "out": "Out",
   "strike": "Strike",
   "umpire": "Árbitro",
-  "foulBall": "Foul"
+  "foulBall": "Foul",
+  "battery": "La batería",
+  "mound": "El montículo",
+  "firstBaseman": "Primera base",
+  "secondBaseman": "Segunda base",
+  "thirdBaseman": "Tercera base",
+  "shortstop": "Campocorto",
+  "leftFielder": "Jardinero izquierdo",
+  "centerFielder": "Jardinero central",
+  "rightFielder": "Jardinero derecho"
 }

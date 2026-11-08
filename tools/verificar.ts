@@ -100,7 +100,7 @@ for (const lang of LOCALES) {
   for (const l of level.lessons) {
     const t = c.lessons[l.id];
     const blob = JSON.stringify(t).toLowerCase();
-    for (const term of l.glossary) {
+    for (const term of lang === 'es' ? [] : l.glossary) {
       const forms = String(g[term])
         .split('/')
         .map((f) => f.trim().replace(/^(el|la|los|las)\s+/i, '').toLowerCase())

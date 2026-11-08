@@ -123,6 +123,121 @@ const L1: Lesson[] = [
   },
 ];
 
+
+// Nivel 2 — Las posiciones (Prompt 2). Respuestas correctas copiadas del guion.
+const F9 = 'field9' as const;
+const L2: Lesson[] = [
+  {
+    id: '2.1',
+    level: 2,
+    glossary: ['pitcher', 'catcher', 'battery', 'mound'],
+    demo: [
+      { scene: F9, highlight: ['mound'] },
+      { scene: F9, highlight: ['posC'] },
+      { scene: F9, highlight: ['mound', 'posC'] },
+    ],
+    activities: [
+      { n: 1, type: 'tap', scene: F9, target: 'mound', seg: 0 },
+      {
+        n: 2, type: 'choiceImg', options: ['behind', 'first', 'outfield'], correct: 'behind', seg: 1,
+        images: { behind: 'zone-behindhome', first: 'zone-first', outfield: 'zone-outfield' },
+      },
+      { n: 3, type: 'choice', options: ['pitcher', 'catcher', 'umpire'], correct: 'pitcher', seg: 0 },
+      { n: 4, type: 'tf', correct: 'true', seg: 2 },
+      { n: 5, type: 'choice', options: ['gear', 'bigbat', 'gloves'], correct: 'gear', seg: 1 },
+      { n: 6, type: 'umpire', options: ['strike', 'run', 'foul'], correct: 'strike', seg: 1 },
+    ],
+  },
+  {
+    id: '2.2',
+    level: 2,
+    glossary: ['firstBaseman', 'thirdBaseman'],
+    demo: [
+      { scene: F9, highlight: ['pos1b', 'pos3b'] },
+      { scene: F9, highlight: ['pos1b'] },
+      { scene: F9, highlight: ['pos3b'] },
+      { scene: F9, highlight: ['pos3b'] },
+    ],
+    activities: [
+      { n: 1, type: 'tap', scene: F9, target: 'pos1b', seg: 1 },
+      { n: 2, type: 'tap', scene: F9, target: 'pos3b', seg: 2 },
+      { n: 3, type: 'choice', options: ['out', 'tall', 'throws'], correct: 'out', seg: 1 },
+      { n: 4, type: 'choice', options: ['hard', 'sun', 'dugout'], correct: 'hard', seg: 3 },
+      { n: 5, type: 'tf', correct: 'true', seg: 1 },
+      { n: 6, type: 'drag', board: 'diamond', place: { t1b: 'pos1b', t3b: 'pos3b' }, seg: 0 },
+    ],
+  },
+  {
+    id: '2.3',
+    level: 2,
+    glossary: ['secondBaseman', 'shortstop'],
+    demo: [
+      { scene: F9, highlight: ['pos2b', 'posSS'] },
+      { scene: F9, highlight: ['pos2b', 'posSS', 'second'] },
+      { scene: F9, highlight: ['pos2b', 'posSS'] },
+    ],
+    activities: [
+      { n: 1, type: 'tap', scene: F9, target: 'posSS', seg: 0 },
+      { n: 2, type: 'tap', scene: F9, target: 'pos2b', seg: 0 },
+      { n: 3, type: 'choice', options: ['nobody', 'biggest', 'bat'], correct: 'nobody', seg: 1 },
+      { n: 4, type: 'tf', correct: 'true', seg: 0 },
+      {
+        n: 5, type: 'choiceImg', options: ['middle', 'catcher', 'rf'], correct: 'middle', seg: 1,
+        images: { middle: 'pos-middle', catcher: 'pos-catcher', rf: 'pos-rf' },
+      },
+      { n: 6, type: 'drag', board: 'diamond', place: { tss: 'posSS', t2b: 'pos2b' }, seg: 0 },
+    ],
+  },
+  {
+    id: '2.4',
+    level: 2,
+    glossary: ['leftFielder', 'centerFielder', 'rightFielder'],
+    demo: [
+      { scene: F9, highlight: ['posLF', 'posCF', 'posRF'] },
+      { scene: F9, highlight: ['outfield'] },
+      { scene: F9, highlight: ['posCF'] },
+      { scene: F9, highlight: ['home', 'posLF', 'posRF'] },
+    ],
+    activities: [
+      { n: 1, type: 'tap', scene: F9, target: 'posCF', seg: 2 },
+      { n: 2, type: 'choice', options: ['three', 'two', 'four'], correct: 'three', seg: 0 },
+      { n: 3, type: 'tf', correct: 'true', seg: 3 },
+      { n: 4, type: 'choice', options: ['center', 'right', 'none'], correct: 'center', seg: 2 },
+      {
+        n: 5, type: 'choiceImg', options: ['outfielder', 'catcher', 'first'], correct: 'outfielder', seg: 1,
+        images: { outfielder: 'pos-outfielder', catcher: 'pos-catcher', first: 'pos-1b' },
+      },
+      { n: 6, type: 'drag', board: 'diamond', place: { tlf: 'posLF', tcf: 'posCF', trf: 'posRF' }, seg: 3 },
+    ],
+  },
+  {
+    id: '2.5',
+    level: 2,
+    glossary: ['pitcher', 'catcher', 'shortstop', 'centerFielder'],
+    demo: [
+      { scene: F9, highlight: [] },
+      { scene: F9, highlight: ['mound'], numbers: true },
+      { scene: F9, highlight: ['posC'], numbers: true },
+      { scene: F9, highlight: ['pos1b'], numbers: true },
+      { scene: F9, highlight: ['pos2b'], numbers: true },
+      { scene: F9, highlight: ['pos3b'], numbers: true },
+      { scene: F9, highlight: ['posSS'], numbers: true },
+      { scene: F9, highlight: ['posLF'], numbers: true },
+      { scene: F9, highlight: ['posCF'], numbers: true },
+      { scene: F9, highlight: ['posRF'], numbers: true },
+      { scene: F9, highlight: [], numbers: true },
+    ],
+    activities: [
+      { n: 1, type: 'choice', options: ['n1', 'n2', 'n9'], correct: 'n1', seg: 1 },
+      { n: 2, type: 'choice', options: ['n2', 'n5', 'n7'], correct: 'n2', seg: 2 },
+      { n: 3, type: 'tap', scene: F9, target: 'posSS', seg: 6 },
+      { n: 4, type: 'choice', options: ['cf', 'first', 'third'], correct: 'cf', seg: 8 },
+      { n: 5, type: 'tf', correct: 'false', seg: 0 },
+      { n: 6, type: 'drag', board: 'order', place: { pitcher: '1', catcher: '2', first: '3', second: '4' }, seg: 1 },
+    ],
+  },
+];
+
 export const LEVELS: Level[] = [
   {
     n: 1,
@@ -145,9 +260,28 @@ export const LEVELS: Level[] = [
       { n: 12, type: 'choice', options: ['runs', 'goals', 'hoops'], correct: 'runs', lesson: '1.3' },
     ],
   },
-  // Niveles 2 a 4: se muestran en el camino con el candado Plus.
-  // Su contenido se construye después de la revisión del Nivel 1 (Prompt 5).
-  { n: 2, free: false, lessons: [], lessonIds: ['2.1', '2.2', '2.3', '2.4', '2.5'], exam: [], passPercent: 80 },
+  // Niveles 3 y 4: se muestran en el camino con el candado Plus; su contenido se construye después.
+  {
+    n: 2,
+    free: false,
+    lessons: L2,
+    lessonIds: ['2.1', '2.2', '2.3', '2.4', '2.5'],
+    passPercent: 80,
+    exam: [
+      { n: 1, type: 'choice', options: ['mound', 'second', 'dugout'], correct: 'mound', lesson: '2.1' },
+      { n: 2, type: 'choice', options: ['catcher', 'ss', 'rf'], correct: 'catcher', lesson: '2.5' },
+      { n: 3, type: 'tap', target: 'pos3b', scene: 'field9', lesson: '2.2' },
+      { n: 4, type: 'choice', options: ['pc', 'corners', 'ofs'], correct: 'pc', lesson: '2.1' },
+      { n: 5, type: 'choice', options: ['ss', 'second', 'cf'], correct: 'ss', lesson: '2.5' },
+      { n: 6, type: 'choice', options: ['three', 'one', 'five'], correct: 'three', lesson: '2.4' },
+      { n: 7, type: 'tf', correct: 'true', lesson: '2.2' },
+      { n: 8, type: 'choice', options: ['rf', 'pitcher', 'first'], correct: 'rf', lesson: '2.5' },
+      { n: 9, type: 'choice', options: ['middle', 'cu', 'ofs'], correct: 'middle', lesson: '2.3' },
+      { n: 10, type: 'tap', target: 'posCF', scene: 'field9', lesson: '2.4' },
+      { n: 11, type: 'choice', options: ['first', 'lf', 'catcher'], correct: 'first', lesson: '2.2' },
+      { n: 12, type: 'choice', options: ['n7', 'n4', 'n1'], correct: 'n7', lesson: '2.5' },
+    ],
+  },
   { n: 3, free: false, lessons: [], lessonIds: ['3.1', '3.2', '3.3', '3.4', '3.5'], exam: [], passPercent: 80 },
   { n: 4, free: false, lessons: [], lessonIds: ['4.1', '4.2', '4.3', '4.4', '4.5'], exam: [], passPercent: 80 },
 ];

@@ -12,11 +12,22 @@ export type Target =
   | 'second'
   | 'third'
   | 'dugout'
-  | 'onDeck';
+  | 'onDeck'
+  // Posiciones de los 9 jugadores (Nivel 2)
+  | 'mound'
+  | 'posC'
+  | 'pos1b'
+  | 'pos2b'
+  | 'pos3b'
+  | 'posSS'
+  | 'posLF'
+  | 'posCF'
+  | 'posRF';
 
 export type GearTarget = 'bat' | 'glove' | 'helmet' | 'ball';
 
-export type Scene = 'diamond' | 'gear';
+/** 'field9' = el diamante con los 9 jugadores de la defensa. */
+export type Scene = 'diamond' | 'field9' | 'gear';
 
 /** Un pedazo del guion de la demostración y lo que se resalta mientras se narra. */
 export interface DemoSegment {
@@ -24,6 +35,8 @@ export interface DemoSegment {
   highlight: (Target | GearTarget)[];
   /** Si está, la mascota corre esta ruta sobre el diamante mientras se narra. */
   run?: Target[];
+  /** Muestra el número oficial (1-9) sobre cada jugador. */
+  numbers?: boolean;
 }
 
 export type ActivityType =
@@ -51,7 +64,14 @@ export type OptionImage =
   | 'gear-helmet'
   | 'player-batter'
   | 'player-pitcher'
-  | 'player-catcher';
+  | 'player-catcher'
+  | 'zone-behindhome'
+  | 'zone-first'
+  | 'pos-middle'
+  | 'pos-catcher'
+  | 'pos-rf'
+  | 'pos-outfielder'
+  | 'pos-1b';
 
 export interface Activity {
   /** Número de la actividad en el guion (1 a 6). */
@@ -65,8 +85,12 @@ export interface Activity {
   /** Dónde hay que tocar (tap). */
   scene?: Scene;
   target?: Target | GearTarget;
-  /** Ruta correcta (drag). */
+  /** Ruta correcta (drag de corredor). */
   route?: Target[];
+  /** Colocar fichas (drag de jugadores o tarjetas): ficha -> lugar correcto. */
+  place?: Record<string, string>;
+  /** Tablero de las fichas: el diamante o una fila de casillas numeradas. */
+  board?: 'diamond' | 'order';
   /** Pedazo de la demostración que se repite si el niño falla. */
   seg: number;
 }
@@ -86,6 +110,7 @@ export interface ExamQuestion {
   options?: string[];
   correct?: string;
   target?: Target;
+  scene?: Scene;
   /** Lección que se recomienda repasar si esta pregunta falla. */
   lesson: string;
 }

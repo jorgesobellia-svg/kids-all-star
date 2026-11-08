@@ -19,5 +19,14 @@
   "out": "アウト",
   "strike": "ストライク",
   "umpire": "審判 / アンパイア",
-  "foulBall": "ファウルボール"
+  "foulBall": "ファウルボール",
+  "battery": "バッテリー",
+  "mound": "マウンド",
+  "firstBaseman": "一塁手 / ファースト",
+  "secondBaseman": "二塁手 / セカンド",
+  "thirdBaseman": "三塁手 / サード",
+  "shortstop": "遊撃手 / ショート",
+  "leftFielder": "左翼手 / レフト",
+  "centerFielder": "中堅手 / センター",
+  "rightFielder": "右翼手 / ライト"
 }

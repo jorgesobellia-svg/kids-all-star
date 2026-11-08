@@ -19,5 +19,14 @@
   "out": "Out",
   "strike": "Strike",
   "umpire": "Umpire",
-  "foulBall": "Foul ball"
+  "foulBall": "Foul ball",
+  "battery": "Battery",
+  "mound": "Mound",
+  "firstBaseman": "First baseman",
+  "secondBaseman": "Second baseman",
+  "thirdBaseman": "Third baseman",
+  "shortstop": "Shortstop",
+  "leftFielder": "Left fielder",
+  "centerFielder": "Center fielder",
+  "rightFielder": "Right fielder"
 }

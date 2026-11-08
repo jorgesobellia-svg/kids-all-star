@@ -25,7 +25,7 @@ type LessonText = {
 /** Escena del diamante o del equipo con lo que se resalta en ese pedazo del guion. */
 function Scene({ seg, width, runKey }: { seg: DemoSegment; width: number; runKey: number }) {
   if (seg.scene === 'gear') return <Gear width={width} highlight={seg.highlight as GearTarget[]} />;
-  return <Diamond width={width} highlight={seg.highlight as Target[]} run={seg.run ?? null} runKey={runKey} />;
+  return <Diamond width={width} highlight={seg.highlight as Target[]} run={seg.run ?? null} runKey={runKey} players={seg.scene === 'field9'} numbers={seg.numbers} />;
 }
 
 function readTime(text: string) {
@@ -255,6 +255,7 @@ export default function LessonScreen() {
               trueLabel={t('common.true')}
               falseLabel={t('common.false')}
               dragHint={t('lesson.dragHint')}
+              placeHint={t('lesson.placeHint')}
               retryLabel={t('lesson.retryRoute')}
               locked={answer}
               picked={picked}

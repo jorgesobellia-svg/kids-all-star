@@ -85,7 +85,8 @@
     "answerWas": "Respuesta: {a}",
     "rewatch": "Mira otra vez esta parte. La pregunta vuelve al final.",
     "dragHint": "Arrastra al corredor de base en base",
-    "retryRoute": "Probar otra vez"
+    "retryRoute": "Probar otra vez",
+    "placeHint": "Arrastra cada ficha a su lugar"
   },
   "result": {
     "title": "¡Lección completada!",

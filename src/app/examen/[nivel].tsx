@@ -46,7 +46,7 @@ export default function ExamScreen() {
   const q = level.exam[i];
   const qt = text[String(q.n)];
   // El examen usa el mismo componente de actividades que las lecciones.
-  const act: Activity = { n: q.n, type: q.type === 'tap' ? 'tap' : q.type, options: q.options, correct: q.correct, scene: 'diamond', target: q.target, seg: 0 };
+  const act: Activity = { n: q.n, type: q.type === 'tap' ? 'tap' : q.type, options: q.options, correct: q.correct, scene: q.scene ?? 'diamond', target: q.target, seg: 0 };
   const answered = answer !== null;
   const right = answered ? isCorrect(act, answer!) : false;
 

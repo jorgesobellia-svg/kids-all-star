@@ -342,6 +342,321 @@
           }
         }
       }
+    },
+    "2.1": {
+      "title": "Pitcher y catcher: la batería",
+      "objective": "Saber que el pitcher lanza desde el montículo y el catcher recibe detrás de home, y que juntos se llaman la batería.",
+      "demo": [
+        "Cada jugada empieza con dos jugadores: el pitcher, en inglés pitcher, que lanza la bola desde el montículo, ese cerrito en el centro del campo.",
+        "Y el catcher, el receptor, que se agacha detrás de home y la recibe.",
+        "A los dos juntos les dicen la batería, battery, porque son el motor del equipo."
+      ],
+      "acts": {
+        "1": {
+          "q": "Toca dónde se para el pitcher",
+          "ok": "¡Eso es! El cerrito del centro.",
+          "ko": "El pitcher lanza desde el montículo, en el centro.",
+          "answer": "El montículo (mound)"
+        },
+        "2": {
+          "q": "¿Dónde se coloca el catcher?",
+          "ok": "¡Correcto! Agachado detrás del bateador.",
+          "ko": "El catcher va detrás de home, listo para recibir.",
+          "opts": {
+            "behind": "Detrás de home",
+            "first": "En primera base",
+            "outfield": "En los jardines"
+          }
+        },
+        "3": {
+          "q": "¿Quién empieza cada jugada lanzando la bola?",
+          "ok": "¡Eso es! Pitcher en inglés.",
+          "ko": "Todo empieza con el lanzamiento del pitcher.",
+          "opts": {
+            "pitcher": "El pitcher",
+            "catcher": "El catcher",
+            "umpire": "El umpire"
+          }
+        },
+        "4": {
+          "q": "Al pitcher y al catcher juntos les dicen la batería",
+          "ok": "¡Sí! Battery en inglés.",
+          "ko": "Verdadero: pitcher más catcher, la batería."
+        },
+        "5": {
+          "q": "¿Qué equipo extra usa el catcher para protegerse?",
+          "ok": "¡Correcto! Recibe bolas rápidas, por eso se protege.",
+          "ko": "El catcher se protege completo: careta, peto y espinilleras.",
+          "opts": {
+            "gear": "Careta, peto y espinilleras",
+            "bigbat": "Un bate más grande",
+            "gloves": "Dos guantes"
+          }
+        },
+        "6": {
+          "q": "El catcher atrapó la bola que pasó por la zona buena. ¿Qué cantó el umpire?",
+          "ok": "¡Strike! Lo verás a fondo en el Nivel 4.",
+          "ko": "Si pasó por la zona buena, el umpire canta strike.",
+          "opts": {
+            "strike": "Strike",
+            "run": "Carrera",
+            "foul": "Foul"
+          }
+        }
+      }
+    },
+    "2.2": {
+      "title": "Primera y tercera: las esquinas",
+      "objective": "Ubicar al primera base y al tercera base y entender que cuidan las dos esquinas del cuadro.",
+      "demo": [
+        "En las esquinas del cuadro hay dos guardianes.",
+        "El primera base, first baseman, cuida primera: casi todas las jugadas terminan con un tiro hacia él.",
+        "Y el tercera base, third baseman, cuida tercera, cerquita de donde salen los batazos más fuertes por ese lado.",
+        "Por eso a tercera le dicen la esquina caliente, the hot corner."
+      ],
+      "acts": {
+        "1": {
+          "q": "Toca la posición del primera base",
+          "ok": "¡Eso es! Pegado a primera.",
+          "ko": "El primera base se para junto a primera base.",
+          "answer": "Primera base"
+        },
+        "2": {
+          "q": "Toca la posición del tercera base",
+          "ok": "¡Bien! La otra esquina.",
+          "ko": "El tercera base cuida la esquina de tercera.",
+          "answer": "Tercera base"
+        },
+        "3": {
+          "q": "¿Por qué el primera base recibe tantos tiros?",
+          "ok": "¡Correcto! Por eso practica atrapar tiros de todos lados.",
+          "ko": "El out más común es en primera: por eso recibe tanto.",
+          "opts": {
+            "out": "Porque casi toda jugada busca el out en primera",
+            "tall": "Porque es el más alto",
+            "throws": "Porque lanza primero"
+          }
+        },
+        "4": {
+          "q": "¿Por qué a tercera base le dicen la esquina caliente?",
+          "ok": "¡Eso es! The hot corner.",
+          "ko": "Llegan tan rápido que hay que reaccionar como un rayo.",
+          "opts": {
+            "hard": "Porque los batazos llegan muy fuerte y muy rápido",
+            "sun": "Porque da el sol",
+            "dugout": "Porque está cerca del dugout"
+          }
+        },
+        "5": {
+          "q": "El primera base puede poner un pie en la base y estirarse para atrapar el tiro",
+          "ok": "¡Sí! Así gana un instante para el out.",
+          "ko": "Verdadero: pie en la base y a estirarse por la bola."
+        },
+        "6": {
+          "q": "Arrastra a cada jugador a su esquina",
+          "ok": "¡Esquinas cubiertas!",
+          "ko": "Cada uno a su esquina: revisa cuál es primera y cuál tercera.",
+          "opts": {
+            "t1b": "Primera base",
+            "t3b": "Tercera base"
+          },
+          "answer": "Primera con primera, tercera con tercera"
+        }
+      }
+    },
+    "2.3": {
+      "title": "Segunda y campocorto: el medio",
+      "objective": "Ubicar al segunda base y al campocorto (shortstop) y entender que cubren el centro del cuadro y la segunda base.",
+      "demo": [
+        "En el medio del cuadro juegan dos compañeros: el segunda base, second baseman, y el campocorto, en inglés shortstop.",
+        "Entre los dos cuidan el centro y se turnan para cubrir segunda base cuando hay un tiro o un corredor.",
+        "Son como un equipo dentro del equipo."
+      ],
+      "acts": {
+        "1": {
+          "q": "Toca dónde juega el campocorto",
+          "ok": "¡Eso es! Shortstop en inglés.",
+          "ko": "El campocorto va entre segunda y tercera.",
+          "answer": "Entre segunda y tercera"
+        },
+        "2": {
+          "q": "Toca dónde juega el segunda base",
+          "ok": "¡Bien! Ese es su territorio.",
+          "ko": "El segunda base va entre primera y segunda.",
+          "answer": "Entre primera y segunda"
+        },
+        "3": {
+          "q": "¿Por qué segunda base necesita que la cubran dos jugadores?",
+          "ok": "¡Correcto! El segunda base y el campocorto se turnan.",
+          "ko": "Ninguno se para fijo en segunda: la cubren por turnos.",
+          "opts": {
+            "nobody": "Porque nadie juega parado sobre ella todo el tiempo",
+            "biggest": "Porque es la más grande",
+            "bat": "Porque ahí se batea"
+          }
+        },
+        "4": {
+          "q": "Shortstop significa campocorto en inglés",
+          "ok": "¡Sí! Shortstop igual a campocorto.",
+          "ko": "Verdadero: así se dice campocorto en inglés."
+        },
+        "5": {
+          "q": "Sale un rolling justo por el centro. ¿Quiénes pueden llegar a esa bola?",
+          "ok": "¡Eso es! El medio es su zona.",
+          "ko": "El centro del cuadro lo cuidan esos dos.",
+          "opts": {
+            "middle": "El segunda base o el campocorto",
+            "catcher": "El catcher",
+            "rf": "El jardinero derecho"
+          }
+        },
+        "6": {
+          "q": "Arrastra al campocorto y al segunda base a su lado correcto",
+          "ok": "¡Medio cubierto!",
+          "ko": "Recuerda: campocorto cerca de tercera, segunda base cerca de primera.",
+          "opts": {
+            "tss": "Campocorto",
+            "t2b": "Segunda base"
+          },
+          "answer": "Campocorto a la izquierda del cuadro, segunda base a la derecha"
+        }
+      }
+    },
+    "2.4": {
+      "title": "Los tres jardineros",
+      "objective": "Ubicar al jardinero izquierdo, central y derecho, y entender que el central cubre más terreno y respalda a los otros dos.",
+      "demo": [
+        "Detrás del cuadro, en los jardines, juegan tres: el jardinero izquierdo, left fielder; el jardinero central, center fielder; y el jardinero derecho, right fielder.",
+        "Atrapan los batazos altos y largos, y devuelven la bola rápido al cuadro.",
+        "El del centro cubre más espacio y manda entre los tres.",
+        "Izquierdo y derecho se nombran mirando desde home hacia el campo."
+      ],
+      "acts": {
+        "1": {
+          "q": "Toca dónde juega el jardinero central",
+          "ok": "¡Eso es! Center fielder.",
+          "ko": "El central va en el medio de los jardines.",
+          "answer": "El centro de los jardines"
+        },
+        "2": {
+          "q": "¿Cuántos jardineros hay?",
+          "ok": "¡Correcto! Izquierdo, central y derecho.",
+          "ko": "Son tres jardineros, uno por zona.",
+          "opts": {
+            "three": "Tres",
+            "two": "Dos",
+            "four": "Cuatro"
+          }
+        },
+        "3": {
+          "q": "Los jardineros se nombran mirando desde home hacia el campo",
+          "ok": "¡Sí! Por eso el izquierdo queda de ese lado visto desde home.",
+          "ko": "Verdadero: se mira desde home, no desde los jardines."
+        },
+        "4": {
+          "q": "¿Cuál jardinero cubre más terreno?",
+          "ok": "¡Eso es! Corre hacia los dos lados.",
+          "ko": "El central cubre el espacio más grande.",
+          "opts": {
+            "center": "El central",
+            "right": "El derecho",
+            "none": "Ninguno se mueve"
+          }
+        },
+        "5": {
+          "q": "La bola pasó por encima del cuadro, muy lejos. ¿Quién va por ella?",
+          "ok": "¡Correcto! Ese es trabajo de los jardines.",
+          "ko": "Lejos es zona de jardineros: ellos van por ella.",
+          "opts": {
+            "outfielder": "Un jardinero",
+            "catcher": "El catcher",
+            "first": "El primera base"
+          }
+        },
+        "6": {
+          "q": "Arrastra a cada jardinero a su zona",
+          "ok": "¡Jardines cubiertos!",
+          "ko": "Míralo desde home: izquierdo, central, derecho.",
+          "opts": {
+            "tlf": "Jardinero izquierdo",
+            "tcf": "Jardinero central",
+            "trf": "Jardinero derecho"
+          },
+          "answer": "Izquierdo, central y derecho en orden desde home"
+        }
+      }
+    },
+    "2.5": {
+      "title": "Las 9 posiciones y sus números",
+      "objective": "Memorizar el número oficial de cada posición: 1 pitcher, 2 catcher, 3 primera, 4 segunda, 5 tercera, 6 campocorto, 7 izquierdo, 8 central, 9 derecho.",
+      "demo": [
+        "Último secreto del nivel: cada posición tiene un número, y es el mismo en todo el mundo.",
+        "Uno, pitcher.",
+        "Dos, catcher.",
+        "Tres, primera base.",
+        "Cuatro, segunda base.",
+        "Cinco, tercera base.",
+        "Seis, campocorto.",
+        "Siete, jardinero izquierdo.",
+        "Ocho, jardinero central.",
+        "Nueve, jardinero derecho.",
+        "Así anotan los juegos los anotadores."
+      ],
+      "acts": {
+        "1": {
+          "q": "¿Qué número tiene el pitcher?",
+          "ok": "¡Eso es! El pitcher siempre es el 1.",
+          "ko": "El pitcher abre la cuenta: número 1.",
+          "opts": {
+            "n1": "1",
+            "n2": "2",
+            "n9": "9"
+          }
+        },
+        "2": {
+          "q": "¿Qué número tiene el catcher?",
+          "ok": "¡Correcto! Catcher igual a 2.",
+          "ko": "Después del pitcher va el catcher: número 2.",
+          "opts": {
+            "n2": "2",
+            "n5": "5",
+            "n7": "7"
+          }
+        },
+        "3": {
+          "q": "Toca la posición número 6",
+          "ok": "¡Bien! El 6 es el shortstop.",
+          "ko": "La 6 es el campocorto, entre segunda y tercera.",
+          "answer": "El campocorto"
+        },
+        "4": {
+          "q": "¿Qué posición es la número 8?",
+          "ok": "¡Eso es! Center fielder, número 8.",
+          "ko": "La 8 es el jardinero central.",
+          "opts": {
+            "cf": "El jardinero central",
+            "first": "El primera base",
+            "third": "El tercera base"
+          }
+        },
+        "5": {
+          "q": "Los números de las posiciones cambian en cada liga",
+          "ok": "¡Bien! Son los mismos en todas partes.",
+          "ko": "Falso: el 1 al 9 es igual en todo el béisbol."
+        },
+        "6": {
+          "q": "Ordena las tarjetas del 1 al 4: pitcher, catcher, primera, segunda",
+          "ok": "¡Cuenta perfecta!",
+          "ko": "Va en orden: pitcher 1, catcher 2, primera 3, segunda 4.",
+          "opts": {
+            "pitcher": "Pitcher",
+            "catcher": "Catcher",
+            "first": "Primera",
+            "second": "Segunda"
+          },
+          "answer": "Pitcher 1, catcher 2, primera 3, segunda 4"
+        }
+      }
     }
   },
   "exams": {
@@ -427,6 +742,91 @@
           "runs": "Carreras",
           "goals": "Goles",
           "hoops": "Puntos de canasta"
+        }
+      }
+    },
+    "2": {
+      "1": {
+        "q": "¿Desde dónde lanza el pitcher?",
+        "opts": {
+          "mound": "El montículo",
+          "second": "Segunda base",
+          "dugout": "El dugout"
+        }
+      },
+      "2": {
+        "q": "¿Qué posición es la número 2?",
+        "opts": {
+          "catcher": "El catcher",
+          "ss": "El campocorto",
+          "rf": "El jardinero derecho"
+        }
+      },
+      "3": {
+        "q": "Toca la posición del tercera base en el diagrama",
+        "answer": "Tercera base"
+      },
+      "4": {
+        "q": "¿A qué dos jugadores les dicen la batería?",
+        "opts": {
+          "pc": "Pitcher y catcher",
+          "corners": "Primera y tercera",
+          "ofs": "Los jardineros"
+        }
+      },
+      "5": {
+        "q": "¿Qué posición es la número 6?",
+        "opts": {
+          "ss": "El campocorto",
+          "second": "El segunda base",
+          "cf": "El jardinero central"
+        }
+      },
+      "6": {
+        "q": "¿Cuántos jardineros juegan?",
+        "opts": {
+          "three": "Tres",
+          "one": "Uno",
+          "five": "Cinco"
+        }
+      },
+      "7": {
+        "q": "Verdadero o falso: a tercera base le dicen la esquina caliente"
+      },
+      "8": {
+        "q": "¿Qué posición es la número 9?",
+        "opts": {
+          "rf": "El jardinero derecho",
+          "pitcher": "El pitcher",
+          "first": "El primera base"
+        }
+      },
+      "9": {
+        "q": "¿Quiénes cubren el medio del cuadro?",
+        "opts": {
+          "middle": "El segunda base y el campocorto",
+          "cu": "El catcher y el umpire",
+          "ofs": "Los tres jardineros"
+        }
+      },
+      "10": {
+        "q": "Toca la posición del jardinero central en el diagrama",
+        "answer": "Jardinero central"
+      },
+      "11": {
+        "q": "¿Qué posición recibe más tiros para hacer el out?",
+        "opts": {
+          "first": "El primera base",
+          "lf": "El jardinero izquierdo",
+          "catcher": "El catcher"
+        }
+      },
+      "12": {
+        "q": "¿Qué número tiene el jardinero izquierdo?",
+        "opts": {
+          "n7": "7",
+          "n4": "4",
+          "n1": "1"
         }
       }
     }

@@ -342,6 +342,321 @@
           }
         }
       }
+    },
+    "2.1": {
+      "title": "Pitcher and catcher: the battery",
+      "objective": "Know that the pitcher throws from the mound and the catcher catches behind home plate, and that together they are called the battery.",
+      "demo": [
+        "Every play starts with two players: the pitcher, who throws the ball from the mound, that little hill in the middle of the field.",
+        "And the catcher, who crouches behind home plate and catches it.",
+        "Together, the two of them are called the battery, because they are the engine of the team."
+      ],
+      "acts": {
+        "1": {
+          "q": "Tap where the pitcher stands",
+          "ok": "That's it! The little hill in the middle.",
+          "ko": "The pitcher throws from the mound, in the middle.",
+          "answer": "The mound"
+        },
+        "2": {
+          "q": "Where does the catcher go?",
+          "ok": "Correct! Crouched behind the batter.",
+          "ko": "The catcher goes behind home plate, ready to catch.",
+          "opts": {
+            "behind": "Behind home plate",
+            "first": "At first base",
+            "outfield": "In the outfield"
+          }
+        },
+        "3": {
+          "q": "Who starts every play by throwing the ball?",
+          "ok": "That's it! The pitcher.",
+          "ko": "Everything starts with the pitcher's throw.",
+          "opts": {
+            "pitcher": "The pitcher",
+            "catcher": "The catcher",
+            "umpire": "The umpire"
+          }
+        },
+        "4": {
+          "q": "The pitcher and the catcher together are called the battery",
+          "ok": "Yes! The battery.",
+          "ko": "True: pitcher plus catcher make the battery."
+        },
+        "5": {
+          "q": "What extra gear does the catcher wear for protection?",
+          "ok": "Correct! The catcher gets fast balls, so they need protection.",
+          "ko": "The catcher is fully protected: mask, chest protector and shin guards.",
+          "opts": {
+            "gear": "Mask, chest protector and shin guards",
+            "bigbat": "A bigger bat",
+            "gloves": "Two gloves"
+          }
+        },
+        "6": {
+          "q": "The catcher caught a ball that went through the good zone. What did the umpire call?",
+          "ok": "Strike! You'll learn all about it in Level 4.",
+          "ko": "If it went through the good zone, the umpire calls a strike.",
+          "opts": {
+            "strike": "Strike",
+            "run": "Run",
+            "foul": "Foul"
+          }
+        }
+      }
+    },
+    "2.2": {
+      "title": "First and third: the corners",
+      "objective": "Find the first baseman and the third baseman, and understand that they guard the two corners of the infield.",
+      "demo": [
+        "There are two guards at the corners of the infield.",
+        "The first baseman guards first base: almost every play ends with a throw to him.",
+        "And the third baseman guards third base, close to where the hardest hits come on that side.",
+        "That's why third base is called the hot corner."
+      ],
+      "acts": {
+        "1": {
+          "q": "Tap the first baseman's position",
+          "ok": "That's it! Right next to first base.",
+          "ko": "The first baseman stands next to first base.",
+          "answer": "First baseman"
+        },
+        "2": {
+          "q": "Tap the third baseman's position",
+          "ok": "Good! The other corner.",
+          "ko": "The third baseman guards the third-base corner.",
+          "answer": "Third baseman"
+        },
+        "3": {
+          "q": "Why does the first baseman catch so many throws?",
+          "ok": "Correct! That's why he practices catching throws from everywhere.",
+          "ko": "The most common out is at first base: that's why he gets so many.",
+          "opts": {
+            "out": "Because almost every play tries to get the out at first",
+            "tall": "Because he's the tallest",
+            "throws": "Because he throws first"
+          }
+        },
+        "4": {
+          "q": "Why is third base called the hot corner?",
+          "ok": "That's it! The hot corner.",
+          "ko": "The balls come so fast you have to react like lightning.",
+          "opts": {
+            "hard": "Because the hits come very hard and very fast",
+            "sun": "Because the sun shines there",
+            "dugout": "Because it's close to the dugout"
+          }
+        },
+        "5": {
+          "q": "The first baseman can keep one foot on the base and stretch to catch the throw",
+          "ok": "Yes! That way he gains a moment for the out.",
+          "ko": "True: foot on the base and stretch for the ball."
+        },
+        "6": {
+          "q": "Drag each player to his corner",
+          "ok": "Corners covered!",
+          "ko": "Each one to his corner: check which is first and which is third.",
+          "opts": {
+            "t1b": "First baseman",
+            "t3b": "Third baseman"
+          },
+          "answer": "First baseman at first, third baseman at third"
+        }
+      }
+    },
+    "2.3": {
+      "title": "Second and shortstop: the middle",
+      "objective": "Find the second baseman and the shortstop, and understand that they cover the middle of the infield and second base.",
+      "demo": [
+        "Two teammates play in the middle of the infield: the second baseman and the shortstop.",
+        "Together they guard the middle and take turns covering second base when there is a throw or a runner.",
+        "They're like a team inside the team."
+      ],
+      "acts": {
+        "1": {
+          "q": "Tap where the shortstop plays",
+          "ok": "That's it! The shortstop.",
+          "ko": "The shortstop plays between second and third.",
+          "answer": "Between second and third"
+        },
+        "2": {
+          "q": "Tap where the second baseman plays",
+          "ok": "Good! That's his territory.",
+          "ko": "The second baseman plays between first and second.",
+          "answer": "Between first and second"
+        },
+        "3": {
+          "q": "Why does second base need two players to cover it?",
+          "ok": "Correct! The second baseman and the shortstop take turns.",
+          "ko": "Nobody stands on second all the time: they cover it in turns.",
+          "opts": {
+            "nobody": "Because nobody plays standing on it all the time",
+            "biggest": "Because it's the biggest",
+            "bat": "Because that's where you bat"
+          }
+        },
+        "4": {
+          "q": "Shortstop is the English word for campocorto",
+          "ok": "Yes! Shortstop means campocorto.",
+          "ko": "True: that's how you say campocorto in English."
+        },
+        "5": {
+          "q": "A ground ball goes right up the middle. Who can get to that ball?",
+          "ok": "That's it! The middle is their zone.",
+          "ko": "Those two guard the middle of the infield.",
+          "opts": {
+            "middle": "The second baseman or the shortstop",
+            "catcher": "The catcher",
+            "rf": "The right fielder"
+          }
+        },
+        "6": {
+          "q": "Drag the shortstop and the second baseman to their correct side",
+          "ok": "Middle covered!",
+          "ko": "Remember: shortstop near third, second baseman near first.",
+          "opts": {
+            "tss": "Shortstop",
+            "t2b": "Second baseman"
+          },
+          "answer": "Shortstop on the left of the infield, second baseman on the right"
+        }
+      }
+    },
+    "2.4": {
+      "title": "The three outfielders",
+      "objective": "Find the left, center and right fielders, and understand that the center fielder covers the most ground and backs up the other two.",
+      "demo": [
+        "Behind the infield, in the outfield, three players play: the left fielder, the center fielder and the right fielder.",
+        "They catch the high, long hits and throw the ball back to the infield fast.",
+        "The one in the middle covers the most space and is the leader of the three.",
+        "Left and right are named looking from home plate out to the field."
+      ],
+      "acts": {
+        "1": {
+          "q": "Tap where the center fielder plays",
+          "ok": "That's it! The center fielder.",
+          "ko": "The center fielder plays in the middle of the outfield.",
+          "answer": "The middle of the outfield"
+        },
+        "2": {
+          "q": "How many outfielders are there?",
+          "ok": "Correct! Left, center and right.",
+          "ko": "There are three outfielders, one for each zone.",
+          "opts": {
+            "three": "Three",
+            "two": "Two",
+            "four": "Four"
+          }
+        },
+        "3": {
+          "q": "Outfielders are named looking from home plate out to the field",
+          "ok": "Yes! That's why the left fielder is on that side when you look from home plate.",
+          "ko": "True: you look from home plate, not from the outfield."
+        },
+        "4": {
+          "q": "Which outfielder covers the most ground?",
+          "ok": "That's it! He runs to both sides.",
+          "ko": "The center fielder covers the biggest space.",
+          "opts": {
+            "center": "The center fielder",
+            "right": "The right fielder",
+            "none": "None of them moves"
+          }
+        },
+        "5": {
+          "q": "The ball went over the infield, very far. Who goes after it?",
+          "ok": "Correct! That's the outfield's job.",
+          "ko": "Far away is outfielder territory: they go get it.",
+          "opts": {
+            "outfielder": "An outfielder",
+            "catcher": "The catcher",
+            "first": "The first baseman"
+          }
+        },
+        "6": {
+          "q": "Drag each outfielder to his zone",
+          "ok": "Outfield covered!",
+          "ko": "Look from home plate: left, center, right.",
+          "opts": {
+            "tlf": "Left fielder",
+            "tcf": "Center fielder",
+            "trf": "Right fielder"
+          },
+          "answer": "Left, center and right, in order from home plate"
+        }
+      }
+    },
+    "2.5": {
+      "title": "The 9 positions and their numbers",
+      "objective": "Memorize the official number of each position: 1 pitcher, 2 catcher, 3 first, 4 second, 5 third, 6 shortstop, 7 left, 8 center, 9 right.",
+      "demo": [
+        "Last secret of this level: every position has a number, and it is the same all over the world.",
+        "One, pitcher.",
+        "Two, catcher.",
+        "Three, first baseman.",
+        "Four, second baseman.",
+        "Five, third baseman.",
+        "Six, shortstop.",
+        "Seven, left fielder.",
+        "Eight, center fielder.",
+        "Nine, right fielder.",
+        "That's how scorekeepers write down the games."
+      ],
+      "acts": {
+        "1": {
+          "q": "What is the pitcher's number?",
+          "ok": "That's it! The pitcher is always number 1.",
+          "ko": "The pitcher starts the count: number 1.",
+          "opts": {
+            "n1": "1",
+            "n2": "2",
+            "n9": "9"
+          }
+        },
+        "2": {
+          "q": "What is the catcher's number?",
+          "ok": "Correct! Catcher equals 2.",
+          "ko": "After the pitcher comes the catcher: number 2.",
+          "opts": {
+            "n2": "2",
+            "n5": "5",
+            "n7": "7"
+          }
+        },
+        "3": {
+          "q": "Tap position number 6",
+          "ok": "Good! Number 6 is the shortstop.",
+          "ko": "Number 6 is the shortstop, between second and third.",
+          "answer": "The shortstop"
+        },
+        "4": {
+          "q": "Which position is number 8?",
+          "ok": "That's it! Center fielder, number 8.",
+          "ko": "Number 8 is the center fielder.",
+          "opts": {
+            "cf": "The center fielder",
+            "first": "The first baseman",
+            "third": "The third baseman"
+          }
+        },
+        "5": {
+          "q": "Position numbers change in every league",
+          "ok": "Good! They're the same everywhere.",
+          "ko": "False: 1 to 9 is the same in all of baseball."
+        },
+        "6": {
+          "q": "Put the cards in order from 1 to 4: pitcher, catcher, first, second",
+          "ok": "Perfect count!",
+          "ko": "In order: pitcher 1, catcher 2, first 3, second 4.",
+          "opts": {
+            "pitcher": "Pitcher",
+            "catcher": "Catcher",
+            "first": "First baseman",
+            "second": "Second baseman"
+          },
+          "answer": "Pitcher 1, catcher 2, first 3, second 4"
+        }
+      }
     }
   },
   "exams": {
@@ -427,6 +742,91 @@
           "runs": "Runs",
           "goals": "Goals",
           "hoops": "Basketball points"
+        }
+      }
+    },
+    "2": {
+      "1": {
+        "q": "Where does the pitcher throw from?",
+        "opts": {
+          "mound": "The mound",
+          "second": "Second base",
+          "dugout": "The dugout"
+        }
+      },
+      "2": {
+        "q": "Which position is number 2?",
+        "opts": {
+          "catcher": "The catcher",
+          "ss": "The shortstop",
+          "rf": "The right fielder"
+        }
+      },
+      "3": {
+        "q": "Tap the third baseman's position on the diagram",
+        "answer": "Third baseman"
+      },
+      "4": {
+        "q": "Which two players are called the battery?",
+        "opts": {
+          "pc": "Pitcher and catcher",
+          "corners": "First and third basemen",
+          "ofs": "The outfielders"
+        }
+      },
+      "5": {
+        "q": "Which position is number 6?",
+        "opts": {
+          "ss": "The shortstop",
+          "second": "The second baseman",
+          "cf": "The center fielder"
+        }
+      },
+      "6": {
+        "q": "How many outfielders play?",
+        "opts": {
+          "three": "Three",
+          "one": "One",
+          "five": "Five"
+        }
+      },
+      "7": {
+        "q": "True or false: third base is called the hot corner"
+      },
+      "8": {
+        "q": "Which position is number 9?",
+        "opts": {
+          "rf": "The right fielder",
+          "pitcher": "The pitcher",
+          "first": "The first baseman"
+        }
+      },
+      "9": {
+        "q": "Who covers the middle of the infield?",
+        "opts": {
+          "middle": "The second baseman and the shortstop",
+          "cu": "The catcher and the umpire",
+          "ofs": "The three outfielders"
+        }
+      },
+      "10": {
+        "q": "Tap the center fielder's position on the diagram",
+        "answer": "Center fielder"
+      },
+      "11": {
+        "q": "Which position catches the most throws to make the out?",
+        "opts": {
+          "first": "The first baseman",
+          "lf": "The left fielder",
+          "catcher": "The catcher"
+        }
+      },
+      "12": {
+        "q": "What is the left fielder's number?",
+        "opts": {
+          "n7": "7",
+          "n4": "4",
+          "n1": "1"
         }
       }
     }

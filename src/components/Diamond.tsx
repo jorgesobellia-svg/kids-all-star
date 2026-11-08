@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Animated, Easing, Platform, View } from 'react-native';
-import Svg, { Circle, G, Line, Path, Polygon, Rect } from 'react-native-svg';
+import Svg, { Circle, G, Line, Path, Polygon, Rect, Text as SvgText } from 'react-native-svg';
 import type { Target } from '@/content/types';
 import { C } from '@/theme';
 
@@ -15,10 +15,26 @@ export const P = {
   mound: { x: 180, y: 194 },
   onDeck: { x: 238, y: 278 },
 };
+// Dónde se para cada uno de los 9 jugadores de la defensa (Prompt 2):
+// pitcher en el montículo, catcher detrás de home, primera y tercera en sus esquinas,
+// segunda entre primera y segunda, campocorto entre segunda y tercera, jardineros mirando desde home.
+export const POS = {
+  mound: { x: 180, y: 194 },
+  posC: { x: 180, y: 284 },
+  pos1b: { x: 244, y: 166 },
+  pos2b: { x: 216, y: 140 },
+  posSS: { x: 144, y: 140 },
+  pos3b: { x: 116, y: 166 },
+  posLF: { x: 82, y: 96 },
+  posCF: { x: 180, y: 54 },
+  posRF: { x: 278, y: 96 },
+};
+/** Número oficial de cada posición, igual en todo el béisbol. */
+export const POS_NUM: Record<keyof typeof POS, number> = { mound: 1, posC: 2, pos1b: 3, pos2b: 4, pos3b: 5, posSS: 6, posLF: 7, posCF: 8, posRF: 9 };
 const LEFT_END = { x: 14, y: 96 };
 const RIGHT_END = { x: 346, y: 96 };
 
-export type Hit = Target | 'mound' | 'none';
+export type Hit = Target | 'none';
 
 interface Props {
   width: number;
@@ -32,12 +48,19 @@ interface Props {
   runKey?: number;
   /** Ruta dibujada (actividad de arrastrar). */
   trail?: Target[];
+  /** Muestra a los 9 jugadores de la defensa. */
+  players?: boolean;
+  /** Muestra el número oficial sobre cada jugador. */
+  numbers?: boolean;
+  /** Lugares vacíos (círculos punteados) para colocar fichas. */
+  slots?: Target[];
   children?: React.ReactNode;
 }
 
-const pt = (t: Target) => (t in P ? P[t as keyof typeof P] : P.home);
+const ALL = { ...P, ...POS } as Record<string, { x: number; y: number }>;
+export const pt = (t: Target) => ALL[t] ?? P.home;
 
-export default function Diamond({ width, highlight = [], good, bad, onTap, run, runKey, trail, children }: Props) {
+export default function Diamond({ width, highlight = [], good, bad, onTap, run, runKey, trail, players, numbers, slots, children }: Props) {
   const s = width / VB.w;
   const height = VB.h * s;
   const hl = (t: Target) => highlight.includes(t) || highlight.includes('all');
@@ -158,12 +181,34 @@ export default function Diamond({ width, highlight = [], good, bad, onTap, run, 
           {homeGlow ? <Circle cx={P.home.x} cy={P.home.y} r={17} fill={homeGlow} fillOpacity={0.35} stroke={homeGlow} strokeWidth={3} /> : null}
           <Polygon points={`172,256 188,256 188,264 180,271 172,264`} fill={C.white} stroke="#8a6a44" strokeWidth={1} />
         </G>
+        {slots?.map((id) => (
+          <Circle key={`slot-${id}`} cx={pt(id).x} cy={pt(id).y} r={17} fill={C.white} fillOpacity={0.18} stroke={C.white} strokeWidth={2.5} strokeDasharray="4 4" />
+        ))}
+        {players
+          ? (Object.keys(POS) as (keyof typeof POS)[]).map((id) => {
+              const p = POS[id];
+              const g = glow(id);
+              return (
+                <G key={id} onPress={tap(id)}>
+                  <Circle cx={p.x} cy={p.y} r={19} fill="#000" fillOpacity={0.001} />
+                  {g ? <Circle cx={p.x} cy={p.y} r={17} fill={g} fillOpacity={0.4} stroke={g} strokeWidth={3} /> : null}
+                  <Circle cx={p.x} cy={p.y + 1} r={11} fill={C.navy} stroke={C.white} strokeWidth={2} />
+                  <Path d={`M${p.x - 9} ${p.y - 3} a 9 7 0 0 1 18 0 z`} fill={C.red} />
+                  {numbers ? (
+                    <SvgText x={p.x} y={p.y + 6} fontSize={11} fontWeight="bold" fill={C.white} textAnchor="middle">
+                      {String(POS_NUM[id])}
+                    </SvgText>
+                  ) : null}
+                </G>
+              );
+            })
+          : null}
       </Svg>
       {/* Capa que late sobre lo resaltado (solo visual) */}
       {highlight.length ? (
         <Animated.View pointerEvents="none" style={{ position: 'absolute', left: 0, top: 0, width, height, opacity: pulseOpacity }}>
           <Svg width={width} height={height} viewBox={`0 0 ${VB.w} ${VB.h}`}>
-            {highlight.filter((t): t is 'first' | 'second' | 'third' | 'home' | 'onDeck' => ['first', 'second', 'third', 'home', 'onDeck'].includes(t)).map((t) => (
+            {highlight.filter((t) => ['first', 'second', 'third', 'home', 'onDeck', ...Object.keys(POS)].includes(t)).map((t) => (
               <Circle key={t} cx={pt(t).x} cy={pt(t).y} r={24} fill="none" stroke={C.gold} strokeWidth={4} />
             ))}
           </Svg>
@@ -197,5 +242,8 @@ export function hitMatches(hit: Hit, target: Target): boolean {
   if (hit === target) return true;
   // El cuadro incluye sus bases y el montículo.
   if (target === 'infield' && (hit === 'first' || hit === 'second' || hit === 'third' || hit === 'mound')) return true;
+  // "Toca junto a primera / tercera": vale la base o el jugador que la cuida.
+  if (target === 'pos1b' && hit === 'first') return true;
+  if (target === 'pos3b' && hit === 'third') return true;
   return false;
 }
