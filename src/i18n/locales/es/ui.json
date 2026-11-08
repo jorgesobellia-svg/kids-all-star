@@ -209,7 +209,11 @@
     "nothingToRestore": "No encontramos una compra para restaurar",
     "error": "No se pudo completar. Inténtalo más tarde.",
     "testMode": "Modo de prueba: no se cobra nada. En el teléfono, el pago lo hace la tienda.",
-    "language": "Idioma de la app"
+    "language": "Idioma de la app",
+    "resetBtn": "Empezar de cero",
+    "resetAsk": "Se borra todo el avance de este dispositivo: idioma, alias, lecciones, insignias, XP y racha. La suscripción Plus no se pierde.",
+    "resetYes": "SÍ, BORRAR TODO",
+    "resetNo": "Cancelar"
   },
   "countries": {
     "US": "Estados Unidos",

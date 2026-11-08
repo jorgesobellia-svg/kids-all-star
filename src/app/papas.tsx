@@ -88,7 +88,8 @@ function PlanCard({ id, title, price, per, on, onPick, recommended }: { id: Plan
   }
 
 export default function ParentsScreen() {
-  const { t, p, setPlus, locale } = useStore();
+  const { t, p, setPlus, locale, reset } = useStore();
+  const [askReset, setAskReset] = useState(false);
   const insets = useSafeAreaInsets();
   const [open, setOpen] = useState(false);
   const [plan, setPlan] = useState<Plan>('annual');
@@ -173,6 +174,31 @@ export default function ParentsScreen() {
           </Pressable>
         </View>
         {TEST_MODE ? <Text style={{ fontFamily: F.bodyBold, fontSize: 12, color: C.brown, textAlign: 'center' }}>{t('parents.testMode')}</Text> : null}
+        {/* Empezar de cero: borra el avance de este dispositivo (con confirmación dentro de la app). */}
+        {askReset ? (
+          <View testID="reset-confirm" style={{ backgroundColor: C.wrongSoft, borderRadius: 16, padding: 16, gap: 12 }}>
+            <Text style={{ fontFamily: F.bodySemi, fontSize: 15, lineHeight: 21, color: '#991B1B' }}>{t('parents.resetAsk')}</Text>
+            <Btn
+              testID="reset-yes"
+              label={t('parents.resetYes')}
+              variant="wrong"
+              onPress={() => {
+                const plus = p.plus;
+                reset();
+                // La compra sigue siendo de la cuenta de la tienda; no se pierde al empezar de cero.
+                if (plus) setPlus(true);
+                router.replace('/');
+              }}
+            />
+            <Pressable accessibilityRole="button" onPress={() => setAskReset(false)} style={{ minHeight: 44, justifyContent: 'center' }}>
+              <Text style={{ fontFamily: F.bodyHeavy, fontSize: 16, color: C.navy, textAlign: 'center' }}>{t('parents.resetNo')}</Text>
+            </Pressable>
+          </View>
+        ) : (
+          <Pressable accessibilityRole="button" testID="reset" onPress={() => setAskReset(true)} style={{ minHeight: 44, justifyContent: 'center' }}>
+            <Text style={{ fontFamily: F.bodyHeavy, fontSize: 15, color: C.wrong, textAlign: 'center' }}>{t('parents.resetBtn')}</Text>
+          </Pressable>
+        )}
       </ScrollView>
     </View>
   );
