@@ -5,6 +5,7 @@ import { C, F } from '@/theme';
 import { OptionArt } from './Art';
 import Diamond, { hitMatches, P, VB, type Hit } from './Diamond';
 import Gear from './Gear';
+import { playSfx } from '@/services/sfx';
 import { tapFeedback } from './ui';
 
 export type Answer =
@@ -97,6 +98,7 @@ function TextChoices({ act, optText, trueLabel, falseLabel, picked, locked, onPi
           disabled={!!locked}
           onPress={() => {
             tapFeedback();
+            playSfx('bat');
             onPick(id);
           }}
           style={[{ minHeight: act.type === 'tf' ? 72 : 60, paddingHorizontal: 16, paddingVertical: 12, justifyContent: 'center', flex: act.type === 'tf' ? 1 : undefined }, optionStyle(stateOf(id, act, picked, locked))]}
@@ -124,6 +126,7 @@ function ImageChoices({ act, optText, picked, locked, onPick, width }: Props) {
           disabled={!!locked}
           onPress={() => {
             tapFeedback();
+            playSfx('bat');
             onPick(id);
           }}
           style={[{ width: cardW, minHeight: 150, padding: 8, alignItems: 'center', justifyContent: 'space-between' }, optionStyle(stateOf(id, act, picked, locked))]}
@@ -145,7 +148,7 @@ function TapAct({ act, width, locked, onAnswer }: Props) {
         width={width}
         good={done ? (act.target as GearTarget) : null}
         bad={done && !correct ? (done.hit as GearTarget) : null}
-        onTap={done ? undefined : (t) => onAnswer({ kind: 'tap', hit: t })}
+        onTap={done ? undefined : (t) => { tapFeedback(); playSfx('bat'); onAnswer({ kind: 'tap', hit: t }); }}
       />
     );
   }
@@ -154,7 +157,7 @@ function TapAct({ act, width, locked, onAnswer }: Props) {
       width={width}
       good={done ? (act.target as Target) : null}
       bad={done && !correct ? (done.hit as Hit) : null}
-      onTap={done ? undefined : (h) => onAnswer({ kind: 'tap', hit: h })}
+      onTap={done ? undefined : (h) => { tapFeedback(); playSfx('bat'); onAnswer({ kind: 'tap', hit: h }); }}
     />
   );
 }
@@ -175,6 +178,7 @@ function DragAct({ act, width, locked, onAnswer, dragHint, retryLabel }: Props) 
     const next = [...cur, b];
     trailRef.current = next;
     setTrail(next);
+    playSfx('bat');
     const route = next.slice(1);
     const wrongSoFar = route.some((t, i) => want[i] !== t);
     if (wrongSoFar || route.length === want.length) onAnswer({ kind: 'route', route });

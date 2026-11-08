@@ -29,7 +29,14 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-router",
+      [
+        "expo-router",
+        {
+          "asyncRoutes": {
+            "web": false
+          }
+        }
+      ],
       "expo-localization",
       "expo-font",
       [
@@ -39,7 +46,8 @@
           "imageWidth": 160,
           "backgroundColor": "#0C2340"
         }
-      ]
+      ],
+      "expo-audio"
     ],
     "scheme": "kidsallstar",
     "experiments": {

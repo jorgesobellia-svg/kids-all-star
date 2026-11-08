@@ -1,9 +1,14 @@
 import * as Haptics from 'expo-haptics';
 import React from 'react';
 import { Platform, Pressable, StyleProp, Text, TextStyle, View, ViewStyle } from 'react-native';
+import { preloadSfx } from '@/services/sfx';
+import { unlockSpeech } from '@/services/speech';
 import { C, F } from '@/theme';
 
 export function tapFeedback() {
+  // El primer toque habilita la voz y los sonidos (los navegadores y el iPhone lo exigen).
+  unlockSpeech();
+  preloadSfx();
   if (Platform.OS !== 'web') Haptics.selectionAsync().catch(() => {});
 }
 

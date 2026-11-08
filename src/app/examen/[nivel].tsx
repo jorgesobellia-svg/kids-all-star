@@ -9,6 +9,7 @@ import { getLevel, REWARDS } from '@/content/levels';
 import type { Activity } from '@/content/types';
 import { content } from '@/i18n';
 import { submitScore } from '@/services/scoreboard';
+import { playSfx } from '@/services/sfx';
 import { speak, stopSpeaking } from '@/services/speech';
 import { useStore, weekKey } from '@/state/store';
 import { C, F } from '@/theme';
@@ -53,7 +54,10 @@ export default function ExamScreen() {
   const submit = (a: Answer) => {
     if (answered) return;
     setAnswer(a);
-    if (isCorrect(act, a)) setScore((s) => s + 1);
+    if (isCorrect(act, a)) {
+      playSfx('cheer');
+      setScore((s) => s + 1);
+    }
     else setWrong((w) => [...w, i]);
   };
 

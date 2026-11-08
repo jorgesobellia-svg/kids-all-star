@@ -10,6 +10,7 @@ import { Btn, Label, ProgressBar } from '@/components/ui';
 import { getLesson } from '@/content/levels';
 import type { DemoSegment, GearTarget, Target } from '@/content/types';
 import { content } from '@/i18n';
+import { playSfx } from '@/services/sfx';
 import { speak, stopSpeaking } from '@/services/speech';
 import { submitScore } from '@/services/scoreboard';
 import { dayKey, useStore, weekKey, type LessonReward } from '@/state/store';
@@ -109,6 +110,7 @@ export default function LessonScreen() {
     setAnswer(a);
     const ok = isCorrect(act, a);
     if (ok) {
+      playSfx('cheer');
       setCorrectCount((c) => c + 1);
       if (!missed.has(curIdx)) setFirstTry((s) => new Set(s).add(curIdx));
     } else {
