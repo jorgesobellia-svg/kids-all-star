@@ -569,10 +569,12 @@ const NOVATO: Level[] = [
 export const LEVELS: Level[] = [...NOVATO, ...LEVELS_V3];
 
 /** Etapa de cada nivel: Novato 1-4, Prospecto 5-8, Estrella 9-12. */
-export type Stage = 'rookie' | 'prospect' | 'star';
-export const stageOf = (n: number): Stage => (n <= 4 ? 'rookie' : n <= 8 ? 'prospect' : 'star');
+export type Stage = 'rookie' | 'prospect' | 'star' | 'legend' | 'hall';
+export const stageOf = (n: number): Stage => (n <= 4 ? 'rookie' : n <= 8 ? 'prospect' : n <= 12 ? 'star' : n <= 16 ? 'legend' : 'hall');
+/** Sufijo de las claves de texto de cada etapa (path.stage…, exam.stage…). */
+export const STAGE_SUFFIX: Record<Stage, string> = { rookie: '', prospect: 'Prospect', star: 'Star', legend: 'Legend', hall: 'Hall' };
 /** Último nivel de cada etapa: al aprobar su examen se entrega el diploma. */
-export const STAGE_END: Record<number, Stage> = { 4: 'rookie', 8: 'prospect', 12: 'star' };
+export const STAGE_END: Record<number, Stage> = { 4: 'rookie', 8: 'prospect', 12: 'star', 16: 'legend', 20: 'hall' };
 
 export const REWARDS = {
   xpPerCorrect: 10,

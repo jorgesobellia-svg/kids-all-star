@@ -4,7 +4,7 @@ import { Pressable, ScrollView, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { CheckIcon, CoinBall, Flame, LockIcon, Mascot, StarIcon, TrophyIcon } from '@/components/Art';
 import { tapFeedback } from '@/components/ui';
-import { LEVELS, stageOf } from '@/content/levels';
+import { LEVELS, STAGE_SUFFIX, stageOf } from '@/content/levels';
 import { content } from '@/i18n';
 import { TEST_MODE } from '@/services/billing';
 import { useStore } from '@/state/store';
@@ -88,7 +88,7 @@ export default function PathScreen() {
             <View key={lv.n} style={{ marginTop: 6 }}>
               <View style={{ marginHorizontal: 16, backgroundColor: hasAccess ? C.navy : '#334155', borderRadius: 20, paddingVertical: 14, paddingHorizontal: 18, flexDirection: 'row', alignItems: 'center' }}>
                 <View style={{ flex: 1 }}>
-                  <Text style={{ fontFamily: F.bodyHeavy, fontSize: 13, letterSpacing: 1, color: C.gold }}>{t(stageOf(lv.n) === 'rookie' ? 'path.stage' : stageOf(lv.n) === 'prospect' ? 'path.stageProspect' : 'path.stageStar', { n: lv.n })}</Text>
+                  <Text style={{ fontFamily: F.bodyHeavy, fontSize: 13, letterSpacing: 1, color: C.gold }}>{t(`path.stage${STAGE_SUFFIX[stageOf(lv.n)]}`, { n: lv.n })}</Text>
                   <Text style={{ fontFamily: F.display, fontSize: 26, color: C.white }}>{lt.title}</Text>
                 </View>
                 {!lv.free ? (

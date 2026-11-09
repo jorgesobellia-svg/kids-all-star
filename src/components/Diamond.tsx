@@ -58,6 +58,9 @@ export const XP: Record<string, { x: number; y: number }> = {
   path23: { x: 145, y: 157 },
   path3h: { x: 145, y: 227 },
   bullpen: { x: 322, y: 172 },
+  // Niveles 13 a 20: la pista de advertencia (junto a la cerca) y el carril del corredor a primera.
+  track: { x: 180, y: 34 },
+  lane: { x: 240, y: 212 },
 };
 // Dónde se para un corredor (además de las bases).
 const SPOT: Record<string, { x: number; y: number }> = {
@@ -124,6 +127,14 @@ function flightPath(kind: string, to: { x: number; y: number }) {
   return `M${h.x} ${h.y} Q${(h.x + to.x) / 2} ${Math.min(h.y, to.y) - lift} ${to.x} ${to.y}`;
 }
 
+/** Arco de la pista de advertencia: un poco por dentro de la cerca. */
+function trackArc() {
+  const k = 226 / 236;
+  const a = { x: P.home.x + (LEFT_END.x - P.home.x) * k, y: P.home.y + (LEFT_END.y - P.home.y) * k };
+  const b = { x: P.home.x + (RIGHT_END.x - P.home.x) * k, y: P.home.y + (RIGHT_END.y - P.home.y) * k };
+  return `M${a.x} ${a.y} A 226 226 0 0 1 ${b.x} ${b.y}`;
+}
+
 function Extras({ fx, glow, tap }: { fx: FieldExtras; glow: (t: Target) => string | null; tap: (h: Hit) => (() => void) | undefined }) {
   const ball = fx.ball;
   const to = ball ? spotPt(ball.to) : null;
@@ -135,6 +146,18 @@ function Extras({ fx, glow, tap }: { fx: FieldExtras; glow: (t: Target) => strin
           <Circle cx={312} cy={172} r={7} fill={C.dirt} />
           <Circle cx={336} cy={172} r={7} fill={C.dirt} />
           {glow('bullpen') ? <Rect x={296} y={146} width={56} height={52} rx={8} fill={glow('bullpen')!} fillOpacity={0.3} /> : null}
+        </G>
+      ) : null}
+      {fx.track ? (
+        <G onPress={tap('track')}>
+          <Path d={trackArc()} fill="none" stroke={glow('track') ?? '#B9875A'} strokeWidth={13} strokeOpacity={glow('track') ? 0.9 : 1} />
+          <Path d={trackArc()} fill="none" stroke="#000" strokeOpacity={0.001} strokeWidth={30} />
+        </G>
+      ) : null}
+      {fx.lane ? (
+        <G onPress={tap('lane')}>
+          <Polygon points="215,227 250,192 260,202 225,237" fill={glow('lane') ?? C.dirt} fillOpacity={glow('lane') ? 0.75 : 1} stroke={C.white} strokeWidth={2} />
+          <Polygon points="205,227 250,182 272,204 227,249" fill="#000" fillOpacity={0.001} />
         </G>
       ) : null}
       {fx.backstop ? (
@@ -363,7 +386,7 @@ export default function Diamond({ width, highlight = [], good, bad, onTap, run, 
       {highlight.length ? (
         <Animated.View pointerEvents="none" style={{ position: 'absolute', left: 0, top: 0, width, height, opacity: pulseOpacity }}>
           <Svg width={width} height={height} viewBox={`0 0 ${VB.w} ${VB.h}`}>
-            {highlight.filter((t) => ['first', 'second', 'third', 'home', 'onDeck', 'cutoff', 'backstop', 'path12', ...Object.keys(POS)].includes(t) || t.startsWith('run-') || t.startsWith('fld-')).map((t) => (
+            {highlight.filter((t) => ['first', 'second', 'third', 'home', 'onDeck', 'cutoff', 'backstop', 'path12', 'track', 'lane', ...Object.keys(POS)].includes(t) || t.startsWith('run-') || t.startsWith('fld-')).map((t) => (
               <Circle key={t} cx={pt(t).x} cy={pt(t).y} r={24} fill="none" stroke={C.gold} strokeWidth={4} />
             ))}
           </Svg>

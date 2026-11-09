@@ -1,14 +1,15 @@
 import React from 'react';
 import { Circle, Ellipse, G, Line, Path, Polygon, Rect } from 'react-native-svg';
 import { C } from '@/theme';
+import { XArt4 } from './ArtV4';
 
 // Dibujos de las opciones con imagen de los niveles 5 a 12 (clave "x:nombre").
 // Todos usan el mismo lienzo de 72×60 que los dibujos de los niveles 1 a 4.
 
-const SKIN = '#F2C29B';
+export const SKIN = '#F2C29B';
 
 /** Campo pequeño con jardines, cuadro y cerca. Home abajo. */
-function Park({ children }: { children?: React.ReactNode }) {
+export function Park({ children }: { children?: React.ReactNode }) {
   return (
     <G>
       <Rect x={0} y={0} width={72} height={60} rx={10} fill="#2A6E2D" />
@@ -30,7 +31,7 @@ function Park({ children }: { children?: React.ReactNode }) {
 }
 
 /** Diamante grande (solo el cuadro), para corredores. */
-function Dia({ children }: { children?: React.ReactNode }) {
+export function Dia({ children }: { children?: React.ReactNode }) {
   return (
     <G>
       <Rect x={0} y={0} width={72} height={60} rx={10} fill="#2A6E2D" />
@@ -49,20 +50,20 @@ function Dia({ children }: { children?: React.ReactNode }) {
   );
 }
 
-const Ball = ({ x, y, r = 3.4 }: { x: number; y: number; r?: number }) => <Circle cx={x} cy={y} r={r} fill={C.white} stroke={C.red} strokeWidth={1} />;
-const Runner = ({ x, y }: { x: number; y: number }) => (
+export const Ball = ({ x, y, r = 3.4 }: { x: number; y: number; r?: number }) => <Circle cx={x} cy={y} r={r} fill={C.white} stroke={C.red} strokeWidth={1} />;
+export const Runner = ({ x, y }: { x: number; y: number }) => (
   <G>
     <Circle cx={x} cy={y} r={4.6} fill={C.red} stroke={C.white} strokeWidth={1.4} />
     <Path d={`M${x - 3.6} ${y - 1} a 3.6 3 0 0 1 7.2 0 z`} fill={C.navy} />
   </G>
 );
-const Arrow = ({ d, color = C.gold }: { d: string; color?: string }) => <Path d={d} fill="none" stroke={color} strokeWidth={2.2} strokeDasharray="3 2" strokeLinecap="round" />;
+export const Arrow = ({ d, color = C.gold }: { d: string; color?: string }) => <Path d={d} fill="none" stroke={color} strokeWidth={2.2} strokeDasharray="3 2" strokeLinecap="round" />;
 const Bad = ({ x, y }: { x: number; y: number }) => <Circle cx={x} cy={y} r={8} fill="none" stroke={C.wrong} strokeWidth={2.4} />;
 
 type Pose = 'stand' | 'swing' | 'bunt' | 'batDown' | 'run' | 'glove' | 'throw' | 'sit' | 'angry' | 'tease' | 'arms' | 'set' | 'stop' | 'bandage';
 
 /** Jugador de cuerpo entero. (x, y) = pies. */
-function Kid({ x, y, pose = 'stand', color = C.red, flip = false }: { x: number; y: number; pose?: Pose; color?: string; flip?: boolean }) {
+export function Kid({ x, y, pose = 'stand', color = C.red, flip = false }: { x: number; y: number; pose?: Pose; color?: string; flip?: boolean }) {
   const f = flip ? -1 : 1;
   const top = y - 30;
   const body = (
@@ -547,6 +548,6 @@ export function XArt({ name }: { name: string }) {
         </G>
       );
     default:
-      return null;
+      return <XArt4 name={name} />;
   }
 }

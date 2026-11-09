@@ -63,6 +63,8 @@
     "stage": "ルーキーステージ · レベル {n}",
     "stageProspect": "プロスペクトステージ · レベル {n}",
     "stageStar": "スターステージ · レベル {n}",
+    "stageLegend": "レジェンドステージ · レベル {n}",
+    "stageHall": "殿堂ステージ · レベル {n}",
     "start": "スタート！",
     "exam": "テスト",
     "plus": "PLUS",
@@ -133,7 +135,15 @@
     "stageTitleStar": "スターステージをクリア！",
     "stageDiplomaStar": "スターステージ修了証",
     "stageTextStar": "打つ、走る、守る、腕を大切にして投げる、オールスターのように考える。ぜんぶできるようになったね。",
-    "stageNextStar": "ペロティンがオールスターのユニフォームを手に入れたよ。"
+    "stageNextStar": "ペロティンがオールスターのユニフォームを手に入れたよ。",
+    "stageTitleLegend": "レジェンドステージをクリア！",
+    "stageDiplomaLegend": "レジェンドステージ修了証",
+    "stageTextLegend": "ペロティンがレジェンドのユニフォームを手に入れたよ。",
+    "stageNextLegend": "レベル17が開いて、殿堂ステージが始まるよ。",
+    "stageTitleHall": "殿堂入りおめでとう！",
+    "stageDiplomaHall": "殿堂入り修了証",
+    "stageTextHall": "ペロティンが殿堂のユニフォームを手に入れたよ。ルーキーから殿堂まで、5つのステージをぜんぶクリアしたね。",
+    "stageNextHall": "ほんとうの野球はこれから：グラウンドで、コーチといっしょに。プレイボール！"
   },
   "board": {
     "away": "ビジター",
@@ -187,6 +197,10 @@
   },
   "profile": {
     "stage": "ルーキーステージ · レベル {n}",
+    "stageProspect": "プロスペクトステージ · レベル {n}",
+    "stageStar": "スターステージ · レベル {n}",
+    "stageLegend": "レジェンドステージ · レベル {n}",
+    "stageHall": "殿堂ステージ · レベル {n}",
     "streak": "日連続",
     "xp": "合計XP",
     "league": "今のリーグ",

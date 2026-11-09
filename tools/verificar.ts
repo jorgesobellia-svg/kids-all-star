@@ -16,7 +16,7 @@ const read = (p: string) => JSON.parse(fs.readFileSync(path.join(ROOT, p), 'utf8
 
 // ---------------------------------------------------------------- Guion (docs/guion-v2.md)
 // Niveles 1-4: guion Versión 2. Niveles 5-12: guion definitivo (Versión Fusionada).
-const doc = ['docs/guion-v2.md', 'docs/guion-v3-niveles-5-12.md'].flatMap((f) => fs.readFileSync(path.join(ROOT, f), 'utf8').split('\n'));
+const doc = ['docs/guion-v2.md', 'docs/guion-v3-niveles-5-12.md', 'docs/guion-v4-niveles-13-20.md'].flatMap((f) => fs.readFileSync(path.join(ROOT, f), 'utf8').split('\n'));
 const docAnswer = new Map<string, string[]>(); // pregunta -> correctas (la misma pregunta puede salir en la lección y en el examen)
 const addAnswer = (q: string, a: string) => docAnswer.set(q, [...(docAnswer.get(q) ?? []), a]);
 const docLessons = new Map<string, number>(); // lección -> nº de actividades
@@ -106,6 +106,7 @@ for (const lang of LOCALES) {
       const forms = String(g[term])
         .split('/')
         .map((f) => f.trim().replace(/^(el|la|los|las)\s+/i, '').toLowerCase())
+        .flatMap((f) => [f, f.replace(/\s*[(（][^)）]*[)）]\s*/g, ' ').trim()])
         .filter(Boolean);
       if (!forms.some((f) => blob.includes(f))) badTerms.push(`${l.id}:${term} (${g[term]})`);
     }

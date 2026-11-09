@@ -63,6 +63,8 @@
     "stage": "新秀阶段 · 第 {n} 级",
     "stageProspect": "潜力新星阶段 · 第 {n} 级",
     "stageStar": "明星阶段 · 第 {n} 级",
+    "stageLegend": "传奇阶段 · 第 {n} 级",
+    "stageHall": "名人堂阶段 · 第 {n} 级",
     "start": "开始！",
     "exam": "测验",
     "plus": "PLUS",
@@ -133,7 +135,15 @@
     "stageTitleStar": "你完成了明星阶段！",
     "stageDiplomaStar": "明星阶段证书",
     "stageTextStar": "你已经会击球、跑垒、防守、爱护手臂地投球，还会像全明星一样思考。",
-    "stageNextStar": "Pelotín 已经穿上了全明星球衣。"
+    "stageNextStar": "Pelotín 已经穿上了全明星球衣。",
+    "stageTitleLegend": "你完成了传奇阶段！",
+    "stageDiplomaLegend": "传奇阶段证书",
+    "stageTextLegend": "Pelotín 已经穿上了传奇球衣。",
+    "stageNextLegend": "第 17 级已解锁，名人堂阶段开始了。",
+    "stageTitleHall": "你进入了名人堂！",
+    "stageDiplomaHall": "名人堂证书",
+    "stageTextHall": "Pelotín 已经穿上了名人堂球衣。你完成了全部五个阶段，从新秀到名人堂。",
+    "stageNextHall": "你真正的棒球才刚刚开始：在球场上，和你的教练一起。比赛开始！"
   },
   "board": {
     "away": "客队",
@@ -187,6 +197,10 @@
   },
   "profile": {
     "stage": "新秀阶段 · 第 {n} 级",
+    "stageProspect": "潜力新星阶段 · 第 {n} 级",
+    "stageStar": "明星阶段 · 第 {n} 级",
+    "stageLegend": "传奇阶段 · 第 {n} 级",
+    "stageHall": "名人堂阶段 · 第 {n} 级",
     "streak": "连续天数",
     "xp": "总经验",
     "league": "当前联赛",

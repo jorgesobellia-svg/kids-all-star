@@ -3,7 +3,7 @@ import React from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { BadgeMedal, BallBadge, CoinBall, Flame, LockIcon, Mascot, StarIcon } from '@/components/Art';
-import { LEVELS } from '@/content/levels';
+import { LEVELS, STAGE_SUFFIX, stageOf } from '@/content/levels';
 import { content, translate } from '@/i18n';
 import { initials } from '@/services/moderation';
 import { useStore } from '@/state/store';
@@ -39,7 +39,7 @@ export default function ProfileScreen() {
           <Text testID="profile-name" style={{ fontFamily: F.display, fontSize: 30, color: C.ink }}>
             {p.nickname}
           </Text>
-          <Text style={{ fontFamily: F.bodySemi, fontSize: 15, color: C.muted }}>{t('profile.stage', { n: levelNow })}</Text>
+          <Text style={{ fontFamily: F.bodySemi, fontSize: 15, color: C.muted }}>{t(`profile.stage${STAGE_SUFFIX[stageOf(levelNow)]}`, { n: levelNow })}</Text>
         </View>
         <BallBadge text={initials(p.nickname ?? '')} size={48} ink={C.red} ring={C.red} ringWidth={3.5} fontSize={13} />
       </View>

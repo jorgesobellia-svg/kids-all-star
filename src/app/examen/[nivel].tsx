@@ -5,7 +5,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import ActivityView, { isCorrect, type Answer } from '@/components/Activity';
 import { BadgeMedal, CheckIcon, Mascot, TrophyIcon } from '@/components/Art';
 import { Btn, Card, H1, Label, ProgressBar } from '@/components/ui';
-import { getLevel, REWARDS, STAGE_END } from '@/content/levels';
+import { getLevel, REWARDS, STAGE_END, STAGE_SUFFIX } from '@/content/levels';
 import type { Activity } from '@/content/types';
 import { content } from '@/i18n';
 import { submitScore } from '@/services/scoreboard';
@@ -164,16 +164,16 @@ export default function ExamScreen() {
           {passed && STAGE_END[level.n] ? (
             // Cierre de la etapa Novato: diploma y mensaje del guion.
             <View testID="stage-diploma" style={{ width: '100%', backgroundColor: C.white, borderRadius: 20, padding: 18, gap: 10, alignItems: 'center', borderWidth: 4, borderColor: C.gold }}>
-              <Text style={{ fontFamily: F.bodyHeavy, fontSize: 13, color: C.red, letterSpacing: 1 }}>{t(`exam.stageDiploma${STAGE_END[level.n] === 'rookie' ? '' : STAGE_END[level.n] === 'prospect' ? 'Prospect' : 'Star'}`)}</Text>
-              <Text style={{ fontFamily: F.display, fontSize: 28, color: C.navy, textAlign: 'center' }}>{t(`exam.stageTitle${STAGE_END[level.n] === 'rookie' ? '' : STAGE_END[level.n] === 'prospect' ? 'Prospect' : 'Star'}`)}</Text>
+              <Text style={{ fontFamily: F.bodyHeavy, fontSize: 13, color: C.red, letterSpacing: 1 }}>{t(`exam.stageDiploma${STAGE_SUFFIX[STAGE_END[level.n]]}`)}</Text>
+              <Text style={{ fontFamily: F.display, fontSize: 28, color: C.navy, textAlign: 'center' }}>{t(`exam.stageTitle${STAGE_SUFFIX[STAGE_END[level.n]]}`)}</Text>
               <Text style={{ fontFamily: F.display, fontSize: 24, color: C.gold }}>{p.nickname ?? ''}</Text>
               <View style={{ flexDirection: 'row', gap: 6 }}>
                 {[level.n - 3, level.n - 2, level.n - 1, level.n].map((n) => (
                   <BadgeMedal key={n} size={40} earned level={n} />
                 ))}
               </View>
-              <Text style={{ fontFamily: F.bodySemi, fontSize: 16, lineHeight: 22, color: C.ink, textAlign: 'center' }}>{t(`exam.stageText${STAGE_END[level.n] === 'rookie' ? '' : STAGE_END[level.n] === 'prospect' ? 'Prospect' : 'Star'}`)}</Text>
-              <Text style={{ fontFamily: F.body, fontSize: 14, lineHeight: 20, color: C.muted, textAlign: 'center' }}>{t(`exam.stageNext${STAGE_END[level.n] === 'rookie' ? '' : STAGE_END[level.n] === 'prospect' ? 'Prospect' : 'Star'}`)}</Text>
+              <Text style={{ fontFamily: F.bodySemi, fontSize: 16, lineHeight: 22, color: C.ink, textAlign: 'center' }}>{t(`exam.stageText${STAGE_SUFFIX[STAGE_END[level.n]]}`)}</Text>
+              <Text style={{ fontFamily: F.body, fontSize: 14, lineHeight: 20, color: C.muted, textAlign: 'center' }}>{t(`exam.stageNext${STAGE_SUFFIX[STAGE_END[level.n]]}`)}</Text>
             </View>
           ) : null}
           {passed ? null : (

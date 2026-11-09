@@ -63,6 +63,8 @@
     "stage": "ROOKIE STAGE · LEVEL {n}",
     "stageProspect": "PROSPECT STAGE · LEVEL {n}",
     "stageStar": "STAR STAGE · LEVEL {n}",
+    "stageLegend": "LEGEND STAGE · LEVEL {n}",
+    "stageHall": "HALL OF FAME STAGE · LEVEL {n}",
     "start": "START!",
     "exam": "TEST",
     "plus": "PLUS",
@@ -133,7 +135,15 @@
     "stageTitleStar": "You finished the Star stage!",
     "stageDiplomaStar": "Star stage diploma",
     "stageTextStar": "You now know how to hit, run, play defense, pitch with care and think like an All Star.",
-    "stageNextStar": "Pelotín now has the All Star uniform."
+    "stageNextStar": "Pelotín now has the All Star uniform.",
+    "stageTitleLegend": "You finished the Legend stage!",
+    "stageDiplomaLegend": "Legend stage diploma",
+    "stageTextLegend": "Pelotín now has the Legend uniform.",
+    "stageNextLegend": "Level 17 is unlocked and the Hall of Fame stage begins.",
+    "stageTitleHall": "You made the Hall of Fame!",
+    "stageDiplomaHall": "Hall of Fame diploma",
+    "stageTextHall": "Pelotín now has the Hall of Fame uniform. You finished all five stages, from Rookie to Hall of Fame.",
+    "stageNextHall": "Your real baseball is just beginning: on the field, with your coach. Play ball!"
   },
   "board": {
     "away": "VISITORS",
@@ -187,6 +197,10 @@
   },
   "profile": {
     "stage": "Rookie stage · Level {n}",
+    "stageProspect": "Prospect stage · Level {n}",
+    "stageStar": "Star stage · Level {n}",
+    "stageLegend": "Legend stage · Level {n}",
+    "stageHall": "Hall of Fame stage · Level {n}",
     "streak": "day streak",
     "xp": "total XP",
     "league": "current league",

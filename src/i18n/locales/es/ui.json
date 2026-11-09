@@ -63,6 +63,8 @@
     "stage": "ETAPA NOVATO · NIVEL {n}",
     "stageProspect": "ETAPA PROSPECTO · NIVEL {n}",
     "stageStar": "ETAPA ESTRELLA · NIVEL {n}",
+    "stageLegend": "ETAPA LEYENDA · NIVEL {n}",
+    "stageHall": "ETAPA SALÓN DE LA FAMA · NIVEL {n}",
     "start": "¡EMPEZAR!",
     "exam": "EXAMEN",
     "plus": "PLUS",
@@ -133,7 +135,15 @@
     "stageTitleStar": "¡Completaste la etapa Estrella!",
     "stageDiplomaStar": "Diploma de la etapa Estrella",
     "stageTextStar": "Ya sabes batear, correr, defender, lanzar con cuidado y pensar como un All Star.",
-    "stageNextStar": "Pelotín ya tiene su uniforme All Star."
+    "stageNextStar": "Pelotín ya tiene su uniforme All Star.",
+    "stageTitleLegend": "¡Completaste la etapa Leyenda!",
+    "stageDiplomaLegend": "Diploma de la etapa Leyenda",
+    "stageTextLegend": "Pelotín ya tiene su uniforme de Leyenda.",
+    "stageNextLegend": "Se desbloquea el Nivel 17 y empieza la etapa Salón de la Fama.",
+    "stageTitleHall": "¡Entraste al Salón de la Fama!",
+    "stageDiplomaHall": "Diploma del Salón de la Fama",
+    "stageTextHall": "Pelotín ya tiene su uniforme del Salón de la Fama. Completaste las cinco etapas, de Novato a Salón de la Fama.",
+    "stageNextHall": "Tu béisbol de verdad apenas empieza: en el campo, con tu coach. ¡A jugar!"
   },
   "board": {
     "away": "VISITANTE",
@@ -187,6 +197,10 @@
   },
   "profile": {
     "stage": "Etapa Novato · Nivel {n}",
+    "stageProspect": "Etapa Prospecto · Nivel {n}",
+    "stageStar": "Etapa Estrella · Nivel {n}",
+    "stageLegend": "Etapa Leyenda · Nivel {n}",
+    "stageHall": "Etapa Salón de la Fama · Nivel {n}",
     "streak": "días de racha",
     "xp": "XP total",
     "league": "liga actual",

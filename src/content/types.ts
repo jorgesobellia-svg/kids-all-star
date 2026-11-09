@@ -29,6 +29,8 @@ export type Target =
   | 'backstop' // detrás de home
   | 'path12' // el camino entre primera y segunda
   | 'bullpen'
+  | 'track' // la pista de advertencia (Nivel 15)
+  | 'lane' // el carril del corredor a primera (Nivel 16)
   | 'cutoff' // el cortador, entre el jardín central y home
   | 'anyOF' // cualquier jardinero
   | `run-${string}` // un corredor parado en un lugar (run-second, run-lead2…)
@@ -64,6 +66,10 @@ export interface FieldExtras {
   backstop?: boolean;
   /** Dibuja el camino entre primera y segunda como zona que se puede tocar. */
   path12?: boolean;
+  /** Pista de advertencia junto a la cerca (Nivel 15). */
+  track?: boolean;
+  /** Carril del corredor a primera, en zona de foul (Nivel 16). */
+  lane?: boolean;
 }
 
 /** Marcador completo con carreras, hits y errores (Nivel 8). */
