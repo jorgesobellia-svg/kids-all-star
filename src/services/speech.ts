@@ -1,11 +1,12 @@
+import { createAudioPlayer, type AudioPlayer } from 'expo-audio';
 import * as Speech from 'expo-speech';
+import { VOICE_ES_FILES, VOICE_ES_INDEX } from '@/content/voiceEs';
 import { Platform } from 'react-native';
 import { SPEECH_LANG, type Locale } from '@/i18n';
 import { playSfx } from './sfx';
 
-// Voz de la mascota. Por ahora usa la voz del sistema en el idioma elegido
-// (es-US, en-US, zh-CN, ja-JP). Cuando existan las grabaciones con voces infantiles,
-// se reemplaza aquí por audio grabado, sin tocar las pantallas.
+// Voz de la mascota. En español usa la voz grabada (Alex) cuando la frase está grabada;
+// si no, y en los otros idiomas, usa la voz del sistema (es-US, en-US, zh-CN, ja-JP).
 //
 // En navegadores (y en el iPhone) la voz solo se permite después de que el niño toca
 // la pantalla: unlockSpeech() se llama en cada toque y "despierta" la voz la primera vez.
@@ -102,8 +103,76 @@ function speakWeb(s: WebSynth, text: string, locale: Locale, id: number, onDone?
   }, 80);
 }
 
+// ------------------------------------------------------------ voz grabada
+type Clip = [number, number, number];
+const voicePlayers: Record<number, AudioPlayer> = {};
+let activeClip: AudioPlayer | null = null;
+let clipTimer: ReturnType<typeof setTimeout> | null = null;
+
+// El saludo con el nombre ("¡Hola, Claude! ...") no puede ir grabado: suena "¡Hola!" grabado y sigue la frase.
+const HELLO_RX = /^¡Hola, [^!]+! /;
+
+function clipsFor(text: string, locale: Locale): Clip[] | null {
+  if (locale !== 'es') return null;
+  const whole = VOICE_ES_INDEX[text];
+  if (whole) return [whole];
+  const m = text.match(HELLO_RX);
+  if (m) {
+    const hello = VOICE_ES_INDEX['¡Hola!'];
+    const rest = VOICE_ES_INDEX[text.slice(m[0].length)];
+    if (hello && rest) return [hello, rest];
+  }
+  return null;
+}
+
+function stopClip() {
+  if (clipTimer) clearTimeout(clipTimer);
+  clipTimer = null;
+  if (activeClip) {
+    try {
+      activeClip.pause();
+    } catch {
+      // nada
+    }
+  }
+  activeClip = null;
+}
+
+function playClips(clips: Clip[], id: number, onDone?: () => void) {
+  const [file, start, dur] = clips[0];
+  try {
+    if (!voicePlayers[file]) voicePlayers[file] = createAudioPlayer(VOICE_ES_FILES[file]);
+    const pl = voicePlayers[file];
+    activeClip = pl;
+    pl.seekTo(start);
+    pl.play();
+    clipTimer = setTimeout(() => {
+      if (id !== current) return;
+      stopClip();
+      if (clips.length > 1) playClips(clips.slice(1), id, onDone);
+      else onDone?.();
+    }, dur * 1000 + 80);
+  } catch {
+    onDone?.();
+  }
+}
+
 export function speak(text: string, locale: Locale, onDone?: () => void, o: VoiceOpts = {}): void {
   const id = ++current;
+  stopClip();
+  const clips = clipsFor(text, locale);
+  if (clips) {
+    const s0 = webSynth();
+    if (s0) {
+      try {
+        s0.cancel();
+      } catch {
+        // nada
+      }
+    } else if (Platform.OS !== 'web') Speech.stop();
+    playClips(clips, id, onDone);
+    return;
+  }
   const s = webSynth();
   if (Platform.OS === 'web') {
     if (s) speakWeb(s, text, locale, id, onDone, o);
@@ -131,6 +200,7 @@ export function speak(text: string, locale: Locale, onDone?: () => void, o: Voic
 
 export function stopSpeaking(): void {
   current++;
+  stopClip();
   const s = webSynth();
   if (s) {
     try {
