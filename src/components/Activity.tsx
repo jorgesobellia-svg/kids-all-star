@@ -137,9 +137,10 @@ function TextChoices({ act, optText, trueLabel, falseLabel, picked, locked, onPi
 
 function ImageChoices({ act, optText, picked, locked, onPick, width }: Props) {
   const ids = useMemo(() => shuffle(act.options ?? []), [act]);
-  const cardW = (width - 24) / 3;
+  // Tarjetas en vertical, una debajo de otra: la imagen ocupa casi la mitad del ancho para que se aprecie.
+  const artSize = Math.min(125, Math.round(width * 0.34)); // el dibujo mide 1.2 × alto de ancho
   return (
-    <View style={{ flexDirection: 'row', gap: 12 }}>
+    <View style={{ gap: 12 }}>
       {ids.map((id) => (
         <Pressable
           key={id}
@@ -152,10 +153,10 @@ function ImageChoices({ act, optText, picked, locked, onPick, width }: Props) {
             playSfx('bat');
             onPick(id);
           }}
-          style={[{ width: cardW, minHeight: 150, padding: 8, alignItems: 'center', justifyContent: 'space-between' }, optionStyle(stateOf(id, act, picked, locked))]}
+          style={[{ width, flexDirection: 'row', alignItems: 'center', gap: 12, padding: 10 }, optionStyle(stateOf(id, act, picked, locked))]}
         >
-          <View style={{ flex: 1, justifyContent: 'center' }}>{act.images?.[id] ? <OptionArt image={act.images[id]} size={56} /> : null}</View>
-          <Text style={{ fontFamily: F.bodyHeavy, fontSize: 13, color: C.ink, textAlign: "center" }}>{optText(id)}</Text>
+          <View style={{ width: Math.round(artSize * 1.2), alignItems: 'center', justifyContent: 'center' }}>{act.images?.[id] ? <OptionArt image={act.images[id]} size={artSize} /> : null}</View>
+          <Text style={{ flex: 1, fontFamily: F.bodyHeavy, fontSize: 16, lineHeight: 21, color: C.ink }}>{optText(id)}</Text>
         </Pressable>
       ))}
     </View>
