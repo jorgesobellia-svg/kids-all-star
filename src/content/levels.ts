@@ -581,6 +581,11 @@ export const REWARDS = {
   xpPerfectBonus: 5,
   coinsPerCorrect: 1,
   coinsPerfectBonus: 3,
+  // Racha de aciertos seguidos dentro de la lección: 3 seguidas y 5 seguidas ("¡Jonrón!").
+  combo3Coins: 1,
+  combo5Coins: 3,
+  // Strikes por lección: al tercero, ponche y de vuelta al dugout a ver la demostración.
+  strikesPerLesson: 3,
   examXp: 50,
   examCoins: 10,
   streakMilestones: [3, 7, 14, 30],

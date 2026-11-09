@@ -83,7 +83,7 @@ interface Store {
   setLocale: (l: Locale) => void;
   setPlayer: (nickname: string, country: string) => void;
   setCountry: (country: string) => void;
-  completeLesson: (id: string, correct: number, total: number, perfect: boolean) => LessonReward;
+  completeLesson: (id: string, correct: number, total: number, perfect: boolean, bonusCoins?: number) => LessonReward;
   passExam: (level: number) => { xp: number; coins: number };
   setPlus: (on: boolean) => void;
   setReview: (on: boolean) => void;
@@ -150,10 +150,10 @@ export function StoreProvider({ children, fallbackLocale }: { children: React.Re
     pRef.current = p;
   }, [p]);
 
-  const completeLesson = useCallback((id: string, correct: number, total: number, perfect: boolean): LessonReward => {
+  const completeLesson = useCallback((id: string, correct: number, total: number, perfect: boolean, bonusCoins = 0): LessonReward => {
     const cur = rollWeek(pRef.current);
     const xp = correct * REWARDS.xpPerCorrect + (perfect ? REWARDS.xpPerfectBonus : 0);
-    const coins = correct * REWARDS.coinsPerCorrect + (perfect ? REWARDS.coinsPerfectBonus : 0);
+    const coins = correct * REWARDS.coinsPerCorrect + (perfect ? REWARDS.coinsPerfectBonus : 0) + bonusCoins;
     const { streak, milestone } = touchStreak(cur.streak, dayKey());
     const newCard = !cur.completed[id];
     const next: Progress = {

@@ -11,7 +11,7 @@ import Zone from '@/components/Zone';
 import LineScore from '@/components/LineScore';
 import Mound from '@/components/Mound';
 import { Btn, Label, ProgressBar } from '@/components/ui';
-import { getLesson } from '@/content/levels';
+import { getLesson, REWARDS } from '@/content/levels';
 import type { DemoSegment, GearTarget, Target } from '@/content/types';
 import { content } from '@/i18n';
 import { speak, stopSpeaking, umpireCall } from '@/services/speech';
@@ -76,7 +76,7 @@ export default function LessonScreen() {
     [rawText, name, t],
   );
 
-  const [phase, setPhase] = useState<'demo' | 'acts' | 'replay' | 'result'>('demo');
+  const [phase, setPhase] = useState<'demo' | 'acts' | 'replay' | 'ponche' | 'result'>('demo');
   const [segIdx, setSegIdx] = useState(0);
   const [demoDone, setDemoDone] = useState(false);
   const [replayCount, setReplayCount] = useState(0);
@@ -91,6 +91,11 @@ export default function LessonScreen() {
   const [reward, setReward] = useState<LessonReward | null>(null);
   const [playing, setPlaying] = useState(true);
   const [plays, setPlays] = useState(0);
+  // Strikes de la lección (al tercero, ponche) y racha de aciertos seguidos.
+  const [strikes, setStrikes] = useState(0);
+  const [inARow, setInARow] = useState(0);
+  const [bonus, setBonus] = useState(0);
+  const [combo, setCombo] = useState<0 | 3 | 5>(0);
 
   // Narración de la demostración: cada pedazo con su voz y avanza solo al terminar.
   useEffect(() => {
@@ -146,8 +151,20 @@ export default function LessonScreen() {
     if (ok) {
       setCorrectCount((c) => c + 1);
       if (!missed.has(curIdx)) setFirstTry((s) => new Set(s).add(curIdx));
+      const run = inARow + 1;
+      setInARow(run);
+      if (run === 3) {
+        setCombo(3);
+        setBonus((b) => b + REWARDS.combo3Coins);
+      } else if (run === 5) {
+        setCombo(5);
+        setBonus((b) => b + REWARDS.combo5Coins);
+      } else setCombo(0);
     } else {
       setMissed((s) => new Set(s).add(curIdx));
+      setInARow(0);
+      setCombo(0);
+      setStrikes((k) => k + 1);
     }
     const fb = ok ? at?.ok : at?.ko;
     // Primero canta el umpire; después la mascota explica.
@@ -158,7 +175,7 @@ export default function LessonScreen() {
 
   const finish = () => {
     const perfect = missed.size === 0;
-    const r = completeLesson(lesson.id, correctCount, total, perfect);
+    const r = completeLesson(lesson.id, correctCount, total, perfect, bonus);
     setReward(r);
     setPhase('result');
     const wk = weekKey();
@@ -176,6 +193,11 @@ export default function LessonScreen() {
   const next = () => {
     stopSpeaking();
     if (!act) return;
+    if (!right && strikes >= REWARDS.strikesPerLesson) {
+      // Tercer strike: ponche. Se va al dugout (pantalla de ponche) antes de volver a ver la demostración.
+      setPhase('ponche');
+      return;
+    }
     if (!right) {
       // Se repite el pedazo clave de la demostración y la pregunta vuelve al final.
       setReplaySeg(act.seg);
@@ -213,6 +235,24 @@ export default function LessonScreen() {
     router.back();
   };
 
+  // Desde el dugout: la cuenta vuelve a cero, se ve la demostración completa y el turno empieza de nuevo.
+  const backToBat = () => {
+    stopSpeaking();
+    setStrikes(0);
+    setInARow(0);
+    setCombo(0);
+    setCorrectCount(0);
+    setQueue(lesson.activities.map((_, i) => i));
+    setAnswer(null);
+    setPicked(null);
+    setAttempt((x) => x + 1);
+    setSegIdx(0);
+    setDemoDone(false);
+    setPlays((n) => n + 1);
+    setPlaying(true);
+    setPhase('demo');
+  };
+
   // ------------------------------------------------------------------ Resultado
   if (phase === 'result' && reward) {
     return <ResultView reward={reward} firstTry={firstTry.size} total={total} onDone={() => router.back()} />;
@@ -227,9 +267,21 @@ export default function LessonScreen() {
           <Text style={{ fontSize: 24, color: C.muted, fontFamily: F.bodyBold }}>✕</Text>
         </Pressable>
         <ProgressBar value={progress} />
+        <StrikeLights n={strikes} label={t('lesson.strikes')} />
       </View>
 
-      {phase === 'demo' || phase === 'replay' ? (
+      {phase === 'ponche' ? (
+        <View testID="ponche" style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 24, gap: 14, backgroundColor: C.navy }}>
+          <Text style={{ fontFamily: F.display, fontSize: 64, color: C.gold }}>K</Text>
+          <Text style={{ fontFamily: F.display, fontSize: 34, color: C.white, textAlign: 'center' }}>{name ? t('lesson.ponchadoName', { name }) : t('lesson.ponchado')}</Text>
+          <Text style={{ fontFamily: F.bodySemi, fontSize: 17, lineHeight: 24, color: '#CBD5E1', textAlign: 'center' }}>{t('lesson.ponchadoText')}</Text>
+          <View style={{ alignSelf: 'stretch', marginTop: 10 }}>
+            <Btn testID="to-dugout" label={t('lesson.toDugout')} onPress={backToBat} />
+          </View>
+        </View>
+      ) : null}
+
+      {phase === 'ponche' ? null : phase === 'demo' || phase === 'replay' ? (
         <>
           <ScrollView contentContainerStyle={{ padding: 20, gap: 16, alignItems: 'center' }}>
             <Label style={{ alignSelf: 'flex-start' }}>{phase === 'demo' ? t('lesson.watch') : t('lesson.rewatch')}</Label>
@@ -309,6 +361,16 @@ export default function LessonScreen() {
                 <Text style={{ fontFamily: F.display, fontSize: 26, color: right ? '#166534' : '#991B1B' }}>{name ? t(right ? 'lesson.rightName' : 'lesson.almostName', { name }) : right ? t('lesson.right') : t('lesson.almost')}</Text>
               </View>
               <Text style={{ fontFamily: F.bodySemi, fontSize: 16, lineHeight: 22, color: right ? '#166534' : '#991B1B' }}>{right ? at.ok : at.ko}</Text>
+              {right && combo ? (
+                <View testID="combo" style={{ alignSelf: 'flex-start', backgroundColor: C.gold, borderRadius: 12, paddingHorizontal: 12, paddingVertical: 5 }}>
+                  <Text style={{ fontFamily: F.bodyHeavy, fontSize: 15, color: C.navy }}>
+                    {t(combo === 5 ? 'lesson.combo5' : 'lesson.combo3', { n: combo === 5 ? REWARDS.combo5Coins : REWARDS.combo3Coins })}
+                  </Text>
+                </View>
+              ) : null}
+              {!right && strikes > 0 && strikes < REWARDS.strikesPerLesson ? (
+                <Text style={{ fontFamily: F.bodyHeavy, fontSize: 15, color: '#991B1B' }}>{t('lesson.strikeN', { n: strikes })}</Text>
+              ) : null}
               {!right && at.answer ? (
                 <Text style={{ fontFamily: F.bodyBold, fontSize: 15, color: '#991B1B' }}>{t('lesson.answerWas', { a: at.answer })}</Text>
               ) : null}
@@ -410,6 +472,18 @@ function ResultView({ reward, firstTry, total, onDone }: { reward: LessonReward;
         ) : null}
       </ScrollView>
       <Btn testID="result-continue" label={t('common.continue')} onPress={onDone} />
+    </View>
+  );
+}
+
+// Luces de strikes como en el marcador: tres luces; cuando se enciende la tercera, es ponche.
+function StrikeLights({ n, label }: { n: number; label: string }) {
+  return (
+    <View testID="strikes" accessibilityLabel={`${label}: ${n}`} style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
+      <Text style={{ fontFamily: F.bodyHeavy, fontSize: 14, color: C.navy, marginRight: 2 }}>S</Text>
+      {[0, 1, 2].map((i) => (
+        <View key={i} style={{ width: 14, height: 14, borderRadius: 7, backgroundColor: i < n ? C.red : C.line, borderWidth: 2, borderColor: i < n ? C.redDark : C.lineDark }} />
+      ))}
     </View>
   );
 }
