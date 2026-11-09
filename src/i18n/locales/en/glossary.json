@@ -39,5 +39,13 @@
   "strikeout": "Strikeout",
   "walk": "Walk / base on balls",
   "hbp": "Hit by pitch",
-  "fullCount": "Full count"
+  "fullCount": "Full count",
+  "hit": "Hit",
+  "single": "Single",
+  "double": "Double",
+  "triple": "Triple",
+  "homeRun": "Home run",
+  "groundRuleDouble": "Ground rule double",
+  "bunt": "Bunt",
+  "safe": "Safe"
 }

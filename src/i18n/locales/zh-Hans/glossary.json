@@ -39,5 +39,13 @@
   "strikeout": "三振",
   "walk": "四坏球保送",
   "hbp": "触身球",
-  "fullCount": "满球数"
+  "fullCount": "满球数",
+  "hit": "安打",
+  "single": "一垒安打",
+  "double": "二垒安打",
+  "triple": "三垒安打",
+  "homeRun": "本垒打",
+  "groundRuleDouble": "场规二垒安打",
+  "bunt": "触击",
+  "safe": "安全上垒"
 }

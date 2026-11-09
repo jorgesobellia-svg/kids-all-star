@@ -32,21 +32,27 @@ function shuffle<T>(xs: T[]): T[] {
 
 export default function PlaceAct({ act, width, locked, tokenText, hint, retryLabel, onAnswer }: Props) {
   const place = useMemo(() => act.place ?? {}, [act.place]);
-  const isOrder = act.board === 'order';
+  // 'order' = casillas numeradas; 'match' = casillas con nombre (unir cada ficha con su resultado).
+  const isMatch = act.board === 'match';
+  const isOrder = act.board === 'order' || isMatch;
   const s = width / VB.w;
-  const boardH = isOrder ? 96 : VB.h * s;
   const [tokens] = useState(() => shuffle(Object.keys(place)));
-  const slotIds = useMemo(() => (isOrder ? ['1', '2', '3', '4'] : Array.from(new Set(Object.values(place)))), [isOrder, place]);
+  const slotIds = useMemo(
+    () => (act.board === 'order' ? ['1', '2', '3', '4'] : Array.from(new Set(Object.values(place)))),
+    [act.board, place],
+  );
+  const nCols = isMatch ? slotIds.length : 4;
+  const boardH = isMatch ? 120 : isOrder ? 96 : VB.h * s;
 
-  const cardW = isOrder ? (width - 30) / 4 : Math.min(118, (width - 10 * (tokens.length - 1)) / tokens.length);
-  const cardH = isOrder ? 64 : 76;
+  const cardW = isOrder ? (width - 10 * (nCols - 1) - 6) / nCols : Math.min(118, (width - 10 * (tokens.length - 1)) / tokens.length);
+  const cardH = isMatch ? 70 : isOrder ? 64 : 76;
   const trayTop = boardH + 18;
-  const perRow = isOrder ? 4 : tokens.length;
+  const perRow = isOrder ? nCols : tokens.length;
 
   const slotCenter = (id: string): Pt => {
     if (isOrder) {
       const i = slotIds.indexOf(id);
-      return { x: 3 + i * (cardW + 10) + cardW / 2, y: boardH / 2 };
+      return { x: 3 + i * (cardW + 10) + cardW / 2, y: isMatch ? boardH - 8 - cardH / 2 - 4 : boardH / 2 };
     }
     const p = pt(id as Target);
     return { x: p.x * s, y: p.y * s };
@@ -110,8 +116,12 @@ export default function PlaceAct({ act, width, locked, tokenText, hint, retryLab
         {isOrder ? (
           <View style={{ flexDirection: 'row', gap: 10, paddingHorizontal: 3, height: boardH, alignItems: 'center' }}>
             {slotIds.map((id) => (
-              <View key={id} style={{ width: cardW, height: cardH + 8, borderRadius: 14, borderWidth: 2.5, borderStyle: 'dashed', borderColor: C.lineDark, alignItems: 'center', justifyContent: 'center', backgroundColor: C.bg }}>
-                <Text style={{ fontFamily: F.display, fontSize: 30, color: C.faint }}>{id}</Text>
+              <View key={id} style={{ width: cardW, height: isMatch ? boardH - 8 : cardH + 8, borderRadius: 14, borderWidth: 2.5, borderStyle: 'dashed', borderColor: C.lineDark, alignItems: 'center', justifyContent: isMatch ? 'flex-start' : 'center', paddingTop: isMatch ? 6 : 0, backgroundColor: C.bg }}>
+                {isMatch ? (
+                  <Text numberOfLines={2} style={{ fontFamily: F.bodyHeavy, fontSize: 13, color: C.navy, textAlign: 'center', paddingHorizontal: 4 }}>{tokenText(id)}</Text>
+                ) : (
+                  <Text style={{ fontFamily: F.display, fontSize: 30, color: C.faint }}>{id}</Text>
+                )}
               </View>
             ))}
           </View>
@@ -234,7 +244,7 @@ function Token({
       } as object}
     >
       {compact ? (
-        <BallBadge text={String(num ?? '')} size={38} ink={C.navy} ring={C.gold} ringWidth={3} fontSize={14} />
+        <BallBadge text={num != null ? String(num) : label.slice(0, 1).toUpperCase()} size={38} ink={C.navy} ring={C.gold} ringWidth={3} fontSize={14} />
       ) : (
         <View
           style={{

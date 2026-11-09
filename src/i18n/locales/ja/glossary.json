@@ -39,5 +39,13 @@
   "strikeout": "三振",
   "walk": "四球 / フォアボール",
   "hbp": "死球 / デッドボール",
-  "fullCount": "フルカウント"
+  "fullCount": "フルカウント",
+  "hit": "ヒット / 安打",
+  "single": "シングルヒット",
+  "double": "ツーベースヒット",
+  "triple": "スリーベースヒット",
+  "homeRun": "ホームラン",
+  "groundRuleDouble": "グラウンドルールダブル / 認定二塁打",
+  "bunt": "バント",
+  "safe": "セーフ"
 }

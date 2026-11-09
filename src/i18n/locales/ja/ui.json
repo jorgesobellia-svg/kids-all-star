@@ -61,6 +61,8 @@
   },
   "path": {
     "stage": "ルーキーステージ · レベル {n}",
+    "stageProspect": "プロスペクトステージ · レベル {n}",
+    "stageStar": "スターステージ · レベル {n}",
     "start": "スタート！",
     "exam": "テスト",
     "plus": "PLUS",
@@ -123,7 +125,15 @@
     "stageTitle": "ルーキーステージをクリア！",
     "stageDiploma": "ルーキーステージ修了証",
     "stageText": "グラウンド、ポジション、試合の進み方、カウントがわかったね。",
-    "stageNext": "Plus でもうすぐ：ペロティンのプロスペクトのユニフォームと次のステージ。"
+    "stageNext": "プロスペクトステージへ進もう：クリアすると、ペロティンがプロスペクトのユニフォームをもらえるよ。",
+    "stageTitleProspect": "プロスペクトステージをクリア！",
+    "stageDiplomaProspect": "プロスペクトステージ修了証",
+    "stageTextProspect": "ペロティンがプロスペクトのユニフォームを手に入れたよ。",
+    "stageNextProspect": "レベル9が開いて、スターステージが始まるよ。",
+    "stageTitleStar": "スターステージをクリア！",
+    "stageDiplomaStar": "スターステージ修了証",
+    "stageTextStar": "打つ、走る、守る、腕を大切にして投げる、オールスターのように考える。ぜんぶできるようになったね。",
+    "stageNextStar": "ペロティンがオールスターのユニフォームを手に入れたよ。"
   },
   "board": {
     "away": "ビジター",
@@ -147,7 +157,10 @@
     "callK": "三振！",
     "callWalk": "フォアボール！",
     "callHbp": "デッドボール！",
-    "callRun": "1点！"
+    "callRun": "1点！",
+    "callSafe": "セーフ！",
+    "callBalk": "ボーク！",
+    "callTime": "タイム！"
   },
   "ranking": {
     "title": "スコアボード",

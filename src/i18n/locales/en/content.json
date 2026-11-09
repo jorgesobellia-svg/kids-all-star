@@ -15,6 +15,10 @@
     "4": {
       "title": "The count",
       "badge": "Eagle Eye"
+    },
+    "5": {
+      "title": "Hitting and running",
+      "badge": "Silver Bat"
     }
   },
   "lessonTitles": {
@@ -37,7 +41,12 @@
     "4.2": "The strike zone",
     "4.3": "The foul ball",
     "4.4": "Strikeout and walk",
-    "4.5": "Hit by pitch and full count"
+    "4.5": "Hit by pitch and full count",
+    "5.1": "The hit",
+    "5.2": "Single, double and triple",
+    "5.3": "The home run and the ground rule double",
+    "5.4": "Running to first",
+    "5.5": "The bunt"
   },
   "lessons": {
     "1.1": {
@@ -1330,6 +1339,345 @@
           }
         }
       }
+    },
+    "5.1": {
+      "title": "The hit",
+      "objective": "Understand what a hit is: a good batted ball that gets the batter safely to a base without the defense making a mistake.",
+      "demo": [
+        "It's time to really hit!",
+        "When you hit the ball and get safely to a base, without the defense making a mistake, that's a hit.",
+        "The ball can roll on the ground between the fielders, or land in the outfield where nobody catches it.",
+        "If you get there safely, your hit counts!",
+        "And remember: your base is your safe home, and the word is safe: standing on it, nobody can get you out."
+      ],
+      "acts": {
+        "1": {
+          "q": "What is a hit?",
+          "ok": "That's it! A hit.",
+          "ko": "A hit is when your batted ball gets you somewhere safely.",
+          "opts": {
+            "a": "A good batted ball that gets you there safely",
+            "b": "A batted ball that is caught in the air",
+            "c": "A bad pitch"
+          }
+        },
+        "2": {
+          "q": "For it to be a hit, the ball has to leave the field",
+          "ok": "Good! A hit can be a short one.",
+          "ko": "False: you just need to get there safely."
+        },
+        "3": {
+          "q": "Which picture shows a hit?",
+          "ok": "Correct! It landed where nobody caught it.",
+          "ko": "If it's caught in the air, it's an out, not a hit.",
+          "opts": {
+            "a": "The ball lands in the outfield and the batter reaches first",
+            "b": "The ball is caught in the air",
+            "c": "The batter swings and misses"
+          }
+        },
+        "4": {
+          "q": "You reached first before the throw. What does the umpire call?",
+          "ok": "Safe! You got there safely.",
+          "ko": "Safe means you made it: you got there first.",
+          "opts": {
+            "a": "Safe!",
+            "b": "Out!",
+            "c": "Strike!"
+          }
+        },
+        "5": {
+          "q": "You hit a short one. Tap the base you reach first",
+          "ok": "Good! Your safe home.",
+          "ko": "Every hit starts by reaching first.",
+          "answer": "First base"
+        },
+        "6": {
+          "q": "How do you say \"a salvo\" in English?",
+          "ok": "That's it! Safe.",
+          "ko": "\"Made it safely\" is safe.",
+          "opts": {
+            "a": "Safe",
+            "b": "Out",
+            "c": "Foul"
+          }
+        }
+      }
+    },
+    "5.2": {
+      "title": "Single, double and triple",
+      "objective": "Name each hit by the bases it is worth: a single is one, a double two and a triple three, and stop at the right base by watching the ball and the coach.",
+      "demo": [
+        "A hit is named by the bases you reach.",
+        "If you reach first: it's a single.",
+        "If the ball goes far and you reach second: it's a double.",
+        "And if you run and run and reach third: a triple!",
+        "The triple is the hardest: you have to hit it far and run like the wind.",
+        "Keep going or stop? Watch the ball and listen to your coach: they can see the whole field."
+      ],
+      "acts": {
+        "1": {
+          "q": "You reached first with your hit. What did you hit?",
+          "ok": "That's it! Single.",
+          "ko": "One base: a single.",
+          "opts": {
+            "a": "A single",
+            "b": "A triple",
+            "c": "A home run"
+          }
+        },
+        "2": {
+          "q": "The ball went far into the outfield and you reached second. What is it?",
+          "ok": "Correct! Double.",
+          "ko": "Two bases: a double.",
+          "opts": {
+            "a": "A double",
+            "b": "A single",
+            "c": "A foul"
+          }
+        },
+        "3": {
+          "q": "You hit it really far and ran all the way to third. What is it?",
+          "ok": "Triple! The most exciting one.",
+          "ko": "Three bases: a triple.",
+          "opts": {
+            "a": "A triple",
+            "b": "A single",
+            "c": "An out"
+          }
+        },
+        "4": {
+          "q": "Drag each hit to its base: single, double, triple",
+          "ok": "Perfect! One, two and three.",
+          "ko": "Count the bases: 1 single, 2 double, 3 triple.",
+          "opts": {
+            "single": "Single",
+            "double": "Double",
+            "triple": "Triple",
+            "first": "first",
+            "second": "second",
+            "third": "third"
+          },
+          "answer": "Single to first, double to second, triple to third"
+        },
+        "5": {
+          "q": "The triple is the easiest hit to get",
+          "ok": "Good! It's the hardest.",
+          "ko": "False: a triple takes a long hit and a lot of running."
+        },
+        "6": {
+          "q": "You're running to second and don't know whether to keep going. Who do you look at?",
+          "ok": "That's it! They guide you.",
+          "ko": "Watch the ball and listen to the coach.",
+          "opts": {
+            "a": "The coach and the ball",
+            "b": "The crowd",
+            "c": "Your shoes"
+          }
+        }
+      }
+    },
+    "5.3": {
+      "title": "The home run and the ground rule double",
+      "objective": "Understand the home run (the ball leaves the field in the air over fair territory: a full trip around) and the ground rule double: if a fair ball bounces and then leaves the field, everyone gets two bases, not a home run.",
+      "demo": [
+        "The most famous hit: the home run.",
+        "The ball flies out of the field, in fair territory, without touching the ground: you go all the way around and score.",
+        "But watch out for its cousin: if the ball bounces in fair territory and THEN jumps out, it is not a home run.",
+        "It's a ground rule double: the batter goes to second and every runner moves up two bases.",
+        "Did it go out in the air? Home run. Did it bounce first? Ground rule double."
+      ],
+      "acts": {
+        "1": {
+          "q": "The ball leaves the field in the air, in fair territory. What is it?",
+          "ok": "Home run! All the way around.",
+          "ko": "In the air and out: a home run.",
+          "opts": {
+            "a": "A home run",
+            "b": "A ground rule double",
+            "c": "A foul"
+          }
+        },
+        "2": {
+          "q": "The ball bounces in the outfield and jumps the fence. What is it?",
+          "ok": "That's it! It bounced first: two bases.",
+          "ko": "If it bounces and goes out, it's a ground rule double, not a home run.",
+          "opts": {
+            "a": "A ground rule double",
+            "b": "A home run",
+            "c": "A triple"
+          }
+        },
+        "3": {
+          "q": "On a ground rule double, the batter scores a run",
+          "ok": "Good! They go to second, they don't score.",
+          "ko": "False: on a ground rule double they reach second."
+        },
+        "4": {
+          "q": "The ball bounced and left the field. How many bases does the umpire give?",
+          "ok": "Two bases! Ground rule double.",
+          "ko": "It bounced and went out: two bases for everyone.",
+          "opts": {
+            "a": "Two bases",
+            "b": "All the way around",
+            "c": "One base"
+          }
+        },
+        "5": {
+          "q": "On a home run, how many bases do you run?",
+          "ok": "Correct! And you score a run.",
+          "ko": "A home run goes around the whole diamond.",
+          "opts": {
+            "a": "All of them: all the way around to home",
+            "b": "Only two",
+            "c": "Only one"
+          }
+        },
+        "6": {
+          "q": "Drag each hit to its result: out in the air / bounces and goes out",
+          "ok": "Perfect! That's the difference.",
+          "ko": "Remember: the bounce changes everything.",
+          "opts": {
+            "air": "Out in the air",
+            "bounce": "Bounces and goes out",
+            "hr": "Home run",
+            "grd": "Ground rule double"
+          },
+          "answer": "In the air: home run; bounces and goes out: ground rule double"
+        }
+      }
+    },
+    "5.4": {
+      "title": "Running to first",
+      "objective": "Learn that when running to first you can overrun the base without having to come right back, but at second and third, overrunning puts you in danger of an out.",
+      "demo": [
+        "You ran to first and got there safe. Nice!",
+        "First base has a gift: you can run past it, keep running a little into foul territory, and come back calmly without being tagged out, as long as you don't try to go to second.",
+        "But careful: at second and third there is no gift.",
+        "If you run past the base, they can tag you with the ball and you are out.",
+        "First base forgives; the others do not."
+      ],
+      "acts": {
+        "1": {
+          "q": "At which base can you run past and come back safely?",
+          "ok": "That's it! Only first.",
+          "ko": "The gift is only at first.",
+          "opts": {
+            "a": "At first",
+            "b": "At second",
+            "c": "At third"
+          }
+        },
+        "2": {
+          "q": "If you run past second, they can't get you out either",
+          "ok": "Good! At second they can tag you.",
+          "ko": "False: away from first, running past is dangerous."
+        },
+        "3": {
+          "q": "You ran past first and turn as if to go to second. What happens?",
+          "ok": "Correct! If you try to advance, the play is on.",
+          "ko": "First forgives running past, not trying to advance.",
+          "opts": {
+            "a": "The defense can get you out",
+            "b": "Nothing, first always forgives",
+            "c": "You score a run"
+          }
+        },
+        "4": {
+          "q": "Tap the base you can run past when you get there",
+          "ok": "Good! That's the one.",
+          "ko": "Only first has that gift.",
+          "answer": "First base"
+        },
+        "5": {
+          "q": "Which runner is in danger?",
+          "ok": "That's it! Second doesn't forgive.",
+          "ko": "Second doesn't forgive running past.",
+          "opts": {
+            "a": "The one who ran past second",
+            "b": "The one who ran past first and is coming back",
+            "c": "The one standing on their base"
+          }
+        },
+        "6": {
+          "q": "You reached first, ran past a little and came straight back. What does the umpire call?",
+          "ok": "Safe! First forgives.",
+          "ko": "You came straight back: safe.",
+          "opts": {
+            "a": "Safe!",
+            "b": "Out!",
+            "c": "Foul!"
+          }
+        }
+      }
+    },
+    "5.5": {
+      "title": "The bunt",
+      "objective": "Understand the bunt: holding the bat without swinging to let the ball drop softly, and that a foul bunt with two strikes is strike three.",
+      "demo": [
+        "Not every hit is aiming for the fence.",
+        "A bunt means holding the bat firmly, without swinging, and letting the ball drop softly in front of home plate.",
+        "It can surprise the defense or move a teammate up.",
+        "And learn this one, because it is special: if you bunt foul with two strikes, that foul DOES count as strike three and you are out.",
+        "In Level 4 you learned that a foul with two strikes is not a strikeout; with a bunt, the story changes."
+      ],
+      "acts": {
+        "1": {
+          "q": "What is a bunt?",
+          "ok": "That's it! Bunt.",
+          "ko": "Bunt: the bat stays still and the ball goes soft.",
+          "opts": {
+            "a": "Letting the ball drop softly by holding the bat, without swinging",
+            "b": "A really hard swing",
+            "c": "A pitcher's pitch"
+          }
+        },
+        "2": {
+          "q": "On a bunt you take the hardest swing of the game",
+          "ok": "Good! No swing.",
+          "ko": "False: you hold the bat, you don't swing it hard."
+        },
+        "3": {
+          "q": "You bunt foul with two strikes. What happens?",
+          "ok": "Correct! That's the bunt exception.",
+          "ko": "Foul bunt with two strikes: strikeout.",
+          "opts": {
+            "a": "It's strike three: out",
+            "b": "Nothing, a foul never counts",
+            "c": "It's a ball"
+          }
+        },
+        "4": {
+          "q": "Which picture shows a bunt?",
+          "ok": "That's it! Bat firm and still.",
+          "ko": "This is what a bunt looks like.",
+          "opts": {
+            "a": "The bat held across, with no swing",
+            "b": "The bat swinging all the way",
+            "c": "The bat on the ground"
+          }
+        },
+        "5": {
+          "q": "The bunt went foul with two strikes. What does the umpire call?",
+          "ok": "Out! The special bunt rule.",
+          "ko": "With a bunt there is no free foul on two strikes.",
+          "opts": {
+            "a": "Out! Strike three",
+            "b": "Foul, keep batting!",
+            "c": "Safe!"
+          }
+        },
+        "6": {
+          "q": "What is a surprise bunt for?",
+          "ok": "Correct! Surprise helps.",
+          "ko": "Defense far back: the bunt can be a hit.",
+          "opts": {
+            "a": "To reach first when the defense is far back",
+            "b": "To throw the ball",
+            "c": "To end the inning"
+          }
+        }
+      }
     }
   },
   "exams": {
@@ -1686,6 +2034,90 @@
           "ump": "The umpire",
           "pitcher": "The pitcher",
           "crowd": "The crowd"
+        }
+      }
+    },
+    "5": {
+      "1": {
+        "q": "What is a hit?",
+        "opts": {
+          "a": "A batted ball that gets you there safely",
+          "b": "A pitcher's throw",
+          "c": "A caught ball"
+        }
+      },
+      "2": {
+        "q": "The ball lands in the outfield, far from everyone, and you reach first. What is it?",
+        "opts": {
+          "a": "A hit",
+          "b": "An out",
+          "c": "A foul"
+        }
+      },
+      "3": {
+        "q": "True or false: every hit leaves the field"
+      },
+      "4": {
+        "q": "What does the umpire call when you get there before the throw?",
+        "opts": {
+          "a": "Safe!",
+          "b": "Strike!",
+          "c": "Balk!"
+        }
+      },
+      "5": {
+        "q": "How do you say \"a salvo\" in English?",
+        "opts": {
+          "a": "Safe",
+          "b": "Lead",
+          "c": "Balk"
+        }
+      },
+      "6": {
+        "q": "The ball is caught in the air before it lands. Is it a hit?",
+        "opts": {
+          "a": "No, it's an out",
+          "b": "Yes, always",
+          "c": "Only if you run fast"
+        }
+      },
+      "7": {
+        "q": "Tap the base that is your safe home when you get there on a short hit",
+        "answer": "First base"
+      },
+      "8": {
+        "q": "Who decides whether you were safe or out?",
+        "opts": {
+          "a": "The umpire",
+          "b": "The crowd",
+          "c": "The pitcher"
+        }
+      },
+      "9": {
+        "q": "A batted ball rolls between two fielders and you get there safely. What is it?",
+        "opts": {
+          "a": "A hit",
+          "b": "Always an error",
+          "c": "Nothing"
+        }
+      },
+      "10": {
+        "q": "True or false: standing on your base, you are safe"
+      },
+      "11": {
+        "q": "What do you need for your batted ball to be a hit?",
+        "opts": {
+          "a": "Get there safely without the defense making a mistake",
+          "b": "The crowd has to cheer",
+          "c": "It has to leave the field"
+        }
+      },
+      "12": {
+        "q": "How do you say \"hit\" in English?",
+        "opts": {
+          "a": "Hit",
+          "b": "Balk",
+          "c": "Lead"
         }
       }
     }

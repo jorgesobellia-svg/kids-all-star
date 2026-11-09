@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import Svg, { Circle, G, Line, Path, Polygon, Rect, Text as SvgText } from 'react-native-svg';
+import { XArt } from './ArtV3';
 import type { OptionImage } from '@/content/types';
 import { C, F } from '@/theme';
 import { BallShape, BatShape, GloveShape, HelmetShape } from './Gear';
@@ -167,6 +168,7 @@ function MiniZone({ ball }: { ball: 'in' | 'ground' }) {
 /** Dibujo de cada opción en "Selección con imágenes". */
 export function OptionArt({ image, size = 64 }: { image: OptionImage; size?: number }) {
   let el: React.ReactNode = null;
+  if (image.startsWith('x:')) el = <XArt name={image.slice(2)} />;
   switch (image) {
     case 'zone-outfield': el = <MiniField zone="outfield" />; break;
     case 'zone-dugout': el = <MiniField zone="dugout" />; break;

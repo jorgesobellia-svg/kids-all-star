@@ -15,6 +15,10 @@
     "4": {
       "title": "El conteo",
       "badge": "Ojo de Águila"
+    },
+    "5": {
+      "title": "Batear y correr",
+      "badge": "Bate de Plata"
     }
   },
   "lessonTitles": {
@@ -37,7 +41,12 @@
     "4.2": "La zona de strike",
     "4.3": "El foul",
     "4.4": "Ponche y base por bolas",
-    "4.5": "Golpeado y conteo completo"
+    "4.5": "Golpeado y conteo completo",
+    "5.1": "El hit",
+    "5.2": "Sencillo, doble y triple",
+    "5.3": "El jonrón y el doble por regla",
+    "5.4": "Correr a primera",
+    "5.5": "El toque de bola"
   },
   "lessons": {
     "1.1": {
@@ -1330,6 +1339,345 @@
           }
         }
       }
+    },
+    "5.1": {
+      "title": "El hit",
+      "objective": "Entender qué es un hit: un batazo bueno con el que el bateador llega a salvo a una base sin que la defensa haya fallado.",
+      "demo": [
+        "¡Llegó el momento de batear de verdad!",
+        "Cuando le pegas a la bola y llegas a salvo a una base, sin que la defensa haya fallado, eso es un hit, en inglés hit.",
+        "La bola puede pasar por el suelo, entre los defensores, o caer en los jardines donde nadie la atrapa.",
+        "Si llegas a salvo, ¡tu batazo valió!",
+        "Y recuerda: tu base es tu casa segura, en inglés safe: parado sobre ella, nadie te puede hacer out."
+      ],
+      "acts": {
+        "1": {
+          "q": "¿Qué es un hit?",
+          "ok": "¡Eso es! Hit.",
+          "ko": "Un hit es cuando llegas a salvo con tu batazo.",
+          "opts": {
+            "a": "Un batazo bueno con el que llegas a salvo",
+            "b": "Un batazo que atrapan en el aire",
+            "c": "Un lanzamiento malo"
+          }
+        },
+        "2": {
+          "q": "Para que sea hit, la bola tiene que salir del campo",
+          "ok": "¡Bien! Un hit puede ser cortito.",
+          "ko": "Falso: basta con llegar a salvo."
+        },
+        "3": {
+          "q": "¿Cuál imagen muestra un hit?",
+          "ok": "¡Correcto! Cayó donde nadie la atrapó.",
+          "ko": "Si la atrapan en el aire, es out, no hit.",
+          "opts": {
+            "a": "La bola cae en los jardines y el bateador llega a primera",
+            "b": "La bola es atrapada en el aire",
+            "c": "El bateador abanica y falla"
+          }
+        },
+        "4": {
+          "q": "Llegaste a primera antes que el tiro. ¿Qué canta el umpire?",
+          "ok": "¡Safe! Llegaste a salvo.",
+          "ko": "Safe significa a salvo: llegaste primero.",
+          "opts": {
+            "a": "¡Safe!",
+            "b": "¡Out!",
+            "c": "¡Strike!"
+          }
+        },
+        "5": {
+          "q": "Bateaste un hit cortito. Toca la primera base a la que llegas",
+          "ok": "¡Bien! Tu casa segura.",
+          "ko": "Todo hit empieza llegando a primera.",
+          "answer": "Primera base"
+        },
+        "6": {
+          "q": "¿Cómo se dice «a salvo» en inglés?",
+          "ok": "¡Eso es! Safe.",
+          "ko": "A salvo se dice safe.",
+          "opts": {
+            "a": "Safe",
+            "b": "Out",
+            "c": "Foul"
+          }
+        }
+      }
+    },
+    "5.2": {
+      "title": "Sencillo, doble y triple",
+      "objective": "Nombrar cada hit por las bases que vale: sencillo una, doble dos y triple tres, y frenar en la base correcta mirando la bola y al coach.",
+      "demo": [
+        "Un hit se nombra por las bases que llegas.",
+        "Si llegas a primera: sencillo, en inglés single.",
+        "Si la bola llega lejos y llegas a segunda: doble, double.",
+        "Y si corres, corres y llegas a tercera: ¡triple, triple!",
+        "El triple es el más difícil: hay que batear lejos y correr como el viento.",
+        "¿Sigues o te frenas? Mira la bola y escucha a tu coach: él ve todo el campo."
+      ],
+      "acts": {
+        "1": {
+          "q": "Llegaste a primera con tu hit. ¿Qué bateaste?",
+          "ok": "¡Eso es! Single.",
+          "ko": "Una base: sencillo.",
+          "opts": {
+            "a": "Un sencillo (single)",
+            "b": "Un triple",
+            "c": "Un jonrón"
+          }
+        },
+        "2": {
+          "q": "La bola pegó lejos en los jardines y llegaste a segunda. ¿Qué es?",
+          "ok": "¡Correcto! Double.",
+          "ko": "Dos bases: doble.",
+          "opts": {
+            "a": "Un doble (double)",
+            "b": "Un sencillo",
+            "c": "Un foul"
+          }
+        },
+        "3": {
+          "q": "Bateaste muy lejos y corriste hasta tercera. ¿Qué es?",
+          "ok": "¡Triple! El más emocionante.",
+          "ko": "Tres bases: triple.",
+          "opts": {
+            "a": "Un triple",
+            "b": "Un sencillo",
+            "c": "Un out"
+          }
+        },
+        "4": {
+          "q": "Arrastra cada batazo a su base: sencillo, doble, triple",
+          "ok": "¡Perfecto! Una, dos y tres.",
+          "ko": "Cuenta las bases: 1 sencillo, 2 doble, 3 triple.",
+          "opts": {
+            "single": "Sencillo",
+            "double": "Doble",
+            "triple": "Triple",
+            "first": "first",
+            "second": "second",
+            "third": "third"
+          },
+          "answer": "Sencillo a primera, doble a segunda, triple a tercera"
+        },
+        "5": {
+          "q": "El triple es el hit más fácil de lograr",
+          "ok": "¡Bien! Es el más difícil.",
+          "ko": "Falso: el triple exige batear lejos y correr mucho."
+        },
+        "6": {
+          "q": "Vas corriendo hacia segunda y no sabes si seguir. ¿A quién miras?",
+          "ok": "¡Eso es! Ellos te guían.",
+          "ko": "Mira la bola y escucha al coach.",
+          "opts": {
+            "a": "Al coach y a la bola",
+            "b": "Al público",
+            "c": "A tus zapatos"
+          }
+        }
+      }
+    },
+    "5.3": {
+      "title": "El jonrón y el doble por regla",
+      "objective": "Entender el jonrón (la bola sale del campo en el aire por zona buena: vuelta completa) y el doble por regla: si la bola buena pica y luego sale del campo, son dos bases para todos, no jonrón.",
+      "demo": [
+        "El batazo más famoso: el jonrón, en inglés home run.",
+        "La bola sale volando del campo, por zona buena, sin tocar el suelo: das la vuelta completa y anotas.",
+        "Pero ojo con su primo: si la bola pica en el campo bueno y DESPUÉS salta fuera, no es jonrón.",
+        "Es un doble por regla, en inglés ground rule double: el bateador va a segunda y cada corredor avanza dos bases.",
+        "¿Salió en el aire? Jonrón. ¿Picó primero? Doble por regla."
+      ],
+      "acts": {
+        "1": {
+          "q": "La bola sale del campo en el aire, por zona buena. ¿Qué es?",
+          "ok": "¡Jonrón! Vuelta completa.",
+          "ko": "En el aire y fuera: jonrón.",
+          "opts": {
+            "a": "Un jonrón (home run)",
+            "b": "Un doble por regla",
+            "c": "Un foul"
+          }
+        },
+        "2": {
+          "q": "La bola pica en el jardín y salta la cerca. ¿Qué es?",
+          "ok": "¡Eso es! Picó primero: dos bases.",
+          "ko": "Si pica y sale, es doble por regla, no jonrón.",
+          "opts": {
+            "a": "Un doble por regla (ground rule double)",
+            "b": "Un jonrón",
+            "c": "Un triple"
+          }
+        },
+        "3": {
+          "q": "Con un doble por regla, el bateador anota carrera",
+          "ok": "¡Bien! Va a segunda, no anota.",
+          "ko": "Falso: con el doble por regla llega a segunda."
+        },
+        "4": {
+          "q": "La bola picó y salió del campo. ¿Cuántas bases da el umpire?",
+          "ok": "¡Dos bases! Doble por regla.",
+          "ko": "Picó y salió: dos bases para todos.",
+          "opts": {
+            "a": "Dos bases",
+            "b": "La vuelta completa",
+            "c": "Una base"
+          }
+        },
+        "5": {
+          "q": "Con un jonrón, ¿cuántas bases recorres?",
+          "ok": "¡Correcto! Y anotas carrera.",
+          "ko": "El jonrón recorre todo el diamante.",
+          "opts": {
+            "a": "Todas: vuelta completa hasta home",
+            "b": "Solo dos",
+            "c": "Solo una"
+          }
+        },
+        "6": {
+          "q": "Arrastra cada batazo a su resultado: sale en el aire / pica y sale",
+          "ok": "¡Perfecto! Esa es la diferencia.",
+          "ko": "Recuerda: el pique cambia todo.",
+          "opts": {
+            "air": "Sale en el aire",
+            "bounce": "Pica y sale",
+            "hr": "Jonrón",
+            "grd": "Doble por regla"
+          },
+          "answer": "En el aire: jonrón; pica y sale: doble por regla"
+        }
+      }
+    },
+    "5.4": {
+      "title": "Correr a primera",
+      "objective": "Aprender que corriendo a primera puedes pasarte de largo sin volver enseguida, pero en segunda y tercera pasarte de largo te pone en peligro de out.",
+      "demo": [
+        "Corriste a primera y llegaste safe. ¡Bien!",
+        "En primera hay un regalo: puedes pasarte de largo, seguir corriendo un poco por zona de foul, y regresar tranquilo, sin que te puedan tocar para el out, mientras no intentes ir a segunda.",
+        "Pero cuidado: en segunda y en tercera no hay regalo.",
+        "Si te pasas de largo, te pueden tocar con la bola y eres out.",
+        "Primera perdona; las demás, no."
+      ],
+      "acts": {
+        "1": {
+          "q": "¿En qué base puedes pasarte de largo y volver sin peligro?",
+          "ok": "¡Eso es! Solo primera.",
+          "ko": "El regalo es solo en primera.",
+          "opts": {
+            "a": "En primera",
+            "b": "En segunda",
+            "c": "En tercera"
+          }
+        },
+        "2": {
+          "q": "Si te pasas de largo en segunda, tampoco te pueden hacer out",
+          "ok": "¡Bien! En segunda sí te tocan.",
+          "ko": "Falso: fuera de primera, pasarte es peligro."
+        },
+        "3": {
+          "q": "Te pasaste de largo en primera y giras como para ir a segunda. ¿Qué pasa?",
+          "ok": "¡Correcto! Si intentas avanzar, el juego sigue.",
+          "ko": "Primera perdona el paso de largo, no el intento de avanzar.",
+          "opts": {
+            "a": "La defensa sí te puede hacer out",
+            "b": "Nada, primera siempre perdona",
+            "c": "Anotas carrera"
+          }
+        },
+        "4": {
+          "q": "Toca la base donde puedes pasarte de largo al llegar corriendo",
+          "ok": "¡Bien! Esa es.",
+          "ko": "Solo primera tiene ese regalo.",
+          "answer": "Primera base"
+        },
+        "5": {
+          "q": "¿Cuál corredor está en peligro?",
+          "ok": "¡Eso es! En segunda no hay perdón.",
+          "ko": "Segunda no perdona el paso de largo.",
+          "opts": {
+            "a": "El que se pasó de largo en segunda",
+            "b": "El que se pasó de largo en primera y regresa",
+            "c": "El que está parado en su base"
+          }
+        },
+        "6": {
+          "q": "Llegaste a primera, te pasaste un poco y regresaste derecho. ¿Qué canta el umpire?",
+          "ok": "¡Safe! Primera perdona.",
+          "ko": "Regresaste derecho: safe.",
+          "opts": {
+            "a": "¡Safe!",
+            "b": "¡Out!",
+            "c": "¡Foul!"
+          }
+        }
+      }
+    },
+    "5.5": {
+      "title": "El toque de bola",
+      "objective": "Entender el toque (bunt): sostener el bate sin swing para dejar caer la bola suave, y que un foul de toque con dos strikes sí es tercer strike.",
+      "demo": [
+        "No todo batazo busca la cerca.",
+        "El toque de bola, en inglés bunt, es sostener el bate firme, sin hacer swing, y dejar que la bola caiga suavecita delante de home.",
+        "Sirve para sorprender o para avanzar a un compañero.",
+        "Y aprende esta, que es especial: si tocas de foul con dos strikes, ese foul SÍ cuenta como tercer strike y eres out.",
+        "En el Nivel 4 aprendiste que el foul con dos strikes no poncha; con el toque, la historia cambia."
+      ],
+      "acts": {
+        "1": {
+          "q": "¿Qué es un toque de bola (bunt)?",
+          "ok": "¡Eso es! Bunt.",
+          "ko": "Toque: bate quieto y bola suave.",
+          "opts": {
+            "a": "Dejar caer la bola suave sosteniendo el bate, sin swing",
+            "b": "Un swing muy fuerte",
+            "c": "Un lanzamiento del pitcher"
+          }
+        },
+        "2": {
+          "q": "En el toque se hace el swing más fuerte del juego",
+          "ok": "¡Bien! Sin swing.",
+          "ko": "Falso: el bate se sostiene, no se mueve con fuerza."
+        },
+        "3": {
+          "q": "Tocas de foul con dos strikes. ¿Qué pasa?",
+          "ok": "¡Correcto! Esa es la excepción del toque.",
+          "ko": "Foul de toque con dos strikes: ponche.",
+          "opts": {
+            "a": "Es tercer strike: out",
+            "b": "Nada, el foul nunca cuenta",
+            "c": "Es bola"
+          }
+        },
+        "4": {
+          "q": "¿Cuál imagen muestra un toque?",
+          "ok": "¡Eso es! Bate firme y quieto.",
+          "ko": "Así se ve un bunt.",
+          "opts": {
+            "a": "El bate sostenido en cruz, sin swing",
+            "b": "El bate girando con todo",
+            "c": "El bate en el suelo"
+          }
+        },
+        "5": {
+          "q": "El toque salió de foul con dos strikes. ¿Qué canta el umpire?",
+          "ok": "¡Out! Regla especial del toque.",
+          "ko": "Con toque no hay foul gratis con dos strikes.",
+          "opts": {
+            "a": "¡Out! Tercer strike",
+            "b": "¡Foul, sigue bateando!",
+            "c": "¡Safe!"
+          }
+        },
+        "6": {
+          "q": "¿Para qué sirve un toque sorpresa?",
+          "ok": "¡Correcto! La sorpresa ayuda.",
+          "ko": "Defensa lejos: el toque puede ser hit.",
+          "opts": {
+            "a": "Para llegar a primera cuando la defensa está lejos",
+            "b": "Para lanzar la bola",
+            "c": "Para terminar la entrada"
+          }
+        }
+      }
     }
   },
   "exams": {
@@ -1686,6 +2034,90 @@
           "ump": "El umpire",
           "pitcher": "El pitcher",
           "crowd": "El público"
+        }
+      }
+    },
+    "5": {
+      "1": {
+        "q": "¿Qué es un hit?",
+        "opts": {
+          "a": "Un batazo con el que llegas a salvo",
+          "b": "Un tiro del pitcher",
+          "c": "Una bola atrapada"
+        }
+      },
+      "2": {
+        "q": "La bola cae en los jardines, lejos de todos, y llegas a primera. ¿Qué es?",
+        "opts": {
+          "a": "Un hit",
+          "b": "Un out",
+          "c": "Un foul"
+        }
+      },
+      "3": {
+        "q": "Verdadero o falso: todo hit sale del campo"
+      },
+      "4": {
+        "q": "¿Qué canta el umpire cuando llegas antes que el tiro?",
+        "opts": {
+          "a": "¡Safe!",
+          "b": "¡Strike!",
+          "c": "¡Balk!"
+        }
+      },
+      "5": {
+        "q": "¿Cómo se dice «a salvo» en inglés?",
+        "opts": {
+          "a": "Safe",
+          "b": "Lead",
+          "c": "Balk"
+        }
+      },
+      "6": {
+        "q": "La bola es atrapada en el aire antes de caer. ¿Es hit?",
+        "opts": {
+          "a": "No, es out",
+          "b": "Sí, siempre",
+          "c": "Solo si corre rápido"
+        }
+      },
+      "7": {
+        "q": "Toca la base que es tu casa segura al llegar de un hit cortito",
+        "answer": "Primera base"
+      },
+      "8": {
+        "q": "¿Quién decide si llegaste safe o out?",
+        "opts": {
+          "a": "El umpire",
+          "b": "El público",
+          "c": "El pitcher"
+        }
+      },
+      "9": {
+        "q": "Un batazo pasa rodando entre dos defensores y llegas a salvo. ¿Qué es?",
+        "opts": {
+          "a": "Un hit",
+          "b": "Un error siempre",
+          "c": "Nada"
+        }
+      },
+      "10": {
+        "q": "Verdadero o falso: en tu base, parado sobre ella, estás a salvo"
+      },
+      "11": {
+        "q": "¿Qué necesitas para que tu batazo sea hit?",
+        "opts": {
+          "a": "Llegar a salvo sin que la defensa falle",
+          "b": "Que el público grite",
+          "c": "Que salga del campo"
+        }
+      },
+      "12": {
+        "q": "¿Cómo se dice hit en inglés?",
+        "opts": {
+          "a": "Hit",
+          "b": "Balk",
+          "c": "Lead"
         }
       }
     }

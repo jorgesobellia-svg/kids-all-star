@@ -8,6 +8,8 @@ import { Board, CallBanner, Lineup } from '@/components/Board';
 import Diamond from '@/components/Diamond';
 import Gear from '@/components/Gear';
 import Zone from '@/components/Zone';
+import LineScore from '@/components/LineScore';
+import Mound from '@/components/Mound';
 import { Btn, Label, ProgressBar } from '@/components/ui';
 import { getLesson } from '@/content/levels';
 import type { DemoSegment, GearTarget, Target } from '@/content/types';
@@ -40,8 +42,12 @@ function Scene({ seg, width, runKey }: { seg: DemoSegment; width: number; runKey
   const scene =
     seg.scene === 'zone' ? (
       <Zone width={width} highlight={hl} showZone={seg.showZone} pitch={seg.pitch} swing={seg.swing} count={seg.count} />
+    ) : seg.scene === 'linescore' && seg.linescore ? (
+      <LineScore width={width} state={seg.linescore} highlight={hl} />
+    ) : seg.scene === 'mound' ? (
+      <Mound width={width} pose={seg.pose} highlight={hl} />
     ) : (
-      <Diamond width={width} highlight={seg.highlight as Target[]} run={seg.run ?? null} runKey={runKey} players={seg.scene === 'field9'} numbers={seg.numbers} foulHit={seg.foulHit} />
+      <Diamond width={width} highlight={seg.highlight as Target[]} run={seg.run ?? null} runKey={runKey} players={seg.scene === 'field9'} numbers={seg.numbers} foulHit={seg.foulHit} fx={seg.fx} />
     );
   return (
     <View>

@@ -61,6 +61,8 @@
   },
   "path": {
     "stage": "新秀阶段 · 第 {n} 级",
+    "stageProspect": "潜力新星阶段 · 第 {n} 级",
+    "stageStar": "明星阶段 · 第 {n} 级",
     "start": "开始！",
     "exam": "测验",
     "plus": "PLUS",
@@ -123,7 +125,15 @@
     "stageTitle": "你完成了新秀阶段！",
     "stageDiploma": "新秀阶段证书",
     "stageText": "你已经认识了球场、守备位置、比赛怎么进行和球数。",
-    "stageNext": "Plus 即将推出：Pelotín 的潜力新星球衣和下一个阶段。"
+    "stageNext": "继续进入潜力新星阶段：完成后，Pelotín 会得到潜力新星球衣。",
+    "stageTitleProspect": "你完成了潜力新星阶段！",
+    "stageDiplomaProspect": "潜力新星阶段证书",
+    "stageTextProspect": "Pelotín 已经穿上了潜力新星球衣。",
+    "stageNextProspect": "第 9 级已解锁，明星阶段开始了。",
+    "stageTitleStar": "你完成了明星阶段！",
+    "stageDiplomaStar": "明星阶段证书",
+    "stageTextStar": "你已经会击球、跑垒、防守、爱护手臂地投球，还会像全明星一样思考。",
+    "stageNextStar": "Pelotín 已经穿上了全明星球衣。"
   },
   "board": {
     "away": "客队",
@@ -147,7 +157,10 @@
     "callK": "三振！",
     "callWalk": "四坏球保送！",
     "callHbp": "触身球！",
-    "callRun": "得分！"
+    "callRun": "得分！",
+    "callSafe": "安全上垒！",
+    "callBalk": "投手犯规！",
+    "callTime": "暂停！"
   },
   "ranking": {
     "title": "排行榜",

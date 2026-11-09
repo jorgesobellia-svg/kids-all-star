@@ -15,21 +15,23 @@ const norm = (s: string) => s.replace(/\*/g, '').replace(/\s+/g, ' ').trim();
 const read = (p: string) => JSON.parse(fs.readFileSync(path.join(ROOT, p), 'utf8'));
 
 // ---------------------------------------------------------------- Guion (docs/guion-v2.md)
-const doc = fs.readFileSync(path.join(ROOT, 'docs/guion-v2.md'), 'utf8').split('\n');
-const docAnswer = new Map<string, string>(); // pregunta -> correcta
+// Niveles 1-4: guion Versión 2. Niveles 5-12: guion definitivo (Versión Fusionada).
+const doc = ['docs/guion-v2.md', 'docs/guion-v3-niveles-5-12.md'].flatMap((f) => fs.readFileSync(path.join(ROOT, f), 'utf8').split('\n'));
+const docAnswer = new Map<string, string[]>(); // pregunta -> correctas (la misma pregunta puede salir en la lección y en el examen)
+const addAnswer = (q: string, a: string) => docAnswer.set(q, [...(docAnswer.get(q) ?? []), a]);
 const docLessons = new Map<string, number>(); // lección -> nº de actividades
 let curLesson = '';
 for (const ln of doc) {
-  const m = ln.match(/^### Lección (\d\.\d)/);
+  const m = ln.match(/^### Lección (\d+\.\d)/);
   if (m) curLesson = m[1];
   if (/^### Examen/.test(ln)) curLesson = '';
   if (!ln.startsWith('|') || ln.startsWith('|--')) continue;
   const cells = ln.trim().replace(/^\||\|$/g, '').split('|').map(norm);
   if (!/^\d+$/.test(cells[0])) continue;
   if (cells.length === 6) {
-    docAnswer.set(cells[2], cells[4]);
+    addAnswer(cells[2], cells[4]);
     if (curLesson) docLessons.set(curLesson, (docLessons.get(curLesson) ?? 0) + 1);
-  } else if (cells.length === 4) docAnswer.set(cells[1], cells[3]);
+  } else if (cells.length === 4) addAnswer(cells[1], cells[3]);
 }
 
 const es = read('src/i18n/locales/es/content.json');
@@ -49,7 +51,7 @@ for (const l of level.lessons) {
       a.type === 'tap' || a.type === 'drag' ? at.answer : a.type === 'tf' ? tfLabel(a.correct) : at.opts?.[a.correct ?? ''];
     const want = docAnswer.get(norm(at.q));
     if (!want) bad.push(`#${a.n}: pregunta no encontrada en el guion`);
-    else if (norm(programmed ?? '') !== want) bad.push(`#${a.n}: app «${programmed}» / guion «${want}»`);
+    else if (!want.includes(norm(programmed ?? ''))) bad.push(`#${a.n}: app «${programmed}» / guion «${want.join(' | ')}»`);
   }
   p5Issues += bad.length;
   console.log(`| ${l.id} | ${l.activities.length} / ${docLessons.get(l.id) ?? '?'} | ${bad.length ? bad.join('; ') : 'ninguna'} |`);
@@ -62,7 +64,7 @@ for (const l of level.lessons) {
     const programmed = q.type === 'tap' ? qt.answer : q.type === 'tf' ? tfLabel(q.correct) : qt.opts?.[q.correct ?? ''];
     const want = docAnswer.get(norm(qt.q));
     if (!want) bad.push(`#${q.n}: pregunta no encontrada`);
-    else if (norm(programmed ?? '') !== want) bad.push(`#${q.n}: app «${programmed}» / guion «${want}»`);
+    else if (!want.includes(norm(programmed ?? ''))) bad.push(`#${q.n}: app «${programmed}» / guion «${want.join(' | ')}»`);
   }
   p5Issues += bad.length;
   console.log(`| Examen | ${level.exam.length} preguntas · aprueba con ${level.passPercent} % | ${bad.length ? bad.join('; ') : 'ninguna'} |`);

@@ -61,6 +61,8 @@
   },
   "path": {
     "stage": "ROOKIE STAGE · LEVEL {n}",
+    "stageProspect": "PROSPECT STAGE · LEVEL {n}",
+    "stageStar": "STAR STAGE · LEVEL {n}",
     "start": "START!",
     "exam": "TEST",
     "plus": "PLUS",
@@ -123,7 +125,15 @@
     "stageTitle": "You finished the Rookie stage!",
     "stageDiploma": "Rookie stage diploma",
     "stageText": "You now know the field, the positions, how the game works and the count.",
-    "stageNext": "Coming soon with Plus: Pelotín's Prospect uniform and the next stage."
+    "stageNext": "Keep going with the Prospect stage: when you finish it, Pelotín earns the Prospect uniform.",
+    "stageTitleProspect": "You finished the Prospect stage!",
+    "stageDiplomaProspect": "Prospect stage diploma",
+    "stageTextProspect": "Pelotín now has the Prospect uniform.",
+    "stageNextProspect": "Level 9 is unlocked and the Star stage begins.",
+    "stageTitleStar": "You finished the Star stage!",
+    "stageDiplomaStar": "Star stage diploma",
+    "stageTextStar": "You now know how to hit, run, play defense, pitch with care and think like an All Star.",
+    "stageNextStar": "Pelotín now has the All Star uniform."
   },
   "board": {
     "away": "VISITORS",
@@ -147,7 +157,10 @@
     "callK": "STRIKEOUT!",
     "callWalk": "WALK!",
     "callHbp": "HIT BY PITCH!",
-    "callRun": "RUN!"
+    "callRun": "RUN!",
+    "callSafe": "SAFE!",
+    "callBalk": "BALK!",
+    "callTime": "TIME!"
   },
   "ranking": {
     "title": "SCOREBOARD",

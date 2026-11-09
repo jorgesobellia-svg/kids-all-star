@@ -3,9 +3,10 @@ import { PanResponder, Pressable, Text, View } from 'react-native';
 import type { Activity as Act, GearTarget, Target } from '@/content/types';
 import { C, F } from '@/theme';
 import { OptionArt } from './Art';
-import Diamond, { hitMatches, P, VB, type Hit } from './Diamond';
+import Diamond, { hitMatches, pt, VB, type Hit } from './Diamond';
 import Gear from './Gear';
 import Zone from './Zone';
+import LineScore from './LineScore';
 import PlaceAct from './PlaceAct';
 import { playSfx } from '@/services/sfx';
 import { tapFeedback } from './ui';
@@ -185,10 +186,22 @@ function TapAct({ act, width, locked, onAnswer }: Props) {
       />
     );
   }
+  if (act.scene === 'linescore' && act.linescore) {
+    return (
+      <LineScore
+        width={width}
+        state={act.linescore}
+        good={done ? (act.target as Target) : null}
+        bad={done && !correct ? (done.hit as Hit) : null}
+        onTap={done ? undefined : (h) => { tapFeedback(); playSfx('bat'); onAnswer({ kind: 'tap', hit: h }); }}
+      />
+    );
+  }
   return (
     <Diamond
       width={width}
       players={act.scene === 'field9'}
+      fx={act.fx}
       good={done ? (act.target as Target) : null}
       bad={done && !correct ? (done.hit as Hit) : null}
       onTap={done ? undefined : (h) => { tapFeedback(); playSfx('bat'); onAnswer({ kind: 'tap', hit: h }); }}
@@ -200,11 +213,16 @@ const BASES: Target[] = ['first', 'second', 'third', 'home'];
 
 function DragAct({ act, width, locked, onAnswer, dragHint, retryLabel }: Props) {
   const s = width / VB.w;
-  const [trail, setTrail] = useState<Target[]>(['home']);
-  const [runner, setRunner] = useState({ x: P.home.x, y: P.home.y });
-  const trailRef = useRef<Target[]>(['home']);
-  const start = useRef({ x: P.home.x, y: P.home.y });
+  // Sale de home (corredor) o de un jugador (la bola en el 6-4-3 o en el relevo del cortador).
+  const from: Target = act.from ?? 'home';
+  const home0 = pt(from);
+  const [trail, setTrail] = useState<Target[]>([from]);
+  const [runner, setRunner] = useState({ x: home0.x, y: home0.y });
+  const trailRef = useRef<Target[]>([from]);
+  const start = useRef({ x: home0.x, y: home0.y });
   const want = act.route ?? [];
+  const isBall = from !== 'home';
+  const nodes: Target[] = Array.from(new Set([...(isBall ? [] : BASES), ...want, ...(isBall ? (['first', 'second', 'third', 'home', 'pos1b', 'pos2b', 'pos3b', 'posSS', 'mound', 'cutoff'] as Target[]) : [])])).filter((t) => t !== from);
 
   const visit = (b: Target) => {
     const cur = trailRef.current;
@@ -219,14 +237,14 @@ function DragAct({ act, width, locked, onAnswer, dragHint, retryLabel }: Props) 
   };
 
   const nearest = (x: number, y: number): Target | null => {
-    for (const b of BASES) {
-      const p = P[b as keyof typeof P];
-      if (Math.hypot(p.x - x, p.y - y) < 26) return b;
+    for (const b of nodes) {
+      const p = pt(b);
+      if (Math.hypot(p.x - x, p.y - y) < 24) return b;
     }
     return null;
   };
 
-  const runnerRef = useRef({ x: P.home.x, y: P.home.y });
+  const runnerRef = useRef({ x: home0.x, y: home0.y });
   // Lo que el gesto necesita en cada momento; se actualiza fuera del render.
   const live = useRef({ locked: !!locked, s, visit, nearest });
   useEffect(() => {
@@ -258,7 +276,7 @@ function DragAct({ act, width, locked, onAnswer, dragHint, retryLabel }: Props) 
       onPanResponderRelease: () => {
         // El corredor se queda en la última base pisada.
         const last = trailRef.current[trailRef.current.length - 1];
-        const p = P[last as keyof typeof P];
+        const p = pt(last);
         runnerRef.current = { x: p.x, y: p.y };
         setRunner({ x: p.x, y: p.y });
       },
@@ -266,16 +284,23 @@ function DragAct({ act, width, locked, onAnswer, dragHint, retryLabel }: Props) 
   );
 
   const reset = () => {
-    trailRef.current = ['home'];
-    setTrail(['home']);
-    runnerRef.current = { x: P.home.x, y: P.home.y };
-    setRunner({ x: P.home.x, y: P.home.y });
+    trailRef.current = [from];
+    setTrail([from]);
+    runnerRef.current = { x: home0.x, y: home0.y };
+    setRunner({ x: home0.x, y: home0.y });
   };
 
   const R = 18 * s;
   return (
     <View style={{ gap: 8 }}>
-      <Diamond width={width} trail={trail} highlight={locked ? [] : ['first']} onTap={locked ? undefined : (h) => (BASES.includes(h as Target) ? visit(h as Target) : undefined)}>
+      <Diamond
+        width={width}
+        trail={trail}
+        players={isBall}
+        fx={isBall ? { ...act.fx, runners: act.fx?.runners } : act.fx}
+        highlight={locked ? [] : [want[0] ?? 'first']}
+        onTap={locked ? undefined : (h) => (nodes.includes(h as Target) ? visit(h as Target) : undefined)}
+      >
         <View
           {...pan.panHandlers}
           testID="drag-runner"
@@ -287,9 +312,9 @@ function DragAct({ act, width, locked, onAnswer, dragHint, retryLabel }: Props) 
             width: R * 2,
             height: R * 2,
             borderRadius: R,
-            backgroundColor: C.red,
+            backgroundColor: isBall ? C.white : C.red,
             borderWidth: 3,
-            borderColor: C.white,
+            borderColor: isBall ? C.red : C.white,
             boxShadow: '0 3px 6px rgba(0,0,0,0.35)',
           } as object}
         />

@@ -39,5 +39,13 @@
   "strikeout": "Ponche",
   "walk": "Base por bolas",
   "hbp": "Golpeado por el lanzamiento",
-  "fullCount": "Conteo completo"
+  "fullCount": "Conteo completo",
+  "hit": "Hit / imparable",
+  "single": "Sencillo",
+  "double": "Doble",
+  "triple": "Triple",
+  "homeRun": "Jonrón",
+  "groundRuleDouble": "Doble por regla",
+  "bunt": "Toque de bola",
+  "safe": "A salvo"
 }

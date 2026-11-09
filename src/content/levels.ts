@@ -1,4 +1,5 @@
 import type { Level, Lesson } from './types';
+import { LEVELS_V3 } from './levelsV3';
 
 // Nivel 1 — Bienvenido al diamante.
 // Fuente: "Kids All Star - Contenido Niveles 1-4", Versión 2.
@@ -476,7 +477,8 @@ const L4: Lesson[] = [
   },
 ];
 
-export const LEVELS: Level[] = [
+// Etapa Novato (Versión 2 del guion).
+const NOVATO: Level[] = [
   {
     n: 1,
     free: true,
@@ -562,6 +564,15 @@ export const LEVELS: Level[] = [
     ],
   },
 ];
+
+// Niveles 5 a 12 (etapas Prospecto y Estrella): generados desde docs/guion-v3-niveles-5-12.md.
+export const LEVELS: Level[] = [...NOVATO, ...LEVELS_V3];
+
+/** Etapa de cada nivel: Novato 1-4, Prospecto 5-8, Estrella 9-12. */
+export type Stage = 'rookie' | 'prospect' | 'star';
+export const stageOf = (n: number): Stage => (n <= 4 ? 'rookie' : n <= 8 ? 'prospect' : 'star');
+/** Último nivel de cada etapa: al aprobar su examen se entrega el diploma. */
+export const STAGE_END: Record<number, Stage> = { 4: 'rookie', 8: 'prospect', 12: 'star' };
 
 export const REWARDS = {
   xpPerCorrect: 10,

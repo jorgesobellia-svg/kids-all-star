@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Animated, Easing, Platform, View } from 'react-native';
 import Svg, { Circle, G, Line, Path, Polygon, Rect, Text as SvgText } from 'react-native-svg';
-import type { Target } from '@/content/types';
+import type { FieldExtras, Target } from '@/content/types';
 import { C } from '@/theme';
 
 // Diamante dibujado como un cuadrado girado: home abajo, primera a la derecha,
@@ -34,6 +34,49 @@ export const POS_NUM: Record<keyof typeof POS, number> = { mound: 1, posC: 2, po
 const LEFT_END = { x: 14, y: 96 };
 const RIGHT_END = { x: 346, y: 96 };
 
+// Niveles 5 a 12: lugares del campo para el vuelo de la bola, los corredores y las zonas nuevas.
+// La cerca (el arco de los jardines) pasa por y≈28 en el centro.
+export const XP: Record<string, { x: number; y: number }> = {
+  lf: { x: 82, y: 76 },
+  cf: { x: 180, y: 42 },
+  rf: { x: 278, y: 76 },
+  gapL: { x: 126, y: 64 },
+  gapR: { x: 236, y: 64 },
+  overL: { x: 74, y: 14 },
+  overC: { x: 180, y: 8 },
+  overR: { x: 300, y: 18 },
+  poleR: { x: 340, y: 100 },
+  hole56: { x: 128, y: 150 }, // entre tercera y campocorto
+  hole34: { x: 232, y: 150 }, // entre primera y segunda
+  midIF: { x: 180, y: 150 }, // por el medio del cuadro
+  popIF: { x: 196, y: 128 }, // elevado al cuadro
+  bunt: { x: 196, y: 236 },
+  foulL: { x: 46, y: 172 },
+  cutoff: { x: 180, y: 92 },
+  backstop: { x: 180, y: 294 },
+  path12: { x: 215, y: 157 },
+  path23: { x: 145, y: 157 },
+  path3h: { x: 145, y: 227 },
+  bullpen: { x: 322, y: 172 },
+};
+// Dónde se para un corredor (además de las bases).
+const SPOT: Record<string, { x: number; y: number }> = {
+  first: P.first,
+  second: P.second,
+  third: P.third,
+  home: { x: 166, y: 250 },
+  lead1: { x: 232, y: 174 },
+  lead2: { x: 160, y: 140 },
+  lead3: { x: 124, y: 208 },
+  past1: { x: 270, y: 174 },
+  past2: { x: 162, y: 104 },
+  mid12: { x: 215, y: 157 },
+  mid23: { x: 145, y: 157 },
+  mid3h: { x: 145, y: 227 },
+  midh1: { x: 215, y: 227 },
+};
+export const spotPt = (s: string) => SPOT[s] ?? XP[s] ?? (P as Record<string, { x: number; y: number }>)[s] ?? P.home;
+
 export type Hit = Target | 'none';
 
 interface Props {
@@ -56,13 +99,114 @@ interface Props {
   slots?: Target[];
   /** Batazo de foul por la línea de tercera: cae al suelo o lo atrapan en el aire. */
   foulHit?: 'ground' | 'caught';
+  /** Niveles 5 a 12: corredores, vuelo de la bola, tiros y zonas nuevas. */
+  fx?: FieldExtras;
   children?: React.ReactNode;
 }
 
-const ALL = { ...P, ...POS } as Record<string, { x: number; y: number }>;
-export const pt = (t: Target) => ALL[t] ?? P.home;
+const ALL = { ...XP, ...P, ...POS } as Record<string, { x: number; y: number }>;
+export const pt = (t: Target) => {
+  if (t.startsWith('run-')) return spotPt(t.slice(4));
+  if (t.startsWith('fld-')) return spotPt(t.slice(4));
+  return ALL[t] ?? P.home;
+};
 
-export default function Diamond({ width, highlight = [], good, bad, onTap, run, runKey, trail, players, numbers, slots, foulHit, children }: Props) {
+// Curva del vuelo de la bola: sale de home y llega al punto pedido.
+function flightPath(kind: string, to: { x: number; y: number }) {
+  const h = { x: 180, y: 256 };
+  if (kind === 'ground' || kind === 'bunt' || kind === 'hitRunner') return `M${h.x} ${h.y} L${to.x} ${to.y}`;
+  if (kind === 'bounceOut') {
+    // pica dentro del campo y después salta la cerca
+    const land = { x: to.x, y: Math.max(to.y + 44, 40) };
+    return `M${h.x} ${h.y} Q${(h.x + land.x) / 2} ${land.y - 70} ${land.x} ${land.y} Q${land.x} ${(land.y + to.y) / 2 - 10} ${to.x} ${to.y}`;
+  }
+  const lift = kind === 'foul' ? 60 : 110;
+  return `M${h.x} ${h.y} Q${(h.x + to.x) / 2} ${Math.min(h.y, to.y) - lift} ${to.x} ${to.y}`;
+}
+
+function Extras({ fx, glow, tap }: { fx: FieldExtras; glow: (t: Target) => string | null; tap: (h: Hit) => (() => void) | undefined }) {
+  const ball = fx.ball;
+  const to = ball ? spotPt(ball.to) : null;
+  return (
+    <G>
+      {fx.bullpen ? (
+        <G onPress={tap('bullpen')}>
+          <Rect x={296} y={146} width={56} height={52} rx={8} fill="#3F8A43" stroke={glow('bullpen') ?? C.white} strokeWidth={glow('bullpen') ? 4 : 2} strokeDasharray="5 4" />
+          <Circle cx={312} cy={172} r={7} fill={C.dirt} />
+          <Circle cx={336} cy={172} r={7} fill={C.dirt} />
+          {glow('bullpen') ? <Rect x={296} y={146} width={56} height={52} rx={8} fill={glow('bullpen')!} fillOpacity={0.3} /> : null}
+        </G>
+      ) : null}
+      {fx.backstop ? (
+        <G onPress={tap('backstop')}>
+          <Path d="M118 299 Q180 288 242 299" fill="none" stroke={glow('backstop') ?? '#CBD5E1'} strokeWidth={glow('backstop') ? 6 : 3} />
+          <Rect x={112} y={284} width={136} height={16} fill="#000" fillOpacity={0.001} />
+        </G>
+      ) : null}
+      {fx.path12 ? (
+        <G onPress={tap('path12')}>
+          <Line x1={P.first.x} y1={P.first.y} x2={P.second.x} y2={P.second.y} stroke={glow('path12') ?? C.white} strokeOpacity={glow('path12') ? 1 : 0.5} strokeWidth={glow('path12') ? 8 : 4} strokeDasharray="6 6" strokeLinecap="round" />
+          <Line x1={P.first.x} y1={P.first.y} x2={P.second.x} y2={P.second.y} stroke="#000" strokeOpacity={0.001} strokeWidth={26} />
+        </G>
+      ) : null}
+      {fx.throws && fx.throws.length > 1
+        ? fx.throws.slice(1).map((k, i) => {
+            const a = pt(fx.throws![i] as Target);
+            const b = pt(k as Target);
+            const ang = Math.atan2(b.y - a.y, b.x - a.x);
+            const ax = b.x - Math.cos(ang) * 16;
+            const ay = b.y - Math.sin(ang) * 16;
+            return (
+              <G key={`t${i}`}>
+                <Line x1={a.x} y1={a.y} x2={ax} y2={ay} stroke={C.gold} strokeWidth={4} strokeDasharray="7 5" strokeLinecap="round" />
+                <Polygon
+                  points={`${ax + Math.cos(ang) * 8},${ay + Math.sin(ang) * 8} ${ax + Math.cos(ang + 2.4) * 8},${ay + Math.sin(ang + 2.4) * 8} ${ax + Math.cos(ang - 2.4) * 8},${ay + Math.sin(ang - 2.4) * 8}`}
+                  fill={C.gold}
+                />
+              </G>
+            );
+          })
+        : null}
+      {ball && to ? (
+        <G>
+          <Path d={flightPath(ball.kind, to)} fill="none" stroke={C.white} strokeWidth={3} strokeDasharray={ball.kind === 'ground' || ball.kind === 'bunt' ? '2 5' : '3 6'} strokeLinecap="round" />
+          {ball.kind === 'bounceOut' ? <Circle cx={to.x} cy={Math.max(to.y + 44, 40)} r={5} fill="#1F5E22" /> : null}
+          {ball.kind === 'drop' ? <Circle cx={to.x + 10} cy={to.y + 10} r={11} fill="none" stroke={C.wrong} strokeWidth={3} /> : null}
+          {ball.kind === 'caught' ? <Circle cx={to.x} cy={to.y} r={12} fill="none" stroke={C.green} strokeWidth={3} /> : null}
+          <Circle testID="ball-flight" cx={ball.kind === 'drop' ? to.x + 10 : to.x} cy={ball.kind === 'drop' ? to.y + 10 : to.y} r={6.5} fill={C.white} stroke={C.red} strokeWidth={1.5} />
+        </G>
+      ) : null}
+      {fx.fielders?.map((f) => {
+        const p = spotPt(f);
+        const id = `fld-${f}` as Target;
+        const g = glow(id);
+        return (
+          <G key={id} onPress={tap(id)}>
+            <Circle cx={p.x} cy={p.y} r={19} fill="#000" fillOpacity={0.001} />
+            {g ? <Circle cx={p.x} cy={p.y} r={17} fill={g} fillOpacity={0.4} stroke={g} strokeWidth={3} /> : null}
+            <Circle cx={p.x} cy={p.y + 1} r={11} fill={C.navy} stroke={C.white} strokeWidth={2} />
+            <Path d={`M${p.x - 9} ${p.y - 3} a 9 7 0 0 1 18 0 z`} fill={C.red} />
+          </G>
+        );
+      })}
+      {fx.runners?.map((r) => {
+        const p = spotPt(r);
+        const id = `run-${r}` as Target;
+        const g = glow(id);
+        return (
+          <G key={id} onPress={tap(id)}>
+            <Circle cx={p.x} cy={p.y} r={19} fill="#000" fillOpacity={0.001} />
+            {g ? <Circle cx={p.x} cy={p.y} r={17} fill={g} fillOpacity={0.4} stroke={g} strokeWidth={3} /> : null}
+            <Circle cx={p.x} cy={p.y} r={10} fill={C.red} stroke={C.white} strokeWidth={2.5} />
+            <Path d={`M${p.x - 8} ${p.y - 2} a 8 7 0 0 1 16 0 z`} fill={C.navy} />
+          </G>
+        );
+      })}
+    </G>
+  );
+}
+
+export default function Diamond({ width, highlight = [], good, bad, onTap, run, runKey, trail, players, numbers, slots, foulHit, fx, children }: Props) {
   const s = width / VB.w;
   const height = VB.h * s;
   const hl = (t: Target) => highlight.includes(t) || highlight.includes('all');
@@ -191,6 +335,7 @@ export default function Diamond({ width, highlight = [], good, bad, onTap, run, 
             <Circle testID="foul-ball" cx={foulHit === 'ground' ? 46 : 74} cy={foulHit === 'ground' ? 172 : 194} r={7} fill={C.white} stroke={C.red} strokeWidth={1.5} />
           </G>
         ) : null}
+        {fx ? <Extras fx={fx} glow={glow} tap={tap} /> : null}
         {slots?.map((id) => (
           <Circle key={`slot-${id}`} cx={pt(id).x} cy={pt(id).y} r={17} fill={C.white} fillOpacity={0.18} stroke={C.white} strokeWidth={2.5} strokeDasharray="4 4" />
         ))}
@@ -218,7 +363,7 @@ export default function Diamond({ width, highlight = [], good, bad, onTap, run, 
       {highlight.length ? (
         <Animated.View pointerEvents="none" style={{ position: 'absolute', left: 0, top: 0, width, height, opacity: pulseOpacity }}>
           <Svg width={width} height={height} viewBox={`0 0 ${VB.w} ${VB.h}`}>
-            {highlight.filter((t) => ['first', 'second', 'third', 'home', 'onDeck', ...Object.keys(POS)].includes(t)).map((t) => (
+            {highlight.filter((t) => ['first', 'second', 'third', 'home', 'onDeck', 'cutoff', 'backstop', 'path12', ...Object.keys(POS)].includes(t) || t.startsWith('run-') || t.startsWith('fld-')).map((t) => (
               <Circle key={t} cx={pt(t).x} cy={pt(t).y} r={24} fill="none" stroke={C.gold} strokeWidth={4} />
             ))}
           </Svg>
@@ -255,5 +400,10 @@ export function hitMatches(hit: Hit, target: Target): boolean {
   // "Toca junto a primera / tercera": vale la base o el jugador que la cuida.
   if (target === 'pos1b' && hit === 'first') return true;
   if (target === 'pos3b' && hit === 'third') return true;
+  // "Toca a un jardinero": cualquiera de los tres, o los jardines.
+  if (target === 'anyOF' && (hit === 'posLF' || hit === 'posCF' || hit === 'posRF' || hit === 'outfield')) return true;
+  // El montículo y el pitcher son el mismo lugar.
+  // Tocar el camino entre primera y segunda: vale el corredor que está ahí.
+  if (target === 'path12' && (hit === 'run-lead1' || hit === 'run-mid12')) return true;
   return false;
 }

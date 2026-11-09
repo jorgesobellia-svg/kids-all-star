@@ -24,7 +24,16 @@ export type Target =
   | 'posCF'
   | 'posRF'
   // Zona de strike (Nivel 4)
-  | 'zone';
+  | 'zone'
+  // Niveles 5 a 12: zonas nuevas del campo
+  | 'backstop' // detrás de home
+  | 'path12' // el camino entre primera y segunda
+  | 'bullpen'
+  | 'cutoff' // el cortador, entre el jardín central y home
+  | 'anyOF' // cualquier jardinero
+  | `run-${string}` // un corredor parado en un lugar (run-second, run-lead2…)
+  | `fld-${string}` // un defensor extra (fld-path12…)
+  | `ls-${string}`; // una celda del marcador completo (ls-R0…)
 
 export type GearTarget = 'bat' | 'glove' | 'helmet' | 'ball';
 
@@ -33,7 +42,39 @@ export type GearTarget = 'bat' | 'glove' | 'helmet' | 'ball';
  * 'board' = el marcador (Nivel 3), 'lineup' = la alineación (Nivel 3),
  * 'zone' = bateador, home y zona de strike vistos desde atrás del catcher (Nivel 4).
  */
-export type Scene = 'diamond' | 'field9' | 'gear' | 'board' | 'lineup' | 'zone';
+export type Scene = 'diamond' | 'field9' | 'gear' | 'board' | 'lineup' | 'zone' | 'linescore' | 'mound';
+
+/** Vuelo de la bola bateada desde home hasta un punto del campo (Niveles 5 a 12). */
+export type BallKind = 'ground' | 'fly' | 'caught' | 'drop' | 'out' | 'bounceOut' | 'foul' | 'pole' | 'bunt' | 'hitRunner';
+export interface BallFlight {
+  to: string;
+  kind: BallKind;
+}
+
+/** Lo que se dibuja encima del diamante en los niveles 5 a 12. */
+export interface FieldExtras {
+  /** Corredores en su lugar: first, second, third, home, lead1, lead2, lead3, past1, past2, mid12, mid23, mid3h. */
+  runners?: string[];
+  /** Defensores extra (además de los 9): por ejemplo path12 para la obstrucción. */
+  fielders?: string[];
+  ball?: BallFlight;
+  /** Tiro de la bola entre jugadores o lugares, en orden (6-4-3, cortador…). */
+  throws?: string[];
+  bullpen?: boolean;
+  backstop?: boolean;
+  /** Dibuja el camino entre primera y segunda como zona que se puede tocar. */
+  path12?: boolean;
+}
+
+/** Marcador completo con carreras, hits y errores (Nivel 8). */
+export interface LineScoreState {
+  innings: number;
+  rows: { team: 'away' | 'home'; runs: number[]; R: number; H: number; E: number }[];
+}
+
+/** Postura del pitcher en la escena del montículo (Niveles 9 y 11). */
+export type PitcherPose = 'windup' | 'set' | 'release' | 'balk' | 'fastball' | 'changeup' | 'rest' | 'warm' | 'pickoff';
+
 
 /** Partes del marcador o del conteo que se pueden resaltar. */
 export type BoardTarget = 'half' | 'outs' | 'runs' | 'innings' | 'count' | 'batting' | 'plate' | 'height';
@@ -55,7 +96,7 @@ export interface BoardState {
 export type PitchSpot = 'mid' | 'high' | 'outside' | 'ground' | 'body';
 
 /** Lo que canta el umpire en la escena. */
-export type Call = 'strike' | 'ball' | 'foul' | 'out' | 'k' | 'walk' | 'hbp' | 'run';
+export type Call = 'strike' | 'ball' | 'foul' | 'out' | 'k' | 'walk' | 'hbp' | 'run' | 'safe' | 'balk' | 'time';
 
 /** Un pedazo del guion de la demostración y lo que se resalta mientras se narra. */
 export interface DemoSegment {
@@ -79,6 +120,10 @@ export interface DemoSegment {
   showZone?: boolean;
   /** Diamante: batazo de foul por la línea de tercera (y si lo atrapan en el aire). */
   foulHit?: 'ground' | 'caught';
+  /** Niveles 5 a 12: corredores, vuelo de la bola, tiros y zonas nuevas. */
+  fx?: FieldExtras;
+  linescore?: LineScoreState;
+  pose?: PitcherPose;
 }
 
 export type ActivityType =
@@ -91,6 +136,7 @@ export type ActivityType =
 
 /** Dibujo que acompaña a una opción de "Selección con imágenes". */
 export type OptionImage =
+  | `x:${string}` // Niveles 5 a 12: dibujo armado por clave (ver Art.tsx)
   | 'zone-outfield'
   | 'zone-dugout'
   | 'zone-home'
@@ -148,8 +194,14 @@ export interface Activity {
   route?: Target[];
   /** Colocar fichas (drag de jugadores o tarjetas): ficha -> lugar correcto. */
   place?: Record<string, string>;
-  /** Tablero de las fichas: el diamante o una fila de casillas numeradas. */
-  board?: 'diamond' | 'order';
+  /** Tablero de las fichas: el diamante, casillas numeradas o casillas con nombre (unir). */
+  board?: 'diamond' | 'order' | 'match';
+  /** Niveles 5 a 12: lo que se dibuja en el campo de la actividad. */
+  fx?: FieldExtras;
+  /** Arrastrar: desde dónde sale la ficha (por defecto home). */
+  from?: Target;
+  /** Escena del marcador completo para tocar una celda. */
+  linescore?: LineScoreState;
   /** Pedazo de la demostración que se repite si el niño falla. */
   seg: number;
 }
@@ -170,6 +222,7 @@ export interface ExamQuestion {
   correct?: string;
   target?: Target;
   scene?: Scene;
+  fx?: FieldExtras;
   /** Lección que se recomienda repasar si esta pregunta falla. */
   lesson: string;
 }

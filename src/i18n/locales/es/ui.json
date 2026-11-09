@@ -61,6 +61,8 @@
   },
   "path": {
     "stage": "ETAPA NOVATO · NIVEL {n}",
+    "stageProspect": "ETAPA PROSPECTO · NIVEL {n}",
+    "stageStar": "ETAPA ESTRELLA · NIVEL {n}",
     "start": "¡EMPEZAR!",
     "exam": "EXAMEN",
     "plus": "PLUS",
@@ -123,7 +125,15 @@
     "stageTitle": "¡Completaste la etapa Novato!",
     "stageDiploma": "Diploma de la etapa Novato",
     "stageText": "Ya conoces el campo, las posiciones, cómo se juega y el conteo.",
-    "stageNext": "Próximamente con Plus: el uniforme de Prospecto para Pelotín y la siguiente etapa."
+    "stageNext": "Sigue con la etapa Prospecto: al terminarla, Pelotín gana su uniforme de Prospecto.",
+    "stageTitleProspect": "¡Completaste la etapa Prospecto!",
+    "stageDiplomaProspect": "Diploma de la etapa Prospecto",
+    "stageTextProspect": "Pelotín ya tiene su uniforme de Prospecto.",
+    "stageNextProspect": "Se desbloquea el Nivel 9 y empieza la etapa Estrella.",
+    "stageTitleStar": "¡Completaste la etapa Estrella!",
+    "stageDiplomaStar": "Diploma de la etapa Estrella",
+    "stageTextStar": "Ya sabes batear, correr, defender, lanzar con cuidado y pensar como un All Star.",
+    "stageNextStar": "Pelotín ya tiene su uniforme All Star."
   },
   "board": {
     "away": "VISITANTE",
@@ -147,7 +157,10 @@
     "callK": "¡PONCHE!",
     "callWalk": "¡BASE POR BOLAS!",
     "callHbp": "¡GOLPEADO!",
-    "callRun": "¡CARRERA!"
+    "callRun": "¡CARRERA!",
+    "callSafe": "¡SAFE!",
+    "callBalk": "¡BALK!",
+    "callTime": "¡TIEMPO!"
   },
   "ranking": {
     "title": "SCOREBOARD",

@@ -133,10 +133,10 @@ export function Jersey({ n, size = 40, fill = C.navy }: { n: number; size?: numb
 }
 
 const CALL_COLOR: Record<Call, string> = {
-  strike: C.red, ball: C.blue, foul: C.orange, out: C.red, k: C.red, walk: C.green, hbp: C.purple, run: C.green,
+  strike: C.red, ball: C.blue, foul: C.orange, out: C.red, k: C.red, walk: C.green, hbp: C.purple, run: C.green, safe: C.green, balk: C.purple, time: C.blue,
 };
 const CALL_KEY: Record<Call, string> = {
-  strike: 'callStrike', ball: 'callBall', foul: 'callFoul', out: 'callOut', k: 'callK', walk: 'callWalk', hbp: 'callHbp', run: 'callRun',
+  strike: 'callStrike', ball: 'callBall', foul: 'callFoul', out: 'callOut', k: 'callK', walk: 'callWalk', hbp: 'callHbp', run: 'callRun', safe: 'callSafe', balk: 'callBalk', time: 'callTime',
 };
 
 /** Letrero con lo que canta el umpire, encima de la escena. */
