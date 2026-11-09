@@ -222,7 +222,9 @@ function DragAct({ act, width, locked, onAnswer, dragHint, retryLabel }: Props) 
   const start = useRef({ x: home0.x, y: home0.y });
   const want = act.route ?? [];
   const isBall = from !== 'home';
-  const nodes: Target[] = Array.from(new Set([...(isBall ? [] : BASES), ...want, ...(isBall ? (['first', 'second', 'third', 'home', 'pos1b', 'pos2b', 'pos3b', 'posSS', 'mound', 'cutoff'] as Target[]) : [])])).filter((t) => t !== from);
+  // Con la bola solo cuentan los receptores (y las paradas pedidas): una bola que cruza por encima
+  // de segunda o del montículo camino a home no es una parada.
+  const nodes: Target[] = Array.from(new Set([...(isBall ? [] : BASES), ...want, ...(isBall ? (['first', 'third', 'home', 'pos1b', 'pos2b', 'pos3b', 'posSS', 'cutoff'] as Target[]) : [])])).filter((t) => t !== from);
 
   const visit = (b: Target) => {
     const cur = trailRef.current;

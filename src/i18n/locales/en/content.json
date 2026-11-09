@@ -19,6 +19,34 @@
     "5": {
       "title": "Hitting and running",
       "badge": "Silver Bat"
+    },
+    "6": {
+      "title": "How outs are made",
+      "badge": "Gold Glove"
+    },
+    "7": {
+      "title": "The runner on base",
+      "badge": "Fast Feet"
+    },
+    "8": {
+      "title": "The numbers of the game",
+      "badge": "Official Scorer"
+    },
+    "9": {
+      "title": "Stealing bases and the pitcher",
+      "badge": "Base Stealer"
+    },
+    "10": {
+      "title": "Special rules",
+      "badge": "Diamond Judge"
+    },
+    "11": {
+      "title": "The pitcher's arm",
+      "badge": "Iron Arm"
+    },
+    "12": {
+      "title": "Think like an All Star",
+      "badge": "All Star"
     }
   },
   "lessonTitles": {
@@ -46,7 +74,42 @@
     "5.2": "Single, double and triple",
     "5.3": "The home run and the ground rule double",
     "5.4": "Running to first",
-    "5.5": "The bunt"
+    "5.5": "The bunt",
+    "6.1": "The caught fly ball",
+    "6.2": "The force out",
+    "6.3": "Tagging the runner out",
+    "6.4": "Forced or not?",
+    "6.5": "The double play and the fielder's choice",
+    "7.1": "Safe on the base: your safe home",
+    "7.2": "Tag up",
+    "7.3": "If the batted ball hits you",
+    "7.4": "Don't pass the runner ahead: the line",
+    "7.5": "When to run: it depends on the outs",
+    "8.1": "Hit or error",
+    "8.2": "Run batted in",
+    "8.3": "Reading the count: who's winning",
+    "8.4": "Scoring with numbers",
+    "8.5": "The full scoreboard",
+    "9.1": "The stolen base",
+    "9.2": "Taking a lead",
+    "9.3": "The pickoff",
+    "9.4": "The balk: the trick that doesn't count",
+    "9.5": "Wild pitch and passed ball",
+    "10.1": "Dropped third strike",
+    "10.2": "Infield fly: the out that protects",
+    "10.3": "Live ball and dead ball",
+    "10.4": "Interference and obstruction",
+    "10.5": "Missing a base: the appeal",
+    "11.1": "The pitcher's rubber",
+    "11.2": "Windup and set: the two ways to pitch",
+    "11.3": "Fastball and changeup: the first pitches",
+    "11.4": "Taking care of your arm",
+    "11.5": "The relief pitcher",
+    "12.1": "Where to throw the ball",
+    "12.2": "The cutoff man",
+    "12.3": "Covering and backing up",
+    "12.4": "The coach's signs and the final review",
+    "12.5": "Sportsmanship: how an All Star behaves"
   },
   "lessons": {
     "1.1": {
@@ -1678,6 +1741,2303 @@
           }
         }
       }
+    },
+    "6.1": {
+      "title": "The caught fly ball",
+      "objective": "Reinforce that any batted ball caught in the air, before it touches the ground, is an out for the batter: a fly ball, a line drive and even a fly ball in foul territory.",
+      "demo": [
+        "Baseball's fastest rule: if the batted ball is caught in the air, before it bounces, the batter is out.",
+        "It doesn't matter if it's a high fly ball to the outfield or a hard line drive: a catch is a catch.",
+        "It even counts in foul territory, if the fielder catches it in the air.",
+        "But if it bounces first, nobody can 'catch' it for the out anymore: you have to play it off the ground."
+      ],
+      "acts": {
+        "1": {
+          "q": "The outfielder catches your fly ball in the air. What happens?",
+          "ok": "Correct! Caught in the air: out.",
+          "ko": "Ball caught in the air: batter out.",
+          "opts": {
+            "a": "You're out",
+            "b": "It's a hit",
+            "c": "It's a foul"
+          }
+        },
+        "2": {
+          "q": "A line drive caught in the air is also an out",
+          "ok": "Yes! Line drive or fly ball, same thing.",
+          "ko": "True: what matters is catching it in the air."
+        },
+        "3": {
+          "q": "The ball bounces in the outfield and then the outfielder picks it up. Was it caught for an out?",
+          "ok": "That's it! It bounced: no catch.",
+          "ko": "For an out in the air, it can't bounce.",
+          "opts": {
+            "a": "No, it already bounced",
+            "b": "Yes, it still counts",
+            "c": "Only if he runs"
+          }
+        },
+        "4": {
+          "q": "Which batted ball is a sure out if caught?",
+          "ok": "Correct! That one is caught in the air.",
+          "ko": "You go for the fly ball in the air.",
+          "opts": {
+            "a": "A high fly ball to the outfield",
+            "b": "A ground ball",
+            "c": "A soft bunt"
+          }
+        },
+        "5": {
+          "q": "The shortstop catches a screaming line drive. What does the umpire call for the batter?",
+          "ok": "Out! Line drive caught: out.",
+          "ko": "Caught in the air is always an out.",
+          "opts": {
+            "a": "Out!",
+            "b": "Safe!",
+            "c": "Strike!"
+          }
+        },
+        "6": {
+          "q": "A foul fly ball caught in the air is an out",
+          "ok": "Good! In foul territory catching it counts too.",
+          "ko": "True: a catch in foul territory counts."
+        }
+      }
+    },
+    "6.2": {
+      "title": "The force out",
+      "objective": "Understand the force out: if the runner has to move up, a fielder with the ball only needs to step on the base before the runner gets there.",
+      "demo": [
+        "Imagine a line that pushes.",
+        "When the batter makes contact and has to go to first, everyone behind pushes: the runner on first has to go to second.",
+        "That runner is forced.",
+        "And there's a gift for the defense: they don't have to tag him.",
+        "They just step on his base with the ball before he gets there: a force out. Step on it and that's it."
+      ],
+      "acts": {
+        "1": {
+          "q": "What is a force out?",
+          "ok": "That's it! Force out.",
+          "ko": "Forced: you step on the base with the ball.",
+          "opts": {
+            "a": "Stepping on the base with the ball before the forced runner",
+            "b": "Tagging the runner with an empty glove",
+            "c": "Yelling \"out\""
+          }
+        },
+        "2": {
+          "q": "On a force out you have to tag the runner with the ball",
+          "ok": "Good! Stepping on the base is enough.",
+          "ko": "False: stepping on the base is enough."
+        },
+        "3": {
+          "q": "Runner on first, ground ball to the shortstop. The shortstop steps on second with the ball before the runner. What happens?",
+          "ok": "Correct! He had to run.",
+          "ko": "He was pushed from first: forced.",
+          "opts": {
+            "a": "Force out at second",
+            "b": "Nothing",
+            "c": "The runner scores"
+          }
+        },
+        "4": {
+          "q": "Forced runner running to second. Tap the base the fielder must step on with the ball",
+          "ok": "Good! Step on second and he's out.",
+          "ko": "The forced runner's base is the target.",
+          "answer": "Second base"
+        },
+        "5": {
+          "q": "The fielder stepped on the base with the ball before the forced runner. What does the umpire call?",
+          "ok": "Out! Force out.",
+          "ko": "The ball got to the base first: out.",
+          "opts": {
+            "a": "Out!",
+            "b": "Safe!",
+            "c": "Foul!"
+          }
+        },
+        "6": {
+          "q": "Why do we say the runner is \"forced\"?",
+          "ok": "That's it! The line pushes.",
+          "ko": "The batter-runner pushes him from behind.",
+          "opts": {
+            "a": "Because the one behind pushes him: he can't stay",
+            "b": "Because he runs really fast",
+            "c": "Because the coach makes him steal"
+          }
+        }
+      }
+    },
+    "6.3": {
+      "title": "Tagging the runner out",
+      "objective": "Understand the tag out: when the runner isn't forced, you have to touch him with the ball, or with the glove holding the ball, while he is off his base.",
+      "demo": [
+        "And if the runner does NOT have to run, stepping on the base doesn't work.",
+        "You have to touch him: a tag out.",
+        "You touch him with the ball, or with the glove if the ball is inside it, held tight.",
+        "And it only counts while the runner is off his base: his base is his safe home.",
+        "If he's standing on it, tagging him does nothing."
+      ],
+      "acts": {
+        "1": {
+          "q": "What is a tag out?",
+          "ok": "That's it! Tag out.",
+          "ko": "With no force, you have to tag the runner.",
+          "opts": {
+            "a": "Touching the runner with the ball while off his base",
+            "b": "Stepping on any base",
+            "c": "Yelling his name"
+          }
+        },
+        "2": {
+          "q": "Tagging the runner with an empty glove, without the ball, is an out",
+          "ok": "Good! The ball is what counts.",
+          "ko": "False: without the ball there's no tag."
+        },
+        "3": {
+          "q": "The runner is standing on his base and gets tagged with the ball. Is he out?",
+          "ok": "Correct! On the base he's safe.",
+          "ko": "No out in his safe home.",
+          "opts": {
+            "a": "No, his base is his safe home",
+            "b": "Yes, always",
+            "c": "Only if it is third"
+          }
+        },
+        "4": {
+          "q": "The runner stepped off second and is away from the base. Tap who has to be tagged with the ball",
+          "ok": "Good! Him, with the ball.",
+          "ko": "Off the base, you tag the runner.",
+          "answer": "The runner off his base"
+        },
+        "5": {
+          "q": "Which tag counts for an out?",
+          "ok": "That's it! Ball held tight and tag.",
+          "ko": "The ball has to be secure in the glove.",
+          "opts": {
+            "a": "The glove holding the ball tight touches the runner",
+            "b": "An empty glove brushes the runner",
+            "c": "A hand with no ball touches the runner"
+          }
+        },
+        "6": {
+          "q": "They tagged the runner with the ball halfway between bases. What does the umpire call?",
+          "ok": "Out! Tag out.",
+          "ko": "Out of his safe home and tagged: out.",
+          "opts": {
+            "a": "Out!",
+            "b": "Safe!",
+            "c": "Ball!"
+          }
+        }
+      }
+    },
+    "6.4": {
+      "title": "Forced or not?",
+      "objective": "Decide, based on who is behind, whether a runner is forced (just step on the base) or not (you have to tag him). The key: whether the base behind is taken by someone pushing him.",
+      "demo": [
+        "Before you play, ask yourself: is this runner forced or not?",
+        "The key is to look behind.",
+        "If someone behind him needs his base, he's forced and you just step on the base.",
+        "If nobody is coming behind, he's not forced: you have to tag him.",
+        "Example: a runner alone on second. Nobody pushes him (there's no runner on first), so to get him out you have to tag him with the ball.",
+        "Look behind and you'll know what to do."
+      ],
+      "acts": {
+        "1": {
+          "q": "Runner alone on second, ground ball to the infield. Is he forced to go to third?",
+          "ok": "Correct! Nobody is behind him.",
+          "ko": "With nobody on first, there's no force at second.",
+          "opts": {
+            "a": "No, nobody pushes him",
+            "b": "Yes, always",
+            "c": "Only with two outs"
+          }
+        },
+        "2": {
+          "q": "Runners on first and second, ground ball. Is the runner on second forced?",
+          "ok": "That's it! The whole line pushes.",
+          "ko": "With first taken, the runner on second is forced too.",
+          "opts": {
+            "a": "Yes, the runner on first and the batter push him",
+            "b": "No",
+            "c": "Only if he runs fast"
+          }
+        },
+        "3": {
+          "q": "To decide if there is a force, you look at whether the base behind is taken",
+          "ok": "Good! That's the key.",
+          "ko": "True: look behind."
+        },
+        "4": {
+          "q": "Runner alone on third. To get him out between bases you have to:",
+          "ok": "Correct! He's never forced.",
+          "ko": "The runner on third alone is never forced: you tag him.",
+          "opts": {
+            "a": "Tag him with the ball",
+            "b": "Step on third",
+            "c": "Step on home"
+          }
+        },
+        "5": {
+          "q": "Runners on first and second. Tap the runner who is forced to go to third",
+          "ok": "Good! The line pushes him.",
+          "ko": "The one on second, pushed by the runner on first.",
+          "answer": "The runner on second"
+        },
+        "6": {
+          "q": "Runner alone on second: the fielder steps on third with the ball but doesn't tag the runner, who goes back to second. What does the umpire call?",
+          "ok": "Safe! He had to be tagged.",
+          "ko": "Without a force, stepping on the base doesn't work.",
+          "opts": {
+            "a": "Safe! There was no force",
+            "b": "Out!",
+            "c": "Foul!"
+          }
+        }
+      }
+    },
+    "6.5": {
+      "title": "The double play and the fielder's choice",
+      "objective": "Understand the double play (two outs on one play, usually at second and first) and the fielder's choice: the defense chooses to go for another out and the batter reaches first without a hit.",
+      "demo": [
+        "Two outs with a single batted ball? It's called a double play.",
+        "The recipe: runner on first, ground ball to the infield, throw to second for the first out and a throw to first for the second!",
+        "That's why it's scored 6-4-3 and things like that, as you'll see in Level 8.",
+        "And listen to this one: sometimes the defense chooses to throw to another base and the batter reaches first.",
+        "That's not a hit or an error: it's a fielder's choice.",
+        "The defense made a choice, and it worked or it didn't."
+      ],
+      "acts": {
+        "1": {
+          "q": "What is a double play?",
+          "ok": "That's it! Double play.",
+          "ko": "Two outs, one play.",
+          "opts": {
+            "a": "Two outs on the same play",
+            "b": "Two home runs",
+            "c": "Two pitches"
+          }
+        },
+        "2": {
+          "q": "Classic double play recipe: runner on first and a ground ball. The defense throws:",
+          "ok": "Correct! Second, first: two outs.",
+          "ko": "The short way: 6-4-3.",
+          "opts": {
+            "a": "To second and then to first",
+            "b": "Twice to home",
+            "c": "To the outfield"
+          }
+        },
+        "3": {
+          "q": "The defense throws to second going for an out and the batter reaches first. He got there on:",
+          "ok": "That's it! The defense chose.",
+          "ko": "Fielder's choice: they chose another out.",
+          "opts": {
+            "a": "A fielder's choice",
+            "b": "A clean hit",
+            "c": "Always an error"
+          }
+        },
+        "4": {
+          "q": "A double play on the ground almost always needs a forced runner",
+          "ok": "Good! No force, no recipe.",
+          "ko": "True: the double play comes from the force."
+        },
+        "5": {
+          "q": "Throw to second: out. Throw to first: out. How many outs did the umpire call on the play?",
+          "ok": "Double play! Two outs.",
+          "ko": "Two out calls on one play.",
+          "opts": {
+            "a": "Two outs",
+            "b": "One out",
+            "c": "None"
+          }
+        },
+        "6": {
+          "q": "On a fielder's choice, the batter reaches first because:",
+          "ok": "Correct! The defense's choice.",
+          "ko": "It's not a hit: the defense chose.",
+          "opts": {
+            "a": "The defense chose to go for another out",
+            "b": "The ball left the field",
+            "c": "The pitcher let him"
+          }
+        }
+      }
+    },
+    "7.1": {
+      "title": "Safe on the base: your safe home",
+      "objective": "Understand that standing on the base the runner is safe, that only one runner can be on a base and what happens if two end up on the same one.",
+      "demo": [
+        "Your base is your safe home.",
+        "Standing on it, with the ball live, nobody can tag you out.",
+        "But the home is for one only: two runners can't live on one base.",
+        "If the runner behind catches you on the same base, one of you is extra, and almost always the one who came from behind is in danger, because the runner ahead already owned that home.",
+        "One base, one runner."
+      ],
+      "acts": {
+        "1": {
+          "q": "Standing on your base, can they get you out by tagging you with the ball?",
+          "ok": "That's it! Safe home.",
+          "ko": "On your base you're safe.",
+          "opts": {
+            "a": "No, it's my safe home",
+            "b": "Yes, always",
+            "c": "Only the pitcher can"
+          }
+        },
+        "2": {
+          "q": "Two runners can be on one base at the same time without a problem",
+          "ok": "Good! One base, one runner.",
+          "ko": "False: the home is for one."
+        },
+        "3": {
+          "q": "Two runners end up on second. Who is in danger?",
+          "ok": "Correct! The first one owned it.",
+          "ko": "The runner from behind didn't have a home there.",
+          "opts": {
+            "a": "The one who came from behind",
+            "b": "The one who was already there",
+            "c": "Neither"
+          }
+        },
+        "4": {
+          "q": "Tap the safe home of the runner on third",
+          "ok": "Good! That's his home.",
+          "ko": "Standing there, he's safe.",
+          "answer": "Third base"
+        },
+        "5": {
+          "q": "You're standing on your base and they tag you with the ball. What does the umpire call?",
+          "ok": "Safe! Safe home.",
+          "ko": "On your base there is no tag out.",
+          "opts": {
+            "a": "Safe!",
+            "b": "Out!",
+            "c": "Balk!"
+          }
+        },
+        "6": {
+          "q": "You leave your base, get halfway, and they tag you with the ball. What happens?",
+          "ok": "Correct! Away from home there is danger.",
+          "ko": "Away from your base, the tag is an out.",
+          "opts": {
+            "a": "Out: you left your safe home",
+            "b": "Nothing",
+            "c": "You score"
+          }
+        }
+      }
+    },
+    "7.2": {
+      "title": "Tag up",
+      "objective": "Understand tagging up: on a caught fly ball, the runner has to be touching his base when it's caught and only then can run; if he leaves early, he can be called out on appeal.",
+      "demo": [
+        "A fly ball goes up and you're on base.",
+        "Your first instinct is to run. No!",
+        "If they catch the ball and you've already left, the defense can throw the ball back to your base and you're out.",
+        "The right play is called tagging up: you stay touching your base, wait for the catch, and the instant the ball touches the glove, you go!",
+        "Touch, wait for the catch and run."
+      ],
+      "acts": {
+        "1": {
+          "q": "What is tagging up?",
+          "ok": "That's it! Tag up.",
+          "ko": "First the catch, then you go.",
+          "opts": {
+            "a": "Waiting on your base for the catch and running after",
+            "b": "Running off before the hit",
+            "c": "Running backwards"
+          }
+        },
+        "2": {
+          "q": "You can leave your base as soon as the batter swings",
+          "ok": "Good! You have to wait for the catch.",
+          "ko": "False: leaving early puts you in danger."
+        },
+        "3": {
+          "q": "You left before the catch and the ball was caught. The defense throws the ball back to your base. What happens?",
+          "ok": "Correct! Leaving early gets punished.",
+          "ko": "That's why you touch and wait.",
+          "opts": {
+            "a": "You're out",
+            "b": "Nothing",
+            "c": "You score a run"
+          }
+        },
+        "4": {
+          "q": "You're on third and a fly ball goes to the outfield. Tap where you have to be when it's caught",
+          "ok": "Good! Touching third, ready to go.",
+          "ko": "Your foot stays on the base until the catch.",
+          "answer": "Third base"
+        },
+        "5": {
+          "q": "They caught the fly ball, you took off right as the ball landed in the glove, and you reached home. What does the umpire call?",
+          "ok": "Safe! Perfect tag up.",
+          "ko": "You waited for the catch: a legal play.",
+          "opts": {
+            "a": "Safe! The run counts",
+            "b": "Out!",
+            "c": "Foul!"
+          }
+        },
+        "6": {
+          "q": "At exactly what moment can you take off when tagging up?",
+          "ok": "Correct! That's the moment.",
+          "ko": "Ball in the glove: go!",
+          "opts": {
+            "a": "When the ball touches the fielder's glove",
+            "b": "When the batter swings",
+            "c": "When the crowd yells"
+          }
+        }
+      }
+    },
+    "7.3": {
+      "title": "If the batted ball hits you",
+      "objective": "Learn that if a fair batted ball touches a runner before passing a fielder, the runner is out and the ball is dead; and the exception: if the ball has already passed a fielder (other than the pitcher) and no other fielder can play it, the runner is not out and play goes on.",
+      "demo": [
+        "You're running and the batted ball hits you.",
+        "It's almost always bad for you: if the fair ball touches you before passing a fielder, you're out and the ball is dead right there.",
+        "But there's an exception the pros know: if the ball has already passed a fielder (not the pitcher) and no other fielder can catch it, and then it hits you, it's not your fault: you're not out and the game goes on.",
+        "Was the ball coming 'clean' at you? Out.",
+        "Had it already passed the defense? Keep playing."
+      ],
+      "acts": {
+        "1": {
+          "q": "The batted ball hits your foot coming straight off the bat, without touching any fielder. What happens?",
+          "ok": "Correct! That's the general rule.",
+          "ko": "Ball straight at the runner: out.",
+          "opts": {
+            "a": "You're out and the ball is dead",
+            "b": "Nothing, I keep running",
+            "c": "You score"
+          }
+        },
+        "2": {
+          "q": "The ball rolled past the shortstop, nobody can play it, and then it brushes the runner. What happens?",
+          "ok": "That's it! The exception.",
+          "ko": "It had already passed a fielder: not the runner's fault.",
+          "opts": {
+            "a": "It's not an out: play goes on",
+            "b": "Automatic out",
+            "c": "Balk"
+          }
+        },
+        "3": {
+          "q": "If the batted ball hits the runner, it is always an out, with no exception",
+          "ok": "Good! There is an exception.",
+          "ko": "False: if it already passed a fielder, play goes on."
+        },
+        "4": {
+          "q": "Which fielder does NOT count as \"already passed\" if the ball goes by him?",
+          "ok": "Correct! The pitcher doesn't count for the exception.",
+          "ko": "If it only passed the pitcher, the runner is still out if it hits him.",
+          "opts": {
+            "a": "The pitcher",
+            "b": "The shortstop",
+            "c": "The second baseman"
+          }
+        },
+        "5": {
+          "q": "The ball hit the runner before any fielder touched it. What does the umpire call?",
+          "ok": "Out! Dead ball at that moment.",
+          "ko": "Straight at the runner: out and everything stops.",
+          "opts": {
+            "a": "Out! And dead ball",
+            "b": "Safe!",
+            "c": "Foul!"
+          }
+        },
+        "6": {
+          "q": "The ball already passed the second baseman and keeps rolling into the outfield. Tap where the play is still alive",
+          "ok": "Good! The ball is still alive there.",
+          "ko": "It passed the fielder: the play goes on toward the outfield.",
+          "answer": "The outfield, behind the infield"
+        }
+      }
+    },
+    "7.4": {
+      "title": "Don't pass the runner ahead: the line",
+      "objective": "Learn that runners are a line: you can never pass the runner ahead of you; passing another runner is an out for the one who passes.",
+      "demo": [
+        "Think of a line at the store: nobody cuts in.",
+        "On the bases it's the same: the runners are a line, nobody gets ahead.",
+        "If the runner ahead stopped and you come running and pass him, you're the out, the one who passed.",
+        "That is why the runner behind always has to watch the runner ahead: if he stops, you stop too or go back.",
+        "One line, in order, no cutting in."
+      ],
+      "acts": {
+        "1": {
+          "q": "What happens if you pass the runner ahead of you?",
+          "ok": "Correct! No cutting in.",
+          "ko": "Nobody gets ahead in line: the one who passes is out.",
+          "opts": {
+            "a": "You're out, the one who passed",
+            "b": "The runner ahead is out",
+            "c": "Nothing"
+          }
+        },
+        "2": {
+          "q": "Runners can pass each other if one is faster",
+          "ok": "Good! The line is respected.",
+          "ko": "False: not even the fastest cuts in."
+        },
+        "3": {
+          "q": "The runner ahead stopped at third and you are coming from second at full speed. What do you do?",
+          "ok": "That's it! Always look ahead.",
+          "ko": "The runner ahead sets your speed.",
+          "opts": {
+            "a": "I stop or go back to second",
+            "b": "I pass him and keep going home",
+            "c": "I push him"
+          }
+        },
+        "4": {
+          "q": "There are runners on first and second. Tap the runner ahead, the one who leads the line",
+          "ok": "Good! He is ahead.",
+          "ko": "The runner on second leads the line.",
+          "answer": "The runner on second"
+        },
+        "5": {
+          "q": "You passed your teammate who had stopped between bases. What does the umpire call for you?",
+          "ok": "Out! You cut in line.",
+          "ko": "Passing a runner is an out.",
+          "opts": {
+            "a": "Out!",
+            "b": "Safe!",
+            "c": "Foul!"
+          }
+        },
+        "6": {
+          "q": "Which picture shows the right line?",
+          "ok": "Correct! In line and in order.",
+          "ko": "The line always stays.",
+          "opts": {
+            "a": "Two runners in order, not passing",
+            "b": "One runner passing another",
+            "c": "A runner running backwards"
+          }
+        }
+      }
+    },
+    "7.5": {
+      "title": "When to run: it depends on the outs",
+      "objective": "Learn to run by reading the outs: with two outs you run on contact with any fair ball; with fewer than two outs and a fly ball, first you have to see if it's caught.",
+      "demo": [
+        "You don't always run the same way: it depends on the outs.",
+        "With two outs, run at the crack of the bat: if they catch the ball, the inning is over anyway, so you lose nothing by running all out from the hit.",
+        "With fewer than two outs it's different: if there's a fly ball, first see if they catch it, because if you run and they catch it, they can double you off at your base.",
+        "How many outs are there? You ask that before every pitch."
+      ],
+      "acts": {
+        "1": {
+          "q": "With two outs, as soon as the batter makes contact on a fair ball, the runner must:",
+          "ok": "That's it! With two outs there is nothing to protect.",
+          "ko": "Two outs: run on contact.",
+          "opts": {
+            "a": "Run all out from contact",
+            "b": "Wait on the base",
+            "c": "Walk"
+          }
+        },
+        "2": {
+          "q": "With one out and a fly ball to the outfield, the runner must first:",
+          "ok": "Correct! There might be a tag up.",
+          "ko": "Without two outs, you watch the fly ball first.",
+          "opts": {
+            "a": "See if it is caught before taking off",
+            "b": "Run without looking",
+            "c": "Go back to the dugout"
+          }
+        },
+        "3": {
+          "q": "With two outs, if they catch the fly ball, the inning ends anyway even if the runner stayed",
+          "ok": "Good! That's why you run.",
+          "ko": "True: the catch is the third out anyway."
+        },
+        "4": {
+          "q": "With two outs you ran, you scored, but the outfielder caught the fly ball a second earlier. What happens to your run?",
+          "ok": "Exactly! The third out rules.",
+          "ko": "If the catch came first, the run doesn't count.",
+          "opts": {
+            "a": "It doesn't count: the catch was the third out",
+            "b": "It counts anyway",
+            "c": "It counts half"
+          }
+        },
+        "5": {
+          "q": "With two outs and a runner on second, a ground ball goes into the outfield. Tap how far the runner should try to get",
+          "ok": "Good! With two outs he goes for the run.",
+          "ko": "Two outs: from second, go score.",
+          "answer": "Home"
+        },
+        "6": {
+          "q": "Before every pitch, the smart runner asks:",
+          "ok": "That's it! It all depends on the outs.",
+          "ko": "The outs decide how you run.",
+          "opts": {
+            "a": "How many outs are there?",
+            "b": "What time is it?",
+            "c": "Who's watching?"
+          }
+        }
+      }
+    },
+    "8.1": {
+      "title": "Hit or error",
+      "objective": "Tell apart, with simple examples: a hit (you get there with your good batted ball, without the defense failing) from an error (you get there or move up because the defense messed up a normal play).",
+      "demo": [
+        "You reached first and the scorer has to decide: was it a hit or an error?",
+        "If your batted ball went through clean, without anyone failing, it's a hit, yours and earned.",
+        "If the fielder dropped an easy ball, or threw very badly on a normal play, it's an error: you got there with help from the defense.",
+        "The scorer asks just one question: would a normal fielder have made that play?",
+        "If yes and he failed: error. If your batted ball was impossible: hit."
+      ],
+      "acts": {
+        "1": {
+          "q": "Your batted ball went between two fielders who never touched it and you got there safely. Hit or error?",
+          "ok": "That's it! Clean hit.",
+          "ko": "No failure by the defense: hit.",
+          "opts": {
+            "a": "Hit",
+            "b": "Error",
+            "c": "Foul"
+          }
+        },
+        "2": {
+          "q": "The outfielder dropped a very high, easy fly ball and you reached second. Hit or error?",
+          "ok": "Correct! It was a normal play.",
+          "ko": "An easy ball dropped: error.",
+          "opts": {
+            "a": "Error",
+            "b": "Hit",
+            "c": "Home run"
+          }
+        },
+        "3": {
+          "q": "A very wild throw that lets the batter reach can be an error",
+          "ok": "Good! A bad throw is also an error.",
+          "ko": "True: the bad throw counts as an error."
+        },
+        "4": {
+          "q": "Which picture shows an error?",
+          "ok": "That's it! A failure on a normal play.",
+          "ko": "That drop is the classic error.",
+          "opts": {
+            "a": "A fielder dropping an easy fly ball",
+            "b": "A ball going clean into the outfield",
+            "c": "A home run over the fence"
+          }
+        },
+        "5": {
+          "q": "The scorer asks: the ball was hit really hard, hit the shortstop's glove and kept going. Hit or error?",
+          "ok": "Correct! An impossible play isn't an error.",
+          "ko": "If not even an expert could make it, it's a hit.",
+          "opts": {
+            "a": "Hit: it was too hard",
+            "b": "Always an error",
+            "c": "Nobody knows"
+          }
+        },
+        "6": {
+          "q": "The scorer's question is:",
+          "ok": "That's it! That's how it's decided.",
+          "ko": "That question separates a hit from an error.",
+          "opts": {
+            "a": "Would a normal fielder have made the play?",
+            "b": "Who yelled the loudest?",
+            "c": "What color was the ball?"
+          }
+        }
+      }
+    },
+    "8.2": {
+      "title": "Run batted in",
+      "objective": "Understand the run batted in (RBI): when your hit, your walk with the bases loaded or your sacrifice bunt or fly makes a teammate score, that run is credited to you as batted in.",
+      "demo": [
+        "Behind almost every run there is someone who drove it in.",
+        "If your teammate scores thanks to your batted ball, that run is your run batted in, written RBI.",
+        "A single that brings in a teammate: one RBI.",
+        "A home run with two teammates on base: three RBI — and yes, your own home run run counts too.",
+        "Driving in runs is the batter's favorite job."
+      ],
+      "acts": {
+        "1": {
+          "q": "What is an RBI?",
+          "ok": "That's it! Run batted in.",
+          "ko": "RBI: a run you drove in.",
+          "opts": {
+            "a": "A run a teammate scores thanks to your hitting",
+            "b": "A kind of glove",
+            "c": "A pitch"
+          }
+        },
+        "2": {
+          "q": "You hit a single and your teammate scores from second. How many RBI?",
+          "ok": "Correct! One teammate, one RBI.",
+          "ko": "Each teammate you bring home is an RBI.",
+          "opts": {
+            "a": "One",
+            "b": "Zero",
+            "c": "Five"
+          }
+        },
+        "3": {
+          "q": "On a solo home run, the batter also gets an RBI for his own run",
+          "ok": "Good! His run counts too.",
+          "ko": "True: on a home run you count too."
+        },
+        "4": {
+          "q": "Home run with teammates on first and second. How many RBI?",
+          "ok": "That's it! Three runs driven in.",
+          "ko": "Two teammates plus your run: three.",
+          "opts": {
+            "a": "Three: the two teammates and you",
+            "b": "Two",
+            "c": "One"
+          }
+        },
+        "5": {
+          "q": "With the bases loaded you get a walk and a teammate is forced home. The scorer credits you with:",
+          "ok": "Correct! You drove that run in too.",
+          "ko": "A walk with the bases loaded gives an RBI.",
+          "opts": {
+            "a": "One RBI",
+            "b": "An error",
+            "c": "Nothing"
+          }
+        },
+        "6": {
+          "q": "Your single brings a teammate home from second. Tap the base where that teammate scores",
+          "ok": "Good! That's where the run scores and your RBI is born.",
+          "ko": "The run scores by touching home.",
+          "answer": "Home"
+        }
+      }
+    },
+    "8.3": {
+      "title": "Reading the count: who's winning",
+      "objective": "Read the count as a story: when the batter is ahead (a hitter's count, like 2-0 or 3-1) a fast pitch comes through the zone; when the pitcher is ahead (a pitcher's count, like 0-2 or 1-2) the batter has to protect. The pitch count is something else: how many pitches the pitcher has thrown, and it only matters for taking care of his arm.",
+      "demo": [
+        "The count tells a story: who's winning the battle.",
+        "If there are more balls than strikes, like two balls and no strikes, it's a hitter's count: the pitcher needs a strike and will almost surely throw his best pitch through the zone.",
+        "If there are more strikes, like no balls and two strikes, it's a pitcher's count: the batter has to protect the zone and battle every pitch.",
+        "And careful, don't mix it up: the pitch count is not this count.",
+        "The pitch count is how many pitches the pitcher has thrown in the game, and it's for taking care of his arm, as you'll see in Level 11."
+      ],
+      "acts": {
+        "1": {
+          "q": "A 3-1 count, ahead in balls. It is a count for the:",
+          "ok": "That's it! The batter is ahead.",
+          "ko": "More balls: a hitter's count.",
+          "opts": {
+            "a": "Batter (hitter's count)",
+            "b": "Pitcher",
+            "c": "Nobody"
+          }
+        },
+        "2": {
+          "q": "A 0-2 count, no balls and two strikes. It is a count for the:",
+          "ok": "Correct! The batter is against the wall.",
+          "ko": "Two strikes: the pitcher is ahead.",
+          "opts": {
+            "a": "Pitcher (pitcher's count)",
+            "b": "Batter",
+            "c": "Tie"
+          }
+        },
+        "3": {
+          "q": "The pitch count and the count of the at-bat (balls and strikes) are the same thing",
+          "ok": "Good! They are two different things.",
+          "ko": "False: the pitch count counts the pitches of the whole game."
+        },
+        "4": {
+          "q": "In a hitter's count, the pitcher will almost surely:",
+          "ok": "Correct! He needs a strike.",
+          "ko": "Batter ahead: the pitch comes through the zone.",
+          "opts": {
+            "a": "Go for the zone with his best pitch",
+            "b": "Throw way outside on purpose",
+            "c": "Ask to leave the game"
+          }
+        },
+        "5": {
+          "q": "With two strikes against him, the smart batter:",
+          "ok": "That's it! Battle every pitch.",
+          "ko": "With two strikes you protect, you don't pick.",
+          "opts": {
+            "a": "Protects the zone: also swings at what is close",
+            "b": "Only swings at the perfect one",
+            "c": "Gives up"
+          }
+        },
+        "6": {
+          "q": "The scoreboard says 2 balls and 2 strikes. That count is called:",
+          "ok": "Correct! Two and two, nobody is in charge.",
+          "ko": "Full is 3 and 2, as you saw in Level 4.",
+          "opts": {
+            "a": "An even count, two and two",
+            "b": "A full count",
+            "c": "A home run count"
+          }
+        }
+      }
+    },
+    "8.4": {
+      "title": "Scoring with numbers",
+      "objective": "Read plays written with the Level 2 position numbers (a 6-4-3 double play), the K for a strikeout looking and the backwards K for a strikeout swinging, and the E for an error.",
+      "demo": [
+        "Remember the position numbers from Level 2?",
+        "Scorers use them to write plays without words.",
+        "A 6-4-3 double play means: shortstop to second base, second base to first: two outs!",
+        "K is the strikeout letter: a normal K if the batter struck out without swinging, looking, and a backwards K if he struck out swinging.",
+        "And E is the mark for an error: E6 means an error by the shortstop.",
+        "Reading these codes is reading the game in secret."
+      ],
+      "acts": {
+        "1": {
+          "q": "In a 6-4-3, who gets the ball first?",
+          "ok": "Correct! From 6 to 4.",
+          "ko": "You read the chain in order: 6, 4, 3.",
+          "opts": {
+            "a": "The second baseman (4)",
+            "b": "The first baseman (3)",
+            "c": "The catcher (2)"
+          }
+        },
+        "2": {
+          "q": "What play is a classic 6-4-3?",
+          "ok": "That's it! Two outs written in numbers.",
+          "ko": "6-4-3: the double play recipe.",
+          "opts": {
+            "a": "A double play",
+            "b": "A home run",
+            "c": "A steal"
+          }
+        },
+        "3": {
+          "q": "The K on the scoresheet means strikeout",
+          "ok": "Good! K equals strikeout.",
+          "ko": "True: the K is the strikeout."
+        },
+        "4": {
+          "q": "E6 on the scoresheet means:",
+          "ok": "Correct! E for error, 6 for the shortstop.",
+          "ko": "The letter says what; the number says who.",
+          "opts": {
+            "a": "Error by the shortstop",
+            "b": "Home run by the shortstop",
+            "c": "Six errors"
+          }
+        },
+        "5": {
+          "q": "Drag the ball along the 6-4-3 chain: shortstop, second base, first base",
+          "ok": "Perfect chain! Double play.",
+          "ko": "From 6 to 4 and from 4 to 3.",
+          "answer": "Shortstop, second base, first base"
+        },
+        "6": {
+          "q": "The scoresheet shows a backwards K for a batter. That means he struck out:",
+          "ok": "That's it! The backwards K is swinging.",
+          "ko": "Normal K: looking. Backwards K: swinging.",
+          "opts": {
+            "a": "Swinging",
+            "b": "Looking, without swinging",
+            "c": "Running"
+          }
+        }
+      }
+    },
+    "8.5": {
+      "title": "The full scoreboard",
+      "objective": "Read the full scoreboard: runs (R), hits (H) and errors (E) for each team, and the runs in each inning, without calculating anything else.",
+      "demo": [
+        "The scoreboard is the game's newspaper.",
+        "The innings go across the top, and each team puts its runs inning by inning.",
+        "At the end there are three big numbers: R, runs; H, hits; and E, errors.",
+        "A team can have more hits and lose: runs win, not hits.",
+        "And an error on the scoreboard is nobody's shame: it's information, it tells what happened.",
+        "Always read in this order: runs, hits, errors."
+      ],
+      "acts": {
+        "1": {
+          "q": "On the scoreboard, R means:",
+          "ok": "That's it! R for runs.",
+          "ko": "The R is what wins the game.",
+          "opts": {
+            "a": "Runs",
+            "b": "Steals",
+            "c": "Relievers"
+          }
+        },
+        "2": {
+          "q": "The H on the scoreboard counts:",
+          "ok": "Correct! H for hits.",
+          "ko": "Hits: each team's good batted balls.",
+          "opts": {
+            "a": "Each team's hits",
+            "b": "The hours of the game",
+            "c": "Only home runs"
+          }
+        },
+        "3": {
+          "q": "The team with more hits wins even if it has fewer runs",
+          "ok": "Good! Runs win.",
+          "ko": "False: runs rule, not hits."
+        },
+        "4": {
+          "q": "The E on the scoreboard counts:",
+          "ok": "That's it! E for errors.",
+          "ko": "Errors: failures on normal plays.",
+          "opts": {
+            "a": "Each team's errors",
+            "b": "The innings",
+            "c": "Players thrown out"
+          }
+        },
+        "5": {
+          "q": "A scoreboard says 5 R, 8 H, 1 E against 3 R, 9 H, 0 E. Who won?",
+          "ok": "Correct! Runs rule.",
+          "ko": "More hits isn't always winning.",
+          "opts": {
+            "a": "The one with 5 runs, even with fewer hits",
+            "b": "The one with 9 hits",
+            "c": "Nobody, it's a tie"
+          }
+        },
+        "6": {
+          "q": "On a drawn scoreboard, tap the runs column (R) of the top team",
+          "ok": "Good! Runs are read first.",
+          "ko": "R: the number that decides the game.",
+          "answer": "The R (runs) of the first row"
+        }
+      }
+    },
+    "9.1": {
+      "title": "The stolen base",
+      "objective": "Understand the stolen base: moving up to the next base during the pitch, with no batted ball, and that whether stealing is allowed — and from what age — depends on the league and the age group.",
+      "demo": [
+        "Stealing a base is moving up to the next one while the pitcher pitches, without a batted ball.",
+        "In English: stolen base.",
+        "You take off when the pitcher starts his motion toward home, and it's a race between you, the catcher's throw and the base waiting for you.",
+        "But listen to the most important part: you can't steal in every kids' league, and each league decides from what age.",
+        "Ask your coach if your league has steals: he has the answer for your league."
+      ],
+      "acts": {
+        "1": {
+          "q": "What is stealing a base?",
+          "ok": "That's it! Stolen base.",
+          "ko": "Stealing: you move up with the pitch, not with a hit.",
+          "opts": {
+            "a": "Moving up during the pitch, with no batted ball",
+            "b": "Taking the base home with you",
+            "c": "A hard-hit ball"
+          }
+        },
+        "2": {
+          "q": "In every kids' league you can steal from any age",
+          "ok": "Good! Each league decides.",
+          "ko": "False: ask your coach about your league."
+        },
+        "3": {
+          "q": "When does the stealing runner take off?",
+          "ok": "Correct! That's your moment.",
+          "ko": "The steal starts with the pitch.",
+          "opts": {
+            "a": "When the pitcher starts his motion or releases the ball toward home",
+            "b": "When the batter makes contact",
+            "c": "When the inning ends"
+          }
+        },
+        "4": {
+          "q": "You reached second before the fielder's tag. What does the umpire call?",
+          "ok": "Safe! Steal made.",
+          "ko": "You got there first: stolen base.",
+          "opts": {
+            "a": "Safe! Stolen base",
+            "b": "Out!",
+            "c": "Balk!"
+          }
+        },
+        "5": {
+          "q": "You're stealing from first. Tap the base you want to steal",
+          "ok": "Good! Second is the most stolen.",
+          "ko": "The classic steal is to second.",
+          "answer": "Second base"
+        },
+        "6": {
+          "q": "If your league doesn't allow steals yet, what do you do?",
+          "ok": "That's it! Each league has its time.",
+          "ko": "Your league's rules are always respected.",
+          "opts": {
+            "a": "I respect my league's rule and ask the coach",
+            "b": "I steal anyway",
+            "c": "I get angry"
+          }
+        }
+      }
+    },
+    "9.2": {
+      "title": "Taking a lead",
+      "objective": "Understand taking a lead: moving a few steps away from the base to shorten the path, getting back fast if the pitcher looks, and that many kids' leagues don't allow leads until the ball crosses home.",
+      "demo": [
+        "Before stealing, the runner takes a lead: a few little steps away from his base to be closer to the next one.",
+        "In English it's called a lead.",
+        "But the lead is risky: you're outside your safe home.",
+        "If the pitcher turns and throws to your base, you have to fly back.",
+        "And careful: in many leagues for young kids you can't take a lead until the pitch goes past home.",
+        "Can you take a lead in your league? Ask your coach before you do it."
+      ],
+      "acts": {
+        "1": {
+          "q": "What is taking a lead off the base?",
+          "ok": "That's it! Lead.",
+          "ko": "Taking a lead shortens your path.",
+          "opts": {
+            "a": "Moving a few steps away from the base to get ready to advance",
+            "b": "Going to the dugout",
+            "c": "Pulling the base off the ground"
+          }
+        },
+        "2": {
+          "q": "Taking too big a lead is free: nothing ever happens",
+          "ok": "Good! Far from your base there's danger.",
+          "ko": "False: off the base, a good throw can get you out."
+        },
+        "3": {
+          "q": "You've taken a lead and the pitcher turns toward your base. What do you do?",
+          "ok": "Correct! Back to your safe home.",
+          "ko": "Pitcher looking: go back right away.",
+          "opts": {
+            "a": "I run back to my base",
+            "b": "I keep moving up calmly",
+            "c": "I crouch down and wait"
+          }
+        },
+        "4": {
+          "q": "Tap where a runner leading off first is: between which two bases",
+          "ok": "Good! That's where the leading runner floats.",
+          "ko": "Leading off, you live between two bases, without a home.",
+          "answer": "Between first and second"
+        },
+        "5": {
+          "q": "In many kids' leagues, the runner can only take a lead:",
+          "ok": "That's it! That's why you ask the coach.",
+          "ko": "Each league sets its moment for leads.",
+          "opts": {
+            "a": "When the pitch goes past home",
+            "b": "From the moment he reaches the base",
+            "c": "The league never matters"
+          }
+        },
+        "6": {
+          "q": "You took a big lead and the pitcher's throw got to first before you got back. What is the call?",
+          "ok": "Out! The lead costs you if you get careless.",
+          "ko": "Getting back late from a lead is an out.",
+          "opts": {
+            "a": "Out!",
+            "b": "Safe!",
+            "c": "Strike!"
+          }
+        }
+      }
+    },
+    "9.3": {
+      "title": "The pickoff",
+      "objective": "Understand the pickoff: the pitcher (or the catcher) throws by surprise to a base to try to get the runner who took a lead out, and why the runner has to get back touching the base.",
+      "demo": [
+        "The pitcher plays too.",
+        "If you take a big lead, he can turn by surprise and throw to your base: that's a pickoff, a throw to catch you outside your home.",
+        "If his throw gets there and the fielder tags you before you get back, you are out.",
+        "That's why the runner with a lead is always ready: one eye on the pitcher and his body set to dive back.",
+        "And if the ball goes far on a bad throw, then yes, run!"
+      ],
+      "acts": {
+        "1": {
+          "q": "What is a pickoff?",
+          "ok": "That's it! Pickoff.",
+          "ko": "The pitcher defends his base with that throw.",
+          "opts": {
+            "a": "A surprise throw by the pitcher to a base to get the runner with a lead out",
+            "b": "A kind of bat",
+            "c": "A coach's sign"
+          }
+        },
+        "2": {
+          "q": "On a pickoff, if you get back to your base before the tag, you are safe",
+          "ok": "Good! Your safe home saves you.",
+          "ko": "True: getting there first is safe."
+        },
+        "3": {
+          "q": "The pickoff throw gets away far from the first baseman. As the runner, what do you do?",
+          "ok": "Correct! Ball far away: take advantage.",
+          "ko": "A bad pickoff throw gives away a base.",
+          "opts": {
+            "a": "I run to the next base!",
+            "b": "I stay still",
+            "c": "I go back to the dugout"
+          }
+        },
+        "4": {
+          "q": "The pitcher throws a pickoff to first. Tap the base where the fielder waits for the throw to tag you",
+          "ok": "Good! That's where the pickoff is decided.",
+          "ko": "First receives the surprise throw.",
+          "answer": "First base"
+        },
+        "5": {
+          "q": "The pickoff throw got there and you were tagged one step before getting back to the base. What is the call?",
+          "ok": "Out! The pickoff worked.",
+          "ko": "Tagged outside your home: out.",
+          "opts": {
+            "a": "Out!",
+            "b": "Safe!",
+            "c": "Ball!"
+          }
+        },
+        "6": {
+          "q": "The best antidote against the pickoff is:",
+          "ok": "That's it! Short and alert.",
+          "ko": "Take a lead with your head, not with greed.",
+          "opts": {
+            "a": "A short lead and getting back fast",
+            "b": "Taking the biggest lead possible",
+            "c": "Not looking at the pitcher"
+          }
+        }
+      }
+    },
+    "9.4": {
+      "title": "The balk: the trick that doesn't count",
+      "objective": "Understand the balk in simple words: an illegal move by the pitcher with runners on base — starting to pitch and stopping, or faking a throw without letting go of the ball — punished with one base for each runner; and that in many kids' leagues the balk isn't called or is taught with a warning first.",
+      "demo": [
+        "The pitcher can trick you with his eyes, but not with his body.",
+        "If, with runners on base, he starts his pitching motion and stops, or acts like he's throwing to a base and doesn't let go of the ball, he committed a balk.",
+        "The penalty is fair: each runner moves up one base for free.",
+        "It's like moving a game piece out of turn: it doesn't count.",
+        "And listen: in many kids' leagues the balk isn't called, or the umpire warns first to teach.",
+        "Are balks called in your league? Your coach knows."
+      ],
+      "acts": {
+        "1": {
+          "q": "What is a balk?",
+          "ok": "That's it! Balk.",
+          "ko": "An illegal move by the pitcher: that's a balk.",
+          "opts": {
+            "a": "An illegal move by the pitcher with runners on base",
+            "b": "A very long batted ball",
+            "c": "A steal of home"
+          }
+        },
+        "2": {
+          "q": "What is the penalty for a balk?",
+          "ok": "Correct! A free base per runner.",
+          "ko": "Balk: everybody moves up one.",
+          "opts": {
+            "a": "Each runner moves up one base",
+            "b": "The pitcher leaves the game",
+            "c": "The batter is out"
+          }
+        },
+        "3": {
+          "q": "A balk can only be called if there are runners on base",
+          "ok": "Good! No runners, no balk.",
+          "ko": "True: with no runners, that move isn't punished that way."
+        },
+        "4": {
+          "q": "Which picture shows a balk?",
+          "ok": "That's it! Starting and stopping: balk.",
+          "ko": "Stopping halfway through the motion is the classic balk.",
+          "opts": {
+            "a": "The pitcher starts to pitch and stops halfway",
+            "b": "The pitcher pitches normally to home",
+            "c": "The pitcher makes a legal, complete pickoff"
+          }
+        },
+        "5": {
+          "q": "The pitcher faked a throw to first and kept the ball, with a runner on first. What does the umpire call?",
+          "ok": "Balk! And the runner moves up.",
+          "ko": "Faking without letting go: balk and one base.",
+          "opts": {
+            "a": "Balk! Runner to second",
+            "b": "Safe!",
+            "c": "Strike!"
+          }
+        },
+        "6": {
+          "q": "In your kids' league, maybe the balk:",
+          "ok": "Correct! Each league handles it its own way.",
+          "ko": "With kids, many leagues teach before punishing.",
+          "opts": {
+            "a": "Isn't called yet, or they warn first: ask your coach",
+            "b": "Is always punished by ejection",
+            "c": "Doesn't exist anywhere"
+          }
+        }
+      }
+    },
+    "9.5": {
+      "title": "Wild pitch and passed ball",
+      "objective": "Tell apart: a wild pitch is a pitch so bad the catcher can't catch or block it (the pitcher's fault); a passed ball is a catchable ball that gets away from the catcher (the catcher's fault). In both, runners can advance at their own risk.",
+      "demo": [
+        "Sometimes the ball gets away behind the catcher and the runners run.",
+        "Whose fault was it?",
+        "If the pitch was so bad — very high, very low or very far — that the catcher had no way to catch it, it's a wild pitch: the pitcher's fault.",
+        "If the ball was normal and catchable and the catcher let it get away, it's a passed ball: the catcher's fault.",
+        "Different faults, same hurry: the runners can try to move up, and the catcher has to get the ball back fast."
+      ],
+      "acts": {
+        "1": {
+          "q": "The pitch goes over the catcher's head, impossible to catch. It is:",
+          "ok": "That's it! The pitcher's fault.",
+          "ko": "Impossible ball: wild pitch.",
+          "opts": {
+            "a": "Wild pitch",
+            "b": "Passed ball",
+            "c": "Balk"
+          }
+        },
+        "2": {
+          "q": "The ball arrives normally at the glove and gets away from the catcher. It is:",
+          "ok": "Correct! It was catchable: passed ball.",
+          "ko": "Catchable and got away: passed ball.",
+          "opts": {
+            "a": "Passed ball",
+            "b": "Wild pitch",
+            "c": "Always a strike"
+          }
+        },
+        "3": {
+          "q": "On a wild pitch or a passed ball, the runners can advance if they dare",
+          "ok": "Good! The ball is loose.",
+          "ko": "True: loose ball, run carefully."
+        },
+        "4": {
+          "q": "The difference between a wild pitch and a passed ball is:",
+          "ok": "That's it! That's how the scorer decides.",
+          "ko": "Same escape, different faults.",
+          "opts": {
+            "a": "Whose fault it is: the pitcher's or the catcher's",
+            "b": "The color of the ball",
+            "c": "The inning"
+          }
+        },
+        "5": {
+          "q": "The ball got away to the back and the runner from third scored. That play is NOT scored as:",
+          "ok": "Correct! Moving up on a ball that got away isn't a steal.",
+          "ko": "A steal happens during the pitch, not because of the escape.",
+          "opts": {
+            "a": "Stolen base",
+            "b": "Run",
+            "c": "Advance"
+          }
+        },
+        "6": {
+          "q": "The ball that got away rolled all the way to the back, behind home. Tap where the catcher has to run to get it",
+          "ok": "Good! Get it back fast.",
+          "ko": "The loose ball is behind home.",
+          "answer": "Behind home"
+        }
+      }
+    },
+    "10.1": {
+      "title": "Dropped third strike",
+      "objective": "Understand the dropped third strike: if the catcher doesn't catch the third strike cleanly, the batter can run to first when the rule applies — first base open, or first occupied with two outs — and that in many kids' leagues this rule doesn't exist yet.",
+      "demo": [
+        "The batter struck out… or did he?",
+        "If the catcher doesn't catch the third strike cleanly — he drops it or it bounces first — and the rule applies, the batter can run to first!",
+        "It's called the dropped third strike.",
+        "It applies when first base is open, or when there are two outs even if first is occupied.",
+        "The catcher has to tag him with the ball or throw to first.",
+        "And watch out for your league: in many leagues for young kids this rule isn't used: a strikeout is a strikeout, period.",
+        "Ask your coach if the batter can run in your league."
+      ],
+      "acts": {
+        "1": {
+          "q": "What is the dropped third strike?",
+          "ok": "That's it! Dropped third strike.",
+          "ko": "Third strike without a clean catch: run, if the rule applies.",
+          "opts": {
+            "a": "The catcher doesn't catch the third strike cleanly and the batter can run to first",
+            "b": "A strike that always falls to the ground before the batter",
+            "c": "A kind of glove"
+          }
+        },
+        "2": {
+          "q": "With first base open and one out, the third strike gets away from the catcher. The batter must:",
+          "ok": "Correct! First is open: run.",
+          "ko": "The rule gives you that chance.",
+          "opts": {
+            "a": "Run to first",
+            "b": "Go back to the dugout",
+            "c": "Stand still"
+          }
+        },
+        "3": {
+          "q": "With first occupied and fewer than two outs, the batter can also run on a dropped third strike",
+          "ok": "Good! With first occupied it only applies with two outs.",
+          "ko": "False: first occupied closes the door, except with two outs."
+        },
+        "4": {
+          "q": "Two outs and first occupied, dropped third strike. The batter:",
+          "ok": "That's it! With two outs the door opens.",
+          "ko": "Two outs: even if first is occupied, he can run.",
+          "opts": {
+            "a": "Yes, can run to first",
+            "b": "Never can",
+            "c": "Has to pitch"
+          }
+        },
+        "5": {
+          "q": "The catcher caught the third strike cleanly. What does the umpire call?",
+          "ok": "Out! Clean catch, no running to first.",
+          "ko": "If the catcher catches it cleanly, the strikeout is final.",
+          "opts": {
+            "a": "Out! Complete strikeout",
+            "b": "Safe!",
+            "c": "Balk!"
+          }
+        },
+        "6": {
+          "q": "In your kids' league, the first thing you need to know about this rule is:",
+          "ok": "Correct! Many small leagues don't use it.",
+          "ko": "League rule: coach first.",
+          "opts": {
+            "a": "If my league uses it at my age: ask your coach",
+            "b": "That it always counts everywhere in the world",
+            "c": "That the catcher invented it"
+          }
+        }
+      }
+    },
+    "10.2": {
+      "title": "Infield fly: the out that protects",
+      "objective": "Understand the infield fly and why: with runners on first and second (or the bases loaded) and fewer than two outs, an easy fly ball to the infield is an automatic out for the batter, so the defense doesn't drop it on purpose to make a sneaky double play.",
+      "demo": [
+        "Listen to the why, and you'll never forget it.",
+        "Runners on first and second, an easy fly ball to the infield.",
+        "If the defense drops it on purpose, the runners are trapped: they don't know whether to run or stay, and the defense would get a gift double play.",
+        "To protect the runners there is the infield fly: the umpire calls \"infield fly, batter out\" as soon as he sees it's an easy infield fly ball, with fewer than two outs.",
+        "The batter is out even if the ball falls, and the runners can move up at their own risk, as with any fly ball.",
+        "The rule punishes the trick, not the batter."
+      ],
+      "acts": {
+        "1": {
+          "q": "Why does the infield fly exist?",
+          "ok": "That's it! It protects the runners.",
+          "ko": "The rule is a shield against the trick.",
+          "opts": {
+            "a": "So the defense doesn't drop an easy fly ball on purpose to make a sneaky double play",
+            "b": "To make the game faster",
+            "c": "To punish the batter"
+          }
+        },
+        "2": {
+          "q": "The infield fly is called with runners on:",
+          "ok": "Correct! Those bases and those outs.",
+          "ko": "First and second, fewer than two outs: that's where the rule lives.",
+          "opts": {
+            "a": "First and second (or bases loaded) and fewer than two outs",
+            "b": "Only third",
+            "c": "Bases empty"
+          }
+        },
+        "3": {
+          "q": "The infield fly is also called with two outs",
+          "ok": "Good! With two outs it isn't needed.",
+          "ko": "False: with two outs the trick doesn't work, it isn't called."
+        },
+        "4": {
+          "q": "Easy fly ball to the shortstop with runners on first and second and one out. The umpire calls:",
+          "ok": "That's it! Out before it falls.",
+          "ko": "The call comes with the ball in the air.",
+          "opts": {
+            "a": "\"Infield fly! Batter out\"",
+            "b": "\"Safe!\"",
+            "c": "\"Balk!\""
+          }
+        },
+        "5": {
+          "q": "If the infield fly ball falls to the ground without anyone catching it, the batter:",
+          "ok": "Correct! The out was already called.",
+          "ko": "Whether it falls or not: batter out.",
+          "opts": {
+            "a": "Is out anyway",
+            "b": "It becomes a hit",
+            "c": "Has to run to first"
+          }
+        },
+        "6": {
+          "q": "Which fly ball can be an infield fly?",
+          "ok": "That's it! Easy and in the infield.",
+          "ko": "It has to be a fly ball an infielder catches without hurrying.",
+          "opts": {
+            "a": "An easy, high fly ball over the infield",
+            "b": "A hard line drive to the outfield",
+            "c": "A deep fly ball to the wall"
+          }
+        }
+      }
+    },
+    "10.3": {
+      "title": "Live ball and dead ball",
+      "objective": "Tell apart a live ball (you can run and make outs) from a dead ball (everything stops: a foul is the everyday example, also time requested and granted, and a pitch that hits the batter).",
+      "demo": [
+        "The ball has two states, like a traffic light.",
+        "Live ball: the light is green, you can run, throw and make outs.",
+        "Dead ball: red light, everything stops and nobody can move up or be put out.",
+        "A foul is a dead ball.",
+        "When the umpire grants time, too.",
+        "And when a pitch hits the batter, the ball goes dead that very instant.",
+        "Learn the traffic light: green, play; red, freeze."
+      ],
+      "acts": {
+        "1": {
+          "q": "With a live ball, players can:",
+          "ok": "That's it! Green light.",
+          "ko": "Live ball: the game goes on.",
+          "opts": {
+            "a": "Run, throw and make outs",
+            "b": "Nothing, everything is stopped",
+            "c": "Only watch"
+          }
+        },
+        "2": {
+          "q": "A foul ball turns the ball into:",
+          "ok": "Correct! The foul stops everything.",
+          "ko": "Foul: red light.",
+          "opts": {
+            "a": "Dead ball",
+            "b": "Live ball",
+            "c": "A stolen base"
+          }
+        },
+        "3": {
+          "q": "With a dead ball, a runner can move up to the next base",
+          "ok": "Good! Nobody moves on a red light.",
+          "ko": "False: dead ball, everyone freezes."
+        },
+        "4": {
+          "q": "You ask for time and the umpire grants it by raising his hands. The ball is:",
+          "ok": "Correct! Time granted: dead ball.",
+          "ko": "With the umpire's time, everything stops.",
+          "opts": {
+            "a": "Dead",
+            "b": "Live",
+            "c": "Only foul"
+          }
+        },
+        "5": {
+          "q": "The pitch hits the batter. At that instant the ball:",
+          "ok": "That's it! Hit by the pitch: dead ball.",
+          "ko": "The hit turns the play off instantly.",
+          "opts": {
+            "a": "Goes dead: nobody can move up on that play",
+            "b": "Stays live and everyone runs",
+            "c": "Becomes a home run"
+          }
+        },
+        "6": {
+          "q": "The runner was halfway when foul was called. Tap where he has to go back with the dead ball",
+          "ok": "Good! On a dead ball you go back.",
+          "ko": "Red light: everyone to their base.",
+          "answer": "His starting base"
+        }
+      }
+    },
+    "10.4": {
+      "title": "Interference and obstruction",
+      "objective": "Tell apart in simple words: interference is when the batting team gets in the way of a fielder who is playing the ball; obstruction is when a fielder without the ball blocks a runner's path.",
+      "demo": [
+        "Two long words for a short idea: don't get in the way and don't block.",
+        "If your team is batting and someone gets in the way of a fielder about to play the ball, that's interference: whoever got in the way pays, almost always with an out.",
+        "If a fielder without the ball stands in the way and blocks a runner, that's obstruction: the defense pays, and the runner moves up protected.",
+        "Did the batting team get in the way? Interference.",
+        "Did a fielder without the ball block? Obstruction."
+      ],
+      "acts": {
+        "1": {
+          "q": "A runner crashes into the shortstop just as he is about to catch a ground ball. It is:",
+          "ok": "Correct! He got in the way of the one playing the ball.",
+          "ko": "The offense got in the way: interference.",
+          "opts": {
+            "a": "The runner's interference",
+            "b": "Obstruction",
+            "c": "Nothing, that's the game"
+          }
+        },
+        "2": {
+          "q": "The first baseman, without the ball, stands on the line and blocks the runner rounding the base. It is:",
+          "ok": "That's it! A fielder without the ball blocking.",
+          "ko": "Blocking without the ball: obstruction.",
+          "opts": {
+            "a": "Obstruction",
+            "b": "Interference",
+            "c": "A pickoff"
+          }
+        },
+        "3": {
+          "q": "If the fielder has the ball, he can be in the path to tag the runner",
+          "ok": "Good! With the ball, the fielder is playing.",
+          "ko": "True: with the ball he can go for the tag."
+        },
+        "4": {
+          "q": "The batter interfered with the catcher as he tried to throw. The umpire declares:",
+          "ok": "Correct! Whoever gets in the way pays.",
+          "ko": "Interference by the offense: out.",
+          "opts": {
+            "a": "Out for interference",
+            "b": "A run for the offense",
+            "c": "Balk"
+          }
+        },
+        "5": {
+          "q": "The quick way to tell them apart is to ask:",
+          "ok": "That's it! That question decides.",
+          "ko": "Offense gets in the way: interference. Defense blocks: obstruction.",
+          "opts": {
+            "a": "Who got in the way: the offense or a fielder without the ball?",
+            "b": "What inning is it?",
+            "c": "Who yelled?"
+          }
+        },
+        "6": {
+          "q": "Tap the player committing obstruction: the fielder standing without the ball in the path between first and second",
+          "ok": "Good! He blocks without playing the ball.",
+          "ko": "Without the ball and in the path: obstruction.",
+          "answer": "The fielder without the ball in the path"
+        }
+      }
+    },
+    "10.5": {
+      "title": "Missing a base: the appeal",
+      "objective": "Understand that if a runner misses a base (or leaves early on a tag up), the defense can appeal: with the ball live, touch the base or the runner and show the mistake to the umpire; if the appeal succeeds, it's an out.",
+      "demo": [
+        "Remember Level 1: you have to touch every base.",
+        "If a runner skips one — or left before the catch on a tag up — the umpire doesn't call it on his own.",
+        "The defense has to appeal: with the ball live, a fielder touches the missed base, or the runner, and clearly shows the umpire what happened.",
+        "If the umpire saw it and agrees: out on appeal.",
+        "No appeal, no penalty.",
+        "The defense has to be wide awake too."
+      ],
+      "acts": {
+        "1": {
+          "q": "What is an appeal?",
+          "ok": "That's it! Appeal.",
+          "ko": "Appealing is showing the mistake with the ball in play.",
+          "opts": {
+            "a": "The defense shows the umpire a missed base, touching the base or the runner with the ball live",
+            "b": "A shout from the crowd",
+            "c": "A coach's sign"
+          }
+        },
+        "2": {
+          "q": "If a runner misses a base and nobody appeals, the game goes on without a penalty",
+          "ok": "Good! No appeal, no out.",
+          "ko": "True: the defense has to ask for it."
+        },
+        "3": {
+          "q": "The runner stepped wrong and went right past second on his way. The defense appeals by touching:",
+          "ok": "Correct! The base that was missed.",
+          "ko": "You appeal at the forgotten base.",
+          "opts": {
+            "a": "Second base with the ball",
+            "b": "Home",
+            "c": "The mound"
+          }
+        },
+        "4": {
+          "q": "The defense appealed correctly and the umpire saw the runner never touched second. He calls:",
+          "ok": "Out! Appeal won.",
+          "ko": "Missed base plus appeal: out.",
+          "opts": {
+            "a": "Out!",
+            "b": "Safe!",
+            "c": "Foul!"
+          }
+        },
+        "5": {
+          "q": "A runner scored but left before the catch on a tag up. The defense can:",
+          "ok": "That's it! Leaving early can be appealed too.",
+          "ko": "A tag up done wrong: appeal.",
+          "opts": {
+            "a": "Appeal by touching his starting base with the ball",
+            "b": "Nothing, he already scored",
+            "c": "Bat for him"
+          }
+        },
+        "6": {
+          "q": "The runner skipped third on the way home. Tap the base where the defense has to appeal",
+          "ok": "Good! That's where the mistake is shown.",
+          "ko": "The appeal lives at the forgotten base.",
+          "answer": "Third base"
+        }
+      }
+    },
+    "11.1": {
+      "title": "The pitcher's rubber",
+      "objective": "Understand that the pitcher pitches with his foot on the mound's rubber, that every pitch starts there, and that the distance from the mound to home changes with age and league.",
+      "demo": [
+        "At the top of the mound there's a little white board: the rubber.",
+        "The pitcher pitches with one foot on it: everything starts there.",
+        "With that foot on the rubber, the pitcher looks at the catcher, gets the sign and pitches.",
+        "Pay attention to this big truth: the distance from the rubber to home isn't the same for everyone.",
+        "In kids' leagues it's shorter and it grows with age.",
+        "What is it in your league? Your field measures it, and your coach knows it."
+      ],
+      "acts": {
+        "1": {
+          "q": "What is the pitcher's rubber?",
+          "ok": "That's it! Rubber.",
+          "ko": "Every pitch starts from the rubber.",
+          "opts": {
+            "a": "The little white board on the mound where the pitcher puts his foot",
+            "b": "A special glove",
+            "c": "One more base"
+          }
+        },
+        "2": {
+          "q": "The distance from the rubber to home is the same at every age",
+          "ok": "Good! It changes with age and league.",
+          "ko": "False: for kids it's shorter."
+        },
+        "3": {
+          "q": "When pitching, the pitcher has to start:",
+          "ok": "Correct! Foot on the rubber.",
+          "ko": "The rubber is his starting point.",
+          "opts": {
+            "a": "With one foot on the rubber",
+            "b": "From second base",
+            "c": "From wherever he wants"
+          }
+        },
+        "4": {
+          "q": "Tap the rubber: the little board at the top of the mound",
+          "ok": "Good! That's where the rubber is.",
+          "ko": "In the center of the diamond, on top of the mound.",
+          "answer": "The mound, at its top"
+        },
+        "5": {
+          "q": "The pitcher gets the sign looking at the catcher, standing on the rubber. That is the start of:",
+          "ok": "Correct! Every pitch is born there.",
+          "ko": "Sign, rubber and pitch: the full routine.",
+          "opts": {
+            "a": "Every pitch",
+            "b": "A steal",
+            "c": "A sure balk"
+          }
+        },
+        "6": {
+          "q": "If you want to know the exact distance of your mound, you should:",
+          "ok": "That's it! It depends on your league and your age.",
+          "ko": "Don't copy the grown-ups' numbers.",
+          "opts": {
+            "a": "Ask your coach or look at your league's rule",
+            "b": "Make it up",
+            "c": "Always use the professionals' one"
+          }
+        }
+      }
+    },
+    "11.2": {
+      "title": "Windup and set: the two ways to pitch",
+      "objective": "Tell apart the windup (full motion, step back and arms up, used mostly with no runners) from the set or stretch (short motion from a pause, used with runners to keep them close).",
+      "demo": [
+        "The pitcher has two ways to start.",
+        "With no runners, he can use the windup: the full, calm motion, with his step and his arms going up, like gathering momentum with his whole body.",
+        "With runners on base he uses the set, also called the stretch: he gets in position, makes a still pause facing home — that pause is the law — and pitches quick and short, to give the runner less of an edge.",
+        "Windup to pitch comfortably; set to watch the bases."
+      ],
+      "acts": {
+        "1": {
+          "q": "What is the windup?",
+          "ok": "That's it! The big motion.",
+          "ko": "Windup: the whole body takes part.",
+          "opts": {
+            "a": "The full pitching motion, with a step and momentum",
+            "b": "A throw to first",
+            "c": "A coach's sign"
+          }
+        },
+        "2": {
+          "q": "With runners on base, the pitcher usually pitches from:",
+          "ok": "Correct! Set to watch the bases.",
+          "ko": "With runners, a short motion.",
+          "opts": {
+            "a": "The set (stretch), short and with a pause",
+            "b": "The slowest windup possible",
+            "c": "Sitting down"
+          }
+        },
+        "3": {
+          "q": "In the set, the pitcher must make a still pause before pitching home",
+          "ok": "Good! The pause is part of the rule.",
+          "ko": "True: with no pause in the set, it can be a balk."
+        },
+        "4": {
+          "q": "Which picture shows the set?",
+          "ok": "That's it! Still and sideways: set.",
+          "ko": "You recognize the set by the pause.",
+          "opts": {
+            "a": "The pitcher still, sideways, looking, before a short pitch",
+            "b": "The pitcher with his arms way up taking a step back",
+            "c": "The pitcher batting"
+          }
+        },
+        "5": {
+          "q": "From the set, without making his pause and with a runner on base, the pitcher hurries a pitch home. The umpire can call:",
+          "ok": "Correct! The pause is respected.",
+          "ko": "Remember Level 9: tricking with the body doesn't count.",
+          "opts": {
+            "a": "Balk: he didn't make the set pause",
+            "b": "Always a strike",
+            "c": "Never anything"
+          }
+        },
+        "6": {
+          "q": "The set helps the pitcher:",
+          "ok": "That's it! Less of an edge for the steal.",
+          "ko": "Short motion, less time stolen.",
+          "opts": {
+            "a": "Watch the runners and pitch home faster",
+            "b": "Hit better",
+            "c": "Run more"
+          }
+        }
+      }
+    },
+    "11.3": {
+      "title": "Fastball and changeup: the first pitches",
+      "objective": "Learn that a kid's first pitches are the fastball and the changeup (which looks like a fastball but arrives slower), and that curveballs aren't for young arms: only when the coach decides, with the body ready.",
+      "demo": [
+        "A young pitcher needs only two pitches, done well.",
+        "First the fastball: your straight pitch, with control.",
+        "Then the changeup: it comes out just like the fastball, with the same arm motion, but it arrives slower and fools the batter who has already swung.",
+        "And curveballs? Listen carefully: curveballs aren't for you yet.",
+        "Throwing curveballs with a growing arm can hurt it.",
+        "Fastball and changeup first, always.",
+        "Curveballs come later, only when your coach decides and your body is ready."
+      ],
+      "acts": {
+        "1": {
+          "q": "What are the first two pitches a young pitcher learns?",
+          "ok": "That's it! Fastball and changeup.",
+          "ko": "Those two, done well, are enough.",
+          "opts": {
+            "a": "Fastball and changeup",
+            "b": "Curveball and more curveball",
+            "c": "Only curveballs"
+          }
+        },
+        "2": {
+          "q": "What makes the changeup special?",
+          "ok": "Correct! It fools you with speed.",
+          "ko": "Same arm, slower ball.",
+          "opts": {
+            "a": "It looks like a fastball but arrives slower",
+            "b": "It's the fastest pitch",
+            "c": "It's thrown with the glove"
+          }
+        },
+        "3": {
+          "q": "A kid should practice curveballs all day to be a good pitcher",
+          "ok": "Good! Curveballs wait.",
+          "ko": "False: your growing arm comes first."
+        },
+        "4": {
+          "q": "Who decides when a young player can start with curveballs?",
+          "ok": "That's it! Calmly and with permission.",
+          "ko": "Curveballs only with the coach's decision.",
+          "opts": {
+            "a": "The coach, when the body is ready",
+            "b": "The kid alone, whenever he wants",
+            "c": "The crowd"
+          }
+        },
+        "5": {
+          "q": "The batter swung way too early at a changeup that came floating in. The umpire calls:",
+          "ok": "Strike! The changeup did its job.",
+          "ko": "It came slow and the swing went by first.",
+          "opts": {
+            "a": "Strike! The changeup fooled him",
+            "b": "Ball!",
+            "c": "Safe!"
+          }
+        },
+        "6": {
+          "q": "Which grip and pitch do you learn first?",
+          "ok": "Correct! Fastball first, always.",
+          "ko": "The fastball is the base of every pitcher.",
+          "opts": {
+            "a": "The fastball, holding the ball with your fingers across the seams",
+            "b": "A curveball, twisting the wrist",
+            "c": "Throwing with your eyes closed"
+          }
+        }
+      }
+    },
+    "11.4": {
+      "title": "Taking care of your arm",
+      "objective": "Learn that the arm is cared for with rules: there is a maximum number of pitches and rest days that depend on age and league (with no fixed number in this lesson), you warm up before pitching, and if your arm or elbow hurts, you stop and tell an adult.",
+      "demo": [
+        "Your arm is your treasure, and treasures are protected with rules.",
+        "That's why there's the pitch count — you already met it in Level 8 — and rest days: your league sets a maximum number of pitches for your age, and then says to rest.",
+        "Those numbers change with age and with league, so you won't see any here: ask your coach which ones are yours and always respect them.",
+        "Warm up before pitching, don't pitch every day, and listen to the golden rule: if your arm or elbow hurts, you stop and tell an adult.",
+        "No pitching through pain.",
+        "A game isn't worth an arm."
+      ],
+      "acts": {
+        "1": {
+          "q": "If your arm or elbow hurts while pitching, the right thing is to:",
+          "ok": "That's it! That's the golden rule.",
+          "ko": "Pain is always a signal to stop.",
+          "opts": {
+            "a": "Stop and tell an adult",
+            "b": "Keep pitching more slowly",
+            "c": "Pitch with the other arm without saying anything"
+          }
+        },
+        "2": {
+          "q": "The maximum number of pitches and the rest are the same for every age and league",
+          "ok": "Good! They change with age and league.",
+          "ko": "False: that's why your league and your coach set them."
+        },
+        "3": {
+          "q": "What is the pitch count for?",
+          "ok": "Correct! Counting is caring.",
+          "ko": "Every pitch counts for your arm.",
+          "opts": {
+            "a": "To not go over the maximum for your age and to take care of your arm",
+            "b": "To know who's batting",
+            "c": "To count home runs"
+          }
+        },
+        "4": {
+          "q": "Before pitching in a game or practice, the pitcher must:",
+          "ok": "That's it! A cold arm gets hurt.",
+          "ko": "Warming up is part of pitching.",
+          "opts": {
+            "a": "Warm up the arm throwing softly and gradually",
+            "b": "Throw as hard as possible from the first ball",
+            "c": "Not move the arm"
+          }
+        },
+        "5": {
+          "q": "The coach comes out to talk with his pitcher, who has already thrown a lot. Most likely what comes is:",
+          "ok": "Correct! Taking care is also managing.",
+          "ko": "The count rules: time to rest.",
+          "opts": {
+            "a": "A pitching change to take care of him",
+            "b": "A home run",
+            "c": "An appeal"
+          }
+        },
+        "6": {
+          "q": "Which picture shows taking care of your arm?",
+          "ok": "That's it! Resting is part of the plan.",
+          "ko": "Rest trains too: it protects.",
+          "opts": {
+            "a": "A pitcher resting in the dugout after his outing",
+            "b": "A pitcher throwing alone every day",
+            "c": "A pitcher throwing with a bandaged arm and pain"
+          }
+        }
+      }
+    },
+    "11.5": {
+      "title": "The relief pitcher",
+      "objective": "Understand relief pitching: when a pitcher leaves, another comes in from the bullpen; the one who opens the game is the starter and the one who comes in later is the reliever, and changing pitchers is also a way of taking care of arms.",
+      "demo": [
+        "No arm pitches the whole game, much less a young arm.",
+        "The pitcher who starts is called the starter.",
+        "When he leaves — because of his count, because he is tired or for strategy — the relief comes in: the reliever, who was warming up in the bullpen, that space in the back where pitchers practice before coming in.",
+        "The reliever comes in with the game already going and has to be ready from his first pitch.",
+        "Changing pitchers isn't a punishment: it's taking care of the arm and giving the team a fresh breath."
+      ],
+      "acts": {
+        "1": {
+          "q": "What is a reliever?",
+          "ok": "That's it! He comes in with the game going.",
+          "ko": "Relief: a new arm on the mound.",
+          "opts": {
+            "a": "The pitcher who comes in during the game to replace another",
+            "b": "The first batter",
+            "c": "The third base coach"
+          }
+        },
+        "2": {
+          "q": "The pitcher who opens the game is called:",
+          "ok": "Correct! Starter.",
+          "ko": "The first one on the mound is the starter.",
+          "opts": {
+            "a": "Starter",
+            "b": "Reliever",
+            "c": "Cutoff man"
+          }
+        },
+        "3": {
+          "q": "The reliever warms up in the bullpen before coming in",
+          "ok": "Good! Nobody comes in cold.",
+          "ko": "True: the bullpen is his warm-up room."
+        },
+        "4": {
+          "q": "A pitcher leaves the game, partly, because:",
+          "ok": "That's it! Taking care of the arm comes first.",
+          "ko": "The pitch count also decides relief.",
+          "opts": {
+            "a": "His pitch count reached the maximum for his age and league",
+            "b": "The crowd asked for it",
+            "c": "He got bored"
+          }
+        },
+        "5": {
+          "q": "A new pitcher comes in mid-inning. Before going on, the umpire allows him:",
+          "ok": "Correct! He comes in and warms up a bit right there.",
+          "ko": "Every new pitcher warms up before playing.",
+          "opts": {
+            "a": "A few warm-up pitches on the mound",
+            "b": "To bat once",
+            "c": "To steal a base"
+          }
+        },
+        "6": {
+          "q": "Tap the bullpen: the area, usually behind the outfield or to one side, where relievers warm up",
+          "ok": "Good! That's where they wait, ready.",
+          "ko": "Bullpen: the relievers' home.",
+          "answer": "The warm-up area (bullpen)"
+        }
+      }
+    },
+    "12.1": {
+      "title": "Where to throw the ball",
+      "objective": "Think before every pitch about where the ball will go depending on the runners and the outs, looking first to stop the lead runner and taking the sure out when the hard throw can't be made.",
+      "demo": [
+        "You've got the ball in your glove and everyone is running.",
+        "Where do you throw it?",
+        "The All Star answers before the ball is hit: before every pitch he asks himself, if it's hit to me, what do I do?",
+        "It's almost always best to stop the lead runner, the one closest to scoring.",
+        "But a sure out is worth more than an impossible throw: if the long throw can't be made, make sure of the out at first.",
+        "Thinking ahead: that's what separates a player from an All Star."
+      ],
+      "acts": {
+        "1": {
+          "q": "When should you think about where you will throw the ball?",
+          "ok": "That's it! The play is thought out beforehand.",
+          "ko": "The All Star arrives with the plan ready.",
+          "opts": {
+            "a": "Before every pitch",
+            "b": "When you already have it in your glove",
+            "c": "Never, you make it up"
+          }
+        },
+        "2": {
+          "q": "No runners, you field a ground ball. Where do you throw?",
+          "ok": "Correct! The out is at first.",
+          "ko": "No runners: first rules.",
+          "opts": {
+            "a": "To first",
+            "b": "To home",
+            "c": "To third"
+          }
+        },
+        "3": {
+          "q": "A sure out is better than trying an impossible throw and getting none",
+          "ok": "Yes! Make sure of the out.",
+          "ko": "True: a real out is worth more than a dream."
+        },
+        "4": {
+          "q": "Runner on first, easy ground ball to the shortstop with time. Tap the base where you stop the lead runner",
+          "ok": "Good! That's where you stop the leader.",
+          "ko": "The lead runner is stopped at second.",
+          "answer": "Second base"
+        },
+        "5": {
+          "q": "Which runner is it best to stop first?",
+          "ok": "Correct! He's the closest to scoring.",
+          "ko": "The leader of the line is the biggest danger.",
+          "opts": {
+            "a": "The lead runner",
+            "b": "The slowest one",
+            "c": "The one in the dugout"
+          }
+        },
+        "6": {
+          "q": "Two outs and a runner on first, ground ball to the second baseman. The easiest play is:",
+          "ok": "That's it! One out and it's over.",
+          "ko": "With two outs, the closest out wins.",
+          "opts": {
+            "a": "Throw to first or step on second: one out ends the inning",
+            "b": "Throw home",
+            "c": "Keep the ball"
+          }
+        }
+      }
+    },
+    "12.2": {
+      "title": "The cutoff man",
+      "objective": "Understand the cutoff: on long throws from the outfield, an infielder gets in the path, receives the throw and relays it quickly to whatever base is needed.",
+      "demo": [
+        "The outfield is far away, and a direct throw home can arrive weak or off target.",
+        "That's why there's the cutoff man: an infielder gets in the path, raises his arms so the outfielder sees him, receives the throw and spins fast to throw wherever it's needed.",
+        "Two short, strong throws beat one long, weak one.",
+        "The cutoff man is the defense's fast messenger."
+      ],
+      "acts": {
+        "1": {
+          "q": "What does the cutoff man do?",
+          "ok": "Correct! Receives and relays.",
+          "ko": "Cutoff: the bridge for long throws.",
+          "opts": {
+            "a": "Receives the outfielder's throw and relays it to whatever base is needed",
+            "b": "Bats",
+            "c": "Calls the strikes"
+          }
+        },
+        "2": {
+          "q": "Why is a cutoff man used?",
+          "ok": "That's it! Accuracy and speed.",
+          "ko": "Short throws: fewer mistakes.",
+          "opts": {
+            "a": "Because two short throws arrive better than one long, weak one",
+            "b": "To rest",
+            "c": "To confuse the umpire"
+          }
+        },
+        "3": {
+          "q": "Drag the ball along its path: center fielder, cutoff man, home",
+          "ok": "Perfect relay! That's the path.",
+          "ko": "From the outfield to the cutoff, from the cutoff to home.",
+          "answer": "Center field, cutoff man, home"
+        },
+        "4": {
+          "q": "The cutoff man raises his arms so the outfielder knows who to throw to",
+          "ok": "Yes! He has to be easy to see.",
+          "ko": "True: arms up, a clear target."
+        },
+        "5": {
+          "q": "How do you say \"cortador\" in English?",
+          "ok": "Good! Cutoff.",
+          "ko": "Cutoff man: cutoff.",
+          "opts": {
+            "a": "Cutoff",
+            "b": "Bullpen",
+            "c": "Lead"
+          }
+        },
+        "6": {
+          "q": "The cutoff man is usually:",
+          "ok": "Correct! Shortstop or second baseman, depending on the throw.",
+          "ko": "The infield relays for the outfield.",
+          "opts": {
+            "a": "An infielder",
+            "b": "The umpire",
+            "c": "The batter"
+          }
+        }
+      }
+    },
+    "12.3": {
+      "title": "Covering and backing up",
+      "objective": "Learn that on every play everyone moves: if a fielder goes after the ball, another covers his base, and behind every base receiving a throw there should be a back up in case the ball gets away.",
+      "demo": [
+        "On defense nobody stands still watching.",
+        "If the first baseman goes far to get a ground ball, the pitcher runs to cover first.",
+        "And when there is a throw to a base, another fielder runs to get behind that base to back up: if the ball gets away, he stops it and saves a base.",
+        "Covering is filling the house that was left empty; backing up is being the net behind the throw.",
+        "On every play, every player has a job."
+      ],
+      "acts": {
+        "1": {
+          "q": "The first baseman went far for a ground ball. Who covers first?",
+          "ok": "That's it! The pitcher covers.",
+          "ko": "First is empty: the pitcher fills it.",
+          "opts": {
+            "a": "The pitcher",
+            "b": "The catcher",
+            "c": "The left fielder"
+          }
+        },
+        "2": {
+          "q": "What is backing up?",
+          "ok": "Correct! The net behind the throw.",
+          "ko": "Backing up saves bases.",
+          "opts": {
+            "a": "Getting behind the base receiving a throw, in case the ball gets away",
+            "b": "Sitting in the dugout",
+            "c": "Batting twice"
+          }
+        },
+        "3": {
+          "q": "On defense only the player catching the ball moves",
+          "ok": "Good! Everybody moves.",
+          "ko": "False: every play moves all nine."
+        },
+        "4": {
+          "q": "The catcher throws to second on a steal attempt. Tap the outfielder backing up behind second",
+          "ok": "That's it! The center fielder backs up second.",
+          "ko": "Behind second lives the center fielder.",
+          "answer": "The center fielder"
+        },
+        "5": {
+          "q": "What is backing up for?",
+          "ok": "Correct! A mistake doesn't turn into a disaster.",
+          "ko": "The net turns an escape into just a scare.",
+          "opts": {
+            "a": "So a ball that gets away doesn't give away extra bases",
+            "b": "To see better",
+            "c": "To rest standing up"
+          }
+        },
+        "6": {
+          "q": "How do you say \"respaldar\" in English?",
+          "ok": "Good! Back up.",
+          "ko": "Backing up: back up.",
+          "opts": {
+            "a": "Back up",
+            "b": "Tag up",
+            "c": "Lead off"
+          }
+        }
+      }
+    },
+    "12.4": {
+      "title": "The coach's signs and the final review",
+      "objective": "Meet the first and third base coaches, who see the whole play and tell you to keep going or stop, and the team's secret signs; and review in short situations the special rules from Levels 9 and 10, only as a review.",
+      "demo": [
+        "Next to first and third are the base coaches, inside their boxes.",
+        "They see the whole field and tell you whether to keep going or stop: listening to your third base coach is part of running well.",
+        "The team also has hand signs to call for a bunt or a steal: they're secret and you don't tell the other team.",
+        "And before we finish, a lightning review of what you learned in Star — a review, not a new lesson: if the pitcher fakes and doesn't let go, it's a balk; if the third strike isn't caught cleanly, the batter can run when the rule applies; and the easy fly ball with first and second occupied is an infield fly.",
+        "If you already knew it, you're ready to think like an All Star."
+      ],
+      "acts": {
+        "1": {
+          "q": "Where are the base coaches?",
+          "ok": "Correct! One in each corner.",
+          "ko": "First and third each have their coach.",
+          "opts": {
+            "a": "Next to first and next to third",
+            "b": "On the mound",
+            "c": "In the outfield"
+          }
+        },
+        "2": {
+          "q": "You come running to third and your coach raises his hands for you to stop. What do you do?",
+          "ok": "That's it! The coach sees everything.",
+          "ko": "Hands up: stop at third.",
+          "opts": {
+            "a": "I stop at third",
+            "b": "I keep going home",
+            "c": "I go back to first"
+          }
+        },
+        "3": {
+          "q": "The team's signs can be told to the other team if they ask nicely",
+          "ok": "Good! They're secret.",
+          "ko": "False: the signs belong to the team."
+        },
+        "4": {
+          "q": "Review: the pitcher faked a throw to first and didn't let go of the ball, with a runner on base. That was:",
+          "ok": "Good, review done! It was a balk.",
+          "ko": "Level 9 review: faking without letting go is a balk.",
+          "opts": {
+            "a": "A balk",
+            "b": "A legal pickoff",
+            "c": "A steal"
+          }
+        },
+        "5": {
+          "q": "Review: easy fly ball to the infield, runners on first and second, one out. What does the umpire call?",
+          "ok": "That's it, Level 10 review!",
+          "ko": "Infield fly: batter out, called in the air.",
+          "opts": {
+            "a": "\"Infield fly! Batter out\"",
+            "b": "\"Safe!\"",
+            "c": "\"Ball!\""
+          }
+        },
+        "6": {
+          "q": "You didn't understand a sign from the coach. The best thing is:",
+          "ok": "Good! Asking is what an All Star does.",
+          "ko": "Better to ask than to guess.",
+          "opts": {
+            "a": "Ask for time and ask",
+            "b": "Do whatever I want",
+            "c": "Go to the dugout"
+          }
+        }
+      }
+    },
+    "12.5": {
+      "title": "Sportsmanship: how an All Star behaves",
+      "objective": "Close the content with the All Star's behavior: respecting the umpire's decisions, cheering on a teammate who makes a mistake, shaking hands with the other team at the end win or lose, and letting the coach talk to the umpire when there is a disagreement.",
+      "demo": [
+        "An All Star isn't just the one who hits home runs.",
+        "It's the one who respects the umpire's decision even if he doesn't like it, who cheers on his teammate when he makes a mistake instead of making fun of him, and who shakes hands with the other team at the end of the game, win or lose.",
+        "That's sportsmanship.",
+        "If your team doesn't agree with a play, the one who talks to the umpire is your coach, with respect.",
+        "Playing well is trained; behaving well is too.",
+        "That's thinking — and acting — like an All Star."
+      ],
+      "acts": {
+        "1": {
+          "q": "The umpire calls a strike that looked like a ball to you. What does an All Star do?",
+          "ok": "That's an All Star! The umpire decides.",
+          "ko": "Respect and keep going: that's how you play.",
+          "opts": {
+            "a": "Respects the decision and keeps batting",
+            "b": "Yells at the umpire",
+            "c": "Throws the bat"
+          }
+        },
+        "2": {
+          "q": "Your teammate made an error that cost a run. What do you say to him?",
+          "ok": "Correct! Cheering is what a team does.",
+          "ko": "Everyone makes mistakes: the All Star lifts them up.",
+          "opts": {
+            "a": "\"Don't worry, the next one is yours!\"",
+            "b": "\"You did everything wrong!\"",
+            "c": "Nothing, and I get angry at him"
+          }
+        },
+        "3": {
+          "q": "At the end of the game you shake hands with the other team only if you won",
+          "ok": "Good! You always shake hands.",
+          "ko": "False: win or lose, you shake hands."
+        },
+        "4": {
+          "q": "If your team doesn't agree with a decision, who talks to the umpire?",
+          "ok": "That's it! The coach, and with respect.",
+          "ko": "Talking is the coach's job.",
+          "opts": {
+            "a": "The coach, with respect",
+            "b": "All the players yelling",
+            "c": "The crowd"
+          }
+        },
+        "5": {
+          "q": "Which picture shows sportsmanship?",
+          "ok": "Correct! Respect at the end of the game.",
+          "ko": "The handshake line: the close of every game.",
+          "opts": {
+            "a": "Two teams shaking hands at the end",
+            "b": "A player throwing his helmet in anger",
+            "c": "A player making fun of the other team"
+          }
+        },
+        "6": {
+          "q": "How do you say \"deportividad\" in English?",
+          "ok": "Good! Sportsmanship.",
+          "ko": "That word belongs to an All Star too.",
+          "opts": {
+            "a": "Sportsmanship",
+            "b": "Strikeout",
+            "c": "Shortstop"
+          }
+        }
+      }
     }
   },
   "exams": {
@@ -2118,6 +4478,599 @@
           "a": "Hit",
           "b": "Balk",
           "c": "Lead"
+        }
+      }
+    },
+    "6": {
+      "1": {
+        "q": "Batted ball caught in the air before it bounces:",
+        "opts": {
+          "a": "The batter is out",
+          "b": "Hit",
+          "c": "Ball"
+        }
+      },
+      "2": {
+        "q": "The ball bounces first and then they pick it up. Is it a catch for an out?",
+        "opts": {
+          "a": "No",
+          "b": "Yes",
+          "c": "Sometimes"
+        }
+      },
+      "3": {
+        "q": "How do you say \"elevado\" in English?",
+        "opts": {
+          "a": "Fly ball",
+          "b": "Fastball",
+          "c": "Foul ball"
+        }
+      },
+      "4": {
+        "q": "A line drive caught by the third baseman is:",
+        "opts": {
+          "a": "Out",
+          "b": "Hit",
+          "c": "Foul"
+        }
+      },
+      "5": {
+        "q": "True or false: in foul territory you can also catch it for an out"
+      },
+      "6": {
+        "q": "The outfielder drops an easy fly ball and the ball bounces. The batter:",
+        "opts": {
+          "a": "Keeps running, there was no catch",
+          "b": "Is out anyway",
+          "c": "Must go back to the dugout"
+        }
+      },
+      "7": {
+        "q": "Tap the player who catches a long fly ball, in the outfield",
+        "answer": "An outfielder"
+      },
+      "8": {
+        "q": "When can a ball no longer be caught for an out?",
+        "opts": {
+          "a": "When it bounces on the ground",
+          "b": "When it pops out of the glove and falls",
+          "c": "Never"
+        }
+      },
+      "9": {
+        "q": "What does the umpire call after a catch in the air?",
+        "opts": {
+          "a": "Out!",
+          "b": "Safe!",
+          "c": "Ball!"
+        }
+      },
+      "10": {
+        "q": "True or false: it's the same if you catch it with the glove or if it bounces off the glove and falls to the ground"
+      },
+      "11": {
+        "q": "A very high fly ball gives the runners time to:",
+        "opts": {
+          "a": "Get ready and watch the catch",
+          "b": "Run off without looking",
+          "c": "Sit down"
+        }
+      },
+      "12": {
+        "q": "If they catch your batted ball, how many outs are added?",
+        "opts": {
+          "a": "One",
+          "b": "Two",
+          "c": "Three"
+        }
+      }
+    },
+    "7": {
+      "1": {
+        "q": "Standing on your base you are:",
+        "opts": {
+          "a": "Safe",
+          "b": "Out",
+          "c": "In foul territory"
+        }
+      },
+      "2": {
+        "q": "How many runners can be on one base?",
+        "opts": {
+          "a": "One",
+          "b": "Two",
+          "c": "Three"
+        }
+      },
+      "3": {
+        "q": "If two runners reach the same base, the one in danger is:",
+        "opts": {
+          "a": "The one who came from behind",
+          "b": "The one ahead",
+          "c": "The tallest one"
+        }
+      },
+      "4": {
+        "q": "True or false: tagging a runner standing on his base gets him out"
+      },
+      "5": {
+        "q": "The runner's base is his:",
+        "opts": {
+          "a": "Safe home",
+          "b": "Dugout",
+          "c": "Mound"
+        }
+      },
+      "6": {
+        "q": "You're running between bases and they tag you with the ball. You are:",
+        "opts": {
+          "a": "Out",
+          "b": "Safe",
+          "c": "Nothing happens"
+        }
+      },
+      "7": {
+        "q": "Tap the safe home of a runner on first",
+        "answer": "First base"
+      },
+      "8": {
+        "q": "What does the umpire call when you're on your base?",
+        "opts": {
+          "a": "Safe!",
+          "b": "Out!",
+          "c": "Strike!"
+        }
+      },
+      "9": {
+        "q": "True or false: the runner ahead owns the base where he already was"
+      },
+      "10": {
+        "q": "To be safe between plays, the runner must be:",
+        "opts": {
+          "a": "Touching his base",
+          "b": "In the outfield",
+          "c": "In the dugout"
+        }
+      },
+      "11": {
+        "q": "If the runner behind catches up to you, the right thing is that:",
+        "opts": {
+          "a": "He goes back to his base if he can",
+          "b": "Both stay",
+          "c": "You run off"
+        }
+      },
+      "12": {
+        "q": "How do you say \"a salvo\" in this level?",
+        "opts": {
+          "a": "Safe",
+          "b": "Balk",
+          "c": "Lead"
+        }
+      }
+    },
+    "8": {
+      "1": {
+        "q": "A clean batted ball that gets through without anyone failing:",
+        "opts": {
+          "a": "Hit",
+          "b": "Error",
+          "c": "Balk"
+        }
+      },
+      "2": {
+        "q": "A fielder drops an easy ball:",
+        "opts": {
+          "a": "Error",
+          "b": "Hit",
+          "c": "Safe"
+        }
+      },
+      "3": {
+        "q": "How do you say \"error\" in English?",
+        "opts": {
+          "a": "Error",
+          "b": "Hit",
+          "c": "Lead"
+        }
+      },
+      "4": {
+        "q": "A really hard ball, impossible to catch, that gets away from the glove:",
+        "opts": {
+          "a": "Hit",
+          "b": "Error",
+          "c": "Foul"
+        }
+      },
+      "5": {
+        "q": "True or false: a bad throw on a normal play can be an error"
+      },
+      "6": {
+        "q": "Who decides hit or error?",
+        "opts": {
+          "a": "The official scorer",
+          "b": "The crowd",
+          "c": "The batter"
+        }
+      },
+      "7": {
+        "q": "You got there because the first baseman didn't catch a normal throw to the base. That is:",
+        "opts": {
+          "a": "Error",
+          "b": "Hit",
+          "c": "Steal"
+        }
+      },
+      "8": {
+        "q": "Tap the player whose easy miss turns the batted ball into an error",
+        "answer": "The fielder who missed the easy play"
+      },
+      "9": {
+        "q": "If your batted ball was good and earned, the scorer writes:",
+        "opts": {
+          "a": "Hit",
+          "b": "E (error)",
+          "c": "K"
+        }
+      },
+      "10": {
+        "q": "True or false: every batted ball the fielder touches is an error"
+      },
+      "11": {
+        "q": "The key difference between a hit and an error is:",
+        "opts": {
+          "a": "Whether the defense failed a normal play",
+          "b": "The size of the field",
+          "c": "The time"
+        }
+      },
+      "12": {
+        "q": "An error lets the batting team:",
+        "opts": {
+          "a": "Reach or move up without earning it with the batted ball",
+          "b": "Always score two runs",
+          "c": "Change pitchers"
+        }
+      }
+    },
+    "9": {
+      "1": {
+        "q": "Stealing a base is moving up:",
+        "opts": {
+          "a": "During the pitch, with no batted ball",
+          "b": "With a home run",
+          "c": "Walking calmly"
+        }
+      },
+      "2": {
+        "q": "How do you say \"robo de base\" in English?",
+        "opts": {
+          "a": "Stolen base",
+          "b": "Safe base",
+          "c": "Fast base"
+        }
+      },
+      "3": {
+        "q": "Who decides if you can steal in your league?",
+        "opts": {
+          "a": "My league and my coach",
+          "b": "The crowd",
+          "c": "Myself"
+        }
+      },
+      "4": {
+        "q": "In a steal, the race is between the runner and:",
+        "opts": {
+          "a": "The catcher's throw to the base",
+          "b": "The outfielder",
+          "c": "The umpire"
+        }
+      },
+      "5": {
+        "q": "True or false: if the throw beats you before you get there, you're out and there was no steal"
+      },
+      "6": {
+        "q": "The moment to take off on a steal is:",
+        "opts": {
+          "a": "When the pitcher goes toward home with the ball",
+          "b": "When the game ends",
+          "c": "When the coach sings"
+        }
+      },
+      "7": {
+        "q": "Tap the base that is stolen most from first",
+        "answer": "Second base"
+      },
+      "8": {
+        "q": "If you are safe on the steal, the scorer writes:",
+        "opts": {
+          "a": "Stolen base (SB)",
+          "b": "Error",
+          "c": "K"
+        }
+      },
+      "9": {
+        "q": "True or false: you can also steal third and even home, although it's harder"
+      },
+      "10": {
+        "q": "What does the umpire call if the tag gets there before you?",
+        "opts": {
+          "a": "Out!",
+          "b": "Safe!",
+          "c": "Foul!"
+        }
+      },
+      "11": {
+        "q": "Before trying to steal in your league you need to know:",
+        "opts": {
+          "a": "If my league allows it at my age",
+          "b": "The color of the other team's uniform",
+          "c": "Nothing"
+        }
+      },
+      "12": {
+        "q": "Stealing needs from the runner:",
+        "opts": {
+          "a": "Speed and a good jump",
+          "b": "Only strength",
+          "c": "A big bat"
+        }
+      }
+    },
+    "10": {
+      "1": {
+        "q": "The dropped third strike happens when:",
+        "opts": {
+          "a": "The catcher doesn't catch the third strike cleanly",
+          "b": "The batter drops the bat",
+          "c": "The pitcher drops the ball"
+        }
+      },
+      "2": {
+        "q": "With first base open, the batter with a dropped third strike can:",
+        "opts": {
+          "a": "Run to first",
+          "b": "Score directly",
+          "c": "Pitch"
+        }
+      },
+      "3": {
+        "q": "With first occupied and one out, does the rule apply?",
+        "opts": {
+          "a": "No",
+          "b": "Yes",
+          "c": "Only on Saturdays"
+        }
+      },
+      "4": {
+        "q": "With first occupied and two outs, does it apply?",
+        "opts": {
+          "a": "Yes",
+          "b": "No",
+          "c": "Never"
+        }
+      },
+      "5": {
+        "q": "How do you say \"tercer strike caído\" in English?",
+        "opts": {
+          "a": "Dropped third strike",
+          "b": "Falling strike",
+          "c": "Lost ball"
+        }
+      },
+      "6": {
+        "q": "To complete the out, the catcher has to:",
+        "opts": {
+          "a": "Tag the batter or throw to first",
+          "b": "Yell",
+          "c": "Ask for another ball"
+        }
+      },
+      "7": {
+        "q": "True or false: if the catcher catches the third strike cleanly, the batter is out and doesn't run"
+      },
+      "8": {
+        "q": "Who do you ask whether your league uses this rule?",
+        "opts": {
+          "a": "My coach",
+          "b": "The other team",
+          "c": "Nobody"
+        }
+      },
+      "9": {
+        "q": "Tap the base the batter runs to on a dropped third strike",
+        "answer": "First base"
+      },
+      "10": {
+        "q": "If the batter doesn't run and goes to the dugout, the defense:",
+        "opts": {
+          "a": "Doesn't need to do anything else, he gave up",
+          "b": "Has to chase him anyway",
+          "c": "Loses the out"
+        }
+      },
+      "11": {
+        "q": "True or false: a pitch that bounces before the glove and is strike three can be \"dropped\" if the catcher doesn't catch it cleanly"
+      },
+      "12": {
+        "q": "This rule exists because the strikeout out is completed:",
+        "opts": {
+          "a": "With the catcher's clean catch",
+          "b": "With the swing only",
+          "c": "With the crowd yelling"
+        }
+      }
+    },
+    "11": {
+      "1": {
+        "q": "The rubber is at:",
+        "opts": {
+          "a": "The top of the mound",
+          "b": "Second base",
+          "c": "The dugout"
+        }
+      },
+      "2": {
+        "q": "How do you say \"goma del pitcher\" in English?",
+        "opts": {
+          "a": "Rubber",
+          "b": "Gum base",
+          "c": "White base"
+        }
+      },
+      "3": {
+        "q": "The pitcher pitches with one foot:",
+        "opts": {
+          "a": "On the rubber",
+          "b": "In the air",
+          "c": "On home"
+        }
+      },
+      "4": {
+        "q": "The mound-to-home distance in kids' leagues is:",
+        "opts": {
+          "a": "Shorter and it changes with age",
+          "b": "The same as the professionals'",
+          "c": "Always the same"
+        }
+      },
+      "5": {
+        "q": "True or false: copying the professionals' distance for young kids would be wrong"
+      },
+      "6": {
+        "q": "Who do you ask about your league's distance?",
+        "opts": {
+          "a": "My coach",
+          "b": "The other team",
+          "c": "Nobody"
+        }
+      },
+      "7": {
+        "q": "Tap where the rubber is on the diamond",
+        "answer": "The mound"
+      },
+      "8": {
+        "q": "From the rubber, the pitcher first:",
+        "opts": {
+          "a": "Looks at the catcher and gets the sign",
+          "b": "Runs to first",
+          "c": "Bats"
+        }
+      },
+      "9": {
+        "q": "Without his foot on the rubber, the pitch:",
+        "opts": {
+          "a": "Shouldn't be thrown",
+          "b": "Always counts anyway",
+          "c": "It's a home run"
+        }
+      },
+      "10": {
+        "q": "True or false: the rubber is white and long, different from a base"
+      },
+      "11": {
+        "q": "The mound is also called:",
+        "opts": {
+          "a": "The little hill",
+          "b": "The safe home",
+          "c": "The on-deck circle"
+        }
+      },
+      "12": {
+        "q": "Having the distance change with age is so that:",
+        "opts": {
+          "a": "Kids pitch safely and with control",
+          "b": "To make the game slower",
+          "c": "Nothing"
+        }
+      }
+    },
+    "12": {
+      "1": {
+        "q": "When do you think about where to throw the ball?",
+        "opts": {
+          "a": "Before every pitch",
+          "b": "After the game",
+          "c": "Never"
+        }
+      },
+      "2": {
+        "q": "No runners, ground ball to the third baseman: he throws to:",
+        "opts": {
+          "a": "First",
+          "b": "Home",
+          "c": "Second"
+        }
+      },
+      "3": {
+        "q": "The runner it's best to stop first is:",
+        "opts": {
+          "a": "The lead runner",
+          "b": "The slowest one",
+          "c": "None"
+        }
+      },
+      "4": {
+        "q": "A sure out is worth more than:",
+        "opts": {
+          "a": "An impossible throw with no out",
+          "b": "Two sure outs",
+          "c": "A home run"
+        }
+      },
+      "5": {
+        "q": "With two outs, any out:",
+        "opts": {
+          "a": "Ends the inning",
+          "b": "Counts double",
+          "c": "Doesn't count"
+        }
+      },
+      "6": {
+        "q": "The All Star's question before the pitch is:",
+        "opts": {
+          "a": "If it's hit to me, what do I do?",
+          "b": "Who's watching me?",
+          "c": "What time is it?"
+        }
+      },
+      "7": {
+        "q": "Tap the base for the out on a ground ball with no runners",
+        "answer": "First base"
+      },
+      "8": {
+        "q": "Runner on second who can score on a hit: the long throw from the outfield will look for:",
+        "opts": {
+          "a": "Home, to stop the run",
+          "b": "Always first",
+          "c": "The dugout"
+        }
+      },
+      "9": {
+        "q": "True or false: thinking about the play ahead of time makes the fielder faster"
+      },
+      "10": {
+        "q": "If the throw to the lead runner is impossible, the right thing is:",
+        "opts": {
+          "a": "Make sure of the easiest out",
+          "b": "Throw anywhere",
+          "c": "Keep the ball"
+        }
+      },
+      "11": {
+        "q": "With a runner on third and fewer than two outs, a ground ball can look for:",
+        "opts": {
+          "a": "The out at home if the runner breaks, or the sure out",
+          "b": "Just watch",
+          "c": "Pitch again"
+        }
+      },
+      "12": {
+        "q": "Thinking like an All Star means:",
+        "opts": {
+          "a": "Planning the play before it happens",
+          "b": "Running faster than everyone",
+          "c": "Hitting harder than everyone"
         }
       }
     }

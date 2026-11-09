@@ -53,7 +53,7 @@ export const XP: Record<string, { x: number; y: number }> = {
   bunt: { x: 196, y: 236 },
   foulL: { x: 46, y: 172 },
   cutoff: { x: 180, y: 92 },
-  backstop: { x: 180, y: 294 },
+  backstop: { x: 232, y: 291 },
   path12: { x: 215, y: 157 },
   path23: { x: 145, y: 157 },
   path3h: { x: 145, y: 227 },
@@ -108,7 +108,7 @@ const ALL = { ...XP, ...P, ...POS } as Record<string, { x: number; y: number }>;
 export const pt = (t: Target) => {
   if (t.startsWith('run-')) return spotPt(t.slice(4));
   if (t.startsWith('fld-')) return spotPt(t.slice(4));
-  return ALL[t] ?? P.home;
+  return ALL[t] ?? spotPt(t);
 };
 
 // Curva del vuelo de la bola: sale de home y llega al punto pedido.
@@ -139,8 +139,8 @@ function Extras({ fx, glow, tap }: { fx: FieldExtras; glow: (t: Target) => strin
       ) : null}
       {fx.backstop ? (
         <G onPress={tap('backstop')}>
-          <Path d="M118 299 Q180 288 242 299" fill="none" stroke={glow('backstop') ?? '#CBD5E1'} strokeWidth={glow('backstop') ? 6 : 3} />
-          <Rect x={112} y={284} width={136} height={16} fill="#000" fillOpacity={0.001} />
+          <Path d="M50 299 Q180 280 310 299" fill="none" stroke={glow('backstop') ?? '#CBD5E1'} strokeWidth={glow('backstop') ? 6 : 3} />
+          <Rect x={44} y={278} width={272} height={22} fill="#000" fillOpacity={0.001} />
         </G>
       ) : null}
       {fx.path12 ? (
@@ -395,6 +395,8 @@ export default function Diamond({ width, highlight = [], good, bad, onTap, run, 
 /** ¿La zona tocada cuenta como el objetivo pedido? */
 export function hitMatches(hit: Hit, target: Target): boolean {
   if (hit === target) return true;
+  // Tocar al corredor parado sobre una base cuenta como tocar esa base (y al revés).
+  if (hit === `run-${target}` || target === `run-${hit}`) return true;
   // El cuadro incluye sus bases y el montículo.
   if (target === 'infield' && (hit === 'first' || hit === 'second' || hit === 'third' || hit === 'mound')) return true;
   // "Toca junto a primera / tercera": vale la base o el jugador que la cuida.
