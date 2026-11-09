@@ -20,17 +20,22 @@ type Shape = 'star' | 'base' | 'home';
 const shapeOf = (i: number): Shape => (i === 0 ? 'star' : i === 4 ? 'home' : 'base');
 
 function fieldGeom(W: number) {
-  const d = Math.min(W * 0.3, 130);
-  const H = 2 * d + 230;
+  // Diamante en perspectiva (como la cámara de TV desde atrás de home): más alto que ancho, para que las
+  // líneas de foul suban casi hasta el título del nivel.
+  const dx = Math.min(W * 0.25, 110);
+  const dy = dx * 1.35;
+  const d = dy;
   const cx = W / 2;
-  const home = { x: cx, y: H - 122 };
-  const first = { x: cx + d, y: home.y - d };
-  const second = { x: cx, y: home.y - 2 * d };
-  const third = { x: cx - d, y: home.y - d };
-  const onDeck = { x: cx - d * 0.98, y: H - 50 };
-  const dugout = { x: cx + d * 0.98, y: H - 48 };
+  const home = { x: cx, y: 2 * dy + 64 };
+  const H = home.y + 100;
+  const first = { x: cx + dx, y: home.y - dy };
+  const second = { x: cx, y: home.y - 2 * dy };
+  const third = { x: cx - dx, y: home.y - dy };
+  const onDeck = { x: cx - dx * 1.25, y: home.y + 40 };
+  const dugout = { x: cx + dx * 1.25, y: home.y + 42 };
+  const slope = dy / dx;
   // Orden de los nodos: lecciones 1-5 y examen.
-  return { d, H, cx, home, first, second, third, onDeck, dugout, nodes: [onDeck, first, second, third, home, dugout] };
+  return { d, H, cx, slope, home, first, second, third, onDeck, dugout, nodes: [onDeck, first, second, third, home, dugout] };
 }
 
 // Fondo de pasto con franjas de corte, como un campo de béisbol.
@@ -133,11 +138,11 @@ export default function PathScreen() {
 
               <View style={{ height: G.H, width: W, alignSelf: 'center' }}>
                 <Svg pointerEvents="none" width={W} height={G.H} style={{ position: 'absolute', top: 0, left: 0 }}>
-                  {/* Diamante visto desde arriba: tierra del cuadro, pasto interior, líneas de cal y montículo */}
+                  {/* Diamante visto desde arriba: tierra del cuadro, pasto interior, líneas de foul hasta el borde y montículo */}
                   <Polygon points={`${G.home.x},${G.home.y + 34} ${G.first.x + 40},${G.first.y} ${G.second.x},${G.second.y - 40} ${G.third.x - 40},${G.third.y}`} fill="#C98B4F" stroke="#A86F3C" strokeWidth={3} strokeLinejoin="round" />
                   <Polygon points={`${G.home.x},${G.home.y - 30} ${G.first.x - 34},${G.first.y} ${G.second.x},${G.second.y + 34} ${G.third.x + 34},${G.third.y}`} fill="#48A64C" />
-                  <Line x1={G.home.x} y1={G.home.y} x2={G.first.x + 50} y2={G.first.y - 50} stroke="#FFFFFF" strokeWidth={3} opacity={0.85} />
-                  <Line x1={G.home.x} y1={G.home.y} x2={G.third.x - 50} y2={G.third.y - 50} stroke="#FFFFFF" strokeWidth={3} opacity={0.85} />
+                  <Line x1={G.home.x} y1={G.home.y} x2={G.home.x + (G.home.y + 14) / G.slope} y2={-14} stroke="#FFFFFF" strokeWidth={3} opacity={0.85} />
+                  <Line x1={G.home.x} y1={G.home.y} x2={G.home.x - (G.home.y + 14) / G.slope} y2={-14} stroke="#FFFFFF" strokeWidth={3} opacity={0.85} />
                   <Circle cx={G.cx} cy={G.home.y - G.d} r={17} fill="#C98B4F" stroke="#A86F3C" strokeWidth={2} />
                   <Rect x={G.cx - 7} y={G.home.y - G.d - 2} width={14} height={4} fill="#FFFFFF" />
                   {/* Círculo de espera y dugout */}
@@ -169,7 +174,7 @@ export default function PathScreen() {
                       ) : null}
                       <Node state={st} shape={shapeOf(i)} testID={`node-${id}`} label={(ct.lessonTitles as Record<string, string>)[id]} onPress={press(st, () => router.push({ pathname: '/leccion/[id]', params: { id } }))} />
                       {st === 'current' ? (
-                        <View pointerEvents="none" style={{ position: 'absolute', left: right && i !== 4 ? 96 : i === 4 ? 100 : -46, top: i === 4 ? 0 : 40 }}>
+                        <View pointerEvents="none" style={{ position: 'absolute', left: right && i !== 4 ? 96 : i === 4 ? 100 : -46, top: i === 4 ? -24 : 40 }}>
                           <Mascot size={68} />
                         </View>
                       ) : null}
