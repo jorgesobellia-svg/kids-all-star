@@ -88,7 +88,7 @@ function PlanCard({ id, title, price, per, on, onPick, recommended }: { id: Plan
   }
 
 export default function ParentsScreen() {
-  const { t, p, setPlus, locale, reset } = useStore();
+  const { t, p, setPlus, setReview, locale, reset } = useStore();
   const [askReset, setAskReset] = useState(false);
   const insets = useSafeAreaInsets();
   const [open, setOpen] = useState(false);
@@ -174,6 +174,24 @@ export default function ParentsScreen() {
           </Pressable>
         </View>
         {TEST_MODE ? <Text style={{ fontFamily: F.bodyBold, fontSize: 12, color: C.brown, textAlign: 'center' }}>{t('parents.testMode')}</Text> : null}
+        {/* Solo en la demo de prueba: abrir todos los niveles para revisarlos. No existe en la app de las tiendas. */}
+        {TEST_MODE ? (
+          <Pressable
+            accessibilityRole="switch"
+            accessibilityState={{ checked: !!p.review }}
+            testID="review-toggle"
+            onPress={() => setReview(!p.review)}
+            style={{ flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: C.white, borderRadius: 16, padding: 14, borderWidth: 2, borderColor: p.review ? C.green : C.line }}
+          >
+            <View style={{ width: 48, height: 28, borderRadius: 14, backgroundColor: p.review ? C.green : C.lineDark, padding: 3, alignItems: p.review ? 'flex-end' : 'flex-start' }}>
+              <View style={{ width: 22, height: 22, borderRadius: 11, backgroundColor: C.white }} />
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text style={{ fontFamily: F.bodyHeavy, fontSize: 15, color: C.ink }}>{t('parents.reviewTitle')}</Text>
+              <Text style={{ fontFamily: F.body, fontSize: 13, lineHeight: 18, color: C.muted }}>{t('parents.reviewText')}</Text>
+            </View>
+          </Pressable>
+        ) : null}
         {/* Empezar de cero: borra el avance de este dispositivo (con confirmación dentro de la app). */}
         {askReset ? (
           <View testID="reset-confirm" style={{ backgroundColor: C.wrongSoft, borderRadius: 16, padding: 16, gap: 12 }}>

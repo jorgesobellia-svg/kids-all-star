@@ -210,6 +210,8 @@
     "error": "Couldn't complete. Please try again later.",
     "testMode": "Test mode: nothing is charged. On a phone, payment goes through the store.",
     "language": "App language",
+    "reviewTitle": "Review mode: open every level",
+    "reviewText": "Only in this test demo. You can open any lesson or exam without passing the earlier ones.",
     "resetBtn": "Start over from scratch",
     "resetAsk": "All progress on this device will be erased: language, nickname, lessons, badges, XP and streak. The Plus subscription is not lost.",
     "resetYes": "YES, ERASE EVERYTHING",

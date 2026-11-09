@@ -6,10 +6,12 @@ import { CheckIcon, CoinBall, Flame, LockIcon, Mascot, StarIcon, TrophyIcon } fr
 import { tapFeedback } from '@/components/ui';
 import { LEVELS } from '@/content/levels';
 import { content } from '@/i18n';
+import { TEST_MODE } from '@/services/billing';
 import { useStore } from '@/state/store';
 import { C, F } from '@/theme';
 
-type NodeState = 'done' | 'current' | 'locked' | 'plus' | 'soon';
+// 'open' = abierta en modo revisión (se ve como la actual, pero sin la mascota).
+type NodeState = 'done' | 'current' | 'open' | 'locked' | 'plus' | 'soon';
 
 const OFFSETS = [0, 64, 0, -64, 0, 52];
 
@@ -46,7 +48,8 @@ export default function PathScreen() {
         {LEVELS.map((lv) => {
           const lt = (ct.levels as Record<string, { title: string; badge: string }>)[String(lv.n)];
           const unlockedByProgress = lv.n === 1 || !!p.examsPassed[String(lv.n - 1)];
-          const hasAccess = lv.free || p.plus;
+          const review = !!p.review && TEST_MODE;
+          const hasAccess = lv.free || p.plus || review;
           const built = lv.lessons.length > 0;
           const firstOpen = lv.lessonIds.findIndex((id) => !p.completed[id]);
           const allDone = firstOpen === -1;
@@ -56,6 +59,7 @@ export default function PathScreen() {
             if (!hasAccess) return 'plus';
             if (!built) return 'soon';
             if (p.completed[id]) return 'done';
+            if (review) return unlockedByProgress && i === firstOpen ? 'current' : 'open';
             if (!unlockedByProgress) return 'locked';
             return i === firstOpen ? 'current' : 'locked';
           };
@@ -67,7 +71,9 @@ export default function PathScreen() {
                 ? 'done'
                 : allDone && unlockedByProgress
                   ? 'current'
-                  : 'locked';
+                  : review
+                    ? 'open'
+                    : 'locked';
 
           const press = (st: NodeState, go: () => void, isExam = false) => () => {
             tapFeedback();
@@ -138,8 +144,9 @@ export default function PathScreen() {
 
 function Node({ state, onPress, exam, label, testID }: { state: NodeState; onPress: () => void; exam?: boolean; label: string; testID?: string }) {
   const size = state === 'current' ? 88 : 72;
-  const bg = state === 'done' ? C.red : state === 'current' ? C.gold : '#E2E8F0';
-  const sh = state === 'done' ? C.redDark : state === 'current' ? C.goldDark : C.lineDark;
+  const live = state === 'current' || state === 'open';
+  const bg = state === 'done' ? C.red : live ? C.gold : '#E2E8F0';
+  const sh = state === 'done' ? C.redDark : live ? C.goldDark : C.lineDark;
   return (
     <Pressable
       testID={testID}
@@ -161,10 +168,10 @@ function Node({ state, onPress, exam, label, testID }: { state: NodeState; onPre
       } as object}
     >
       {exam ? (
-        <TrophyIcon size={40} color={state === 'done' || state === 'current' ? C.white : C.faint} />
+        <TrophyIcon size={40} color={state === 'done' || live ? C.white : C.faint} />
       ) : state === 'done' ? (
         <CheckIcon size={34} />
-      ) : state === 'current' ? (
+      ) : live ? (
         <StarIcon size={42} />
       ) : (
         <LockIcon size={28} />

@@ -210,6 +210,8 @@
     "error": "No se pudo completar. Inténtalo más tarde.",
     "testMode": "Modo de prueba: no se cobra nada. En el teléfono, el pago lo hace la tienda.",
     "language": "Idioma de la app",
+    "reviewTitle": "Modo revisión: abrir todos los niveles",
+    "reviewText": "Solo en esta demo de prueba. Puedes entrar a cualquier lección o examen sin aprobar los anteriores.",
     "resetBtn": "Empezar de cero",
     "resetAsk": "Se borra todo el avance de este dispositivo: idioma, alias, lecciones, insignias, XP y racha. La suscripción Plus no se pierde.",
     "resetYes": "SÍ, BORRAR TODO",

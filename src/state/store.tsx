@@ -20,6 +20,8 @@ export interface Progress {
   completed: Record<string, { perfect: boolean }>;
   examsPassed: Record<string, boolean>;
   plus: boolean;
+  /** Solo en modo de prueba: abre todos los niveles para revisarlos sin aprobar exámenes. */
+  review?: boolean;
 }
 
 export interface LessonReward {
@@ -84,6 +86,7 @@ interface Store {
   completeLesson: (id: string, correct: number, total: number, perfect: boolean) => LessonReward;
   passExam: (level: number) => { xp: number; coins: number };
   setPlus: (on: boolean) => void;
+  setReview: (on: boolean) => void;
   reset: () => void;
 }
 
@@ -138,6 +141,7 @@ export function StoreProvider({ children, fallbackLocale }: { children: React.Re
   const setPlayer = useCallback((nickname: string, country: string) => setP((s) => ({ ...s, nickname, country })), []);
   const setCountry = useCallback((country: string) => setP((s) => ({ ...s, country })), []);
   const setPlus = useCallback((on: boolean) => setP((s) => (s.plus === on ? s : { ...s, plus: on })), []);
+  const setReview = useCallback((on: boolean) => setP((s) => ({ ...s, review: on })), []);
   const reset = useCallback(() => setP(initial()), []);
 
   // Se calcula con el estado actual del render; las pantallas llaman esto una sola vez por lección.
@@ -183,8 +187,8 @@ export function StoreProvider({ children, fallbackLocale }: { children: React.Re
   }, []);
 
   const value = useMemo<Store>(
-    () => ({ ready, p, t, locale, setLocale, setPlayer, setCountry, completeLesson, passExam, setPlus, reset }),
-    [ready, p, t, locale, setLocale, setPlayer, setCountry, completeLesson, passExam, setPlus, reset],
+    () => ({ ready, p, t, locale, setLocale, setPlayer, setCountry, completeLesson, passExam, setPlus, setReview, reset }),
+    [ready, p, t, locale, setLocale, setPlayer, setCountry, completeLesson, passExam, setPlus, setReview, reset],
   );
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
