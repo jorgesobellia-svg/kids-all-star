@@ -20,10 +20,10 @@ type Shape = 'star' | 'base' | 'home';
 const shapeOf = (i: number): Shape => (i === 0 ? 'star' : i === 4 ? 'home' : 'base');
 
 function fieldGeom(W: number) {
-  // Diamante en perspectiva (como la cámara de TV desde atrás de home): más alto que ancho, para que las
-  // líneas de foul suban casi hasta el título del nivel.
-  const dx = Math.min(W * 0.25, 110);
-  const dy = dx * 1.35;
+  // El "diamante" es un cuadrado girado: los cuatro lados iguales. Su tamaño se ajusta para que las líneas
+  // de foul (a 45°) suban casi hasta el título del nivel.
+  const dx = Math.min(W * 0.21, 92);
+  const dy = dx;
   const d = dy;
   const cx = W / 2;
   const home = { x: cx, y: 2 * dy + 64 };
@@ -139,16 +139,16 @@ export default function PathScreen() {
               <View style={{ height: G.H, width: W, alignSelf: 'center' }}>
                 <Svg pointerEvents="none" width={W} height={G.H} style={{ position: 'absolute', top: 0, left: 0 }}>
                   {/* Diamante visto desde arriba: tierra del cuadro, pasto interior, líneas de foul hasta el borde y montículo */}
-                  <Polygon points={`${G.home.x},${G.home.y + 34} ${G.first.x + 40},${G.first.y} ${G.second.x},${G.second.y - 40} ${G.third.x - 40},${G.third.y}`} fill="#C98B4F" stroke="#A86F3C" strokeWidth={3} strokeLinejoin="round" />
-                  <Polygon points={`${G.home.x},${G.home.y - 30} ${G.first.x - 34},${G.first.y} ${G.second.x},${G.second.y + 34} ${G.third.x + 34},${G.third.y}`} fill="#48A64C" />
+                  <Polygon points={`${G.home.x},${G.home.y + 32} ${G.first.x + 32},${G.first.y} ${G.second.x},${G.second.y - 32} ${G.third.x - 32},${G.third.y}`} fill="#C98B4F" stroke="#A86F3C" strokeWidth={3} strokeLinejoin="round" />
+                  <Polygon points={`${G.home.x},${G.home.y - 26} ${G.first.x - 26},${G.first.y} ${G.second.x},${G.second.y + 26} ${G.third.x + 26},${G.third.y}`} fill="#48A64C" />
                   <Line x1={G.home.x} y1={G.home.y} x2={G.home.x + (G.home.y + 14) / G.slope} y2={-14} stroke="#FFFFFF" strokeWidth={3} opacity={0.85} />
                   <Line x1={G.home.x} y1={G.home.y} x2={G.home.x - (G.home.y + 14) / G.slope} y2={-14} stroke="#FFFFFF" strokeWidth={3} opacity={0.85} />
-                  <Circle cx={G.cx} cy={G.home.y - G.d} r={17} fill="#C98B4F" stroke="#A86F3C" strokeWidth={2} />
+                  <Circle cx={G.cx} cy={G.home.y - G.d} r={14} fill="#C98B4F" stroke="#A86F3C" strokeWidth={2} />
                   <Rect x={G.cx - 7} y={G.home.y - G.d - 2} width={14} height={4} fill="#FFFFFF" />
                   {/* Círculo de espera y dugout */}
-                  <Circle cx={G.onDeck.x} cy={G.onDeck.y} r={44} fill="#C98B4F" stroke="#FFFFFF" strokeWidth={3} opacity={0.95} />
-                  <Rect x={G.dugout.x - 58} y={G.dugout.y - 40} width={116} height={80} rx={14} fill="#1E3A5F" stroke="#0C2340" strokeWidth={3} />
-                  <Rect x={G.dugout.x - 58} y={G.dugout.y - 40} width={116} height={14} rx={7} fill="#0C2340" />
+                  <Circle cx={G.onDeck.x} cy={G.onDeck.y} r={40} fill="#C98B4F" stroke="#FFFFFF" strokeWidth={3} opacity={0.95} />
+                  <Rect x={G.dugout.x - 50} y={G.dugout.y - 38} width={100} height={76} rx={14} fill="#1E3A5F" stroke="#0C2340" strokeWidth={3} />
+                  <Rect x={G.dugout.x - 50} y={G.dugout.y - 38} width={100} height={14} rx={7} fill="#0C2340" />
                   {/* Recorrido del corredor: de la espera a home y la vuelta completa, luego al dugout */}
                   <Polyline
                     points={[G.onDeck, G.home, G.first, G.second, G.third, G.home, G.dugout].map((q) => `${q.x},${q.y}`).join(' ')}
@@ -230,13 +230,13 @@ function Node({ state, onPress, exam, shape = 'star', label, testID }: { state: 
         accessibilityRole="button"
         accessibilityLabel={label}
         onPress={onPress}
-        style={{ width: 76, height: 76, borderRadius: 20, backgroundColor: state === 'done' ? C.gold : live ? C.gold : '#E2E8F0', alignItems: 'center', justifyContent: 'center', boxShadow: `0 6px 0 ${state === 'done' ? C.goldDark : live ? C.goldDark : C.lineDark}` } as object}
+        style={{ width: 70, height: 70, borderRadius: 18, backgroundColor: state === 'done' ? C.gold : live ? C.gold : '#E2E8F0', alignItems: 'center', justifyContent: 'center', boxShadow: `0 6px 0 ${state === 'done' ? C.goldDark : live ? C.goldDark : C.lineDark}` } as object}
       >
         <TrophyIcon size={40} color={state === 'done' || live ? C.white : C.faint} />
       </Pressable>
     );
   }
-  const size = (state === 'current' ? 86 : 74) * (shape === 'base' ? 1.1 : 1);
+  const size = (state === 'current' ? 76 : 66) * (shape === 'base' ? 1.1 : 1);
   const pts = SHAPES[shape](size);
   const iconTop = shape === 'home' ? -size * 0.08 : shape === 'star' ? size * 0.05 : 0;
   return (
