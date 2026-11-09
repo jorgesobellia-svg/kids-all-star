@@ -68,7 +68,13 @@ export default function LessonScreen() {
   const insets = useSafeAreaInsets();
   const { width: winW } = useWindowDimensions();
   const W = Math.min(winW, 520) - 40;
-  const text = (content(locale).lessons as Record<string, LessonText>)[String(id)];
+  const rawText = (content(locale).lessons as Record<string, LessonText>)[String(id)];
+  // El narrador saluda al jugador por su nombre de usuario al empezar cada lección (texto y voz).
+  const name = (p.nickname ?? '').trim();
+  const text = useMemo(
+    () => (rawText && name && rawText.demo.length ? { ...rawText, demo: [t('common.hello', { name }) + rawText.demo[0], ...rawText.demo.slice(1)] } : rawText),
+    [rawText, name, t],
+  );
 
   const [phase, setPhase] = useState<'demo' | 'acts' | 'replay' | 'result'>('demo');
   const [segIdx, setSegIdx] = useState(0);
@@ -300,7 +306,7 @@ export default function LessonScreen() {
                     <CheckIcon size={20} />
                   </View>
                 ) : null}
-                <Text style={{ fontFamily: F.display, fontSize: 26, color: right ? '#166534' : '#991B1B' }}>{right ? t('lesson.right') : t('lesson.almost')}</Text>
+                <Text style={{ fontFamily: F.display, fontSize: 26, color: right ? '#166534' : '#991B1B' }}>{name ? t(right ? 'lesson.rightName' : 'lesson.almostName', { name }) : right ? t('lesson.right') : t('lesson.almost')}</Text>
               </View>
               <Text style={{ fontFamily: F.bodySemi, fontSize: 16, lineHeight: 22, color: right ? '#166534' : '#991B1B' }}>{right ? at.ok : at.ko}</Text>
               {!right && at.answer ? (
@@ -355,7 +361,7 @@ function ResultView({ reward, firstTry, total, onDone }: { reward: LessonReward;
         <Mascot size={140} mood="cheer" />
         <View style={{ alignItems: 'center' }}>
           <Text testID="result-title" style={{ fontFamily: F.display, fontSize: 36, color: C.gold, textAlign: 'center' }}>
-            {reward.perfect ? t('result.perfect') : t('result.title')}
+            {(p.nickname ?? '').trim() ? t(reward.perfect ? 'result.perfectName' : 'result.titleName', { name: (p.nickname ?? '').trim() }) : reward.perfect ? t('result.perfect') : t('result.title')}
           </Text>
         </View>
         <View style={{ flexDirection: 'row', gap: 10, width: '100%' }}>

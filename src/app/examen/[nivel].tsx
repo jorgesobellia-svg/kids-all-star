@@ -149,7 +149,7 @@ export default function ExamScreen() {
       <View style={{ flex: 1, backgroundColor: C.navy, paddingTop: insets.top + 36, paddingBottom: insets.bottom + 24, paddingHorizontal: 24 }}>
         <ScrollView contentContainerStyle={{ alignItems: 'center', gap: 16 }}>
           <Mascot size={130} mood={passed ? 'cheer' : 'think'} />
-          <Text testID="exam-result" style={{ fontFamily: F.display, fontSize: 36, color: passed ? C.gold : C.white }}>{passed ? t('exam.passTitle') : t('exam.failTitle')}</Text>
+          <Text testID="exam-result" style={{ fontFamily: F.display, fontSize: 36, color: passed ? C.gold : C.white }}>{(p.nickname ?? '').trim() ? t(passed ? 'exam.passTitleName' : 'exam.failTitleName', { name: (p.nickname ?? '').trim() }) : passed ? t('exam.passTitle') : t('exam.failTitle')}</Text>
           <Text style={{ fontFamily: F.bodyBold, fontSize: 18, color: '#CBD5E1' }}>{t('exam.score', { a: score, b: total })}</Text>
           {passed ? (
             <View style={{ alignItems: 'center', gap: 10 }}>

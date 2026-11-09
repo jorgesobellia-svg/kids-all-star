@@ -8,7 +8,7 @@ LVN = int(sys.argv[4]) if len(sys.argv) > 4 else 3
 LV = json.load(open('/tmp/claude-0/-home-claude/5a1dc8cd-4e70-59e3-964c-a54d3230116f/scratchpad/levels.json'))[LVN - 1]
 content = json.load(open(f'/home/claude/kids-all-star/src/i18n/locales/{LANG}/content.json'))
 ui = json.load(open(f'/home/claude/kids-all-star/src/i18n/locales/{LANG}/ui.json'))
-RIGHT = ui['lesson']['right']
+RIGHT = ui['lesson']['rightName'].replace('{name}', 'Prueba2')
 POS = {'first': (250, 192), 'second': (180, 122), 'third': (110, 192), 'home': (180, 262), 'infield': (180, 170),
        'backstop': (240, 292), 'track': (180, 34), 'lane': (240, 212), 'bullpen': (322, 172), 'cutoff': (180, 92), 'path12': (215, 157), 'foulLine': (60, 135),
        'run-first': (250, 192), 'run-second': (180, 122), 'run-third': (110, 192), 'run-lead1': (232, 174), 'run-lead2': (160, 140),

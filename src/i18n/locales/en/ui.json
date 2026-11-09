@@ -1,5 +1,6 @@
 {
   "common": {
+    "hello": "Hi, {name}! ",
     "continue": "CONTINUE",
     "check": "CHECK",
     "close": "Close",
@@ -66,6 +67,7 @@
     "stageLegend": "LEGEND STAGE · LEVEL {n}",
     "stageHall": "HALL OF FAME STAGE · LEVEL {n}",
     "start": "START!",
+    "hello": "Hi, {name}!",
     "exam": "TEST",
     "plus": "PLUS",
     "comingSoon": "Coming soon",
@@ -86,6 +88,8 @@
     "type_umpire": "WHAT WOULD THE UMPIRE CALL?",
     "right": "Correct!",
     "almost": "Almost!",
+    "rightName": "Correct, {name}!",
+    "almostName": "Almost, {name}!",
     "answerWas": "Answer: {a}",
     "rewatch": "Watch this part again. The question comes back at the end.",
     "dragHint": "Drag the runner from base to base",
@@ -95,6 +99,8 @@
   "result": {
     "title": "Lesson complete!",
     "perfect": "Perfect lesson!",
+    "titleName": "Lesson complete, {name}!",
+    "perfectName": "Perfect lesson, {name}!",
     "xp": "XP EARNED",
     "correct": "CORRECT",
     "streak": "STREAK",
@@ -117,6 +123,8 @@
     "review": "Review first",
     "passTitle": "You passed!",
     "failTitle": "So close!",
+    "passTitleName": "You passed, {name}!",
+    "failTitleName": "So close, {name}!",
     "score": "{a} of {b} correct",
     "badgeWon": "You earned the {badge} badge",
     "nextUnlocked": "The next level is unlocked",

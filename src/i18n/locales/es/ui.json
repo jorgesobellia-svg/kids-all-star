@@ -1,5 +1,6 @@
 {
   "common": {
+    "hello": "¡Hola, {name}! ",
     "continue": "CONTINUAR",
     "check": "COMPROBAR",
     "close": "Cerrar",
@@ -66,6 +67,7 @@
     "stageLegend": "ETAPA LEYENDA · NIVEL {n}",
     "stageHall": "ETAPA SALÓN DE LA FAMA · NIVEL {n}",
     "start": "¡EMPEZAR!",
+    "hello": "¡Hola, {name}!",
     "exam": "EXAMEN",
     "plus": "PLUS",
     "comingSoon": "Muy pronto",
@@ -86,6 +88,8 @@
     "type_umpire": "¿QUÉ CANTARÍA EL UMPIRE?",
     "right": "¡Correcto!",
     "almost": "¡Casi!",
+    "rightName": "¡Correcto, {name}!",
+    "almostName": "¡Casi, {name}!",
     "answerWas": "Respuesta: {a}",
     "rewatch": "Mira otra vez esta parte. La pregunta vuelve al final.",
     "dragHint": "Arrastra al corredor de base en base",
@@ -95,6 +99,8 @@
   "result": {
     "title": "¡Lección completada!",
     "perfect": "¡Lección perfecta!",
+    "titleName": "¡Lección completada, {name}!",
+    "perfectName": "¡Lección perfecta, {name}!",
     "xp": "XP GANADO",
     "correct": "ACIERTOS",
     "streak": "RACHA",
@@ -117,6 +123,8 @@
     "review": "Repasar primero",
     "passTitle": "¡Aprobaste!",
     "failTitle": "¡Casi lo logras!",
+    "passTitleName": "¡Aprobaste, {name}!",
+    "failTitleName": "¡Casi lo logras, {name}!",
     "score": "{a} de {b} correctas",
     "badgeWon": "Ganaste la insignia {badge}",
     "nextUnlocked": "Se desbloqueó el siguiente nivel",

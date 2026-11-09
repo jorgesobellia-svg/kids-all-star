@@ -1,5 +1,6 @@
 {
   "common": {
+    "hello": "{name}、こんにちは！",
     "continue": "つづける",
     "check": "こたえあわせ",
     "close": "とじる",
@@ -66,6 +67,7 @@
     "stageLegend": "レジェンドステージ · レベル {n}",
     "stageHall": "殿堂ステージ · レベル {n}",
     "start": "スタート！",
+    "hello": "{name}、こんにちは！",
     "exam": "テスト",
     "plus": "PLUS",
     "comingSoon": "もうすぐ",
@@ -86,6 +88,8 @@
     "type_umpire": "審判は何てコールする？",
     "right": "正解！",
     "almost": "おしい！",
+    "rightName": "正解、{name}！",
+    "almostName": "おしい、{name}！",
     "answerWas": "こたえ：{a}",
     "rewatch": "ここをもう一回見てね。この問題は最後にもう一度出るよ。",
     "dragHint": "ランナーをベースからベースへドラッグしよう",
@@ -95,6 +99,8 @@
   "result": {
     "title": "レッスンクリア！",
     "perfect": "パーフェクト！",
+    "titleName": "{name}、レッスンクリア！",
+    "perfectName": "{name}、パーフェクト！",
     "xp": "かくとくXP",
     "correct": "正解",
     "streak": "連続",
@@ -117,6 +123,8 @@
     "review": "先にふくしゅう",
     "passTitle": "合格！",
     "failTitle": "あと少し！",
+    "passTitleName": "{name}、合格！",
+    "failTitleName": "{name}、あと少し！",
     "score": "{b}問中{a}問正解",
     "badgeWon": "{badge} バッジをゲット",
     "nextUnlocked": "次のレベルがひらいたよ",

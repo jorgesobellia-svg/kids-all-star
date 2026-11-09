@@ -1,5 +1,6 @@
 {
   "common": {
+    "hello": "{name}，你好！",
     "continue": "继续",
     "check": "检查",
     "close": "关闭",
@@ -66,6 +67,7 @@
     "stageLegend": "传奇阶段 · 第 {n} 级",
     "stageHall": "名人堂阶段 · 第 {n} 级",
     "start": "开始！",
+    "hello": "{name}，你好！",
     "exam": "测验",
     "plus": "PLUS",
     "comingSoon": "即将推出",
@@ -86,6 +88,8 @@
     "type_umpire": "裁判会怎么判？",
     "right": "答对了！",
     "almost": "差一点！",
+    "rightName": "答对了，{name}！",
+    "almostName": "差一点，{name}！",
     "answerWas": "答案：{a}",
     "rewatch": "再看一次这一段。这道题最后还会出现。",
     "dragHint": "把跑垒员从一个垒拖到下一个垒",
@@ -95,6 +99,8 @@
   "result": {
     "title": "课程完成！",
     "perfect": "完美通过！",
+    "titleName": "{name}，课程完成！",
+    "perfectName": "{name}，完美通过！",
     "xp": "获得经验",
     "correct": "答对",
     "streak": "连续天数",
@@ -117,6 +123,8 @@
     "review": "先复习",
     "passTitle": "你通过了！",
     "failTitle": "差一点就过了！",
+    "passTitleName": "{name}，你通过了！",
+    "failTitleName": "{name}，差一点就过了！",
     "score": "答对 {a}/{b}",
     "badgeWon": "你获得了 {badge} 徽章",
     "nextUnlocked": "下一级已解锁",

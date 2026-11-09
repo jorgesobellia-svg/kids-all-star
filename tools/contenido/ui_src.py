@@ -6,6 +6,7 @@ def T(es, en, zh, ja): return (es, en, zh, ja)
 
 ui = {
  'common': {
+  'hello': T('¡Hola, {name}! ', 'Hi, {name}! ', '{name}，你好！', '{name}、こんにちは！'),
   'continue': T('CONTINUAR', 'CONTINUE', '继续', 'つづける'),
   'check': T('COMPROBAR', 'CHECK', '检查', 'こたえあわせ'),
   'close': T('Cerrar', 'Close', '关闭', 'とじる'),
@@ -72,6 +73,7 @@ ui = {
   'stageLegend': T('ETAPA LEYENDA · NIVEL {n}', 'LEGEND STAGE · LEVEL {n}', '传奇阶段 · 第 {n} 级', 'レジェンドステージ · レベル {n}'),
   'stageHall': T('ETAPA SALÓN DE LA FAMA · NIVEL {n}', 'HALL OF FAME STAGE · LEVEL {n}', '名人堂阶段 · 第 {n} 级', '殿堂ステージ · レベル {n}'),
   'start': T('¡EMPEZAR!', 'START!', '开始！', 'スタート！'),
+  'hello': T('¡Hola, {name}!', 'Hi, {name}!', '{name}，你好！', '{name}、こんにちは！'),
   'exam': T('EXAMEN', 'TEST', '测验', 'テスト'),
   'plus': T('PLUS', 'PLUS', 'PLUS', 'PLUS'),
   'comingSoon': T('Muy pronto', 'Coming soon', '即将推出', 'もうすぐ'),
@@ -92,6 +94,8 @@ ui = {
   'type_umpire': T('¿QUÉ CANTARÍA EL UMPIRE?', 'WHAT WOULD THE UMPIRE CALL?', '裁判会怎么判？', '審判は何てコールする？'),
   'right': T('¡Correcto!', 'Correct!', '答对了！', '正解！'),
   'almost': T('¡Casi!', 'Almost!', '差一点！', 'おしい！'),
+  'rightName': T('¡Correcto, {name}!', 'Correct, {name}!', '答对了，{name}！', '正解、{name}！'),
+  'almostName': T('¡Casi, {name}!', 'Almost, {name}!', '差一点，{name}！', 'おしい、{name}！'),
   'answerWas': T('Respuesta: {a}', 'Answer: {a}', '答案：{a}', 'こたえ：{a}'),
   'rewatch': T('Mira otra vez esta parte. La pregunta vuelve al final.', 'Watch this part again. The question comes back at the end.', '再看一次这一段。这道题最后还会出现。', 'ここをもう一回見てね。この問題は最後にもう一度出るよ。'),
   'dragHint': T('Arrastra al corredor de base en base', 'Drag the runner from base to base', '把跑垒员从一个垒拖到下一个垒', 'ランナーをベースからベースへドラッグしよう'),
@@ -101,6 +105,8 @@ ui = {
  'result': {
   'title': T('¡Lección completada!', 'Lesson complete!', '课程完成！', 'レッスンクリア！'),
   'perfect': T('¡Lección perfecta!', 'Perfect lesson!', '完美通过！', 'パーフェクト！'),
+  'titleName': T('¡Lección completada, {name}!', 'Lesson complete, {name}!', '{name}，课程完成！', '{name}、レッスンクリア！'),
+  'perfectName': T('¡Lección perfecta, {name}!', 'Perfect lesson, {name}!', '{name}，完美通过！', '{name}、パーフェクト！'),
   'xp': T('XP GANADO', 'XP EARNED', '获得经验', 'かくとくXP'),
   'correct': T('ACIERTOS', 'CORRECT', '答对', '正解'),
   'streak': T('RACHA', 'STREAK', '连续天数', '連続'),
@@ -123,6 +129,8 @@ ui = {
   'review': T('Repasar primero', 'Review first', '先复习', '先にふくしゅう'),
   'passTitle': T('¡Aprobaste!', 'You passed!', '你通过了！', '合格！'),
   'failTitle': T('¡Casi lo logras!', 'So close!', '差一点就过了！', 'あと少し！'),
+  'passTitleName': T('¡Aprobaste, {name}!', 'You passed, {name}!', '{name}，你通过了！', '{name}、合格！'),
+  'failTitleName': T('¡Casi lo logras, {name}!', 'So close, {name}!', '{name}，差一点就过了！', '{name}、あと少し！'),
   'score': T('{a} de {b} correctas', '{a} of {b} correct', '答对 {a}/{b}', '{b}問中{a}問正解'),
   'badgeWon': T('Ganaste la insignia {badge}', 'You earned the {badge} badge', '你获得了 {badge} 徽章', '{badge} バッジをゲット'),
   'nextUnlocked': T('Se desbloqueó el siguiente nivel', 'The next level is unlocked', '下一级已解锁', '次のレベルがひらいたよ'),

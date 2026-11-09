@@ -57,6 +57,8 @@ export default function PathScreen() {
   const { width } = useWindowDimensions();
   const W = Math.min(width, 600);
   const G = fieldGeom(W);
+  // Nivel en curso: el primero cuyo examen no se ha aprobado. Ahí el camino saluda al jugador por su nombre.
+  const curLevel = (LEVELS.find((l) => !p.examsPassed[String(l.n)]) ?? LEVELS[LEVELS.length - 1]).n;
 
   const say = (msg: string) => {
     setToast(msg);
@@ -127,6 +129,9 @@ export default function PathScreen() {
               <View style={{ marginHorizontal: 16, backgroundColor: hasAccess ? C.navy : '#334155', borderRadius: 20, paddingVertical: 14, paddingHorizontal: 18, flexDirection: 'row', alignItems: 'center' }}>
                 <View style={{ flex: 1 }}>
                   <Text style={{ fontFamily: F.bodyHeavy, fontSize: 13, letterSpacing: 1, color: C.gold }}>{t(`path.stage${STAGE_SUFFIX[stageOf(lv.n)]}`, { n: lv.n })}</Text>
+                  {curLevel === lv.n && (p.nickname ?? '').trim() ? (
+                    <Text style={{ fontFamily: F.display, fontSize: 20, color: C.white }}>{t('path.hello', { name: (p.nickname ?? '').trim() })}</Text>
+                  ) : null}
                   <Text style={{ fontFamily: F.display, fontSize: 26, color: C.white }}>{lt.title}</Text>
                 </View>
                 {!lv.free ? (
