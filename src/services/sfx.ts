@@ -1,8 +1,10 @@
 import { createAudioPlayer, setAudioModeAsync, type AudioPlayer } from 'expo-audio';
 import { Platform } from 'react-native';
 
-// Efectos de sonido originales (generados para la app, sin derechos de terceros):
-//   bat.wav          -> golpe de bate de madera contra la pelota al elegir una opción
+// Efectos de sonido:
+//   bat.wav          -> golpe de bate de madera contra la pelota al elegir una opción.
+//                       Grabación "Baseball hit - wooden bat" de GFX Sounds (Uppbeat), recortada a 0,38 s.
+//                       Ver docs/creditos.md.
 //   umpire-safe.wav  -> el umpire canta "Safe!" (respuesta correcta)
 //   umpire-out.wav   -> el umpire canta "You're out!" (respuesta incorrecta)
 // Las voces del umpire se generaron con Kokoro (licencia Apache 2.0). Para usar una
