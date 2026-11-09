@@ -1,7 +1,7 @@
 import { router } from 'expo-router';
 import React, { useState } from 'react';
 import { Pressable, ScrollView, Text, useWindowDimensions, View } from 'react-native';
-import Svg, { Polygon, Polyline, Rect } from 'react-native-svg';
+import Svg, { Circle, Line, Polygon, Polyline, Rect } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { CheckIcon, CoinBall, Flame, LockIcon, Mascot, StarIcon, TrophyIcon } from '@/components/Art';
 import { tapFeedback } from '@/components/ui';
@@ -14,13 +14,24 @@ import { C, F } from '@/theme';
 // 'open' = abierta en modo revisión (se ve como la actual, pero sin la mascota).
 type NodeState = 'done' | 'current' | 'open' | 'locked' | 'plus' | 'soon';
 
-const OFFSETS = [0, 64, 0, -64, 0, 52];
-// Cada fila del camino mide lo mismo para poder dibujar el camino de tierra entre las bases.
-const ROW = 128;
-const PAD = 18;
-// Lección 1 = estrella; lecciones 2-4 = primera, segunda y tercera base; lección 5 = home (anotar la carrera).
+// Cada nivel es una vuelta al diamante: estrella en el círculo de espera (lección 1), primera (2), segunda (3),
+// tercera (4), home para anotar la carrera (5) y el examen en el dugout.
 type Shape = 'star' | 'base' | 'home';
 const shapeOf = (i: number): Shape => (i === 0 ? 'star' : i === 4 ? 'home' : 'base');
+
+function fieldGeom(W: number) {
+  const d = Math.min(W * 0.3, 130);
+  const H = 2 * d + 230;
+  const cx = W / 2;
+  const home = { x: cx, y: H - 122 };
+  const first = { x: cx + d, y: home.y - d };
+  const second = { x: cx, y: home.y - 2 * d };
+  const third = { x: cx - d, y: home.y - d };
+  const onDeck = { x: cx - d * 0.98, y: H - 50 };
+  const dugout = { x: cx + d * 0.98, y: H - 48 };
+  // Orden de los nodos: lecciones 1-5 y examen.
+  return { d, H, cx, home, first, second, third, onDeck, dugout, nodes: [onDeck, first, second, third, home, dugout] };
+}
 
 // Fondo de pasto con franjas de corte, como un campo de béisbol.
 function Grass({ height, width }: { height: number; width: number }) {
@@ -40,6 +51,7 @@ export default function PathScreen() {
   const [toast, setToast] = useState<string | null>(null);
   const { width } = useWindowDimensions();
   const W = Math.min(width, 600);
+  const G = fieldGeom(W);
 
   const say = (msg: string) => {
     setToast(msg);
@@ -65,7 +77,7 @@ export default function PathScreen() {
       </View>
 
       <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingBottom: 40 }}>
-        <Grass height={LEVELS.length * (6 * ROW + 2 * PAD + 120) + 200} width={width} />
+        <Grass height={LEVELS.length * (G.H + 110) + 200} width={width} />
         {LEVELS.map((lv) => {
           const lt = (ct.levels as Record<string, { title: string; badge: string }>)[String(lv.n)];
           const unlockedByProgress = lv.n === 1 || !!p.examsPassed[String(lv.n - 1)];
@@ -106,7 +118,7 @@ export default function PathScreen() {
           };
 
           return (
-            <View key={lv.n} style={{ marginTop: 14 }}>
+            <View key={lv.n} style={{ marginTop: 26 }}>
               <View style={{ marginHorizontal: 16, backgroundColor: hasAccess ? C.navy : '#334155', borderRadius: 20, paddingVertical: 14, paddingHorizontal: 18, flexDirection: 'row', alignItems: 'center' }}>
                 <View style={{ flex: 1 }}>
                   <Text style={{ fontFamily: F.bodyHeavy, fontSize: 13, letterSpacing: 1, color: C.gold }}>{t(`path.stage${STAGE_SUFFIX[stageOf(lv.n)]}`, { n: lv.n })}</Text>
@@ -119,32 +131,52 @@ export default function PathScreen() {
                 ) : null}
               </View>
 
-              <View style={{ alignItems: 'center', height: 6 * ROW + 2 * PAD }}>
-                <Svg pointerEvents="none" width={W} height={6 * ROW + 2 * PAD} style={{ position: 'absolute', top: 0 }}>
-                  {/* Camino de tierra que une las bases, con borde más oscuro */}
-                  <Polyline points={OFFSETS.map((o, i) => `${W / 2 + o},${PAD + ROW * i + ROW / 2}`).join(' ')} fill="none" stroke="#A86F3C" strokeWidth={30} strokeLinejoin="round" strokeLinecap="round" />
-                  <Polyline points={OFFSETS.map((o, i) => `${W / 2 + o},${PAD + ROW * i + ROW / 2}`).join(' ')} fill="none" stroke="#C98B4F" strokeWidth={22} strokeLinejoin="round" strokeLinecap="round" />
+              <View style={{ height: G.H, width: W, alignSelf: 'center' }}>
+                <Svg pointerEvents="none" width={W} height={G.H} style={{ position: 'absolute', top: 0, left: 0 }}>
+                  {/* Diamante visto desde arriba: tierra del cuadro, pasto interior, líneas de cal y montículo */}
+                  <Polygon points={`${G.home.x},${G.home.y + 34} ${G.first.x + 40},${G.first.y} ${G.second.x},${G.second.y - 40} ${G.third.x - 40},${G.third.y}`} fill="#C98B4F" stroke="#A86F3C" strokeWidth={3} strokeLinejoin="round" />
+                  <Polygon points={`${G.home.x},${G.home.y - 30} ${G.first.x - 34},${G.first.y} ${G.second.x},${G.second.y + 34} ${G.third.x + 34},${G.third.y}`} fill="#48A64C" />
+                  <Line x1={G.home.x} y1={G.home.y} x2={G.first.x + 50} y2={G.first.y - 50} stroke="#FFFFFF" strokeWidth={3} opacity={0.85} />
+                  <Line x1={G.home.x} y1={G.home.y} x2={G.third.x - 50} y2={G.third.y - 50} stroke="#FFFFFF" strokeWidth={3} opacity={0.85} />
+                  <Circle cx={G.cx} cy={G.home.y - G.d} r={17} fill="#C98B4F" stroke="#A86F3C" strokeWidth={2} />
+                  <Rect x={G.cx - 7} y={G.home.y - G.d - 2} width={14} height={4} fill="#FFFFFF" />
+                  {/* Círculo de espera y dugout */}
+                  <Circle cx={G.onDeck.x} cy={G.onDeck.y} r={44} fill="#C98B4F" stroke="#FFFFFF" strokeWidth={3} opacity={0.95} />
+                  <Rect x={G.dugout.x - 58} y={G.dugout.y - 40} width={116} height={80} rx={14} fill="#1E3A5F" stroke="#0C2340" strokeWidth={3} />
+                  <Rect x={G.dugout.x - 58} y={G.dugout.y - 40} width={116} height={14} rx={7} fill="#0C2340" />
+                  {/* Recorrido del corredor: de la espera a home y la vuelta completa, luego al dugout */}
+                  <Polyline
+                    points={[G.onDeck, G.home, G.first, G.second, G.third, G.home, G.dugout].map((q) => `${q.x},${q.y}`).join(' ')}
+                    fill="none"
+                    stroke="#FFFFFF"
+                    strokeWidth={4}
+                    strokeDasharray="2 10"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    opacity={0.9}
+                  />
                 </Svg>
-                <View style={{ height: PAD }} />
                 {lv.lessonIds.map((id, i) => {
                   const st = lessonState(i);
+                  const q = G.nodes[i];
+                  const right = q.x >= G.cx;
                   return (
-                    <View key={id} style={{ height: ROW, justifyContent: 'center', transform: [{ translateX: OFFSETS[i] }], alignItems: 'center' }}>
+                    <View key={id} style={{ position: 'absolute', left: q.x - 60, top: q.y - 60, width: 120, height: 120, alignItems: 'center', justifyContent: 'center', zIndex: st === 'current' ? 3 : 1 }}>
                       {st === 'current' ? (
-                        <View style={{ position: 'absolute', top: -14, backgroundColor: C.white, borderWidth: 2, borderColor: C.line, borderRadius: 14, paddingHorizontal: 14, paddingVertical: 4, zIndex: 2 }}>
-                          <Text style={{ fontFamily: F.bodyHeavy, fontSize: 15, color: C.red }}>{t('path.start')}</Text>
+                        <View style={{ position: 'absolute', top: -6, backgroundColor: C.white, borderWidth: 2, borderColor: C.line, borderRadius: 14, paddingHorizontal: 12, paddingVertical: 3, zIndex: 2 }}>
+                          <Text style={{ fontFamily: F.bodyHeavy, fontSize: 14, color: C.red }}>{t('path.start')}</Text>
                         </View>
                       ) : null}
                       <Node state={st} shape={shapeOf(i)} testID={`node-${id}`} label={(ct.lessonTitles as Record<string, string>)[id]} onPress={press(st, () => router.push({ pathname: '/leccion/[id]', params: { id } }))} />
                       {st === 'current' ? (
-                        <View pointerEvents="none" style={{ position: 'absolute', left: OFFSETS[i] > 0 ? -110 : 100, top: 34 }}>
-                          <Mascot size={84} />
+                        <View pointerEvents="none" style={{ position: 'absolute', left: right && i !== 4 ? 96 : i === 4 ? 100 : -46, top: i === 4 ? 0 : 40 }}>
+                          <Mascot size={68} />
                         </View>
                       ) : null}
                     </View>
                   );
                 })}
-                <View style={{ height: ROW, justifyContent: 'center', transform: [{ translateX: OFFSETS[5] }], alignItems: 'center' }}>
+                <View style={{ position: 'absolute', left: G.dugout.x - 60, top: G.dugout.y - 60, width: 120, height: 120, alignItems: 'center', justifyContent: 'center' }}>
                   <Node
                     state={examState}
                     exam
@@ -152,7 +184,7 @@ export default function PathScreen() {
                     label={t('path.exam')}
                     onPress={press(examState, () => router.push({ pathname: '/examen/[nivel]', params: { nivel: String(lv.n) } }), true)}
                   />
-                  <View style={{ position: 'absolute', bottom: -4, backgroundColor: 'rgba(12,35,64,0.75)', borderRadius: 10, paddingHorizontal: 10, paddingVertical: 2 }}>
+                  <View style={{ position: 'absolute', bottom: -2, backgroundColor: 'rgba(12,35,64,0.85)', borderRadius: 10, paddingHorizontal: 10, paddingVertical: 2 }}>
                     <Text style={{ fontFamily: F.bodyHeavy, fontSize: 13, color: C.white }}>{t('path.exam')}</Text>
                   </View>
                 </View>
@@ -193,13 +225,13 @@ function Node({ state, onPress, exam, shape = 'star', label, testID }: { state: 
         accessibilityRole="button"
         accessibilityLabel={label}
         onPress={onPress}
-        style={{ width: 84, height: 84, borderRadius: 22, backgroundColor: state === 'done' ? C.gold : live ? C.gold : '#E2E8F0', alignItems: 'center', justifyContent: 'center', boxShadow: `0 6px 0 ${state === 'done' ? C.goldDark : live ? C.goldDark : C.lineDark}` } as object}
+        style={{ width: 76, height: 76, borderRadius: 20, backgroundColor: state === 'done' ? C.gold : live ? C.gold : '#E2E8F0', alignItems: 'center', justifyContent: 'center', boxShadow: `0 6px 0 ${state === 'done' ? C.goldDark : live ? C.goldDark : C.lineDark}` } as object}
       >
         <TrophyIcon size={40} color={state === 'done' || live ? C.white : C.faint} />
       </Pressable>
     );
   }
-  const size = (state === 'current' ? 96 : 84) * (shape === 'base' ? 1.1 : 1);
+  const size = (state === 'current' ? 86 : 74) * (shape === 'base' ? 1.1 : 1);
   const pts = SHAPES[shape](size);
   const iconTop = shape === 'home' ? -size * 0.08 : shape === 'star' ? size * 0.05 : 0;
   return (
