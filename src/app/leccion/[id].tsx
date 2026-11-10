@@ -1,9 +1,10 @@
 import { router, useLocalSearchParams } from 'expo-router';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Pressable, ScrollView, Text, useWindowDimensions, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import ActivityView, { isCorrect, type Answer } from '@/components/Activity';
 import { CheckIcon, CoinBall, Mascot, SpeakerIcon } from '@/components/Art';
+import Pelotin from '@/components/Pelotin';
 import { Board, CallBanner, Lineup } from '@/components/Board';
 import Diamond from '@/components/Diamond';
 import Gear from '@/components/Gear';
@@ -88,6 +89,20 @@ export default function LessonScreen() {
   const [firstTry, setFirstTry] = useState<Set<number>>(new Set());
   const [missed, setMissed] = useState<Set<number>>(new Set());
   const [replaySeg, setReplaySeg] = useState(0);
+  // Los botones de Continuar esperan a que Pelotín termine de decir la explicación en voz alta,
+  // para que los niños que todavía no leen bien la escuchen completa.
+  const [heard, setHeard] = useState(true);
+  const heardToken = useRef(0);
+  const sayThen = (msg: string) => {
+    const tok = ++heardToken.current;
+    setHeard(false);
+    const ok = () => {
+      if (tok === heardToken.current) setHeard(true);
+    };
+    speak(msg, locale, ok);
+    // Respaldo por si el teléfono no tiene voz para ese idioma.
+    setTimeout(ok, readTime(msg) + 2500);
+  };
   const [reward, setReward] = useState<LessonReward | null>(null);
   const [playing, setPlaying] = useState(true);
   const [plays, setPlays] = useState(0);
@@ -168,8 +183,12 @@ export default function LessonScreen() {
     }
     const fb = ok ? at?.ok : at?.ko;
     // Primero canta el umpire; después la mascota explica.
+    const tok = ++heardToken.current;
+    setHeard(false);
     umpireCall(ok ? 'safe' : 'out', locale, () => {
-      if (fb) speak(fb, locale);
+      if (tok !== heardToken.current) return;
+      if (fb) sayThen(fb);
+      else setHeard(true);
     });
   };
 
@@ -191,6 +210,7 @@ export default function LessonScreen() {
   };
 
   const next = () => {
+    if (!heard) return;
     stopSpeaking();
     if (!act) return;
     if (!right && strikes >= REWARDS.strikesPerLesson) {
@@ -203,7 +223,7 @@ export default function LessonScreen() {
       setReplaySeg(act.seg);
       setPhase('replay');
       setReplayCount((k) => k + 1);
-      speak(text.demo[act.seg], locale);
+      sayThen(text.demo[act.seg]);
       return;
     }
     const rest = queue.slice(1);
@@ -301,7 +321,7 @@ export default function LessonScreen() {
             {phase === 'demo' ? <Text style={{ alignSelf: 'flex-start', fontFamily: F.display, fontSize: 28, color: C.ink }}>{text.title}</Text> : null}
             <Scene seg={lesson.demo[phase === 'demo' ? segIdx : replaySeg]} width={W} runKey={phase === 'demo' ? plays * 100 + segIdx : 10000 + replayCount} />
             <View style={{ flexDirection: 'row', alignItems: 'flex-start', gap: 10, width: W }}>
-              <Mascot size={72} />
+              <Pelotin size={88} testID="pelotin" />
               <View style={{ flex: 1, backgroundColor: C.bg, borderRadius: 16, borderTopLeftRadius: 4, padding: 14 }}>
                 <Text testID="demo-text" style={{ fontFamily: F.bodySemi, fontSize: 18, lineHeight: 25, color: C.ink }}>
                   {text.demo[phase === 'demo' ? segIdx : replaySeg]}
@@ -336,7 +356,7 @@ export default function LessonScreen() {
                 <Btn testID="demo-ready" label={t('lesson.ready')} variant={demoDone ? 'red' : 'disabled'} onPress={demoDone ? startActs : undefined} />
               </>
             ) : (
-              <Btn testID="replay-continue" label={t('common.continue')} onPress={afterReplay} />
+              <Btn testID="replay-continue" label={t('common.continue')} variant={heard ? 'red' : 'disabled'} onPress={heard ? afterReplay : undefined} />
             )}
           </View>
         </>
@@ -344,9 +364,12 @@ export default function LessonScreen() {
         <>
           <ScrollView contentContainerStyle={{ padding: 20, gap: 14 }}>
             <Label>{t(`lesson.type_${act.type}`)}</Label>
-            <Text testID="act-question" style={{ fontFamily: F.display, fontSize: 26, lineHeight: 30, color: C.ink }}>
-              {at.q}
-            </Text>
+            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+              <Pelotin size={60} />
+              <Text testID="act-question" style={{ flex: 1, fontFamily: F.display, fontSize: 26, lineHeight: 30, color: C.ink }}>
+                {at.q}
+              </Text>
+            </View>
             <ActivityView
               key={`${curIdx}-${attempt}`}
               act={act}
@@ -366,11 +389,7 @@ export default function LessonScreen() {
           {answered ? (
             <View testID="feedback" style={{ backgroundColor: right ? C.greenSoft : C.wrongSoft, paddingHorizontal: 22, paddingTop: 16, paddingBottom: insets.bottom + 20, gap: 10 }}>
               <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
-                {right ? (
-                  <View style={{ width: 32, height: 32, borderRadius: 16, backgroundColor: C.green, alignItems: 'center', justifyContent: 'center' }}>
-                    <CheckIcon size={20} />
-                  </View>
-                ) : null}
+                <Pelotin size={56} mood={right ? 'cheer' : 'think'} />
                 <Text style={{ fontFamily: F.display, fontSize: 26, color: right ? '#166534' : '#991B1B' }}>{name ? t(right ? 'lesson.rightName' : 'lesson.almostName', { name }) : right ? t('lesson.right') : t('lesson.almost')}</Text>
               </View>
               <Text style={{ fontFamily: F.bodySemi, fontSize: 16, lineHeight: 22, color: right ? '#166534' : '#991B1B' }}>{right ? at.ok : at.ko}</Text>
@@ -387,7 +406,7 @@ export default function LessonScreen() {
               {!right && at.answer ? (
                 <Text style={{ fontFamily: F.bodyBold, fontSize: 15, color: '#991B1B' }}>{t('lesson.answerWas', { a: at.answer })}</Text>
               ) : null}
-              <Btn testID="feedback-continue" label={t('common.continue')} variant={right ? 'green' : 'wrong'} onPress={next} />
+              <Btn testID="feedback-continue" label={t('common.continue')} variant={!heard ? 'disabled' : right ? 'green' : 'wrong'} onPress={heard ? next : undefined} />
             </View>
           ) : !autoCheck ? (
             <View style={{ paddingHorizontal: 20, paddingTop: 14, paddingBottom: insets.bottom + 20, borderTopWidth: 2, borderTopColor: C.line }}>

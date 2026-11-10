@@ -183,9 +183,41 @@ function whenLoaded(pl: AudioPlayer, id: number, go: () => void) {
   }, 1500);
 }
 
-export function speak(text: string, locale: Locale, onDone?: () => void, o: VoiceOpts = {}): void {
+// ------------------------------------------------------------ ¿está hablando Pelotín?
+// La animación de la mascota (boca que se mueve) y los botones que esperan a que termine
+// de hablar escuchan este aviso.
+let talking = false;
+const talkListeners = new Set<(on: boolean) => void>();
+function setTalking(on: boolean) {
+  if (talking === on) return;
+  talking = on;
+  talkListeners.forEach((f) => f(on));
+}
+export function isTalking(): boolean {
+  return talking;
+}
+export function onTalkingChange(f: (on: boolean) => void): () => void {
+  talkListeners.add(f);
+  return () => {
+    talkListeners.delete(f);
+  };
+}
+
+export function speak(text: string, locale: Locale, onDoneRaw?: () => void, o: VoiceOpts = {}): void {
   const id = ++current;
   stopClip();
+  setTalking(true);
+  let finished = false;
+  const onDone = () => {
+    if (finished || id !== current) return;
+    finished = true;
+    setTalking(false);
+    onDoneRaw?.();
+  };
+  // Respaldo: si el teléfono nunca avisa que terminó, la boca se cierra igual.
+  setTimeout(() => {
+    if (id === current && !finished) setTalking(false);
+  }, Math.max(3000, text.length * 95) + 3000);
   const clips = clipsFor(text, locale);
   if (clips) {
     const s0 = webSynth();
@@ -227,6 +259,7 @@ export function speak(text: string, locale: Locale, onDone?: () => void, o: Voic
 export function stopSpeaking(): void {
   current++;
   stopClip();
+  setTalking(false);
   const s = webSynth();
   if (s) {
     try {

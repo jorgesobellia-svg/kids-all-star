@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import Svg, { Circle, G, Line, Path, Polygon, Rect, Text as SvgText } from 'react-native-svg';
+import Svg, { Circle, Ellipse, G, Line, Path, Polygon, Rect, Text as SvgText } from 'react-native-svg';
 import { XArt } from './ArtV3';
 import type { OptionImage } from '@/content/types';
 import { C, F } from '@/theme';
@@ -19,7 +19,34 @@ export function AppIcon({ size = 120 }: { size?: number }) {
 }
 
 /** Pelotín, la mascota (arte original). */
-export function Mascot({ size = 96, mood = 'happy', cap = C.red }: { size?: number; mood?: 'happy' | 'cheer' | 'think'; cap?: string }) {
+export type MascotMouth = 'rest' | 'half' | 'open';
+
+export function Mascot({
+  size = 96,
+  mood = 'happy',
+  cap = C.red,
+  mouth = 'rest',
+  blink = false,
+}: {
+  size?: number;
+  mood?: 'happy' | 'cheer' | 'think';
+  cap?: string;
+  /** Boca al hablar: 'rest' es la sonrisa normal; 'half' y 'open' se alternan mientras suena la voz. */
+  mouth?: MascotMouth;
+  blink?: boolean;
+}) {
+  const talkMouth =
+    mouth === 'open' ? (
+      <>
+        <Ellipse cx={50} cy={70} rx={8} ry={7} fill={C.navy} />
+        <Ellipse cx={50} cy={74} rx={5} ry={2.6} fill="#E8475A" />
+      </>
+    ) : mouth === 'half' ? (
+      <Ellipse cx={50} cy={70} rx={7} ry={3.6} fill={C.navy} />
+    ) : null;
+  const eyes = blink ? (
+    <Path d="M35 58h10M55 58h10" fill="none" stroke={C.navy} strokeWidth={3} strokeLinecap="round" />
+  ) : null;
   return (
     <Svg width={size} height={size} viewBox="0 0 100 100">
       <Circle cx={50} cy={56} r={34} fill={C.white} stroke={C.gold} strokeWidth={3} />
@@ -30,19 +57,24 @@ export function Mascot({ size = 96, mood = 'happy', cap = C.red }: { size?: numb
       {mood === 'cheer' ? (
         <>
           <Path d="M36 58q4 -6 8 0M56 58q4 -6 8 0" fill="none" stroke={C.navy} strokeWidth={3} strokeLinecap="round" />
-          <Path d="M38 68q12 12 24 0z" fill={C.navy} />
+          {talkMouth ?? <Path d="M38 68q12 12 24 0z" fill={C.navy} />}
         </>
       ) : (
         <>
-          <Circle cx={40} cy={58} r={5} fill={C.navy} />
-          <Circle cx={60} cy={58} r={5} fill={C.navy} />
-          <Circle cx={41.5} cy={56.5} r={1.6} fill={C.white} />
-          <Circle cx={61.5} cy={56.5} r={1.6} fill={C.white} />
-          {mood === 'think' ? (
-            <Path d="M42 72q8 -4 16 0" fill="none" stroke={C.navy} strokeWidth={3} strokeLinecap="round" />
-          ) : (
-            <Path d="M40 70q10 9 20 0" fill="none" stroke={C.navy} strokeWidth={3} strokeLinecap="round" />
+          {eyes ?? (
+            <>
+              <Circle cx={40} cy={58} r={5} fill={C.navy} />
+              <Circle cx={60} cy={58} r={5} fill={C.navy} />
+              <Circle cx={41.5} cy={56.5} r={1.6} fill={C.white} />
+              <Circle cx={61.5} cy={56.5} r={1.6} fill={C.white} />
+            </>
           )}
+          {talkMouth ??
+            (mood === 'think' ? (
+              <Path d="M42 72q8 -4 16 0" fill="none" stroke={C.navy} strokeWidth={3} strokeLinecap="round" />
+            ) : (
+              <Path d="M40 70q10 9 20 0" fill="none" stroke={C.navy} strokeWidth={3} strokeLinecap="round" />
+            ))}
         </>
       )}
     </Svg>
