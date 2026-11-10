@@ -1,16 +1,20 @@
 import { router } from 'expo-router';
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { BallBadge } from '@/components/Art';
 import { Body, Btn, H1, ProgressBar, tapFeedback } from '@/components/ui';
 import { ui } from '@/i18n';
 import { checkNickname, initials } from '@/services/moderation';
+import { startIntroMusic, stopIntroMusic } from '@/services/music';
 import { submitScore } from '@/services/scoreboard';
 import { useStore } from '@/state/store';
 import { C, F } from '@/theme';
 
 export default function NicknameScreen() {
+  useEffect(() => {
+    startIntroMusic();
+  }, []);
   const { t, locale, p, setPlayer } = useStore();
   const insets = useSafeAreaInsets();
   const [name, setName] = useState(p.nickname ?? '');
@@ -34,6 +38,7 @@ export default function NicknameScreen() {
     const nick = name.trim();
     setPlayer(nick, country);
     submitScore({ playerId: p.playerId, nickname: nick, country, league: p.league, weeklyXp: p.weeklyXp, totalXp: p.xp, weekId: p.weekId });
+    stopIntroMusic();
     router.replace('/camino');
   };
 

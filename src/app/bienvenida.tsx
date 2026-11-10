@@ -1,13 +1,17 @@
 import { router } from 'expo-router';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { AppIcon, Mascot } from '@/components/Art';
 import { Btn } from '@/components/ui';
+import { startIntroMusic } from '@/services/music';
 import { useStore } from '@/state/store';
 import { C, F } from '@/theme';
 
 export default function Welcome() {
+  useEffect(() => {
+    startIntroMusic();
+  }, []);
   const { t } = useStore();
   const insets = useSafeAreaInsets();
   return (

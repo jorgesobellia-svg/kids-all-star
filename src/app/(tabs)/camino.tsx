@@ -1,5 +1,5 @@
 import { router } from 'expo-router';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Pressable, ScrollView, Text, useWindowDimensions, View } from 'react-native';
 import Svg, { Circle, Line, Polygon, Polyline, Rect } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -8,6 +8,7 @@ import { tapFeedback } from '@/components/ui';
 import { LEVELS, STAGE_SUFFIX, stageOf } from '@/content/levels';
 import { content } from '@/i18n';
 import { TEST_MODE } from '@/services/billing';
+import { stopIntroMusic } from '@/services/music';
 import { TESTERS } from '@/services/testers';
 import { useStore } from '@/state/store';
 import { C, F } from '@/theme';
@@ -51,6 +52,9 @@ function Grass({ height, width }: { height: number; width: number }) {
 }
 
 export default function PathScreen() {
+  useEffect(() => {
+    stopIntroMusic();
+  }, []);
   const { p, t, locale } = useStore();
   const insets = useSafeAreaInsets();
   const ct = content(locale);

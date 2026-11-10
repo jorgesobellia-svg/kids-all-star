@@ -1,10 +1,11 @@
 import { router, useLocalSearchParams } from 'expo-router';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { AppIcon, BallBadge, CheckIcon } from '@/components/Art';
 import { Btn, tapFeedback } from '@/components/ui';
 import { LOCALES, translate, type Locale } from '@/i18n';
+import { startIntroMusic, stopIntroMusic } from '@/services/music';
 import { useStore } from '@/state/store';
 import { C, F } from '@/theme';
 
@@ -14,11 +15,18 @@ export default function LanguageScreen() {
   const [sel, setSel] = useState<Locale>(p.locale ?? locale);
   const insets = useSafeAreaInsets();
   const tt = (k: string) => translate(sel, k);
+  const onboarding = from !== 'profile' && !p.nickname;
+  useEffect(() => {
+    if (onboarding) startIntroMusic();
+  }, [onboarding]);
 
   const confirm = () => {
     setLocale(sel);
     if (from === 'profile') router.back();
-    else router.replace(p.nickname ? '/camino' : '/bienvenida');
+    else {
+      if (p.nickname) stopIntroMusic();
+      router.replace(p.nickname ? '/camino' : '/bienvenida');
+    }
   };
 
   return (
