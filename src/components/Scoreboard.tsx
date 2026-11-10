@@ -5,7 +5,7 @@ import { F } from '@/theme';
 // Pizarra de estadio para la parte de arriba de la lección:
 //   - una casilla por "inning" (cada pregunta de la lección); al acertar se enciende la carrera ("1");
 //   - la casilla del inning que se está jugando parpadea;
-//   - a la derecha, los STRIKES como bombillos rojos, igual que en las pizarras de los estadios.
+//   - a la derecha, los OUTS como bombillos rojos, igual que en las pizarras de los estadios.
 const SB = {
   board: '#0E2A1C', // verde oscuro de pizarra
   frame: '#2B4A38',
@@ -127,7 +127,7 @@ export default function Scoreboard({
           <Text style={{ fontFamily: F.display, fontSize: 10, letterSpacing: 2, color: SB.head, marginTop: 3, opacity: 0.8 }}>{inningLabel}</Text>
         </View>
 
-        {/* Strikes */}
+        {/* Outs */}
         <View testID="strikes" accessibilityLabel={`${strikesLabel}: ${strikes}`} style={{ alignItems: 'center', paddingHorizontal: 4 }}>
           <Text style={{ fontFamily: F.display, fontSize: 12, letterSpacing: 1, color: SB.head, marginBottom: 5 }}>{strikesLabel.toUpperCase()}</Text>
           <View style={{ flexDirection: 'row', gap: 6 }}>

@@ -108,7 +108,7 @@ export default function LessonScreen() {
   const [reward, setReward] = useState<LessonReward | null>(null);
   const [playing, setPlaying] = useState(true);
   const [plays, setPlays] = useState(0);
-  // Strikes de la lección (al tercero, ponche) y racha de aciertos seguidos.
+  // Outs de la lección (con 3 outs, al dugout) y racha de aciertos seguidos.
   const [strikes, setStrikes] = useState(0);
   const [inARow, setInARow] = useState(0);
   const [bonus, setBonus] = useState(0);
@@ -311,7 +311,7 @@ export default function LessonScreen() {
 
       {phase === 'ponche' ? (
         <View testID="ponche" style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 24, gap: 14, backgroundColor: C.navy }}>
-          <Text style={{ fontFamily: F.display, fontSize: 64, color: C.gold }}>K</Text>
+          <Text style={{ fontFamily: F.display, fontSize: 56, color: C.gold }}>{'3 ' + t('lesson.strikes').toUpperCase()}</Text>
           <Text style={{ fontFamily: F.display, fontSize: 34, color: C.white, textAlign: 'center' }}>{name ? t('lesson.ponchadoName', { name }) : t('lesson.ponchado')}</Text>
           <Text style={{ fontFamily: F.bodySemi, fontSize: 17, lineHeight: 24, color: '#CBD5E1', textAlign: 'center' }}>{t('lesson.ponchadoText')}</Text>
           <View style={{ alignSelf: 'stretch', marginTop: 10 }}>
