@@ -246,7 +246,7 @@ TR = {
       'o': [('A hit', '安打', 'ヒット'), ('Always an error', '一定是失误', 'いつもエラー'), ('Nothing', '什么都不算', '何でもない')]},
   10: {'q': ('True or false: standing on your base, you are safe', '对还是错：站在垒包上，你就是安全的', '○か×か：塁の上に立っていれば、安全（セーフ）だ')},
   11: {'q': ('What do you need for your batted ball to be a hit?', '你的击球要怎样才算安打？', '打球がヒットになるには、何が必要？'),
-       'o': [('Get there safely without the defense making a mistake', '在防守没有失误的情况下安全上垒', '守備のミスなしに安全に着くこと'), ('The crowd has to cheer', '观众要欢呼', 'お客さんがさけぶこと'), ('It has to leave the field', '球要飞出球场', 'グラウンドの外に出ること')]},
+       'o': [('Get there safely without the defense being able to get you out', '安全上垒，防守没办法让你出局', '守備にアウトにされずに、安全に塁に着くこと'), ('The crowd has to cheer', '观众要欢呼', 'お客さんがさけぶこと'), ('It has to leave the field', '球要飞出球场', 'グラウンドの外に出ること')]},
   12: {'q': ('How do you say "hit" in English?', '“安打”的英语怎么说？', 'ヒットは英語で何という？'),
        'o': [('Hit', 'Hit', 'Hit'), ('Balk', 'Balk', 'Balk'), ('Lead', 'Lead', 'Lead')]},
  },

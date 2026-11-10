@@ -553,11 +553,11 @@
     "n": 11,
     "q": "¿Qué necesitas para que tu batazo sea hit?",
     "opts": [
-     "Llegar a salvo sin que la defensa falle",
+     "Llegar a salvo sin que la defensa pueda sacarte out",
      "Que el público grite",
      "Que salga del campo"
     ],
-    "correct": "Llegar a salvo sin que la defensa falle"
+    "correct": "Llegar a salvo sin que la defensa pueda sacarte out"
    },
    {
     "n": 12,

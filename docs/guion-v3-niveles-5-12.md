@@ -355,7 +355,7 @@ marca las lecciones que debe repasar y puede intentarlo de nuevo.
 | 8      | ¿Quién decide si llegaste safe o out?                                     | El umpire / El público / El pitcher                                                  | El umpire                               |
 | 9      | Un batazo pasa rodando entre dos defensores y llegas a salvo. ¿Qué es?    | Un hit / Un error siempre / Nada                                                     | Un hit                                  |
 | 10     | Verdadero o falso: en tu base, parado sobre ella, estás a salvo           | Verdadero / Falso                                                                    | Verdadero                               |
-| 11     | ¿Qué necesitas para que tu batazo sea hit?                                | Llegar a salvo sin que la defensa falle / Que el público grite / Que salga del campo | Llegar a salvo sin que la defensa falle |
+| 11     | ¿Qué necesitas para que tu batazo sea hit?                                | Llegar a salvo sin que la defensa pueda sacarte out / Que el público grite / Que salga del campo | Llegar a salvo sin que la defensa pueda sacarte out |
 | 12     | ¿Cómo se dice hit en inglés?                                              | Hit / Balk / Lead                                                                    | Hit                                     |
 
 Al aprobar: insignia Bate de Plata, 50 XP de bono, 10 pelotas y se

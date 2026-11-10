@@ -7087,7 +7087,7 @@
       "11": {
         "q": "What do you need for your batted ball to be a hit?",
         "opts": {
-          "a": "Get there safely without the defense making a mistake",
+          "a": "Get there safely without the defense being able to get you out",
           "b": "The crowd has to cheer",
           "c": "It has to leave the field"
         }

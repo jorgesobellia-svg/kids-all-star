@@ -7087,7 +7087,7 @@
       "11": {
         "q": "¿Qué necesitas para que tu batazo sea hit?",
         "opts": {
-          "a": "Llegar a salvo sin que la defensa falle",
+          "a": "Llegar a salvo sin que la defensa pueda sacarte out",
           "b": "Que el público grite",
           "c": "Que salga del campo"
         }
