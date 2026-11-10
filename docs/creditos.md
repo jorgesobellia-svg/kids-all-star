@@ -6,4 +6,4 @@
 - **Voces del umpire** (`assets/sfx/umpire-safe.wav`, `umpire-out.wav`): generadas con Kokoro (Apache 2.0).
 
 ## Música de entrada
-- `assets/music/intro-organo.mp3`: "Take Me Out to the Ball Game" (intro en órgano Hammond), interpretada por Albert Behar. Archivo aportado por Jorge; recortado el silencio final para que suene en bucle. La canción (1908) es de dominio público; la grabación es de Albert Behar: confirmar su licencia antes de publicar en las tiendas.
+- `assets/music/intro-estadio.mp3`: "Baseball stadium organ crowd" (órgano de estadio con público), de Locran. Archivo aportado por Jorge; recortados los silencios del inicio y del final para que suene en bucle sin pausa. Confirmar la licencia de la grabación antes de publicar en las tiendas.

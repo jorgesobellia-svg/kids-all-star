@@ -1,10 +1,10 @@
 import { createAudioPlayer, setAudioModeAsync, type AudioPlayer } from 'expo-audio';
 import { Platform } from 'react-native';
 
-// Música de entrada: "Take Me Out to the Ball Game" en órgano Hammond (Albert Behar).
+// Música de entrada: órgano de estadio con público ("Baseball stadium organ crowd", Locran).
 // Suena en bucle en las pantallas de inicio (idioma → bienvenida → apodo) y se apaga
 // al entrar al juego. Ver docs/creditos.md.
-const SRC = require('../../assets/music/intro-organo.mp3');
+const SRC = require('../../assets/music/intro-estadio.mp3');
 const VOLUME = 0.55;
 
 let player: AudioPlayer | null = null;
