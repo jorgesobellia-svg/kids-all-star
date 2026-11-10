@@ -4,6 +4,7 @@ import { Pressable, ScrollView, Text, useWindowDimensions, View } from 'react-na
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import ActivityView, { isCorrect, type Answer } from '@/components/Activity';
 import { BadgeMedal, CheckIcon, Mascot, TrophyIcon } from '@/components/Art';
+import Pelotin from '@/components/Pelotin';
 import { Btn, Card, H1, Label, ProgressBar } from '@/components/ui';
 import { getLevel, REWARDS, STAGE_END, STAGE_SUFFIX } from '@/content/levels';
 import type { Activity } from '@/content/types';
@@ -47,7 +48,8 @@ export default function ExamScreen() {
   const q = level.exam[i];
   const qt = text[String(q.n)];
   // El examen usa el mismo componente de actividades que las lecciones.
-  const act: Activity = { n: q.n, type: q.type === 'tap' ? 'tap' : q.type, options: q.options, correct: q.correct, scene: q.scene ?? 'diamond', target: q.target, fx: q.fx, seg: 0 };
+  // Se guarda la misma actividad por pregunta para que las opciones no se vuelvan a barajar al contestar.
+  const act = examAct(q);
   const answered = answer !== null;
   const right = answered ? isCorrect(act, answer!) : false;
 
@@ -246,6 +248,10 @@ export default function ExamScreen() {
           onPick={setPicked}
           onAnswer={submit}
         />
+        {/* Pelotín acompaña cada pregunta del examen: habla al leerla y reacciona a la respuesta. */}
+        <View style={{ alignItems: 'center', marginTop: 8 }}>
+          <Pelotin size={120} testID="exam-pelotin" mood={answered ? (right ? 'cheer' : 'think') : 'happy'} />
+        </View>
       </ScrollView>
       {answered ? (
         <View testID="exam-feedback" style={{ backgroundColor: right ? C.greenSoft : C.wrongSoft, paddingHorizontal: 22, paddingTop: 16, paddingBottom: insets.bottom + 20, gap: 10 }}>
@@ -267,4 +273,14 @@ export default function ExamScreen() {
       ) : null}
     </View>
   );
+}
+
+const actCache = new WeakMap<object, Activity>();
+function examAct(q: NonNullable<ReturnType<typeof getLevel>>['exam'][number]): Activity {
+  let a = actCache.get(q);
+  if (!a) {
+    a = { n: q.n, type: q.type === 'tap' ? 'tap' : q.type, options: q.options, correct: q.correct, scene: q.scene ?? 'diamond', target: q.target, fx: q.fx, seg: 0 };
+    actCache.set(q, a);
+  }
+  return a;
 }
