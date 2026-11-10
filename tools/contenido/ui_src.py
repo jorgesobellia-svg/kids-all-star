@@ -76,6 +76,7 @@ ui = {
   'hello': T('¡Hola, {name}!', 'Hi, {name}!', '{name}，你好！', '{name}、こんにちは！'),
   'exam': T('EXAMEN', 'TEST', '测验', 'テスト'),
   'plus': T('PLUS', 'PLUS', 'PLUS', 'PLUS'),
+  'testers': T('PRUEBA', 'BETA', '测试版', 'テスト版'),
   'comingSoon': T('Muy pronto', 'Coming soon', '即将推出', 'もうすぐ'),
   'lockedExam': T('Termina las 5 lecciones para abrir el examen', 'Finish the 5 lessons to unlock the test', '完成 5 节课才能开启测验', '5つのレッスンを終えるとテストがひらくよ'),
   'streakA11y': T('Racha de {n} días', '{n}-day streak', '连续 {n} 天', '{n}日連続'),

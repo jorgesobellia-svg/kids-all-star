@@ -8,6 +8,7 @@ import { tapFeedback } from '@/components/ui';
 import { LEVELS, STAGE_SUFFIX, stageOf } from '@/content/levels';
 import { content } from '@/i18n';
 import { TEST_MODE } from '@/services/billing';
+import { TESTERS } from '@/services/testers';
 import { useStore } from '@/state/store';
 import { C, F } from '@/theme';
 
@@ -72,7 +73,11 @@ export default function PathScreen() {
           <Flame size={26} />
           <Text style={{ fontFamily: F.bodyHeavy, fontSize: 18, color: '#C2410C' }}>{p.streak.count}</Text>
         </View>
-        {p.plus ? (
+        {TESTERS ? (
+          <View style={{ backgroundColor: C.green, borderRadius: 8, paddingHorizontal: 8, paddingVertical: 3 }}>
+            <Text style={{ fontFamily: F.bodyHeavy, fontSize: 13, color: C.white }}>{t('path.testers')}</Text>
+          </View>
+        ) : p.plus ? (
           <View style={{ backgroundColor: C.gold, borderRadius: 8, paddingHorizontal: 8, paddingVertical: 3 }}>
             <Text style={{ fontFamily: F.bodyHeavy, fontSize: 13, color: C.navy }}>{t('path.plus')}</Text>
           </View>
@@ -88,7 +93,7 @@ export default function PathScreen() {
         {LEVELS.map((lv) => {
           const lt = (ct.levels as Record<string, { title: string; badge: string }>)[String(lv.n)];
           const unlockedByProgress = lv.n === 1 || !!p.examsPassed[String(lv.n - 1)];
-          const review = !!p.review && TEST_MODE;
+          const review = TESTERS || (!!p.review && TEST_MODE);
           const hasAccess = lv.free || p.plus || review;
           const built = lv.lessons.length > 0;
           const firstOpen = lv.lessonIds.findIndex((id) => !p.completed[id]);
@@ -134,7 +139,7 @@ export default function PathScreen() {
                   ) : null}
                   <Text style={{ fontFamily: F.display, fontSize: 26, color: C.white }}>{lt.title}</Text>
                 </View>
-                {!lv.free ? (
+                {!lv.free && !TESTERS ? (
                   <View style={{ backgroundColor: C.gold, borderRadius: 8, paddingHorizontal: 8, paddingVertical: 3 }}>
                     <Text style={{ fontFamily: F.bodyHeavy, fontSize: 13, color: C.navy }}>{t('path.plus')}</Text>
                   </View>

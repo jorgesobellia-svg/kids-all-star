@@ -70,6 +70,7 @@
     "hello": "Hi, {name}!",
     "exam": "TEST",
     "plus": "PLUS",
+    "testers": "BETA",
     "comingSoon": "Coming soon",
     "lockedExam": "Finish the 5 lessons to unlock the test",
     "streakA11y": "{n}-day streak",

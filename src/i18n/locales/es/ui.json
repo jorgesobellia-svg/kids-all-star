@@ -70,6 +70,7 @@
     "hello": "¡Hola, {name}!",
     "exam": "EXAMEN",
     "plus": "PLUS",
+    "testers": "PRUEBA",
     "comingSoon": "Muy pronto",
     "lockedExam": "Termina las 5 lecciones para abrir el examen",
     "streakA11y": "Racha de {n} días",

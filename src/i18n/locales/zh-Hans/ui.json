@@ -70,6 +70,7 @@
     "hello": "{name}，你好！",
     "exam": "测验",
     "plus": "PLUS",
+    "testers": "测试版",
     "comingSoon": "即将推出",
     "lockedExam": "完成 5 节课才能开启测验",
     "streakA11y": "连续 {n} 天",
