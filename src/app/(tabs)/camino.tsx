@@ -9,7 +9,7 @@ import { LEVELS, STAGE_SUFFIX, stageOf } from '@/content/levels';
 import { content } from '@/i18n';
 import { TEST_MODE } from '@/services/billing';
 import { clearLevelPassed, pauseLevelMusic, startLevelMusicIfPending, stopIntroMusic } from '@/services/music';
-import { TESTERS } from '@/services/testers';
+import { BUILD_STAMP, TESTERS } from '@/services/testers';
 import { useStore } from '@/state/store';
 import { C, F } from '@/theme';
 
@@ -86,7 +86,7 @@ export default function PathScreen() {
         </View>
         {TESTERS ? (
           <View style={{ backgroundColor: C.green, borderRadius: 8, paddingHorizontal: 8, paddingVertical: 3 }}>
-            <Text style={{ fontFamily: F.bodyHeavy, fontSize: 13, color: C.white }}>{t('path.testers')}</Text>
+            <Text style={{ fontFamily: F.bodyHeavy, fontSize: 13, color: C.white }}>{t('path.testers')}{BUILD_STAMP ? ' · ' + BUILD_STAMP : ''}</Text>
           </View>
         ) : p.plus ? (
           <View style={{ backgroundColor: C.gold, borderRadius: 8, paddingHorizontal: 8, paddingVertical: 3 }}>
