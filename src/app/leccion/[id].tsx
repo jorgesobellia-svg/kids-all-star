@@ -255,15 +255,17 @@ export default function LessonScreen() {
 
   // ------------------------------------------------------------------ Resultado
   if (phase === 'result' && reward) {
-    // Al terminar la última lección del nivel (el home), se pasa directo al examen si aún no está aprobado.
+    // Secuencia del nivel: estrella → 1.ª base → 2.ª base → 3.ª base → home → examen.
+    // Al tocar Continuar se pasa directo a la siguiente lección; después del home, al examen
+    // (si ya está aprobado, se vuelve al camino).
     const lv = getLevel(Number(String(id).split('.')[0]));
-    const toExam =
-      !!lv &&
-      lv.lessonIds[lv.lessonIds.length - 1] === String(id) &&
-      !p.examsPassed[String(lv.n)];
+    const pos = lv ? lv.lessonIds.indexOf(String(id)) : -1;
+    const nextLesson = lv && pos >= 0 && pos < lv.lessonIds.length - 1 ? lv.lessonIds[pos + 1] : null;
+    const toExam = !!lv && pos === lv.lessonIds.length - 1 && !p.examsPassed[String(lv.n)];
     const onDone = () => {
       stopSpeaking();
-      if (toExam && lv) router.replace({ pathname: '/examen/[nivel]', params: { nivel: String(lv.n) } });
+      if (nextLesson) router.replace({ pathname: '/leccion/[id]', params: { id: nextLesson } });
+      else if (toExam && lv) router.replace({ pathname: '/examen/[nivel]', params: { nivel: String(lv.n) } });
       else router.back();
     };
     return <ResultView reward={reward} firstTry={firstTry.size} total={total} onDone={onDone} />;
