@@ -4,7 +4,7 @@ import { useFonts } from 'expo-font';
 import { getLocales } from 'expo-localization';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { deviceLocale } from '@/i18n';
@@ -31,7 +31,14 @@ function Gate({ children }: { children: React.ReactNode }) {
 }
 
 export default function RootLayout() {
-  const [fontsLoaded] = useFonts({
+  // Si las letras no cargan (internet lento o un archivo que falta), la app sigue igual a los pocos segundos
+  // con la letra del sistema, en vez de quedarse en la pantalla azul.
+  const [waited, setWaited] = useState(false);
+  useEffect(() => {
+    const tm = setTimeout(() => setWaited(true), 4000);
+    return () => clearTimeout(tm);
+  }, []);
+  const [fontsLoaded, fontError] = useFonts({
     Barlow_500Medium,
     Barlow_600SemiBold,
     Barlow_700Bold,
@@ -39,7 +46,7 @@ export default function RootLayout() {
     BarlowCondensed_700Bold,
     BarlowCondensed_800ExtraBold,
   });
-  if (!fontsLoaded) return <View style={{ flex: 1, backgroundColor: C.navy }} />;
+  if (!fontsLoaded && !fontError && !waited) return <View style={{ flex: 1, backgroundColor: C.navy }} />;
   return (
     <SafeAreaProvider>
       <StoreProvider fallbackLocale={deviceLocale(getLocales())}>
