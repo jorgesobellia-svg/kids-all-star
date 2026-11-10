@@ -21,20 +21,26 @@ export function AppIcon({ size = 120 }: { size?: number }) {
 /** Pelotín, la mascota (arte original). */
 export type MascotMouth = 'rest' | 'half' | 'open';
 
-export function Mascot({
-  size = 96,
-  mood = 'happy',
-  cap = C.red,
-  mouth = 'rest',
-  blink = false,
-}: {
-  size?: number;
+export interface FaceProps {
   mood?: 'happy' | 'cheer' | 'think';
   cap?: string;
+  /** Color de la estrella de la gorra. */
+  star?: string;
   /** Boca al hablar: 'rest' es la sonrisa normal; 'half' y 'open' se alternan mientras suena la voz. */
   mouth?: MascotMouth;
   blink?: boolean;
-}) {
+}
+
+export function Mascot({ size = 96, ...face }: FaceProps & { size?: number }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 100 100">
+      <MascotFace {...face} />
+    </Svg>
+  );
+}
+
+/** La cabeza de Pelotín (pelota con gorra) en un cuadro de 100×100, para usar dentro de otro dibujo. */
+export function MascotFace({ mood = 'happy', cap = C.red, star = C.gold, mouth = 'rest', blink = false }: FaceProps) {
   const talkMouth =
     mouth === 'open' ? (
       <>
@@ -48,12 +54,12 @@ export function Mascot({
     <Path d="M35 58h10M55 58h10" fill="none" stroke={C.navy} strokeWidth={3} strokeLinecap="round" />
   ) : null;
   return (
-    <Svg width={size} height={size} viewBox="0 0 100 100">
+    <G>
       <Circle cx={50} cy={56} r={34} fill={C.white} stroke={C.gold} strokeWidth={3} />
       <Path d="M26 34q12 22 0 44M74 34q-12 22 0 44" fill="none" stroke={C.red} strokeWidth={3} strokeDasharray="4 3" />
       <Path d="M18 42a32 28 0 0 1 64 0z" fill={cap} />
       <Path d="M60 42h28a4 4 0 0 1 0 8H60z" fill={cap} />
-      <Polygon points="50,20 52.6,25.6 58.6,26.2 54,30.2 55.4,36 50,33 44.6,36 46,30.2 41.4,26.2 47.4,25.6" fill={C.gold} />
+      <Polygon points="50,20 52.6,25.6 58.6,26.2 54,30.2 55.4,36 50,33 44.6,36 46,30.2 41.4,26.2 47.4,25.6" fill={star} />
       {mood === 'cheer' ? (
         <>
           <Path d="M36 58q4 -6 8 0M56 58q4 -6 8 0" fill="none" stroke={C.navy} strokeWidth={3} strokeLinecap="round" />
@@ -77,7 +83,7 @@ export function Mascot({
             ))}
         </>
       )}
-    </Svg>
+    </G>
   );
 }
 

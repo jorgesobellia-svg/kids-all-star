@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { AccessibilityInfo, Animated, Easing } from 'react-native';
 import { Mascot, type MascotMouth } from '@/components/Art';
+import { capLook } from '@/content/shop';
 import { isTalking, onTalkingChange } from '@/services/speech';
+import { avatarOf, useStore } from '@/state/store';
 
 /** true mientras Pelotín está hablando (voz grabada o voz del teléfono). */
 export function useTalking(): boolean {
@@ -31,6 +33,8 @@ const MOUTHS: MascotMouth[] = ['open', 'half', 'open', 'rest', 'half', 'open', '
  */
 export default function Pelotin({ size = 72, mood = 'happy', testID }: { size?: number; mood?: 'happy' | 'cheer' | 'think'; testID?: string }) {
   const talking = useTalking();
+  // La gorra que el niño le compró en Mi Pelotín.
+  const look = capLook(avatarOf(useStore().p));
   const reduce = useReduceMotion();
   const [frame, setFrame] = useState(0);
   const [blink, setBlink] = useState(false);
@@ -92,7 +96,7 @@ export default function Pelotin({ size = 72, mood = 'happy', testID }: { size?: 
 
   return (
     <Animated.View testID={testID} accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={{ transform: [{ translateY }, { rotate }] }}>
-      <Mascot size={size} mood={mood} mouth={mouth} blink={blink && mouth === 'rest'} />
+      <Mascot size={size} mood={mood} mouth={mouth} blink={blink && mouth === 'rest'} cap={look.cap} star={look.star} />
     </Animated.View>
   );
 }

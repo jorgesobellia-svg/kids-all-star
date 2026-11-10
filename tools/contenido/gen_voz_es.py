@@ -9,7 +9,7 @@ c=json.load(open('/home/claude/kids-all-star/src/i18n/locales/es/content.json'))
 UI=json.load(open('/home/claude/kids-all-star/src/i18n/locales/es/ui.json'))
 LV=json.load(open('../levels.json'))
 def key(x): return [int(p) for p in x.split('.')]
-jobs=[('common',['¡Hola!'])]
+jobs=[('common',['¡Hola!']+[UI['shop'][k] for k in ('tut1','tut2','tut3','tut4')])]
 for lv in sorted({l.split('.')[0] for l in c['lessons']}, key=int):
     for lid in sorted([l for l in c['lessons'] if l.split('.')[0]==lv], key=key):
         L=c['lessons'][lid]; items=list(L['demo'])
