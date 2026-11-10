@@ -5,6 +5,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import ActivityView, { isCorrect, type Answer } from '@/components/Activity';
 import { CheckIcon, CoinBall, Mascot, SpeakerIcon } from '@/components/Art';
 import Pelotin from '@/components/Pelotin';
+import { setAdvance } from '@/services/advance';
 import Scoreboard from '@/components/Scoreboard';
 import { StatusBar } from 'expo-status-bar';
 import { Board, CallBanner, Lineup } from '@/components/Board';
@@ -286,9 +287,11 @@ export default function LessonScreen() {
     const toExam = !!lv && pos === lv.lessonIds.length - 1 && !p.examsPassed[String(lv.n)];
     const onDone = () => {
       stopSpeaking();
-      if (nextLesson) router.replace({ pathname: '/leccion/[id]', params: { id: nextLesson } });
-      else if (toExam && lv) router.replace({ pathname: '/examen/[nivel]', params: { nivel: String(lv.n) } });
-      else router.back();
+      // Vuelve al diamante: Pelotín corre a la siguiente base con el público aplaudiendo
+      // y desde ahí entra sola a la siguiente lección o al examen.
+      if (lv && nextLesson) setAdvance({ level: lv.n, from: pos, to: pos + 1, next: { kind: 'lesson', id: nextLesson } });
+      else if (lv && toExam) setAdvance({ level: lv.n, from: pos, to: lv.lessonIds.length, next: { kind: 'exam', level: lv.n } });
+      router.back();
     };
     return <ResultView reward={reward} firstTry={firstTry.size} total={total} onDone={onDone} />;
   }

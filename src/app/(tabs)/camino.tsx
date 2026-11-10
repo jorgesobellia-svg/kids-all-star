@@ -1,14 +1,16 @@
 import { router, useFocusEffect } from 'expo-router';
-import React, { useCallback, useEffect, useState } from 'react';
-import { Pressable, ScrollView, Text, useWindowDimensions, View } from 'react-native';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { AccessibilityInfo, Animated, Easing, Pressable, ScrollView, Text, useWindowDimensions, View } from 'react-native';
 import Svg, { Circle, Line, Polygon, Polyline, Rect } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { CheckIcon, CoinBall, Flame, LockIcon, Mascot, StarIcon, TrophyIcon } from '@/components/Art';
 import { tapFeedback } from '@/components/ui';
 import { LEVELS, STAGE_SUFFIX, stageOf } from '@/content/levels';
 import { content } from '@/i18n';
+import { takeAdvance, type Advance } from '@/services/advance';
 import { TEST_MODE } from '@/services/billing';
 import { clearLevelPassed, pauseLevelMusic, startLevelMusicIfPending, stopIntroMusic } from '@/services/music';
+import { playSfx, stopSfx } from '@/services/sfx';
 import { BUILD_STAMP, TESTERS } from '@/services/testers';
 import { useStore } from '@/state/store';
 import { C, F } from '@/theme';
@@ -56,12 +58,24 @@ export default function PathScreen() {
     stopIntroMusic();
   }, []);
   // Tras aprobar un examen suena el órgano mientras el jugador mira su avance en el camino.
+  // Al volver de una lección: Pelotín corre a la siguiente base (se oyen sus pasos en la tierra).
+  const [adv, setAdv] = useState<Advance | null>(null);
   useFocusEffect(
     useCallback(() => {
       startLevelMusicIfPending();
+      const a = takeAdvance();
+      if (a) setAdv(a);
       return () => pauseLevelMusic();
     }, []),
   );
+  const scrollRef = useRef<React.ComponentRef<typeof ScrollView>>(null);
+  const levelY = useRef<Record<number, number>>({});
+  const finishAdvance = useCallback((a: Advance) => {
+    stopSfx('steps');
+    setAdv(null);
+    if (a.next.kind === 'lesson') router.push({ pathname: '/leccion/[id]', params: { id: a.next.id } });
+    else router.push({ pathname: '/examen/[nivel]', params: { nivel: String(a.next.level) } });
+  }, []);
   const { p, t, locale } = useStore();
   const insets = useSafeAreaInsets();
   const ct = content(locale);
@@ -99,7 +113,7 @@ export default function PathScreen() {
         </View>
       </View>
 
-      <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingBottom: 40 }}>
+      <ScrollView ref={scrollRef} style={{ flex: 1 }} contentContainerStyle={{ paddingBottom: 40 }}>
         <Grass height={LEVELS.length * (G.H + 110) + 200} width={width} />
         {LEVELS.map((lv) => {
           const lt = (ct.levels as Record<string, { title: string; badge: string }>)[String(lv.n)];
@@ -136,6 +150,7 @@ export default function PathScreen() {
             tapFeedback();
             if (st === 'plus') router.push('/papas');
             else if (st === 'soon') say(t('path.comingSoon'));
+            else if (adv) return;
             else if (st === 'locked') {
               if (isExam) say(t('path.lockedExam'));
             } else {
@@ -145,7 +160,14 @@ export default function PathScreen() {
           };
 
           return (
-            <View key={lv.n} style={{ marginTop: 26 }}>
+            <View
+              key={lv.n}
+              style={{ marginTop: 26 }}
+              onLayout={(e) => {
+                levelY.current[lv.n] = e.nativeEvent.layout.y;
+                if (adv?.level === lv.n) scrollRef.current?.scrollTo({ y: Math.max(0, e.nativeEvent.layout.y - 10), animated: false });
+              }}
+            >
               <View style={{ marginHorizontal: 16, backgroundColor: hasAccess ? C.navy : '#334155', borderRadius: 20, paddingVertical: 14, paddingHorizontal: 18, flexDirection: 'row', alignItems: 'center' }}>
                 <View style={{ flex: 1 }}>
                   <Text style={{ fontFamily: F.bodyHeavy, fontSize: 13, letterSpacing: 1, color: C.gold }}>{t(`path.stage${STAGE_SUFFIX[stageOf(lv.n)]}`, { n: lv.n })}</Text>
@@ -192,13 +214,13 @@ export default function PathScreen() {
                   const right = q.x >= G.cx;
                   return (
                     <View key={id} style={{ position: 'absolute', left: q.x - 60, top: q.y - 60, width: 120, height: 120, alignItems: 'center', justifyContent: 'center', zIndex: st === 'current' ? 3 : 1 }}>
-                      {st === 'current' ? (
+                      {st === 'current' && adv?.level !== lv.n ? (
                         <View style={{ position: 'absolute', top: -6, backgroundColor: C.white, borderWidth: 2, borderColor: C.line, borderRadius: 14, paddingHorizontal: 12, paddingVertical: 3, zIndex: 2 }}>
                           <Text style={{ fontFamily: F.bodyHeavy, fontSize: 14, color: C.red }}>{t('path.start')}</Text>
                         </View>
                       ) : null}
                       <Node state={st} shape={shapeOf(i)} testID={`node-${id}`} label={(ct.lessonTitles as Record<string, string>)[id]} onPress={press(st, () => router.push({ pathname: '/leccion/[id]', params: { id } }))} />
-                      {st === 'current' ? (
+                      {st === 'current' && adv?.level !== lv.n ? (
                         <View pointerEvents="none" style={{ position: 'absolute', left: right && i !== 4 ? 96 : i === 4 ? 100 : -46, top: i === 4 ? -24 : 40 }}>
                           <Mascot size={68} />
                         </View>
@@ -206,6 +228,7 @@ export default function PathScreen() {
                     </View>
                   );
                 })}
+                {adv?.level === lv.n ? <Runner key={`${adv.level}-${adv.from}-${adv.to}`} G={G} a={adv} onDone={finishAdvance} /> : null}
                 <View style={{ position: 'absolute', left: G.dugout.x - 60, top: G.dugout.y - 60, width: 120, height: 120, alignItems: 'center', justifyContent: 'center' }}>
                   <Node
                     state={examState}
@@ -230,6 +253,60 @@ export default function PathScreen() {
         </View>
       ) : null}
     </View>
+  );
+}
+
+// Recorrido del corredor en el diamante y el punto de cada nodo dentro de él.
+// Nodos: 0 estrella, 1 primera, 2 segunda, 3 tercera, 4 home, 5 dugout (examen).
+const NODE_AT = [0, 2, 3, 4, 5, 6];
+const MASCOT = 68;
+
+function Runner({ G, a, onDone }: { G: ReturnType<typeof fieldGeom>; a: Advance; onDone: (a: Advance) => void }) {
+  const route = [G.onDeck, G.home, G.first, G.second, G.third, G.home, G.dugout];
+  const pts = route.slice(NODE_AT[a.from], NODE_AT[a.to] + 1);
+  const at = (q: { x: number; y: number }) => ({ x: q.x - MASCOT / 2, y: q.y - MASCOT - 6 });
+  const [pos] = useState(() => new Animated.ValueXY(at(pts[0])));
+  const [hop] = useState(() => new Animated.Value(0));
+  useEffect(() => {
+    let alive = true;
+    const run = Animated.sequence(pts.slice(1).map((q) => Animated.timing(pos, { toValue: at(q), duration: 750, easing: Easing.inOut(Easing.quad), useNativeDriver: true })));
+    const bounce = Animated.loop(
+      Animated.sequence([
+        Animated.timing(hop, { toValue: -10, duration: 160, useNativeDriver: true }),
+        Animated.timing(hop, { toValue: 0, duration: 160, useNativeDriver: true }),
+      ]),
+    );
+    const go = (still: boolean) => {
+      if (!alive) return;
+      if (still) pos.setValue(at(pts[pts.length - 1]));
+      else {
+        bounce.start();
+        playSfx('steps');
+      }
+      (still ? Animated.delay(400) : run).start(() => {
+        if (!alive) return;
+        // Llega a la base: se callan los pasos, celebra un momento y entra.
+        stopSfx('steps');
+        bounce.stop();
+        hop.setValue(0);
+        setTimeout(() => alive && onDone(a), 1000);
+      });
+    };
+    AccessibilityInfo.isReduceMotionEnabled()
+      .then(go)
+      .catch(() => go(false));
+    return () => {
+      alive = false;
+      run.stop();
+      bounce.stop();
+    };
+    // Se anima una sola vez por avance.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  return (
+    <Animated.View testID="runner" pointerEvents="none" style={{ position: 'absolute', left: 0, top: 0, zIndex: 5, transform: [{ translateX: pos.x }, { translateY: Animated.add(pos.y, hop) }] }}>
+      <Mascot size={MASCOT} mood="cheer" />
+    </Animated.View>
   );
 }
 

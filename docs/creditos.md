@@ -3,6 +3,9 @@
 - **Golpe de bate** (`assets/sfx/bat.wav`): "Baseball hit - wooden bat", de GFX Sounds, descargado de Uppbeat
   (https://uppbeat.io/sfx/baseball-hit-wooden-bat/163056/43591). Recortado y nivelado para la app.
   Pendiente: confirmar en la licencia de Uppbeat/GFX Sounds si exige crédito visible en la app.
+- **Pasos corriendo** (`assets/sfx/pasos.mp3`): "Footsteps running on gravel (sneakers)", de GFX Sounds
+  (archivo que envió Jorge, probablemente de Uppbeat). Recortado a 3,2 s. Suena cuando Pelotín corre de base en base en el camino.
+  Pendiente: confirmar la misma licencia que el golpe de bate.
 - **Voces del umpire** (`assets/sfx/umpire-safe.wav`, `umpire-out.wav`): generadas con Kokoro (Apache 2.0).
 
 ## Música de entrada
