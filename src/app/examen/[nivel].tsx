@@ -8,7 +8,7 @@ import { Btn, Card, H1, Label, ProgressBar } from '@/components/ui';
 import { getLevel, REWARDS, STAGE_END, STAGE_SUFFIX } from '@/content/levels';
 import type { Activity } from '@/content/types';
 import { content } from '@/i18n';
-import { markLevelPassed } from '@/services/music';
+import { markLevelPassed, startLevelMusicIfPending } from '@/services/music';
 import { submitScore } from '@/services/scoreboard';
 import { speak, stopSpeaking, umpireCall } from '@/services/speech';
 import { useStore, weekKey } from '@/state/store';
@@ -198,7 +198,16 @@ export default function ExamScreen() {
         </ScrollView>
         <View style={{ gap: 8 }}>
           {passed ? null : <Btn label={t('exam.retry')} onPress={restart} />}
-          <Btn testID="exam-done" label={t('exam.toPath')} variant={passed ? 'red' : 'ghost'} onPress={() => router.back()} />
+          <Btn
+            testID="exam-done"
+            label={t('exam.toPath')}
+            variant={passed ? 'red' : 'ghost'}
+            onPress={() => {
+              // En el iPhone (Safari) la música solo puede arrancar dentro de un toque: se inicia aquí.
+              startLevelMusicIfPending();
+              router.back();
+            }}
+          />
         </View>
       </View>
     );
