@@ -1,5 +1,5 @@
 import { router, useLocalSearchParams } from 'expo-router';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Pressable, ScrollView, Text, useWindowDimensions, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import ActivityView, { isCorrect, type Answer } from '@/components/Activity';
@@ -29,6 +29,9 @@ export default function ExamScreen() {
   const levelText = (ct.levels as Record<string, { title: string; badge: string }>)[String(nivel)];
 
   const [phase, setPhase] = useState<'intro' | 'run' | 'done'>('intro');
+  // ¿Ya terminó Pelotín de decir la respuesta correcta?
+  const [heard, setHeard] = useState(true);
+  const heardToken = useRef(0);
   const [i, setI] = useState(0);
   const [picked, setPicked] = useState<string | null>(null);
   const [answer, setAnswer] = useState<Answer | null>(null);
@@ -56,16 +59,32 @@ export default function ExamScreen() {
   const submit = (a: Answer) => {
     if (answered) return;
     setAnswer(a);
+    const tok = ++heardToken.current;
     if (isCorrect(act, a)) {
+      setHeard(true);
       umpireCall('safe', locale);
       setScore((s) => s + 1);
     } else {
-      umpireCall('out', locale);
+      // Pelotín dice la respuesta correcta en voz alta (como en las lecciones) y
+      // "Continuar" espera a que termine, para los niños que todavía no leen bien.
+      setHeard(false);
+      const label = q.type === 'tap' ? qt.answer : q.type === 'tf' ? (q.correct === 'true' ? t('common.true') : t('common.false')) : qt.opts?.[q.correct ?? ''];
+      const msg = label ? t('exam.correctWas', { a: label }) : '';
+      const done = () => {
+        if (heardToken.current === tok) setHeard(true);
+      };
+      umpireCall('out', locale, () => {
+        if (!msg) return done();
+        speak(msg, locale, done);
+        setTimeout(done, Math.max(3000, msg.length * 95) + 2500);
+      });
       setWrong((w) => [...w, i]);
     }
   };
 
   const next = () => {
+    if (!heard) return;
+    heardToken.current++;
     stopSpeaking();
     if (i + 1 < total) {
       setI(i + 1);
@@ -92,6 +111,7 @@ export default function ExamScreen() {
   };
 
   const restart = () => {
+    setHeard(true);
     setI(0);
     setScore(0);
     setWrong([]);
@@ -264,7 +284,7 @@ export default function ExamScreen() {
             <Text style={{ fontFamily: F.display, fontSize: 26, color: right ? '#166534' : '#991B1B' }}>{right ? t('lesson.right') : t('lesson.almost')}</Text>
           </View>
           {!right && correctLabel ? <Text style={{ fontFamily: F.bodyBold, fontSize: 16, color: '#991B1B' }}>{t('exam.correctWas', { a: correctLabel })}</Text> : null}
-          <Btn testID="exam-continue" label={t('common.continue')} variant={right ? 'green' : 'wrong'} onPress={next} />
+          <Btn testID="exam-continue" label={t('common.continue')} variant={right ? 'green' : heard ? 'wrong' : 'disabled'} onPress={heard ? next : undefined} />
         </View>
       ) : q.type !== 'tap' ? (
         <View style={{ paddingHorizontal: 20, paddingTop: 14, paddingBottom: insets.bottom + 20, borderTopWidth: 2, borderTopColor: C.line }}>
