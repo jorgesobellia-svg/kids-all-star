@@ -92,6 +92,7 @@
     "rightName": "正解、{name}！",
     "almostName": "おしい、{name}！",
     "strikes": "ストライク",
+    "inning": "イニング",
     "strikeN": "ストライク{n}。3つ目で三振だよ。",
     "ponchado": "三振！",
     "ponchadoName": "{name}、三振！",

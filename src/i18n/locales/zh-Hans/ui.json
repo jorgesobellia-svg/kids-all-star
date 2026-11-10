@@ -92,6 +92,7 @@
     "rightName": "答对了，{name}！",
     "almostName": "差一点，{name}！",
     "strikes": "好球数",
+    "inning": "局",
     "strikeN": "第 {n} 个好球。三个好球就三振出局。",
     "ponchado": "三振出局！",
     "ponchadoName": "{name}，三振出局！",

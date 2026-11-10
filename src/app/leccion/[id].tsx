@@ -5,6 +5,8 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import ActivityView, { isCorrect, type Answer } from '@/components/Activity';
 import { CheckIcon, CoinBall, Mascot, SpeakerIcon } from '@/components/Art';
 import Pelotin from '@/components/Pelotin';
+import Scoreboard from '@/components/Scoreboard';
+import { StatusBar } from 'expo-status-bar';
 import { Board, CallBanner, Lineup } from '@/components/Board';
 import Diamond from '@/components/Diamond';
 import Gear from '@/components/Gear';
@@ -295,13 +297,17 @@ export default function LessonScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: C.white }}>
-      <View style={{ paddingTop: insets.top + 10, paddingHorizontal: 16, flexDirection: 'row', alignItems: 'center', gap: 12 }}>
-        <Pressable testID="lesson-exit" accessibilityRole="button" accessibilityLabel={t('lesson.exit')} onPress={exit} style={{ width: 44, height: 44, alignItems: 'center', justifyContent: 'center' }}>
-          <Text style={{ fontSize: 24, color: C.muted, fontFamily: F.bodyBold }}>✕</Text>
-        </Pressable>
-        <ProgressBar value={progress} />
-        <StrikeLights n={strikes} label={t('lesson.strikes')} />
-      </View>
+      <StatusBar style="light" />
+      <Scoreboard
+        total={total}
+        runs={correctCount}
+        strikes={strikes}
+        strikesLabel={t('lesson.strikes')}
+        inningLabel={t('lesson.inning')}
+        exitLabel={t('lesson.exit')}
+        onExit={exit}
+        topInset={insets.top}
+      />
 
       {phase === 'ponche' ? (
         <View testID="ponche" style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 24, gap: 14, backgroundColor: C.navy }}>
@@ -509,13 +515,3 @@ function ResultView({ reward, firstTry, total, onDone }: { reward: LessonReward;
 }
 
 // Luces de strikes como en el marcador: tres luces; cuando se enciende la tercera, es ponche.
-function StrikeLights({ n, label }: { n: number; label: string }) {
-  return (
-    <View testID="strikes" accessibilityLabel={`${label}: ${n}`} style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
-      <Text style={{ fontFamily: F.bodyHeavy, fontSize: 14, color: C.navy, marginRight: 2 }}>S</Text>
-      {[0, 1, 2].map((i) => (
-        <View key={i} style={{ width: 14, height: 14, borderRadius: 7, backgroundColor: i < n ? C.red : C.line, borderWidth: 2, borderColor: i < n ? C.redDark : C.lineDark }} />
-      ))}
-    </View>
-  );
-}

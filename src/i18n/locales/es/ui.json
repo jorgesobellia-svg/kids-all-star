@@ -92,6 +92,7 @@
     "rightName": "¡Correcto, {name}!",
     "almostName": "¡Casi, {name}!",
     "strikes": "Strikes",
+    "inning": "INNING",
     "strikeN": "Strike {n}. Al tercero es ponche.",
     "ponchado": "¡Ponchado!",
     "ponchadoName": "¡Ponchado, {name}!",

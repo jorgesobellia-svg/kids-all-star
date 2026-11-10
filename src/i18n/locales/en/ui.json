@@ -92,6 +92,7 @@
     "rightName": "Correct, {name}!",
     "almostName": "Almost, {name}!",
     "strikes": "Strikes",
+    "inning": "INNING",
     "strikeN": "Strike {n}. Three strikes and you're out.",
     "ponchado": "Struck out!",
     "ponchadoName": "Struck out, {name}!",

@@ -98,6 +98,7 @@ ui = {
   'rightName': T('¡Correcto, {name}!', 'Correct, {name}!', '答对了，{name}！', '正解、{name}！'),
   'almostName': T('¡Casi, {name}!', 'Almost, {name}!', '差一点，{name}！', 'おしい、{name}！'),
   'strikes': T('Strikes', 'Strikes', '好球数', 'ストライク'),
+  'inning': T('INNING', 'INNING', '局', 'イニング'),
   'strikeN': T('Strike {n}. Al tercero es ponche.', "Strike {n}. Three strikes and you're out.", '第 {n} 个好球。三个好球就三振出局。', 'ストライク{n}。3つ目で三振だよ。'),
   'ponchado': T('¡Ponchado!', 'Struck out!', '三振出局！', '三振！'),
   'ponchadoName': T('¡Ponchado, {name}!', 'Struck out, {name}!', '{name}，三振出局！', '{name}、三振！'),
