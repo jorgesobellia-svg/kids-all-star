@@ -144,17 +144,43 @@ function playClips(clips: Clip[], id: number, onDone?: () => void) {
     if (!voicePlayers[file]) voicePlayers[file] = createAudioPlayer(VOICE_ES_FILES[file]);
     const pl = voicePlayers[file];
     activeClip = pl;
-    pl.seekTo(start);
-    pl.play();
-    clipTimer = setTimeout(() => {
-      if (id !== current) return;
-      stopClip();
-      if (clips.length > 1) playClips(clips.slice(1), id, onDone);
-      else onDone?.();
-    }, dur * 1000 + 80);
+    // En el teléfono el archivo carga en segundo plano: hay que esperar a que esté listo
+    // y a que termine el salto al inicio de la frase antes de darle play.
+    whenLoaded(pl, id, () => {
+      pl.seekTo(start, 0, 0)
+        .catch(() => {})
+        .then(() => {
+          if (id !== current) return;
+          pl.play();
+          clipTimer = setTimeout(() => {
+            if (id !== current) return;
+            stopClip();
+            if (clips.length > 1) playClips(clips.slice(1), id, onDone);
+            else onDone?.();
+          }, dur * 1000 + 80);
+        });
+    });
   } catch {
     onDone?.();
   }
+}
+
+function whenLoaded(pl: AudioPlayer, id: number, go: () => void) {
+  if (pl.isLoaded) return go();
+  let done = false;
+  const sub = pl.addListener('playbackStatusUpdate', (st) => {
+    if (done || !st.isLoaded) return;
+    done = true;
+    sub.remove();
+    if (id === current) go();
+  });
+  // Por si el aviso no llega: se intenta igual pasado un momento.
+  setTimeout(() => {
+    if (done) return;
+    done = true;
+    sub.remove();
+    if (id === current) go();
+  }, 1500);
 }
 
 export function speak(text: string, locale: Locale, onDone?: () => void, o: VoiceOpts = {}): void {
