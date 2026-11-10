@@ -1,25 +1,37 @@
 import { createAudioPlayer, setAudioModeAsync, type AudioPlayer } from 'expo-audio';
 import { Platform } from 'react-native';
 
-// Música de entrada: órgano de estadio con público ("Baseball stadium organ crowd", Locran).
-// Suena en bucle en las pantallas de inicio (idioma → bienvenida → apodo) y se apaga
-// al entrar al juego. Ver docs/creditos.md.
-const SRC = require('../../assets/music/intro-estadio.mp3');
-const VOLUME = 0.55;
+// Música en bucle (ver docs/creditos.md):
+//   intro  -> órgano de estadio con público ("Baseball stadium organ crowd", Locran).
+//             Pantallas de inicio: idioma → bienvenida → apodo. Se apaga al entrar al juego.
+//   nivel  -> "Take Me Out to the Ball Game" en órgano Hammond (Albert Behar).
+//             Suena en el camino de niveles después de aprobar un examen, hasta que el
+//             jugador entra a la siguiente lección o examen.
+const SOURCES = {
+  intro: require('../../assets/music/intro-estadio.mp3'),
+  nivel: require('../../assets/music/nivel-organo.mp3'),
+};
+type Track = keyof typeof SOURCES;
+const VOLUME: Record<Track, number> = { intro: 0.55, nivel: 0.6 };
 
-let player: AudioPlayer | null = null;
-let wanted = false;
+const players: Partial<Record<Track, AudioPlayer>> = {};
+let playing: Track | null = null;
+let modeSet = false;
 let webUnlockArmed = false;
 
-function get(): AudioPlayer | null {
+function get(name: Track): AudioPlayer | null {
   try {
-    if (!player) {
-      if (Platform.OS !== 'web') setAudioModeAsync({ playsInSilentMode: true }).catch(() => {});
-      player = createAudioPlayer(SRC);
-      player.loop = true;
-      player.volume = VOLUME;
+    if (!modeSet && Platform.OS !== 'web') {
+      modeSet = true;
+      setAudioModeAsync({ playsInSilentMode: true }).catch(() => {});
     }
-    return player;
+    if (!players[name]) {
+      const p = createAudioPlayer(SOURCES[name]);
+      p.loop = true;
+      p.volume = VOLUME[name];
+      players[name] = p;
+    }
+    return players[name] ?? null;
   } catch {
     return null;
   }
@@ -34,32 +46,49 @@ function armWebUnlock() {
     document.removeEventListener('pointerdown', go, true);
     document.removeEventListener('keydown', go, true);
     webUnlockArmed = false;
-    if (wanted) get()?.play();
+    if (playing) get(playing)?.play();
   };
   document.addEventListener('pointerdown', go, true);
   document.addEventListener('keydown', go, true);
 }
 
-export function startIntroMusic(): void {
-  if (wanted) return;
-  wanted = true;
-  const p = get();
-  if (!p) return;
+function start(name: Track) {
+  if (playing === name) return;
+  if (playing) stop(playing);
+  playing = name;
   try {
-    p.play();
+    get(name)?.play();
   } catch {
     // sin audio: la app sigue igual
   }
   armWebUnlock();
 }
 
-export function stopIntroMusic(): void {
-  if (!wanted) return;
-  wanted = false;
+function stop(name: Track) {
+  if (playing !== name) return;
+  playing = null;
   try {
-    player?.pause();
-    player?.seekTo(0);
+    players[name]?.pause();
+    players[name]?.seekTo(0);
   } catch {
     // nada
   }
 }
+
+export const startIntroMusic = () => start('intro');
+export const stopIntroMusic = () => stop('intro');
+
+// Celebración de nivel: el examen aprobado la deja pendiente y el camino la toca
+// mientras el jugador mira su avance.
+let levelPending = false;
+export const markLevelPassed = () => {
+  levelPending = true;
+};
+export const clearLevelPassed = () => {
+  levelPending = false;
+  stop('nivel');
+};
+export const startLevelMusicIfPending = () => {
+  if (levelPending) start('nivel');
+};
+export const pauseLevelMusic = () => stop('nivel');

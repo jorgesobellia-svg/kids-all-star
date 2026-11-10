@@ -8,6 +8,7 @@ import { Btn, Card, H1, Label, ProgressBar } from '@/components/ui';
 import { getLevel, REWARDS, STAGE_END, STAGE_SUFFIX } from '@/content/levels';
 import type { Activity } from '@/content/types';
 import { content } from '@/i18n';
+import { markLevelPassed } from '@/services/music';
 import { submitScore } from '@/services/scoreboard';
 import { speak, stopSpeaking, umpireCall } from '@/services/speech';
 import { useStore, weekKey } from '@/state/store';
@@ -73,6 +74,7 @@ export default function ExamScreen() {
       setPhase('done');
       if (score >= need) {
         const r = passExam(level.n);
+        markLevelPassed();
         const wk = weekKey();
         submitScore({
           playerId: p.playerId,
