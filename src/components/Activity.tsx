@@ -225,7 +225,7 @@ function DragAct({ act, width, locked, onAnswer, dragHint, retryLabel }: Props) 
   const isBall = from !== 'home';
   // Con la bola solo cuentan los receptores (y las paradas pedidas): una bola que cruza por encima
   // de segunda o del montículo camino a home no es una parada.
-  const nodes: Target[] = Array.from(new Set([...(isBall ? [] : BASES), ...want, ...(isBall ? (['first', 'third', 'home', 'pos1b', 'pos2b', 'pos3b', 'posSS', 'cutoff'] as Target[]) : [])])).filter((t) => t !== from);
+  const nodes: Target[] = Array.from(new Set([...(isBall ? [] : BASES), ...want, ...(isBall ? (['first', 'third', 'home', 'pos1b', 'pos2b', 'pos3b', 'posSS', 'cutoff'] as Target[]) : [])])).filter((t) => t !== from || want.includes(t)); // el home de salida también es la llegada cuando la ruta termina ahí (anotar la carrera)
 
   const visit = (b: Target) => {
     const cur = trailRef.current;
