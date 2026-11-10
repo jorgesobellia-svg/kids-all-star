@@ -104,8 +104,9 @@ export default function PathScreen() {
         {LEVELS.map((lv) => {
           const lt = (ct.levels as Record<string, { title: string; badge: string }>)[String(lv.n)];
           const unlockedByProgress = lv.n === 1 || !!p.examsPassed[String(lv.n - 1)];
-          const review = TESTERS || (!!p.review && TEST_MODE);
-          const hasAccess = lv.free || p.plus || review;
+          const review = !!p.review && TEST_MODE;
+          // Versión de prueba: sin pedir suscripción, pero los niveles se van abriendo en orden como en la app real.
+          const hasAccess = lv.free || p.plus || review || TESTERS;
           const built = lv.lessons.length > 0;
           const firstOpen = lv.lessonIds.findIndex((id) => !p.completed[id]);
           const allDone = firstOpen === -1;

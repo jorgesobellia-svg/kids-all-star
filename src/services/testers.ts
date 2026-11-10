@@ -1,4 +1,5 @@
-// Versión para probadores: todos los niveles abiertos, sin pasar por el muro de padres.
+// Versión para probadores: no pide la suscripción Plus (ni el muro de padres para pagar);
+// los niveles se desbloquean en orden igual que en la app real.
 // Solo se activa al compilar con EXPO_PUBLIC_TESTERS=1 (web de Netlify y APK de prueba).
 // Las compilaciones para la App Store y Google Play NO deben llevar esa variable.
 export const TESTERS = process.env.EXPO_PUBLIC_TESTERS === '1';

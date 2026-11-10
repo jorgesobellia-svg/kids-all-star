@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     env:
-      # APK para probadores: todos los niveles abiertos y sin muro de padres. No usar para la tienda.
+      # APK para probadores: sin pedir la suscripción Plus. No usar para la tienda.
       EXPO_PUBLIC_TESTERS: '1'
     steps:
       - uses: actions/checkout@v4
