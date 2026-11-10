@@ -255,12 +255,11 @@ export default function LessonScreen() {
 
   // ------------------------------------------------------------------ Resultado
   if (phase === 'result' && reward) {
-    // Al terminar la última lección del nivel (el home) con todo el nivel completo, se pasa directo al examen.
+    // Al terminar la última lección del nivel (el home), se pasa directo al examen si aún no está aprobado.
     const lv = getLevel(Number(String(id).split('.')[0]));
     const toExam =
       !!lv &&
       lv.lessonIds[lv.lessonIds.length - 1] === String(id) &&
-      lv.lessonIds.every((lid) => lid === String(id) || !!p.completed[lid]) &&
       !p.examsPassed[String(lv.n)];
     const onDone = () => {
       stopSpeaking();
