@@ -11,7 +11,7 @@ import Zone from '@/components/Zone';
 import LineScore from '@/components/LineScore';
 import Mound from '@/components/Mound';
 import { Btn, Label, ProgressBar } from '@/components/ui';
-import { getLesson, REWARDS } from '@/content/levels';
+import { getLesson, getLevel, REWARDS } from '@/content/levels';
 import type { DemoSegment, GearTarget, Target } from '@/content/types';
 import { content } from '@/i18n';
 import { speak, stopSpeaking, umpireCall } from '@/services/speech';
@@ -255,7 +255,19 @@ export default function LessonScreen() {
 
   // ------------------------------------------------------------------ Resultado
   if (phase === 'result' && reward) {
-    return <ResultView reward={reward} firstTry={firstTry.size} total={total} onDone={() => router.back()} />;
+    // Al terminar la última lección del nivel (el home) con todo el nivel completo, se pasa directo al examen.
+    const lv = getLevel(Number(String(id).split('.')[0]));
+    const toExam =
+      !!lv &&
+      lv.lessonIds[lv.lessonIds.length - 1] === String(id) &&
+      lv.lessonIds.every((lid) => lid === String(id) || !!p.completed[lid]) &&
+      !p.examsPassed[String(lv.n)];
+    const onDone = () => {
+      stopSpeaking();
+      if (toExam && lv) router.replace({ pathname: '/examen/[nivel]', params: { nivel: String(lv.n) } });
+      else router.back();
+    };
+    return <ResultView reward={reward} firstTry={firstTry.size} total={total} onDone={onDone} />;
   }
 
   const autoCheck = act && (act.type === 'tap' || act.type === 'drag');
