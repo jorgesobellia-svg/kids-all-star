@@ -138,11 +138,11 @@ function stopClip() {
   activeClip = null;
 }
 
-// Margen alrededor de cada frase: entre frase y frase de la pista hay silencio, así que se
+// Margen alrededor de cada frase: entre frase y frase de la pista hay 0,6 s de silencio, así que se
 // empieza un poco antes y se termina un poco después para no cortar la primera ni la última sílaba
 // (el salto en el archivo no es exacto en todos los teléfonos).
 const LEAD = 0.15;
-const TAIL = 0.22;
+const TAIL = 0.25;
 
 function playClips(clips: Clip[], id: number, onDone?: () => void) {
   const [file, start, dur] = clips[0];
@@ -161,8 +161,14 @@ function playClips(clips: Clip[], id: number, onDone?: () => void) {
     // En el teléfono el archivo carga en segundo plano: hay que esperar a que esté listo
     // y a que termine el salto al inicio de la frase antes de darle play.
     whenLoaded(pl, id, () => {
+      try {
+        pl.pause();
+      } catch {
+        // nada
+      }
       pl.seekTo(from, 0, 0)
         .catch(() => {})
+        .then(() => settled(pl, from, id))
         .then(() => {
           if (id !== current) return;
           pl.play();
@@ -189,6 +195,27 @@ function playClips(clips: Clip[], id: number, onDone?: () => void) {
   } catch {
     onDone?.();
   }
+}
+
+// En algunos teléfonos el salto termina un instante después de avisar que terminó: si se da
+// play antes, suena un pedacito de donde estaba (la primera sílaba repetida). Se espera a que
+// la posición esté de verdad en el inicio de la frase.
+function settled(pl: AudioPlayer, at: number, id: number): Promise<void> {
+  return new Promise((resolve) => {
+    const t0 = Date.now();
+    const check = () => {
+      if (id !== current) return resolve();
+      let pos = at;
+      try {
+        pos = pl.currentTime;
+      } catch {
+        // sin posición: se sigue igual
+      }
+      if (Math.abs(pos - at) < 0.2 || Date.now() - t0 > 700) return resolve();
+      setTimeout(check, 30);
+    };
+    check();
+  });
 }
 
 function whenLoaded(pl: AudioPlayer, id: number, go: () => void) {
