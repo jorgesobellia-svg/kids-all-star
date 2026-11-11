@@ -138,26 +138,52 @@ function stopClip() {
   activeClip = null;
 }
 
+// Margen alrededor de cada frase: entre frase y frase de la pista hay silencio, así que se
+// empieza un poco antes y se termina un poco después para no cortar la primera ni la última sílaba
+// (el salto en el archivo no es exacto en todos los teléfonos).
+const LEAD = 0.15;
+const TAIL = 0.22;
+
 function playClips(clips: Clip[], id: number, onDone?: () => void) {
   const [file, start, dur] = clips[0];
+  const from = Math.max(0, start - LEAD);
+  const end = start + dur + TAIL;
   try {
-    if (!voicePlayers[file]) voicePlayers[file] = createAudioPlayer(VOICE_ES_FILES[file]);
+    if (!voicePlayers[file]) voicePlayers[file] = createAudioPlayer(VOICE_ES_FILES[file], { updateInterval: 50 });
     const pl = voicePlayers[file];
     activeClip = pl;
+    const next = () => {
+      if (id !== current) return;
+      stopClip();
+      if (clips.length > 1) playClips(clips.slice(1), id, onDone);
+      else onDone?.();
+    };
     // En el teléfono el archivo carga en segundo plano: hay que esperar a que esté listo
     // y a que termine el salto al inicio de la frase antes de darle play.
     whenLoaded(pl, id, () => {
-      pl.seekTo(start, 0, 0)
+      pl.seekTo(from, 0, 0)
         .catch(() => {})
         .then(() => {
           if (id !== current) return;
           pl.play();
-          clipTimer = setTimeout(() => {
+          // Se corta cuando el audio de verdad llegó al final de la frase (no por reloj: el
+          // teléfono tarda un momento en empezar a sonar y así no se come el final).
+          const t0 = Date.now();
+          const limit = (end - from) * 1000 + 1500;
+          const tick = () => {
             if (id !== current) return;
-            stopClip();
-            if (clips.length > 1) playClips(clips.slice(1), id, onDone);
-            else onDone?.();
-          }, dur * 1000 + 80);
+            let pos = 0;
+            try {
+              pos = pl.currentTime;
+            } catch {
+              pos = 0;
+            }
+            // (una posición muy lejos del final es la vieja, de antes del salto: se ignora)
+            const reached = pos >= end && pos < end + 1.5 && Date.now() - t0 > 150;
+            if (reached || Date.now() - t0 > limit) return next();
+            clipTimer = setTimeout(tick, 40);
+          };
+          clipTimer = setTimeout(tick, 40);
         });
     });
   } catch {
