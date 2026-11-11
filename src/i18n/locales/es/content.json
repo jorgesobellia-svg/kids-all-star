@@ -1634,7 +1634,7 @@
           }
         },
         "2": {
-          "q": "La bola pica en el jardín y salta la cerca. ¿Qué es?",
+          "q": "La bola pica en el jardín y salta la valla. ¿Qué es?",
           "ok": "¡Eso es! Picó primero: dos bases.",
           "ko": "Si pica y sale, es doble por regla, no jonrón.",
           "opts": {
@@ -1750,7 +1750,7 @@
       "title": "El toque de bola",
       "objective": "Entender el toque (bunt): sostener el bate sin swing para dejar caer la bola suave, y que un foul de toque con dos strikes sí es tercer strike.",
       "demo": [
-        "No todo batazo busca la cerca.",
+        "No todo batazo busca la valla.",
         "El toque de bola, en inglés bunt, es sostener el bate firme, sin hacer swing, y dejar que la bola caiga suavecita delante de home.",
         "Sirve para sorprender o para avanzar a un compañero.",
         "Y aprende esta, que es especial: si tocas de foul con dos strikes, ese foul SÍ cuenta como tercer strike y eres out.",
@@ -2500,7 +2500,7 @@
           "opts": {
             "a": "Un defensor dejando caer un elevado fácil",
             "b": "Una bola pasando limpia al jardín",
-            "c": "Un jonrón sobre la cerca"
+            "c": "Un jonrón sobre la valla"
           }
         },
         "5": {
@@ -4936,14 +4936,14 @@
     },
     "15.4": {
       "title": "Dejar la bola adelante y la pista de advertencia",
-      "objective": "Jugar la bola de modo que siempre quede delante del jardinero, y conocer la pista de advertencia (warning track): la franja junto a la cerca que avisa con los pies que la pared está cerca.",
+      "objective": "Jugar la bola de modo que siempre quede delante del jardinero, y conocer la pista de advertencia (warning track): la franja junto a la valla que avisa con los pies que la pared está cerca.",
       "demo": [
         "Dos secretos de los jardines.",
         "Primero: deja la bola adelante.",
         "Si un batazo pica delante de ti, recógelo tranquilo; si te pasa por el lado o por encima, los corredores corren y corren.",
         "Por eso, ante la duda, se juega un paso más atrás.",
-        "Segundo: junto a la cerca hay una franja de tierra distinta, la pista de advertencia, en inglés warning track.",
-        "Cuando tus pies la sienten, la cerca está cerquita: atrapa con cuidado y no choques contra la pared."
+        "Segundo: junto a la valla hay una franja de tierra distinta, la pista de advertencia, en inglés warning track.",
+        "Cuando tus pies la sienten, la valla está cerquita: atrapa con cuidado y no choques contra la pared."
       ],
       "acts": {
         "1": {
@@ -4959,16 +4959,16 @@
         "2": {
           "q": "¿Qué es la pista de advertencia (warning track)?",
           "ok": "¡Correcto! Tus pies la sienten.",
-          "ko": "Tierra distinta bajo los pies: cerca cerca.",
+          "ko": "Tierra distinta bajo los pies: la valla está cerca.",
           "opts": {
-            "a": "La franja junto a la cerca que avisa que la pared está cerca",
+            "a": "La franja junto a la valla que avisa que la pared está cerca",
             "b": "La línea de foul",
             "c": "El círculo de espera"
           }
         },
         "3": {
           "q": "La pista de advertencia está en el medio de los jardines",
-          "ok": "¡Bien! Está junto a la cerca.",
+          "ok": "¡Bien! Está junto a la valla.",
           "ko": "Falso: bordea todo el jardín, pegada a la pared."
         },
         "4": {
@@ -4982,15 +4982,15 @@
           }
         },
         "5": {
-          "q": "Cuando sientes la pista de advertencia, debes correr más fuerte hacia la cerca",
+          "q": "Cuando sientes la pista de advertencia, debes correr más fuerte hacia la valla",
           "ok": "¡Correcto! Es aviso de cuidado.",
           "ko": "Falso: te avisa para que no choques."
         },
         "6": {
-          "q": "Toca la zona que avisa que la cerca está cerca",
+          "q": "Toca la franja de tierra que te avisa que ya vas a chocar con la valla",
           "ok": "¡Bien! Ahí mismo.",
-          "ko": "Pegada a la cerca, todo alrededor del jardín.",
-          "answer": "La pista de advertencia, junto a la cerca"
+          "ko": "Pegada a la valla, todo alrededor del jardín.",
+          "answer": "La pista de advertencia, junto a la valla"
         }
       }
     },
@@ -5720,7 +5720,7 @@
           "opts": {
             "a": "Contra la base, nunca contra el defensor",
             "b": "Contra el defensor para tumbarlo",
-            "c": "Contra la cerca"
+            "c": "Contra la valla"
           }
         },
         "4": {
@@ -6405,14 +6405,14 @@
       "objective": "REPASO de los niveles 5 a 8, marcado como repaso: hit, doble por regla, outs forzado y de toque, doble play, pisa y corre y el marcador R/H/E.",
       "demo": [
         "Gran repaso, parte dos: la etapa Prospecto.",
-        "Bateaste tu primer hit y aprendiste que sencillo, doble y triple cuentan bases; que si la bola pica y salta la cerca es doble por regla;",
+        "Bateaste tu primer hit y aprendiste que sencillo, doble y triple cuentan bases; que si la bola pica y salta la valla es doble por regla;",
         "que el out forzado se hace pisando la base y el de toque, tocando al corredor; que dos outs en una jugada son doble play;",
         "que el elevado se espera con pisa y corre; y que el marcador cuenta carreras, hits y errores.",
         "Todo repaso, nada nuevo: es tu caja de herramientas del medio del camino."
       ],
       "acts": {
         "1": {
-          "q": "REPASO: la bola buena pica y salta la cerca. Es:",
+          "q": "REPASO: la bola buena pica y salta la valla. Es:",
           "ok": "¡Eso es! Dos bases.",
           "ko": "Picó y salió: doble por regla.",
           "opts": {
@@ -7948,9 +7948,9 @@
         }
       },
       "8": {
-        "q": "Corriendo hacia la cerca sientes bajo los pies un suelo distinto al pasto. ¿Qué es?",
+        "q": "Corriendo hacia la valla sientes bajo los pies un suelo distinto al pasto. ¿Qué es?",
         "opts": {
-          "a": "La pista de advertencia: la cerca está cerca",
+          "a": "La pista de advertencia: la valla está cerca",
           "b": "La caja de bateo",
           "c": "El montículo"
         }
@@ -7958,7 +7958,7 @@
       "9": {
         "q": "Sentir la pista de advertencia te avisa de…",
         "opts": {
-          "a": "Cuidarte para no chocar con la cerca",
+          "a": "Cuidarte para no chocar con la valla",
           "b": "Correr todavía más fuerte",
           "c": "Pedir tiempo"
         }

@@ -204,7 +204,7 @@
       "n": 2,
       "tipo": "Selección simple",
       "type": "choice",
-      "q": "La bola pica en el jardín y salta la cerca. ¿Qué es?",
+      "q": "La bola pica en el jardín y salta la valla. ¿Qué es?",
       "opts": [
        "Un doble por regla (ground rule double)",
        "Un jonrón",
@@ -449,7 +449,7 @@
      }
     ],
     "objective": "Entender el toque (bunt): sostener el bate sin swing para dejar caer la bola suave, y que un foul de toque con dos strikes sí es tercer strike.",
-    "demoRaw": "«No todo batazo busca la cerca. El toque de bola, en inglés bunt, es sostener el bate firme, sin hacer swing, y dejar que la bola caiga suavecita delante de home. Sirve para sorprender o para avanzar a un compañero. Y aprende esta, que es especial: si tocas de foul con dos strikes, ese foul SÍ cuenta como tercer strike y eres out. En el Nivel 4 aprendiste que el foul con dos strikes no poncha; con el toque, la historia cambia.»"
+    "demoRaw": "«No todo batazo busca la valla. El toque de bola, en inglés bunt, es sostener el bate firme, sin hacer swing, y dejar que la bola caiga suavecita delante de home. Sirve para sorprender o para avanzar a un compañero. Y aprende esta, que es especial: si tocas de foul con dos strikes, ese foul SÍ cuenta como tercer strike y eres out. En el Nivel 4 aprendiste que el foul con dos strikes no poncha; con el toque, la historia cambia.»"
    }
   ],
   "exam": [
@@ -1775,7 +1775,7 @@
       "opts": [
        "Un defensor dejando caer un elevado fácil",
        "Una bola pasando limpia al jardín",
-       "Un jonrón sobre la cerca"
+       "Un jonrón sobre la valla"
       ],
       "correct": "Un defensor dejando caer un elevado fácil",
       "right": "¡Eso es! Falla en jugada normal.",
@@ -6054,13 +6054,13 @@
       "type": "choice",
       "q": "¿Qué es la pista de advertencia (warning track)?",
       "opts": [
-       "La franja junto a la cerca que avisa que la pared está cerca",
+       "La franja junto a la valla que avisa que la pared está cerca",
        "La línea de foul",
        "El círculo de espera"
       ],
-      "correct": "La franja junto a la cerca que avisa que la pared está cerca",
+      "correct": "La franja junto a la valla que avisa que la pared está cerca",
       "right": "¡Correcto! Tus pies la sienten.",
-      "wrong": "Tierra distinta bajo los pies: cerca cerca."
+      "wrong": "Tierra distinta bajo los pies: la valla está cerca."
      },
      {
       "n": 3,
@@ -6072,7 +6072,7 @@
        "Falso"
       ],
       "correct": "Falso",
-      "right": "¡Bien! Está junto a la cerca.",
+      "right": "¡Bien! Está junto a la valla.",
       "wrong": "Falso: bordea todo el jardín, pegada a la pared."
      },
      {
@@ -6093,7 +6093,7 @@
       "n": 5,
       "tipo": "Verdadero o falso",
       "type": "tf",
-      "q": "Cuando sientes la pista de advertencia, debes correr más fuerte hacia la cerca",
+      "q": "Cuando sientes la pista de advertencia, debes correr más fuerte hacia la valla",
       "opts": [
        "Verdadero",
        "Falso"
@@ -6106,19 +6106,19 @@
       "n": 6,
       "tipo": "Toca en el campo",
       "type": "tap",
-      "q": "Toca la zona que avisa que la cerca está cerca",
+      "q": "Toca la franja de tierra que te avisa que ya vas a chocar con la valla",
       "opts": [
-       "La pista de advertencia, junto a la cerca",
+       "La pista de advertencia, junto a la valla",
        "El montículo",
        "La caja de bateo"
       ],
-      "correct": "La pista de advertencia, junto a la cerca",
+      "correct": "La pista de advertencia, junto a la valla",
       "right": "¡Bien! Ahí mismo.",
-      "wrong": "Pegada a la cerca, todo alrededor del jardín."
+      "wrong": "Pegada a la valla, todo alrededor del jardín."
      }
     ],
-    "objective": "Jugar la bola de modo que siempre quede delante del jardinero, y conocer la pista de advertencia (warning track): la franja junto a la cerca que avisa con los pies que la pared está cerca.",
-    "demoRaw": "«Dos secretos de los jardines. Primero: deja la bola adelante. Si un batazo pica delante de ti, recógelo tranquilo; si te pasa por el lado o por encima, los corredores corren y corren. Por eso, ante la duda, se juega un paso más atrás. Segundo: junto a la cerca hay una franja de tierra distinta, la pista de advertencia, en inglés warning track. Cuando tus pies la sienten, la cerca está cerquita: atrapa con cuidado y no choques contra la pared.»"
+    "objective": "Jugar la bola de modo que siempre quede delante del jardinero, y conocer la pista de advertencia (warning track): la franja junto a la valla que avisa con los pies que la pared está cerca.",
+    "demoRaw": "«Dos secretos de los jardines. Primero: deja la bola adelante. Si un batazo pica delante de ti, recógelo tranquilo; si te pasa por el lado o por encima, los corredores corren y corren. Por eso, ante la duda, se juega un paso más atrás. Segundo: junto a la valla hay una franja de tierra distinta, la pista de advertencia, en inglés warning track. Cuando tus pies la sienten, la valla está cerquita: atrapa con cuidado y no choques contra la pared.»"
    },
    {
     "id": "15.5",
@@ -6284,23 +6284,23 @@
    },
    {
     "n": 8,
-    "q": "Corriendo hacia la cerca sientes bajo los pies un suelo distinto al pasto. ¿Qué es?",
+    "q": "Corriendo hacia la valla sientes bajo los pies un suelo distinto al pasto. ¿Qué es?",
     "opts": [
-     "La pista de advertencia: la cerca está cerca",
+     "La pista de advertencia: la valla está cerca",
      "La caja de bateo",
      "El montículo"
     ],
-    "correct": "La pista de advertencia: la cerca está cerca"
+    "correct": "La pista de advertencia: la valla está cerca"
    },
    {
     "n": 9,
     "q": "Sentir la pista de advertencia te avisa de…",
     "opts": [
-     "Cuidarte para no chocar con la cerca",
+     "Cuidarte para no chocar con la valla",
      "Correr todavía más fuerte",
      "Pedir tiempo"
     ],
-    "correct": "Cuidarte para no chocar con la cerca"
+    "correct": "Cuidarte para no chocar con la valla"
    },
    {
     "n": 10,
@@ -7539,7 +7539,7 @@
       "opts": [
        "Contra la base, nunca contra el defensor",
        "Contra el defensor para tumbarlo",
-       "Contra la cerca"
+       "Contra la valla"
       ],
       "correct": "Contra la base, nunca contra el defensor",
       "right": "¡Correcto! A la base.",
@@ -8756,7 +8756,7 @@
       "n": 1,
       "tipo": "Selección simple",
       "type": "choice",
-      "q": "REPASO: la bola buena pica y salta la cerca. Es:",
+      "q": "REPASO: la bola buena pica y salta la valla. Es:",
       "opts": [
        "Doble por regla",
        "Jonrón",
@@ -8835,7 +8835,7 @@
      }
     ],
     "objective": "REPASO de los niveles 5 a 8, marcado como repaso: hit, doble por regla, outs forzado y de toque, doble play, pisa y corre y el marcador R/H/E.",
-    "demoRaw": "«Gran repaso, parte dos: la etapa Prospecto. Bateaste tu primer hit y aprendiste que sencillo, doble y triple cuentan bases; que si la bola pica y salta la cerca es doble por regla; que el out forzado se hace pisando la base y el de toque, tocando al corredor; que dos outs en una jugada son doble play; que el elevado se espera con pisa y corre; y que el marcador cuenta carreras, hits y errores. Todo repaso, nada nuevo: es tu caja de herramientas del medio del camino.»"
+    "demoRaw": "«Gran repaso, parte dos: la etapa Prospecto. Bateaste tu primer hit y aprendiste que sencillo, doble y triple cuentan bases; que si la bola pica y salta la valla es doble por regla; que el out forzado se hace pisando la base y el de toque, tocando al corredor; que dos outs en una jugada son doble play; que el elevado se espera con pisa y corre; y que el marcador cuenta carreras, hits y errores. Todo repaso, nada nuevo: es tu caja de herramientas del medio del camino.»"
    },
    {
     "id": "20.3",

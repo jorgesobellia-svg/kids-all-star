@@ -653,19 +653,19 @@ Demostración (30-60 segundos) — guion de Pelotín:
 «Dos secretos de los jardines. Primero: deja la bola adelante. Si un
 batazo pica delante de ti, recógelo tranquilo; si te pasa por el lado o
 por encima, los corredores corren y corren. Por eso, ante la duda, se
-juega un paso más atrás. Segundo: junto a la cerca hay una franja de
+juega un paso más atrás. Segundo: junto a la valla hay una franja de
 tierra distinta, la pista de advertencia, en inglés warning track.
-Cuando tus pies la sienten, la cerca está cerquita: atrapa con cuidado y
+Cuando tus pies la sienten, la valla está cerquita: atrapa con cuidado y
 no choques contra la pared.»
 
 | # | Tipo | Pregunta / instrucción | Opciones | Correcta | Si acierta / si falla |
 |---|---|---|---|---|---|
 | 1 | Selección simple | ¿Por qué el jardinero juega un paso más atrás ante la duda? | Para que la bola quede siempre delante de él / Para estar cerca de la banca / Para descansar | Para que la bola quede siempre delante de él | ¡Eso es! Bola adelante, jugada viva. / La bola que te pasa vale muchas bases. |
-| 2 | Selección simple | ¿Qué es la pista de advertencia (warning track)? | La franja junto a la cerca que avisa que la pared está cerca / La línea de foul / El círculo de espera | La franja junto a la cerca que avisa que la pared está cerca | ¡Correcto! Tus pies la sienten. / Tierra distinta bajo los pies: cerca cerca. |
-| 3 | Verdadero o falso | La pista de advertencia está en el medio de los jardines | Verdadero / Falso | Falso | ¡Bien! Está junto a la cerca. / Falso: bordea todo el jardín, pegada a la pared. |
+| 2 | Selección simple | ¿Qué es la pista de advertencia (warning track)? | La franja junto a la valla que avisa que la pared está cerca / La línea de foul / El círculo de espera | La franja junto a la valla que avisa que la pared está cerca | ¡Correcto! Tus pies la sienten. / Tierra distinta bajo los pies: la valla está cerca. |
+| 3 | Verdadero o falso | La pista de advertencia está en el medio de los jardines | Verdadero / Falso | Falso | ¡Bien! Está junto a la valla. / Falso: bordea todo el jardín, pegada a la pared. |
 | 4 | Selección simple | ¿Cómo notas la pista de advertencia sin mirar abajo? | Los pies sienten un suelo distinto al pasto / Suena una alarma / El coach grita siempre | Los pies sienten un suelo distinto al pasto | ¡Eso es! Se siente con los pies. / Así miras la bola y no el suelo. |
-| 5 | Verdadero o falso | Cuando sientes la pista de advertencia, debes correr más fuerte hacia la cerca | Verdadero / Falso | Falso | ¡Correcto! Es aviso de cuidado. / Falso: te avisa para que no choques. |
-| 6 | Toca en el campo | Toca la zona que avisa que la cerca está cerca | La pista de advertencia, junto a la cerca / El montículo / La caja de bateo | La pista de advertencia, junto a la cerca | ¡Bien! Ahí mismo. / Pegada a la cerca, todo alrededor del jardín. |
+| 5 | Verdadero o falso | Cuando sientes la pista de advertencia, debes correr más fuerte hacia la valla | Verdadero / Falso | Falso | ¡Correcto! Es aviso de cuidado. / Falso: te avisa para que no choques. |
+| 6 | Toca en el campo | Toca la franja de tierra que te avisa que ya vas a chocar con la valla | La pista de advertencia, junto a la valla / El montículo / La caja de bateo | La pista de advertencia, junto a la valla | ¡Bien! Ahí mismo. / Pegada a la valla, todo alrededor del jardín. |
 
 Cierre: +10 XP por respuesta correcta, +5 XP de bono si termina sin
 errores. Gana 1 pelota (moneda) por respuesta correcta y 3 pelotas extra
@@ -716,8 +716,8 @@ lecciones que debe repasar y puede intentarlo de nuevo.
 | 5 | La bola rozó el pasto una fracción antes de entrar al guante. ¿Qué fue? | Una trampa (trap): no es atrapada / Una atrapada legal / Un out seguro | Una trampa (trap): no es atrapada |
 | 6 | Tras una trampa, la bola sigue viva. ¿Qué hace el jardinero? | La recoge y tira rápido a una base / La muestra al umpire celebrando / Espera a que el umpire grite | La recoge y tira rápido a una base |
 | 7 | ¿Por qué ante la duda el jardinero juega un paso más atrás? | Para que la bola quede siempre delante de él / Para estar más lejos del coach / Para ver mejor al público | Para que la bola quede siempre delante de él |
-| 8 | Corriendo hacia la cerca sientes bajo los pies un suelo distinto al pasto. ¿Qué es? | La pista de advertencia: la cerca está cerca / La caja de bateo / El montículo | La pista de advertencia: la cerca está cerca |
-| 9 | Sentir la pista de advertencia te avisa de… | Cuidarte para no chocar con la cerca / Correr todavía más fuerte / Pedir tiempo | Cuidarte para no chocar con la cerca |
+| 8 | Corriendo hacia la valla sientes bajo los pies un suelo distinto al pasto. ¿Qué es? | La pista de advertencia: la valla está cerca / La caja de bateo / El montículo | La pista de advertencia: la valla está cerca |
+| 9 | Sentir la pista de advertencia te avisa de… | Cuidarte para no chocar con la valla / Correr todavía más fuerte / Pedir tiempo | Cuidarte para no chocar con la valla |
 | 10 | Elevado con sol de frente. ¿Qué técnica usas? | El guante como visera, tapando el sol sin tapar la bola / Cierro los ojos y estiro el guante / Miro fijo al sol | El guante como visera, tapando el sol sin tapar la bola |
 | 11 | Perdiste la bola en el brillo del sol. ¿Qué haces? | Lo digo en voz alta para que un compañero respalde / Me quedo callado y adivino / Me siento en el pasto | Lo digo en voz alta para que un compañero respalde |
 | 12 | La prioridad en los jardines significa que… | Hay una voz que manda en cada zona, y el centro manda en el medio / Todos atrapan todo / Nadie debe pedir ninguna bola | Hay una voz que manda en cada zona, y el centro manda en el medio |
@@ -1128,7 +1128,7 @@ pregúntale a tu coach antes de hacerlo.»
 |---|---|---|---|---|---|
 | 1 | Selección simple | ¿Cuál es la forma segura de deslizarse en ligas de niños? | Pies primero, con las manos arriba / De cabeza, con las manos al frente / Contra el defensor, empujándolo | Pies primero, con las manos arriba | ¡Eso es! Pies primero. / Piernas al frente y manos arriba: seguro. |
 | 2 | Verdadero o falso | Al deslizarse, hay que apoyar las manos en el suelo para frenar | Verdadero / Falso | Falso | ¡Bien! Manos arriba. / Falso: apoyar las manos puede lastimar las muñecas. |
-| 3 | Selección simple | ¿Contra qué se desliza un corredor? | Contra la base, nunca contra el defensor / Contra el defensor para tumbarlo / Contra la cerca | Contra la base, nunca contra el defensor | ¡Correcto! A la base. / El defensor no es un obstáculo para chocar. |
+| 3 | Selección simple | ¿Contra qué se desliza un corredor? | Contra la base, nunca contra el defensor / Contra el defensor para tumbarlo / Contra la valla | Contra la base, nunca contra el defensor | ¡Correcto! A la base. / El defensor no es un obstáculo para chocar. |
 | 4 | Selección simple | ¿Se puede deslizar de cabeza en tu liga? | Depende de mi liga: pregúntale a tu coach / Siempre, en todas / Nunca se pregunta nada | Depende de mi liga: pregúntale a tu coach | ¡Eso es! Pregunta primero. / En tu liga puede ser distinto: pregúntale a tu coach. |
 | 5 | Verdadero o falso | Deslizarse sirve para llegar bajo el toque del defensor | Verdadero / Falso | Verdadero | ¡Bien! Por eso se usa. / Verdadero: bajo y rápido a la base. |
 | 6 | Selección con imágenes | ¿Cuál imagen muestra el deslizamiento seguro? | Corredor pies primero con las manos arriba / Corredor de cabeza / Corredor chocando al defensor | Corredor pies primero con las manos arriba | ¡Eso es! Ese llega seguro. / Pies primero, siempre en ligas de niños. |
@@ -1523,7 +1523,7 @@ Demostración (30-60 segundos) — guion de Pelotín:
 
 «Gran repaso, parte dos: la etapa Prospecto. Bateaste tu primer hit y
 aprendiste que sencillo, doble y triple cuentan bases; que si la bola
-pica y salta la cerca es doble por regla; que el out forzado se hace
+pica y salta la valla es doble por regla; que el out forzado se hace
 pisando la base y el de toque, tocando al corredor; que dos outs en una
 jugada son doble play; que el elevado se espera con pisa y corre; y que
 el marcador cuenta carreras, hits y errores. Todo repaso, nada nuevo: es
@@ -1531,7 +1531,7 @@ tu caja de herramientas del medio del camino.»
 
 | # | Tipo | Pregunta / instrucción | Opciones | Correcta | Si acierta / si falla |
 |---|---|---|---|---|---|
-| 1 | Selección simple | REPASO: la bola buena pica y salta la cerca. Es: | Doble por regla / Jonrón / Triple | Doble por regla | ¡Eso es! Dos bases. / Picó y salió: doble por regla. |
+| 1 | Selección simple | REPASO: la bola buena pica y salta la valla. Es: | Doble por regla / Jonrón / Triple | Doble por regla | ¡Eso es! Dos bases. / Picó y salió: doble por regla. |
 | 2 | Verdadero o falso | REPASO: en el out forzado basta pisar la base con la bola antes que el corredor | Verdadero / Falso | Verdadero | ¡Bien! Fuerza es pisar. / Forzado: base pisada a tiempo. |
 | 3 | Selección simple | REPASO: en el marcador, las letras R/H/E significan: | Carreras, hits y errores / Recta, curva y slider / Nada, es decoración | Carreras, hits y errores | ¡Correcto! Runs, hits, errors. / Así se lee una pizarra. |
 | 4 | ¿Qué cantaría el umpire? | REPASO: atrapan tu elevado y tu compañero de tercera arrancó antes de la atrapada; la defensa devuelve la bola a tercera. El umpire canta: | ¡Out! Salió antes del pisa y corre / ¡Safe! Carrera / ¡Foul! | ¡Out! Salió antes del pisa y corre | ¡Out! La espera era la jugada. / Pisa y corre mal hecho cuesta out. |
@@ -1710,7 +1710,7 @@ Nivel 15 — Los jardines
 | Prioridad | Priority | 优先权 (yōuxiānquán) | 優先権 | La regla de equipo que decide quién atrapa una bola entre dos. |
 | Atrapada | Catch | 接杀 (jiēshā) | キャッチ | La bola queda segura en el guante o la mano sin tocar el suelo. |
 | Trampa | Trap | 弹跳接球 (tántiào jiēqiú) | ワンバウンド捕球 | La bola toca el suelo antes de quedar en el guante: no es atrapada. |
-| Pista de advertencia | Warning track | 警戒区 (jǐngjièqū) | ウォーニングトラック | La franja junto a la cerca que avisa que la pared está cerca. |
+| Pista de advertencia | Warning track | 警戒区 (jǐngjièqū) | ウォーニングトラック | La franja junto a la valla que avisa que la pared está cerca. |
 | Visera (con el guante) | Glove as a visor | 手套遮阳 (shǒutào zhēyáng) | グラブで日差しを遮る | Usar el guante para tapar el sol sin tapar la bola. |
 | Bola adelante | Keep the ball in front | 把球留在身前 (bǎ qiú liú zài shēn qián) | ボールを前に止める | Jugar de modo que la bola nunca pase al jardinero. |
 

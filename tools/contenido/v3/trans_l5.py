@@ -184,7 +184,7 @@ TR = {
            '明白触击：拿住球棒不挥棒，让球轻轻落下；还要知道两好球时触击成界外球，就是第三个好球。',
            'バントを知ろう：バットをふらずに持って、ボールをやさしく落とすこと。2ストライクでバントがファウルになったら、3つ目のストライクになるよ。'),
    'demo': [
-     ('No todo batazo busca la cerca.', "Not every hit is aiming for the fence.", '不是每次击球都要打到围墙。', 'どの打球もフェンスをねらうわけじゃない。'),
+     ('No todo batazo busca la valla.', "Not every hit is aiming for the fence.", '不是每次击球都要打到围墙。', 'どの打球もフェンスをねらうわけじゃない。'),
      ('El toque de bola, en inglés bunt, es sostener el bate firme, sin hacer swing, y dejar que la bola caiga suavecita delante de home.',
       'A bunt means holding the bat firmly, without swinging, and letting the ball drop softly in front of home plate.',
       '触击，英语叫 bunt，就是稳稳拿住球棒，不挥棒，让球轻轻落在本垒前面。',

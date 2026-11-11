@@ -4987,7 +4987,7 @@
           "ko": "False: it warns you so you don't crash."
         },
         "6": {
-          "q": "Tap the area that warns you the fence is close",
+          "q": "Tap the strip of dirt that warns you you're about to hit the fence",
           "ok": "Good! Right there.",
           "ko": "Right by the fence, all around the outfield.",
           "answer": "The warning track, next to the fence"

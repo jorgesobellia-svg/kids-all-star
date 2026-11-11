@@ -150,7 +150,9 @@ function Extras({ fx, glow, tap }: { fx: FieldExtras; glow: (t: Target) => strin
       ) : null}
       {fx.track ? (
         <G onPress={tap('track')}>
-          <Path d={trackArc()} fill="none" stroke={glow('track') ?? '#B9875A'} strokeWidth={13} strokeOpacity={glow('track') ? 0.9 : 1} />
+          {/* La pista siempre se ve de tierra; al resaltarla, el color va como borde alrededor. */}
+          {glow('track') ? <Path d={trackArc()} fill="none" stroke={glow('track')!} strokeWidth={21} /> : null}
+          <Path d={trackArc()} fill="none" stroke="#B9875A" strokeWidth={13} />
           <Path d={trackArc()} fill="none" stroke="#000" strokeOpacity={0.001} strokeWidth={30} />
         </G>
       ) : null}
