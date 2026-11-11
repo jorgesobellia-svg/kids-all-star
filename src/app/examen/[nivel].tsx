@@ -48,6 +48,9 @@ export default function ExamScreen() {
 
   const total = level.exam.length;
   const need = Math.ceil((total * level.passPercent) / 100);
+  // Cada fallo es un out. Con los outs que ya no dejan aprobar (3 en un examen de 12), se acaba el examen.
+  const maxOuts = total - need + 1;
+  const outs = wrong.length;
   const q = level.exam[i];
   const qt = text[String(q.n)];
   // El examen usa el mismo componente de actividades que las lecciones.
@@ -70,13 +73,20 @@ export default function ExamScreen() {
       setHeard(false);
       const label = q.type === 'tap' ? qt.answer : q.type === 'tf' ? (q.correct === 'true' ? t('common.true') : t('common.false')) : qt.opts?.[q.correct ?? ''];
       const msg = label ? t('exam.correctWas', { a: label }) : '';
+      // Después de la respuesta, Pelotín avisa cuántos outs van.
+      const warn = outWarning(wrong.length + 1, maxOuts);
       const done = () => {
         if (heardToken.current === tok) setHeard(true);
       };
+      const sayWarn = () => {
+        if (heardToken.current !== tok) return;
+        if (!warn) return done();
+        speak(t(warn), locale, done);
+      };
       umpireCall('out', locale, () => {
-        if (!msg) return done();
-        speak(msg, locale, done);
-        setTimeout(done, Math.max(3000, msg.length * 95) + 2500);
+        if (msg) speak(msg, locale, sayWarn);
+        else sayWarn();
+        setTimeout(done, Math.max(3000, (msg.length + 90) * 95) + 3500);
       });
       setWrong((w) => [...w, i]);
     }
@@ -86,6 +96,11 @@ export default function ExamScreen() {
     if (!heard) return;
     heardToken.current++;
     stopSpeaking();
+    if (outs >= maxOuts) {
+      // Tercer out: se acaba el examen y vuelve a home a repetirlo.
+      setPhase('done');
+      return;
+    }
     if (i + 1 < total) {
       setI(i + 1);
       setAnswer(null);
@@ -144,6 +159,10 @@ export default function ExamScreen() {
               <Text style={{ fontFamily: F.bodyBold, fontSize: 14, color: C.muted }}>{t('exam.toPass', { p: level.passPercent })}</Text>
             </Card>
           </View>
+          <View testID="exam-outs-rule" style={{ width: '100%', backgroundColor: C.wrongSoft, borderRadius: 16, padding: 14, flexDirection: 'row', alignItems: 'center', gap: 14 }}>
+            <OutLights outs={3} max={3} />
+            <Text style={{ flex: 1, fontFamily: F.bodyBold, fontSize: 15, lineHeight: 20, color: '#991B1B' }}>{t('exam.outsRule')}</Text>
+          </View>
           <View style={{ width: '100%', backgroundColor: C.navy, borderRadius: 16, padding: 14, flexDirection: 'row', alignItems: 'center', gap: 14 }}>
             <BadgeMedal size={48} earned level={level.n} />
             <View style={{ flex: 1 }}>
@@ -173,6 +192,7 @@ export default function ExamScreen() {
       <View style={{ flex: 1, backgroundColor: C.navy, paddingTop: insets.top + 36, paddingBottom: insets.bottom + 24, paddingHorizontal: 24 }}>
         <ScrollView contentContainerStyle={{ alignItems: 'center', gap: 16 }}>
           <Mascot size={130} mood={passed ? 'cheer' : 'think'} />
+          {passed ? null : <Text testID="exam-3outs" style={{ fontFamily: F.display, fontSize: 52, color: C.gold }}>{t('exam.outsTitle')}</Text>}
           <Text testID="exam-result" style={{ fontFamily: F.display, fontSize: 36, color: passed ? C.gold : C.white }}>{(p.nickname ?? '').trim() ? t(passed ? 'exam.passTitleName' : 'exam.failTitleName', { name: (p.nickname ?? '').trim() }) : passed ? t('exam.passTitle') : t('exam.failTitle')}</Text>
           <Text style={{ fontFamily: F.bodyBold, fontSize: 18, color: '#CBD5E1' }}>{t('exam.score', { a: score, b: total })}</Text>
           {passed ? (
@@ -248,6 +268,10 @@ export default function ExamScreen() {
         <Text style={{ fontFamily: F.bodyHeavy, fontSize: 15, color: C.muted }}>
           {i + 1}/{total}
         </Text>
+        <View testID="exam-outs" accessibilityLabel={`${t('lesson.strikes')} ${outs}`} style={{ alignItems: 'center', gap: 2 }}>
+          <Text style={{ fontFamily: F.bodyHeavy, fontSize: 10, color: C.muted, letterSpacing: 1 }}>{t('lesson.strikes').toUpperCase()}</Text>
+          <OutLights outs={outs} max={maxOuts} />
+        </View>
       </View>
       <ScrollView contentContainerStyle={{ padding: 20, gap: 14 }}>
         <Label>{t('exam.label', { n: level.n })}</Label>
@@ -284,6 +308,7 @@ export default function ExamScreen() {
             <Text style={{ fontFamily: F.display, fontSize: 26, color: right ? '#166534' : '#991B1B' }}>{right ? t('lesson.right') : t('lesson.almost')}</Text>
           </View>
           {!right && correctLabel ? <Text style={{ fontFamily: F.bodyBold, fontSize: 16, color: '#991B1B' }}>{t('exam.correctWas', { a: correctLabel })}</Text> : null}
+          {!right && outWarning(outs, maxOuts) ? <Text testID="exam-out-warn" style={{ fontFamily: F.bodyHeavy, fontSize: 16, color: '#991B1B' }}>{t(outWarning(outs, maxOuts)!)}</Text> : null}
           <Btn testID="exam-continue" label={t('common.continue')} variant={right ? 'green' : heard ? 'wrong' : 'disabled'} onPress={heard ? next : undefined} />
         </View>
       ) : q.type !== 'tap' ? (
@@ -303,4 +328,23 @@ function examAct(q: NonNullable<ReturnType<typeof getLevel>>['exam'][number]): A
     actCache.set(q, a);
   }
   return a;
+}
+
+/** Lo que Pelotín dice después de cada fallo: 1 out, el que deja a uno del final, o el último. */
+function outWarning(outs: number, max: number): string | null {
+  if (outs <= 0) return null;
+  if (outs >= max) return 'exam.out3';
+  if (outs === max - 1) return 'exam.out2';
+  return 'exam.out1';
+}
+
+/** Luces de outs como en el marcador del estadio. */
+function OutLights({ outs, max }: { outs: number; max: number }) {
+  return (
+    <View style={{ flexDirection: 'row', gap: 4 }}>
+      {Array.from({ length: max }, (_, k) => (
+        <View key={k} style={{ width: 14, height: 14, borderRadius: 7, backgroundColor: k < outs ? C.red : C.line, borderWidth: 2, borderColor: k < outs ? '#7F0A1C' : '#CBD5E1' }} />
+      ))}
+    </View>
+  );
 }
