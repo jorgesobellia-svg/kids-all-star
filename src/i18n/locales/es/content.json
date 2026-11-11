@@ -4770,7 +4770,7 @@
           }
         },
         "2": {
-          "q": "Si la bola pasa por encima del jardinero, todavía puede alcanzarla corriendo hacia atrás",
+          "q": "Si el jardinero da su primer paso hacia adelante y la bola le pasa por encima, todavía puede alcanzarla corriendo hacia atrás",
           "ok": "¡Bien! Casi nunca se alcanza.",
           "ko": "Falso: por eso el primer paso va atrás."
         },

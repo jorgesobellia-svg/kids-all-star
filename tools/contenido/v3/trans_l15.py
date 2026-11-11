@@ -21,7 +21,7 @@ TR = {
         'o': [('Backwards', '向后', '後ろ'), ('Always forward', '总是向前', 'いつも前'), ('Toward the dugout', '朝休息区', 'ベンチのほう')],
         'ok': ("That's it! Back first.", '对了！先后退。', 'そのとおり！まず後ろ。'),
         'ko': ("The one that drops in front can be reached; the one that goes over can't.", '落在前面的接得到；飞过去的接不到。', '前に落ちるのはとれる。こえた球はとれない。')},
-    2: {'q': ('If the ball goes over the outfielder\'s head, he can still reach it running backwards', '如果球从外野手头顶飞过，他往后跑还能追到', 'ボールが外野手の頭の上をこえても、後ろに走ればまだとれる'),
+    2: {'q': ('If the outfielder takes his first step forward and the ball goes over his head, he can still reach it running backwards', '如果外野手第一步往前跨，球又从他头顶飞过，他往后跑还能追到', '外野手が最初の一歩を前にふみ出して、ボールが頭の上をこえても、後ろに走ればまだとれる'),
         'ok': ('Good! It almost never can be reached.', '很好！几乎追不到。', 'いいね！ほとんどとれない。'),
         'ko': ("False: that's why the first step goes back.", '错：所以第一步要后退。', 'まちがい：だから第一歩は後ろなんだ。')},
     3: {'q': ('Which ball can you reach?', '哪种球你能接到？', 'どの球ならとれる？'),

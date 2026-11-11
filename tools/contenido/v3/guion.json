@@ -5782,7 +5782,7 @@
       "n": 2,
       "tipo": "Verdadero o falso",
       "type": "tf",
-      "q": "Si la bola pasa por encima del jardinero, todavía puede alcanzarla corriendo hacia atrás",
+      "q": "Si el jardinero da su primer paso hacia adelante y la bola le pasa por encima, todavía puede alcanzarla corriendo hacia atrás",
       "opts": [
        "Verdadero",
        "Falso"

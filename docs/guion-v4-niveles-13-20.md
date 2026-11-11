@@ -575,7 +575,7 @@ hacia adelante que mirar cómo la bola cae detrás de ti.»
 | # | Tipo | Pregunta / instrucción | Opciones | Correcta | Si acierta / si falla |
 |---|---|---|---|---|---|
 | 1 | Selección simple | ¿Hacia dónde va el primer paso del jardinero ante un batazo alto? | Hacia atrás / Hacia adelante siempre / Hacia la banca | Hacia atrás | ¡Eso es! Atrás primero. / La que cae delante se alcanza; la que pasa, no. |
-| 2 | Verdadero o falso | Si la bola pasa por encima del jardinero, todavía puede alcanzarla corriendo hacia atrás | Verdadero / Falso | Falso | ¡Bien! Casi nunca se alcanza. / Falso: por eso el primer paso va atrás. |
+| 2 | Verdadero o falso | Si el jardinero da su primer paso hacia adelante y la bola le pasa por encima, todavía puede alcanzarla corriendo hacia atrás | Verdadero / Falso | Falso | ¡Bien! Casi nunca se alcanza. / Falso: por eso el primer paso va atrás. |
 | 3 | Selección simple | ¿Qué bola sí puedes alcanzar? | La que cae delante de ti / La que ya salió del campo / La que pasó muy por encima | La que cae delante de ti | ¡Correcto! La de delante. / Corres hacia adelante y la buscas. |
 | 4 | Selección con imágenes | ¿Cuál imagen muestra el buen primer paso? | Jardinero girando hacia atrás al salir el batazo / Jardinero entrando hacia el cuadro / Jardinero parado esperando | Jardinero girando hacia atrás al salir el batazo | ¡Eso es! Ese llega. / Primero atrás, después a la bola. |
 | 5 | Selección simple | ¿Cuándo decides tu primer paso? | Apenas sale el batazo, leyendo su altura / Cuando la bola ya cayó / Cuando el coach grita tarde | Apenas sale el batazo, leyendo su altura | ¡Correcto! Al instante. / Leer rápido es la mitad de la atrapada. |

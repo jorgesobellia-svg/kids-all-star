@@ -4770,7 +4770,7 @@
           }
         },
         "2": {
-          "q": "If the ball goes over the outfielder's head, he can still reach it running backwards",
+          "q": "If the outfielder takes his first step forward and the ball goes over his head, he can still reach it running backwards",
           "ok": "Good! It almost never can be reached.",
           "ko": "False: that's why the first step goes back."
         },
