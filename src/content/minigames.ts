@@ -1,18 +1,25 @@
-// Minijuegos: uno cada dos niveles, se abre al aprobar el examen del nivel `after`.
-// Por ahora solo está "¡A batear!" (después del nivel 4).
+// Minijuegos: uno al final de cada etapa; se abre al aprobar el examen del nivel `after`
+// y aparece en el camino justo debajo de ese nivel.
 export interface MiniGame {
   id: string;
-  /** Nivel cuyo examen lo desbloquea. Aparece en el camino justo después de ese nivel. */
+  /** Nivel cuyo examen lo desbloquea. */
   after: number;
   /** Clave del título en ui.json. */
   title: string;
+  /** Clave del texto del récord en ui.json (con {n}). */
+  best: string;
 }
 
-export const MINIGAMES: MiniGame[] = [{ id: 'batear', after: 4, title: 'game.batTitle' }];
+export const MINIGAMES: MiniGame[] = [
+  { id: 'batear', after: 4, title: 'game.batTitle', best: 'game.best' },
+  { id: 'pichar', after: 8, title: 'game.pitchTitle', best: 'game.bestK' },
+  { id: 'umpire', after: 12, title: 'game.umpTitle', best: 'game.bestCalls' },
+  { id: 'elevada', after: 16, title: 'game.flyTitle', best: 'game.bestCatches' },
+];
 
 export const gameAfter = (level: number): MiniGame | undefined => MINIGAMES.find((g) => g.after === level);
 
-// ---------------------------------------------------------------- ¡A batear!
+// ---------------------------------------------------------------- ¡A batear! (nivel 4)
 /** Ventanas de tiempo (ms) alrededor del momento en que la bola llega al home. */
 export const BAT = {
   /** Diferencia máxima para jonrón. */
@@ -28,6 +35,53 @@ export const BAT = {
   minMs: 650,
   /** Parte de los lanzamientos que vienen fuera de la zona (bolas). */
   ballRate: 0.28,
+  /** Outs para terminar (un ponche y se acaba, para que sea corto). */
+  outs: 1,
   coinsHit: 1,
   coinsHr: 2,
+};
+
+// ---------------------------------------------------------------- ¡A pichar! (nivel 8)
+export const PITCH = {
+  /** Tiempo (ms) que tarda la mira en ir y volver de lado a lado al principio, y el mínimo. */
+  sweepMs: 1700,
+  minSweepMs: 800,
+  /** Cuánto se acelera tras cada ponche (ms). */
+  stepMs: 120,
+  /** Si la bola cae a esta distancia del centro de la zona (en proporción, 0–1) es "por el centro". */
+  middle: 0.45,
+  /** Probabilidad de que el bateador le pegue a una por el centro y a una en la orilla. */
+  hitMiddle: 0.65,
+  hitEdge: 0.15,
+  outs: 3,
+  coinsK: 1,
+};
+
+// ---------------------------------------------------------------- Umpire por un día (nivel 12)
+export const UMP = {
+  /** Duración del lanzamiento (ms) al principio y mínima. */
+  startMs: 1400,
+  minMs: 700,
+  stepMs: 40,
+  /** Errores para terminar. */
+  lives: 3,
+  /** Parte de los lanzamientos que pasan rozando la orilla de la zona. */
+  edgeRate: 0.45,
+  /** Pelotas por cada cuántas bien cantadas. */
+  callsPerCoin: 2,
+};
+
+// ---------------------------------------------------------------- ¡Atrapa la elevada! (nivel 16)
+export const FLY = {
+  /** Tiempo (ms) que la bola está en el aire al principio y mínimo. */
+  startMs: 2600,
+  minMs: 1500,
+  stepMs: 90,
+  /** Velocidad de Pelotín corriendo (unidades del dibujo por segundo). */
+  runSpeed: 190,
+  /** Distancia (unidades del dibujo) a la que Pelotín la atrapa. */
+  reach: 26,
+  /** Bolas que se pueden caer antes de terminar. */
+  lives: 3,
+  coinsCatch: 1,
 };

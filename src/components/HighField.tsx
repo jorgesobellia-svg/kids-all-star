@@ -15,6 +15,8 @@ export const HF = {
   zone: { l: 167, r: 195, t: 426, b: 460 },
   /** Pies de Pelotín en la caja de bateo de la izquierda (bateador derecho). */
   batter: { x: 140, y: 504, h: 134 },
+  /** Gradas del fondo, donde va el público. */
+  stands: { x: 0, y: 20, w: 360, h: 52 },
 };
 const VB = { w: HF.w, h: HF.h };
 
@@ -90,22 +92,13 @@ export default function HighField() {
           ))}
         </Pattern>
       </Defs>
-      {/* cielo, árboles, pantalla y cerca */}
+      {/* cielo y gradas (el público va aparte, para que brinque) */}
       <Rect x={0} y={0} width={VB.w} height={72} fill="url(#sky)" />
-      {[10, 58, 112, 250, 300, 350].map((x, i) => (
-        <G key={x}>
-          <Rect x={x - 3} y={50} width={6} height={20} fill="#6B4423" />
-          <Circle cx={x} cy={40 + (i % 2) * 5} r={20} fill={i % 2 ? '#2F7D32' : '#256B29'} />
-          <Circle cx={x - 8} cy={34 + (i % 2) * 5} r={10} fill="#3D9440" opacity={0.7} />
-        </G>
-      ))}
-      <Rect x={146} y={18} width={68} height={52} rx={3} fill="#374151" />
-      <Rect x={150} y={22} width={60} height={44} fill="#4B5563" />
-      <Rect x={0} y={70} width={VB.w} height={24} fill="#5B7FA6" />
-      {Array.from({ length: 30 }, (_, i) => (
-        <Line key={i} x1={i * 12} y1={70} x2={i * 12} y2={94} stroke="#8FA9C6" strokeWidth={1} />
-      ))}
-      <Rect x={0} y={68} width={VB.w} height={3} fill="#E5E7EB" />
+      <Path d={`M0 22 Q180 6 360 22 L360 76 L0 76 Z`} fill="#1E3A5F" />
+      <Path d={`M0 22 Q180 6 360 22`} fill="none" stroke="#2B4A6F" strokeWidth={3} />
+      {/* cerca del jardín, verde oscura como en el camino, con su raya amarilla */}
+      <Rect x={0} y={74} width={VB.w} height={20} fill="#0F5132" />
+      <Rect x={0} y={74} width={VB.w} height={2.5} fill="#FFD43B" />
       {/* pasto con franjas de cortadora (más anchas al acercarse) */}
       <Rect x={0} y={94} width={VB.w} height={VB.h - 94} fill="url(#grass)" />
       {Array.from({ length: 10 }, (_, i) => {
@@ -158,3 +151,19 @@ export default function HighField() {
   );
 }
 
+
+/** Cámara: qué parte del dibujo se ve (x, y de la esquina y ancho). Sin cámara se ve todo. */
+export interface Cam {
+  x: number;
+  y: number;
+  w: number;
+}
+export const FULL: Cam = { x: 0, y: 0, w: HF.w };
+
+/** Escala y conversiones del dibujo a píxeles para un ancho de pantalla y una cámara. */
+export function stageOf(W: number, cam: Cam = FULL) {
+  const s = W / cam.w;
+  const vh = (cam.w * HF.h) / HF.w;
+  return { s, W, H: vh * s, cam, viewBox: `${cam.x} ${cam.y} ${cam.w} ${vh}`, X: (v: number) => (v - cam.x) * s, Y: (v: number) => (v - cam.y) * s };
+}
+export type Stage = ReturnType<typeof stageOf>;

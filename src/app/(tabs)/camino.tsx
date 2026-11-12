@@ -271,7 +271,7 @@ function GameCard({ game, open, best }: { game: MiniGame; open: boolean; best: n
       <View style={{ flex: 1 }}>
         <Text style={{ fontFamily: F.bodyHeavy, fontSize: 12, letterSpacing: 1.2, color: open ? C.navy : C.muted }}>{t('game.label')}</Text>
         <Text style={{ fontFamily: F.display, fontSize: 26, color: open ? C.navy : C.muted }}>{t(game.title)}</Text>
-        <Text style={{ fontFamily: F.bodyBold, fontSize: 14, color: open ? C.navy : C.muted }}>{open ? (best ? t('game.best', { n: best }) : t('game.play')) : t('game.locked', { n: game.after })}</Text>
+        <Text style={{ fontFamily: F.bodyBold, fontSize: 14, color: open ? C.navy : C.muted }}>{open ? (best ? t(game.best, { n: best }) : t('game.play')) : t('game.locked', { n: game.after })}</Text>
       </View>
     </Pressable>
   );

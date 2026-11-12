@@ -23,7 +23,7 @@ for lv in sorted({l.split('.')[0] for l in c['lessons']}, key=int):
             if lab: ex.append(UI['exam']['correctWas'].replace('{a}', lab))
         jobs.append(('exam'+lv, ex))
 # Minijuegos: la explicación que dice Pelotín antes de jugar.
-jobs.append(('games', [UI['game']['batIntro']+' '+UI['game']['batRule']]))
+jobs.append(('games', [UI['game'][g+'Intro']+' '+UI['game'][g+'Rule'] for g in ('bat','pitch','ump','fly')]))
 only=sys.argv[1:]  # niveles a grabar (vacío = todos)
 for jid, items in jobs:
     lv = jid.replace('exam','').split('.')[0]
