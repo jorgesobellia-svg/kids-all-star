@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Animated, Easing, Platform, Pressable, useWindowDimensions, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import FieldScene from '@/components/FieldScene';
-import { ActionBtn, Ball, Board, CallText, GameHeader, GameIntro, GameOver, rand, RIVAL, useTimers } from '@/components/GameKit';
+import { ActionBtn, Ball, Board, CallText, GameHeader, GameIntro, GameOver, rand, RIVAL, useAmbience, useTimers } from '@/components/GameKit';
 import { HF, stageOf } from '@/components/HighField';
 import PelotinBat from '@/components/PelotinBat';
 import type { BatPose } from '@/components/PelotinBat';
@@ -77,6 +77,7 @@ export default function BatGame() {
   const swung = useRef(false);
   const game = useRef(ZERO);
   const tm = useTimers();
+  useAmbience(phase !== 'intro' && phase !== 'over');
 
   useEffect(() => () => stopSpeaking(), []);
   useEffect(() => {

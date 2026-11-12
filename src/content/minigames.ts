@@ -77,10 +77,10 @@ export const FLY = {
   startMs: 2600,
   minMs: 1500,
   stepMs: 90,
-  /** Velocidad de Pelotín corriendo (unidades del dibujo por segundo). */
-  runSpeed: 190,
-  /** Distancia (unidades del dibujo) a la que Pelotín la atrapa. */
-  reach: 26,
+  /** Velocidad de Pelotín corriendo (pies por segundo). */
+  runSpeed: 34,
+  /** Distancia (pies) a la que Pelotín la atrapa. */
+  reach: 9,
   /** Bolas que se pueden caer antes de terminar. */
   lives: 3,
   coinsCatch: 1,

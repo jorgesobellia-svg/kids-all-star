@@ -4,7 +4,7 @@ import { Animated, Easing, useWindowDimensions, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Circle } from 'react-native-svg';
 import FieldScene from '@/components/FieldScene';
-import { ActionBtn, Ball, Board, CallText, GameHeader, GameIntro, GameOver, rand, RIVAL, useTimers } from '@/components/GameKit';
+import { ActionBtn, Ball, Board, CallText, GameHeader, GameIntro, GameOver, rand, RIVAL, useAmbience, useTimers } from '@/components/GameKit';
 import { HF, stageOf } from '@/components/HighField';
 import PelotinBody from '@/components/PelotinBody';
 import { tapFeedback } from '@/components/ui';
@@ -91,6 +91,7 @@ export default function UmpireGame() {
   const game = useRef(ZERO);
   const judged = useRef(false);
   const tm = useTimers();
+  useAmbience(phase !== 'intro' && phase !== 'over');
 
   useEffect(() => () => stopSpeaking(), []);
   useEffect(() => {

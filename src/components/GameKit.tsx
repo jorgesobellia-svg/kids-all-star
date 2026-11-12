@@ -6,6 +6,7 @@ import { CoinBall } from '@/components/Art';
 import Pelotin from '@/components/Pelotin';
 import { Btn } from '@/components/ui';
 import type { Avatar } from '@/content/shop';
+import { startGameAmbience, stopGameAmbience } from '@/services/music';
 import type { GameReward } from '@/state/store';
 import { C, F } from '@/theme';
 
@@ -42,6 +43,15 @@ export function useTimers() {
     }),
     [],
   );
+}
+
+/** Ruido de estadio de fondo mientras `on` es verdadero (se apaga solo al salir). */
+export function useAmbience(on: boolean) {
+  useEffect(() => {
+    if (!on) return;
+    startGameAmbience();
+    return () => stopGameAmbience();
+  }, [on]);
 }
 
 export function BackBtn({ onPress, label }: { onPress: () => void; label: string }) {

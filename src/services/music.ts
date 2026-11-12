@@ -9,10 +9,12 @@ import { Platform } from 'react-native';
 //             jugador entra a la siguiente lección o examen.
 const SOURCES = {
   intro: require('../../assets/music/intro-estadio.mp3'),
+  // El mismo ambiente de estadio, más bajito, de fondo durante los minijuegos.
+  juego: require('../../assets/music/intro-estadio.mp3'),
   nivel: require('../../assets/music/nivel-organo.mp3'),
 };
 type Track = keyof typeof SOURCES;
-const VOLUME: Record<Track, number> = { intro: 0.55, nivel: 0.6 };
+const VOLUME: Record<Track, number> = { intro: 0.55, juego: 0.3, nivel: 0.6 };
 
 const players: Partial<Record<Track, AudioPlayer>> = {};
 let playing: Track | null = null;
@@ -92,3 +94,7 @@ export const startLevelMusicIfPending = () => {
   if (levelPending) start('nivel');
 };
 export const pauseLevelMusic = () => stop('nivel');
+
+/** Ambiente de estadio (público y órgano, bajito) mientras se juega un minijuego. */
+export const startGameAmbience = () => start('juego');
+export const stopGameAmbience = () => stop('juego');

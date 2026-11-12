@@ -5,7 +5,7 @@ import { Animated, Easing, Platform, useWindowDimensions, View } from 'react-nat
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Circle, Line } from 'react-native-svg';
 import FieldScene from '@/components/FieldScene';
-import { ActionBtn, Ball, Board, CallText, GameHeader, GameIntro, GameOver, rand, RIVAL, useTimers } from '@/components/GameKit';
+import { ActionBtn, Ball, Board, CallText, GameHeader, GameIntro, GameOver, rand, RIVAL, useAmbience, useTimers } from '@/components/GameKit';
 import { HF, stageOf } from '@/components/HighField';
 import PelotinBody from '@/components/PelotinBody';
 import type { BatPose } from '@/components/PelotinBat';
@@ -68,6 +68,7 @@ export default function PitchGame() {
   const game = useRef(ZERO);
   const loops = useRef<Animated.CompositeAnimation[]>([]);
   const tm = useTimers();
+  useAmbience(phase !== 'intro' && phase !== 'over');
 
   useEffect(() => () => stopSpeaking(), []);
   useEffect(() => {
