@@ -1,5 +1,6 @@
 import { createAudioPlayer, type AudioPlayer } from 'expo-audio';
 import * as Speech from 'expo-speech';
+import { VOICE_EN_FILES, VOICE_EN_INDEX } from '@/content/voiceEn';
 import { VOICE_ES_FILES, VOICE_ES_INDEX } from '@/content/voiceEs';
 import { Platform } from 'react-native';
 import { SPEECH_LANG, type Locale } from '@/i18n';
@@ -105,22 +106,27 @@ function speakWeb(s: WebSynth, text: string, locale: Locale, id: number, onDone?
 
 // ------------------------------------------------------------ voz grabada
 type Clip = [number, number, number];
-const voicePlayers: Record<number, AudioPlayer> = {};
+// Voz grabada por idioma (español: Alex; inglés: Echo). Chino y japonés usan la voz del teléfono.
+type VoiceLang = 'es' | 'en';
+const VOICES: Record<VoiceLang, { files: number[]; index: Record<string, Clip>; hello: RegExp; helloKey: string }> = {
+  // El saludo con el nombre ("¡Hola, Claude! ...") no puede ir grabado: suena "¡Hola!" grabado y sigue la frase.
+  es: { files: VOICE_ES_FILES, index: VOICE_ES_INDEX, hello: /^¡Hola, [^!]+! /, helloKey: '¡Hola!' },
+  en: { files: VOICE_EN_FILES, index: VOICE_EN_INDEX, hello: /^Hi, [^!]+! /, helloKey: 'Hi!' },
+};
+const voicePlayers: Record<string, AudioPlayer> = {};
 let activeClip: AudioPlayer | null = null;
 let clipTimer: ReturnType<typeof setTimeout> | null = null;
 
-// El saludo con el nombre ("¡Hola, Claude! ...") no puede ir grabado: suena "¡Hola!" grabado y sigue la frase.
-const HELLO_RX = /^¡Hola, [^!]+! /;
-
-function clipsFor(text: string, locale: Locale): Clip[] | null {
-  if (locale !== 'es') return null;
-  const whole = VOICE_ES_INDEX[text];
-  if (whole) return [whole];
-  const m = text.match(HELLO_RX);
+function clipsFor(text: string, locale: Locale): { lang: VoiceLang; clips: Clip[] } | null {
+  if (locale !== 'es' && locale !== 'en') return null;
+  const v = VOICES[locale];
+  const whole = v.index[text];
+  if (whole) return { lang: locale, clips: [whole] };
+  const m = text.match(v.hello);
   if (m) {
-    const hello = VOICE_ES_INDEX['¡Hola!'];
-    const rest = VOICE_ES_INDEX[text.slice(m[0].length)];
-    if (hello && rest) return [hello, rest];
+    const hello = v.index[v.helloKey];
+    const rest = v.index[text.slice(m[0].length)];
+    if (hello && rest) return { lang: locale, clips: [hello, rest] };
   }
   return null;
 }
@@ -144,18 +150,19 @@ function stopClip() {
 const LEAD = 0.15;
 const TAIL = 0.25;
 
-function playClips(clips: Clip[], id: number, onDone?: () => void) {
+function playClips(lang: VoiceLang, clips: Clip[], id: number, onDone?: () => void) {
   const [file, start, dur] = clips[0];
   const from = Math.max(0, start - LEAD);
   const end = start + dur + TAIL;
   try {
-    if (!voicePlayers[file]) voicePlayers[file] = createAudioPlayer(VOICE_ES_FILES[file], { updateInterval: 50 });
-    const pl = voicePlayers[file];
+    const key = `${lang}:${file}`;
+    if (!voicePlayers[key]) voicePlayers[key] = createAudioPlayer(VOICES[lang].files[file], { updateInterval: 50 });
+    const pl = voicePlayers[key];
     activeClip = pl;
     const next = () => {
       if (id !== current) return;
       stopClip();
-      if (clips.length > 1) playClips(clips.slice(1), id, onDone);
+      if (clips.length > 1) playClips(lang, clips.slice(1), id, onDone);
       else onDone?.();
     };
     // En el teléfono el archivo carga en segundo plano: hay que esperar a que esté listo
@@ -281,7 +288,7 @@ export function speak(text: string, locale: Locale, onDoneRaw?: () => void, o: V
         // nada
       }
     } else if (Platform.OS !== 'web') Speech.stop();
-    playClips(clips, id, onDone);
+    playClips(clips.lang, clips.clips, id, onDone);
     return;
   }
   const s = webSynth();

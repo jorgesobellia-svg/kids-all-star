@@ -52,7 +52,7 @@ TR = {
    'demo': [
      ('El pitcher tiene dos formas de empezar.', 'The pitcher has two ways to start.', '投手有两种开始的方式。', 'ピッチャーには、はじめ方が2つある。'),
      ('Sin corredores, puede usar el windup: el movimiento completo y tranquilo, con su paso y los brazos subiendo, como tomar impulso con todo el cuerpo.', 'With no runners, he can use the windup: the full, calm motion, with his step and his arms going up, like gathering momentum with his whole body.', '垒上没人时，他可以用完整投球动作（windup）：完整又从容的动作，迈步、举起双臂，就像用全身蓄力。', 'ランナーがいないときは、ワインドアップ（windup）：ゆったりした大きな動きで、ふみ出して、うでを上げる。体ぜんぶでいきおいをつけるみたいに。'),
-     ('Con corredores en base usa el set, también llamado stretch: se coloca, hace una pausa quieto frente a home — esa pausa es ley — y lanza rápido y corto, para darle menos ventaja al corredor.', "With runners on base he uses the set, also called the stretch: he gets in position, makes a still pause facing home — that pause is the law — and pitches quick and short, to give the runner less of an edge.", '垒上有人时，他用固定姿势（set），也叫 stretch：站好位置，面向本垒静止停顿一下——这个停顿是规定——然后快速、简短地投球，让跑垒员少占便宜。', 'ランナーがいるときは、セット（set）、ストレッチともいう：かまえて、ホームに向かってじっと止まる——その停止はルール——それから短くすばやく投げて、ランナーに有利をあげない。'),
+     ('Con corredores en base usa el set, también llamado stretch: se coloca, hace una pausa quieto frente a home — esa pausa es ley — y lanza rápido y corto, para darle menos ventaja al corredor.', 'With runners on base he uses the set, also called the stretch: he gets in position, makes a still pause facing home — that pause is required — and pitches quick and short, to give the runner less of an edge.', '垒上有人时，他用固定姿势（set），也叫 stretch：站好位置，面向本垒静止停顿一下——这个停顿是规定——然后快速、简短地投球，让跑垒员少占便宜。', 'ランナーがいるときは、セット（set）、ストレッチともいう：かまえて、ホームに向かってじっと止まる——その停止はルール——それから短くすばやく投げて、ランナーに有利をあげない。'),
      ('Windup para lanzar cómodo; set para cuidar las bases.', 'Windup to pitch comfortably; set to watch the bases.', '完整投球动作，投得舒服；固定姿势，看住垒包。', 'ワインドアップは楽に投げるため、セットは塁を守るため。'),
    ],
    'acts': {
@@ -170,7 +170,7 @@ TR = {
      ('El pitcher que empieza se llama abridor, en inglés starter.', 'The pitcher who starts is called the starter.', '开场投球的投手叫先发投手，英语叫 starter。', 'さいしょに投げるピッチャーは先発、英語で starter。'),
      ('Cuando sale — por su conteo, por cansancio o por estrategia — entra el relevo: el relevista, reliever, que estaba calentando en el bullpen, ese espacio al fondo donde los pitchers practican antes de entrar.', 'When he leaves — because of his count, because he is tired or for strategy — the relief comes in: the reliever, who was warming up in the bullpen, that space in the back where pitchers practice before coming in.', '当他下场——因为投球数、因为累了或者因为战术——就换投手：中继投手（reliever）上场，他之前在牛棚（bullpen）热身，那是场地后面投手上场前练习的地方。', '先発が下がるとき——ピッチカウント、つかれ、作戦のため——リリーフが入る：リリーフ（reliever）は、ブルペン（bullpen）でじゅんびしていた。ブルペンは、ピッチャーが入る前に練習する、おくのばしょ。'),
      ('El relevista entra con el juego ya andando y debe estar listo desde su primer lanzamiento.', 'The reliever comes in with the game already going and has to be ready from his first pitch.', '中继投手在比赛进行中上场，从第一球起就要准备好。', 'リリーフは試合のとちゅうから入るから、さいしょの1球からじゅんびができていなきゃいけない。'),
-     ('Cambiar de pitcher no es castigo: es cuidar el brazo y darle aire nuevo al equipo.', "Changing pitchers isn't a punishment: it's taking care of the arm and giving the team a fresh breath.", '换投手不是惩罚：是保护手臂，也给球队带来新鲜空气。', 'ピッチャーをかえるのは、ばつじゃない：うでを守って、チームに新しい風を入れることなんだ。'),
+     ('Cambiar de pitcher no es castigo: es cuidar el brazo y darle aire nuevo al equipo.', "Changing pitchers isn't a punishment: it's taking care of the arm and giving the team a fresh arm.", '换投手不是惩罚：是保护手臂，也给球队带来新鲜空气。', 'ピッチャーをかえるのは、ばつじゃない：うでを守って、チームに新しい風を入れることなんだ。'),
    ],
    'acts': {
     1: {'q': ('What is a reliever?', '什么是中继投手（reliever）？', 'リリーフ（reliever）って何？'),
@@ -202,7 +202,7 @@ TR = {
  'exam': {
   1: {'q': ('The rubber is at:', '投手板在：', '投手板があるのは：'),
       'o': [('The top of the mound', '投手丘的顶上', 'マウンドのてっぺん'), ('Second base', '二垒', '二塁'), ('The dugout', '休息区', 'ダッグアウト')]},
-  2: {'q': ('How do you say "goma del pitcher" in English?', '“投手板”的英语怎么说？', '投手板は英語で何という？'),
+  2: {'q': ("What's the white board on the mound called?", '“投手板”的英语怎么说？', '投手板は英語で何という？'),
       'o': [('Rubber', 'Rubber', 'Rubber'), ('Gum base', 'Gum base', 'Gum base'), ('White base', 'White base', 'White base')]},
   3: {'q': ('The pitcher pitches with one foot:', '投手投球时一只脚：', 'ピッチャーは片足をどこにして投げる？'),
       'o': [('On the rubber', '踩在投手板上', '投手板につけて'), ('In the air', '在空中', '空中に'), ('On home', '在本垒上', 'ホームに')]},
@@ -218,8 +218,8 @@ TR = {
   9: {'q': ('Without his foot on the rubber, the pitch:', '脚没有踩在投手板上，这一球：', '投手板に足をつけないで投げるのは：'),
       'o': [("Shouldn't be thrown", '不应该投', 'してはいけない'), ('Always counts anyway', '照样算数', 'いつもそれでいい'), ("It's a home run", '是本垒打', 'ホームラン')]},
   10: {'q': ('True or false: the rubber is white and long, different from a base', '对还是错：投手板是白色的长条，和垒包不一样', '○か×か：投手板は白くて長い。塁とはちがう')},
-  11: {'q': ('The mound is also called:', '投手丘也叫：', 'マウンドのべつのよび方は：'),
-       'o': [('The little hill', '小山丘', '小さな山'), ('The safe home', '安全的家', '安全なおうち'), ("The on-deck circle", '准备区', 'ネクストバッターズサークル')]},
+  11: {'q': ('What is the mound?', '投手丘也叫：', 'マウンドのべつのよび方は：'),
+       'o': [('The little hill the pitcher pitches from', '小山丘', '小さな山'), ('The safe spot', '安全的家', '安全なおうち'), ("The on-deck circle", '准备区', 'ネクストバッターズサークル')]},
   12: {'q': ('Having the distance change with age is so that:', '距离随年龄改变，是为了：', 'きょりが年齢でかわるのは、何のため？'),
        'o': [('Kids pitch safely and with control', '让小朋友投得安全、有控制', '子どもが安全に、コントロールよく投げるため'), ('To make the game slower', '让比赛变慢', '試合をおそくするため'), ('Nothing', '没有用', '何のためでもない')]},
  },

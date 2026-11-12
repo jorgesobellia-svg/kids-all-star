@@ -53,13 +53,13 @@ TR = {
            'レベル5から8の総復習（復習と書いてあるよ）：ヒット、エンタイトルツーベース、フォースアウトとタッチアウト、ダブルプレー、タッチアップ、R/H/E のスコアボード。'),
    'demo': [
      ('Gran repaso, parte dos: la etapa Prospecto.', 'Big final review, part two: the Prospect stage.', '总复习，第二部分：潜力新星阶段。', '総復習、パート2：プロスペクトステージ。'),
-     ('Bateaste tu primer hit y aprendiste que sencillo, doble y triple cuentan bases; que si la bola pica y salta la valla es doble por regla;', 'You got your first hit and learned that single, double and triple count bases; that if the ball bounces and jumps the fence it\'s a ground-rule double;', '你打出了第一支安打，学到一垒打、二垒打和三垒打是按垒数算的；球落地后弹过围栏，是规则二垒打；', '初めてのヒットを打って、シングル、ツーベース、スリーベースは塁の数だと学んだ。ボールがはねてフェンスをこえたら、エンタイトルツーベース。'),
+     ('Bateaste tu primer hit y aprendiste que sencillo, doble y triple cuentan bases; que si la bola pica y salta la valla es doble por regla;', "You got your first hit and learned that single, double and triple count bases; that if the ball bounces over the fence it's a ground-rule double;", '你打出了第一支安打，学到一垒打、二垒打和三垒打是按垒数算的；球落地后弹过围栏，是规则二垒打；', '初めてのヒットを打って、シングル、ツーベース、スリーベースは塁の数だと学んだ。ボールがはねてフェンスをこえたら、エンタイトルツーベース。'),
      ('que el out forzado se hace pisando la base y el de toque, tocando al corredor; que dos outs en una jugada son doble play;', 'that the force out is made by stepping on the base and the tag out by tagging the runner; that two outs in one play is a double play;', '封杀是踩垒，触杀是碰到跑垒员；一次比赛拿到两个出局就是双杀；', 'フォースアウトは塁をふんで、タッチアウトはランナーにタッチしてとる。1つのプレーでアウト2つはダブルプレー。'),
      ('que el elevado se espera con pisa y corre; y que el marcador cuenta carreras, hits y errores.', 'that on a fly ball you wait and tag up; and that the scoreboard counts runs, hits and errors.', '高飞球要等着触垒再跑；记分板记录得分、安打和失误。', 'フライはタッチアップで待つ。そしてスコアボードは得点、ヒット、エラーを数える。'),
-     ('Todo repaso, nada nuevo: es tu caja de herramientas del medio del camino.', "All review, nothing new: it's your toolbox from the middle of the path.", '全是复习，没有新东西：这是你旅程中段的工具箱。', '全部復習、新しいことはなし：道のりのまん中で手に入れた道具箱だ。'),
+     ('Todo repaso, nada nuevo: es tu caja de herramientas del medio del camino.', "All review, nothing new: it's the toolbox you built halfway through.", '全是复习，没有新东西：这是你旅程中段的工具箱。', '全部復習、新しいことはなし：道のりのまん中で手に入れた道具箱だ。'),
    ],
    'acts': {
-    1: {'q': ('REVIEW: the fair ball bounces and jumps the fence. It\'s a:', '复习：界内球落地后弹过围栏。这是：', '復習：フェアの打球がはねて、フェンスをこえた。これは：'),
+    1: {'q': ("REVIEW: the fair ball bounces over the fence. It's a:", '复习：界内球落地后弹过围栏。这是：', '復習：フェアの打球がはねて、フェンスをこえた。これは：'),
         'o': [('Ground-rule double', '规则二垒打', 'エンタイトルツーベース'), ('Home run', '本垒打', 'ホームラン'), ('Triple', '三垒打', 'スリーベース')],
         'ok': ("That's it! Two bases.", '对了！两个垒。', 'そのとおり！2つの塁。'),
         'ko': ('It bounced and went out: ground-rule double.', '弹出去了：规则二垒打。', 'はねて出た：エンタイトルツーベース。')},
@@ -74,7 +74,7 @@ TR = {
         'o': [('Out! He left before tagging up', '出局！他在触垒再跑前就离垒了', 'アウト！タッチアップの前に出た'), ('Safe! Run', '安全！得分', 'セーフ！得点'), ('Foul!', '界外球！', 'ファウル！')],
         'ok': ('Out! Waiting was the play.', '出局！等待才是正确的做法。', 'アウト！待つのが正しいプレーだった。'),
         'ko': ('A bad tag-up costs an out.', '触垒再跑做错，就会出局。', 'タッチアップをまちがえると、アウトになる。')},
-    5: {'q': ('REVIEW: tap the first base on the classic double play path that ends at first', '复习：点一下最后在一垒结束的经典双杀路线中的第一个垒', '復習：一塁で終わる、よくあるダブルプレーの道すじで、最初の塁をタッチしよう'),
+    5: {'q': ('REVIEW: tap the base where the classic double play gets its first out', '复习：点一下最后在一垒结束的经典双杀路线中的第一个垒', '復習：一塁で終わる、よくあるダブルプレーの道すじで、最初の塁をタッチしよう'),
         'ans': ('Second base', '二垒', '二塁'),
         'ok': ('Good! Second and then first.', '很好！先二垒，再一垒。', 'いいね！二塁、それから一塁。'),
         'ko': ('The short path of the double play.', '双杀的捷径。', 'ダブルプレーの近道。')},
@@ -91,7 +91,7 @@ TR = {
            'レベル9から12の総復習（復習と書いてあるよ）：盗塁、ボーク、振り逃げ、インフィールドフライ、ボールインプレイとボールデッド、サイン、うでを大事にすること。新しいルールはなし。'),
    'demo': [
      ('Gran repaso, parte tres: la etapa Estrella.', 'Big final review, part three: the Star stage.', '总复习，第三部分：明星阶段。', '総復習、パート3：スターステージ。'),
-     ('Robaste tu primera base mirando a la liga y a tu coach; el balk adelantó corredores, el tercer strike caído te dio una carrera inesperada a primera, y el infield fly protegió a los corredores del engaño.', 'You stole your first base looking to your league and your coach; the balk moved runners up, the dropped third strike gave you a surprise run to first, and the infield fly protected the runners from being tricked.', '你看着联赛规定和教练，完成了第一次盗垒；投手犯规让跑垒员前进，不死三振让你意外地跑上一垒，内野高飞球规则保护跑垒员不被骗。', 'リーグとコーチを見て、初めての盗塁をした。ボークでランナーが進み、振り逃げで思いがけず一塁へ走り、インフィールドフライはランナーをだまし打ちから守った。'),
+     ('Robaste tu primera base mirando a la liga y a tu coach; el balk adelantó corredores, el tercer strike caído te dio una carrera inesperada a primera, y el infield fly protegió a los corredores del engaño.', "You stole your first base after checking your league's rules with your coach; the balk moved runners up, the dropped third strike gave you a surprise run to first, and the infield fly protected the runners from being tricked.", '你看着联赛规定和教练，完成了第一次盗垒；投手犯规让跑垒员前进，不死三振让你意外地跑上一垒，内野高飞球规则保护跑垒员不被骗。', 'リーグとコーチを見て、初めての盗塁をした。ボークでランナーが進み、振り逃げで思いがけず一塁へ走り、インフィールドフライはランナーをだまし打ちから守った。'),
      ('Aprendiste bola viva y bola muerta, a cubrir y respaldar, y la lección que vale oro: tu brazo se cuida, con recta y cambio primero, y dolor significa parar y avisar.', "You learned live ball and dead ball, covering and backing up, and the lesson worth gold: your arm is looked after, with fastball and changeup first, and pain means stop and tell.", '你学会了活球和死球（比赛停止）、补位和补防，还有最宝贵的一课：要保护手臂，先练直球和变速球，疼痛就要停下来告诉大人。', 'ボールインプレイとボールデッド、カバーとバックアップを学んだ。そして金のレッスン：うでは大事にする。まずストレートとチェンジアップ。いたいときは、やめて知らせる。'),
      ('Todo eso es repaso: hoy solo confirmas que sigue siendo tuyo.', "All of that is review: today you're just confirming it's still yours.", '这些全是复习：今天你只是确认它们还是你的。', 'それは全部復習：今日は、まだ自分のものだとたしかめるだけ。'),
    ],
@@ -155,7 +155,7 @@ TR = {
     6: {'q': ('REVIEW: the captain leads above all with:', '复习：队长最主要靠什么带领大家：', '復習：キャプテンがいちばんみちびくのは：'),
         'o': [('His example', '他的榜样', '自分の手本'), ('His long speeches', '他的长篇大论', '長いスピーチ'), ('His punishments', '他的惩罚', 'ばつ')],
         'ok': ('Correct! Example first, always.', '正确！永远是榜样第一。', '正解！いつも手本が先。'),
-        'ko': ('The C is held up with actions.', '队长的“C”靠行动撑起来。', 'キャプテンの「C」は行動でささえる。')},
+        'ko': ("The captain's C is earned with actions.", '队长的“C”靠行动撑起来。', 'キャプテンの「C」は行動でささえる。')},
    },
   },
   '20.5': {
