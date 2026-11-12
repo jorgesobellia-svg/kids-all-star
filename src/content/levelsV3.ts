@@ -3031,7 +3031,7 @@ export const LEVELS_V3: Level[] = [
        "b",
        "c"
       ],
-      "correct": "a"
+      "correct": "b"
      }
     ]
    },

@@ -806,16 +806,14 @@ por lección perfecta.
 ### Lección 8.4 Anotar con números
 
 Objetivo: Leer jugadas escritas con los números de posición del Nivel 2
-(un doble play 6-4-3), la K del ponche mirando y la K al revés del
-ponche con swing, y la E del error.
+(un doble play 6-4-3), la K del ponche con swing y la K al revés del ponche mirando, y la E del error.
 
 Demostración (30-60 segundos) — guion de Pelotín:
 
 «¿Recuerdas los números de las posiciones del Nivel 2? Los anotadores
 los usan para escribir jugadas sin palabras. Un doble play 6-4-3
 significa: campocorto a segunda base, segunda base a primera: ¡dos outs!
-La K es la letra del ponche: K normal si el bateador se ponchó sin hacer
-swing, mirando, y K al revés si se ponchó abanicando. Y la E es la marca
+La K es la letra del ponche: K normal si el bateador se ponchó abanicando, y K al revés si se ponchó mirando, sin hacer swing. Y la E es la marca
 del error: E6 significa error del campocorto. Leer estos códigos es leer
 el juego en secreto.»
 
@@ -826,7 +824,7 @@ el juego en secreto.»
 | 3      | Verdadero o falso        | La K en la hoja de anotación significa ponche                                | Verdadero / Falso                                           | Verdadero                              | ¡Bien! K igual a ponche. / Verdadero: la K es el ponche.                              |
 | 4      | Selección simple         | E6 en la hoja significa:                                                     | Error del campocorto / Jonrón del campocorto / Seis errores | Error del campocorto                   | ¡Correcto! E de error, 6 del campocorto. / La letra dice el qué; el número, el quién. |
 | 5      | Arrastrar                | Arrastra la bola por la cadena 6-4-3: campocorto, segunda base, primera base | — (ruta 6, 4, 3)                                            | Campocorto, segunda base, primera base | ¡Cadena perfecta! Doble play. / Del 6 al 4 y del 4 al 3.                              |
-| 6      | ¿Qué cantaría el umpire? | La hoja dice K al revés para un bateador. Eso significa que se ponchó:       | Haciendo swing / Mirando sin swing / Corriendo              | Haciendo swing                         | ¡Eso es! La K al revés es abanicando. / K normal: mirando. K al revés: con swing.     |
+| 6      | ¿Qué cantaría el umpire? | La hoja dice K al revés para un bateador. Eso significa que se ponchó:       | Haciendo swing / Mirando sin swing / Corriendo              | Mirando sin swing                      | ¡Eso es! La K al revés es ponche mirando, sin swing. / K normal: con swing. K al revés: mirando.     |
 
 Cierre: +10 XP por respuesta correcta, +5 XP de bono si termina sin
 errores. Gana 1 pelota (moneda) por respuesta correcta y 3 pelotas extra

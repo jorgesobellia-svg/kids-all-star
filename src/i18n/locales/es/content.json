@@ -2659,12 +2659,12 @@
     },
     "8.4": {
       "title": "Anotar con números",
-      "objective": "Leer jugadas escritas con los números de posición del Nivel 2 (un doble play 6-4-3), la K del ponche mirando y la K al revés del ponche con swing, y la E del error.",
+      "objective": "Leer jugadas escritas con los números de posición del Nivel 2 (un doble play 6-4-3), la K del ponche con swing y la K al revés del ponche mirando, y la E del error.",
       "demo": [
         "¿Recuerdas los números de las posiciones del Nivel 2?",
         "Los anotadores los usan para escribir jugadas sin palabras.",
         "Un doble play 6-4-3 significa: campocorto a segunda base, segunda base a primera: ¡dos outs!",
-        "La K es la letra del ponche: K normal si el bateador se ponchó sin hacer swing, mirando, y K al revés si se ponchó abanicando.",
+        "La K es la letra del ponche: K normal si el bateador se ponchó abanicando, y K al revés si se ponchó mirando, sin hacer swing.",
         "Y la E es la marca del error: E6 significa error del campocorto.",
         "Leer estos códigos es leer el juego en secreto."
       ],
@@ -2712,8 +2712,8 @@
         },
         "6": {
           "q": "La hoja dice K al revés para un bateador. Eso significa que se ponchó:",
-          "ok": "¡Eso es! La K al revés es abanicando.",
-          "ko": "K normal: mirando. K al revés: con swing.",
+          "ok": "¡Eso es! La K al revés es ponche mirando, sin swing.",
+          "ko": "K normal: con swing. K al revés: mirando.",
           "opts": {
             "a": "Haciendo swing",
             "b": "Mirando sin swing",

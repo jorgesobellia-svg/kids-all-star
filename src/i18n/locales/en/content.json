@@ -2659,12 +2659,12 @@
     },
     "8.4": {
       "title": "Scoring with numbers",
-      "objective": "Read plays written with the Level 2 position numbers (a 6-4-3 double play), the K for a strikeout looking and the backwards K for a strikeout swinging, and the E for an error.",
+      "objective": "Read plays written with the Level 2 position numbers (a 6-4-3 double play), the K for a strikeout swinging and the backwards K for a strikeout looking, and the E for an error.",
       "demo": [
         "Remember the position numbers from Level 2?",
         "Scorers use them to write plays without words.",
         "A 6-4-3 double play means: shortstop to second base, second base to first: two outs!",
-        "K is the strikeout letter: a normal K if the batter struck out without swinging, looking, and a backwards K if he struck out swinging.",
+        "K is the strikeout letter: a regular K means the batter struck out swinging, and a backwards K means he struck out looking, without swinging.",
         "And E is the mark for an error: E6 means an error by the shortstop.",
         "Reading these codes is reading the game in secret."
       ],
@@ -2712,8 +2712,8 @@
         },
         "6": {
           "q": "The scoresheet shows a backwards K for a batter. That means he struck out:",
-          "ok": "That's it! The backwards K is swinging.",
-          "ko": "Normal K: looking. Backwards K: swinging.",
+          "ok": "That's it! A backwards K means he struck out looking.",
+          "ko": "Regular K: swinging. Backwards K: looking.",
           "opts": {
             "a": "Swinging",
             "b": "Looking, without swinging",
