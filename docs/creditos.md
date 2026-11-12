@@ -13,3 +13,4 @@
 - `assets/music/nivel-organo.mp3`: "Take Me Out to the Ball Game" (intro en órgano Hammond), de Albert Behar. Suena en el camino después de aprobar un examen. Archivo aportado por Jorge; recortado el silencio final. La canción (1908) es de dominio público; confirmar la licencia de la grabación antes de publicar.
 
 - `assets/sfx/publico.wav`: público del estadio celebrando (gritos y aplausos). Sintetizado por nosotros con `tools/contenido/gen_publico.py`; no usa grabaciones de terceros.
+- `assets/sfx/ump-*.wav` (hit, strike, ball, foul, home run, strike three, ball four): cantos del umpire en ¡A batear!, generados con Kokoro (voz am_michael, Apache 2.0).

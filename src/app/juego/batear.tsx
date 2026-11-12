@@ -10,7 +10,7 @@ import PelotinBat from '@/components/PelotinBat';
 import type { BatPose } from '@/components/PelotinBat';
 import { tapFeedback } from '@/components/ui';
 import { BAT } from '@/content/minigames';
-import { playSfx } from '@/services/sfx';
+import { playSfx, preloadUmpireCalls } from '@/services/sfx';
 import { speak, stopSpeaking } from '@/services/speech';
 import { avatarOf, type GameReward, useStore } from '@/state/store';
 import { C } from '@/theme';
@@ -118,7 +118,6 @@ export default function BatGame() {
         o += 1;
         b = 0;
         s = 0;
-        playSfx('out');
       }
     } else if (c === 'foul') {
       if (s < 2) s += 1;
@@ -129,7 +128,6 @@ export default function BatGame() {
         nx.walks += 1;
         b = 0;
         s = 0;
-        playSfx('safe');
       }
     } else {
       nx.hits += 1;
@@ -140,6 +138,9 @@ export default function BatGame() {
       setCheer(true);
       tm.later(() => setCheer(false), c === 'hr' ? 2000 : 1500);
     }
+    // El umpire canta la jugada (en inglés, como en el béisbol de verdad).
+    const voice = { hr: 'umpHr', hit: 'umpHit', foul: 'umpFoul', strike: 'umpStrike', ball: 'umpBall', walk: 'umpWalk', k: 'umpK' } as const;
+    tm.later(() => playSfx(voice[shown]), c === 'hit' || c === 'hr' || c === 'foul' ? 250 : 0);
     game.current = { count: { b, s, o }, stats: nx };
     setCount({ b, s, o });
     setStats(nx);
@@ -174,8 +175,7 @@ export default function BatGame() {
     prog.stopAnimation();
     const c: Call = a <= BAT.hr ? 'hr' : a <= BAT.hit ? 'hit' : 'foul';
     playSfx('bat');
-    if (c === 'hr') tm.later(() => playSfx('crowd'), 250);
-    else if (c === 'hit') tm.later(() => playSfx('safe'), 350);
+    if (c === 'hr') tm.later(() => playSfx('crowd'), 900);
     if (Platform.OS !== 'web') Haptics.impactAsync(c === 'foul' ? Haptics.ImpactFeedbackStyle.Light : Haptics.ImpactFeedbackStyle.Heavy).catch(() => {});
     // A dónde sale la bola: jonrón por encima de la cerca, hit entre los fildeadores, foul de lado.
     const left = dt < 0; // temprano = jalada (hacia la izquierda, el lado de tercera)
@@ -188,6 +188,7 @@ export default function BatGame() {
 
   function restart() {
     tm.clear();
+    preloadUmpireCalls();
     game.current = ZERO;
     setCount(ZERO.count);
     setStats(ZERO.stats);

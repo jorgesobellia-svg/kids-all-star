@@ -20,10 +20,18 @@ const SOURCES = {
   out: require('../../assets/sfx/umpire-out.wav'),
   steps: require('../../assets/sfx/pasos.mp3'),
   crowd: require('../../assets/sfx/publico.wav'),
+  // Cantos del umpire en ¡A batear! (Kokoro, voz am_michael, Apache 2.0).
+  umpHit: require('../../assets/sfx/ump-hit.wav'),
+  umpStrike: require('../../assets/sfx/ump-strike.wav'),
+  umpBall: require('../../assets/sfx/ump-ball.wav'),
+  umpK: require('../../assets/sfx/ump-strikeout.wav'),
+  umpHr: require('../../assets/sfx/ump-homerun.wav'),
+  umpFoul: require('../../assets/sfx/ump-foul.wav'),
+  umpWalk: require('../../assets/sfx/ump-ballfour.wav'),
 };
 
 type Sfx = keyof typeof SOURCES;
-const VOLUME: Record<Sfx, number> = { bat: 1, safe: 1, out: 1, steps: 1, crowd: 0.9 };
+const VOLUME: Record<Sfx, number> = { bat: 1, safe: 1, out: 1, steps: 1, crowd: 0.9, umpHit: 1, umpStrike: 1, umpBall: 1, umpK: 1, umpHr: 1, umpFoul: 1, umpWalk: 1 };
 const players: Partial<Record<Sfx, AudioPlayer>> = {};
 let modeSet = false;
 
@@ -72,4 +80,9 @@ export function preloadSfx(): void {
   player('safe');
   player('out');
   player('crowd');
+}
+
+/** Carga de antemano los cantos del umpire del minijuego de batear (para que no tarden la primera vez). */
+export function preloadUmpireCalls(): void {
+  (['umpHit', 'umpStrike', 'umpBall', 'umpK', 'umpHr', 'umpFoul', 'umpWalk', 'crowd'] as const).forEach((n) => player(n));
 }
