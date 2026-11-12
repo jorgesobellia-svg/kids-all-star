@@ -24,6 +24,8 @@ for lv in sorted({l.split('.')[0] for l in c['lessons']}, key=int):
             lab = qt.get('answer') if q['type']=='tap' else (UI['common']['true'] if q.get('correct')=='true' else UI['common']['false']) if q['type']=='tf' else qt.get('opts',{}).get(q.get('correct',''))
             if lab: ex.append(UI['exam']['correctWas'].replace('{a}', lab))
         jobs.append(('exam'+lv, ex))
+# Minijuegos: la explicación que dice Pelotín antes de jugar.
+jobs.append(('games', [UI['game']['batIntro']+' '+UI['game']['batRule']]))
 only=sys.argv[1:]  # niveles a grabar (vacío = todos)
 for jid, items in jobs:
     lv = jid.replace('exam','').split('.')[0]

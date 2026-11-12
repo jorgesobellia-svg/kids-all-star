@@ -9,6 +9,7 @@ import { Crowd, stadiumGeom, StadiumScene, type StadiumGeom } from '@/components
 import type { Avatar } from '@/content/shop';
 import { tapFeedback } from '@/components/ui';
 import { LEVELS, STAGE_SUFFIX, stageOf } from '@/content/levels';
+import { gameAfter, type MiniGame } from '@/content/minigames';
 import { content } from '@/i18n';
 import { takeAdvance, type Advance } from '@/services/advance';
 import { TEST_MODE } from '@/services/billing';
@@ -224,6 +225,7 @@ export default function PathScreen() {
                   </View>
                 </View>
               </View>
+              {gameAfter(lv.n) ? <GameCard game={gameAfter(lv.n)!} open={!!p.examsPassed[String(lv.n)] || review} best={p.games?.[gameAfter(lv.n)!.id]?.best ?? 0} /> : null}
             </View>
           );
         })}
@@ -237,6 +239,41 @@ export default function PathScreen() {
         </View>
       ) : null}
     </View>
+  );
+}
+
+// Tarjeta del minijuego que se abre al aprobar el examen del nivel anterior.
+function GameCard({ game, open, best }: { game: MiniGame; open: boolean; best: number }) {
+  const { t } = useStore();
+  return (
+    <Pressable
+      testID={`game-card-${game.id}`}
+      accessibilityRole="button"
+      accessibilityLabel={`${t('game.label')}: ${t(game.title)}`}
+      onPress={() => {
+        tapFeedback();
+        if (open) {
+          clearLevelPassed();
+          router.push(`/juego/${game.id}` as never);
+        }
+      }}
+      style={{ marginHorizontal: 16, marginTop: 14, backgroundColor: open ? C.gold : '#E2E8F0', borderRadius: 20, paddingVertical: 14, paddingHorizontal: 16, flexDirection: 'row', alignItems: 'center', gap: 12, boxShadow: `0 6px 0 ${open ? C.goldDark : C.lineDark}` } as object}
+    >
+      <View style={{ width: 54, height: 54, borderRadius: 27, backgroundColor: open ? C.navy : '#CBD5E1', alignItems: 'center', justifyContent: 'center' }}>
+        {open ? (
+          <Svg width={34} height={34} viewBox="0 0 34 34">
+            <Polygon points="6,30 9,27 27,7 30,4 32,6 29,9 11,29 8,32" fill="#C9813E" stroke="#7C4A1E" strokeWidth={1.5} strokeLinejoin="round" />
+          </Svg>
+        ) : (
+          <LockIcon size={26} />
+        )}
+      </View>
+      <View style={{ flex: 1 }}>
+        <Text style={{ fontFamily: F.bodyHeavy, fontSize: 12, letterSpacing: 1.2, color: open ? C.navy : C.muted }}>{t('game.label')}</Text>
+        <Text style={{ fontFamily: F.display, fontSize: 26, color: open ? C.navy : C.muted }}>{t(game.title)}</Text>
+        <Text style={{ fontFamily: F.bodyBold, fontSize: 14, color: open ? C.navy : C.muted }}>{open ? (best ? t('game.best', { n: best }) : t('game.play')) : t('game.locked', { n: game.after })}</Text>
+      </View>
+    </Pressable>
   );
 }
 

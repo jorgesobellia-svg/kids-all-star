@@ -29,6 +29,19 @@ export interface Progress {
   owned?: string[];
   /** Tutorial de Mi Pelotín: 'done' cuando ya lo vio completo. */
   shopIntro?: 'done';
+  /** Minijuegos: mejor marca y veces jugadas. */
+  games?: Record<string, { best: number; plays: number }>;
+  /** Pelotas ganadas hoy en los minijuegos (tienen tope diario). */
+  gameCoins?: { day: string; coins: number };
+}
+
+/** Tope diario de pelotas que se pueden ganar en los minijuegos. */
+export const GAME_COINS_PER_DAY = 15;
+
+export interface GameReward {
+  coins: number;
+  capped: boolean;
+  newBest: boolean;
 }
 
 export type BuyResult = 'ok' | 'coins' | 'locked' | 'owned';
@@ -111,6 +124,8 @@ interface Store {
   /** Regalo del tutorial: la primera gorra gratis. */
   giftCap: () => void;
   finishShopIntro: () => void;
+  /** Termina una partida de minijuego: guarda el récord y da las pelotas (con tope diario). */
+  finishGame: (id: string, score: number, coins: number) => GameReward;
 }
 
 const Ctx = createContext<Store | null>(null);
@@ -243,9 +258,27 @@ export function StoreProvider({ children, fallbackLocale }: { children: React.Re
 
   const finishShopIntro = useCallback(() => setP((s) => ({ ...s, shopIntro: 'done' })), []);
 
+  const finishGame = useCallback((id: string, score: number, coins: number): GameReward => {
+    const cur = pRef.current;
+    const today = dayKey();
+    const used = cur.gameCoins?.day === today ? cur.gameCoins.coins : 0;
+    const give = Math.max(0, Math.min(coins, GAME_COINS_PER_DAY - used));
+    const prev = cur.games?.[id];
+    const newBest = score > 0 && score > (prev?.best ?? 0);
+    const next: Progress = {
+      ...cur,
+      coins: cur.coins + give,
+      gameCoins: { day: today, coins: used + give },
+      games: { ...(cur.games ?? {}), [id]: { best: Math.max(score, prev?.best ?? 0), plays: (prev?.plays ?? 0) + 1 } },
+    };
+    pRef.current = next;
+    setP(next);
+    return { coins: give, capped: give < coins, newBest };
+  }, []);
+
   const value = useMemo<Store>(
-    () => ({ ready, p, t, locale, setLocale, setPlayer, setCountry, completeLesson, passExam, setPlus, setReview, reset, buy, equip, setNumber, giftCap, finishShopIntro }),
-    [ready, p, t, locale, setLocale, setPlayer, setCountry, completeLesson, passExam, setPlus, setReview, reset, buy, equip, setNumber, giftCap, finishShopIntro],
+    () => ({ ready, p, t, locale, setLocale, setPlayer, setCountry, completeLesson, passExam, setPlus, setReview, reset, buy, equip, setNumber, giftCap, finishShopIntro, finishGame }),
+    [ready, p, t, locale, setLocale, setPlayer, setCountry, completeLesson, passExam, setPlus, setReview, reset, buy, equip, setNumber, giftCap, finishShopIntro, finishGame],
   );
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;

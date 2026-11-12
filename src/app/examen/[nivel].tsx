@@ -7,6 +7,7 @@ import { BadgeMedal, CheckIcon, Mascot, TrophyIcon } from '@/components/Art';
 import Pelotin from '@/components/Pelotin';
 import { Btn, Card, H1, Label, ProgressBar } from '@/components/ui';
 import { getLevel, REWARDS, STAGE_END, STAGE_SUFFIX } from '@/content/levels';
+import { gameAfter } from '@/content/minigames';
 import type { Activity } from '@/content/types';
 import { content } from '@/i18n';
 import { markLevelPassed, startLevelMusicIfPending } from '@/services/music';
@@ -203,6 +204,7 @@ export default function ExamScreen() {
                 +{REWARDS.examXp} XP · {t('result.coinsWon', { n: REWARDS.examCoins })}
               </Text>
               {STAGE_END[level.n] ? null : <Text style={{ fontFamily: F.body, fontSize: 15, color: '#CBD5E1' }}>{t('exam.nextUnlocked')}</Text>}
+              {gameAfter(level.n) ? <Text testID="exam-game-unlocked" style={{ fontFamily: F.bodyHeavy, fontSize: 16, color: C.gold, textAlign: 'center' }}>{t('game.unlocked', { name: t(gameAfter(level.n)!.title) })}</Text> : null}
             </View>
           ) : null}
           {passed && STAGE_END[level.n] ? (
