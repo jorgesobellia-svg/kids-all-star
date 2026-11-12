@@ -9,6 +9,8 @@ import { Platform } from 'react-native';
 //   umpire-out.wav   -> el umpire canta "You're out!" (respuesta incorrecta)
 //   pasos.mp3        -> pasos de tenis corriendo en tierra mientras Pelotín corre de base en base en el camino.
 //                       Grabación "Footsteps running on gravel (sneakers)" de GFX Sounds, recortada a 3,2 s.
+//   publico.wav      -> el público del estadio celebrando (jonrón en ¡A batear!, atrapada en ¡Atrapa la elevada!).
+//                       Sintetizado con tools/contenido/gen_publico.py (sin grabaciones de terceros).
 // Las voces del umpire se generaron con Kokoro (licencia Apache 2.0). Para usar una
 // grabación real, basta reemplazar estos archivos con el mismo nombre.
 
@@ -17,10 +19,11 @@ const SOURCES = {
   safe: require('../../assets/sfx/umpire-safe.wav'),
   out: require('../../assets/sfx/umpire-out.wav'),
   steps: require('../../assets/sfx/pasos.mp3'),
+  crowd: require('../../assets/sfx/publico.wav'),
 };
 
 type Sfx = keyof typeof SOURCES;
-const VOLUME: Record<Sfx, number> = { bat: 1, safe: 1, out: 1, steps: 1 };
+const VOLUME: Record<Sfx, number> = { bat: 1, safe: 1, out: 1, steps: 1, crowd: 0.9 };
 const players: Partial<Record<Sfx, AudioPlayer>> = {};
 let modeSet = false;
 
@@ -68,4 +71,5 @@ export function preloadSfx(): void {
   player('bat');
   player('safe');
   player('out');
+  player('crowd');
 }

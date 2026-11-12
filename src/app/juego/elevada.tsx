@@ -164,6 +164,7 @@ export default function FlyGame() {
     setPhase('call');
     if (caught) {
       playSfx('out');
+      tm.later(() => playSfx('crowd'), 200);
       setCheer(true);
       tm.later(() => setCheer(false), 1500);
       if (Platform.OS !== 'web') Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(() => {});

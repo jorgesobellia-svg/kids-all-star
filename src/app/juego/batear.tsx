@@ -173,7 +173,8 @@ export default function BatGame() {
     prog.stopAnimation();
     const c: Call = a <= BAT.hr ? 'hr' : a <= BAT.hit ? 'hit' : 'foul';
     playSfx('bat');
-    if (c !== 'foul') tm.later(() => playSfx('safe'), 350);
+    if (c === 'hr') tm.later(() => playSfx('crowd'), 250);
+    else if (c === 'hit') tm.later(() => playSfx('safe'), 350);
     if (Platform.OS !== 'web') Haptics.impactAsync(c === 'foul' ? Haptics.ImpactFeedbackStyle.Light : Haptics.ImpactFeedbackStyle.Heavy).catch(() => {});
     // A dónde sale la bola: jonrón por encima de la cerca, hit entre los fildeadores, foul de lado.
     const left = dt < 0; // temprano = jalada (hacia la izquierda, el lado de tercera)
