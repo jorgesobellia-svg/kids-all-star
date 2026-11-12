@@ -3,12 +3,14 @@ import { router } from 'expo-router';
 import React, { useEffect, useRef, useState } from 'react';
 import { Animated, Easing, Platform, Pressable, ScrollView, Text, useWindowDimensions, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import Svg, { Circle, Ellipse, G, Path, Polygon, Rect } from 'react-native-svg';
+import Svg, { Circle, Path, Rect } from 'react-native-svg';
 import { CoinBall } from '@/components/Art';
 import Pelotin from '@/components/Pelotin';
+import HighField, { FIELDERS, HF } from '@/components/HighField';
+import PelotinBat, { BAT_FEET, BAT_H, type BatPose } from '@/components/PelotinBat';
 import PelotinBody, { BODY_H, BODY_W } from '@/components/PelotinBody';
 import { Btn, tapFeedback } from '@/components/ui';
-import { batLook } from '@/content/shop';
+import type { Avatar } from '@/content/shop';
 import { BAT } from '@/content/minigames';
 import { playSfx } from '@/services/sfx';
 import { speak, stopSpeaking } from '@/services/speech';
@@ -19,11 +21,11 @@ import { C, F } from '@/theme';
 // crece al acercarse y el niño toca BATEA justo cuando llega al home. Bolas fuera de la zona: no batear.
 // Se juega con el conteo de verdad (bolas, strikes, outs) y se acaba con 3 outs.
 
-const VB = { w: 360, h: 396, x: 180 };
-const MOUND = { x: 180, y: 128 };
-const PLATE = { x: 180, y: 366 };
-const ZONE = { l: 152, r: 208, t: 280, b: 346 };
-const BALL_R = 11;
+const VB = { w: HF.w, h: HF.h };
+const ZONE = HF.zone;
+const REL = HF.release;
+const BALL_R = 5.5;
+const RIVAL: Avatar = { cap: 'cap-blue', uniform: 'uni-blue', bat: 'bat-wood', number: 7 };
 
 type Phase = 'intro' | 'ready' | 'pitch' | 'call' | 'over';
 type Call = 'hr' | 'hit' | 'foul' | 'strike' | 'ball' | 'walk' | 'k';
@@ -37,23 +39,23 @@ interface Pitch {
 }
 
 const rand = (a: number, b: number) => a + Math.random() * (b - a);
-const FIRST_PITCH: Pitch = { x: 180, y: 313, isBall: false, ms: 1500 };
+const FIRST_PITCH: Pitch = { x: 181, y: 443, isBall: false, ms: 1500 };
 
 function newPitch(hits: number): Pitch {
   const ms = Math.max(BAT.minMs, BAT.startMs - hits * BAT.stepMs) * rand(0.92, 1.1);
   if (Math.random() < BAT.ballRate) {
     const side = Math.floor(Math.random() * 4);
     const p = [
-      { x: rand(100, 124), y: rand(290, 340) }, // pegada al bateador
-      { x: rand(238, 262), y: rand(290, 340) }, // afuera
-      { x: rand(165, 195), y: rand(232, 250) }, // alta
-      { x: rand(165, 195), y: rand(372, 384) }, // al suelo
+      { x: rand(149, 157), y: rand(ZONE.t + 4, ZONE.b - 4) }, // pegada al bateador
+      { x: rand(205, 213), y: rand(ZONE.t + 4, ZONE.b - 4) }, // afuera
+      { x: rand(172, 190), y: rand(404, 414) }, // alta
+      { x: rand(172, 190), y: rand(468, 476) }, // al suelo
     ][side];
     return { ...p, isBall: true, ms };
   }
   return {
-    x: rand(ZONE.l + 8, ZONE.r - 8),
-    y: rand(ZONE.t + 8, ZONE.b - 8),
+    x: rand(ZONE.l + 4, ZONE.r - 4),
+    y: rand(ZONE.t + 4, ZONE.b - 4),
     isBall: false,
     ms,
   };
@@ -66,24 +68,21 @@ export default function BatGame() {
   const { width: winW } = useWindowDimensions();
   const W = Math.min(winW, 520);
   const [areaH, setAreaH] = useState(0);
-  // Lo que sobra de alto se llena con más jardín arriba, para que el botón quede abajo, cerca del pulgar.
-  // Si hay alto de sobra se acerca la cámara (se recorta un poco a los lados) y el resto se llena con jardín arriba.
-  const s = Math.max(W / VB.w, areaH ? Math.min(areaH / VB.h, W / 300) : 0);
-  const x0 = VB.x - W / s / 2;
-  const oy = Math.max(0, areaH / s - VB.h);
+  // El campo ocupa todo el ancho y va pegado abajo (cerca del botón). Si falta alto se recorta el cielo;
+  // si sobra, arriba se ve más cielo.
+  const s = W / VB.w;
   const H = VB.h * s;
 
   const [phase, setPhase] = useState<Phase>('intro');
   const [count, setCount] = useState({ b: 0, s: 0, o: 0 });
   const [stats, setStats] = useState({ hits: 0, hrs: 0, walks: 0 });
   const [call, setCall] = useState<{ c: Call; tip: Tip } | null>(null);
-  const [swinging, setSwinging] = useState(false);
+  const [pose, setPose] = useState<BatPose>('box');
   const [windup, setWindup] = useState(false);
   const [reward, setReward] = useState<GameReward | null>(null);
 
   const [prog] = useState(() => new Animated.Value(0));
   const [fly] = useState(() => new Animated.Value(0));
-  const [batRot] = useState(() => new Animated.Value(0));
   const pitch = useRef<Pitch>(FIRST_PITCH);
   const [pitchView, setPitchView] = useState<Pitch>(FIRST_PITCH);
   const [flyTo, setFlyTo] = useState<{ x: number; y: number } | null>(null);
@@ -203,15 +202,10 @@ export default function BatGame() {
     if (phase !== 'pitch' || swung.current) return;
     swung.current = true;
     tapFeedback();
-    setSwinging(true);
-    batRot.setValue(0);
-    Animated.timing(batRot, {
-      toValue: 1,
-      duration: 140,
-      easing: Easing.out(Easing.quad),
-      useNativeDriver: true,
-    }).start();
-    later(() => setSwinging(false), 500);
+    // El swing en tres cuadros: manos adelante, bate plano por la zona, y de vuelta a esperar.
+    setPose('boxMid');
+    later(() => setPose('boxSwing'), 70);
+    later(() => setPose('box'), 650);
     const pt = pitch.current;
     const dt = Date.now() - (t0.current + pt.ms);
     const a = Math.abs(dt);
@@ -230,7 +224,7 @@ export default function BatGame() {
     if (Platform.OS !== 'web') Haptics.impactAsync(c === 'foul' ? Haptics.ImpactFeedbackStyle.Light : Haptics.ImpactFeedbackStyle.Heavy).catch(() => {});
     // A dónde sale la bola: jonrón por encima de la cerca, hit al jardín, foul hacia las gradas de un lado.
     const left = dt < 0; // temprano = jalada (a la izquierda del bateador derecho visto desde atrás)
-    const dest = c === 'hr' ? { x: rand(120, 240), y: -30 } : c === 'hit' ? { x: left ? rand(70, 130) : rand(230, 290), y: rand(40, 90) } : { x: left ? -30 : VB.w + 30, y: rand(120, 220) };
+    const dest = c === 'hr' ? { x: rand(110, 250), y: 10 } : c === 'hit' ? { x: left ? rand(40, 130) : rand(230, 320), y: rand(150, 240) } : { x: left ? -30 : VB.w + 30, y: rand(380, 450) };
     setFlyTo(dest);
     fly.setValue(0);
     Animated.timing(fly, {
@@ -412,70 +406,69 @@ export default function BatGame() {
 
   // ---------------------------------------------------------------- juego
   const pt = pitchView;
-  const X = (v: number) => (v - x0 - BALL_R) * s;
+  const X = (v: number) => (v - BALL_R) * s;
   const Y = (v: number) => (v - BALL_R) * s;
-  const bx = prog.interpolate({ inputRange: [0, 1, 1.3], outputRange: [MOUND.x, pt.x, pt.x + (pt.x - MOUND.x) * 0.12].map(X) });
-  const by = prog.interpolate({ inputRange: [0, 1, 1.3], outputRange: [MOUND.y - 14, pt.y, pt.y + 34].map(Y) });
-  const bs = prog.interpolate({ inputRange: [0, 1, 1.3], outputRange: [0.22, 1, 1.12] });
+  // La bola baja del montículo al home y, si nadie le pega, sigue hasta el guante del catcher (abajo).
+  const bx = prog.interpolate({ inputRange: [0, 1, 1.3], outputRange: [REL.x, pt.x, pt.x + (pt.x - REL.x) * 0.1].map(X) });
+  const by = prog.interpolate({ inputRange: [0, 1, 1.3], outputRange: [REL.y, pt.y, pt.y + 60].map(Y) });
+  const bs = prog.interpolate({ inputRange: [0, 1, 1.3], outputRange: [0.55, 1.2, 1.6] });
   const fx = flyTo ? fly.interpolate({ inputRange: [0, 1], outputRange: [X(pt.x), X(flyTo.x)] }) : 0;
-  const fy = flyTo ? fly.interpolate({ inputRange: [0, 0.5, 1], outputRange: [Y(pt.y), Y((pt.y + flyTo.y) / 2 - 90), Y(flyTo.y)] }) : 0;
-  const fs = flyTo ? fly.interpolate({ inputRange: [0, 1], outputRange: [1, 0.35] }) : 1;
-
-  // Pelotín, bateador derecho: a la izquierda del home, sin tapar la zona de strike.
-  const BH = 132 * s;
-  const BW = (BH * BODY_W) / BODY_H;
-  const bLeft = Math.max(4 * s, (ZONE.l - x0) * s - BW - 2 * s);
-  const bTop = 390 * s - BH;
-  const pivot = { x: bLeft + (140 / BODY_W) * BW, y: bTop + (152 / BODY_H) * BH };
-  const batLen = 84 * s;
-  const rot = batRot.interpolate({ inputRange: [0, 1], outputRange: ['-80deg', '8deg'] });
-  const b = batLook(avatar);
+  const fy = flyTo ? fly.interpolate({ inputRange: [0, 0.5, 1], outputRange: [Y(pt.y), Y((pt.y + flyTo.y) / 2 - 120), Y(flyTo.y)] }) : 0;
+  const fs = flyTo ? fly.interpolate({ inputRange: [0, 0.5, 1], outputRange: [1.2, 1.5, 0.6] }) : 1;
   const big = call && (call.c === 'hr' || call.c === 'hit' || call.c === 'walk');
   const bad = call && (call.c === 'strike' || call.c === 'k');
+  const top = areaH ? areaH - H : 0;
+  const kb = HF.batter.h / BAT_H;
 
   return (
     <View style={{ flex: 1, backgroundColor: C.navy, paddingTop: insets.top + 6, paddingBottom: insets.bottom + 16 }}>
       <View style={{ flexDirection: 'row', alignItems: 'center', paddingHorizontal: 12, paddingBottom: 6, gap: 8, maxWidth: 560, width: '100%', alignSelf: 'center' }}>
         <BackBtn onPress={exit} label={t('common.back')} light />
-        <Text numberOfLines={1} adjustsFontSizeToFit style={{ flex: 1, fontFamily: F.display, fontSize: 24, color: C.white }}>{t('game.batTitle')}</Text>
+        <Text numberOfLines={1} adjustsFontSizeToFit style={{ flex: 1, fontFamily: F.display, fontSize: 24, color: C.white }}>
+          {t('game.batTitle')}
+        </Text>
         <CountBoard b={count.b} s={count.s} o={count.o} hits={stats.hits} />
       </View>
 
-      <View style={{ flex: 1, overflow: 'hidden' }} onLayout={(e) => setAreaH(e.nativeEvent.layout.height)}>
+      <View style={{ flex: 1, overflow: 'hidden', backgroundColor: '#93C5FD' }} onLayout={(e) => setAreaH(e.nativeEvent.layout.height)}>
         {areaH ? (
-          <Pressable testID="game-field" onPressIn={swing} onPress={swing} unstable_pressDelay={0} style={{ width: W, height: H + oy * s, alignSelf: 'center', overflow: 'hidden' }} accessible={false}>
-            <Field s={s} x0={x0} w={W / s} oy={oy} windup={windup} />
-            <View pointerEvents="box-none" style={{ position: 'absolute', left: 0, top: oy * s, width: W, height: H }}>
-              {/* Pelotín al bate */}
-              <View pointerEvents="none" style={{ position: 'absolute', left: bLeft, top: bTop }}>
-                <PelotinBody avatar={avatar} height={BH} holdBat={!swinging} face={{ mood: call ? (bad ? 'think' : 'cheer') : 'happy' }} />
-              </View>
-              {swinging ? (
-                <Animated.View pointerEvents="none" style={{ position: 'absolute', left: pivot.x - batLen, top: pivot.y - batLen, width: batLen * 2, height: batLen * 2, transform: [{ rotate: rot }] }}>
-                  <Svg width={batLen * 2} height={batLen * 2} viewBox="0 0 200 200">
-                    <Path d="M100 97.6 L142 97.6 Q160 93.5 190 93.5 Q200 93.5 200 100 Q200 106.5 190 106.5 Q160 106.5 142 102.4 L100 102.4 Z" fill={b.wood} stroke={b.edge} strokeWidth={2} />
-                    <Rect x={100} y={96.8} width={14} height={6.4} rx={2} fill={b.grip} />
-                  </Svg>
-                </Animated.View>
-              ) : null}
-              {/* bola en vuelo hacia el home */}
-              {phase === 'pitch' || (phase === 'call' && !flyTo) ? (
-                <Animated.View pointerEvents="none" style={{ position: 'absolute', left: 0, top: 0, transform: [{ translateX: bx }, { translateY: by }, { scale: bs }] }}>
-                  <Ball size={BALL_R * 2 * s} />
-                </Animated.View>
-              ) : null}
-              {/* bola bateada */}
-              {flyTo && (phase === 'call' || phase === 'ready') ? (
-                <Animated.View pointerEvents="none" style={{ position: 'absolute', left: 0, top: 0, transform: [{ translateX: fx }, { translateY: fy }, { scale: fs }] }}>
-                  <Ball size={BALL_R * 2 * s} />
-                </Animated.View>
-              ) : null}
+          <Pressable testID="game-field" onPressIn={swing} onPress={swing} unstable_pressDelay={0} style={{ position: 'absolute', left: (Math.min(winW, 9999) - W) / 2, top, width: W, height: H }} accessible={false}>
+            <Svg width={W} height={H} viewBox={`0 0 ${VB.w} ${VB.h}`} style={{ position: 'absolute' }}>
+              <HighField />
+              {/* zona de strike en amarillo, flotando sobre el home */}
+              <Rect x={ZONE.l} y={ZONE.t} width={ZONE.r - ZONE.l} height={ZONE.b - ZONE.t} fill="#FDE047" fillOpacity={0.22} stroke="#FACC15" strokeWidth={2} strokeDasharray="5 3" rx={2} />
+            </Svg>
+            {/* fildeadores rivales; el último es el pitcher, que se prepara antes de tirar */}
+            {FIELDERS.map(([x, y, h], i) => {
+              const pitcher = i === FIELDERS.length - 1;
+              const bh = h * s;
+              return (
+                <View key={i} pointerEvents="none" style={{ position: 'absolute', left: x * s - ((BODY_W * bh) / BODY_H) / 2, top: (y - h) * s - (pitcher && windup ? 4 * s : 0) }}>
+                  <PelotinBody avatar={RIVAL} height={bh} face={{ mood: pitcher && windup ? 'cheer' : 'happy' }} />
+                </View>
+              );
+            })}
+            {/* Pelotín al bate */}
+            <View pointerEvents="none" style={{ position: 'absolute', left: (HF.batter.x - BAT_FEET.x * kb) * s, top: (HF.batter.y - BAT_FEET.y * kb) * s }}>
+              <PelotinBat avatar={avatar} height={BAT_H * kb * s} pose={pose} mood={call ? (bad ? 'think' : 'cheer') : 'happy'} />
             </View>
+            {/* bola en vuelo hacia el home */}
+            {phase === 'pitch' || (phase === 'call' && !flyTo) ? (
+              <Animated.View pointerEvents="none" style={{ position: 'absolute', left: 0, top: 0, transform: [{ translateX: bx }, { translateY: by }, { scale: bs }] }}>
+                <Ball size={BALL_R * 2 * s} />
+              </Animated.View>
+            ) : null}
+            {/* bola bateada */}
+            {flyTo && (phase === 'call' || phase === 'ready') ? (
+              <Animated.View pointerEvents="none" style={{ position: 'absolute', left: 0, top: 0, transform: [{ translateX: fx }, { translateY: fy }, { scale: fs }] }}>
+                <Ball size={BALL_R * 2 * s} />
+              </Animated.View>
+            ) : null}
             {call ? (
-              <View pointerEvents="none" style={{ position: 'absolute', left: 0, right: 0, top: (oy + 175) * s, alignItems: 'center', gap: 6 }}>
+              <View pointerEvents="none" style={{ position: 'absolute', left: 0, right: 0, top: 150 * s, alignItems: 'center', gap: 6 }}>
                 <Text
                   testID="game-call"
-                  style={{ fontFamily: F.display, fontSize: big ? 58 : 48, color: big ? C.gold : C.white, textShadowColor: 'rgba(0,0,0,0.55)', textShadowOffset: { width: 0, height: 3 }, textShadowRadius: 6, textAlign: 'center' }}
+                  style={{ fontFamily: F.display, fontSize: big ? 58 : 48, color: big ? C.gold : C.white, textShadowColor: 'rgba(0,0,0,0.6)', textShadowOffset: { width: 0, height: 3 }, textShadowRadius: 6, textAlign: 'center' }}
                 >
                   {t(`game.${call.c}`)}
                 </Text>
@@ -495,7 +488,9 @@ export default function BatGame() {
           testID="game-swing"
           accessibilityRole="button"
           accessibilityLabel={t('game.swing')}
-          onPressIn={swing} onPress={swing} unstable_pressDelay={0}
+          onPressIn={swing}
+          onPress={swing}
+          unstable_pressDelay={0}
           style={({ pressed }) => [
             { minHeight: 84, borderRadius: 22, backgroundColor: phase === 'pitch' ? C.red : '#7F1D2D', alignItems: 'center', justifyContent: 'center', marginTop: pressed ? 5 : 0, marginBottom: pressed ? 0 : 5 },
             Platform.OS === 'web' ? ({ boxShadow: `0 ${pressed ? 0 : 6}px 0 ${C.redDark}` } as object) : { shadowColor: C.redDark, shadowOffset: { width: 0, height: pressed ? 0 : 6 }, shadowOpacity: 1, shadowRadius: 0 },
@@ -602,69 +597,5 @@ function Ball({ size }: { size: number }) {
       <Circle cx={12} cy={12} r={11} fill={C.white} stroke="#CBD5E1" strokeWidth={1} />
       <Path d="M6 4q4 8 0 16M18 4q-4 8 0 16" fill="none" stroke={C.red} strokeWidth={1.6} strokeDasharray="2 1.6" />
     </Svg>
-  );
-}
-
-// El campo visto desde detrás del home: gradas y cerca al fondo, jardín, cuadro de tierra,
-// el montículo con el pitcher, el home y la zona de strike marcada.
-function Field({ s, x0, w, oy, windup }: { s: number; x0: number; w: number; oy: number; windup: boolean }) {
-  const vh = VB.h + oy;
-  return (
-    <Svg width={w * s} height={vh * s} viewBox={`${x0} 0 ${w} ${vh}`}>
-      <Rect x={0} y={0} width={VB.w} height={44} fill="#1E3A5F" />
-      {Array.from({ length: 30 }, (_, i) => (
-        <Circle key={i} cx={8 + i * 12} cy={18 + (i % 3) * 8} r={4} fill={['#F87171', '#FBBF24', '#60A5FA', '#F9FAFB', '#34D399'][i % 5]} opacity={0.8} />
-      ))}
-      <Rect x={0} y={42} width={VB.w} height={8} fill="#14532D" />
-      <Rect x={0} y={50} width={VB.w} height={vh - 50} fill={C.grass} />
-      {Array.from({ length: Math.ceil((oy + 170) / 28) }, (_, i) => (
-        <Rect key={i} x={0} y={50 + i * 28} width={VB.w} height={14} fill="#378C3B" />
-      ))}
-      <G transform={`translate(0 ${oy})`}>
-        <Polygon points={`${MOUND.x},70 330,250 ${PLATE.x},${VB.h} 30,250`} fill={C.dirt} />
-        <Polygon points={`${MOUND.x},100 290,245 ${PLATE.x},350 70,245`} fill={C.grass} />
-        <Ellipse cx={MOUND.x} cy={MOUND.y + 6} rx={34} ry={12} fill="#B9844F" />
-        <Rect x={MOUND.x - 8} y={MOUND.y + 3} width={16} height={4} fill={C.white} />
-        <Rect x={286} y={240} width={10} height={6} fill={C.white} transform="rotate(45 291 243)" />
-        <Rect x={64} y={240} width={10} height={6} fill={C.white} transform="rotate(45 69 243)" />
-        <Rect x={175} y={76} width={10} height={6} fill={C.white} transform="rotate(45 180 79)" />
-        <Pitcher windup={windup} />
-        <Ellipse cx={PLATE.x} cy={PLATE.y + 8} rx={64} ry={18} fill="#B9844F" />
-        <Polygon
-          points={`${PLATE.x - 22},${PLATE.y} ${PLATE.x + 22},${PLATE.y} ${PLATE.x + 22},${PLATE.y + 7} ${PLATE.x},${PLATE.y + 16} ${PLATE.x - 22},${PLATE.y + 7}`}
-          fill={C.white}
-          stroke="#94A3B8"
-          strokeWidth={1}
-        />
-        <Rect
-          x={ZONE.l}
-          y={ZONE.t}
-          width={ZONE.r - ZONE.l}
-          height={ZONE.b - ZONE.t}
-          fill={C.white}
-          fillOpacity={0.08}
-          stroke={C.white}
-          strokeOpacity={0.75}
-          strokeWidth={2}
-          strokeDasharray="6 4"
-          rx={3}
-        />
-      </G>
-    </Svg>
-  );
-}
-
-function Pitcher({ windup }: { windup: boolean }) {
-  // Pequeño, al fondo, de frente al bateador.
-  return (
-    <G transform={`translate(${MOUND.x} ${MOUND.y - 34})`}>
-      <Rect x={-6} y={14} width={5} height={18} rx={2} fill="#E2E8F0" />
-      <Rect x={1} y={14} width={5} height={18} rx={2} fill="#E2E8F0" />
-      <Rect x={-8} y={-2} width={16} height={18} rx={4} fill={C.navy} />
-      <Circle cx={0} cy={-8} r={6} fill="#F2C29B" />
-      <Path d="M-6 -10a6 5 0 0 1 12 0z" fill={C.red} />
-      {windup ? <Rect x={6} y={-16} width={4} height={16} rx={2} fill={C.navy} /> : <Rect x={6} y={0} width={4} height={13} rx={2} fill={C.navy} />}
-      <Circle cx={-10} cy={6} r={4} fill="#7C2D12" />
-    </G>
   );
 }
