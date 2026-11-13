@@ -345,18 +345,18 @@ marca las lecciones que debe repasar y puede intentarlo de nuevo.
 
 | **\#** | **Pregunta**                                                              | **Opciones**                                                                         | **Correcta**                            |
 |--------|---------------------------------------------------------------------------|--------------------------------------------------------------------------------------|-----------------------------------------|
-| 1      | ¿Qué es un hit?                                                           | Un batazo con el que llegas a salvo / Un tiro del pitcher / Una bola atrapada        | Un batazo con el que llegas a salvo     |
-| 2      | La bola cae en los jardines, lejos de todos, y llegas a primera. ¿Qué es? | Un hit / Un out / Un foul                                                            | Un hit                                  |
-| 3      | Verdadero o falso: todo hit sale del campo                                | Verdadero / Falso                                                                    | Falso                                   |
-| 4      | ¿Qué canta el umpire cuando llegas antes que el tiro?                     | ¡Safe! / ¡Strike! / ¡Balk!                                                           | ¡Safe!                                  |
-| 5      | ¿Cómo se dice «a salvo» en inglés?                                        | Safe / Lead / Balk                                                                   | Safe                                    |
-| 6      | La bola es atrapada en el aire antes de caer. ¿Es hit?                    | No, es out / Sí, siempre / Solo si corre rápido                                      | No, es out                              |
-| 7      | Toca la base que es tu lugar seguro al llegar de un hit cortito            | — (diagrama del diamante)                                                            | Primera base                            |
-| 8      | ¿Quién decide si llegaste safe o out?                                     | El umpire / El público / El pitcher                                                  | El umpire                               |
-| 9      | Un batazo pasa rodando entre dos defensores y llegas a salvo. ¿Qué es?    | Un hit / Un error siempre / Nada                                                     | Un hit                                  |
-| 10     | Verdadero o falso: en tu base, parado sobre ella, estás a salvo           | Verdadero / Falso                                                                    | Verdadero                               |
-| 11     | ¿Qué necesitas para que tu batazo sea hit?                                | Llegar a salvo sin que la defensa pueda sacarte out / Que el público grite / Que salga del campo | Llegar a salvo sin que la defensa pueda sacarte out |
-| 12     | ¿Cómo se dice «sencillo» en inglés?                                       | Single / Balk / Lead                                                                 | Single                                  |
+| 1 | ¿Qué es un hit? | Un batazo con el que llegas a salvo / Un tiro del pitcher / Una bola atrapada | Un batazo con el que llegas a salvo |
+| 2 | La bola cae en los jardines, lejos de todos, y llegas a primera. ¿Qué es? | Un hit / Un out / Un foul | Un hit |
+| 3 | ¿Qué canta el umpire cuando llegas antes que el tiro? | ¡Safe! / ¡Strike! / ¡Balk! | ¡Safe! |
+| 4 | Toca la base que es tu lugar seguro al llegar de un hit cortito | — (diagrama del diamante) | Primera base |
+| 5 | ¿Cómo se dice «sencillo» en inglés? | Single / Balk / Lead | Single |
+| 6 | Llegas a segunda con tu batazo. ¿Qué hit es? | Un doble / Un sencillo / Un triple | Un doble |
+| 7 | La bola sale volando del campo sin tocar el suelo, en territorio fair. ¿Qué es? | Un jonrón / Un doble por regla / Un foul | Un jonrón |
+| 8 | Verdadero o falso: si la bola pica en territorio fair y después salta la valla, es jonrón | Verdadero / Falso | Falso |
+| 9 | Verdadero o falso: al correr a primera puedes pasarte de largo y volver sin peligro | Verdadero / Falso | Verdadero |
+| 10 | Te pasas de largo en segunda y te tocan con la bola fuera de la base. ¿Qué pasa? | Eres out / Eres safe / No pasa nada | Eres out |
+| 11 | ¿Qué es un toque de bola (bunt)? | Sostener el bate sin swing y dejar caer la bola suave / El swing más fuerte del juego / Un lanzamiento del pitcher | Sostener el bate sin swing y dejar caer la bola suave |
+| 12 | Con dos strikes, tu toque sale de foul. ¿Qué pasa? | Es el tercer strike: ponche / Sigues bateando / Es bola | Es el tercer strike: ponche |
 
 Al aprobar: insignia Bate de Plata, 50 XP de bono, 10 pelotas y se
 desbloquea el siguiente nivel.

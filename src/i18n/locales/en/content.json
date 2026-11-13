@@ -7035,9 +7035,6 @@
         }
       },
       "3": {
-        "q": "True or false: every hit leaves the field"
-      },
-      "4": {
         "q": "What does the umpire call when you get there before the throw?",
         "opts": {
           "a": "Safe!",
@@ -7045,59 +7042,62 @@
           "c": "Balk!"
         }
       },
-      "5": {
-        "q": "You reach the base before the ball. What's the word for that?",
-        "opts": {
-          "a": "Safe",
-          "b": "Lead",
-          "c": "Balk"
-        }
-      },
-      "6": {
-        "q": "The ball is caught in the air before it lands. Is it a hit?",
-        "opts": {
-          "a": "No, it's an out",
-          "b": "Yes, always",
-          "c": "Only if you run fast"
-        }
-      },
-      "7": {
+      "4": {
         "q": "Tap the base you reach on a short hit",
         "answer": "First base"
       },
-      "8": {
-        "q": "Who decides whether you were safe or out?",
-        "opts": {
-          "a": "The umpire",
-          "b": "The crowd",
-          "c": "The pitcher"
-        }
-      },
-      "9": {
-        "q": "A batted ball rolls between two fielders and you get there safely. What is it?",
-        "opts": {
-          "a": "A hit",
-          "b": "Always an error",
-          "c": "Nothing"
-        }
-      },
-      "10": {
-        "q": "True or false: standing on your base, you are safe"
-      },
-      "11": {
-        "q": "What do you need for your batted ball to be a hit?",
-        "opts": {
-          "a": "Reach base safely without the defense being able to get you out",
-          "b": "The crowd has to cheer",
-          "c": "It has to leave the field"
-        }
-      },
-      "12": {
+      "5": {
         "q": "What's a hit that gets you to first base called?",
         "opts": {
           "a": "Single",
           "b": "Balk",
           "c": "Lead"
+        }
+      },
+      "6": {
+        "q": "You reach second on your hit. What kind of hit is it?",
+        "opts": {
+          "a": "A double",
+          "b": "A single",
+          "c": "A triple"
+        }
+      },
+      "7": {
+        "q": "The ball flies out of the park without touching the ground, in fair territory. What is it?",
+        "opts": {
+          "a": "A home run",
+          "b": "A ground rule double",
+          "c": "A foul"
+        }
+      },
+      "8": {
+        "q": "True or false: if the ball bounces in fair territory and then goes over the fence, it's a home run"
+      },
+      "9": {
+        "q": "True or false: when you run to first, you can run past the base and come back safely"
+      },
+      "10": {
+        "q": "You run past second and get tagged with the ball off the base. What happens?",
+        "opts": {
+          "a": "You're out",
+          "b": "You're safe",
+          "c": "Nothing happens"
+        }
+      },
+      "11": {
+        "q": "What is a bunt?",
+        "opts": {
+          "a": "Holding the bat still, with no swing, and letting the ball drop softly",
+          "b": "The hardest swing in the game",
+          "c": "A pitcher's throw"
+        }
+      },
+      "12": {
+        "q": "With two strikes, your bunt goes foul. What happens?",
+        "opts": {
+          "a": "It's strike three: you're out",
+          "b": "You keep batting",
+          "c": "It's a ball"
         }
       }
     },

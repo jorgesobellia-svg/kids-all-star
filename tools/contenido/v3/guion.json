@@ -475,15 +475,6 @@
    },
    {
     "n": 3,
-    "q": "Verdadero o falso: todo hit sale del campo",
-    "opts": [
-     "Verdadero",
-     "Falso"
-    ],
-    "correct": "Falso"
-   },
-   {
-    "n": 4,
     "q": "¿Qué canta el umpire cuando llegas antes que el tiro?",
     "opts": [
      "¡Safe!",
@@ -493,27 +484,7 @@
     "correct": "¡Safe!"
    },
    {
-    "n": 5,
-    "q": "¿Cómo se dice «a salvo» en inglés?",
-    "opts": [
-     "Safe",
-     "Lead",
-     "Balk"
-    ],
-    "correct": "Safe"
-   },
-   {
-    "n": 6,
-    "q": "La bola es atrapada en el aire antes de caer. ¿Es hit?",
-    "opts": [
-     "No, es out",
-     "Sí, siempre",
-     "Solo si corre rápido"
-    ],
-    "correct": "No, es out"
-   },
-   {
-    "n": 7,
+    "n": 4,
     "q": "Toca la base que es tu lugar seguro al llegar de un hit cortito",
     "opts": [
      "— (diagrama del diamante)"
@@ -521,46 +492,7 @@
     "correct": "Primera base"
    },
    {
-    "n": 8,
-    "q": "¿Quién decide si llegaste safe o out?",
-    "opts": [
-     "El umpire",
-     "El público",
-     "El pitcher"
-    ],
-    "correct": "El umpire"
-   },
-   {
-    "n": 9,
-    "q": "Un batazo pasa rodando entre dos defensores y llegas a salvo. ¿Qué es?",
-    "opts": [
-     "Un hit",
-     "Un error siempre",
-     "Nada"
-    ],
-    "correct": "Un hit"
-   },
-   {
-    "n": 10,
-    "q": "Verdadero o falso: en tu base, parado sobre ella, estás a salvo",
-    "opts": [
-     "Verdadero",
-     "Falso"
-    ],
-    "correct": "Verdadero"
-   },
-   {
-    "n": 11,
-    "q": "¿Qué necesitas para que tu batazo sea hit?",
-    "opts": [
-     "Llegar a salvo sin que la defensa pueda sacarte out",
-     "Que el público grite",
-     "Que salga del campo"
-    ],
-    "correct": "Llegar a salvo sin que la defensa pueda sacarte out"
-   },
-   {
-    "n": 12,
+    "n": 5,
     "q": "¿Cómo se dice «sencillo» en inglés?",
     "opts": [
      "Single",
@@ -568,6 +500,74 @@
      "Lead"
     ],
     "correct": "Single"
+   },
+   {
+    "n": 6,
+    "q": "Llegas a segunda con tu batazo. ¿Qué hit es?",
+    "opts": [
+     "Un doble",
+     "Un sencillo",
+     "Un triple"
+    ],
+    "correct": "Un doble"
+   },
+   {
+    "n": 7,
+    "q": "La bola sale volando del campo sin tocar el suelo, en territorio fair. ¿Qué es?",
+    "opts": [
+     "Un jonrón",
+     "Un doble por regla",
+     "Un foul"
+    ],
+    "correct": "Un jonrón"
+   },
+   {
+    "n": 8,
+    "q": "Verdadero o falso: si la bola pica en territorio fair y después salta la valla, es jonrón",
+    "opts": [
+     "Verdadero",
+     "Falso"
+    ],
+    "correct": "Falso"
+   },
+   {
+    "n": 9,
+    "q": "Verdadero o falso: al correr a primera puedes pasarte de largo y volver sin peligro",
+    "opts": [
+     "Verdadero",
+     "Falso"
+    ],
+    "correct": "Verdadero"
+   },
+   {
+    "n": 10,
+    "q": "Te pasas de largo en segunda y te tocan con la bola fuera de la base. ¿Qué pasa?",
+    "opts": [
+     "Eres out",
+     "Eres safe",
+     "No pasa nada"
+    ],
+    "correct": "Eres out"
+   },
+   {
+    "n": 11,
+    "q": "¿Qué es un toque de bola (bunt)?",
+    "opts": [
+     "Sostener el bate sin swing y dejar caer la bola suave",
+     "El swing más fuerte del juego",
+     "Un lanzamiento del pitcher"
+    ],
+    "correct": "Sostener el bate sin swing y dejar caer la bola suave"
+   },
+   {
+    "n": 12,
+    "q": "Con dos strikes, tu toque sale de foul. ¿Qué pasa?",
+    "opts": [
+     "Es el tercer strike: ponche",
+     "Sigues bateando",
+     "Es bola"
+    ],
+    "correct": "Es el tercer strike: ponche"
    }
   ],
   "reward": "Al aprobar: insignia Bate de Plata, 50 XP de bono, 10 pelotas y se desbloquea el siguiente nivel."

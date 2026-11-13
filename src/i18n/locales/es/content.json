@@ -7035,9 +7035,6 @@
         }
       },
       "3": {
-        "q": "Verdadero o falso: todo hit sale del campo"
-      },
-      "4": {
         "q": "¿Qué canta el umpire cuando llegas antes que el tiro?",
         "opts": {
           "a": "¡Safe!",
@@ -7045,59 +7042,62 @@
           "c": "¡Balk!"
         }
       },
-      "5": {
-        "q": "¿Cómo se dice «a salvo» en inglés?",
-        "opts": {
-          "a": "Safe",
-          "b": "Lead",
-          "c": "Balk"
-        }
-      },
-      "6": {
-        "q": "La bola es atrapada en el aire antes de caer. ¿Es hit?",
-        "opts": {
-          "a": "No, es out",
-          "b": "Sí, siempre",
-          "c": "Solo si corre rápido"
-        }
-      },
-      "7": {
+      "4": {
         "q": "Toca la base que es tu lugar seguro al llegar de un hit cortito",
         "answer": "Primera base"
       },
-      "8": {
-        "q": "¿Quién decide si llegaste safe o out?",
-        "opts": {
-          "a": "El umpire",
-          "b": "El público",
-          "c": "El pitcher"
-        }
-      },
-      "9": {
-        "q": "Un batazo pasa rodando entre dos defensores y llegas a salvo. ¿Qué es?",
-        "opts": {
-          "a": "Un hit",
-          "b": "Un error siempre",
-          "c": "Nada"
-        }
-      },
-      "10": {
-        "q": "Verdadero o falso: en tu base, parado sobre ella, estás a salvo"
-      },
-      "11": {
-        "q": "¿Qué necesitas para que tu batazo sea hit?",
-        "opts": {
-          "a": "Llegar a salvo sin que la defensa pueda sacarte out",
-          "b": "Que el público grite",
-          "c": "Que salga del campo"
-        }
-      },
-      "12": {
+      "5": {
         "q": "¿Cómo se dice «sencillo» en inglés?",
         "opts": {
           "a": "Single",
           "b": "Balk",
           "c": "Lead"
+        }
+      },
+      "6": {
+        "q": "Llegas a segunda con tu batazo. ¿Qué hit es?",
+        "opts": {
+          "a": "Un doble",
+          "b": "Un sencillo",
+          "c": "Un triple"
+        }
+      },
+      "7": {
+        "q": "La bola sale volando del campo sin tocar el suelo, en territorio fair. ¿Qué es?",
+        "opts": {
+          "a": "Un jonrón",
+          "b": "Un doble por regla",
+          "c": "Un foul"
+        }
+      },
+      "8": {
+        "q": "Verdadero o falso: si la bola pica en territorio fair y después salta la valla, es jonrón"
+      },
+      "9": {
+        "q": "Verdadero o falso: al correr a primera puedes pasarte de largo y volver sin peligro"
+      },
+      "10": {
+        "q": "Te pasas de largo en segunda y te tocan con la bola fuera de la base. ¿Qué pasa?",
+        "opts": {
+          "a": "Eres out",
+          "b": "Eres safe",
+          "c": "No pasa nada"
+        }
+      },
+      "11": {
+        "q": "¿Qué es un toque de bola (bunt)?",
+        "opts": {
+          "a": "Sostener el bate sin swing y dejar caer la bola suave",
+          "b": "El swing más fuerte del juego",
+          "c": "Un lanzamiento del pitcher"
+        }
+      },
+      "12": {
+        "q": "Con dos strikes, tu toque sale de foul. ¿Qué pasa?",
+        "opts": {
+          "a": "Es el tercer strike: ponche",
+          "b": "Sigues bateando",
+          "c": "Es bola"
         }
       }
     },
