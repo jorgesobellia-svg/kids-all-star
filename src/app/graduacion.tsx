@@ -363,18 +363,22 @@ export default function Graduation() {
     // Solo quien aprobó el último examen llega aquí; la fecha se guarda una sola vez.
     if (p.examsPassed[String(LEVELS[LEVELS.length - 1].n)]) graduate();
     startGradMusic();
-    const id = setTimeout(() => playSfx('crowd'), 400);
+    // El público grita y el umpire da la bienvenida al Salón de la Fama.
+    const ids = [setTimeout(() => playSfx('crowd'), 400), setTimeout(() => playSfx('umpHof'), 1500)];
     return () => {
-      clearTimeout(id);
+      ids.forEach(clearTimeout);
       stopGradMusic();
     };
   }, [ready, graduate, p.examsPassed]);
 
   // El público vuelve a gritar de vez en cuando con los fuegos artificiales.
   useEffect(() => {
-    if (phase === 'party' && pops > 0 && pops % 6 === 0) playSfx('crowd');
+    if (phase === 'party' && pops > 0 && pops % 8 === 0) playSfx('crowd');
   }, [pops, phase]);
-  const [onPop] = useState(() => () => setPops((n) => n + 1));
+  const [onPop] = useState(() => () => {
+    playSfx('fireworks');
+    setPops((n) => n + 1);
+  });
 
   const cert: CertText = {
     kicker: t('grad.certKicker'),
@@ -451,7 +455,7 @@ export default function Graduation() {
             <Fans box={{ x: 0, y: 0, w: W, h: 70 }} s={1} cheering />
           </View>
           {[0, 350, 700, 1050, 1400].map((d, i) => (
-            <Firework key={i} W={W} skyH={skyH * 0.9} delay={d} onPop={i === 0 ? onPop : undefined} />
+            <Firework key={i} W={W} skyH={skyH * 0.9} delay={d} onPop={i === 0 || i === 3 ? onPop : undefined} />
           ))}
           <Confetti W={W} H={H} n={36} />
           <View style={{ position: 'absolute', top: insets.top + skyH * 0.26, left: 16, right: 16, alignItems: 'center' }}>
