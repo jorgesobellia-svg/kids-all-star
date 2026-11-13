@@ -11,17 +11,21 @@
     "coins": "balls"
   },
   "language": {
-    "hello": "Hello · Hola · 你好 · こんにちは",
+    "hello": "Hello · Hola · Ciao · Olá · 你好 · こんにちは",
     "title": "Choose your language",
     "note": "You can change it later in Profile",
     "name_es": "Español",
     "name_en": "English",
     "name_zh-Hans": "简体中文",
     "name_ja": "日本語",
+    "name_it": "Italiano",
+    "name_pt-BR": "Português (Brasil)",
     "code_es": "ES",
     "code_en": "EN",
     "code_zh-Hans": "中",
-    "code_ja": "日"
+    "code_ja": "日",
+    "code_it": "IT",
+    "code_pt-BR": "PT"
   },
   "welcome": {
     "appName1": "KIDS",
@@ -444,6 +448,7 @@
     "BO": "Bolivia",
     "PY": "Paraguay",
     "UY": "Uruguay",
+    "BR": "Brazil",
     "CA": "Canada",
     "JP": "Japan",
     "TW": "Taiwan",

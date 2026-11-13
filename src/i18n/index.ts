@@ -4,23 +4,29 @@ import es_ui from './locales/es/ui.json';
 import en_ui from './locales/en/ui.json';
 import zh_ui from './locales/zh-Hans/ui.json';
 import ja_ui from './locales/ja/ui.json';
+import it_ui from './locales/it/ui.json';
+import pt_ui from './locales/pt-BR/ui.json';
 import es_c from './locales/es/content.json';
 import en_c from './locales/en/content.json';
 import zh_c from './locales/zh-Hans/content.json';
 import ja_c from './locales/ja/content.json';
+import it_c from './locales/it/content.json';
+import pt_c from './locales/pt-BR/content.json';
 
-export const LOCALES = ['es', 'en', 'zh-Hans', 'ja'] as const;
+export const LOCALES = ['es', 'en', 'it', 'pt-BR', 'zh-Hans', 'ja'] as const;
 export type Locale = (typeof LOCALES)[number];
 
 export type UiStrings = typeof es_ui;
 export type ContentStrings = typeof es_c;
 
-const UI: Record<Locale, UiStrings> = { es: es_ui, en: en_ui, 'zh-Hans': zh_ui, ja: ja_ui };
+const UI: Record<Locale, UiStrings> = { es: es_ui, en: en_ui, it: it_ui, 'pt-BR': pt_ui, 'zh-Hans': zh_ui, ja: ja_ui };
 const CONTENT: Record<Locale, ContentStrings> = {
   es: es_c,
   en: en_c as unknown as ContentStrings,
   'zh-Hans': zh_c as unknown as ContentStrings,
   ja: ja_c as unknown as ContentStrings,
+  it: it_c as unknown as ContentStrings,
+  'pt-BR': pt_c as unknown as ContentStrings,
 };
 
 /** Código de voz para la mascota en cada idioma. */
@@ -29,6 +35,8 @@ export const SPEECH_LANG: Record<Locale, string> = {
   en: 'en-US',
   'zh-Hans': 'zh-CN',
   ja: 'ja-JP',
+  it: 'it-IT',
+  'pt-BR': 'pt-BR',
 };
 
 export function ui(locale: Locale): UiStrings {
@@ -53,7 +61,7 @@ export function translate(locale: Locale, key: string, vars?: Record<string, str
   return s;
 }
 
-/** Elige el idioma del teléfono si es uno de los 4; si no, inglés. */
+/** Elige el idioma del teléfono si es uno de los de la app; si no, inglés. */
 export function deviceLocale(tags: { languageTag?: string | null; languageCode?: string | null; languageScriptCode?: string | null }[]): Locale {
   for (const t of tags) {
     const code = (t.languageCode || '').toLowerCase();
@@ -61,6 +69,8 @@ export function deviceLocale(tags: { languageTag?: string | null; languageCode?:
     if (code === 'en') return 'en';
     if (code === 'ja') return 'ja';
     if (code === 'zh') return 'zh-Hans';
+    if (code === 'it') return 'it';
+    if (code === 'pt') return 'pt-BR';
   }
   return 'en';
 }

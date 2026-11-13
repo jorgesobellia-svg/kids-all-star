@@ -11,17 +11,21 @@
     "coins": "棒球币"
   },
   "language": {
-    "hello": "Hello · Hola · 你好 · こんにちは",
+    "hello": "Hello · Hola · Ciao · Olá · 你好 · こんにちは",
     "title": "选择你的语言",
     "note": "之后可以在个人资料里更改",
     "name_es": "Español",
     "name_en": "English",
     "name_zh-Hans": "简体中文",
     "name_ja": "日本語",
+    "name_it": "Italiano",
+    "name_pt-BR": "Português (Brasil)",
     "code_es": "ES",
     "code_en": "EN",
     "code_zh-Hans": "中",
-    "code_ja": "日"
+    "code_ja": "日",
+    "code_it": "IT",
+    "code_pt-BR": "PT"
   },
   "welcome": {
     "appName1": "KIDS",
@@ -444,6 +448,7 @@
     "BO": "玻利维亚",
     "PY": "巴拉圭",
     "UY": "乌拉圭",
+    "BR": "巴西",
     "CA": "加拿大",
     "JP": "日本",
     "TW": "台湾",
