@@ -91,7 +91,8 @@ export default function UmpireGame() {
   const game = useRef(ZERO);
   const judged = useRef(false);
   const tm = useTimers();
-  useAmbience(phase !== 'intro' && phase !== 'over');
+  // El público suena en toda la sesión del minijuego (inicio, juego y pantalla final).
+  useAmbience(true);
 
   useEffect(() => () => stopSpeaking(), []);
   useEffect(() => {

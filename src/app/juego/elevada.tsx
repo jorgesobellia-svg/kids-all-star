@@ -161,7 +161,8 @@ export default function FlyGame() {
   const game = useRef({ catches: 0, drops: 0 });
   const onLand = useRef<() => void>(() => {});
   const tm = useTimers();
-  useAmbience(phase !== 'intro' && phase !== 'over');
+  // El público suena en toda la sesión del minijuego (inicio, juego y pantalla final).
+  useAmbience(true);
 
   useEffect(() => () => stopSpeaking(), []);
   useEffect(() => {

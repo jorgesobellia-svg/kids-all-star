@@ -14,3 +14,4 @@
 
 - `assets/sfx/publico.wav`: público del estadio celebrando (gritos y aplausos). Sintetizado por nosotros con `tools/contenido/gen_publico.py`; no usa grabaciones de terceros.
 - `assets/sfx/ump-*.wav` (hit, strike, ball, foul, home run, strike three, ball four): cantos del umpire en ¡A batear!, generados con Kokoro (voz am_michael, Apache 2.0).
+- `assets/music/publico-estadio.mp3`: "Stadium Crowd Stomps & Clapping" de Tomas Herudek (Uppbeat), recortado y hecho bucle. Ambiente de los minijuegos. Revisar en Uppbeat si pide crédito.

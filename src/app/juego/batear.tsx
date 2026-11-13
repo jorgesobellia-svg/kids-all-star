@@ -77,7 +77,8 @@ export default function BatGame() {
   const swung = useRef(false);
   const game = useRef(ZERO);
   const tm = useTimers();
-  useAmbience(phase !== 'intro' && phase !== 'over');
+  // El público suena en toda la sesión del minijuego (inicio, juego y pantalla final).
+  useAmbience(true);
 
   useEffect(() => () => stopSpeaking(), []);
   useEffect(() => {

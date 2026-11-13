@@ -68,7 +68,8 @@ export default function PitchGame() {
   const game = useRef(ZERO);
   const loops = useRef<Animated.CompositeAnimation[]>([]);
   const tm = useTimers();
-  useAmbience(phase !== 'intro' && phase !== 'over');
+  // El público suena en toda la sesión del minijuego (inicio, juego y pantalla final).
+  useAmbience(true);
 
   useEffect(() => () => stopSpeaking(), []);
   useEffect(() => {
