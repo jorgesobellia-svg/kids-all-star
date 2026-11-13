@@ -1,7 +1,8 @@
+import { router } from 'expo-router';
 import React from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { Pressable, ScrollView, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { CoinBall } from '@/components/Art';
+import { CoinBall, StarIcon } from '@/components/Art';
 import { ProgressBar } from '@/components/ui';
 import { LEVELS } from '@/content/levels';
 import { content } from '@/i18n';
@@ -27,6 +28,25 @@ export default function AlbumScreen() {
         </Text>
       </View>
       <ProgressBar value={have / all.length} color={C.gold} height={12} />
+      {p.examsPassed[String(LEVELS[LEVELS.length - 1].n)] ? (
+        // Tarjeta dorada de la graduación: abre la tarjeta (se puede dar vuelta) y el certificado.
+        <Pressable
+          testID="album-golden"
+          accessibilityRole="button"
+          accessibilityLabel={t('grad.albumCard')}
+          onPress={() => router.push({ pathname: '/graduacion', params: { view: 'card' } } as never)}
+          style={{ flexDirection: 'row', alignItems: 'center', gap: 14, backgroundColor: C.gold, borderRadius: 18, padding: 14, borderWidth: 3, borderColor: C.white, boxShadow: `0 5px 0 ${C.goldDark}` } as object}
+        >
+          <View style={{ width: 52, height: 72, borderRadius: 8, backgroundColor: C.navy, alignItems: 'center', justifyContent: 'center', borderWidth: 3, borderColor: '#FFE48A' }}>
+            <StarIcon size={30} color={C.gold} stroke={C.gold} />
+          </View>
+          <View style={{ flex: 1 }}>
+            <Text style={{ fontFamily: F.display, fontSize: 24, color: C.navy }}>{t('grad.albumCard')}</Text>
+            <Text style={{ fontFamily: F.bodyBold, fontSize: 13, color: C.navy }}>{t('grad.hof')}</Text>
+          </View>
+          <Text style={{ fontSize: 26, color: C.navy }}>›</Text>
+        </Pressable>
+      ) : null}
       {LEVELS.map((lv) => (
         <View key={lv.n} style={{ gap: 10, marginTop: 8 }}>
           <Text style={{ fontFamily: F.bodyHeavy, fontSize: 15, color: C.muted }}>{t('album.levelTitle', { n: lv.n })}</Text>

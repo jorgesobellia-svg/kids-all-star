@@ -100,3 +100,7 @@ export const pauseLevelMusic = () => stop('nivel');
 /** Público del estadio de fondo mientras el niño está en un minijuego. */
 export const startGameAmbience = () => start('juego');
 export const stopGameAmbience = () => stop('juego');
+
+/** Graduación del nivel 20: el órgano del estadio con el público (el mismo de la entrada). */
+export const startGradMusic = () => start('intro');
+export const stopGradMusic = () => stop('intro');

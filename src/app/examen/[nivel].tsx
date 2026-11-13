@@ -6,15 +6,17 @@ import ActivityView, { isCorrect, type Answer } from '@/components/Activity';
 import { BadgeMedal, CheckIcon, Mascot, TrophyIcon } from '@/components/Art';
 import Pelotin from '@/components/Pelotin';
 import { Btn, Card, H1, Label, ProgressBar } from '@/components/ui';
-import { getLevel, REWARDS, STAGE_END, STAGE_SUFFIX } from '@/content/levels';
+import { getLevel, LEVELS, REWARDS, STAGE_END, STAGE_SUFFIX } from '@/content/levels';
 import { gameAfter } from '@/content/minigames';
 import type { Activity } from '@/content/types';
 import { content } from '@/i18n';
-import { markLevelPassed, startLevelMusicIfPending } from '@/services/music';
+import { markLevelPassed, startGradMusic, startLevelMusicIfPending } from '@/services/music';
 import { submitScore } from '@/services/scoreboard';
 import { speak, stopSpeaking, umpireCall } from '@/services/speech';
 import { useStore, weekKey } from '@/state/store';
 import { C, F } from '@/theme';
+
+const LAST_LEVEL = LEVELS[LEVELS.length - 1].n;
 
 type ExamText = Record<string, { q: string; opts?: Record<string, string>; answer?: string }>;
 
@@ -242,7 +244,18 @@ export default function ExamScreen() {
         </ScrollView>
         <View style={{ gap: 8 }}>
           {passed ? null : <Btn label={t('exam.retry')} onPress={restart} />}
-          <Btn
+          {passed && level.n === LAST_LEVEL ? (
+            // Último nivel: en vez de volver al camino, la ceremonia de graduación.
+            <Btn
+              testID="exam-ceremony"
+              label={t('grad.goCeremony')}
+              onPress={() => {
+                startGradMusic();
+                router.replace('/graduacion' as never);
+              }}
+            />
+          ) : null}
+          {passed && level.n === LAST_LEVEL ? null : <Btn
             testID="exam-done"
             label={t('exam.toPath')}
             variant={passed ? 'red' : 'ghost'}
@@ -251,7 +264,7 @@ export default function ExamScreen() {
               startLevelMusicIfPending();
               router.back();
             }}
-          />
+          />}
         </View>
       </View>
     );

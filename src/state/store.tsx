@@ -33,6 +33,8 @@ export interface Progress {
   games?: Record<string, { best: number; plays: number }>;
   /** Pelotas ganadas hoy en los minijuegos (tienen tope diario). */
   gameCoins?: { day: string; coins: number };
+  /** Fecha (ISO) en que aprobó el examen del nivel 20 y vio la graduación: la tarjeta dorada es suya. */
+  graduated?: string;
 }
 
 /** Tope diario de pelotas que se pueden ganar en los minijuegos. */
@@ -126,6 +128,8 @@ interface Store {
   finishShopIntro: () => void;
   /** Termina una partida de minijuego: guarda el récord y da las pelotas (con tope diario). */
   finishGame: (id: string, score: number, coins: number) => GameReward;
+  /** Guarda la fecha de graduación (solo la primera vez). */
+  graduate: () => void;
 }
 
 const Ctx = createContext<Store | null>(null);
@@ -276,9 +280,14 @@ export function StoreProvider({ children, fallbackLocale }: { children: React.Re
     return { coins: give, capped: give < coins, newBest };
   }, []);
 
+  // Con setP de función: se llama al abrir la pantalla, cuando pRef todavía puede no estar al día.
+  const graduate = useCallback(() => {
+    setP((s) => (s.graduated ? s : { ...s, graduated: new Date().toISOString() }));
+  }, []);
+
   const value = useMemo<Store>(
-    () => ({ ready, p, t, locale, setLocale, setPlayer, setCountry, completeLesson, passExam, setPlus, setReview, reset, buy, equip, setNumber, giftCap, finishShopIntro, finishGame }),
-    [ready, p, t, locale, setLocale, setPlayer, setCountry, completeLesson, passExam, setPlus, setReview, reset, buy, equip, setNumber, giftCap, finishShopIntro, finishGame],
+    () => ({ ready, p, t, locale, setLocale, setPlayer, setCountry, completeLesson, passExam, setPlus, setReview, reset, buy, equip, setNumber, giftCap, finishShopIntro, finishGame, graduate }),
+    [ready, p, t, locale, setLocale, setPlayer, setCountry, completeLesson, passExam, setPlus, setReview, reset, buy, equip, setNumber, giftCap, finishShopIntro, finishGame, graduate],
   );
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
