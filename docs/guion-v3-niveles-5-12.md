@@ -689,18 +689,18 @@ marca las lecciones que debe repasar y puede intentarlo de nuevo.
 
 | **\#** | **Pregunta**                                                                      | **Opciones**                                                            | **Correcta**                  |
 |--------|-----------------------------------------------------------------------------------|-------------------------------------------------------------------------|-------------------------------|
-| 1      | Parado en tu base estás:                                                          | A salvo (safe) / Out / En foul                                          | A salvo (safe)                |
-| 2      | ¿Cuántos corredores pueden ocupar una base?                                       | Uno / Dos / Tres                                                        | Uno                           |
-| 3      | Si dos corredores llegan a la misma base, está en peligro:                        | El que llegó de atrás / El de adelante / El más alto                    | El que llegó de atrás         |
-| 4      | Verdadero o falso: tocar a un corredor parado en su base lo hace out              | Verdadero / Falso                                                       | Falso                         |
-| 5      | La base del corredor es su:                                                       | Casa segura / Dugout / Montículo                                        | Casa segura                   |
-| 6      | Sales corriendo entre bases y te tocan con la bola. Eres:                         | Out / Safe / Nada pasa                                                  | Out                           |
-| 7      | Toca el lugar seguro de un corredor en primera                                     | — (diagrama del diamante)                                               | Primera base                  |
-| 8      | ¿Qué canta el umpire cuando estás sobre tu base?                                  | ¡Safe! / ¡Out! / ¡Strike!                                               | ¡Safe!                        |
-| 9      | Verdadero o falso: el corredor de adelante es el dueño de la base donde ya estaba | Verdadero / Falso                                                       | Verdadero                     |
-| 10     | Para estar a salvo entre jugadas, el corredor debe estar:                         | Tocando su base / En el jardín / En el dugout                           | Tocando su base               |
-| 11     | Si el corredor de atrás te alcanza, lo correcto es que:                           | Él regrese a su base si puede / Los dos se queden / Tú salgas corriendo | Él regrese a su base si puede |
-| 12     | ¿Cómo se dice «a salvo» en inglés?                                            | Safe / Balk / Lead                                                      | Safe                          |
+| 1 | Parado en tu base estás: | A salvo (safe) / Out / En foul | A salvo (safe) |
+| 2 | ¿Cuántos corredores pueden ocupar una base? | Uno / Dos / Tres | Uno |
+| 3 | Si dos corredores llegan a la misma base, está en peligro: | El que llegó de atrás / El de adelante / El más alto | El que llegó de atrás |
+| 4 | Toca el lugar seguro de un corredor en primera | — (diagrama del diamante) | Primera base |
+| 5 | Con menos de dos outs, atrapan un elevado. ¿Cuándo puede correr el corredor a la siguiente base? | Después de la atrapada, tocando primero su base / Apenas batean / Nunca | Después de la atrapada, tocando primero su base |
+| 6 | Verdadero o falso: si el corredor sale antes de la atrapada, la defensa puede pedir el out en apelación | Verdadero / Falso | Verdadero |
+| 7 | Una bola bateada en territorio fair le pega al corredor antes de pasar a un defensor. ¿Qué pasa? | El corredor es out / Es hit / Es foul | El corredor es out |
+| 8 | Verdadero o falso: si la bola ya pasó junto al campocorto y nadie más puede jugarla, el corredor no es out si le pega | Verdadero / Falso | Verdadero |
+| 9 | Vas corriendo y pasas al corredor que va delante de ti. ¿Qué pasa? | Tú eres out / Él es out / No pasa nada | Tú eres out |
+| 10 | El corredor de adelante se detuvo. ¿Qué haces tú? | Me detengo o regreso / Lo paso / Corro a home | Me detengo o regreso |
+| 11 | Hay dos outs y el bateador le pega a la bola. ¿Qué hace el corredor? | Corre enseguida, apenas hay contacto / Espera a ver si la atrapan / Se queda en su base | Corre enseguida, apenas hay contacto |
+| 12 | Hay un out y batean un elevado. ¿Qué hace primero el corredor? | Mira si lo atrapan / Corre sin mirar / Se sienta | Mira si lo atrapan |
 
 Al aprobar: insignia Pies Rápidos, 50 XP de bono, 10 pelotas y se
 desbloquea el siguiente nivel.
@@ -865,18 +865,18 @@ marca las lecciones que debe repasar y puede intentarlo de nuevo.
 
 | **\#** | **Pregunta**                                                                | **Opciones**                                                                                    | **Correcta**                                 |
 |--------|-----------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|----------------------------------------------|
-| 1      | Batazo limpio que pasa sin que nadie falle:                                 | Hit / Error / Balk                                                                              | Hit                                          |
-| 2      | Un defensor deja caer una bola fácil:                                       | Error / Hit / Safe                                                                              | Error                                        |
-| 3      | ¿Cómo se dice «carreras» en inglés?                                              | Runs / Strikes / Lead                                                                           | Runs                                         |
-| 4      | Un batazo durísimo imposible de atrapar que se escapa del guante:           | Hit / Error / Foul                                                                              | Hit                                          |
-| 5      | Verdadero o falso: un mal tiro en una jugada normal puede ser error         | Verdadero / Falso                                                                               | Verdadero                                    |
-| 6      | ¿Quién decide hit o error?                                                  | El anotador oficial / El público / El bateador                                                  | El anotador oficial                          |
-| 7      | Llegaste porque el primera base no atrapó un tiro normal a la base. Eso es: | Error / Hit / Robo                                                                              | Error                                        |
-| 8      | Toca al defensor que falló la jugada fácil               | — (toca al defensor que dejó caer la bola)                                                      | El defensor que falló la jugada fácil        |
-| 9      | Si tu batazo fue bueno y merecido, el anotador escribe:                     | Hit / E (error) / K                                                                             | Hit                                          |
-| 10     | Verdadero o falso: todo batazo donde el defensor toca la bola es error      | Verdadero / Falso                                                                               | Falso                                        |
-| 11     | La diferencia clave entre hit y error es:                                   | Si la defensa falló una jugada normal / El tamaño del campo / La hora                           | Si la defensa falló una jugada normal        |
-| 12     | Un error permite al equipo al bate:                                         | Llegar o avanzar sin merecerlo con el batazo / Anotar dos carreras siempre / Cambiar de pitcher | Llegar o avanzar sin merecerlo con el batazo |
+| 1 | Batazo limpio que pasa sin que nadie falle: | Hit / Error / Balk | Hit |
+| 2 | Un defensor deja caer una bola fácil: | Error / Hit / Safe | Error |
+| 3 | Toca al defensor que falló la jugada fácil | — (toca al defensor que dejó caer la bola) | El defensor que falló la jugada fácil |
+| 4 | La diferencia clave entre hit y error es: | Si la defensa falló una jugada normal / El tamaño del campo / La hora | Si la defensa falló una jugada normal |
+| 5 | Con bases llenas recibes base por bolas y anota el de tercera. ¿Qué te apuntan? | Una carrera impulsada (RBI) / Un hit / Un error | Una carrera impulsada (RBI) |
+| 6 | Verdadero o falso: si tu elevado de sacrificio hace anotar a un compañero, esa carrera es impulsada por ti | Verdadero / Falso | Verdadero |
+| 7 | El conteo va dos bolas y cero strikes. ¿Quién va ganando? | El bateador / El pitcher / Nadie | El bateador |
+| 8 | ¿Qué es el pitch count? | Cuántos lanzamientos lleva el pitcher / El conteo de bolas y strikes / Las carreras del juego | Cuántos lanzamientos lleva el pitcher |
+| 9 | En la anotación, una K al revés significa: | Ponche mirando, sin swing / Ponche con swing / Un error | Ponche mirando, sin swing |
+| 10 | ¿Qué significa un doble play anotado 6-4-3? | Del campocorto al segunda base y a primera / Tres carreras / Seis outs | Del campocorto al segunda base y a primera |
+| 11 | En el marcador, ¿qué significa la H? | Hits / Home / Hora | Hits |
+| 12 | Verdadero o falso: el equipo con más hits siempre gana | Verdadero / Falso | Falso |
 
 Al aprobar: insignia Anotador Oficial, 50 XP de bono, 10 pelotas, el
 diploma de Prospecto y el uniforme de Prospecto para Pelotín. Se
@@ -1053,18 +1053,18 @@ marca las lecciones que debe repasar y puede intentarlo de nuevo.
 
 | **\#** | **Pregunta**                                                                          | **Opciones**                                                                               | **Correcta**                                |
 |--------|---------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|---------------------------------------------|
-| 1      | Robar una base es avanzar:                                                            | Durante el lanzamiento, sin batazo / Con un jonrón / Caminando tranquilo                   | Durante el lanzamiento, sin batazo          |
-| 2      | ¿Cómo se dice robo de base en inglés?                                                 | Stolen base / Safe base / Fast base                                                        | Stolen base                                 |
-| 3      | ¿Quién decide si en tu liga se puede robar?                                           | Mi liga y mi coach / El público / Yo mismo                                                 | Mi liga y mi coach                          |
-| 4      | En un robo, la carrera es entre el corredor y:                                        | El tiro del catcher a la base / El jardinero / El umpire                                   | El tiro del catcher a la base               |
-| 5      | Verdadero o falso: si el tiro llega y te tocan antes de que llegues, eres out y no hubo robo      | Verdadero / Falso                                                                          | Verdadero                                   |
-| 6      | El momento de arrancar el robo es:                                                    | Cuando el pitcher va hacia home con la bola / Al terminar el juego / Cuando el coach canta | Cuando el pitcher va hacia home con la bola |
-| 7      | Toca la base que más se roba desde primera                                            | — (diagrama del diamante)                                                                  | Segunda base                                |
-| 8      | Si llegas safe en el robo, el anotador escribe:                                       | Base robada (SB) / Error / K                                                               | Base robada (SB)                            |
-| 9      | Verdadero o falso: también se puede robar tercera y hasta home, aunque es más difícil | Verdadero / Falso                                                                          | Verdadero                                   |
-| 10     | ¿Qué canta el umpire si te tocan con la bola antes de llegar?                                  | ¡Out! / ¡Safe! / ¡Foul!                                                                    | ¡Out!                                       |
-| 11     | Antes de intentar robar en tu liga debes saber:                                       | Si mi liga lo permite a mi edad / El color del uniforme rival / Nada                       | Si mi liga lo permite a mi edad             |
-| 12     | El robo necesita del corredor:                                                        | Velocidad y buen arranque / Solo fuerza / Un bate grande                                   | Velocidad y buen arranque                   |
+| 1 | Robar una base es avanzar: | Durante el lanzamiento, sin batazo / Con un jonrón / Caminando tranquilo | Durante el lanzamiento, sin batazo |
+| 2 | ¿Cómo se dice robo de base en inglés? | Stolen base / Safe base / Fast base | Stolen base |
+| 3 | ¿Quién decide si en tu liga se puede robar? | Mi liga y mi coach / El público / Yo mismo | Mi liga y mi coach |
+| 4 | Toca la base que más se roba desde primera | — (diagrama del diamante) | Segunda base |
+| 5 | ¿Qué es despegarse de la base (lead)? | Alejarse unos pasos de la base para acortar el camino / Correr a home / Sentarse en la base | Alejarse unos pasos de la base para acortar el camino |
+| 6 | Estás despegado y el pitcher mira hacia tu base. ¿Qué haces? | Vuelvo rápido a mi base / Me quedo quieto / Corro a la siguiente | Vuelvo rápido a mi base |
+| 7 | ¿Qué es un pickoff? | Un tiro de sorpresa a una base para sacar out al corredor despegado / Un lanzamiento muy rápido / Un batazo corto | Un tiro de sorpresa a una base para sacar out al corredor despegado |
+| 8 | Verdadero o falso: en un pickoff, si vuelves a tu base antes de que te toquen, eres safe | Verdadero / Falso | Verdadero |
+| 9 | Con corredores en base, el pitcher empieza a lanzar y se detiene. ¿Qué es? | Un balk / Un strike / Un pickoff | Un balk |
+| 10 | ¿Qué pasa con un balk? | Cada corredor avanza una base / El bateador es out / El pitcher batea | Cada corredor avanza una base |
+| 11 | Un lanzamiento tan malo que el catcher no puede atraparlo ni bloquearlo es: | Un wild pitch / Un passed ball / Un balk | Un wild pitch |
+| 12 | Una bola que se podía atrapar se le escapa al catcher. ¿Qué es? | Un passed ball / Un wild pitch / Un hit | Un passed ball |
 
 Al aprobar: insignia Ladrón de Bases, 50 XP de bono, 10 pelotas y se
 desbloquea el siguiente nivel.
@@ -1236,18 +1236,18 @@ marca las lecciones que debe repasar y puede intentarlo de nuevo.
 
 | **\#** | **Pregunta**                                                                                                                       | **Opciones**                                                                                                | **Correcta**                                 |
 |--------|------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------------------|
-| 1      | El tercer strike caído ocurre cuando:                                                                                              | El catcher no atrapa limpio el tercer strike / El bateador deja caer el bate / El pitcher deja caer la bola | El catcher no atrapa limpio el tercer strike |
-| 2      | Con primera libre, el bateador con tercer strike caído puede:                                                                      | Correr a primera / Anotar directo / Lanzar                                                                  | Correr a primera                             |
-| 3      | Con primera ocupada y un out, ¿aplica la regla?                                                                                    | No / Sí / Solo los sábados                                                                                  | No                                           |
-| 4      | Con primera ocupada y dos outs, ¿aplica?                                                                                           | Sí / No / Nunca                                                                                             | Sí                                           |
-| 5      | ¿Cómo se dice tercer strike caído en inglés?                                                                                       | Dropped third strike / Falling strike / Lost ball                                                           | Dropped third strike                         |
-| 6      | Para completar el out, el catcher debe:                                                                                            | Tocar al bateador o tirar a primera / Gritar / Pedir otra bola                                              | Tocar al bateador o tirar a primera          |
-| 7      | Verdadero o falso: si el catcher atrapa limpio el tercer strike, el bateador es out y no corre                                     | Verdadero / Falso                                                                                           | Verdadero                                    |
-| 8      | ¿A quién preguntas si tu liga usa esta regla?                                                                                      | A mi coach / Al rival / A nadie                                                                             | A mi coach                                   |
-| 9      | Toca la base a la que corre el bateador con el tercer strike caído                                                                 | — (diagrama del diamante)                                                                                   | Primera base                                 |
-| 10     | Si el bateador no corre y se va al dugout, la defensa:                                                                             | Ya no necesita hacer nada, se rindió / Debe perseguirlo igual / Pierde el out                               | Ya no necesita hacer nada, se rindió         |
-| 11     | Verdadero o falso: un lanzamiento que pica antes del guante y es tercer strike puede ser «caído» si el catcher no lo atrapa limpio | Verdadero / Falso                                                                                           | Verdadero                                    |
-| 12     | Esta regla existe porque el out de ponche se completa:                                                                             | Con la atrapada limpia del catcher / Con el swing solamente / Con el grito del público                      | Con la atrapada limpia del catcher           |
+| 1 | El tercer strike caído ocurre cuando: | El catcher no atrapa limpio el tercer strike / El bateador deja caer el bate / El pitcher deja caer la bola | El catcher no atrapa limpio el tercer strike |
+| 2 | Con primera libre, el bateador con tercer strike caído puede: | Correr a primera / Anotar directo / Lanzar | Correr a primera |
+| 3 | Con primera ocupada y dos outs, ¿aplica? | Sí / No / Nunca | Sí |
+| 4 | Toca la base a la que corre el bateador con el tercer strike caído | — (diagrama del diamante) | Primera base |
+| 5 | Corredores en primera y segunda, un out, y un elevado fácil al cuadro. ¿Qué canta el umpire? | Infield fly: el bateador es out / Foul / Bola | Infield fly: el bateador es out |
+| 6 | ¿Para qué existe el infield fly? | Para que la defensa no deje caer la bola a propósito y haga un doble play / Para que el juego dure más / Para ayudar al pitcher a descansar | Para que la defensa no deje caer la bola a propósito y haga un doble play |
+| 7 | Durante una bola muerta, los corredores: | No pueden avanzar / Corren libres / Anotan | No pueden avanzar |
+| 8 | Verdadero o falso: un foul es un ejemplo de bola muerta | Verdadero / Falso | Verdadero |
+| 9 | Un defensor sin la bola se para en el camino del corredor y lo bloquea. ¿Qué es? | Obstrucción / Interferencia / Un error | Obstrucción |
+| 10 | Un corredor estorba a propósito al defensor que va a atrapar la bola. ¿Qué es? | Interferencia / Obstrucción / Un robo | Interferencia |
+| 11 | El corredor no pisó segunda. ¿Qué puede hacer la defensa? | Apelar: tocar la base o al corredor con la bola y avisar al umpire / Nada / Pedir otro bateador | Apelar: tocar la base o al corredor con la bola y avisar al umpire |
+| 12 | Verdadero o falso: si la apelación prospera, el corredor es out | Verdadero / Falso | Verdadero |
 
 Al aprobar: insignia Juez del Diamante, 50 XP de bono, 10 pelotas y se
 desbloquea el siguiente nivel.
@@ -1422,18 +1422,18 @@ marca las lecciones que debe repasar y puede intentarlo de nuevo.
 
 | **\#** | **Pregunta**                                                                                | **Opciones**                                                                 | **Correcta**                               |
 |--------|---------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|--------------------------------------------|
-| 1      | La goma está en:                                                                            | La cima del montículo / Segunda base / El dugout                             | La cima del montículo                      |
-| 2      | ¿Cómo se dice goma del pitcher en inglés?                                                   | Rubber / Gum base / White base                                               | Rubber                                     |
-| 3      | El pitcher lanza con un pie:                                                                | Apoyado en la goma / En el aire / En home                                    | Apoyado en la goma                         |
-| 4      | La distancia montículo-home en ligas infantiles es:                                         | Más corta y cambia con la edad / Igual que la profesional / Siempre la misma | Más corta y cambia con la edad             |
-| 5      | Verdadero o falso: copiar la distancia de los profesionales para niños pequeños estaría mal | Verdadero / Falso                                                            | Verdadero                                  |
-| 6      | ¿A quién preguntas por la distancia de tu liga?                                             | A mi coach / Al rival / A nadie                                              | A mi coach                                 |
-| 7      | Toca dónde está la goma en el diamante                                                      | — (diagrama del diamante)                                                    | El montículo                               |
-| 8      | Desde la goma, el pitcher primero:                                                          | Mira al catcher y recibe la señal / Corre a primera / Batea                  | Mira al catcher y recibe la señal          |
-| 9      | Sin apoyar el pie en la goma, el lanzamiento:                                               | No debe hacerse / Vale igual siempre / Es un jonrón                          | No debe hacerse                            |
-| 10     | Verdadero o falso: la goma es blanca y alargada, distinta de una base                       | Verdadero / Falso                                                            | Verdadero                                  |
-| 11     | El montículo también se llama:                                                              | La lomita / El lugar seguro / El círculo de espera                            | La lomita                                  |
-| 12     | Que la distancia cambie por edad sirve para:                                                | Que los niños lancen seguros y con control / Hacer el juego más lento / Nada | Que los niños lancen seguros y con control |
+| 1 | La goma está en: | La cima del montículo / Segunda base / El dugout | La cima del montículo |
+| 2 | ¿Cómo se dice goma del pitcher en inglés? | Rubber / Gum base / White base | Rubber |
+| 3 | La distancia montículo-home en ligas infantiles es: | Más corta y cambia con la edad / Igual que la profesional / Siempre la misma | Más corta y cambia con la edad |
+| 4 | Toca dónde está la goma en el diamante | — (diagrama del diamante) | El montículo |
+| 5 | ¿Cuándo se usa sobre todo el windup (el movimiento completo)? | Sin corredores en base / Con bases llenas / Solo al batear | Sin corredores en base |
+| 6 | Con corredores en base, el pitcher usa el set o stretch para: | Cuidar a los corredores con un movimiento corto / Lanzar más lento / Descansar | Cuidar a los corredores con un movimiento corto |
+| 7 | ¿Cuáles son los primeros lanzamientos de un pitcher joven? | La recta y el cambio / Las curvas / Solo bolas | La recta y el cambio |
+| 8 | Verdadero o falso: las curvas son buenas para brazos jóvenes desde el primer día | Verdadero / Falso | Falso |
+| 9 | Te duele el codo mientras lanzas. ¿Qué haces? | Paro y le aviso a un adulto / Sigo lanzando / Lanzo más fuerte | Paro y le aviso a un adulto |
+| 10 | ¿Quién decide cuántos lanzamientos y cuánto descanso te tocan? | Mi liga, según mi edad: le pregunto a mi coach / El público / Yo solo | Mi liga, según mi edad: le pregunto a mi coach |
+| 11 | El pitcher que entra a lanzar después del abridor es el: | Relevista / Bateador / Umpire | Relevista |
+| 12 | ¿Dónde calientan los relevistas? | En el bullpen / En home / En segunda | En el bullpen |
 
 Al aprobar: insignia Brazo de Acero, 50 XP de bono, 10 pelotas y se
 desbloquea el siguiente nivel.
@@ -1603,18 +1603,18 @@ marca las lecciones que debe repasar y puede intentarlo de nuevo.
 
 | **\#** | **Pregunta**                                                                               | **Opciones**                                                                             | **Correcta**                                           |
 |--------|--------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|--------------------------------------------------------|
-| 1      | ¿Cuándo se piensa a dónde tirar la bola?                                                   | Antes de cada lanzamiento / Después del juego / Nunca                                    | Antes de cada lanzamiento                              |
-| 2      | Sin corredores, rolling al tercera base: tira a:                                           | Primera / Home / Segunda                                                                 | Primera                                                |
-| 3      | El corredor que conviene frenar primero es:                                                | El más adelantado / El más lento / Ninguno                                               | El más adelantado                                      |
-| 4      | Un out seguro vale más que:                                                                | Un tiro imposible sin out / Dos outs seguros / Un jonrón                                 | Un tiro imposible sin out                              |
-| 5      | Con dos outs, cualquier out:                                                               | Termina la entrada / Vale doble / No cuenta                                              | Termina la entrada                                     |
-| 6      | La pregunta del All Star antes del lanzamiento es:                                         | Si me la batean, ¿qué hago? / ¿Quién me mira? / ¿Qué hora es?                            | Si me la batean, ¿qué hago?                            |
-| 7      | Toca la base del out con un rolling sin corredores                                         | — (diagrama del diamante)                                                                | Primera base                                           |
-| 8      | Corredor en segunda que puede anotar con un hit: el tiro largo desde los jardines buscará: | Home, para frenar la carrera / Primera siempre / El dugout                               | Home, para frenar la carrera                           |
-| 9      | Verdadero o falso: pensar la jugada antes hace más rápido al defensor                      | Verdadero / Falso                                                                        | Verdadero                                              |
-| 10     | Si el tiro al corredor líder es imposible, lo correcto es:                                 | Asegurar el out más fácil / Tirar a cualquier lado / Quedarse con la bola                | Asegurar el out más fácil                              |
-| 11     | Con corredor en tercera y menos de dos outs, un rolling puede buscar:                      | El out en home si el corredor arranca, o el out seguro / Solo mirar / Lanzar de nuevo    | El out en home si el corredor arranca, o el out seguro |
-| 12     | Pensar como All Star significa:                                                            | Planear la jugada antes de que pase / Correr más que todos / Batear más fuerte que todos | Planear la jugada antes de que pase                    |
+| 1 | ¿Cuándo se piensa a dónde tirar la bola? | Antes de cada lanzamiento / Después del juego / Nunca | Antes de cada lanzamiento |
+| 2 | Sin corredores, rolling al tercera base: tira a: | Primera / Home / Segunda | Primera |
+| 3 | El corredor que conviene frenar primero es: | El más adelantado / El más lento / Ninguno | El más adelantado |
+| 4 | Toca la base del out con un rolling sin corredores | — (diagrama del diamante) | Primera base |
+| 5 | En un tiro largo desde los jardines, ¿qué hace el cortador? | Recibe el tiro y lo pasa a la base que haga falta / Batea / Se va al dugout | Recibe el tiro y lo pasa a la base que haga falta |
+| 6 | Verdadero o falso: el cortador es un defensor del cuadro que se pone en el camino del tiro | Verdadero / Falso | Verdadero |
+| 7 | El primera base sale lejos a buscar un rolling. ¿Quién cubre primera? | El pitcher / El jardinero central / Nadie | El pitcher |
+| 8 | ¿Para qué sirve respaldar (back up) detrás de una base? | Para frenar la bola si se escapa / Para descansar / Para batear | Para frenar la bola si se escapa |
+| 9 | ¿Quién te dice si sigues corriendo o te frenas en tercera? | El coach de tercera / El rival / El público | El coach de tercera |
+| 10 | Verdadero o falso: las señales del equipo se le cuentan al rival | Verdadero / Falso | Falso |
+| 11 | Al terminar el juego, ganes o pierdas, un All Star: | Saluda al rival / Se va sin saludar / Se burla del rival | Saluda al rival |
+| 12 | Si no estás de acuerdo con el umpire, ¿qué haces? | Dejo que mi coach hable con él / Le grito / Tiro el casco | Dejo que mi coach hable con él |
 
 Al aprobar: insignia All Star, 50 XP de bono, 10 pelotas, el diploma de
 Estrella y el uniforme All Star para Pelotín. La app le muestra el

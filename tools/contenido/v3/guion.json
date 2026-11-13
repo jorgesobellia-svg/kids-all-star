@@ -1629,35 +1629,6 @@
    },
    {
     "n": 4,
-    "q": "Verdadero o falso: tocar a un corredor parado en su base lo hace out",
-    "opts": [
-     "Verdadero",
-     "Falso"
-    ],
-    "correct": "Falso"
-   },
-   {
-    "n": 5,
-    "q": "La base del corredor es su:",
-    "opts": [
-     "Casa segura",
-     "Dugout",
-     "Montículo"
-    ],
-    "correct": "Casa segura"
-   },
-   {
-    "n": 6,
-    "q": "Sales corriendo entre bases y te tocan con la bola. Eres:",
-    "opts": [
-     "Out",
-     "Safe",
-     "Nada pasa"
-    ],
-    "correct": "Out"
-   },
-   {
-    "n": 7,
     "q": "Toca el lugar seguro de un corredor en primera",
     "opts": [
      "— (diagrama del diamante)"
@@ -1665,18 +1636,18 @@
     "correct": "Primera base"
    },
    {
-    "n": 8,
-    "q": "¿Qué canta el umpire cuando estás sobre tu base?",
+    "n": 5,
+    "q": "Con menos de dos outs, atrapan un elevado. ¿Cuándo puede correr el corredor a la siguiente base?",
     "opts": [
-     "¡Safe!",
-     "¡Out!",
-     "¡Strike!"
+     "Después de la atrapada, tocando primero su base",
+     "Apenas batean",
+     "Nunca"
     ],
-    "correct": "¡Safe!"
+    "correct": "Después de la atrapada, tocando primero su base"
    },
    {
-    "n": 9,
-    "q": "Verdadero o falso: el corredor de adelante es el dueño de la base donde ya estaba",
+    "n": 6,
+    "q": "Verdadero o falso: si el corredor sale antes de la atrapada, la defensa puede pedir el out en apelación",
     "opts": [
      "Verdadero",
      "Falso"
@@ -1684,34 +1655,63 @@
     "correct": "Verdadero"
    },
    {
-    "n": 10,
-    "q": "Para estar a salvo entre jugadas, el corredor debe estar:",
+    "n": 7,
+    "q": "Una bola bateada en territorio fair le pega al corredor antes de pasar a un defensor. ¿Qué pasa?",
     "opts": [
-     "Tocando su base",
-     "En el jardín",
-     "En el dugout"
+     "El corredor es out",
+     "Es hit",
+     "Es foul"
     ],
-    "correct": "Tocando su base"
+    "correct": "El corredor es out"
+   },
+   {
+    "n": 8,
+    "q": "Verdadero o falso: si la bola ya pasó junto al campocorto y nadie más puede jugarla, el corredor no es out si le pega",
+    "opts": [
+     "Verdadero",
+     "Falso"
+    ],
+    "correct": "Verdadero"
+   },
+   {
+    "n": 9,
+    "q": "Vas corriendo y pasas al corredor que va delante de ti. ¿Qué pasa?",
+    "opts": [
+     "Tú eres out",
+     "Él es out",
+     "No pasa nada"
+    ],
+    "correct": "Tú eres out"
+   },
+   {
+    "n": 10,
+    "q": "El corredor de adelante se detuvo. ¿Qué haces tú?",
+    "opts": [
+     "Me detengo o regreso",
+     "Lo paso",
+     "Corro a home"
+    ],
+    "correct": "Me detengo o regreso"
    },
    {
     "n": 11,
-    "q": "Si el corredor de atrás te alcanza, lo correcto es que:",
+    "q": "Hay dos outs y el bateador le pega a la bola. ¿Qué hace el corredor?",
     "opts": [
-     "Él regrese a su base si puede",
-     "Los dos se queden",
-     "Tú salgas corriendo"
+     "Corre enseguida, apenas hay contacto",
+     "Espera a ver si la atrapan",
+     "Se queda en su base"
     ],
-    "correct": "Él regrese a su base si puede"
+    "correct": "Corre enseguida, apenas hay contacto"
    },
    {
     "n": 12,
-    "q": "¿Cómo se dice «a salvo» en inglés?",
+    "q": "Hay un out y batean un elevado. ¿Qué hace primero el corredor?",
     "opts": [
-     "Safe",
-     "Balk",
-     "Lead"
+     "Mira si lo atrapan",
+     "Corre sin mirar",
+     "Se sienta"
     ],
-    "correct": "Safe"
+    "correct": "Mira si lo atrapan"
    }
   ],
   "reward": "Al aprobar: insignia Pies Rápidos, 50 XP de bono, 10 pelotas y se desbloquea el siguiente nivel."
@@ -2194,55 +2194,6 @@
    },
    {
     "n": 3,
-    "q": "¿Cómo se dice «carreras» en inglés?",
-    "opts": [
-     "Runs",
-     "Strikes",
-     "Lead"
-    ],
-    "correct": "Runs"
-   },
-   {
-    "n": 4,
-    "q": "Un batazo durísimo imposible de atrapar que se escapa del guante:",
-    "opts": [
-     "Hit",
-     "Error",
-     "Foul"
-    ],
-    "correct": "Hit"
-   },
-   {
-    "n": 5,
-    "q": "Verdadero o falso: un mal tiro en una jugada normal puede ser error",
-    "opts": [
-     "Verdadero",
-     "Falso"
-    ],
-    "correct": "Verdadero"
-   },
-   {
-    "n": 6,
-    "q": "¿Quién decide hit o error?",
-    "opts": [
-     "El anotador oficial",
-     "El público",
-     "El bateador"
-    ],
-    "correct": "El anotador oficial"
-   },
-   {
-    "n": 7,
-    "q": "Llegaste porque el primera base no atrapó un tiro normal a la base. Eso es:",
-    "opts": [
-     "Error",
-     "Hit",
-     "Robo"
-    ],
-    "correct": "Error"
-   },
-   {
-    "n": 8,
     "q": "Toca al defensor que falló la jugada fácil",
     "opts": [
      "— (toca al defensor que dejó caer la bola)"
@@ -2250,26 +2201,7 @@
     "correct": "El defensor que falló la jugada fácil"
    },
    {
-    "n": 9,
-    "q": "Si tu batazo fue bueno y merecido, el anotador escribe:",
-    "opts": [
-     "Hit",
-     "E (error)",
-     "K"
-    ],
-    "correct": "Hit"
-   },
-   {
-    "n": 10,
-    "q": "Verdadero o falso: todo batazo donde el defensor toca la bola es error",
-    "opts": [
-     "Verdadero",
-     "Falso"
-    ],
-    "correct": "Falso"
-   },
-   {
-    "n": 11,
+    "n": 4,
     "q": "La diferencia clave entre hit y error es:",
     "opts": [
      "Si la defensa falló una jugada normal",
@@ -2279,14 +2211,82 @@
     "correct": "Si la defensa falló una jugada normal"
    },
    {
-    "n": 12,
-    "q": "Un error permite al equipo al bate:",
+    "n": 5,
+    "q": "Con bases llenas recibes base por bolas y anota el de tercera. ¿Qué te apuntan?",
     "opts": [
-     "Llegar o avanzar sin merecerlo con el batazo",
-     "Anotar dos carreras siempre",
-     "Cambiar de pitcher"
+     "Una carrera impulsada (RBI)",
+     "Un hit",
+     "Un error"
     ],
-    "correct": "Llegar o avanzar sin merecerlo con el batazo"
+    "correct": "Una carrera impulsada (RBI)"
+   },
+   {
+    "n": 6,
+    "q": "Verdadero o falso: si tu elevado de sacrificio hace anotar a un compañero, esa carrera es impulsada por ti",
+    "opts": [
+     "Verdadero",
+     "Falso"
+    ],
+    "correct": "Verdadero"
+   },
+   {
+    "n": 7,
+    "q": "El conteo va dos bolas y cero strikes. ¿Quién va ganando?",
+    "opts": [
+     "El bateador",
+     "El pitcher",
+     "Nadie"
+    ],
+    "correct": "El bateador"
+   },
+   {
+    "n": 8,
+    "q": "¿Qué es el pitch count?",
+    "opts": [
+     "Cuántos lanzamientos lleva el pitcher",
+     "El conteo de bolas y strikes",
+     "Las carreras del juego"
+    ],
+    "correct": "Cuántos lanzamientos lleva el pitcher"
+   },
+   {
+    "n": 9,
+    "q": "En la anotación, una K al revés significa:",
+    "opts": [
+     "Ponche mirando, sin swing",
+     "Ponche con swing",
+     "Un error"
+    ],
+    "correct": "Ponche mirando, sin swing"
+   },
+   {
+    "n": 10,
+    "q": "¿Qué significa un doble play anotado 6-4-3?",
+    "opts": [
+     "Del campocorto al segunda base y a primera",
+     "Tres carreras",
+     "Seis outs"
+    ],
+    "correct": "Del campocorto al segunda base y a primera"
+   },
+   {
+    "n": 11,
+    "q": "En el marcador, ¿qué significa la H?",
+    "opts": [
+     "Hits",
+     "Home",
+     "Hora"
+    ],
+    "correct": "Hits"
+   },
+   {
+    "n": 12,
+    "q": "Verdadero o falso: el equipo con más hits siempre gana",
+    "opts": [
+     "Verdadero",
+     "Falso"
+    ],
+    "correct": "Falso"
    }
   ],
   "reward": "Al aprobar: insignia Anotador Oficial, 50 XP de bono, 10 pelotas, el diploma de Prospecto y el uniforme de Prospecto para Pelotín. Se desbloquea el Nivel 9 y empieza la etapa Estrella."
@@ -2777,35 +2777,6 @@
    },
    {
     "n": 4,
-    "q": "En un robo, la carrera es entre el corredor y:",
-    "opts": [
-     "El tiro del catcher a la base",
-     "El jardinero",
-     "El umpire"
-    ],
-    "correct": "El tiro del catcher a la base"
-   },
-   {
-    "n": 5,
-    "q": "Verdadero o falso: si el tiro llega y te tocan antes de que llegues, eres out y no hubo robo",
-    "opts": [
-     "Verdadero",
-     "Falso"
-    ],
-    "correct": "Verdadero"
-   },
-   {
-    "n": 6,
-    "q": "El momento de arrancar el robo es:",
-    "opts": [
-     "Cuando el pitcher va hacia home con la bola",
-     "Al terminar el juego",
-     "Cuando el coach canta"
-    ],
-    "correct": "Cuando el pitcher va hacia home con la bola"
-   },
-   {
-    "n": 7,
     "q": "Toca la base que más se roba desde primera",
     "opts": [
      "— (diagrama del diamante)"
@@ -2813,18 +2784,38 @@
     "correct": "Segunda base"
    },
    {
-    "n": 8,
-    "q": "Si llegas safe en el robo, el anotador escribe:",
+    "n": 5,
+    "q": "¿Qué es despegarse de la base (lead)?",
     "opts": [
-     "Base robada (SB)",
-     "Error",
-     "K"
+     "Alejarse unos pasos de la base para acortar el camino",
+     "Correr a home",
+     "Sentarse en la base"
     ],
-    "correct": "Base robada (SB)"
+    "correct": "Alejarse unos pasos de la base para acortar el camino"
    },
    {
-    "n": 9,
-    "q": "Verdadero o falso: también se puede robar tercera y hasta home, aunque es más difícil",
+    "n": 6,
+    "q": "Estás despegado y el pitcher mira hacia tu base. ¿Qué haces?",
+    "opts": [
+     "Vuelvo rápido a mi base",
+     "Me quedo quieto",
+     "Corro a la siguiente"
+    ],
+    "correct": "Vuelvo rápido a mi base"
+   },
+   {
+    "n": 7,
+    "q": "¿Qué es un pickoff?",
+    "opts": [
+     "Un tiro de sorpresa a una base para sacar out al corredor despegado",
+     "Un lanzamiento muy rápido",
+     "Un batazo corto"
+    ],
+    "correct": "Un tiro de sorpresa a una base para sacar out al corredor despegado"
+   },
+   {
+    "n": 8,
+    "q": "Verdadero o falso: en un pickoff, si vuelves a tu base antes de que te toquen, eres safe",
     "opts": [
      "Verdadero",
      "Falso"
@@ -2832,34 +2823,44 @@
     "correct": "Verdadero"
    },
    {
-    "n": 10,
-    "q": "¿Qué canta el umpire si te tocan con la bola antes de llegar?",
+    "n": 9,
+    "q": "Con corredores en base, el pitcher empieza a lanzar y se detiene. ¿Qué es?",
     "opts": [
-     "¡Out!",
-     "¡Safe!",
-     "¡Foul!"
+     "Un balk",
+     "Un strike",
+     "Un pickoff"
     ],
-    "correct": "¡Out!"
+    "correct": "Un balk"
+   },
+   {
+    "n": 10,
+    "q": "¿Qué pasa con un balk?",
+    "opts": [
+     "Cada corredor avanza una base",
+     "El bateador es out",
+     "El pitcher batea"
+    ],
+    "correct": "Cada corredor avanza una base"
    },
    {
     "n": 11,
-    "q": "Antes de intentar robar en tu liga debes saber:",
+    "q": "Un lanzamiento tan malo que el catcher no puede atraparlo ni bloquearlo es:",
     "opts": [
-     "Si mi liga lo permite a mi edad",
-     "El color del uniforme rival",
-     "Nada"
+     "Un wild pitch",
+     "Un passed ball",
+     "Un balk"
     ],
-    "correct": "Si mi liga lo permite a mi edad"
+    "correct": "Un wild pitch"
    },
    {
     "n": 12,
-    "q": "El robo necesita del corredor:",
+    "q": "Una bola que se podía atrapar se le escapa al catcher. ¿Qué es?",
     "opts": [
-     "Velocidad y buen arranque",
-     "Solo fuerza",
-     "Un bate grande"
+     "Un passed ball",
+     "Un wild pitch",
+     "Un hit"
     ],
-    "correct": "Velocidad y buen arranque"
+    "correct": "Un passed ball"
    }
   ],
   "reward": "Al aprobar: insignia Ladrón de Bases, 50 XP de bono, 10 pelotas y se desbloquea el siguiente nivel."
@@ -3342,16 +3343,6 @@
    },
    {
     "n": 3,
-    "q": "Con primera ocupada y un out, ¿aplica la regla?",
-    "opts": [
-     "No",
-     "Sí",
-     "Solo los sábados"
-    ],
-    "correct": "No"
-   },
-   {
-    "n": 4,
     "q": "Con primera ocupada y dos outs, ¿aplica?",
     "opts": [
      "Sí",
@@ -3361,46 +3352,7 @@
     "correct": "Sí"
    },
    {
-    "n": 5,
-    "q": "¿Cómo se dice tercer strike caído en inglés?",
-    "opts": [
-     "Dropped third strike",
-     "Falling strike",
-     "Lost ball"
-    ],
-    "correct": "Dropped third strike"
-   },
-   {
-    "n": 6,
-    "q": "Para completar el out, el catcher debe:",
-    "opts": [
-     "Tocar al bateador o tirar a primera",
-     "Gritar",
-     "Pedir otra bola"
-    ],
-    "correct": "Tocar al bateador o tirar a primera"
-   },
-   {
-    "n": 7,
-    "q": "Verdadero o falso: si el catcher atrapa limpio el tercer strike, el bateador es out y no corre",
-    "opts": [
-     "Verdadero",
-     "Falso"
-    ],
-    "correct": "Verdadero"
-   },
-   {
-    "n": 8,
-    "q": "¿A quién preguntas si tu liga usa esta regla?",
-    "opts": [
-     "A mi coach",
-     "Al rival",
-     "A nadie"
-    ],
-    "correct": "A mi coach"
-   },
-   {
-    "n": 9,
+    "n": 4,
     "q": "Toca la base a la que corre el bateador con el tercer strike caído",
     "opts": [
      "— (diagrama del diamante)"
@@ -3408,18 +3360,38 @@
     "correct": "Primera base"
    },
    {
-    "n": 10,
-    "q": "Si el bateador no corre y se va al dugout, la defensa:",
+    "n": 5,
+    "q": "Corredores en primera y segunda, un out, y un elevado fácil al cuadro. ¿Qué canta el umpire?",
     "opts": [
-     "Ya no necesita hacer nada, se rindió",
-     "Debe perseguirlo igual",
-     "Pierde el out"
+     "Infield fly: el bateador es out",
+     "Foul",
+     "Bola"
     ],
-    "correct": "Ya no necesita hacer nada, se rindió"
+    "correct": "Infield fly: el bateador es out"
    },
    {
-    "n": 11,
-    "q": "Verdadero o falso: un lanzamiento que pica antes del guante y es tercer strike puede ser «caído» si el catcher no lo atrapa limpio",
+    "n": 6,
+    "q": "¿Para qué existe el infield fly?",
+    "opts": [
+     "Para que la defensa no deje caer la bola a propósito y haga un doble play",
+     "Para que el juego dure más",
+     "Para ayudar al pitcher a descansar"
+    ],
+    "correct": "Para que la defensa no deje caer la bola a propósito y haga un doble play"
+   },
+   {
+    "n": 7,
+    "q": "Durante una bola muerta, los corredores:",
+    "opts": [
+     "No pueden avanzar",
+     "Corren libres",
+     "Anotan"
+    ],
+    "correct": "No pueden avanzar"
+   },
+   {
+    "n": 8,
+    "q": "Verdadero o falso: un foul es un ejemplo de bola muerta",
     "opts": [
      "Verdadero",
      "Falso"
@@ -3427,14 +3399,43 @@
     "correct": "Verdadero"
    },
    {
-    "n": 12,
-    "q": "Esta regla existe porque el out de ponche se completa:",
+    "n": 9,
+    "q": "Un defensor sin la bola se para en el camino del corredor y lo bloquea. ¿Qué es?",
     "opts": [
-     "Con la atrapada limpia del catcher",
-     "Con el swing solamente",
-     "Con el grito del público"
+     "Obstrucción",
+     "Interferencia",
+     "Un error"
     ],
-    "correct": "Con la atrapada limpia del catcher"
+    "correct": "Obstrucción"
+   },
+   {
+    "n": 10,
+    "q": "Un corredor estorba a propósito al defensor que va a atrapar la bola. ¿Qué es?",
+    "opts": [
+     "Interferencia",
+     "Obstrucción",
+     "Un robo"
+    ],
+    "correct": "Interferencia"
+   },
+   {
+    "n": 11,
+    "q": "El corredor no pisó segunda. ¿Qué puede hacer la defensa?",
+    "opts": [
+     "Apelar: tocar la base o al corredor con la bola y avisar al umpire",
+     "Nada",
+     "Pedir otro bateador"
+    ],
+    "correct": "Apelar: tocar la base o al corredor con la bola y avisar al umpire"
+   },
+   {
+    "n": 12,
+    "q": "Verdadero o falso: si la apelación prospera, el corredor es out",
+    "opts": [
+     "Verdadero",
+     "Falso"
+    ],
+    "correct": "Verdadero"
    }
   ],
   "reward": "Al aprobar: insignia Juez del Diamante, 50 XP de bono, 10 pelotas y se desbloquea el siguiente nivel."
@@ -3919,16 +3920,6 @@
    },
    {
     "n": 3,
-    "q": "El pitcher lanza con un pie:",
-    "opts": [
-     "Apoyado en la goma",
-     "En el aire",
-     "En home"
-    ],
-    "correct": "Apoyado en la goma"
-   },
-   {
-    "n": 4,
     "q": "La distancia montículo-home en ligas infantiles es:",
     "opts": [
      "Más corta y cambia con la edad",
@@ -3938,26 +3929,7 @@
     "correct": "Más corta y cambia con la edad"
    },
    {
-    "n": 5,
-    "q": "Verdadero o falso: copiar la distancia de los profesionales para niños pequeños estaría mal",
-    "opts": [
-     "Verdadero",
-     "Falso"
-    ],
-    "correct": "Verdadero"
-   },
-   {
-    "n": 6,
-    "q": "¿A quién preguntas por la distancia de tu liga?",
-    "opts": [
-     "A mi coach",
-     "Al rival",
-     "A nadie"
-    ],
-    "correct": "A mi coach"
-   },
-   {
-    "n": 7,
+    "n": 4,
     "q": "Toca dónde está la goma en el diamante",
     "opts": [
      "— (diagrama del diamante)"
@@ -3965,53 +3937,83 @@
     "correct": "El montículo"
    },
    {
+    "n": 5,
+    "q": "¿Cuándo se usa sobre todo el windup (el movimiento completo)?",
+    "opts": [
+     "Sin corredores en base",
+     "Con bases llenas",
+     "Solo al batear"
+    ],
+    "correct": "Sin corredores en base"
+   },
+   {
+    "n": 6,
+    "q": "Con corredores en base, el pitcher usa el set o stretch para:",
+    "opts": [
+     "Cuidar a los corredores con un movimiento corto",
+     "Lanzar más lento",
+     "Descansar"
+    ],
+    "correct": "Cuidar a los corredores con un movimiento corto"
+   },
+   {
+    "n": 7,
+    "q": "¿Cuáles son los primeros lanzamientos de un pitcher joven?",
+    "opts": [
+     "La recta y el cambio",
+     "Las curvas",
+     "Solo bolas"
+    ],
+    "correct": "La recta y el cambio"
+   },
+   {
     "n": 8,
-    "q": "Desde la goma, el pitcher primero:",
-    "opts": [
-     "Mira al catcher y recibe la señal",
-     "Corre a primera",
-     "Batea"
-    ],
-    "correct": "Mira al catcher y recibe la señal"
-   },
-   {
-    "n": 9,
-    "q": "Sin apoyar el pie en la goma, el lanzamiento:",
-    "opts": [
-     "No debe hacerse",
-     "Vale igual siempre",
-     "Es un jonrón"
-    ],
-    "correct": "No debe hacerse"
-   },
-   {
-    "n": 10,
-    "q": "Verdadero o falso: la goma es blanca y alargada, distinta de una base",
+    "q": "Verdadero o falso: las curvas son buenas para brazos jóvenes desde el primer día",
     "opts": [
      "Verdadero",
      "Falso"
     ],
-    "correct": "Verdadero"
+    "correct": "Falso"
+   },
+   {
+    "n": 9,
+    "q": "Te duele el codo mientras lanzas. ¿Qué haces?",
+    "opts": [
+     "Paro y le aviso a un adulto",
+     "Sigo lanzando",
+     "Lanzo más fuerte"
+    ],
+    "correct": "Paro y le aviso a un adulto"
+   },
+   {
+    "n": 10,
+    "q": "¿Quién decide cuántos lanzamientos y cuánto descanso te tocan?",
+    "opts": [
+     "Mi liga, según mi edad: le pregunto a mi coach",
+     "El público",
+     "Yo solo"
+    ],
+    "correct": "Mi liga, según mi edad: le pregunto a mi coach"
    },
    {
     "n": 11,
-    "q": "El montículo también se llama:",
+    "q": "El pitcher que entra a lanzar después del abridor es el:",
     "opts": [
-     "La lomita",
-     "El lugar seguro",
-     "El círculo de espera"
+     "Relevista",
+     "Bateador",
+     "Umpire"
     ],
-    "correct": "La lomita"
+    "correct": "Relevista"
    },
    {
     "n": 12,
-    "q": "Que la distancia cambie por edad sirve para:",
+    "q": "¿Dónde calientan los relevistas?",
     "opts": [
-     "Que los niños lancen seguros y con control",
-     "Hacer el juego más lento",
-     "Nada"
+     "En el bullpen",
+     "En home",
+     "En segunda"
     ],
-    "correct": "Que los niños lancen seguros y con control"
+    "correct": "En el bullpen"
    }
   ],
   "reward": "Al aprobar: insignia Brazo de Acero, 50 XP de bono, 10 pelotas y se desbloquea el siguiente nivel."
@@ -4504,36 +4506,6 @@
    },
    {
     "n": 4,
-    "q": "Un out seguro vale más que:",
-    "opts": [
-     "Un tiro imposible sin out",
-     "Dos outs seguros",
-     "Un jonrón"
-    ],
-    "correct": "Un tiro imposible sin out"
-   },
-   {
-    "n": 5,
-    "q": "Con dos outs, cualquier out:",
-    "opts": [
-     "Termina la entrada",
-     "Vale doble",
-     "No cuenta"
-    ],
-    "correct": "Termina la entrada"
-   },
-   {
-    "n": 6,
-    "q": "La pregunta del All Star antes del lanzamiento es:",
-    "opts": [
-     "Si me la batean, ¿qué hago?",
-     "¿Quién me mira?",
-     "¿Qué hora es?"
-    ],
-    "correct": "Si me la batean, ¿qué hago?"
-   },
-   {
-    "n": 7,
     "q": "Toca la base del out con un rolling sin corredores",
     "opts": [
      "— (diagrama del diamante)"
@@ -4541,18 +4513,18 @@
     "correct": "Primera base"
    },
    {
-    "n": 8,
-    "q": "Corredor en segunda que puede anotar con un hit: el tiro largo desde los jardines buscará:",
+    "n": 5,
+    "q": "En un tiro largo desde los jardines, ¿qué hace el cortador?",
     "opts": [
-     "Home, para frenar la carrera",
-     "Primera siempre",
-     "El dugout"
+     "Recibe el tiro y lo pasa a la base que haga falta",
+     "Batea",
+     "Se va al dugout"
     ],
-    "correct": "Home, para frenar la carrera"
+    "correct": "Recibe el tiro y lo pasa a la base que haga falta"
    },
    {
-    "n": 9,
-    "q": "Verdadero o falso: pensar la jugada antes hace más rápido al defensor",
+    "n": 6,
+    "q": "Verdadero o falso: el cortador es un defensor del cuadro que se pone en el camino del tiro",
     "opts": [
      "Verdadero",
      "Falso"
@@ -4560,34 +4532,63 @@
     "correct": "Verdadero"
    },
    {
-    "n": 10,
-    "q": "Si el tiro al corredor líder es imposible, lo correcto es:",
+    "n": 7,
+    "q": "El primera base sale lejos a buscar un rolling. ¿Quién cubre primera?",
     "opts": [
-     "Asegurar el out más fácil",
-     "Tirar a cualquier lado",
-     "Quedarse con la bola"
+     "El pitcher",
+     "El jardinero central",
+     "Nadie"
     ],
-    "correct": "Asegurar el out más fácil"
+    "correct": "El pitcher"
+   },
+   {
+    "n": 8,
+    "q": "¿Para qué sirve respaldar (back up) detrás de una base?",
+    "opts": [
+     "Para frenar la bola si se escapa",
+     "Para descansar",
+     "Para batear"
+    ],
+    "correct": "Para frenar la bola si se escapa"
+   },
+   {
+    "n": 9,
+    "q": "¿Quién te dice si sigues corriendo o te frenas en tercera?",
+    "opts": [
+     "El coach de tercera",
+     "El rival",
+     "El público"
+    ],
+    "correct": "El coach de tercera"
+   },
+   {
+    "n": 10,
+    "q": "Verdadero o falso: las señales del equipo se le cuentan al rival",
+    "opts": [
+     "Verdadero",
+     "Falso"
+    ],
+    "correct": "Falso"
    },
    {
     "n": 11,
-    "q": "Con corredor en tercera y menos de dos outs, un rolling puede buscar:",
+    "q": "Al terminar el juego, ganes o pierdas, un All Star:",
     "opts": [
-     "El out en home si el corredor arranca, o el out seguro",
-     "Solo mirar",
-     "Lanzar de nuevo"
+     "Saluda al rival",
+     "Se va sin saludar",
+     "Se burla del rival"
     ],
-    "correct": "El out en home si el corredor arranca, o el out seguro"
+    "correct": "Saluda al rival"
    },
    {
     "n": 12,
-    "q": "Pensar como All Star significa:",
+    "q": "Si no estás de acuerdo con el umpire, ¿qué haces?",
     "opts": [
-     "Planear la jugada antes de que pase",
-     "Correr más que todos",
-     "Batear más fuerte que todos"
+     "Dejo que mi coach hable con él",
+     "Le grito",
+     "Tiro el casco"
     ],
-    "correct": "Planear la jugada antes de que pase"
+    "correct": "Dejo que mi coach hable con él"
    }
   ],
   "reward": "Al aprobar: insignia All Star, 50 XP de bono, 10 pelotas, el diploma de Estrella y el uniforme All Star para Pelotín. La app le muestra el mensaje de cierre: ya sabe batear, correr, defender, lanzar con cuidado y pensar como un All Star."

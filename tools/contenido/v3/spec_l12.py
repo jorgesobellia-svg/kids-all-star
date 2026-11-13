@@ -64,6 +64,6 @@ SPEC = {
    'acts': {1: {'seg': 1}, 2: {'seg': 1}, 3: {'seg': 1}, 4: {'seg': 3}, 5: {'seg': 1, 'images': ['handshake', 'helmetThrow', 'teasing']}, 6: {'seg': 2}},
   },
  },
- 'exam': {7: {'target': 'first'}},
- 'examLessons': ['12.1'] * 12,
+ 'exam': {4: {'target': 'first'}},
+ 'examLessons': ['12.1', '12.1', '12.1', '12.1', '12.2', '12.2', '12.3', '12.3', '12.4', '12.4', '12.5', '12.5'],
 }

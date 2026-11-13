@@ -67,6 +67,6 @@ SPEC = {
             6: {'seg': 5, 'target': 'ls-R0', 'scene': LSN, 'linescore': LS}},
   },
  },
- 'exam': {8: {'target': 'posLF', 'scene': F9, 'fx': {'ball': {'to': 'lf', 'kind': 'drop'}}}},
- 'examLessons': ['8.1'] * 12,
+ 'exam': {3: {'target': 'posLF', 'scene': 'field9', 'fx': {'ball': {'to': 'lf', 'kind': 'drop'}}}},
+ 'examLessons': ['8.1', '8.1', '8.1', '8.1', '8.2', '8.2', '8.3', '8.3', '8.4', '8.4', '8.5', '8.5'],
 }

@@ -62,6 +62,6 @@ SPEC = {
    'acts': {1: {'seg': 1}, 2: {'seg': 2}, 3: {'seg': 1}, 4: {'seg': 1}, 5: {'seg': 1, 'target': 'home', 'fx': {'runners': ['second'], 'ball': {'to': 'lf', 'kind': 'ground'}}}, 6: {'seg': 3}},
   },
  },
- 'exam': {7: {'target': 'first', 'fx': {'runners': ['first']}}},
- 'examLessons': ['7.1'] * 12,
+ 'exam': {4: {'target': 'first', 'fx': {'runners': ['first']}}},
+ 'examLessons': ['7.1', '7.1', '7.1', '7.1', '7.2', '7.2', '7.3', '7.3', '7.4', '7.4', '7.5', '7.5'],
 }

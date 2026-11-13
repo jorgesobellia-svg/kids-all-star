@@ -64,6 +64,6 @@ SPEC = {
             6: {'seg': 4, 'target': 'backstop', 'scene': F9, 'fx': {'backstop': True, 'ball': {'to': 'backstop', 'kind': 'ground'}}}},
   },
  },
- 'exam': {7: {'target': 'second', 'fx': {'runners': ['first']}}},
- 'examLessons': ['9.1'] * 12,
+ 'exam': {4: {'target': 'second', 'fx': {'runners': ['first']}}},
+ 'examLessons': ['9.1', '9.1', '9.1', '9.1', '9.2', '9.2', '9.3', '9.3', '9.4', '9.4', '9.5', '9.5'],
 }

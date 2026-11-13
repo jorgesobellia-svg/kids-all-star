@@ -7206,61 +7206,61 @@
         }
       },
       "4": {
-        "q": "Verdadero o falso: tocar a un corredor parado en su base lo hace out"
-      },
-      "5": {
-        "q": "La base del corredor es su:",
-        "opts": {
-          "a": "Casa segura",
-          "b": "Dugout",
-          "c": "Montículo"
-        }
-      },
-      "6": {
-        "q": "Sales corriendo entre bases y te tocan con la bola. Eres:",
-        "opts": {
-          "a": "Out",
-          "b": "Safe",
-          "c": "Nada pasa"
-        }
-      },
-      "7": {
         "q": "Toca el lugar seguro de un corredor en primera",
         "answer": "Primera base"
       },
-      "8": {
-        "q": "¿Qué canta el umpire cuando estás sobre tu base?",
+      "5": {
+        "q": "Con menos de dos outs, atrapan un elevado. ¿Cuándo puede correr el corredor a la siguiente base?",
         "opts": {
-          "a": "¡Safe!",
-          "b": "¡Out!",
-          "c": "¡Strike!"
+          "a": "Después de la atrapada, tocando primero su base",
+          "b": "Apenas batean",
+          "c": "Nunca"
         }
       },
+      "6": {
+        "q": "Verdadero o falso: si el corredor sale antes de la atrapada, la defensa puede pedir el out en apelación"
+      },
+      "7": {
+        "q": "Una bola bateada en territorio fair le pega al corredor antes de pasar a un defensor. ¿Qué pasa?",
+        "opts": {
+          "a": "El corredor es out",
+          "b": "Es hit",
+          "c": "Es foul"
+        }
+      },
+      "8": {
+        "q": "Verdadero o falso: si la bola ya pasó junto al campocorto y nadie más puede jugarla, el corredor no es out si le pega"
+      },
       "9": {
-        "q": "Verdadero o falso: el corredor de adelante es el dueño de la base donde ya estaba"
+        "q": "Vas corriendo y pasas al corredor que va delante de ti. ¿Qué pasa?",
+        "opts": {
+          "a": "Tú eres out",
+          "b": "Él es out",
+          "c": "No pasa nada"
+        }
       },
       "10": {
-        "q": "Para estar a salvo entre jugadas, el corredor debe estar:",
+        "q": "El corredor de adelante se detuvo. ¿Qué haces tú?",
         "opts": {
-          "a": "Tocando su base",
-          "b": "En el jardín",
-          "c": "En el dugout"
+          "a": "Me detengo o regreso",
+          "b": "Lo paso",
+          "c": "Corro a home"
         }
       },
       "11": {
-        "q": "Si el corredor de atrás te alcanza, lo correcto es que:",
+        "q": "Hay dos outs y el bateador le pega a la bola. ¿Qué hace el corredor?",
         "opts": {
-          "a": "Él regrese a su base si puede",
-          "b": "Los dos se queden",
-          "c": "Tú salgas corriendo"
+          "a": "Corre enseguida, apenas hay contacto",
+          "b": "Espera a ver si la atrapan",
+          "c": "Se queda en su base"
         }
       },
       "12": {
-        "q": "¿Cómo se dice «a salvo» en inglés?",
+        "q": "Hay un out y batean un elevado. ¿Qué hace primero el corredor?",
         "opts": {
-          "a": "Safe",
-          "b": "Balk",
-          "c": "Lead"
+          "a": "Mira si lo atrapan",
+          "b": "Corre sin mirar",
+          "c": "Se sienta"
         }
       }
     },
@@ -7282,56 +7282,10 @@
         }
       },
       "3": {
-        "q": "¿Cómo se dice «carreras» en inglés?",
-        "opts": {
-          "a": "Runs",
-          "b": "Strikes",
-          "c": "Lead"
-        }
-      },
-      "4": {
-        "q": "Un batazo durísimo imposible de atrapar que se escapa del guante:",
-        "opts": {
-          "a": "Hit",
-          "b": "Error",
-          "c": "Foul"
-        }
-      },
-      "5": {
-        "q": "Verdadero o falso: un mal tiro en una jugada normal puede ser error"
-      },
-      "6": {
-        "q": "¿Quién decide hit o error?",
-        "opts": {
-          "a": "El anotador oficial",
-          "b": "El público",
-          "c": "El bateador"
-        }
-      },
-      "7": {
-        "q": "Llegaste porque el primera base no atrapó un tiro normal a la base. Eso es:",
-        "opts": {
-          "a": "Error",
-          "b": "Hit",
-          "c": "Robo"
-        }
-      },
-      "8": {
         "q": "Toca al defensor que falló la jugada fácil",
         "answer": "El defensor que falló la jugada fácil"
       },
-      "9": {
-        "q": "Si tu batazo fue bueno y merecido, el anotador escribe:",
-        "opts": {
-          "a": "Hit",
-          "b": "E (error)",
-          "c": "K"
-        }
-      },
-      "10": {
-        "q": "Verdadero o falso: todo batazo donde el defensor toca la bola es error"
-      },
-      "11": {
+      "4": {
         "q": "La diferencia clave entre hit y error es:",
         "opts": {
           "a": "Si la defensa falló una jugada normal",
@@ -7339,13 +7293,59 @@
           "c": "La hora"
         }
       },
-      "12": {
-        "q": "Un error permite al equipo al bate:",
+      "5": {
+        "q": "Con bases llenas recibes base por bolas y anota el de tercera. ¿Qué te apuntan?",
         "opts": {
-          "a": "Llegar o avanzar sin merecerlo con el batazo",
-          "b": "Anotar dos carreras siempre",
-          "c": "Cambiar de pitcher"
+          "a": "Una carrera impulsada (RBI)",
+          "b": "Un hit",
+          "c": "Un error"
         }
+      },
+      "6": {
+        "q": "Verdadero o falso: si tu elevado de sacrificio hace anotar a un compañero, esa carrera es impulsada por ti"
+      },
+      "7": {
+        "q": "El conteo va dos bolas y cero strikes. ¿Quién va ganando?",
+        "opts": {
+          "a": "El bateador",
+          "b": "El pitcher",
+          "c": "Nadie"
+        }
+      },
+      "8": {
+        "q": "¿Qué es el pitch count?",
+        "opts": {
+          "a": "Cuántos lanzamientos lleva el pitcher",
+          "b": "El conteo de bolas y strikes",
+          "c": "Las carreras del juego"
+        }
+      },
+      "9": {
+        "q": "En la anotación, una K al revés significa:",
+        "opts": {
+          "a": "Ponche mirando, sin swing",
+          "b": "Ponche con swing",
+          "c": "Un error"
+        }
+      },
+      "10": {
+        "q": "¿Qué significa un doble play anotado 6-4-3?",
+        "opts": {
+          "a": "Del campocorto al segunda base y a primera",
+          "b": "Tres carreras",
+          "c": "Seis outs"
+        }
+      },
+      "11": {
+        "q": "En el marcador, ¿qué significa la H?",
+        "opts": {
+          "a": "Hits",
+          "b": "Home",
+          "c": "Hora"
+        }
+      },
+      "12": {
+        "q": "Verdadero o falso: el equipo con más hits siempre gana"
       }
     },
     "9": {
@@ -7374,61 +7374,66 @@
         }
       },
       "4": {
-        "q": "En un robo, la carrera es entre el corredor y:",
-        "opts": {
-          "a": "El tiro del catcher a la base",
-          "b": "El jardinero",
-          "c": "El umpire"
-        }
-      },
-      "5": {
-        "q": "Verdadero o falso: si el tiro llega y te tocan antes de que llegues, eres out y no hubo robo"
-      },
-      "6": {
-        "q": "El momento de arrancar el robo es:",
-        "opts": {
-          "a": "Cuando el pitcher va hacia home con la bola",
-          "b": "Al terminar el juego",
-          "c": "Cuando el coach canta"
-        }
-      },
-      "7": {
         "q": "Toca la base que más se roba desde primera",
         "answer": "Segunda base"
       },
-      "8": {
-        "q": "Si llegas safe en el robo, el anotador escribe:",
+      "5": {
+        "q": "¿Qué es despegarse de la base (lead)?",
         "opts": {
-          "a": "Base robada (SB)",
-          "b": "Error",
-          "c": "K"
+          "a": "Alejarse unos pasos de la base para acortar el camino",
+          "b": "Correr a home",
+          "c": "Sentarse en la base"
         }
       },
+      "6": {
+        "q": "Estás despegado y el pitcher mira hacia tu base. ¿Qué haces?",
+        "opts": {
+          "a": "Vuelvo rápido a mi base",
+          "b": "Me quedo quieto",
+          "c": "Corro a la siguiente"
+        }
+      },
+      "7": {
+        "q": "¿Qué es un pickoff?",
+        "opts": {
+          "a": "Un tiro de sorpresa a una base para sacar out al corredor despegado",
+          "b": "Un lanzamiento muy rápido",
+          "c": "Un batazo corto"
+        }
+      },
+      "8": {
+        "q": "Verdadero o falso: en un pickoff, si vuelves a tu base antes de que te toquen, eres safe"
+      },
       "9": {
-        "q": "Verdadero o falso: también se puede robar tercera y hasta home, aunque es más difícil"
+        "q": "Con corredores en base, el pitcher empieza a lanzar y se detiene. ¿Qué es?",
+        "opts": {
+          "a": "Un balk",
+          "b": "Un strike",
+          "c": "Un pickoff"
+        }
       },
       "10": {
-        "q": "¿Qué canta el umpire si te tocan con la bola antes de llegar?",
+        "q": "¿Qué pasa con un balk?",
         "opts": {
-          "a": "¡Out!",
-          "b": "¡Safe!",
-          "c": "¡Foul!"
+          "a": "Cada corredor avanza una base",
+          "b": "El bateador es out",
+          "c": "El pitcher batea"
         }
       },
       "11": {
-        "q": "Antes de intentar robar en tu liga debes saber:",
+        "q": "Un lanzamiento tan malo que el catcher no puede atraparlo ni bloquearlo es:",
         "opts": {
-          "a": "Si mi liga lo permite a mi edad",
-          "b": "El color del uniforme rival",
-          "c": "Nada"
+          "a": "Un wild pitch",
+          "b": "Un passed ball",
+          "c": "Un balk"
         }
       },
       "12": {
-        "q": "El robo necesita del corredor:",
+        "q": "Una bola que se podía atrapar se le escapa al catcher. ¿Qué es?",
         "opts": {
-          "a": "Velocidad y buen arranque",
-          "b": "Solo fuerza",
-          "c": "Un bate grande"
+          "a": "Un passed ball",
+          "b": "Un wild pitch",
+          "c": "Un hit"
         }
       }
     },
@@ -7450,14 +7455,6 @@
         }
       },
       "3": {
-        "q": "Con primera ocupada y un out, ¿aplica la regla?",
-        "opts": {
-          "a": "No",
-          "b": "Sí",
-          "c": "Solo los sábados"
-        }
-      },
-      "4": {
         "q": "Con primera ocupada y dos outs, ¿aplica?",
         "opts": {
           "a": "Sí",
@@ -7465,55 +7462,63 @@
           "c": "Nunca"
         }
       },
-      "5": {
-        "q": "¿Cómo se dice tercer strike caído en inglés?",
-        "opts": {
-          "a": "Dropped third strike",
-          "b": "Falling strike",
-          "c": "Lost ball"
-        }
-      },
-      "6": {
-        "q": "Para completar el out, el catcher debe:",
-        "opts": {
-          "a": "Tocar al bateador o tirar a primera",
-          "b": "Gritar",
-          "c": "Pedir otra bola"
-        }
-      },
-      "7": {
-        "q": "Verdadero o falso: si el catcher atrapa limpio el tercer strike, el bateador es out y no corre"
-      },
-      "8": {
-        "q": "¿A quién preguntas si tu liga usa esta regla?",
-        "opts": {
-          "a": "A mi coach",
-          "b": "Al rival",
-          "c": "A nadie"
-        }
-      },
-      "9": {
+      "4": {
         "q": "Toca la base a la que corre el bateador con el tercer strike caído",
         "answer": "Primera base"
       },
-      "10": {
-        "q": "Si el bateador no corre y se va al dugout, la defensa:",
+      "5": {
+        "q": "Corredores en primera y segunda, un out, y un elevado fácil al cuadro. ¿Qué canta el umpire?",
         "opts": {
-          "a": "Ya no necesita hacer nada, se rindió",
-          "b": "Debe perseguirlo igual",
-          "c": "Pierde el out"
+          "a": "Infield fly: el bateador es out",
+          "b": "Foul",
+          "c": "Bola"
+        }
+      },
+      "6": {
+        "q": "¿Para qué existe el infield fly?",
+        "opts": {
+          "a": "Para que la defensa no deje caer la bola a propósito y haga un doble play",
+          "b": "Para que el juego dure más",
+          "c": "Para ayudar al pitcher a descansar"
+        }
+      },
+      "7": {
+        "q": "Durante una bola muerta, los corredores:",
+        "opts": {
+          "a": "No pueden avanzar",
+          "b": "Corren libres",
+          "c": "Anotan"
+        }
+      },
+      "8": {
+        "q": "Verdadero o falso: un foul es un ejemplo de bola muerta"
+      },
+      "9": {
+        "q": "Un defensor sin la bola se para en el camino del corredor y lo bloquea. ¿Qué es?",
+        "opts": {
+          "a": "Obstrucción",
+          "b": "Interferencia",
+          "c": "Un error"
+        }
+      },
+      "10": {
+        "q": "Un corredor estorba a propósito al defensor que va a atrapar la bola. ¿Qué es?",
+        "opts": {
+          "a": "Interferencia",
+          "b": "Obstrucción",
+          "c": "Un robo"
         }
       },
       "11": {
-        "q": "Verdadero o falso: un lanzamiento que pica antes del guante y es tercer strike puede ser «caído» si el catcher no lo atrapa limpio"
+        "q": "El corredor no pisó segunda. ¿Qué puede hacer la defensa?",
+        "opts": {
+          "a": "Apelar: tocar la base o al corredor con la bola y avisar al umpire",
+          "b": "Nada",
+          "c": "Pedir otro bateador"
+        }
       },
       "12": {
-        "q": "Esta regla existe porque el out de ponche se completa:",
-        "opts": {
-          "a": "Con la atrapada limpia del catcher",
-          "b": "Con el swing solamente",
-          "c": "Con el grito del público"
-        }
+        "q": "Verdadero o falso: si la apelación prospera, el corredor es out"
       }
     },
     "11": {
@@ -7534,14 +7539,6 @@
         }
       },
       "3": {
-        "q": "El pitcher lanza con un pie:",
-        "opts": {
-          "a": "Apoyado en la goma",
-          "b": "En el aire",
-          "c": "En home"
-        }
-      },
-      "4": {
         "q": "La distancia montículo-home en ligas infantiles es:",
         "opts": {
           "a": "Más corta y cambia con la edad",
@@ -7549,54 +7546,67 @@
           "c": "Siempre la misma"
         }
       },
-      "5": {
-        "q": "Verdadero o falso: copiar la distancia de los profesionales para niños pequeños estaría mal"
-      },
-      "6": {
-        "q": "¿A quién preguntas por la distancia de tu liga?",
-        "opts": {
-          "a": "A mi coach",
-          "b": "Al rival",
-          "c": "A nadie"
-        }
-      },
-      "7": {
+      "4": {
         "q": "Toca dónde está la goma en el diamante",
         "answer": "El montículo"
       },
-      "8": {
-        "q": "Desde la goma, el pitcher primero:",
+      "5": {
+        "q": "¿Cuándo se usa sobre todo el windup (el movimiento completo)?",
         "opts": {
-          "a": "Mira al catcher y recibe la señal",
-          "b": "Corre a primera",
-          "c": "Batea"
+          "a": "Sin corredores en base",
+          "b": "Con bases llenas",
+          "c": "Solo al batear"
         }
       },
-      "9": {
-        "q": "Sin apoyar el pie en la goma, el lanzamiento:",
+      "6": {
+        "q": "Con corredores en base, el pitcher usa el set o stretch para:",
         "opts": {
-          "a": "No debe hacerse",
-          "b": "Vale igual siempre",
-          "c": "Es un jonrón"
+          "a": "Cuidar a los corredores con un movimiento corto",
+          "b": "Lanzar más lento",
+          "c": "Descansar"
+        }
+      },
+      "7": {
+        "q": "¿Cuáles son los primeros lanzamientos de un pitcher joven?",
+        "opts": {
+          "a": "La recta y el cambio",
+          "b": "Las curvas",
+          "c": "Solo bolas"
+        }
+      },
+      "8": {
+        "q": "Verdadero o falso: las curvas son buenas para brazos jóvenes desde el primer día"
+      },
+      "9": {
+        "q": "Te duele el codo mientras lanzas. ¿Qué haces?",
+        "opts": {
+          "a": "Paro y le aviso a un adulto",
+          "b": "Sigo lanzando",
+          "c": "Lanzo más fuerte"
         }
       },
       "10": {
-        "q": "Verdadero o falso: la goma es blanca y alargada, distinta de una base"
+        "q": "¿Quién decide cuántos lanzamientos y cuánto descanso te tocan?",
+        "opts": {
+          "a": "Mi liga, según mi edad: le pregunto a mi coach",
+          "b": "El público",
+          "c": "Yo solo"
+        }
       },
       "11": {
-        "q": "El montículo también se llama:",
+        "q": "El pitcher que entra a lanzar después del abridor es el:",
         "opts": {
-          "a": "La lomita",
-          "b": "El lugar seguro",
-          "c": "El círculo de espera"
+          "a": "Relevista",
+          "b": "Bateador",
+          "c": "Umpire"
         }
       },
       "12": {
-        "q": "Que la distancia cambie por edad sirve para:",
+        "q": "¿Dónde calientan los relevistas?",
         "opts": {
-          "a": "Que los niños lancen seguros y con control",
-          "b": "Hacer el juego más lento",
-          "c": "Nada"
+          "a": "En el bullpen",
+          "b": "En home",
+          "c": "En segunda"
         }
       }
     },
@@ -7626,66 +7636,61 @@
         }
       },
       "4": {
-        "q": "Un out seguro vale más que:",
-        "opts": {
-          "a": "Un tiro imposible sin out",
-          "b": "Dos outs seguros",
-          "c": "Un jonrón"
-        }
-      },
-      "5": {
-        "q": "Con dos outs, cualquier out:",
-        "opts": {
-          "a": "Termina la entrada",
-          "b": "Vale doble",
-          "c": "No cuenta"
-        }
-      },
-      "6": {
-        "q": "La pregunta del All Star antes del lanzamiento es:",
-        "opts": {
-          "a": "Si me la batean, ¿qué hago?",
-          "b": "¿Quién me mira?",
-          "c": "¿Qué hora es?"
-        }
-      },
-      "7": {
         "q": "Toca la base del out con un rolling sin corredores",
         "answer": "Primera base"
       },
-      "8": {
-        "q": "Corredor en segunda que puede anotar con un hit: el tiro largo desde los jardines buscará:",
+      "5": {
+        "q": "En un tiro largo desde los jardines, ¿qué hace el cortador?",
         "opts": {
-          "a": "Home, para frenar la carrera",
-          "b": "Primera siempre",
-          "c": "El dugout"
+          "a": "Recibe el tiro y lo pasa a la base que haga falta",
+          "b": "Batea",
+          "c": "Se va al dugout"
+        }
+      },
+      "6": {
+        "q": "Verdadero o falso: el cortador es un defensor del cuadro que se pone en el camino del tiro"
+      },
+      "7": {
+        "q": "El primera base sale lejos a buscar un rolling. ¿Quién cubre primera?",
+        "opts": {
+          "a": "El pitcher",
+          "b": "El jardinero central",
+          "c": "Nadie"
+        }
+      },
+      "8": {
+        "q": "¿Para qué sirve respaldar (back up) detrás de una base?",
+        "opts": {
+          "a": "Para frenar la bola si se escapa",
+          "b": "Para descansar",
+          "c": "Para batear"
         }
       },
       "9": {
-        "q": "Verdadero o falso: pensar la jugada antes hace más rápido al defensor"
-      },
-      "10": {
-        "q": "Si el tiro al corredor líder es imposible, lo correcto es:",
+        "q": "¿Quién te dice si sigues corriendo o te frenas en tercera?",
         "opts": {
-          "a": "Asegurar el out más fácil",
-          "b": "Tirar a cualquier lado",
-          "c": "Quedarse con la bola"
+          "a": "El coach de tercera",
+          "b": "El rival",
+          "c": "El público"
         }
       },
+      "10": {
+        "q": "Verdadero o falso: las señales del equipo se le cuentan al rival"
+      },
       "11": {
-        "q": "Con corredor en tercera y menos de dos outs, un rolling puede buscar:",
+        "q": "Al terminar el juego, ganes o pierdas, un All Star:",
         "opts": {
-          "a": "El out en home si el corredor arranca, o el out seguro",
-          "b": "Solo mirar",
-          "c": "Lanzar de nuevo"
+          "a": "Saluda al rival",
+          "b": "Se va sin saludar",
+          "c": "Se burla del rival"
         }
       },
       "12": {
-        "q": "Pensar como All Star significa:",
+        "q": "Si no estás de acuerdo con el umpire, ¿qué haces?",
         "opts": {
-          "a": "Planear la jugada antes de que pase",
-          "b": "Correr más que todos",
-          "c": "Batear más fuerte que todos"
+          "a": "Dejo que mi coach hable con él",
+          "b": "Le grito",
+          "c": "Tiro el casco"
         }
       }
     },

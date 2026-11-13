@@ -65,6 +65,6 @@ SPEC = {
             6: {'seg': 2, 'target': 'bullpen', 'scene': F9, 'fx': {'bullpen': True}}},
   },
  },
- 'exam': {7: {'target': 'mound'}},
- 'examLessons': ['11.1'] * 12,
+ 'exam': {4: {'target': 'mound'}},
+ 'examLessons': ['11.1', '11.1', '11.1', '11.1', '11.2', '11.2', '11.3', '11.3', '11.4', '11.4', '11.5', '11.5'],
 }

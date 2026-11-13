@@ -71,6 +71,6 @@ SPEC = {
             6: {'seg': 1, 'target': 'third', 'fx': {'runners': ['mid3h']}}},
   },
  },
- 'exam': {9: {'target': 'first'}},
- 'examLessons': ['10.1'] * 12,
+ 'exam': {4: {'target': 'first'}},
+ 'examLessons': ['10.1', '10.1', '10.1', '10.1', '10.2', '10.2', '10.3', '10.3', '10.4', '10.4', '10.5', '10.5'],
 }
