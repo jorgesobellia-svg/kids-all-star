@@ -74,7 +74,7 @@ lines.append(' }')
 trs = block(trs, 'exam', '\n'.join(lines))
 open(trp, 'w').write(trs)
 
-sps = block(sps, 'examLessons', repr(lessons))
+sps = re.sub(r"'examLessons': [^\n]*", "'examLessons': " + repr(lessons) + ',', sps, count=1)
 if "'exam':" in sps:
     sps = block(sps, 'exam', repr(sp_ex))
 else:
