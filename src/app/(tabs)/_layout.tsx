@@ -2,14 +2,49 @@ import { Tabs } from 'expo-router';
 import React from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import Svg, { Circle, Path, Rect } from 'react-native-svg';
+import Svg, { Circle, Defs, Line, LinearGradient, Path, Pattern, Rect, Stop } from 'react-native-svg';
 import { LockIcon } from '@/components/Art';
 import { tapFeedback } from '@/components/ui';
 import { shopOpen, useStore } from '@/state/store';
 import { C, F } from '@/theme';
 
+// Pasto de la barra de abajo: el mismo verde, briznas y franjas de cortadora de los minijuegos.
+function speckles(n: number, seed: number, w: number, h: number) {
+  let x = seed;
+  const r = () => ((x = (x * 9301 + 49297) % 233280) / 233280);
+  return Array.from({ length: n }, () => [r() * w, r() * h, r()] as const);
+}
+const GRASS_DOTS = speckles(40, 3, 18, 18);
+
+function GrassBg({ count }: { count: number }) {
+  return (
+    <View style={{ position: 'absolute', left: 0, right: 0, top: 0, bottom: 0 }} pointerEvents="none">
+      <Svg width="100%" height="100%" preserveAspectRatio="none">
+        <Defs>
+          <LinearGradient id="tabGrass" x1="0" y1="0" x2="0" y2="1">
+            <Stop offset="0" stopColor="#3F8F3A" />
+            <Stop offset="1" stopColor="#2F7A2B" />
+          </LinearGradient>
+          <Pattern id="tabGrassTex" width={18} height={18} patternUnits="userSpaceOnUse">
+            {GRASS_DOTS.map(([x, y, k], i) => (
+              <Line key={i} x1={x} y1={y} x2={x + (k - 0.5) * 2} y2={y - 2 - k * 2} stroke={k > 0.5 ? '#2F6B2A' : '#6BBF5F'} strokeWidth={0.8} opacity={0.5} />
+            ))}
+          </Pattern>
+        </Defs>
+        <Rect x="0" y="0" width="100%" height="100%" fill="url(#tabGrass)" />
+        {Array.from({ length: count }, (_, i) =>
+          i % 2 ? <Rect key={i} x={`${(i * 100) / count}%`} y="0" width={`${100 / count}%`} height="100%" fill="#FFFFFF" opacity={0.08} /> : null,
+        )}
+        <Rect x="0" y="0" width="100%" height="100%" fill="url(#tabGrassTex)" />
+      </Svg>
+      {/* raya de cal arriba, como la línea del campo */}
+      <View style={{ position: 'absolute', left: 0, right: 0, top: 0, height: 4, backgroundColor: '#FFFFFF' }} />
+    </View>
+  );
+}
+
 function Icon({ name, active }: { name: string; active: boolean }) {
-  const c = active ? C.red : C.muted;
+  const c = active ? C.red : '#FFD43B';
   const fill = active ? C.red : 'none';
   switch (name) {
     case 'camino':
@@ -48,7 +83,8 @@ export default function TabsLayout() {
     <Tabs
       screenOptions={{ headerShown: false }}
       tabBar={({ state, navigateToTab }) => (
-        <View style={{ flexDirection: 'row', justifyContent: 'space-around', borderTopWidth: 2, borderTopColor: C.line, backgroundColor: C.white, paddingTop: 8, paddingBottom: Math.max(insets.bottom, 12) }}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-around', paddingTop: 10, paddingBottom: Math.max(insets.bottom, 12), backgroundColor: '#3F8F3A' }}>
+          <GrassBg count={state.routes.length} />
           {state.routes.map((r, i) => {
             const active = state.index === i;
             return (
@@ -61,7 +97,7 @@ export default function TabsLayout() {
                   tapFeedback();
                   navigateToTab(r.key);
                 }}
-                style={{ alignItems: 'center', minWidth: 64, minHeight: 48, gap: 2 }}
+                style={{ alignItems: 'center', minWidth: 64, minHeight: 48, gap: 2, paddingVertical: 4, paddingHorizontal: 6, borderRadius: 14, backgroundColor: active ? '#FFFFFF' : 'transparent' }}
               >
                 <View>
                   <Icon name={r.name} active={active} />
@@ -71,7 +107,7 @@ export default function TabsLayout() {
                     </View>
                   ) : null}
                 </View>
-                <Text numberOfLines={1} adjustsFontSizeToFit style={{ fontSize: 12, maxWidth: 76, fontFamily: active ? F.bodyHeavy : F.bodyBold, color: active ? C.red : C.muted }}>{t(LABEL[r.name] ?? r.name)}</Text>
+                <Text numberOfLines={1} adjustsFontSizeToFit style={{ fontSize: 12, maxWidth: 76, fontFamily: active ? F.bodyHeavy : F.bodyBold, color: active ? C.red : '#FFD43B', textShadowColor: active ? 'transparent' : 'rgba(0,0,0,0.35)', textShadowOffset: { width: 0, height: 1 }, textShadowRadius: 2 }}>{t(LABEL[r.name] ?? r.name)}</Text>
               </Pressable>
             );
           })}
