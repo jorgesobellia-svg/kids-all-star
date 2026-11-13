@@ -164,7 +164,7 @@ marca Plus en el mapa y se abren solo con suscripción activa.
 | 14 · El cuadro a fondo | 14.5 | ¡Mía! Pedir el elevado | Cómo se pide un elevado con «¡Mía!» y se respalda al compañero |
 | 15 · Los jardines | 15.1 | El primer paso: hacia atrás | Que el primer paso del jardinero va hacia atrás |
 | 15 · Los jardines | 15.2 | ¿De quién es el elevado? La prioridad del centro | Que el jardinero central manda en los elevados del medio |
-| 15 · Los jardines | 15.3 | Atrapada de verdad o trampa | La diferencia entre atrapada de verdad y trampa |
+| 15 · Los jardines | 15.3 | Atrapada de verdad o bola de pique | La diferencia entre atrapada de verdad y trampa |
 | 15 · Los jardines | 15.4 | Dejar la bola adelante y la pista de advertencia | Para qué sirve la pista de advertencia y dejar la bola adelante |
 | 15 · Los jardines | 15.5 | Jugar con el sol de frente | Cómo se atrapa con sol de frente usando el guante como visera |
 | 16 · El turno al bate inteligente | 16.1 | La caja de bateo, la postura y el agarre | La caja de bateo, la postura y el agarre |
@@ -428,7 +428,7 @@ abajo, dos manos y ojos en la bola: esa es la receta del rolling.»
 
 | # | Tipo | Pregunta / instrucción | Opciones | Correcta | Si acierta / si falla |
 |---|---|---|---|---|---|
-| 1 | Selección simple | ¿Cómo se espera un rolling? | De frente a la bola, con el guante en el suelo / De lado, con una sola mano / De espaldas, adivinando | De frente a la bola, con el guante en el suelo | ¡Eso es! De frente. / Tu cuerpo detrás de la bola la detiene todo. |
+| 1 | Selección simple | ¿Cómo se espera un rolling? | De frente a la bola, con el guante en el suelo / De lado, con una sola mano / De espaldas, adivinando | De frente a la bola, con el guante en el suelo | ¡Eso es! De frente. / Con tu cuerpo detrás de la bola, nada se escapa. |
 | 2 | Selección simple | ¿Qué hace la mano libre al fildear? | Va encima del guante para asegurar la bola / Saluda al público / Se queda en el bolsillo | Va encima del guante para asegurar la bola | ¡Correcto! Dos manos. / Guante y mano: la bola no se escapa. |
 | 3 | Verdadero o falso | Al fildear hay que cerrar los ojos en el último momento | Verdadero / Falso | Falso | ¡Bien! Ojos en la bola. / Falso: mírala hasta que entre al guante. |
 | 4 | Arrastrar | Ordena los pasos del rolling: frente a la bola, guante al suelo, asegurar con dos manos, tiro a la base | 1 / 2 / 3 / 4 | 1 / 2 / 3 / 4 | ¡Perfecto! Ese es el orden. / Frente, abajo, dos manos y tiro. |
@@ -613,7 +613,7 @@ Cierre: +10 XP por respuesta correcta, +5 XP de bono si termina sin
 errores. Gana 1 pelota (moneda) por respuesta correcta y 3 pelotas extra
 por lección perfecta.
 
-### Lección 15.3 Atrapada de verdad o trampa
+### Lección 15.3 Atrapada de verdad o bola de pique
 
 Objetivo: Distinguir la atrapada legal (la bola queda segura en el
 guante o la mano sin tocar el suelo) de la trampa (la bola toca el suelo
@@ -632,11 +632,11 @@ cosa: ¿tocó el suelo o no?»
 | # | Tipo | Pregunta / instrucción | Opciones | Correcta | Si acierta / si falla |
 |---|---|---|---|---|---|
 | 1 | Selección simple | ¿Qué es una atrapada (catch) de verdad? | La bola queda segura en el guante o la mano sin tocar el suelo / La bola pica y luego entra al guante / La bola queda bajo el cuerpo | La bola queda segura en el guante o la mano sin tocar el suelo | ¡Eso es! Sin tocar el suelo. / Segura y sin picar: atrapada. |
-| 2 | Selección simple | La bola rozó el pasto y después quedó en el guante. ¿Qué es? | Una trampa (trap): no es atrapada / Una atrapada legal / Un jonrón | Una trampa (trap): no es atrapada | ¡Correcto! Trampa. / Tocó el suelo: no cuenta como atrapada. |
-| 3 | Verdadero o falso | Con una trampa, el bateador es out igual porque la bola terminó en el guante | Verdadero / Falso | Falso | ¡Bien! No es out por atrapada. / Falso: la bola sigue en juego y hay que jugarla. |
-| 4 | Selección simple | Si hay trampa, ¿qué debe hacer el jardinero? | Recoger la bola y tirar rápido a una base / Quedarse celebrando / Mostrar el guante al público | Recoger la bola y tirar rápido a una base | ¡Eso es! La jugada sigue. / Nada de celebrar: bola viva, a tirar. |
+| 2 | Selección simple | La bola rozó el pasto y después quedó en el guante. ¿Qué es? | Una bola de pique (trap): no es atrapada / Una atrapada legal / Un jonrón | Una bola de pique (trap): no es atrapada | ¡Correcto! De pique. / Tocó el suelo: no cuenta como atrapada. |
+| 3 | Verdadero o falso | Con una bola de pique, el bateador es out igual porque la bola terminó en el guante | Verdadero / Falso | Falso | ¡Bien! No es out por atrapada. / Falso: la bola sigue en juego y hay que jugarla. |
+| 4 | Selección simple | Si la bola fue de pique, ¿qué debe hacer el jardinero? | Recoger la bola y tirar rápido a una base / Quedarse celebrando / Mostrar el guante al público | Recoger la bola y tirar rápido a una base | ¡Eso es! La jugada sigue. / Nada de celebrar: bola viva, a tirar. |
 | 5 | ¿Qué cantaría el umpire? | Bola que pica antes de entrar al guante del jardinero. ¿Qué decide el umpire? | No es atrapada: bola en juego / Out del bateador / Foul | No es atrapada: bola en juego | ¡Bien decidido! / Picó primero: sigue el juego. |
-| 6 | Verdadero o falso | Para que sea atrapada, la bola puede rebotar una vez en el suelo si el guante la cubre | Verdadero / Falso | Falso | ¡Correcto! Ni un rebote. / Falso: un solo toque al suelo y ya es trampa. |
+| 6 | Verdadero o falso | Para que sea atrapada, la bola puede rebotar una vez en el suelo si el guante la cubre | Verdadero / Falso | Falso | ¡Correcto! Ni un rebote. / Falso: si toca el suelo una sola vez, ya es de pique. |
 
 Cierre: +10 XP por respuesta correcta, +5 XP de bono si termina sin
 errores. Gana 1 pelota (moneda) por respuesta correcta y 3 pelotas extra
@@ -713,8 +713,8 @@ lecciones que debe repasar y puede intentarlo de nuevo.
 | 2 | La bola que un jardinero sí puede recuperar es la que… | Cae delante de él / Le pasó muy por encima / Ya salió del campo | Cae delante de él |
 | 3 | Elevado dudoso entre el centro y la izquierda: el central lo pide. ¿Quién lo atrapa? | El jardinero central: su palabra manda en el medio / El izquierdo, porque llegó primero a gritar / Los dos a la vez | El jardinero central: su palabra manda en el medio |
 | 4 | El central pidió la bola. El jardinero derecho debe… | Ceder, apartarse y respaldar / Seguir corriendo igual / Irse a su posición sin mirar | Ceder, apartarse y respaldar |
-| 5 | La bola rozó el pasto una fracción antes de entrar al guante. ¿Qué fue? | Una trampa (trap): no es atrapada / Una atrapada legal / Un out seguro | Una trampa (trap): no es atrapada |
-| 6 | Tras una trampa, la bola sigue viva. ¿Qué hace el jardinero? | La recoge y tira rápido a una base / La muestra al umpire celebrando / Espera a que el umpire grite | La recoge y tira rápido a una base |
+| 5 | La bola rozó el pasto una fracción antes de entrar al guante. ¿Qué fue? | Una bola de pique (trap): no es atrapada / Una atrapada legal / Un out seguro | Una bola de pique (trap): no es atrapada |
+| 6 | Tras un pique así, la bola sigue viva. ¿Qué hace el jardinero? | La recoge y tira rápido a una base / La muestra al umpire celebrando / Espera a que el umpire grite | La recoge y tira rápido a una base |
 | 7 | ¿Por qué ante la duda el jardinero juega un paso más atrás? | Para que la bola quede siempre delante de él / Para estar más lejos del coach / Para ver mejor al público | Para que la bola quede siempre delante de él |
 | 8 | Corriendo hacia la valla sientes bajo los pies un suelo distinto al pasto. ¿Qué es? | La pista de advertencia: la valla está cerca / La caja de bateo / El montículo | La pista de advertencia: la valla está cerca |
 | 9 | Sentir la pista de advertencia te avisa de… | Cuidarte para no chocar con la valla / Correr todavía más fuerte / Pedir tiempo | Cuidarte para no chocar con la valla |
@@ -802,7 +802,7 @@ Demostración (30-60 segundos) — guion de Pelotín:
 
 «Escucha el sonido más fino del béisbol: ¡tic! La bola apenas roza el
 bate, sale disparada hacia atrás y el catcher la atrapa directo, sin que
-toque el suelo. Eso es un foul tip, en inglés foul tip. No es un foul
+toque el suelo. Eso es un foul tip. No es un foul
 común: si el catcher lo atrapa, cuenta como strike y la bola sigue viva,
 como un lanzamiento más. Hasta puede ser el tercer strike y ponche. Pero
 si el catcher no la atrapa y la bola cae, ahí sí es foul normal y la
@@ -892,7 +892,7 @@ para Pelotín, y empieza la etapa Salón de la Fama.
 
 | # | Pregunta | Opciones | Correcta |
 |---|---|---|---|
-| 1 | ¿Dónde deben ir los dos pies del bateador? | Dentro de la caja de bateo (batter's box) / Donde el bateador se sienta famoso / Un pie sobre home | Dentro de la caja de bateo (batter's box) |
+| 1 | ¿Dónde deben ir los dos pies del bateador? | Dentro de la caja de bateo (batter's box) / Fuera de la caja, donde quiera / Un pie sobre home | Dentro de la caja de bateo (batter's box) |
 | 2 | Agarrar el bate apretándolo con toda la fuerza hace el swing… | Más lento / Más rápido siempre / No cambia nada | Más lento |
 | 3 | ¿Desde qué momento sigues la bola con los ojos? | Desde que sale de la mano del pitcher / Cuando ya pasó por tu lado / Solo en el swing | Desde que sale de la mano del pitcher |
 | 4 | El bateador empieza el swing y se frena a mitad de camino. ¿Qué es y quién decide? | Swing a medias (checked swing): decide el umpire de home / Foul tip: decide el catcher / Toque: decide el coach | Swing a medias (checked swing): decide el umpire de home |
@@ -1033,7 +1033,7 @@ a su gente como piezas de ajedrez.»
 | 2 | Selección simple | Con corredor en tercera y juego cerrado, ¿cómo juega el cuadro? | Adentro, cerca, para tirar rápido a home / Muy atrás, junto a los jardines / En la banca | Adentro, cerca, para tirar rápido a home | ¡Correcto! Cuadro adentro (infield in). / Cerca de home para defender la carrera. |
 | 3 | Selección simple | ¿Cuándo juega el cuadro atrás, en su lugar normal? | Cuando busca el doble play con calma / Cuando hay corredor en tercera y juego cerrado / Nunca | Cuando busca el doble play con calma | ¡Bien! Atrás para el doble play. / Lejos de home, el tiro a home llegaría tarde: mejor dos outs. |
 | 4 | Verdadero o falso | Ante un bateador muy fuerte, los jardines suelen dar pasos atrás | Verdadero / Falso | Verdadero | ¡Correcto! Respetan su fuerza. / Verdadero: espacio atrás para las bolas profundas. |
-| 5 | Selección simple | ¿Quién decide cómo se acomoda la defensa? | El coach, leyendo el juego / El bateador rival / El público | El coach, leyendo el juego | ¡Eso es! Lee y mueve. / Como piezas de ajedrez, dice el guion. |
+| 5 | Selección simple | ¿Quién decide cómo se acomoda la defensa? | El coach, leyendo el juego / El bateador rival / El público | El coach, leyendo el juego | ¡Eso es! Lee y mueve. / Mueve a sus jugadores como piezas de ajedrez. |
 | 6 | Verdadero o falso | Acomodar la defensa es hacer trampa | Verdadero / Falso | Falso | ¡Bien! Es estrategia legal. / Falso: cada equipo se coloca como mejor le convenga. |
 
 Cierre: +10 XP por respuesta correcta, +5 XP de bono si termina sin
@@ -1053,7 +1053,7 @@ cosas: el marcador, la entrada y los outs. Con el juego empatado al
 final, un corredor se cuida distinto que ganando por mucho. Y escucha
 cómo se llama el momento más feliz del béisbol: si el equipo de casa
 batea en su última oportunidad, empata o pierde por poco, y un batazo
-trae la carrera que gana, eso es un walk-off, en inglés walk-off: el
+trae la carrera que gana, eso es un walk-off: el
 juego se acaba en ese instante y todos salen a celebrar, porque el rival
 ya no tiene otro turno. Ganando el equipo de casa al llegar a ese turno,
 ni siquiera hace falta jugarlo: el juego ya terminó. El marcador no es
@@ -1063,7 +1063,7 @@ solo números: decide qué riesgo vale la pena.»
 |---|---|---|---|---|---|
 | 1 | Selección simple | ¿Qué tres datos miras antes de cada jugada? | Marcador, entrada y outs / El público, el clima y la banca / Mi promedio, mi guante y mi gorra | Marcador, entrada y outs | ¡Eso es! Tres datos, una decisión. / Con ellos sabes qué riesgo vale. |
 | 2 | Selección simple | ¿Qué es un walk-off? | El batazo del equipo de casa que gana el juego en su última oportunidad y lo termina al instante / El último out de la defensa / Un jonrón en la práctica | El batazo del equipo de casa que gana el juego en su última oportunidad y lo termina al instante | ¡Correcto! Walk-off: juego terminado. / Carrera que gana y a celebrar: no hay otro turno. |
-| 3 | Verdadero o falso | El walk-off solo lo puede dar el equipo de casa en su última oportunidad al bate | Verdadero / Falso | Verdadero | ¡Bien! Así es la jugada. / Verdadero: el visitante siempre deja un turno de respuesta. |
+| 3 | Verdadero o falso | El walk-off solo lo puede dar el equipo de casa en su última oportunidad al bate | Verdadero / Falso | Verdadero | ¡Bien! Así es la jugada. / Verdadero: el de casa siempre tiene su turno para responder. |
 | 4 | Selección simple | Si el equipo de casa ya va ganando al llegar a su último turno, ¿qué pasa? | El juego ya terminó, no hace falta batearlo / Se batea igual por costumbre / Se regala un turno al rival | El juego ya terminó, no hace falta batearlo | ¡Eso es! Ya ganaron. / No hay nada que remontar: juego acabado. |
 | 5 | Verdadero o falso | Con el juego muy abierto a favor, conviene arriesgar igual que en un juego empatado | Verdadero / Falso | Falso | ¡Correcto! El marcador manda el riesgo. / Falso: cada marcador pide su jugada. |
 | 6 | ¿Qué cantaría el umpire? | Última oportunidad de casa, juego empatado y un hit trae la carrera que gana. ¿Qué pasó? | ¡Walk-off! Juego terminado / Sigue el juego un turno más / Foul, no cuenta | ¡Walk-off! Juego terminado | ¡Bien! A celebrar. / Carrera que gana en el último turno: se acabó. |
@@ -1130,7 +1130,7 @@ pregúntale a tu coach antes de hacerlo.»
 | 2 | Verdadero o falso | Al deslizarse, hay que apoyar las manos en el suelo para frenar | Verdadero / Falso | Falso | ¡Bien! Manos arriba. / Falso: apoyar las manos puede lastimar las muñecas. |
 | 3 | Selección simple | ¿Contra qué se desliza un corredor? | Contra la base, nunca contra el defensor / Contra el defensor para tumbarlo / Contra la valla | Contra la base, nunca contra el defensor | ¡Correcto! A la base. / El defensor no es un obstáculo para chocar. |
 | 4 | Selección simple | ¿Se puede deslizar de cabeza en tu liga? | Depende de mi liga: pregúntale a tu coach / Siempre, en todas / Nunca se pregunta nada | Depende de mi liga: pregúntale a tu coach | ¡Eso es! Pregunta primero. / En tu liga puede ser distinto: pregúntale a tu coach. |
-| 5 | Verdadero o falso | Deslizarse sirve para llegar bajo el toque del defensor | Verdadero / Falso | Verdadero | ¡Bien! Por eso se usa. / Verdadero: bajo y rápido a la base. |
+| 5 | Verdadero o falso | Deslizarse sirve para llegar por debajo del guante del defensor | Verdadero / Falso | Verdadero | ¡Bien! Por eso se usa. / Verdadero: bajo y rápido a la base. |
 | 6 | Selección con imágenes | ¿Cuál imagen muestra el deslizamiento seguro? | Corredor pies primero con las manos arriba / Corredor de cabeza / Corredor chocando al defensor | Corredor pies primero con las manos arriba | ¡Eso es! Ese llega seguro. / Pies primero, siempre en ligas de niños. |
 
 Cierre: +10 XP por respuesta correcta, +5 XP de bono si termina sin
@@ -1189,7 +1189,7 @@ cada liga: pregúntale a tu coach.»
 
 | # | Tipo | Pregunta / instrucción | Opciones | Correcta | Si acierta / si falla |
 |---|---|---|---|---|---|
-| 1 | Selección simple | ¿Qué es un juego oficial? | El que ya jugó lo que la liga pide para que el resultado valga / Cualquier juego con público / El primer juego del año | El que ya jugó lo que la liga pide para que el resultado valga | ¡Eso es! Resultado que vale. / Lo que pide la liga, no un número de aquí. |
+| 1 | Selección simple | ¿Qué es un juego oficial? | El que ya jugó lo que la liga pide para que el resultado valga / Cualquier juego con público / El primer juego del año | El que ya jugó lo que la liga pide para que el resultado valga | ¡Eso es! Resultado que vale. / Lo define tu liga: pregúntale a tu coach. |
 | 2 | Selección simple | ¿Qué es un juego suspendido? | Un juego detenido que puede terminarse otro día desde donde quedó / Un juego cancelado para siempre / Un juego sin umpire | Un juego detenido que puede terminarse otro día desde donde quedó | ¡Correcto! Se guarda y se sigue. / Clima feo hoy, final otro día. |
 | 3 | Verdadero o falso | Con rayos cerca, el juego sigue hasta terminar la entrada | Verdadero / Falso | Falso | ¡Bien! Rayos es salir ya (repaso). / Falso: rayos significa salir del campo sin esperar. |
 | 4 | Selección simple | ¿Qué son las entradas extra (extra innings)? | Turnos nuevos para desempatar un juego oficial empatado / Entradas de práctica / La entrada de la banca | Turnos nuevos para desempatar un juego oficial empatado | ¡Eso es! A desempatar. / Uno para cada equipo, hasta que alguien quede arriba. |
@@ -1275,12 +1275,12 @@ lecciones que debe repasar y puede intentarlo de nuevo.
 | 1 | ¿Cuál deslizamiento es el seguro en ligas de niños? | Pies primero, manos arriba / De cabeza / Buscando chocar al defensor | Pies primero, manos arriba |
 | 2 | ¿Puedes deslizarte de cabeza en tu liga? | Lo pregunto a mi coach: cada liga decide / Siempre se puede / Nadie lo decide nunca | Lo pregunto a mi coach: cada liga decide |
 | 3 | La regla de misericordia sirve para… | Terminar antes un juego con diferencia enorme, cuidando a los niños / Castigar al equipo perdedor / Acortar todos los juegos | Terminar antes un juego con diferencia enorme, cuidando a los niños |
-| 4 | La diferencia de carreras de la regla de misericordia la define… | Cada liga, según la edad / Este documento con un número fijo / El equipo visitante | Cada liga, según la edad |
+| 4 | La diferencia de carreras de la regla de misericordia la define… | Cada liga, según la edad / Un número fijo igual para todas las ligas / El equipo visitante | Cada liga, según la edad |
 | 5 | Un juego detenido por rayos que se terminará otro día desde donde quedó es un… | Juego suspendido / Juego perdido para los dos / Juego de práctica | Juego suspendido |
 | 6 | Un juego se vuelve oficial cuando… | Ya se jugó lo que la liga pide para que el resultado valga / Llega el primer espectador / Se canta el primer strike | Ya se jugó lo que la liga pide para que el resultado valga |
 | 7 | El juego oficial terminó empatado y tu liga lo permite. ¿Qué sigue? | Entradas extra (extra innings) para desempatar / Los dos equipos ganan / Se repite el juego otro mes | Entradas extra (extra innings) para desempatar |
 | 8 | Entra un sustituto por un compañero. ¿Qué turno al bate ocupa? | El del jugador que salió / El último siempre / El que él prefiera | El del jugador que salió |
-| 9 | El jugador que salió, ¿puede reingresar? | Depende de la regla de reingreso de mi liga: pregúntale a tu coach / Siempre puede / Este documento lo prohíbe en todas | Depende de la regla de reingreso de mi liga: pregúntale a tu coach |
+| 9 | El jugador que salió, ¿puede reingresar? | Depende de la regla de reingreso de mi liga: pregúntale a tu coach / Siempre puede / Está prohibido en todas las ligas | Depende de la regla de reingreso de mi liga: pregúntale a tu coach |
 | 10 | Un jugador bateó en el turno de otro. ¿Cómo se llama ese error? | Batear fuera de turno (batting out of order) / Balk / Foul tip | Batear fuera de turno (batting out of order) |
 | 11 | El corredor especial (courtesy runner) corre por… | El catcher, para que pueda ponerse la armadura (si la liga lo permite) / Cualquier jugador cansado, siempre / El bateador que falló | El catcher, para que pueda ponerse la armadura (si la liga lo permite) |
 | 12 | Si tu liga no permite corredor especial, el catcher en base… | Corre él mismo, como cualquier jugador / No puede seguir jugando / Lo reemplaza el umpire corriendo | Corre él mismo, como cualquier jugador |
@@ -1507,7 +1507,7 @@ con orgullo: ¡esto ya lo dominas!»
 | 3 | Toca en el campo | REPASO: toca la base que sigue después de segunda en el orden de correr | — (toca tercera) | Tercera base | ¡Correcto! El orden de siempre. / Primera, segunda, tercera, home. |
 | 4 | ¿Qué cantaría el umpire? | REPASO: cuarto lanzamiento malo fuera de la zona y no le tiraste. ¿Qué canta? | ¡Base por bolas! A primera / ¡Out! / ¡Foul! | ¡Base por bolas! A primera | ¡Eso es! Caminando a primera. / La paciencia también embasa. |
 | 5 | Selección simple | REPASO: si el lanzamiento te golpea, tú: | Vas a primera / Eres out / Sigues bateando siempre | Vas a primera | ¡Correcto! Primera gratis por el golpe. / Regla de Novato, bien recordada. |
-| 6 | Arrastrar | REPASO: arrastra cada concepto a su canto: pasa por la zona sin swing / cuarto malo fuera / desviada fuera | — (zona a strike; cuarto malo a bola-base por bolas; desviada a foul) | Strike, base por bolas, foul | ¡Perfecto! Fundamentos firmes. / La base de Todo está sólida. |
+| 6 | Arrastrar | REPASO: arrastra cada concepto a su canto: pasa por la zona sin swing / cuarta bola fuera de la zona / desviada fuera | — (zona a strike; cuarta bola a base por bolas; desviada a foul) | Strike, base por bolas, foul | ¡Perfecto! Fundamentos firmes. / La base de todo está sólida. |
 
 Cierre: +10 XP por respuesta correcta, +5 XP de bono si termina sin
 errores. Gana 1 pelota (moneda) por respuesta correcta y 3 pelotas extra
@@ -1516,7 +1516,7 @@ por lección perfecta.
 ### Lección 20.2 Repaso Prospecto: batear, outs y bases
 
 Objetivo: REPASO de los niveles 5 a 8, marcado como repaso: hit, doble
-por regla, outs forzado y de toque, doble play, pisa y corre y el
+por regla, outs forzado y por tocado, doble play, pisa y corre y el
 marcador R/H/E.
 
 Demostración (30-60 segundos) — guion de Pelotín:
@@ -1531,11 +1531,11 @@ tu caja de herramientas del medio del camino.»
 
 | # | Tipo | Pregunta / instrucción | Opciones | Correcta | Si acierta / si falla |
 |---|---|---|---|---|---|
-| 1 | Selección simple | REPASO: la bola buena pica y salta la valla. Es: | Doble por regla / Jonrón / Triple | Doble por regla | ¡Eso es! Dos bases. / Picó y salió: doble por regla. |
-| 2 | Verdadero o falso | REPASO: en el out forzado basta pisar la base con la bola antes que el corredor | Verdadero / Falso | Verdadero | ¡Bien! Fuerza es pisar. / Forzado: base pisada a tiempo. |
+| 1 | Selección simple | REPASO: la bola pica en territorio fair y salta la valla. Es: | Doble por regla / Jonrón / Triple | Doble por regla | ¡Eso es! Dos bases. / Picó y salió: doble por regla. |
+| 2 | Verdadero o falso | REPASO: en el out forzado basta pisar la base con la bola antes que el corredor | Verdadero / Falso | Verdadero | ¡Bien! Forzado es pisar. / Forzado: base pisada a tiempo. |
 | 3 | Selección simple | REPASO: en el marcador, las letras R/H/E significan: | Carreras, hits y errores / Recta, curva y slider / Nada, es decoración | Carreras, hits y errores | ¡Correcto! Runs, hits, errors. / Así se lee una pizarra. |
 | 4 | ¿Qué cantaría el umpire? | REPASO: atrapan tu elevado y tu compañero de tercera arrancó antes de la atrapada; la defensa devuelve la bola a tercera. El umpire canta: | ¡Out! Salió antes del pisa y corre / ¡Safe! Carrera / ¡Foul! | ¡Out! Salió antes del pisa y corre | ¡Out! La espera era la jugada. / Pisa y corre mal hecho cuesta out. |
-| 5 | Toca en el campo | REPASO: toca la primera base del camino clásico del doble play que termina en primera | — (toca segunda, donde empieza el relay del doble play) | Segunda base | ¡Bien! Segunda y luego primera. / El camino corto del doble play. |
+| 5 | Toca en el campo | REPASO: toca la base donde se hace el primer out del doble play clásico | — (toca segunda, donde empieza el relay del doble play) | Segunda base | ¡Bien! Segunda y luego primera. / El camino corto del doble play. |
 | 6 | Selección simple | REPASO: la llegada del bateador porque la defensa eligió otro out se anota como: | Jugada de selección / Hit / Error siempre | Jugada de selección | ¡Correcto! Fielder's choice. / La defensa eligió, tú llegaste. |
 
 Cierre: +10 XP por respuesta correcta, +5 XP de bono si termina sin
@@ -1552,7 +1552,7 @@ Demostración (30-60 segundos) — guion de Pelotín:
 
 «Gran repaso, parte tres: la etapa Estrella. Robaste tu primera base
 mirando a la liga y a tu coach; el balk adelantó corredores, el tercer
-strike caído te dio una carrera inesperada a primera, y el infield fly
+strike caído te dio una corrida inesperada a primera, y el infield fly
 protegió a los corredores del engaño. Aprendiste bola viva y bola
 muerta, a cubrir y respaldar, y la lección que vale oro: tu brazo se
 cuida, con recta y cambio primero, y dolor significa parar y avisar.
@@ -1561,7 +1561,7 @@ Todo eso es repaso: hoy solo confirmas que sigue siendo tuyo.»
 | # | Tipo | Pregunta / instrucción | Opciones | Correcta | Si acierta / si falla |
 |---|---|---|---|---|---|
 | 1 | Selección simple | REPASO: el pitcher hace un balk con corredor en segunda. El corredor: | Avanza una base, a tercera / Vuelve a primera / Sale del juego | Avanza una base, a tercera | ¡Correcto! Una base por el balk. / Balk canta, corredor avanza. |
-| 2 | Verdadero o falso | REPASO: con el tercer strike caído y primera libre, el bateador puede correr a primera | Verdadero / Falso | Verdadero | ¡Bien! Esa carrera es legal. / Strike tres caído: a correr. |
+| 2 | Verdadero o falso | REPASO: con el tercer strike caído y primera libre, el bateador puede correr a primera | Verdadero / Falso | Verdadero | ¡Bien! Correr a primera ahí es legal. / Strike tres caído: a correr. |
 | 3 | Selección simple | REPASO: la bola queda muerta cuando: | El umpire detiene el juego, por ejemplo en un foul a las gradas o un tiempo pedido / El pitcher respira / El público aplaude | El umpire detiene el juego, por ejemplo en un foul a las gradas o un tiempo pedido | ¡Eso es! Bola muerta, todo quieto. / Con bola muerta nadie avanza. |
 | 4 | ¿Qué cantaría el umpire? | REPASO: elevado fácil al cuadro con primera y segunda ocupadas y menos de dos outs, cantado desde el aire. El umpire ya cantó: | ¡Infield fly! Bateador out / ¡Jonrón! / ¡Balk! | ¡Infield fly! Bateador out | ¡Correcto! Regla de protección. / Los corredores quedan a su riesgo, protegidos del engaño. |
 | 5 | Selección simple | REPASO: la frase completa del brazo sano es: | Si duele, paro y aviso a un adulto / Aguanto callado toda la temporada / Lanzo curvas para que duela menos | Si duele, paro y aviso a un adulto | ¡Eso es! Oro puro, campeón. / Esa frase te cuida para siempre. |
@@ -1594,7 +1594,7 @@ repaso solo junta las piezas antes del examen final de toda la app.»
 | 3 | Selección simple | REPASO: truena durante tu turno al bate. Lo correcto es: | Dejar el turno y salir del campo al refugio / Terminar el turno rápido / Seguir si el rayo fue lejos | Dejar el turno y salir del campo al refugio | ¡Eso es! Seguridad sin negociación. / Ningún turno vale más que tu vida. |
 | 4 | ¿Qué cantaría el umpire? | REPASO: dos defensores van por el mismo elevado, uno grita «¡mía!» y atrapa. El umpire: | No canta nada especial: jugada normal con buena comunicación / Canta falta por gritar / Detiene el juego | No canta nada especial: jugada normal con buena comunicación | ¡Correcto! Gritar «¡mía!» es legal y sano. / Pedir la bola protege al equipo. |
 | 5 | Toca en el campo | REPASO: con corredores en primera y tercera, toca la base del corredor que puede sellar un walk-off si anota | — (toca tercera) | Tercera base | ¡Bien! Su carrera puede ser la que gana. / El de tercera es la carrera del cierre. |
-| 6 | Selección simple | REPASO: el capitán lidera sobre todo con: | Su ejemplo / Sus discursos largos / Sus castigos | Su ejemplo | ¡Correcto! Ejemplo primero, siempre. / La C se sostiene con actos. |
+| 6 | Selección simple | REPASO: el capitán lidera sobre todo con: | Su ejemplo / Sus discursos largos / Sus castigos | Su ejemplo | ¡Correcto! Ejemplo primero, siempre. / La C de capitán se gana con actos. |
 
 Cierre: +10 XP por respuesta correcta, +5 XP de bono si termina sin
 errores. Gana 1 pelota (moneda) por respuesta correcta y 3 pelotas extra
@@ -1609,7 +1609,7 @@ cuidar a compañeros y cuerpo.
 
 Demostración (30-60 segundos) — guion de Pelotín:
 
-«Llegaste, campeón. Mira el camino que caminaste: de Novato, contando
+«Llegaste, campeón. Mira todo el camino que recorriste: de Novato, contando
 bolas y strikes, a Prospecto bateando y leyendo el marcador; de Estrella
 robando y cuidando tu brazo, a Leyenda revisando detalles y campo; y
 hoy, Salón de la Fama, pensando el juego y levantando a tu equipo. Kids

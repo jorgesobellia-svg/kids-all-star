@@ -88,7 +88,7 @@ TR = {
            '子どもがさいしょにおぼえる球は、ストレート（fastball）とチェンジアップ（changeup、ストレートに見えるけど、おそく来る）。カーブは若いうでのものじゃない：コーチが決めて、体のじゅんびができてから。'),
    'demo': [
      ('Un pitcher joven necesita solo dos lanzamientos, y bien hechos.', 'A young pitcher needs only two pitches, done well.', '年轻的投手只需要两种球，把它们投好。', '若いピッチャーにひつようなのは2つの球だけ。それをちゃんと投げること。'),
-     ('Primero la recta, en inglés fastball: tu lanzamiento derecho y con control.', 'First the fastball: your straight pitch, with control.', '首先是直球，英语叫 fastball：你的直线球，要有控制。', 'まずはストレート、英語で fastball：まっすぐで、コントロールのある球。'),
+     ('Primero la recta, en inglés fastball: tu lanzamiento recto y con control.', 'First the fastball: your straight pitch, with control.', '首先是直球，英语叫 fastball：你的直线球，要有控制。', 'まずはストレート、英語で fastball：まっすぐで、コントロールのある球。'),
      ('Después el cambio, changeup: sale igual que la recta, con el mismo movimiento de brazo, pero llega más lento y engaña al bateador que ya hizo su swing.', 'Then the changeup: it comes out just like the fastball, with the same arm motion, but it arrives slower and fools the batter who has already swung.', '然后是变速球，changeup：出手和直球一模一样，手臂动作也一样，但来得比较慢，骗过已经挥棒的击球员。', 'つぎはチェンジアップ、changeup：ストレートと同じうでの動きで投げるけど、おそく来て、もうスイングしたバッターをだます。'),
      ('¿Y las curvas? Escucha bien: las curvas no son para ti todavía.', "And curveballs? Listen carefully: curveballs aren't for you yet.", '那曲球呢？仔细听：曲球你现在还不能投。', 'カーブは？よく聞いて：カーブは君にはまだ早い。'),
      ('Lanzar curvas con el brazo en crecimiento puede lastimarlo.', 'Throwing curveballs with a growing arm can hurt it.', '手臂还在成长时投曲球，可能会受伤。', 'せいちょう中のうででカーブを投げると、けがをすることがある。'),
@@ -219,7 +219,7 @@ TR = {
       'o': [("Shouldn't be thrown", '不应该投', 'してはいけない'), ('Always counts anyway', '照样算数', 'いつもそれでいい'), ("It's a home run", '是本垒打', 'ホームラン')]},
   10: {'q': ('True or false: the rubber is white and long, different from a base', '对还是错：投手板是白色的长条，和垒包不一样', '○か×か：投手板は白くて長い。塁とはちがう')},
   11: {'q': ('What is the mound?', '投手丘也叫：', 'マウンドのべつのよび方は：'),
-       'o': [('The little hill the pitcher pitches from', '小山丘', '小さな山'), ('The safe spot', '安全的家', '安全なおうち'), ("The on-deck circle", '准备区', 'ネクストバッターズサークル')]},
+       'o': [('The little hill the pitcher pitches from', '小山丘', '小さな山'), ('The safe spot', '安全区', '安全地帯'), ("The on-deck circle", '准备区', 'ネクストバッターズサークル')]},
   12: {'q': ('Having the distance change with age is so that:', '距离随年龄改变，是为了：', 'きょりが年齢でかわるのは、何のため？'),
        'o': [('Kids pitch safely and with control', '让小朋友投得安全、有控制', '子どもが安全に、コントロールよく投げるため'), ('To make the game slower', '让比赛变慢', '試合をおそくするため'), ('Nothing', '没有用', '何のためでもない')]},
  },

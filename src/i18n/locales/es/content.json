@@ -112,7 +112,7 @@
     "6.3": "Out tocando al corredor",
     "6.4": "¿Forzado o no?",
     "6.5": "El doble play y la jugada de selección",
-    "7.1": "Safe en la base: tu casa segura",
+    "7.1": "Safe en la base: tu lugar seguro",
     "7.2": "Pisa y corre",
     "7.3": "Si la bola bateada te pega",
     "7.4": "No pasar al de adelante: la fila",
@@ -154,7 +154,7 @@
     "14.5": "¡Mía! Pedir el elevado",
     "15.1": "El primer paso: hacia atrás",
     "15.2": "¿De quién es el elevado? La prioridad del centro",
-    "15.3": "Atrapada de verdad o trampa",
+    "15.3": "Atrapada de verdad o bola de pique",
     "15.4": "Dejar la bola adelante y la pista de advertencia",
     "15.5": "Jugar con el sol de frente",
     "16.1": "La caja de bateo, la postura y el agarre",
@@ -191,7 +191,7 @@
         "¡Bienvenido al diamante! Así se llama el campo de béisbol en inglés: diamond.",
         "Mira: la parte de tierra con las cuatro esquinas es el cuadro, en inglés infield.",
         "La parte verde y grande de atrás son los jardines, en inglés outfield.",
-        "Y estas dos líneas blancas que salen hacia los lados son las líneas de foul: separan el campo bueno del malo."
+        "Y estas dos líneas blancas que salen hacia los lados son las líneas de foul: separan el territorio fair del territorio foul."
       ],
       "acts": {
         "1": {
@@ -263,7 +263,7 @@
         "2": {
           "q": "Después de primera, ¿a qué base sigues?",
           "ok": "¡Correcto! Second base.",
-          "ko": "El orden es 1, 2, 3: primero va segunda.",
+          "ko": "El orden es 1, 2, 3: después de primera sigue segunda.",
           "opts": {
             "second": "A segunda",
             "third": "A tercera",
@@ -326,7 +326,7 @@
         },
         "3": {
           "q": "¿Cuándo anotas una carrera?",
-          "ok": "¡Eso es! Run anotada.",
+          "ok": "¡Eso es! ¡Carrera anotada!",
           "ko": "Solo cuenta cuando completas la vuelta y pisas home.",
           "opts": {
             "lap": "Cuando pisas home después de dar la vuelta",
@@ -447,7 +447,7 @@
         "2": {
           "q": "¿Con qué atrapas la bola?",
           "ok": "¡Eso es! Glove en inglés.",
-          "ko": "Atrapas con el guante, en tu mano contraria a la que lanza.",
+          "ko": "Atrapas con el guante, en la mano contraria a la que usas para lanzar.",
           "opts": {
             "glove": "El guante (glove)",
             "bat": "El bate",
@@ -491,7 +491,7 @@
       "title": "Pitcher y catcher: la batería",
       "objective": "Saber que el pitcher lanza desde el montículo y el catcher recibe detrás de home, y que juntos se llaman la batería.",
       "demo": [
-        "Cada jugada empieza con dos jugadores: el pitcher, en inglés pitcher, que lanza la bola desde el montículo, ese cerrito en el centro del campo.",
+        "Cada jugada empieza con dos jugadores: el pitcher, que lanza la bola desde el montículo, ese cerrito en el centro del campo.",
         "Y el catcher, el receptor, que se agacha detrás de home y la recibe.",
         "A los dos juntos les dicen la batería, battery, porque son el motor del equipo."
       ],
@@ -514,7 +514,7 @@
         },
         "3": {
           "q": "¿Quién empieza cada jugada lanzando la bola?",
-          "ok": "¡Eso es! Pitcher en inglés.",
+          "ok": "¡Eso es! El pitcher.",
           "ko": "Todo empieza con el lanzamiento del pitcher.",
           "opts": {
             "pitcher": "El pitcher",
@@ -538,9 +538,9 @@
           }
         },
         "6": {
-          "q": "El catcher atrapó la bola que pasó por la zona buena. ¿Qué cantó el umpire?",
+          "q": "El catcher atrapó la bola que pasó por la zona de strike. ¿Qué cantó el umpire?",
           "ok": "¡Strike! Lo verás a fondo en el Nivel 4.",
-          "ko": "Si pasó por la zona buena, el umpire canta strike.",
+          "ko": "Si pasó por la zona de strike, el umpire canta strike.",
           "opts": {
             "strike": "Strike",
             "run": "Carrera",
@@ -845,7 +845,7 @@
         },
         "4": {
           "q": "¿Quién batea en la parte baja?",
-          "ok": "¡Correcto! Y por eso a veces define al final.",
+          "ok": "¡Correcto! Por eso el de casa batea de último y a veces define el juego.",
           "ko": "En la baja le toca al de casa.",
           "opts": {
             "home": "El equipo de casa",
@@ -918,7 +918,7 @@
           }
         },
         "5": {
-          "q": "Un equipo lleva 0 outs. ¿Cuántos bateadores más puede tener como mínimo antes de que le toque defender?",
+          "q": "Un equipo lleva 0 outs. ¿Hasta cuándo sigue bateando?",
           "ok": "¡Correcto! Sin outs, el turno sigue vivo.",
           "ko": "El turno no tiene reloj: termina con el tercer out.",
           "opts": {
@@ -1143,16 +1143,16 @@
       "objective": "Distinguir un strike (lanzamiento bueno, en la zona o abanicado) de una bola (lanzamiento fuera de la zona al que no se le tira).",
       "demo": [
         "Mira bien cada lanzamiento, porque el umpire canta una de dos cosas.",
-        "Si la bola pasa por la zona buena, o si le tiras y no le das, es strike.",
+        "Si la bola pasa por la zona de strike, o si le tiras y no le das, es strike.",
         "Si pasa lejos de la zona y no le tiraste, es bola, en inglés ball.",
-        "Bola mala para el pitcher, buena para ti.",
-        "El conteo de bolas y strikes es la cuenta del turno."
+        "Una bola es mala para el pitcher y buena para ti.",
+        "El conteo de bolas y strikes es como el marcador de tu turno al bate."
       ],
       "acts": {
         "1": {
           "q": "El lanzamiento pasó por el medio de la zona y el bateador no tiró",
           "ok": "¡Strike cantado! Aunque no tire, si va en la zona es strike.",
-          "ko": "Pasó por la zona buena: eso es strike.",
+          "ko": "Pasó por la zona de strike: eso es strike.",
           "opts": {
             "strike": "Strike",
             "ball": "Bola",
@@ -1210,8 +1210,8 @@
       "title": "La zona de strike",
       "objective": "Reconocer la zona de strike: el rectángulo imaginario sobre home, entre las rodillas y el pecho del bateador en su postura normal.",
       "demo": [
-        "Imagina un rectángulo invisible flotando sobre home: ese es la zona de strike, strike zone.",
-        "Va de ancho como home,",
+        "Imagina un rectángulo invisible flotando sobre home: esa es la zona de strike, strike zone.",
+        "Es tan ancha como home,",
         "y de alto más o menos desde las rodillas hasta el pecho del bateador parado normal.",
         "Si la bola cruza por ese rectángulo, es strike.",
         "Si pasa por fuera, es bola.",
@@ -1275,7 +1275,7 @@
       "title": "El foul",
       "objective": "Entender que una bola bateada fuera de las líneas antes de pasar las bases es foul: cuenta como strike, pero con dos strikes no pone fin al turno, y si un defensor la atrapa en el aire es out.",
       "demo": [
-        "Cuando bateas y la bola sale del campo bueno, cruzando las líneas hacia los lados, es foul.",
+        "Cuando bateas y la bola sale del territorio fair, cruzando las líneas hacia los lados, es foul.",
         "El foul cuenta como strike,",
         "pero escucha el truco: si ya tienes dos strikes y das foul, no te ponchas.",
         "Sigues bateando.",
@@ -1285,9 +1285,9 @@
         "1": {
           "q": "¿Qué es un foul?",
           "ok": "¡Eso es! Foul ball.",
-          "ko": "Foul es la bola que sale de lo válido.",
+          "ko": "Foul es la bola que cae fuera de las líneas.",
           "opts": {
-            "outside": "Una bola bateada fuera del campo bueno",
+            "outside": "Una bola bateada fuera del territorio fair",
             "high": "Un lanzamiento alto",
             "run": "Una carrera"
           }
@@ -1295,7 +1295,7 @@
         "2": {
           "q": "La bola bateada cayó fuera de la línea de tercera",
           "ok": "¡Foul! Fuera de la línea.",
-          "ko": "Cayó en territorio malo: foul.",
+          "ko": "Cayó en territorio foul: foul.",
           "opts": {
             "foul": "Foul",
             "hr": "Jonrón",
@@ -1320,7 +1320,7 @@
         "5": {
           "q": "El tercera base atrapó el foul en el aire, sin que cayera. ¿Qué pasa?",
           "ok": "¡Eso es! Atrapada en el aire, out.",
-          "ko": "Foul atrapado de aire sí es out, caiga donde caiga.",
+          "ko": "Un foul atrapado en el aire sí es out.",
           "opts": {
             "out": "Es out",
             "strikeOnly": "Es strike solamente",
@@ -1411,7 +1411,7 @@
       "title": "Golpeado y conteo completo",
       "objective": "Entender que si el lanzamiento golpea al bateador sin que él lo busque ni haga swing, va a primera base (hit by pitch), y repasar el conteo completo 3-2.",
       "demo": [
-        "Última de conteo.",
+        "Última lección del conteo.",
         "Si el lanzamiento pega en el bateador (y él no hizo swing ni se metió a propósito), no es out ni sigue bateando: se va a primera base.",
         "En inglés le dicen hit by pitch.",
         "Y ahora junta todo: el conteo más emocionante es 3 bolas y 2 strikes, el conteo completo, full count.",
@@ -1480,10 +1480,10 @@
       "objective": "Entender qué es un hit: un batazo bueno con el que el bateador llega a salvo a una base sin que la defensa haya fallado.",
       "demo": [
         "¡Llegó el momento de batear de verdad!",
-        "Cuando le pegas a la bola y llegas a salvo a una base, sin que la defensa haya fallado, eso es un hit, en inglés hit.",
+        "Cuando le pegas a la bola y llegas a salvo a una base, sin que la defensa haya fallado, eso es un hit.",
         "La bola puede pasar por el suelo, entre los defensores, o caer en los jardines donde nadie la atrapa.",
         "Si llegas a salvo, ¡tu batazo valió!",
-        "Y recuerda: tu base es tu casa segura, en inglés safe: parado sobre ella, nadie te puede hacer out."
+        "Y recuerda: tu base es tu lugar seguro, en inglés safe: parado sobre ella, nadie te puede hacer out."
       ],
       "acts": {
         "1": {
@@ -1523,7 +1523,7 @@
         },
         "5": {
           "q": "Bateaste un hit cortito. Toca la primera base a la que llegas",
-          "ok": "¡Bien! Tu casa segura.",
+          "ok": "¡Bien! Tu lugar seguro.",
           "ko": "Todo hit empieza llegando a primera.",
           "answer": "Primera base"
         },
@@ -1543,10 +1543,10 @@
       "title": "Sencillo, doble y triple",
       "objective": "Nombrar cada hit por las bases que vale: sencillo una, doble dos y triple tres, y frenar en la base correcta mirando la bola y al coach.",
       "demo": [
-        "Un hit se nombra por las bases que llegas.",
+        "Un hit se nombra según la base a la que llegas.",
         "Si llegas a primera: sencillo, en inglés single.",
         "Si la bola llega lejos y llegas a segunda: doble, double.",
-        "Y si corres, corres y llegas a tercera: ¡triple, triple!",
+        "Y si corres, corres y llegas a tercera: ¡triple!",
         "El triple es el más difícil: hay que batear lejos y correr como el viento.",
         "¿Sigues o te frenas? Mira la bola y escucha a tu coach: él ve todo el campo."
       ],
@@ -1562,7 +1562,7 @@
           }
         },
         "2": {
-          "q": "La bola pegó lejos en los jardines y llegaste a segunda. ¿Qué es?",
+          "q": "La bola cayó lejos en los jardines y llegaste a segunda. ¿Qué es?",
           "ok": "¡Correcto! Double.",
           "ko": "Dos bases: doble.",
           "opts": {
@@ -1614,17 +1614,17 @@
     },
     "5.3": {
       "title": "El jonrón y el doble por regla",
-      "objective": "Entender el jonrón (la bola sale del campo en el aire por zona buena: vuelta completa) y el doble por regla: si la bola buena pica y luego sale del campo, son dos bases para todos, no jonrón.",
+      "objective": "Entender el jonrón (la bola sale del campo en el aire por territorio fair: vuelta completa) y el doble por regla: si la bola pica en territorio fair y luego sale del campo, son dos bases para todos, no jonrón.",
       "demo": [
         "El batazo más famoso: el jonrón, en inglés home run.",
-        "La bola sale volando del campo, por zona buena, sin tocar el suelo: das la vuelta completa y anotas.",
-        "Pero ojo con su primo: si la bola pica en el campo bueno y DESPUÉS salta fuera, no es jonrón.",
+        "La bola sale volando del campo, por territorio fair, sin tocar el suelo: das la vuelta completa y anotas.",
+        "Pero ojo con su primo: si la bola pica en territorio fair y DESPUÉS salta fuera, no es jonrón.",
         "Es un doble por regla, en inglés ground rule double: el bateador va a segunda y cada corredor avanza dos bases.",
         "¿Salió en el aire? Jonrón. ¿Picó primero? Doble por regla."
       ],
       "acts": {
         "1": {
-          "q": "La bola sale del campo en el aire, por zona buena. ¿Qué es?",
+          "q": "La bola sale del campo en el aire, por territorio fair. ¿Qué es?",
           "ok": "¡Jonrón! Vuelta completa.",
           "ko": "En el aire y fuera: jonrón.",
           "opts": {
@@ -1947,14 +1947,14 @@
         "Y si el corredor NO está obligado a correr, pisar la base no sirve.",
         "Hay que tocarlo: out de toque, en inglés tag out.",
         "Se toca con la bola, o con el guante si la bola está dentro del guante, bien agarrada.",
-        "Y solo vale mientras el corredor está fuera de su base: su base es su casa segura.",
+        "Y solo vale mientras el corredor está fuera de su base: su base es su lugar seguro.",
         "Si está parado sobre ella, tocarlo no hace nada."
       ],
       "acts": {
         "1": {
           "q": "¿Qué es un out de toque (tag out)?",
           "ok": "¡Eso es! Tag out.",
-          "ko": "Sin fuerza, hay que tocar al corredor.",
+          "ko": "Si no está forzado, hay que tocar al corredor.",
           "opts": {
             "a": "Tocar al corredor con la bola fuera de su base",
             "b": "Pisar cualquier base",
@@ -1969,15 +1969,15 @@
         "3": {
           "q": "El corredor está parado sobre su base y lo tocan con la bola. ¿Es out?",
           "ok": "¡Correcto! Sobre la base está a salvo.",
-          "ko": "En su casa segura no hay out.",
+          "ko": "En su lugar seguro no hay out.",
           "opts": {
-            "a": "No, su base es su casa segura",
+            "a": "No, su base es su lugar seguro",
             "b": "Sí, siempre",
             "c": "Solo si es tercera"
           }
         },
         "4": {
-          "q": "El corredor se despegó de segunda y está fuera de la base. Toca a quién hay que tocar con la bola",
+          "q": "El corredor se despegó de segunda y está fuera de la base. Señala al corredor que hay que tocar con la bola",
           "ok": "¡Bien! A él, con la bola.",
           "ko": "Fuera de la base, el toque es sobre el corredor.",
           "answer": "Al corredor fuera de su base"
@@ -1995,7 +1995,7 @@
         "6": {
           "q": "Tocaron al corredor con la bola a mitad de camino entre bases. ¿Qué canta el umpire?",
           "ok": "¡Out! Tag out.",
-          "ko": "Fuera de su casa segura y tocado: out.",
+          "ko": "Fuera de su lugar seguro y tocado: out.",
           "opts": {
             "a": "¡Out!",
             "b": "¡Safe!",
@@ -2019,7 +2019,7 @@
         "1": {
           "q": "Corredor solo en segunda, rolling al cuadro. ¿Está forzado a ir a tercera?",
           "ok": "¡Correcto! Nadie viene detrás.",
-          "ko": "Sin nadie en primera, no hay fuerza en segunda.",
+          "ko": "Sin nadie en primera, el de segunda no está forzado.",
           "opts": {
             "a": "No, nadie lo empuja",
             "b": "Sí, siempre",
@@ -2037,7 +2037,7 @@
           }
         },
         "3": {
-          "q": "Para decidir si hay fuerza, hay que mirar si la base de atrás está ocupada",
+          "q": "Para saber si un corredor está forzado, hay que mirar si la base de atrás está ocupada",
           "ok": "¡Bien! Esa es la clave.",
           "ko": "Verdadero: mira atrás."
         },
@@ -2060,9 +2060,9 @@
         "6": {
           "q": "Corredor solo en segunda: el defensor pisa tercera con la bola, pero no tocó al corredor, que volvió a segunda. ¿Qué canta?",
           "ok": "¡Safe! Había que tocarlo.",
-          "ko": "Sin fuerza, pisar la base no sirve.",
+          "ko": "Si no está forzado, pisar la base no sirve.",
           "opts": {
-            "a": "¡Safe! No había fuerza",
+            "a": "¡Safe! No estaba forzado",
             "b": "¡Out!",
             "c": "¡Foul!"
           }
@@ -2113,8 +2113,8 @@
         },
         "4": {
           "q": "Para un doble play por el suelo casi siempre hace falta un corredor forzado",
-          "ok": "¡Bien! Sin fuerza no hay receta.",
-          "ko": "Verdadero: el doble play nace de la fuerza."
+          "ok": "¡Bien! Sin corredor forzado no hay receta.",
+          "ko": "Verdadero: el doble play nace del corredor forzado."
         },
         "5": {
           "q": "Tiro a segunda: out. Tiro a primera: out. ¿Cuántos outs cantó el umpire en la jugada?",
@@ -2139,13 +2139,13 @@
       }
     },
     "7.1": {
-      "title": "Safe en la base: tu casa segura",
+      "title": "Safe en la base: tu lugar seguro",
       "objective": "Entender que parado sobre su base el corredor está a salvo, que en una base solo puede haber un corredor y qué pasa si dos coinciden en la misma.",
       "demo": [
-        "Tu base es tu casa segura.",
+        "Tu base es tu lugar seguro.",
         "Parado sobre ella, con la bola viva, nadie te puede hacer out tocándote.",
-        "Pero la casa es para uno solo: en una base no pueden vivir dos corredores.",
-        "Si el de atrás te alcanza en la misma base, uno de los dos sobra, y casi siempre el que llegó de atrás es el que está en peligro, porque el de adelante ya era dueño de esa casa.",
+        "Pero la base es para uno solo: en una base no pueden vivir dos corredores.",
+        "Si el de atrás te alcanza en la misma base, uno de los dos sobra, y casi siempre el que llegó de atrás es el que está en peligro, porque el de adelante ya era dueño de esa base.",
         "Una base, un corredor."
       ],
       "acts": {
@@ -2154,7 +2154,7 @@
           "ok": "¡Eso es! Casa segura.",
           "ko": "Sobre tu base estás a salvo.",
           "opts": {
-            "a": "No, es mi casa segura",
+            "a": "No, es mi lugar seguro",
             "b": "Sí, siempre",
             "c": "Solo el pitcher"
           }
@@ -2162,12 +2162,12 @@
         "2": {
           "q": "En una base pueden estar dos corredores a la vez sin problema",
           "ok": "¡Bien! Una base, un corredor.",
-          "ko": "Falso: la casa es para uno."
+          "ko": "Falso: la base es para uno solo."
         },
         "3": {
           "q": "Dos corredores coinciden en segunda. ¿Quién está en peligro?",
           "ok": "¡Correcto! El dueño era el primero.",
-          "ko": "El de atrás no tenía casa ahí.",
+          "ko": "El de atrás no tenía lugar ahí.",
           "opts": {
             "a": "El que llegó de atrás",
             "b": "El que ya estaba",
@@ -2175,8 +2175,8 @@
           }
         },
         "4": {
-          "q": "Toca la casa segura del corredor que está en tercera",
-          "ok": "¡Bien! Esa es su casa.",
+          "q": "Toca el lugar seguro del corredor que está en tercera",
+          "ok": "¡Bien! Esa es su base.",
           "ko": "Parado ahí, está a salvo.",
           "answer": "Tercera base"
         },
@@ -2192,10 +2192,10 @@
         },
         "6": {
           "q": "Sales de tu base a mitad de camino y te tocan con la bola. ¿Qué pasa?",
-          "ok": "¡Correcto! Fuera de la casa hay peligro.",
+          "ok": "¡Correcto! Fuera de la base hay peligro.",
           "ko": "Fuera de tu base, el toque sí es out.",
           "opts": {
-            "a": "Out: saliste de tu casa segura",
+            "a": "Out: saliste de tu lugar seguro",
             "b": "Nada",
             "c": "Anotas"
           }
@@ -2204,7 +2204,7 @@
     },
     "7.2": {
       "title": "Pisa y corre",
-      "objective": "Entender el pisa y corre (tag up): con un elevado atrapado, el corredor debe estar tocando su base al momento de la atrapada y recién entonces puede correr; si sale antes, puede ser out en apelación.",
+      "objective": "Entender el pisa y corre (tag up): con un elevado atrapado, el corredor debe estar tocando su base al momento de la atrapada y solo entonces puede correr; si sale antes, puede ser out en apelación.",
       "demo": [
         "Sale un elevado y tú estás en base.",
         "Tu primer impulso es correr. ¡No!",
@@ -2268,10 +2268,10 @@
     },
     "7.3": {
       "title": "Si la bola bateada te pega",
-      "objective": "Aprender que si una bola bateada en zona buena toca a un corredor antes de pasar a un defensor, el corredor es out y la bola queda muerta; y la excepción: si la bola ya pasó a un defensor (menos al pitcher) y ya nadie más puede jugarla, el corredor no es out y el juego sigue.",
+      "objective": "Aprender que si una bola bateada en territorio fair toca a un corredor antes de pasar a un defensor, el corredor es out y la bola queda muerta; y la excepción: si la bola ya pasó a un defensor (menos al pitcher) y ya nadie más puede jugarla, el corredor no es out y el juego sigue.",
       "demo": [
         "Vas corriendo y la bola bateada te pega.",
-        "Casi siempre es malo para ti: si la bola buena te toca antes de pasar a un defensor, eres out y la bola queda muerta ahí mismo.",
+        "Casi siempre es malo para ti: si la bola bateada en territorio fair te toca antes de pasar a un defensor, eres out y la bola queda muerta ahí mismo.",
         "Pero hay una excepción que los grandes conocen: si la bola ya pasó a un defensor — que no sea el pitcher — y ya ningún otro defensor puede atraparla, y entonces te pega, no es tu culpa: no eres out y el juego sigue.",
         "¿La bola venía «limpia» hacia ti? Out.",
         "¿Ya había pasado a la defensa? Sigue jugando."
@@ -2303,13 +2303,13 @@
           "ko": "Falso: si ya pasó a un defensor, sigue el juego."
         },
         "4": {
-          "q": "¿A qué defensor NO cuenta como «ya pasó» si la bola lo pasa?",
+          "q": "Si la bola solo pasó junto a este defensor, la excepción NO vale. ¿Quién es?",
           "ok": "¡Correcto! El pitcher no cuenta para la excepción.",
           "ko": "Si solo pasó al pitcher, el corredor igual es out si la bola le pega.",
           "opts": {
-            "a": "Al pitcher",
-            "b": "Al campocorto",
-            "c": "Al segunda base"
+            "a": "El pitcher",
+            "b": "El campocorto",
+            "c": "El segunda base"
           }
         },
         "5": {
@@ -2335,7 +2335,7 @@
       "objective": "Aprender que los corredores son una fila: nunca se puede pasar al corredor de adelante; pasar a otro corredor es out del que pasa.",
       "demo": [
         "Piensa en una fila en la tienda: nadie se cuela.",
-        "En las bases es igual: los corredores son una fila, no se adelanta.",
+        "En las bases es igual: los corredores son una fila: nadie se adelanta.",
         "Si el de adelante se frenó y tú llegas corriendo y lo pasas, el out eres tú, el que pasó.",
         "Por eso el corredor de atrás debe mirar siempre al de adelante: si él se detiene, tú también te detienes o regresas.",
         "Una fila, en orden, sin colarse."
@@ -2344,7 +2344,7 @@
         "1": {
           "q": "¿Qué pasa si pasas al corredor que va adelante de ti?",
           "ok": "¡Correcto! Nada de colarse.",
-          "ko": "La fila no se adelanta: out el que pasa.",
+          "ko": "En la fila nadie se adelanta: out el que pasa.",
           "opts": {
             "a": "Eres out tú, el que pasó",
             "b": "Es out el de adelante",
@@ -2591,10 +2591,10 @@
     },
     "8.3": {
       "title": "Leer el conteo: quién va ganando",
-      "objective": "Leer el conteo como una historia: con ventaja del bateador (conteo de bateador, como 2-0 o 3-1) viene bola rápida por la zona; con ventaja del pitcher (conteo de pitcher, como 0-2 o 1-2) el bateador debe proteger. El conteo del pitcher (pitch count) es otra cosa: cuántos lanzamientos lleva, y solo importa para cuidar su brazo.",
+      "objective": "Leer el conteo como una historia: con ventaja del bateador (conteo de bateador, como 2-0 o 3-1) viene una recta por la zona; con ventaja del pitcher (conteo de pitcher, como 0-2 o 1-2) el bateador debe proteger. El conteo del pitcher (pitch count) es otra cosa: cuántos lanzamientos lleva, y solo importa para cuidar su brazo.",
       "demo": [
         "El conteo cuenta una historia: quién va ganando la pelea.",
-        "Si hay más bolas que strikes, como dos bolas y cero strikes, es un conteo de bateador, en inglés hitter's count: el pitcher necesita un strike y casi seguro lanzará su mejor bola por la zona.",
+        "Si hay más bolas que strikes, como dos bolas y cero strikes, es un conteo de bateador, en inglés hitter's count: el pitcher necesita un strike y casi seguro tirará su mejor lanzamiento por la zona.",
         "Si hay más strikes, como cero bolas y dos strikes, es un conteo de pitcher, pitcher's count: el bateador debe cuidar la zona y pelear cada lanzamiento.",
         "Y ojo, no confundas: el pitch count no es este conteo.",
         "El pitch count es cuántos lanzamientos lleva el pitcher en el juego, y sirve para cuidar su brazo, como verás en el Nivel 11."
@@ -2628,7 +2628,7 @@
         "4": {
           "q": "En un conteo de bateador, el pitcher casi seguro:",
           "ok": "¡Correcto! Necesita un strike.",
-          "ko": "Ventaja del bateador: viene bola por la zona.",
+          "ko": "Ventaja del bateador: viene un lanzamiento por la zona.",
           "opts": {
             "a": "Buscará la zona con su mejor lanzamiento",
             "b": "Lanzará a propósito muy lejos",
@@ -2761,7 +2761,7 @@
         },
         "4": {
           "q": "La E del marcador cuenta:",
-          "ok": "¡Eso es! E de errors.",
+          "ok": "¡Eso es! E de errores.",
           "ko": "Errores: fallas en jugadas normales.",
           "opts": {
             "a": "Los errores de cada equipo",
@@ -2824,7 +2824,7 @@
           }
         },
         "4": {
-          "q": "Llegaste a segunda antes del toque del defensor. ¿Qué canta el umpire?",
+          "q": "Llegaste a segunda antes de que el defensor te tocara con la bola. ¿Qué canta el umpire?",
           "ok": "¡Safe! Robo logrado.",
           "ko": "Llegaste primero: base robada.",
           "opts": {
@@ -2857,7 +2857,7 @@
       "demo": [
         "Antes de robar, el corredor se despega: da unos pasitos lejos de su base para quedar más cerca de la siguiente.",
         "En inglés se dice lead.",
-        "Pero el despego tiene peligro: quedaste fuera de tu casa segura.",
+        "Pero el despego tiene peligro: quedaste fuera de tu lugar seguro.",
         "Si el pitcher se da vuelta y tira a tu base, debes volver volando.",
         "Y ojo: en muchas ligas de niños pequeños no se puede despegar hasta que el lanzamiento pasa por home.",
         "¿En tu liga se puede despegar? Pregunta a tu coach antes de hacerlo."
@@ -2880,7 +2880,7 @@
         },
         "3": {
           "q": "Estás despegado y el pitcher se voltea hacia tu base. ¿Qué haces?",
-          "ok": "¡Correcto! De vuelta a tu casa segura.",
+          "ok": "¡Correcto! De vuelta a tu lugar seguro.",
           "ko": "Pitcher mirando: regresa enseguida.",
           "opts": {
             "a": "Vuelvo corriendo a mi base",
@@ -2891,7 +2891,7 @@
         "4": {
           "q": "Toca dónde queda un corredor despegado de primera: entre qué dos bases",
           "ok": "¡Bien! Ahí flota el corredor despegado.",
-          "ko": "Despegado vives entre dos bases, sin casa.",
+          "ko": "Despegado estás entre dos bases, sin lugar seguro.",
           "answer": "Entre primera y segunda"
         },
         "5": {
@@ -2921,7 +2921,7 @@
       "objective": "Entender el pickoff: el pitcher (o el catcher) tira de sorpresa a una base para intentar hacer out al corredor despegado, y por qué el corredor debe volver tocando la base.",
       "demo": [
         "El pitcher también juega.",
-        "Si te despegas mucho, puede girar de sorpresa y tirar a tu base: eso es un pickoff, un tiro para sorprenderte fuera de tu casa.",
+        "Si te despegas mucho, puede girar de sorpresa y tirar a tu base: eso es un pickoff, un tiro para sorprenderte fuera de tu base.",
         "Si su tiro llega y el defensor te toca antes de que vuelvas, eres out.",
         "Por eso el corredor despegado vive listo: un ojo en el pitcher y el cuerpo preparado para lanzarse de vuelta.",
         "Y si la bola se va lejos por un mal tiro, ¡ahí sí, a correr!"
@@ -2930,7 +2930,7 @@
         "1": {
           "q": "¿Qué es un pickoff?",
           "ok": "¡Eso es! Pickoff.",
-          "ko": "El pitcher defiende su base con ese tiro.",
+          "ko": "Con ese tiro el pitcher vigila al corredor.",
           "opts": {
             "a": "Un tiro de sorpresa del pitcher a una base para sacar al corredor despegado",
             "b": "Un tipo de bate",
@@ -2938,8 +2938,8 @@
           }
         },
         "2": {
-          "q": "En un pickoff, si vuelves a tu base antes del toque, eres safe",
-          "ok": "¡Bien! Tu casa segura te salva.",
+          "q": "En un pickoff, si vuelves a tu base antes de que te toquen, eres safe",
+          "ok": "¡Bien! Tu lugar seguro te salva.",
           "ko": "Verdadero: llegar primero es safe."
         },
         "3": {
@@ -2961,7 +2961,7 @@
         "5": {
           "q": "El tiro de pickoff llegó y te tocaron un paso antes de volver a la base. ¿Qué canta?",
           "ok": "¡Out! El pickoff funcionó.",
-          "ko": "Tocado fuera de tu casa: out.",
+          "ko": "Tocado fuera de tu base: out.",
           "opts": {
             "a": "¡Out!",
             "b": "¡Safe!",
@@ -2985,7 +2985,7 @@
       "objective": "Entender el balk en palabras simples: un movimiento ilegal del pitcher con corredores en base — empezar a lanzar y pararse, o fingir un tiro sin soltar la bola — castigado con una base para cada corredor; y que en muchas ligas infantiles el balk no se canta o se enseña avisando primero.",
       "demo": [
         "El pitcher puede engañar con la mirada, pero no con el cuerpo.",
-        "Si con corredores en base empieza su movimiento de lanzar y se detiene, o hace como que tira a una base y no suelta la bola, cometió un balk, en inglés balk.",
+        "Si con corredores en base empieza su movimiento de lanzar y se detiene, o hace como que tira a una base y no suelta la bola, cometió un balk.",
         "El castigo es justo: cada corredor avanza una base gratis.",
         "Es como mover una pieza fuera de turno: no vale.",
         "Y escucha: en muchas ligas de niños el balk no se canta, o el umpire avisa primero para enseñar.",
@@ -3015,7 +3015,7 @@
         "3": {
           "q": "El balk solo se puede cantar si hay corredores en base",
           "ok": "¡Bien! Sin corredores no hay balk.",
-          "ko": "Verdadero: sin corredores, ese movimiento no castiga así."
+          "ko": "Verdadero: sin corredores, ese movimiento no se castiga como balk."
         },
         "4": {
           "q": "¿Cuál imagen muestra un balk?",
@@ -3173,7 +3173,7 @@
         },
         "6": {
           "q": "En tu liga infantil, lo primero que debes saber de esta regla es:",
-          "ok": "¡Correcto! Muchas ligas chicas no la usan.",
+          "ok": "¡Correcto! Muchas ligas de niños pequeños no la usan.",
           "ko": "Regla de liga: coach primero.",
           "opts": {
             "a": "Si mi liga la usa a mi edad: pregúntale a tu coach",
@@ -3410,7 +3410,7 @@
           "ko": "Verdadero: la defensa debe pedirlo."
         },
         "3": {
-          "q": "El corredor pisó mal y pasó de largo segunda en su camino. La defensa apela tocando:",
+          "q": "El corredor se saltó segunda sin pisarla. La defensa apela tocando:",
           "ok": "¡Correcto! La base que faltó.",
           "ko": "Se apela en la base del olvido.",
           "opts": {
@@ -3584,7 +3584,7 @@
       "objective": "Aprender que los primeros lanzamientos de un niño son la recta (fastball) y el cambio (changeup, que parece recta pero llega más lenta), y que las curvas no son para brazos jóvenes: solo cuando el coach lo decida, con el cuerpo ya listo.",
       "demo": [
         "Un pitcher joven necesita solo dos lanzamientos, y bien hechos.",
-        "Primero la recta, en inglés fastball: tu lanzamiento derecho y con control.",
+        "Primero la recta, en inglés fastball: tu lanzamiento recto y con control.",
         "Después el cambio, changeup: sale igual que la recta, con el mismo movimiento de brazo, pero llega más lento y engaña al bateador que ya hizo su swing.",
         "¿Y las curvas? Escucha bien: las curvas no son para ti todavía.",
         "Lanzar curvas con el brazo en crecimiento puede lastimarlo.",
@@ -3791,7 +3791,7 @@
         "El All Star responde antes de que le bateen: antes de cada lanzamiento se pregunta, si me la batean, ¿qué hago?",
         "Casi siempre conviene frenar al corredor más adelantado, el que está más cerca de anotar.",
         "Pero un out seguro vale más que un tiro imposible: si el tiro largo no se puede, asegura el out en primera.",
-        "Pensar antes: eso separa al jugador del All Star."
+        "Pensar antes: eso separa a un jugador cualquiera de un All Star."
       ],
       "acts": {
         "1": {
@@ -3849,7 +3849,7 @@
     },
     "12.2": {
       "title": "El cortador",
-      "objective": "Entender el cortador (cutoff): en tiros largos desde los jardines, un defensor del cuadro se coloca en el camino, recibe el tiro y lo releva rápido a la base que haga falta.",
+      "objective": "Entender el cortador (cutoff): en tiros largos desde los jardines, un defensor del cuadro se coloca en el camino, recibe el tiro y lo pasa rápido a la base que haga falta.",
       "demo": [
         "Los jardines quedan lejos, y un tiro directo a home puede llegar débil o desviado.",
         "Por eso existe el cortador, en inglés cutoff: un defensor del cuadro se pone en el camino, levanta los brazos para que el jardinero lo vea, recibe el tiro y gira volando para tirar a donde haga falta.",
@@ -3859,10 +3859,10 @@
       "acts": {
         "1": {
           "q": "¿Qué hace el cortador (cutoff)?",
-          "ok": "¡Correcto! Recibe y releva.",
+          "ok": "¡Correcto! Recibe y pasa.",
           "ko": "Cutoff: el puente de los tiros largos.",
           "opts": {
-            "a": "Recibe el tiro del jardinero y lo releva a la base que haga falta",
+            "a": "Recibe el tiro del jardinero y lo pasa a la base que haga falta",
             "b": "Batea",
             "c": "Canta los strikes"
           }
@@ -3901,7 +3901,7 @@
         "6": {
           "q": "El cortador suele ser:",
           "ok": "¡Correcto! Campocorto o segunda base, según el tiro.",
-          "ko": "El cuadro releva a los jardines.",
+          "ko": "El cuadro ayuda a los jardines con el tiro.",
           "opts": {
             "a": "Un defensor del cuadro",
             "b": "El umpire",
@@ -3917,7 +3917,7 @@
         "En defensa nadie se queda quieto mirando.",
         "Si el primera base sale lejos a buscar un rolling, el pitcher corre a cubrir primera.",
         "Y cuando se tira a una base, otro defensor corre a ponerse detrás de esa base para respaldar, en inglés back up: si la bola se escapa, él la frena y salva una base.",
-        "Cubrir es ocupar la casa que quedó vacía; respaldar es ser la red detrás del tiro.",
+        "Cubrir es ocupar la base que quedó vacía; respaldar es ser la red detrás del tiro.",
         "En cada jugada, cada jugador tiene un trabajo."
       ],
       "acts": {
@@ -4498,7 +4498,7 @@
       "objective": "Fildear un rolling paso a paso: colocarse frente a la bola, guante abierto en el suelo, la otra mano encima, y mirar la bola hasta que entra al guante.",
       "demo": [
         "Sale un rolling hacia ti.",
-        "No lo esperes de lado: ponte frente a la bola, en inglés field the ball.",
+        "No lo esperes de lado: ponte frente a la bola y fíldeala, en inglés field the ball.",
         "Baja el guante abierto hasta el suelo, como una palita, y pon la otra mano encima, suave, para que la bola no se escape.",
         "Mira la bola hasta que entre a tu guante: ojos en la bola, siempre.",
         "Después, pies hacia la base y tiro seguro.",
@@ -4508,7 +4508,7 @@
         "1": {
           "q": "¿Cómo se espera un rolling?",
           "ok": "¡Eso es! De frente.",
-          "ko": "Tu cuerpo detrás de la bola la detiene todo.",
+          "ko": "Con tu cuerpo detrás de la bola, nada se escapa.",
           "opts": {
             "a": "De frente a la bola, con el guante en el suelo",
             "b": "De lado, con una sola mano",
@@ -4569,7 +4569,7 @@
       "demo": [
         "Un tiro bueno no sirve de nada si nadie lo recibe bien.",
         "Recibir en la base, en inglés receive the throw, es llegar a tiempo, colocarte junto a la base y mostrar el guante abierto como un blanco grande para tu compañero.",
-        "Atrapa, asegura la bola con las dos manos y recién ahí busca el siguiente tiro.",
+        "Atrapa, asegura la bola con las dos manos y solo entonces busca el siguiente tiro.",
         "Primero el out de tu base; el doble play viene después.",
         "Sin apuro y sin soltar la bola."
       ],
@@ -4872,13 +4872,13 @@
       }
     },
     "15.3": {
-      "title": "Atrapada de verdad o trampa",
-      "objective": "Distinguir la atrapada legal (la bola queda segura en el guante o la mano sin tocar el suelo) de la trampa (la bola toca el suelo antes o a la vez), que no es atrapada y no hace out.",
+      "title": "Atrapada de verdad o bola de pique",
+      "objective": "Distinguir la atrapada legal (la bola queda segura en el guante o la mano sin tocar el suelo) de la bola de pique (la bola toca el suelo antes o a la vez), que no es atrapada y no hace out.",
       "demo": [
         "El jardinero se lanza, la bola entra al guante… pero antes rozó el pasto.",
         "¿Out o no?",
         "Aquí está la diferencia: atrapada, en inglés catch, es cuando la bola queda segura en tu guante o en tu mano sin haber tocado el suelo.",
-        "Si la bola toca el suelo antes o al mismo tiempo, aunque después quede en tu guante, es una trampa, en inglés trap, y no es atrapada: el bateador no es out por esa jugada.",
+        "Si la bola toca el suelo antes o al mismo tiempo, aunque después quede en tu guante, es una bola de pique, en inglés trap, y no es atrapada: el bateador no es out por esa jugada.",
         "El umpire mira una sola cosa: ¿tocó el suelo o no?"
       ],
       "acts": {
@@ -4894,21 +4894,21 @@
         },
         "2": {
           "q": "La bola rozó el pasto y después quedó en el guante. ¿Qué es?",
-          "ok": "¡Correcto! Trampa.",
+          "ok": "¡Correcto! De pique.",
           "ko": "Tocó el suelo: no cuenta como atrapada.",
           "opts": {
-            "a": "Una trampa (trap): no es atrapada",
+            "a": "Una bola de pique (trap): no es atrapada",
             "b": "Una atrapada legal",
             "c": "Un jonrón"
           }
         },
         "3": {
-          "q": "Con una trampa, el bateador es out igual porque la bola terminó en el guante",
+          "q": "Con una bola de pique, el bateador es out igual porque la bola terminó en el guante",
           "ok": "¡Bien! No es out por atrapada.",
           "ko": "Falso: la bola sigue en juego y hay que jugarla."
         },
         "4": {
-          "q": "Si hay trampa, ¿qué debe hacer el jardinero?",
+          "q": "Si la bola fue de pique, ¿qué debe hacer el jardinero?",
           "ok": "¡Eso es! La jugada sigue.",
           "ko": "Nada de celebrar: bola viva, a tirar.",
           "opts": {
@@ -4930,7 +4930,7 @@
         "6": {
           "q": "Para que sea atrapada, la bola puede rebotar una vez en el suelo si el guante la cubre",
           "ok": "¡Correcto! Ni un rebote.",
-          "ko": "Falso: un solo toque al suelo y ya es trampa."
+          "ko": "Falso: si toca el suelo una sola vez, ya es de pique."
         }
       }
     },
@@ -5065,7 +5065,7 @@
         "Los dos pies van dentro de la caja, separados, rodillas suaves y peso en equilibrio.",
         "Las manos agarran el bate firmes, pero sin apretarlo como si fuera a romperse: manos duras, swing lento.",
         "El bate descansa sobre el hombro de atrás, listo.",
-        "Caja, postura y agarre, en inglés stance y grip.",
+        "Postura y agarre: en inglés, stance y grip.",
         "Desde ahí, todo es mirar la bola."
       ],
       "acts": {
@@ -5191,7 +5191,7 @@
       "demo": [
         "Escucha el sonido más fino del béisbol: ¡tic!",
         "La bola apenas roza el bate, sale disparada hacia atrás y el catcher la atrapa directo, sin que toque el suelo.",
-        "Eso es un foul tip, en inglés foul tip.",
+        "Eso es un foul tip.",
         "No es un foul común: si el catcher lo atrapa, cuenta como strike y la bola sigue viva, como un lanzamiento más.",
         "Hasta puede ser el tercer strike y ponche.",
         "Pero si el catcher no la atrapa y la bola cae, ahí sí es foul normal y la bola se detiene.",
@@ -5609,7 +5609,7 @@
         "5": {
           "q": "¿Quién decide cómo se acomoda la defensa?",
           "ok": "¡Eso es! Lee y mueve.",
-          "ko": "Como piezas de ajedrez, dice el guion.",
+          "ko": "Mueve a sus jugadores como piezas de ajedrez.",
           "opts": {
             "a": "El coach, leyendo el juego",
             "b": "El bateador rival",
@@ -5629,7 +5629,7 @@
       "demo": [
         "Antes de cada jugada, los jugadores de Salón de la Fama miran tres cosas: el marcador, la entrada y los outs.",
         "Con el juego empatado al final, un corredor se cuida distinto que ganando por mucho.",
-        "Y escucha cómo se llama el momento más feliz del béisbol: si el equipo de casa batea en su última oportunidad, empata o pierde por poco, y un batazo trae la carrera que gana, eso es un walk-off, en inglés walk-off: el juego se acaba en ese instante y todos salen a celebrar, porque el rival ya no tiene otro turno.",
+        "Y escucha cómo se llama el momento más feliz del béisbol: si el equipo de casa batea en su última oportunidad, empata o pierde por poco, y un batazo trae la carrera que gana, eso es un walk-off: el juego se acaba en ese instante y todos salen a celebrar, porque el rival ya no tiene otro turno.",
         "Ganando el equipo de casa al llegar a ese turno, ni siquiera hace falta jugarlo: el juego ya terminó.",
         "El marcador no es solo números: decide qué riesgo vale la pena."
       ],
@@ -5657,7 +5657,7 @@
         "3": {
           "q": "El walk-off solo lo puede dar el equipo de casa en su última oportunidad al bate",
           "ok": "¡Bien! Así es la jugada.",
-          "ko": "Verdadero: el visitante siempre deja un turno de respuesta."
+          "ko": "Verdadero: el de casa siempre tiene su turno para responder."
         },
         "4": {
           "q": "Si el equipo de casa ya va ganando al llegar a su último turno, ¿qué pasa?",
@@ -5691,7 +5691,7 @@
       "objective": "Deslizarse (slide) pies primero, con las manos arriba y sin ir contra el defensor; y saber que deslizarse de cabeza puede estar prohibido en su liga: se pregunta al coach.",
       "demo": [
         "Llegas corriendo a la base y el tiro viene cerca: ¡a deslizarse!",
-        "Deslizarse, en inglés slide, es tirarse por el suelo para llegar bajo el toque.",
+        "Deslizarse, en inglés slide, es tirarse por el suelo para llegar por debajo del guante del defensor.",
         "La forma segura en ligas de niños es pies primero, feet-first slide: las piernas van al frente, el cuerpo se recuesta un poco y las manos suben para no apoyarlas en el suelo.",
         "Nunca te lanzas contra el defensor para tumbarlo: se llega a la base, no al jugador.",
         "Y ojo: en muchas ligas infantiles deslizarse de cabeza está prohibido, porque la cabeza va desprotegida al frente.",
@@ -5734,7 +5734,7 @@
           }
         },
         "5": {
-          "q": "Deslizarse sirve para llegar bajo el toque del defensor",
+          "q": "Deslizarse sirve para llegar por debajo del guante del defensor",
           "ok": "¡Bien! Por eso se usa.",
           "ko": "Verdadero: bajo y rápido a la base."
         },
@@ -5828,7 +5828,7 @@
         "1": {
           "q": "¿Qué es un juego oficial?",
           "ok": "¡Eso es! Resultado que vale.",
-          "ko": "Lo que pide la liga, no un número de aquí.",
+          "ko": "Lo define tu liga: pregúntale a tu coach.",
           "opts": {
             "a": "El que ya jugó lo que la liga pide para que el resultado valga",
             "b": "Cualquier juego con público",
@@ -6338,7 +6338,7 @@
         "Gran repaso, parte uno: vuelve a tu primer día.",
         "El diamante, tus cuatro bases en orden, las posiciones y su número de anotador.",
         "En home: strike si pasa por la zona o le tiras y fallas, bola si va fuera y no le tiras, foul si la desvías fuera.",
-        "Tres strikes y es ponche; la cuenta llena te aprieta, y si te golpea el lanzamiento, vas a primera.",
+        "Tres strikes y es ponche; el conteo completo te aprieta, y si te golpea el lanzamiento, vas a primera.",
         "Nada de esto es nuevo, campeón: es el suelo sobre el que construiste todo lo demás.",
         "Dilo con orgullo: ¡esto ya lo dominas!"
       ],
@@ -6385,9 +6385,9 @@
           }
         },
         "6": {
-          "q": "REPASO: arrastra cada concepto a su canto: pasa por la zona sin swing / cuarto malo fuera / desviada fuera",
+          "q": "REPASO: arrastra cada concepto a su canto: pasa por la zona sin swing / cuarta bola fuera de la zona / desviada fuera",
           "ok": "¡Perfecto! Fundamentos firmes.",
-          "ko": "La base de Todo está sólida.",
+          "ko": "La base de todo está sólida.",
           "opts": {
             "zone": "Pasa por la zona sin swing",
             "fourth": "Cuarto malo fuera",
@@ -6402,17 +6402,17 @@
     },
     "20.2": {
       "title": "Repaso Prospecto: batear, outs y bases",
-      "objective": "REPASO de los niveles 5 a 8, marcado como repaso: hit, doble por regla, outs forzado y de toque, doble play, pisa y corre y el marcador R/H/E.",
+      "objective": "REPASO de los niveles 5 a 8, marcado como repaso: hit, doble por regla, outs forzado y por tocado, doble play, pisa y corre y el marcador R/H/E.",
       "demo": [
         "Gran repaso, parte dos: la etapa Prospecto.",
         "Bateaste tu primer hit y aprendiste que sencillo, doble y triple cuentan bases; que si la bola pica y salta la valla es doble por regla;",
-        "que el out forzado se hace pisando la base y el de toque, tocando al corredor; que dos outs en una jugada son doble play;",
+        "que el out forzado se hace pisando la base y el otro, tocando al corredor con la bola; que dos outs en una jugada son doble play;",
         "que el elevado se espera con pisa y corre; y que el marcador cuenta carreras, hits y errores.",
         "Todo repaso, nada nuevo: es tu caja de herramientas del medio del camino."
       ],
       "acts": {
         "1": {
-          "q": "REPASO: la bola buena pica y salta la valla. Es:",
+          "q": "REPASO: la bola pica en territorio fair y salta la valla. Es:",
           "ok": "¡Eso es! Dos bases.",
           "ko": "Picó y salió: doble por regla.",
           "opts": {
@@ -6423,7 +6423,7 @@
         },
         "2": {
           "q": "REPASO: en el out forzado basta pisar la base con la bola antes que el corredor",
-          "ok": "¡Bien! Fuerza es pisar.",
+          "ok": "¡Bien! Forzado es pisar.",
           "ko": "Forzado: base pisada a tiempo."
         },
         "3": {
@@ -6447,7 +6447,7 @@
           }
         },
         "5": {
-          "q": "REPASO: toca la primera base del camino clásico del doble play que termina en primera",
+          "q": "REPASO: toca la base donde se hace el primer out del doble play clásico",
           "ok": "¡Bien! Segunda y luego primera.",
           "ko": "El camino corto del doble play.",
           "answer": "Segunda base"
@@ -6469,7 +6469,7 @@
       "objective": "REPASO de los niveles 9 a 12, marcado como repaso: robo, balk, tercer strike caído, infield fly, bola viva y muerta, señales y el cuidado del brazo, sin enseñar ninguna regla nueva.",
       "demo": [
         "Gran repaso, parte tres: la etapa Estrella.",
-        "Robaste tu primera base mirando a la liga y a tu coach; el balk adelantó corredores, el tercer strike caído te dio una carrera inesperada a primera, y el infield fly protegió a los corredores del engaño.",
+        "Robaste tu primera base mirando a la liga y a tu coach; el balk adelantó corredores, el tercer strike caído te dio una corrida inesperada a primera, y el infield fly protegió a los corredores del engaño.",
         "Aprendiste bola viva y bola muerta, a cubrir y respaldar, y la lección que vale oro: tu brazo se cuida, con recta y cambio primero, y dolor significa parar y avisar.",
         "Todo eso es repaso: hoy solo confirmas que sigue siendo tuyo."
       ],
@@ -6486,7 +6486,7 @@
         },
         "2": {
           "q": "REPASO: con el tercer strike caído y primera libre, el bateador puede correr a primera",
-          "ok": "¡Bien! Esa carrera es legal.",
+          "ok": "¡Bien! Correr a primera ahí es legal.",
           "ko": "Strike tres caído: a correr."
         },
         "3": {
@@ -6533,7 +6533,7 @@
       "demo": [
         "Gran repaso, parte cuatro: lo más fino del camino.",
         "El foul tip que el catcher atrapa y cuenta como strike; la tarjeta de alineación que ordena cada turno; el jardinero que pide el elevado con un «¡mía!» que evita choques;",
-        "el trueno que vacía el campo sin discusión; la secuencia de recta y cambio que piensa antes de lanzar; y el capitán que manda con el ejemplo.",
+        "el trueno que vacía el campo sin discusión; el pitcher que piensa su recta y su cambio antes de lanzar; y el capitán que manda con el ejemplo.",
         "Todo esto ya lo viviste en Leyenda y en Salón de la Fama: este repaso solo junta las piezas antes del examen final de toda la app."
       ],
       "acts": {
@@ -6581,7 +6581,7 @@
         "6": {
           "q": "REPASO: el capitán lidera sobre todo con:",
           "ok": "¡Correcto! Ejemplo primero, siempre.",
-          "ko": "La C se sostiene con actos.",
+          "ko": "La C de capitán se gana con actos.",
           "opts": {
             "a": "Su ejemplo",
             "b": "Sus discursos largos",
@@ -6595,7 +6595,7 @@
       "objective": "Cierre de todo Kids All Star: recordar el camino Novato → Prospecto → Estrella → Leyenda → Salón de la Fama y la promesa que sigue fuera de la app: jugar, preguntarle al coach lo que cambia por liga y cuidar a compañeros y cuerpo.",
       "demo": [
         "Llegaste, campeón.",
-        "Mira el camino que caminaste: de Novato, contando bolas y strikes, a Prospecto bateando y leyendo el marcador; de Estrella robando y cuidando tu brazo, a Leyenda revisando detalles y campo; y hoy, Salón de la Fama, pensando el juego y levantando a tu equipo.",
+        "Mira todo el camino que recorriste: de Novato, contando bolas y strikes, a Prospecto bateando y leyendo el marcador; de Estrella robando y cuidando tu brazo, a Leyenda revisando detalles y campo; y hoy, Salón de la Fama, pensando el juego y levantando a tu equipo.",
         "Kids All Star se termina aquí, pero tu béisbol apenas empieza: sal al campo, sigue aprendiendo en cada juego, pregúntale a tu coach todo lo que cambia según tu liga y nunca olvides las dos reglas que valen para toda la vida: cuida tu cuerpo y levanta a tu compañero.",
         "¡A jugar!"
       ],
@@ -7062,7 +7062,7 @@
         }
       },
       "7": {
-        "q": "Toca la base que es tu casa segura al llegar de un hit cortito",
+        "q": "Toca la base que es tu lugar seguro al llegar de un hit cortito",
         "answer": "Primera base"
       },
       "8": {
@@ -7093,9 +7093,9 @@
         }
       },
       "12": {
-        "q": "¿Cómo se dice hit en inglés?",
+        "q": "¿Cómo se dice «sencillo» en inglés?",
         "opts": {
-          "a": "Hit",
+          "a": "Single",
           "b": "Balk",
           "c": "Lead"
         }
@@ -7166,7 +7166,7 @@
         }
       },
       "10": {
-        "q": "Verdadero o falso: da igual atraparla con el guante o que rebote primero en el guante y caiga al suelo"
+        "q": "Verdadero o falso: si la bola te rebota en el guante y cae al suelo, igual es out"
       },
       "11": {
         "q": "Un elevado muy alto da tiempo a los corredores para:",
@@ -7230,7 +7230,7 @@
         }
       },
       "7": {
-        "q": "Toca la casa segura de un corredor en primera",
+        "q": "Toca el lugar seguro de un corredor en primera",
         "answer": "Primera base"
       },
       "8": {
@@ -7261,7 +7261,7 @@
         }
       },
       "12": {
-        "q": "¿Cómo se dice «a salvo» en este nivel?",
+        "q": "¿Cómo se dice «a salvo» en inglés?",
         "opts": {
           "a": "Safe",
           "b": "Balk",
@@ -7287,10 +7287,10 @@
         }
       },
       "3": {
-        "q": "¿Cómo se dice error en inglés?",
+        "q": "¿Cómo se dice «carreras» en inglés?",
         "opts": {
-          "a": "Error",
-          "b": "Hit",
+          "a": "Runs",
+          "b": "Strikes",
           "c": "Lead"
         }
       },
@@ -7322,7 +7322,7 @@
         }
       },
       "8": {
-        "q": "Toca al jugador cuya falla fácil convierte el batazo en error",
+        "q": "Toca al defensor que falló la jugada fácil",
         "answer": "El defensor que falló la jugada fácil"
       },
       "9": {
@@ -7387,7 +7387,7 @@
         }
       },
       "5": {
-        "q": "Verdadero o falso: si te atrapa el tiro antes de llegar, eres out y no hubo robo"
+        "q": "Verdadero o falso: si el tiro llega y te tocan antes de que llegues, eres out y no hubo robo"
       },
       "6": {
         "q": "El momento de arrancar el robo es:",
@@ -7413,7 +7413,7 @@
         "q": "Verdadero o falso: también se puede robar tercera y hasta home, aunque es más difícil"
       },
       "10": {
-        "q": "¿Qué canta el umpire si el toque llega antes que tú?",
+        "q": "¿Qué canta el umpire si te tocan con la bola antes de llegar?",
         "opts": {
           "a": "¡Out!",
           "b": "¡Safe!",
@@ -7592,7 +7592,7 @@
         "q": "El montículo también se llama:",
         "opts": {
           "a": "La lomita",
-          "b": "La casa segura",
+          "b": "El lugar seguro",
           "c": "El círculo de espera"
         }
       },
@@ -7926,13 +7926,13 @@
       "5": {
         "q": "La bola rozó el pasto una fracción antes de entrar al guante. ¿Qué fue?",
         "opts": {
-          "a": "Una trampa (trap): no es atrapada",
+          "a": "Una bola de pique (trap): no es atrapada",
           "b": "Una atrapada legal",
           "c": "Un out seguro"
         }
       },
       "6": {
-        "q": "Tras una trampa, la bola sigue viva. ¿Qué hace el jardinero?",
+        "q": "Tras un pique así, la bola sigue viva. ¿Qué hace el jardinero?",
         "opts": {
           "a": "La recoge y tira rápido a una base",
           "b": "La muestra al umpire celebrando",
@@ -7993,7 +7993,7 @@
         "q": "¿Dónde deben ir los dos pies del bateador?",
         "opts": {
           "a": "Dentro de la caja de bateo (batter's box)",
-          "b": "Donde el bateador se sienta famoso",
+          "b": "Fuera de la caja, donde quiera",
           "c": "Un pie sobre home"
         }
       },
@@ -8213,7 +8213,7 @@
         "q": "La diferencia de carreras de la regla de misericordia la define…",
         "opts": {
           "a": "Cada liga, según la edad",
-          "b": "Este documento con un número fijo",
+          "b": "Un número fijo igual para todas las ligas",
           "c": "El equipo visitante"
         }
       },
@@ -8254,7 +8254,7 @@
         "opts": {
           "a": "Depende de la regla de reingreso de mi liga: pregúntale a tu coach",
           "b": "Siempre puede",
-          "c": "Este documento lo prohíbe en todas"
+          "c": "Está prohibido en todas las ligas"
         }
       },
       "10": {

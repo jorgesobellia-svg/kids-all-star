@@ -48,7 +48,7 @@ TR = {
            'ゴロを一歩ずつ捕球しよう：ボールの正面に入って、開いたグラブを地面に、もう片方の手を上に。グラブに入るまでボールを見る。'),
    'demo': [
      ('Sale un rolling hacia ti.', 'A ground ball comes at you.', '一个滚地球朝你滚来。', 'ゴロが君のほうに来た。'),
-     ('No lo esperes de lado: ponte frente a la bola, en inglés field the ball.', "Don't wait for it sideways: get in front of it and field it.", '别侧着身子等：站到球的正前方去接球，英语叫 field the ball。', '横向きで待たないで：ボールの正面に入って捕球する、英語で field the ball。'),
+     ('No lo esperes de lado: ponte frente a la bola y fíldeala, en inglés field the ball.', "Don't wait for it sideways: get in front of it and field it.", '别侧着身子等：站到球的正前方去接球，英语叫 field the ball。', '横向きで待たないで：ボールの正面に入って捕球する、英語で field the ball。'),
      ('Baja el guante abierto hasta el suelo, como una palita, y pon la otra mano encima, suave, para que la bola no se escape.', 'Lower your open glove all the way to the ground, like a little shovel, and put your other hand gently on top so the ball doesn\'t get away.', '把张开的手套放低到地面，像一把小铲子，另一只手轻轻盖在上面，别让球跑掉。', '開いたグラブを地面まで下げる、小さなシャベルみたいに。もう片方の手をやさしく上にのせて、ボールがにげないように。'),
      ('Mira la bola hasta que entre a tu guante: ojos en la bola, siempre.', 'Watch the ball until it goes into your glove: eyes on the ball, always.', '盯着球直到它进入手套：永远看着球。', 'グラブに入るまでボールを見る：目はいつもボールに。'),
      ('Después, pies hacia la base y tiro seguro.', 'Then, feet toward the base and a safe throw.', '然后，脚朝向垒包，稳稳地传球。', 'それから、足を塁に向けて、たしかな送球。'),
@@ -58,7 +58,7 @@ TR = {
     1: {'q': ('How do you wait for a ground ball?', '怎么等滚地球？', 'ゴロはどうやって待つ？'),
         'o': [('Facing the ball, with the glove on the ground', '面对着球，手套放在地上', 'ボールの正面で、グラブを地面に'), ('Sideways, with one hand', '侧着身子，用一只手', '横向きで、片手で'), ('Backwards, guessing', '背对着球，靠猜', 'うしろ向きで、あてずっぽう')],
         'ok': ("That's it! Facing it.", '对了！正对着球。', 'そのとおり！正面で。'),
-        'ko': ('Your body behind the ball stops it all.', '身体挡在球后面，什么都能挡住。', '体がボールのうしろにあれば、ぜんぶ止まる。')},
+        'ko': ('With your body behind the ball, nothing gets by.', '身体挡在球后面，什么都跑不掉。', '体がボールのうしろにあれば、何もぬけない。')},
     2: {'q': ('What does your free hand do when fielding?', '接球时空着的那只手做什么？', '捕球するとき、空いている手は何をする？'),
         'o': [('It goes on top of the glove to secure the ball', '盖在手套上，把球护住', 'グラブの上にのせて、ボールをおさえる'), ('It waves at the crowd', '向观众挥手', 'お客さんに手をふる'), ('It stays in your pocket', '放在口袋里', 'ポケットに入れたまま')],
         'ok': ('Correct! Two hands.', '正确！双手。', '正解！両手。'),
@@ -89,7 +89,7 @@ TR = {
    'demo': [
      ('Un tiro bueno no sirve de nada si nadie lo recibe bien.', "A good throw is useless if nobody receives it well.", '传得再好，没人接好也没用。', 'いい送球も、ちゃんと受けなければ意味がない。'),
      ('Recibir en la base, en inglés receive the throw, es llegar a tiempo, colocarte junto a la base y mostrar el guante abierto como un blanco grande para tu compañero.', 'Receiving a throw at the base means getting there in time, setting up next to the base and showing your open glove like a big target for your teammate.', '在垒上接传球，英语叫 receive the throw，就是及时赶到，站在垒包旁边，张开手套给队友一个大大的目标。', '塁で送球を受ける、英語で receive the throw は、まにあうように行って、塁のそばにかまえ、開いたグラブを仲間の大きな目じるしにすること。'),
-     ('Atrapa, asegura la bola con las dos manos y recién ahí busca el siguiente tiro.', 'Catch it, secure the ball with two hands, and only then look for the next throw.', '接住，用双手把球护稳，然后才找下一次传球。', 'とって、両手でボールをおさえて、それから次の送球をさがす。'),
+     ('Atrapa, asegura la bola con las dos manos y solo entonces busca el siguiente tiro.', 'Catch it, secure the ball with two hands, and only then look for the next throw.', '接住，用双手把球护稳，然后才找下一次传球。', 'とって、両手でボールをおさえて、それから次の送球をさがす。'),
      ('Primero el out de tu base; el doble play viene después.', 'First the out at your base; the double play comes after.', '先拿下你这个垒的出局；双杀是之后的事。', 'まず自分の塁のアウト。ダブルプレーはそのあと。'),
      ('Sin apuro y sin soltar la bola.', 'No rushing and without dropping the ball.', '不慌不忙，也别让球掉了。', 'あわてないで、ボールをはなさないで。'),
    ],

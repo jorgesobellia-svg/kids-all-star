@@ -263,7 +263,7 @@
         "2": {
           "q": "After first base, which base is next?",
           "ok": "Correct! Second base.",
-          "ko": "The order is 1, 2, 3: second base comes next.",
+          "ko": "The order is 1, 2, 3: after first comes second.",
           "opts": {
             "second": "To second base",
             "third": "To third base",
@@ -326,7 +326,7 @@
         },
         "3": {
           "q": "When do you score a run?",
-          "ok": "That's it! Run scored.",
+          "ok": "That's it! Run scored!",
           "ko": "It only counts when you go all the way around and touch home plate.",
           "opts": {
             "lap": "When you touch home plate after going all the way around",
@@ -845,7 +845,7 @@
         },
         "4": {
           "q": "Who bats in the bottom of the inning?",
-          "ok": "Correct! That's why they sometimes decide the game at the end.",
+          "ok": "Correct! That's why the home team bats last and sometimes decides the game.",
           "ko": "In the bottom, it's the home team's turn.",
           "opts": {
             "home": "The home team",
@@ -1146,7 +1146,7 @@
         "If the ball goes through the strike zone, or if you swing and miss, it's a strike.",
         "If it goes far from the zone and you didn't swing, it's a ball.",
         "A ball is bad for the pitcher and good for you.",
-        "The count of balls and strikes is the score of your turn at bat."
+        "The count of balls and strikes is like the scoreboard for your turn at bat."
       ],
       "acts": {
         "1": {
@@ -1285,7 +1285,7 @@
         "1": {
           "q": "What is a foul?",
           "ok": "That's it! A foul ball.",
-          "ko": "A foul is a ball that goes outside the fair area.",
+          "ko": "A foul is a batted ball that lands outside the lines.",
           "opts": {
             "outside": "A ball hit outside the foul lines",
             "high": "A high pitch",
@@ -1320,7 +1320,7 @@
         "5": {
           "q": "The third baseman caught the foul in the air, before it landed. What happens?",
           "ok": "That's it! Caught in the air: out.",
-          "ko": "A foul caught in the air is an out, wherever it is.",
+          "ko": "A foul caught in the air is an out.",
           "opts": {
             "out": "It's an out",
             "strikeOnly": "It's only a strike",
@@ -1523,7 +1523,7 @@
         },
         "5": {
           "q": "You hit a short one. Tap the base you reach first",
-          "ok": "Good! First base is your first stop.",
+          "ok": "Good! That's your safe spot.",
           "ko": "Every hit starts by reaching first.",
           "answer": "First base"
         },
@@ -1954,7 +1954,7 @@
         "1": {
           "q": "What is a tag out?",
           "ok": "That's it! Tag out.",
-          "ko": "With no force, you have to tag the runner.",
+          "ko": "If he isn't forced, you have to tag the runner.",
           "opts": {
             "a": "Touching the runner with the ball while off his base",
             "b": "Stepping on any base",
@@ -1977,7 +1977,7 @@
           }
         },
         "4": {
-          "q": "The runner stepped off second and is away from the base. Tap who has to be tagged with the ball",
+          "q": "The runner stepped off second and is away from the base. Tap the runner who has to be tagged with the ball",
           "ok": "Good! Him, with the ball.",
           "ko": "Off the base, you tag the runner.",
           "answer": "The runner off his base"
@@ -2019,7 +2019,7 @@
         "1": {
           "q": "Runner alone on second, ground ball to the infield. Is he forced to go to third?",
           "ok": "Correct! Nobody is behind him.",
-          "ko": "With nobody on first, there's no force at second.",
+          "ko": "With nobody on first, the runner on second isn't forced.",
           "opts": {
             "a": "No, nobody pushes him",
             "b": "Yes, always",
@@ -2037,7 +2037,7 @@
           }
         },
         "3": {
-          "q": "To decide if there is a force, you look at whether the base behind is taken",
+          "q": "To know if a runner is forced, you look at whether the base behind him is taken",
           "ok": "Good! That's the key.",
           "ko": "True: look behind."
         },
@@ -2060,9 +2060,9 @@
         "6": {
           "q": "Runner alone on second: the fielder steps on third with the ball but doesn't tag the runner, who goes back to second. What does the umpire call?",
           "ok": "Safe! He had to be tagged.",
-          "ko": "Without a force, stepping on the base doesn't work.",
+          "ko": "If he isn't forced, stepping on the base doesn't work.",
           "opts": {
-            "a": "Safe! There was no force",
+            "a": "Safe! He wasn't forced",
             "b": "Out!",
             "c": "Foul!"
           }
@@ -2113,8 +2113,8 @@
         },
         "4": {
           "q": "A double play on the ground almost always needs a forced runner",
-          "ok": "Good! No force, no recipe.",
-          "ko": "True: the double play comes from the force."
+          "ok": "Good! No forced runner, no recipe.",
+          "ko": "True: the double play starts with a forced runner."
         },
         "5": {
           "q": "Throw to second: out. Throw to first: out. How many outs did the umpire call on the play?",
@@ -2176,7 +2176,7 @@
         },
         "4": {
           "q": "Tap the safe spot of the runner on third",
-          "ok": "Good! That's his safe spot.",
+          "ok": "Good! That's his base.",
           "ko": "Standing there, he's safe.",
           "answer": "Third base"
         },
@@ -2303,7 +2303,7 @@
           "ko": "False: if it already passed a fielder, play goes on."
         },
         "4": {
-          "q": "Which fielder does NOT count as \"already passed\" if the ball goes by him?",
+          "q": "If the ball only went past this fielder, the exception does NOT apply. Who is it?",
           "ok": "Correct! The pitcher doesn't count for the exception.",
           "ko": "If it only passed the pitcher, the runner is still out if it hits him.",
           "opts": {
@@ -2930,7 +2930,7 @@
         "1": {
           "q": "What is a pickoff?",
           "ok": "That's it! Pickoff.",
-          "ko": "The pitcher defends his base with that throw.",
+          "ko": "With that throw, the pitcher keeps the runner close.",
           "opts": {
             "a": "A surprise throw by the pitcher to a base to get the runner with a lead out",
             "b": "A kind of bat",
@@ -3015,7 +3015,7 @@
         "3": {
           "q": "A balk can only be called if there are runners on base",
           "ok": "Good! No runners, no balk.",
-          "ko": "True: with no runners, that move isn't punished that way."
+          "ko": "True: with no runners, that move isn't called a balk."
         },
         "4": {
           "q": "Which picture shows a balk?",
@@ -3173,7 +3173,7 @@
         },
         "6": {
           "q": "In your kids' league, the first thing you need to know about this rule is:",
-          "ok": "Correct! Many small leagues don't use it.",
+          "ok": "Correct! Many leagues for young kids don't use it.",
           "ko": "League rule: coach first.",
           "opts": {
             "a": "If my league uses it at my age: ask your coach",
@@ -3410,7 +3410,7 @@
           "ko": "True: the defense has to ask for it."
         },
         "3": {
-          "q": "The runner stepped wrong and went right past second on his way. The defense appeals by touching:",
+          "q": "The runner skipped second without touching it. The defense appeals by touching:",
           "ok": "Correct! The base that was missed.",
           "ko": "You appeal at the forgotten base.",
           "opts": {
@@ -3859,10 +3859,10 @@
       "acts": {
         "1": {
           "q": "What does the cutoff man do?",
-          "ok": "Correct! Receives and relays.",
+          "ok": "Correct! Catch it and pass it on.",
           "ko": "Cutoff: the bridge for long throws.",
           "opts": {
-            "a": "Receives the outfielder's throw and relays it to whatever base is needed",
+            "a": "Catches the outfielder's throw and passes it on to whatever base is needed",
             "b": "Bats",
             "c": "Calls the strikes"
           }
@@ -3901,7 +3901,7 @@
         "6": {
           "q": "The cutoff man is usually:",
           "ok": "Correct! Shortstop or second baseman, depending on the throw.",
-          "ko": "The infield relays for the outfield.",
+          "ko": "The infield helps the outfield with the throw.",
           "opts": {
             "a": "An infielder",
             "b": "The umpire",
@@ -4508,7 +4508,7 @@
         "1": {
           "q": "How do you wait for a ground ball?",
           "ok": "That's it! Facing it.",
-          "ko": "Your body behind the ball stops it all.",
+          "ko": "With your body behind the ball, nothing gets by.",
           "opts": {
             "a": "Facing the ball, with the glove on the ground",
             "b": "Sideways, with one hand",
@@ -5065,7 +5065,7 @@
         "Both feet go inside the box, apart, knees soft and weight balanced.",
         "Your hands hold the bat firmly, but without squeezing it as if it were going to break: stiff hands, slow swing.",
         "The bat rests on your back shoulder, ready.",
-        "Box, stance and grip.",
+        "Stance and grip.",
         "From there, it's all about watching the ball."
       ],
       "acts": {
@@ -5657,7 +5657,7 @@
         "3": {
           "q": "Only the home team can get a walk-off, in its last chance at bat",
           "ok": "Good! That's how the play works.",
-          "ko": "True: the visitor always leaves a turn to answer."
+          "ko": "True: the home team always gets its turn to answer."
         },
         "4": {
           "q": "If the home team is already winning when its last turn comes, what happens?",
@@ -5691,7 +5691,7 @@
       "objective": "Slide feet first, with your hands up and never into the fielder; and know that sliding head first may be banned in your league: ask the coach.",
       "demo": [
         "You're running into the base and the throw is close: time to slide!",
-        "To slide is to drop down onto the ground to get in under the tag.",
+        "To slide is to drop down onto the ground to get in under the fielder's glove.",
         "The safe way in kids' leagues is feet first: your legs go in front, your body leans back a little and your hands go up so you don't put them on the ground.",
         "You never throw yourself into the fielder to knock him down: you go to the base, not to the player.",
         "And careful: in many kids' leagues sliding head first is banned, because your head goes in front, unprotected.",
@@ -5734,7 +5734,7 @@
           }
         },
         "5": {
-          "q": "Sliding helps you get in under the fielder's tag",
+          "q": "Sliding helps you get in under the fielder's glove",
           "ok": "Good! That's why it's used.",
           "ko": "True: low and fast to the base."
         },
@@ -5828,7 +5828,7 @@
         "1": {
           "q": "What is an official game?",
           "ok": "That's it! A result that counts.",
-          "ko": "What your league requires, not a number from this game.",
+          "ko": "Your league decides: ask your coach.",
           "opts": {
             "a": "One that has already played what the league requires for the result to count",
             "b": "Any game with a crowd",
@@ -6385,7 +6385,7 @@
           }
         },
         "6": {
-          "q": "REVIEW: drag each idea to its call: through the zone with no swing / fourth bad one outside / knocked out of play",
+          "q": "REVIEW: drag each idea to its call: through the zone with no swing / ball four, outside the zone / knocked out of play",
           "ok": "Perfect! Solid fundamentals.",
           "ko": "Your foundation for everything is solid.",
           "opts": {
@@ -6486,7 +6486,7 @@
         },
         "2": {
           "q": "REVIEW: on a dropped third strike with first base open, the batter can run to first",
-          "ok": "Good! That run is legal.",
+          "ok": "Good! Running to first there is legal.",
           "ko": "Strike three dropped: run."
         },
         "3": {
@@ -6533,7 +6533,7 @@
       "demo": [
         "Big final review, part four: the finest details of the path.",
         "The foul tip the catcher catches that counts as a strike; the lineup card that orders every turn; the outfielder who calls for the fly ball with a \"Mine!\" that prevents crashes;",
-        "the thunder that clears the field with no arguing; the fastball-and-changeup sequence that thinks before throwing; and the captain who leads by example.",
+        "the thunder that clears the field with no arguing; the pitcher who plans his fastball and changeup before throwing; and the captain who leads by example.",
         "You already lived all this in Legend and Hall of Fame: this review just puts the pieces together before the final exam of the whole app."
       ],
       "acts": {
@@ -7093,9 +7093,9 @@
         }
       },
       "12": {
-        "q": "You hit the ball and reach base safely. What's that called?",
+        "q": "What's a hit that gets you to first base called?",
         "opts": {
-          "a": "Hit",
+          "a": "Single",
           "b": "Balk",
           "c": "Lead"
         }
@@ -7166,7 +7166,7 @@
         }
       },
       "10": {
-        "q": "True or false: it's the same if you catch it with the glove or if it bounces off the glove and falls to the ground"
+        "q": "True or false: if the ball bounces off your glove and falls to the ground, it's still an out"
       },
       "11": {
         "q": "A very high fly ball gives the runners time to:",
@@ -7287,10 +7287,10 @@
         }
       },
       "3": {
-        "q": "What's it called when a fielder messes up a normal play?",
+        "q": "What does the R on the scoreboard stand for?",
         "opts": {
-          "a": "Error",
-          "b": "Hit",
+          "a": "Runs",
+          "b": "Strikes",
           "c": "Lead"
         }
       },
@@ -7322,7 +7322,7 @@
         }
       },
       "8": {
-        "q": "Tap the player whose easy miss turns the batted ball into an error",
+        "q": "Tap the fielder who missed the easy play",
         "answer": "The fielder who missed the easy play"
       },
       "9": {
@@ -7387,7 +7387,7 @@
         }
       },
       "5": {
-        "q": "True or false: if the throw beats you before you get there, you're out and there was no steal"
+        "q": "True or false: if the throw gets there and you're tagged before you reach the base, you're out and there was no steal"
       },
       "6": {
         "q": "The moment to take off on a steal is:",
@@ -7413,7 +7413,7 @@
         "q": "True or false: you can also steal third and even home, although it's harder"
       },
       "10": {
-        "q": "What does the umpire call if the tag gets there before you?",
+        "q": "What does the umpire call if you're tagged with the ball before you get there?",
         "opts": {
           "a": "Out!",
           "b": "Safe!",
@@ -7993,7 +7993,7 @@
         "q": "Where must both of the batter's feet go?",
         "opts": {
           "a": "Inside the batter's box",
-          "b": "Wherever the batter feels famous",
+          "b": "Outside the box, wherever he wants",
           "c": "One foot on home"
         }
       },
@@ -8213,7 +8213,7 @@
         "q": "The run difference for the mercy rule is set by…",
         "opts": {
           "a": "Each league, depending on age",
-          "b": "This game, with a fixed number",
+          "b": "A fixed number that's the same for every league",
           "c": "The visiting team"
         }
       },

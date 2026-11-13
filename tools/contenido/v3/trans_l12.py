@@ -15,7 +15,7 @@ TR = {
      ('El All Star responde antes de que le bateen: antes de cada lanzamiento se pregunta, si me la batean, ¿qué hago?', 'The All Star answers before the ball is hit: before every pitch he asks himself, if it\'s hit to me, what do I do?', '全明星在球被打出之前就有答案：每一球投出之前，他都会问自己：如果球打到我这里，我该怎么做？', 'オールスターは、打たれる前に答えを持っている：1球ごとに投げる前に考える。「ぼくのところに来たら、どうする？」'),
      ('Casi siempre conviene frenar al corredor más adelantado, el que está más cerca de anotar.', "It's almost always best to stop the lead runner, the one closest to scoring.", '几乎总是要先拦住前位跑者，也就是离得分最近的那个。', 'たいていは、リードランナーを止めるのがいい。いちばん得点に近いランナーだ。'),
      ('Pero un out seguro vale más que un tiro imposible: si el tiro largo no se puede, asegura el out en primera.', "But a sure out is worth more than an impossible throw: if the long throw can't be made, make sure of the out at first.", '但稳妥的出局比不可能的传球更有价值：如果远传做不到，就在一垒拿下出局。', 'でも、確実なアウトは、むりな送球よりねうちがある：遠くへの送球がむりなら、一塁で確実にアウトをとろう。'),
-     ('Pensar antes: eso separa al jugador del All Star.', 'Thinking ahead: that\'s what separates a player from an All Star.', '提前思考：这就是普通球员和全明星的区别。', '先に考える：それが、ふつうの選手とオールスターのちがい。'),
+     ('Pensar antes: eso separa a un jugador cualquiera de un All Star.', 'Thinking ahead: that\'s what separates a player from an All Star.', '提前思考：这就是普通球员和全明星的区别。', '先に考える：それが、ふつうの選手とオールスターのちがい。'),
    ],
    'acts': {
     1: {'q': ('When should you think about where you will throw the ball?', '你应该什么时候想好球要传到哪里？', 'ボールをどこに投げるか、いつ考える？'),
@@ -56,8 +56,8 @@ TR = {
    ],
    'acts': {
     1: {'q': ('What does the cutoff man do?', '接力传球手（cutoff）做什么？', 'カットオフ（cutoff）は何をする？'),
-        'o': [("Receives the outfielder's throw and relays it to whatever base is needed", '接住外野手的传球，转传到需要的垒', '外野手の送球を受けて、ひつような塁へつなぐ'), ('Bats', '击球', '打つ'), ('Calls the strikes', '判好球', 'ストライクをコールする')],
-        'ok': ('Correct! Receives and relays.', '正确！接球再转传。', '正解！受けて、つなぐ。'),
+        'o': [("Catches the outfielder's throw and passes it on to whatever base is needed", '接住外野手的传球，转传到需要的垒', '外野手の送球を受けて、ひつような塁へつなぐ'), ('Bats', '击球', '打つ'), ('Calls the strikes', '判好球', 'ストライクをコールする')],
+        'ok': ('Correct! Catch it and pass it on.', '正确！接住再传出去。', '正解！受けて、つなぐ。'),
         'ko': ('Cutoff: the bridge for long throws.', '接力传球手：远传的桥梁。', 'カットオフ：遠い送球のかけ橋。')},
     2: {'q': ('Why is a cutoff man used?', '为什么要用接力传球手？', 'なぜカットオフを使う？'),
         'o': [('Because two short throws arrive better than one long, weak one', '因为两次短传比一次又远又没力的传球更好', '短い送球2つのほうが、長くてよわい送球1つよりよくとどくから'), ('To rest', '为了休息', '休むため'), ('To confuse the umpire', '为了让裁判搞不清楚', '審判をまよわせるため')],
@@ -77,7 +77,7 @@ TR = {
     6: {'q': ('The cutoff man is usually:', '接力传球手通常是：', 'カットオフはふつう：'),
         'o': [('An infielder', '一名内野手', '内野の選手'), ('The umpire', '裁判', '審判'), ('The batter', '击球员', 'バッター')],
         'ok': ('Correct! Shortstop or second baseman, depending on the throw.', '正确！看传球方向，可能是游击手或二垒手。', '正解！送球によって、遊撃手か二塁手。'),
-        'ko': ('The infield relays for the outfield.', '内野为外野接力。', '内野が外野の送球をつなぐ。')},
+        'ko': ('The infield helps the outfield with the throw.', '内野帮外野把球传到位。', '内野が外野の送球を手伝う。')},
    },
   },
   '12.3': {
@@ -89,7 +89,7 @@ TR = {
      ('En defensa nadie se queda quieto mirando.', 'On defense nobody stands still watching.', '防守时，没有人站着不动光看。', '守備では、だれも立って見ているだけじゃない。'),
      ('Si el primera base sale lejos a buscar un rolling, el pitcher corre a cubrir primera.', 'If the first baseman goes far to get a ground ball, the pitcher runs to cover first.', '如果一垒手跑远去接滚地球，投手就跑去补一垒。', '一塁手が遠くまでゴロをとりに出たら、ピッチャーが一塁のカバーに走る。'),
      ('Y cuando se tira a una base, otro defensor corre a ponerse detrás de esa base para respaldar, en inglés back up: si la bola se escapa, él la frena y salva una base.', 'And when there is a throw to a base, another fielder runs to get behind that base to back up: if the ball gets away, he stops it and saves a base.', '当球传向一个垒时，另一名防守球员会跑到那个垒后面补位防守，英语叫 back up：如果球漏了，他把球拦住，救回一个垒。', 'そして、塁に送球するときは、べつの守備がその塁のうしろに走ってバックアップ、英語で back up：ボールがそれたら止めて、塁をひとつ守る。'),
-     ('Cubrir es ocupar la casa que quedó vacía; respaldar es ser la red detrás del tiro.', 'Covering is filling the base that was left empty; backing up is being the net behind the throw.', '补位占垒，就是占住空出来的家；补位防守，就是当传球后面的那张网。', 'ベースカバーは、あいたおうちに入ること。バックアップは、送球のうしろのネットになること。'),
+     ('Cubrir es ocupar la base que quedó vacía; respaldar es ser la red detrás del tiro.', 'Covering is filling the base that was left empty; backing up is being the net behind the throw.', '补位占垒，就是占住空出来的垒；补位防守，就是当传球后面的那张网。', 'ベースカバーは、あいた塁に入ること。バックアップは、送球のうしろのネットになること。'),
      ('En cada jugada, cada jugador tiene un trabajo.', 'On every play, every player has a job.', '每一球，每个球员都有自己的工作。', 'どのプレーでも、どの選手にもしごとがある。'),
    ],
    'acts': {

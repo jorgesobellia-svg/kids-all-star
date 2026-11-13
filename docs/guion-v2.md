@@ -213,8 +213,8 @@ jardines (outfield) y las líneas de foul.**
 > diamond. Mira: la parte de tierra con las cuatro esquinas es el
 > cuadro, en inglés infield. La parte verde y grande de atrás son los
 > jardines, en inglés outfield. Y estas dos líneas blancas que salen
-> hacia los lados son las líneas de foul: separan el campo bueno del
-> malo.»*
+> hacia los lados son las líneas de foul: separan el territorio fair del
+> territorio foul.»*
 
 | **\#** | **Tipo**               | **Pregunta / instrucción**                                | **Opciones**                                                                            | **Correcta**                          | **Si acierta / si falla**                                                            |
 |--------|------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------------------------|---------------------------------------|--------------------------------------------------------------------------------------|
@@ -245,7 +245,7 @@ siempre en el mismo sentido.**
 | **\#** | **Tipo**               | **Pregunta / instrucción**                                               | **Opciones**                            | **Correcta**              | **Si acierta / si falla**                                                                   |
 |--------|------------------------|--------------------------------------------------------------------------|-----------------------------------------|---------------------------|---------------------------------------------------------------------------------------------|
 | 1      | Toca en el campo       | Bateaste. Toca la primera base a la que corres                           | — (toca primera)                        | Primera base (first base) | ¡Eso es! Siempre a primera primero. / No: la primera parada siempre es primera base.        |
-| 2      | Selección simple       | Después de primera, ¿a qué base sigues?                                  | A segunda / A tercera / A home          | A segunda                 | ¡Correcto! Second base. / El orden es 1, 2, 3: primero va segunda.                          |
+| 2      | Selección simple       | Después de primera, ¿a qué base sigues?                                  | A segunda / A tercera / A home          | A segunda                 | ¡Correcto! Second base. / El orden es 1, 2, 3: después de primera sigue segunda.                          |
 | 3      | Arrastrar              | Arrastra al corredor por las bases en orden hasta tercera                | — (ruta primera, segunda, tercera)      | Primera, segunda, tercera | ¡Ruta perfecta! / El orden no se salta: primera, segunda y después tercera.                 |
 | 4      | Verdadero o falso      | Un corredor puede correr de primera directo a tercera saltándose segunda | Verdadero / Falso                       | Falso                     | ¡Bien! Hay que pisar todas. / Falso: tiene que pisar segunda en el camino.                  |
 | 5      | Selección con imágenes | ¿Qué forma hace el recorrido de las bases?                               | Un cuadrado / Un círculo / Un triángulo | Un cuadrado               | ¡Eso es! Por eso se le dice diamante. / Cuatro esquinas: es un cuadrado girado.             |
@@ -271,7 +271,7 @@ home se anota la carrera.**
 |--------|--------------------------|---------------------------------------------------------------|----------------------------------------------------------------------------------------------|--------------------------------------------|------------------------------------------------------------------------------------------------------|
 | 1      | Toca en el campo         | Toca home                                                     | — (toca home)                                                                                | Home (home plate)                          | ¡Eso es! La esquina con forma de casita. / Home es la esquina de abajo, donde se batea.              |
 | 2      | Selección simple         | ¿Qué haces parado en home al empezar tu turno?                | Batear / Lanzar / Esperar en el dugout                                                       | Batear                                     | ¡Correcto! Ahí empieza tu turno. / En home te toca batear.                                           |
-| 3      | Selección simple         | ¿Cuándo anotas una carrera?                                   | Cuando pisas home después de dar la vuelta / Cuando llegas a segunda / Cuando bateas la bola | Cuando pisas home después de dar la vuelta | ¡Eso es! Run anotada. / Solo cuenta cuando completas la vuelta y pisas home.                         |
+| 3      | Selección simple         | ¿Cuándo anotas una carrera?                                   | Cuando pisas home después de dar la vuelta / Cuando llegas a segunda / Cuando bateas la bola | Cuando pisas home después de dar la vuelta | ¡Eso es! ¡Carrera anotada! / Solo cuenta cuando completas la vuelta y pisas home.                         |
 | 4      | Verdadero o falso        | Home tiene forma de almohadilla cuadrada como las demás bases | Verdadero / Falso                                                                            | Falso                                      | ¡Bien! Home es plano y tiene punta, como una casita. / Falso: home es diferente, es una placa plana. |
 | 5      | ¿Qué cantaría el umpire? | El corredor pisó home. ¿Qué se anotó?                         | Una carrera (run) / Un out / Un strike                                                       | Una carrera (run)                          | ¡Carrera! Así se suma un punto en béisbol. / Al pisar home se anota una carrera, no un out.          |
 | 6      | Selección con imágenes   | ¿Cómo se llaman los puntos en béisbol?                        | Carreras / Goles / Canastas                                                                  | Carreras                                   | ¡Correcto! En béisbol son carreras, runs. / En béisbol no hay goles: hay carreras.                   |
@@ -320,7 +320,7 @@ casco puesto para batear y correr las bases.**
 | **\#** | **Tipo**               | **Pregunta / instrucción**                                  | **Opciones**                                                                     | **Correcta**                   | **Si acierta / si falla**                                                                      |
 |--------|------------------------|-------------------------------------------------------------|----------------------------------------------------------------------------------|--------------------------------|------------------------------------------------------------------------------------------------|
 | 1      | Selección con imágenes | ¿Con qué le pegas a la bola?                                | El bate (bat) / El guante / El casco                                             | El bate (bat)                  | ¡Correcto! Bat en inglés. / A la bola se le pega con el bate.                                  |
-| 2      | Selección con imágenes | ¿Con qué atrapas la bola?                                   | El guante (glove) / El bate / Home                                               | El guante (glove)              | ¡Eso es! Glove en inglés. / Atrapas con el guante, en tu mano contraria a la que lanza.        |
+| 2      | Selección con imágenes | ¿Con qué atrapas la bola?                                   | El guante (glove) / El bate / Home                                               | El guante (glove)              | ¡Eso es! Glove en inglés. / Atrapas con el guante, en la mano contraria a la que usas para lanzar.        |
 | 3      | Verdadero o falso      | El casco protege tu cabeza cuando bateas y corres las bases | Verdadero / Falso                                                                | Verdadero                      | ¡Sí! Por eso nunca se quita a mitad de camino. / Verdadero: el casco es protección, no adorno. |
 | 4      | Selección simple       | Vas a batear y no tienes casco. ¿Qué haces?                 | Pides un casco antes de batear / Bateas así mismo / Bateas con la gorra al revés | Pides un casco antes de batear | ¡Muy bien! Sin casco, no se batea. / Nunca batees sin casco: pide uno primero.                 |
 | 5      | Toca en el campo       | Toca la pelota en la imagen del equipo                      | — (toca la pelota)                                                               | La pelota (ball)               | ¡Bien! Blanca, con costuras rojas. / Esa redonda con costuras es la pelota.                    |
@@ -374,8 +374,8 @@ recibe detrás de home, y que juntos se llaman la batería.**
 
 **Demostración (30-60 segundos) — guion de la mascota:**
 
-> *«Cada jugada empieza con dos jugadores: el pitcher, en inglés
-> pitcher, que lanza la bola desde el montículo, ese cerrito en el
+> *«Cada jugada empieza con dos jugadores: el pitcher, que
+> lanza la bola desde el montículo, ese cerrito en el
 > centro del campo. Y el catcher, el receptor, que se agacha detrás de
 > home y la recibe. A los dos juntos les dicen la batería, battery,
 > porque son el motor del equipo.»*
@@ -384,10 +384,10 @@ recibe detrás de home, y que juntos se llaman la batería.**
 |--------|--------------------------|-----------------------------------------------------------------------------|----------------------------------------------------------------|-----------------------------|---------------------------------------------------------------------------------------------------------------------|
 | 1      | Toca en el campo         | Toca dónde se para el pitcher                                               | — (toca el montículo)                                          | El montículo (mound)        | ¡Eso es! El cerrito del centro. / El pitcher lanza desde el montículo, en el centro.                                |
 | 2      | Selección con imágenes   | ¿Dónde se coloca el catcher?                                                | Detrás de home / En primera base / En los jardines             | Detrás de home              | ¡Correcto! Agachado detrás del bateador. / El catcher va detrás de home, listo para recibir.                        |
-| 3      | Selección simple         | ¿Quién empieza cada jugada lanzando la bola?                                | El pitcher / El catcher / El umpire                            | El pitcher                  | ¡Eso es! Pitcher en inglés. / Todo empieza con el lanzamiento del pitcher.                                          |
+| 3      | Selección simple         | ¿Quién empieza cada jugada lanzando la bola?                                | El pitcher / El catcher / El umpire                            | El pitcher                  | ¡Eso es! El pitcher. / Todo empieza con el lanzamiento del pitcher.                                          |
 | 4      | Verdadero o falso        | Al pitcher y al catcher juntos les dicen la batería                         | Verdadero / Falso                                              | Verdadero                   | ¡Sí! Battery en inglés. / Verdadero: pitcher más catcher, la batería.                                               |
 | 5      | Selección simple         | ¿Qué equipo extra usa el catcher para protegerse?                           | Careta, peto y espinilleras / Un bate más grande / Dos guantes | Careta, peto y espinilleras | ¡Correcto! Recibe bolas rápidas, por eso se protege. / El catcher se protege completo: careta, peto y espinilleras. |
-| 6      | ¿Qué cantaría el umpire? | El catcher atrapó la bola que pasó por la zona buena. ¿Qué cantó el umpire? | Strike / Carrera / Foul                                        | Strike                      | ¡Strike! Lo verás a fondo en el Nivel 4. / Si pasó por la zona buena, el umpire canta strike.                       |
+| 6      | ¿Qué cantaría el umpire? | El catcher atrapó la bola que pasó por la zona de strike. ¿Qué cantó el umpire? | Strike / Carrera / Foul                                        | Strike                      | ¡Strike! Lo verás a fondo en el Nivel 4. / Si pasó por la zona de strike, el umpire canta strike.                       |
 
 *Cierre: +10 XP por respuesta correcta, +5 XP de bono si termina sin
 errores. Gana 1 pelota (moneda) por respuesta correcta y 3 pelotas extra
@@ -552,7 +552,7 @@ alta batea el visitante y en la baja batea el equipo de casa.**
 | 1      | Selección simple         | ¿Cómo se llama cada pedazo grande del juego?             | Entrada (inning) / Carrera / Strike                                           | Entrada (inning)            | ¡Eso es! Inning en inglés. / Esos pedazos se llaman entradas.                               |
 | 2      | Selección simple         | ¿Cuántas mitades tiene una entrada?                      | Dos: alta y baja / Una / Tres                                                 | Dos: alta y baja            | ¡Correcto! Alta y baja. / Una entrada son dos turnos, uno por equipo.                       |
 | 3      | Selección simple         | ¿Quién batea en la parte alta?                           | El equipo visitante / El equipo de casa / El umpire                           | El equipo visitante         | ¡Eso es! El visitante abre. / En la alta batea el visitante.                                |
-| 4      | Selección simple         | ¿Quién batea en la parte baja?                           | El equipo de casa / El equipo visitante / Nadie                               | El equipo de casa           | ¡Correcto! Y por eso a veces define al final. / En la baja le toca al de casa.              |
+| 4      | Selección simple         | ¿Quién batea en la parte baja?                           | El equipo de casa / El equipo visitante / Nadie                               | El equipo de casa           | ¡Correcto! Por eso el de casa batea de último y a veces define el juego. / En la baja le toca al de casa.              |
 | 5      | Verdadero o falso        | Si solo se jugó la parte alta, ya terminó la entrada     | Verdadero / Falso                                                             | Falso                       | ¡Bien! Falta la baja para completarla. / Falso: la entrada termina cuando batearon los dos. |
 | 6      | ¿Qué cantaría el umpire? | Terminó la parte alta de la tercera entrada. ¿Qué sigue? | La parte baja de la tercera / La primera entrada otra vez / Se acabó el juego | La parte baja de la tercera | ¡Eso es! Ahora batea el de casa. / Sigue la baja de esa misma entrada.                      |
 
@@ -578,7 +578,7 @@ defensa le hace tres outs, y entonces los equipos cambian de lugar.**
 | 2      | Selección simple         | Ya van 2 outs y hacen el tercero. ¿Qué pasa?                                                            | Cambia el turno / Siguen bateando / Se anota una carrera                            | Cambia el turno                          | ¡Correcto! A defender. / Tercer out: se acabó el turno.                                         |
 | 3      | Verdadero o falso        | Los outs de una mitad no se suman con los de la otra: cada turno empieza en cero                        | Verdadero / Falso                                                                   | Verdadero                                | ¡Sí! Cada turno es una cuenta nueva. / Verdadero: cada equipo cuenta sus tres outs en su turno. |
 | 4      | Selección con imágenes   | Tu equipo estaba en el campo defendiendo y ya hicieron los 3 outs. ¿A dónde vas?                        | Al dugout, a prepararte para batear / A tu casa / A los jardines a seguir esperando | Al dugout, a prepararte para batear      | ¡Eso es! Ahora les toca batear. / Termina la defensa: entra tu turno al bate.                   |
-| 5      | Selección simple         | Un equipo lleva 0 outs. ¿Cuántos bateadores más puede tener como mínimo antes de que le toque defender? | Sigue bateando hasta que le hagan 3 outs / Solo uno más / Ninguno                   | Sigue bateando hasta que le hagan 3 outs | ¡Correcto! Sin outs, el turno sigue vivo. / El turno no tiene reloj: termina con el tercer out. |
+| 5      | Selección simple         | Un equipo lleva 0 outs. ¿Hasta cuándo sigue bateando? | Sigue bateando hasta que le hagan 3 outs / Solo uno más / Ninguno                   | Sigue bateando hasta que le hagan 3 outs | ¡Correcto! Sin outs, el turno sigue vivo. / El turno no tiene reloj: termina con el tercer out. |
 | 6      | ¿Qué cantaría el umpire? | Tercer out de la parte alta. ¿Qué anuncia el juego ahora?                                               | Cambio: viene la parte baja / Jonrón / Base por bolas                               | Cambio: viene la parte baja              | ¡Eso es! Cambio de turno. / Tercer out arriba: cambio, viene la baja.                           |
 
 *Cierre: +10 XP por respuesta correcta, +5 XP de bono si termina sin
@@ -709,14 +709,14 @@ tira).**
 **Demostración (30-60 segundos) — guion de la mascota:**
 
 > *«Mira bien cada lanzamiento, porque el umpire canta una de dos cosas.
-> Si la bola pasa por la zona buena, o si le tiras y no le das, es
+> Si la bola pasa por la zona de strike, o si le tiras y no le das, es
 > strike. Si pasa lejos de la zona y no le tiraste, es bola, en inglés
-> ball. Bola mala para el pitcher, buena para ti. El conteo de bolas y
-> strikes es la cuenta del turno.»*
+> ball. Una bola es mala para el pitcher y buena para ti. El conteo de bolas y
+> strikes es como el marcador de tu turno al bate.»*
 
 | **\#** | **Tipo**                 | **Pregunta / instrucción**                                                      | **Opciones**                      | **Correcta** | **Si acierta / si falla**                                                                                         |
 |--------|--------------------------|---------------------------------------------------------------------------------|-----------------------------------|--------------|-------------------------------------------------------------------------------------------------------------------|
-| 1      | ¿Qué cantaría el umpire? | El lanzamiento pasó por el medio de la zona y el bateador no tiró               | Strike / Bola / Foul              | Strike       | ¡Strike cantado! Aunque no tire, si va en la zona es strike. / Pasó por la zona buena: eso es strike.             |
+| 1      | ¿Qué cantaría el umpire? | El lanzamiento pasó por el medio de la zona y el bateador no tiró               | Strike / Bola / Foul              | Strike       | ¡Strike cantado! Aunque no tire, si va en la zona es strike. / Pasó por la zona de strike: eso es strike.             |
 | 2      | ¿Qué cantaría el umpire? | El lanzamiento pasó muy alto y el bateador no tiró                              | Bola / Strike / Out               | Bola         | ¡Bola! Ball en inglés. / Muy alto y sin tirar: es bola.                                                           |
 | 3      | ¿Qué cantaría el umpire? | El bateador abanicó (hizo swing) y no tocó la bola                              | Strike / Bola / Carrera           | Strike       | ¡Strike por swing! Tirarle y fallar también es strike. / Si le tiras y no le das, es strike aunque vaya mala.     |
 | 4      | Verdadero o falso        | Si el lanzamiento va fuera de la zona pero el bateador le tira y falla, es bola | Verdadero / Falso                 | Falso        | ¡Bien! Al tirar y fallar, siempre es strike. / Falso: el swing fallado convierte cualquier lanzamiento en strike. |
@@ -734,8 +734,8 @@ home, entre las rodillas y el pecho del bateador en su postura normal.**
 
 **Demostración (30-60 segundos) — guion de la mascota:**
 
-> *«Imagina un rectángulo invisible flotando sobre home: ese es la zona
-> de strike, strike zone. Va de ancho como home, y de alto más o menos
+> *«Imagina un rectángulo invisible flotando sobre home: esa es la zona
+> de strike, strike zone. Es tan ancha como home, y de alto más o menos
 > desde las rodillas hasta el pecho del bateador parado normal. Si la
 > bola cruza por ese rectángulo, es strike. Si pasa por fuera, es bola.
 > Es imaginario, pero el umpire lo ve.»*
@@ -761,7 +761,7 @@ pone fin al turno, y si un defensor la atrapa en el aire es out.**
 
 **Demostración (30-60 segundos) — guion de la mascota:**
 
-> *«Cuando bateas y la bola sale del campo bueno, cruzando las líneas
+> *«Cuando bateas y la bola sale del territorio fair, cruzando las líneas
 > hacia los lados, es foul. El foul cuenta como strike, pero escucha el
 > truco: si ya tienes dos strikes y das foul, no te ponchas. Sigues
 > bateando. Y cuidado: si un defensor atrapa ese foul en el aire, sin
@@ -769,11 +769,11 @@ pone fin al turno, y si un defensor la atrapa en el aire es out.**
 
 | **\#** | **Tipo**                 | **Pregunta / instrucción**                                                            | **Opciones**                                                               | **Correcta**                           | **Si acierta / si falla**                                                                                      |
 |--------|--------------------------|---------------------------------------------------------------------------------------|----------------------------------------------------------------------------|----------------------------------------|----------------------------------------------------------------------------------------------------------------|
-| 1      | Selección simple         | ¿Qué es un foul?                                                                      | Una bola bateada fuera del campo bueno / Un lanzamiento alto / Una carrera | Una bola bateada fuera del campo bueno | ¡Eso es! Foul ball. / Foul es la bola que sale de lo válido.                                                   |
-| 2      | ¿Qué cantaría el umpire? | La bola bateada cayó fuera de la línea de tercera                                     | Foul / Jonrón / Bola                                                       | Foul                                   | ¡Foul! Fuera de la línea. / Cayó en territorio malo: foul.                                                     |
+| 1      | Selección simple         | ¿Qué es un foul?                                                                      | Una bola bateada fuera del territorio fair / Un lanzamiento alto / Una carrera | Una bola bateada fuera del territorio fair | ¡Eso es! Foul ball. / Foul es la bola que cae fuera de las líneas.                                                   |
+| 2      | ¿Qué cantaría el umpire? | La bola bateada cayó fuera de la línea de tercera                                     | Foul / Jonrón / Bola                                                       | Foul                                   | ¡Foul! Fuera de la línea. / Cayó en territorio foul: foul.                                                     |
 | 3      | Selección simple         | Un foul que cae al suelo cuenta como                                                  | Strike / Bola / Nada                                                       | Strike                                 | ¡Correcto! Suma un strike. / El foul al suelo es un strike más en la cuenta.                                   |
 | 4      | Verdadero o falso        | Con dos strikes, un foul que cae al suelo es el tercer strike y te ponchas            | Verdadero / Falso                                                          | Falso                                  | ¡Bien! Con foul no te ponchas: sigues bateando. / Falso, y es el truco clave: el foul con 2 strikes no poncha. |
-| 5      | Selección simple         | El tercera base atrapó el foul en el aire, sin que cayera. ¿Qué pasa?                 | Es out / Es strike solamente / No cuenta                                   | Es out                                 | ¡Eso es! Atrapada en el aire, out. / Foul atrapado de aire sí es out, caiga donde caiga.                       |
+| 5      | Selección simple         | El tercera base atrapó el foul en el aire, sin que cayera. ¿Qué pasa?                 | Es out / Es strike solamente / No cuenta                                   | Es out                                 | ¡Eso es! Atrapada en el aire, out. / Un foul atrapado en el aire sí es out.                       |
 | 6      | Selección con imágenes   | Conteo 3 bolas y 2 strikes, y el bateador da un foul al suelo. ¿Cómo sigue el conteo? | Sigue 3 y 2 / Es ponche / Camina a primera                                 | Sigue 3 y 2                            | ¡Exacto! El famoso conteo completo sigue vivo. / Foul con 2 strikes: el conteo no cambia, sigue 3-2.           |
 
 *Cierre: +10 XP por respuesta correcta, +5 XP de bono si termina sin
@@ -816,7 +816,7 @@ conteo completo 3-2.**
 
 **Demostración (30-60 segundos) — guion de la mascota:**
 
-> *«Última de conteo. Si el lanzamiento pega en el bateador (y él no
+> *«Última lección del conteo. Si el lanzamiento pega en el bateador (y él no
 > hizo swing ni se metió a propósito), no es out ni sigue bateando: se
 > va a primera base. En inglés le dicen hit by pitch. Y ahora junta
 > todo: el conteo más emocionante es 3 bolas y 2 strikes, el conteo

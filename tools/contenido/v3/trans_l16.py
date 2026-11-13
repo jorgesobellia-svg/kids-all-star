@@ -14,7 +14,7 @@ TR = {
      ('Los dos pies van dentro de la caja, separados, rodillas suaves y peso en equilibrio.', 'Both feet go inside the box, apart, knees soft and weight balanced.', '双脚都站在区里，分开，膝盖放松，重心平衡。', '両足はボックスの中、広げて、ひざはやわらかく、体重はバランスよく。'),
      ('Las manos agarran el bate firmes, pero sin apretarlo como si fuera a romperse: manos duras, swing lento.', 'Your hands hold the bat firmly, but without squeezing it as if it were going to break: stiff hands, slow swing.', '双手稳稳地握棒，但别捏得像要把它捏断：手太僵，挥棒就慢。', '手はバットをしっかりにぎる。でも折れそうなほど強くはにぎらない：手がかたいと、スイングはおそい。'),
      ('El bate descansa sobre el hombro de atrás, listo.', 'The bat rests on your back shoulder, ready.', '球棒靠在后面的肩膀上，准备好。', 'バットはうしろのかたにのせて、じゅんびオーケー。'),
-     ('Caja, postura y agarre, en inglés stance y grip.', 'Box, stance and grip.', '击球员区、站姿和握棒，英语叫 stance 和 grip。', 'ボックス、スタンス、グリップ。英語で stance と grip。'),
+     ('Postura y agarre: en inglés, stance y grip.', 'Stance and grip.', '站姿和握棒，英语叫 stance 和 grip。', 'スタンスとグリップ。英語で stance と grip。'),
      ('Desde ahí, todo es mirar la bola.', "From there, it's all about watching the ball.", '接下来，就是看球了。', 'そこからは、ボールを見るだけ。'),
    ],
    'acts': {
@@ -88,7 +88,7 @@ TR = {
    'demo': [
      ('Escucha el sonido más fino del béisbol: ¡tic!', 'Listen to the faintest sound in baseball: tick!', '听听棒球里最细的声音：嗒！', '野球でいちばん小さな音を聞いて：チッ！'),
      ('La bola apenas roza el bate, sale disparada hacia atrás y el catcher la atrapa directo, sin que toque el suelo.', 'The ball barely brushes the bat, shoots back and the catcher catches it directly, without it touching the ground.', '球只是轻轻擦过球棒，往后飞出去，捕手没让它落地就直接接住了。', 'ボールがバットをほんの少しかすめて、うしろへ飛び、キャッチャーが地面にふれる前に直接とる。'),
-     ('Eso es un foul tip, en inglés foul tip.', "That's a foul tip.", '这就是擦棒球，英语叫 foul tip。', 'これがファウルチップ、英語で foul tip。'),
+     ('Eso es un foul tip.', "That's a foul tip.", '这就是擦棒球，英语叫 foul tip。', 'これがファウルチップ、英語で foul tip。'),
      ('No es un foul común: si el catcher lo atrapa, cuenta como strike y la bola sigue viva, como un lanzamiento más.', "It's not a regular foul: if the catcher catches it, it counts as a strike and the ball stays live, like any other pitch.", '它不是普通的界外球：如果捕手接住了，就算好球，球继续是活球，就像普通的一次投球。', 'ふつうのファウルじゃない：キャッチャーがとったら、ストライクで、ボールはインプレーのまま。ふつうの投球と同じ。'),
      ('Hasta puede ser el tercer strike y ponche.', 'It can even be the third strike and a strikeout.', '它甚至可以是第三个好球，三振出局。', '3つ目のストライクで、三振になることもある。'),
      ('Pero si el catcher no la atrapa y la bola cae, ahí sí es foul normal y la bola se detiene.', "But if the catcher doesn't catch it and the ball drops, then it's a regular foul and the ball stops.", '但如果捕手没接住，球掉下来，那就是普通的界外球，比赛停止。', 'でもキャッチャーがとれずにボールが落ちたら、それはふつうのファウルで、プレーは止まる。'),
@@ -199,7 +199,7 @@ TR = {
  },
  'exam': {
   1: {'q': ("Where must both of the batter's feet go?", '击球员的双脚必须放在哪里？', 'バッターの両足はどこ？'),
-      'o': [("Inside the batter's box", "击球员区里（batter's box）", "バッターボックスの中（batter's box）"), ('Wherever the batter feels famous', '击球员觉得自己最威风的地方', 'バッターが有名人みたいに思えるところ'), ('One foot on home', '一只脚踩在本垒上', '片足をホームに')]},
+      'o': [("Inside the batter's box", "击球员区里（batter's box）", "バッターボックスの中（batter's box）"), ('Outside the box, wherever he wants', '在击球员区外面，随便哪里', 'ボックスの外、どこでも'), ('One foot on home', '一只脚踩在本垒上', '片足をホームに')]},
   2: {'q': ('Squeezing the bat with all your strength makes the swing…', '用尽全力捏紧球棒，挥棒会……', 'ありったけの力でバットをにぎると、スイングは……'),
       'o': [('Slower', '更慢', 'おそくなる'), ('Always faster', '总是更快', 'いつも速くなる'), ("It doesn't change anything", '没有任何变化', '何もかわらない')]},
   3: {'q': ('From what moment do you follow the ball with your eyes?', '你从什么时候开始用眼睛追球？', 'いつから目でボールを追う？'),
