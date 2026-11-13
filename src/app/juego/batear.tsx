@@ -5,7 +5,7 @@ import { Animated, Easing, Platform, Pressable, useWindowDimensions, View } from
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import FieldScene from '@/components/FieldScene';
 import { ActionBtn, Ball, Board, CallText, GameHeader, GameIntro, GameOver, rand, RIVAL, useAmbience, useTimers } from '@/components/GameKit';
-import { HF, stageOf } from '@/components/HighField';
+import { BALL_R_PLATE, HF, stageOf, touchesZone, ZONE_LINE } from '@/components/HighField';
 import PelotinBat from '@/components/PelotinBat';
 import type { BatPose } from '@/components/PelotinBat';
 import { tapFeedback } from '@/components/ui';
@@ -34,19 +34,36 @@ interface Pitch {
   ms: number;
 }
 
-const FIRST_PITCH: Pitch = { x: 181, y: 443, isBall: false, ms: 1500 };
+const FIRST_PITCH: Pitch = { x: 181, y: 443, isBall: false, ms: BAT.startMs };
 const ZERO = { count: { b: 0, s: 0, o: 0 }, stats: { hits: 0, hrs: 0, walks: 0 } };
 
 function newPitch(hits: number): Pitch {
-  const ms = Math.max(BAT.minMs, BAT.startMs - hits * BAT.stepMs) * rand(0.92, 1.1);
+  // Cada hit la bola viene más rápido, y además cambia de velocidad (recta o cambio) para que no
+  // se pueda batear siempre con el mismo ritmo.
+  const base = Math.max(BAT.minMs, BAT.startMs - hits * BAT.stepMs);
+  const mix = Math.min(BAT.maxMix, hits * BAT.mixStep);
+  const ms = base * rand(1 - mix, 1 + mix);
+  // Las bolas no tocan ni la línea de la zona; los strikes sí la tocan (algunos apenas la rozan).
+  const R = BALL_R_PLATE + ZONE_LINE;
   if (Math.random() < BAT.ballRate) {
     const p = [
-      { x: rand(149, 157), y: rand(ZONE.t + 4, ZONE.b - 4) }, // pegada al bateador
-      { x: rand(205, 213), y: rand(ZONE.t + 4, ZONE.b - 4) }, // afuera
-      { x: rand(172, 190), y: rand(404, 414) }, // alta
-      { x: rand(172, 190), y: rand(468, 476) }, // al suelo
+      { x: rand(ZONE.l - R - 12, ZONE.l - R - 2), y: rand(ZONE.t, ZONE.b) }, // pegada al bateador
+      { x: rand(ZONE.r + R + 2, ZONE.r + R + 12), y: rand(ZONE.t, ZONE.b) }, // afuera
+      { x: rand(ZONE.l, ZONE.r), y: rand(ZONE.t - R - 14, ZONE.t - R - 2) }, // alta
+      { x: rand(ZONE.l, ZONE.r), y: rand(ZONE.b + R + 2, ZONE.b + R + 12) }, // al suelo
     ][Math.floor(Math.random() * 4)];
     return { ...p, isBall: true, ms };
+  }
+  if (Math.random() < BAT.edgeRate) {
+    // Strike rozando una orilla: la bola toca la línea punteada.
+    const off = rand(-BALL_R_PLATE * 0.5, R - 0.8);
+    const p = [
+      { x: ZONE.l - off, y: rand(ZONE.t, ZONE.b) },
+      { x: ZONE.r + off, y: rand(ZONE.t, ZONE.b) },
+      { x: rand(ZONE.l, ZONE.r), y: ZONE.t - off },
+      { x: rand(ZONE.l, ZONE.r), y: ZONE.b + off },
+    ][Math.floor(Math.random() * 4)];
+    if (touchesZone(p.x, p.y)) return { ...p, isBall: false, ms };
   }
   return { x: rand(ZONE.l + 4, ZONE.r - 4), y: rand(ZONE.t + 4, ZONE.b - 4), isBall: false, ms };
 }

@@ -23,21 +23,25 @@ export const gameAfter = (level: number): MiniGame | undefined => MINIGAMES.find
 /** Ventanas de tiempo (ms) alrededor del momento en que la bola llega al home. */
 export const BAT = {
   /** Diferencia máxima para jonrón. */
-  hr: 55,
+  hr: 45,
   /** Diferencia máxima para hit. */
-  hit: 120,
+  hit: 95,
   /** Diferencia máxima para foul; más allá es abanicar (strike). */
-  foul: 210,
+  foul: 175,
   /** Duración del primer lanzamiento (ms) desde que suelta la bola hasta el home. */
-  startMs: 1500,
+  startMs: 1350,
   /** Cuánto más rápido viene tras cada hit (ms), sin bajar de `minMs`. */
-  stepMs: 70,
-  minMs: 600,
+  stepMs: 80,
+  minMs: 520,
   /** Con cada hit las ventanas de tiempo se achican este tanto (proporción), hasta `minWindow`. */
-  windowStep: 0.04,
-  minWindow: 0.6,
-  /** Parte de los lanzamientos que vienen fuera de la zona (bolas). */
-  ballRate: 0.28,
+  windowStep: 0.06,
+  minWindow: 0.45,
+  /** Cambio de velocidad entre lanzamientos (recta o cambio): crece con cada hit hasta `maxMix`. */
+  mixStep: 0.03,
+  maxMix: 0.25,
+  /** Parte de los lanzamientos que vienen fuera de la zona (bolas) y de strikes rozando la orilla. */
+  ballRate: 0.3,
+  edgeRate: 0.3,
   /** Outs para terminar (un ponche y se acaba, para que sea corto). */
   outs: 1,
   coinsHit: 1,

@@ -16,7 +16,7 @@ const SOURCES = {
   nivel: require('../../assets/music/nivel-organo.mp3'),
 };
 type Track = keyof typeof SOURCES;
-const VOLUME: Record<Track, number> = { intro: 0.55, juego: 0.35, nivel: 0.6 };
+const VOLUME: Record<Track, number> = { intro: 0.55, juego: 0.2, nivel: 0.6 };
 
 const players: Partial<Record<Track, AudioPlayer>> = {};
 let playing: Track | null = null;

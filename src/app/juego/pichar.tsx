@@ -6,7 +6,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Circle, Line } from 'react-native-svg';
 import FieldScene from '@/components/FieldScene';
 import { ActionBtn, Ball, Board, CallText, GameHeader, GameIntro, GameOver, rand, RIVAL, useAmbience, useTimers } from '@/components/GameKit';
-import { HF, stageOf } from '@/components/HighField';
+import { HF, stageOf, touchesZone } from '@/components/HighField';
 import PelotinBody from '@/components/PelotinBody';
 import type { BatPose } from '@/components/PelotinBat';
 import { tapFeedback } from '@/components/ui';
@@ -126,7 +126,8 @@ export default function PitchGame() {
   function resolve(a: { x: number; y: number }) {
     const dx = Math.abs(a.x - ZC.x) / HALF.x;
     const dy = Math.abs(a.y - ZC.y) / HALF.y;
-    const inZone = a.x >= ZONE.l - 2 && a.x <= ZONE.r + 2 && a.y >= ZONE.t - 2 && a.y <= ZONE.b + 2;
+    // Si la bola toca la zona, aunque sea la línea punteada, es strike; bola solo si no la toca.
+    const inZone = touchesZone(a.x, a.y);
     if (!inZone) return settle('ball', 'missed');
     const middle = Math.max(dx, dy) < PITCH.middle;
     const tip: Tip = middle ? 'middle' : 'edge';

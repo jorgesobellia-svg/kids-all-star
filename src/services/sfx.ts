@@ -35,7 +35,7 @@ const SOURCES = {
 };
 
 type Sfx = keyof typeof SOURCES;
-const VOLUME: Record<Sfx, number> = { bat: 1, safe: 1, out: 1, steps: 1, crowd: 0.9, umpHit: 1, umpStrike: 1, umpBall: 1, umpK: 1, umpHr: 1, umpFoul: 1, umpWalk: 1, umpHof: 1, fireworks: 0.6 };
+const VOLUME: Record<Sfx, number> = { bat: 1, safe: 1, out: 1, steps: 1, crowd: 0.65, umpHit: 1, umpStrike: 1, umpBall: 1, umpK: 1, umpHr: 1, umpFoul: 1, umpWalk: 1, umpHof: 1, fireworks: 0.6 };
 const players: Partial<Record<Sfx, AudioPlayer>> = {};
 let modeSet = false;
 

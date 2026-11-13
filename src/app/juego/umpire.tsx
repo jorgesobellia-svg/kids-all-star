@@ -5,7 +5,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Circle } from 'react-native-svg';
 import FieldScene from '@/components/FieldScene';
 import { ActionBtn, Ball, Board, CallText, GameHeader, GameIntro, GameOver, rand, RIVAL, useAmbience, useTimers } from '@/components/GameKit';
-import { HF, stageOf } from '@/components/HighField';
+import { HF, stageOf, touchesZone, ZONE_LINE } from '@/components/HighField';
 import PelotinBody from '@/components/PelotinBody';
 import { tapFeedback } from '@/components/ui';
 import { UMP } from '@/content/minigames';
@@ -34,11 +34,7 @@ interface Pitch {
 }
 
 /** ¿La bola (círculo) toca el rectángulo de la zona? */
-function touches(x: number, y: number) {
-  const cx = Math.max(ZONE.l, Math.min(x, ZONE.r));
-  const cy = Math.max(ZONE.t, Math.min(y, ZONE.b));
-  return Math.hypot(x - cx, y - cy) <= R_PLATE;
-}
+const touches = (x: number, y: number) => touchesZone(x, y, R_PLATE);
 
 function newPitch(n: number): Pitch {
   const ms = Math.max(UMP.minMs, UMP.startMs - n * UMP.stepMs) * rand(0.92, 1.08);
@@ -50,8 +46,10 @@ function newPitch(n: number): Pitch {
   const edgeRate = UMP.edgeRate + (UMP.maxEdgeRate - UMP.edgeRate) * hard;
   const fine = 1 - 0.45 * hard;
   if (r < edgeRate) {
-    // Rozando una orilla: unas tocan la zona y otras no, por muy poquito.
-    const off = rand(-R_PLATE * 0.7 * fine, R_PLATE * 1.7 * fine);
+    // Rozando una orilla: la mitad toca la línea (strike) y la otra mitad pasa sin tocarla (bola),
+    // cada vez más cerca. Se deja un hueco mínimo para que siempre se pueda ver la diferencia.
+    const edge = R_PLATE + ZONE_LINE; // a esta distancia del borde, la bola apenas toca la línea
+    const off = rand(0, 1) < 0.5 ? rand(edge - R_PLATE * 1.6, edge - 0.6) : edge + 1.2 + rand(0, R_PLATE * fine);
     const side = Math.floor(Math.random() * 4);
     if (side === 0) [x, y] = [ZONE.l - off, rand(ZONE.t, ZONE.b)];
     else if (side === 1) [x, y] = [ZONE.r + off, rand(ZONE.t, ZONE.b)];
@@ -65,7 +63,7 @@ function newPitch(n: number): Pitch {
       [rand(146, 152), rand(ZONE.t, ZONE.b)],
       [rand(210, 216), rand(ZONE.t, ZONE.b)],
       [rand(172, 190), rand(404, 412)],
-      [rand(172, 190), rand(474, 480)],
+      [rand(172, 190), rand(476, 482)],
     ][side] as [number, number];
   }
   return { x, y, strike: touches(x, y), ms };

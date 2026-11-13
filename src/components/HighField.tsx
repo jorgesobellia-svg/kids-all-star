@@ -18,6 +18,26 @@ export const HF = {
   /** Gradas del fondo, donde va el público. */
   stands: { x: 0, y: 20, w: 360, h: 52 },
 };
+
+/** Radio de la bola cuando pasa por el home (la animación la agranda 1.2 veces). */
+export const BALL_R_PLATE = 5.5 * 1.2;
+/** Mitad del grosor de la línea punteada de la zona: la línea también es zona. */
+export const ZONE_LINE = 1;
+
+/**
+ * Regla de los tres minijuegos: si la bola toca la zona de strike, aunque sea rozando la
+ * línea punteada con la costura, es STRIKE. Es BOLA solo si no toca ni la línea.
+ */
+export function touchesZone(x: number, y: number, r = BALL_R_PLATE): boolean {
+  const Z = HF.zone;
+  const l = Z.l - ZONE_LINE;
+  const rr = Z.r + ZONE_LINE;
+  const t = Z.t - ZONE_LINE;
+  const b = Z.b + ZONE_LINE;
+  const cx = Math.max(l, Math.min(x, rr));
+  const cy = Math.max(t, Math.min(y, b));
+  return Math.hypot(x - cx, y - cy) <= r;
+}
 const VB = { w: HF.w, h: HF.h };
 
 // Puntitos fijos (siempre iguales) para dar textura de tierra y de pasto.
