@@ -1049,45 +1049,6 @@
    },
    {
     "n": 3,
-    "q": "¿Cómo se dice elevado en inglés?",
-    "opts": [
-     "Fly ball",
-     "Fastball",
-     "Foul ball"
-    ],
-    "correct": "Fly ball"
-   },
-   {
-    "n": 4,
-    "q": "Una línea atrapada por el tercera base es:",
-    "opts": [
-     "Out",
-     "Hit",
-     "Foul"
-    ],
-    "correct": "Out"
-   },
-   {
-    "n": 5,
-    "q": "Verdadero o falso: en zona de foul también se puede atrapar para out",
-    "opts": [
-     "Verdadero",
-     "Falso"
-    ],
-    "correct": "Verdadero"
-   },
-   {
-    "n": 6,
-    "q": "El jardinero deja caer un elevado fácil y la bola pica. El bateador:",
-    "opts": [
-     "Sigue corriendo, no hubo atrapada",
-     "Es out igual",
-     "Debe volver al dugout"
-    ],
-    "correct": "Sigue corriendo, no hubo atrapada"
-   },
-   {
-    "n": 7,
     "q": "Toca al jugador que atrapa un elevado lejos, en los jardines",
     "opts": [
      "— (toca a un jardinero)"
@@ -1095,27 +1056,7 @@
     "correct": "Un jardinero"
    },
    {
-    "n": 8,
-    "q": "¿Cuándo deja de poder atraparse una bola para el out?",
-    "opts": [
-     "Cuando pica en el suelo",
-     "Cuando sale del guante y cae",
-     "Nunca"
-    ],
-    "correct": "Cuando pica en el suelo"
-   },
-   {
-    "n": 9,
-    "q": "¿Qué canta el umpire tras una atrapada en el aire?",
-    "opts": [
-     "¡Out!",
-     "¡Safe!",
-     "¡Bola!"
-    ],
-    "correct": "¡Out!"
-   },
-   {
-    "n": 10,
+    "n": 4,
     "q": "Verdadero o falso: si la bola te rebota en el guante y cae al suelo, igual es out",
     "opts": [
      "Verdadero",
@@ -1124,24 +1065,82 @@
     "correct": "Falso"
    },
    {
-    "n": 11,
-    "q": "Un elevado muy alto da tiempo a los corredores para:",
+    "n": 5,
+    "q": "Corredor en primera y batazo por el suelo. El defensor con la bola pisa segunda antes que el corredor. ¿Qué pasa?",
     "opts": [
-     "Prepararse y mirar la atrapada",
-     "Salir corriendo sin mirar",
-     "Sentarse"
+     "Out forzado",
+     "Safe",
+     "No pasa nada"
     ],
-    "correct": "Prepararse y mirar la atrapada"
+    "correct": "Out forzado"
+   },
+   {
+    "n": 6,
+    "q": "Verdadero o falso: en un out forzado hay que tocar al corredor con la bola",
+    "opts": [
+     "Verdadero",
+     "Falso"
+    ],
+    "correct": "Falso"
+   },
+   {
+    "n": 7,
+    "q": "El corredor no está obligado a correr. ¿Cómo lo sacas out?",
+    "opts": [
+     "Tocándolo con la bola",
+     "Pisando cualquier base",
+     "Gritando «¡out!»"
+    ],
+    "correct": "Tocándolo con la bola"
+   },
+   {
+    "n": 8,
+    "q": "Verdadero o falso: si el corredor está parado sobre su base, tocarlo no lo saca out",
+    "opts": [
+     "Verdadero",
+     "Falso"
+    ],
+    "correct": "Verdadero"
+   },
+   {
+    "n": 9,
+    "q": "Hay corredor en primera y batean un rolling. ¿El corredor de primera está forzado a correr?",
+    "opts": [
+     "Sí, porque el bateador viene detrás",
+     "No, nunca",
+     "Solo si él quiere"
+    ],
+    "correct": "Sí, porque el bateador viene detrás"
+   },
+   {
+    "n": 10,
+    "q": "Corredor solo en segunda, primera vacía, y batean un rolling. Para sacarlo out en tercera hay que:",
+    "opts": [
+     "Tocarlo con la bola",
+     "Pisar tercera",
+     "Pisar segunda"
+    ],
+    "correct": "Tocarlo con la bola"
+   },
+   {
+    "n": 11,
+    "q": "¿Qué es un doble play?",
+    "opts": [
+     "Dos outs en una sola jugada",
+     "Dos hits seguidos",
+     "Dos strikes"
+    ],
+    "correct": "Dos outs en una sola jugada"
    },
    {
     "n": 12,
-    "q": "Si atrapan tu batazo, ¿cuántos outs se suman?",
+    "q": "La defensa elige sacar out a otro corredor y el bateador llega a primera. ¿Es hit?",
     "opts": [
-     "Uno",
-     "Dos",
-     "Tres"
+     "No, es jugada de selección",
+     "Sí, es hit",
+     "Es error"
     ],
-    "correct": "Uno"
+    "correct": "No, es jugada de selección"
    }
   ],
   "reward": "Al aprobar: insignia Guante de Oro, 50 XP de bono, 10 pelotas y se desbloquea el siguiente nivel."

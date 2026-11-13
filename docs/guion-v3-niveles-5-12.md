@@ -515,18 +515,18 @@ marca las lecciones que debe repasar y puede intentarlo de nuevo.
 
 | **\#** | **Pregunta**                                                                                           | **Opciones**                                                             | **Correcta**                      |
 |--------|--------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|-----------------------------------|
-| 1      | Batazo atrapado en el aire antes de picar:                                                             | Out del bateador / Hit / Bola                                            | Out del bateador                  |
-| 2      | La bola pica primero y luego la toman. ¿Es atrapada para out?                                          | No / Sí / A veces                                                        | No                                |
-| 3      | ¿Cómo se dice elevado en inglés?                                                                       | Fly ball / Fastball / Foul ball                                          | Fly ball                          |
-| 4      | Una línea atrapada por el tercera base es:                                                             | Out / Hit / Foul                                                         | Out                               |
-| 5      | Verdadero o falso: en zona de foul también se puede atrapar para out                                   | Verdadero / Falso                                                        | Verdadero                         |
-| 6      | El jardinero deja caer un elevado fácil y la bola pica. El bateador:                                   | Sigue corriendo, no hubo atrapada / Es out igual / Debe volver al dugout | Sigue corriendo, no hubo atrapada |
-| 7      | Toca al jugador que atrapa un elevado lejos, en los jardines                                           | — (toca a un jardinero)                                                  | Un jardinero                      |
-| 8      | ¿Cuándo deja de poder atraparse una bola para el out?                                                  | Cuando pica en el suelo / Cuando sale del guante y cae / Nunca           | Cuando pica en el suelo           |
-| 9      | ¿Qué canta el umpire tras una atrapada en el aire?                                                     | ¡Out! / ¡Safe! / ¡Bola!                                                  | ¡Out!                             |
-| 10     | Verdadero o falso: si la bola te rebota en el guante y cae al suelo, igual es out | Verdadero / Falso                                                        | Falso                             |
-| 11     | Un elevado muy alto da tiempo a los corredores para:                                                   | Prepararse y mirar la atrapada / Salir corriendo sin mirar / Sentarse    | Prepararse y mirar la atrapada    |
-| 12     | Si atrapan tu batazo, ¿cuántos outs se suman?                                                          | Uno / Dos / Tres                                                         | Uno                               |
+| 1 | Batazo atrapado en el aire antes de picar: | Out del bateador / Hit / Bola | Out del bateador |
+| 2 | La bola pica primero y luego la toman. ¿Es atrapada para out? | No / Sí / A veces | No |
+| 3 | Toca al jugador que atrapa un elevado lejos, en los jardines | — (toca a un jardinero) | Un jardinero |
+| 4 | Verdadero o falso: si la bola te rebota en el guante y cae al suelo, igual es out | Verdadero / Falso | Falso |
+| 5 | Corredor en primera y batazo por el suelo. El defensor con la bola pisa segunda antes que el corredor. ¿Qué pasa? | Out forzado / Safe / No pasa nada | Out forzado |
+| 6 | Verdadero o falso: en un out forzado hay que tocar al corredor con la bola | Verdadero / Falso | Falso |
+| 7 | El corredor no está obligado a correr. ¿Cómo lo sacas out? | Tocándolo con la bola / Pisando cualquier base / Gritando «¡out!» | Tocándolo con la bola |
+| 8 | Verdadero o falso: si el corredor está parado sobre su base, tocarlo no lo saca out | Verdadero / Falso | Verdadero |
+| 9 | Hay corredor en primera y batean un rolling. ¿El corredor de primera está forzado a correr? | Sí, porque el bateador viene detrás / No, nunca / Solo si él quiere | Sí, porque el bateador viene detrás |
+| 10 | Corredor solo en segunda, primera vacía, y batean un rolling. Para sacarlo out en tercera hay que: | Tocarlo con la bola / Pisar tercera / Pisar segunda | Tocarlo con la bola |
+| 11 | ¿Qué es un doble play? | Dos outs en una sola jugada / Dos hits seguidos / Dos strikes | Dos outs en una sola jugada |
+| 12 | La defensa elige sacar out a otro corredor y el bateador llega a primera. ¿Es hit? | No, es jugada de selección / Sí, es hit / Es error | No, es jugada de selección |
 
 Al aprobar: insignia Guante de Oro, 50 XP de bono, 10 pelotas y se
 desbloquea el siguiente nivel.

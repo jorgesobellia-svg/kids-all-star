@@ -1560,52 +1560,19 @@ export const LEVELS_V3: Level[] = [
    {
     "n": 3,
     "lesson": "6.1",
-    "type": "choice",
-    "options": [
-     "a",
-     "b",
-     "c"
-    ],
-    "correct": "a"
-   },
-   {
-    "n": 4,
-    "lesson": "6.1",
-    "type": "choice",
-    "options": [
-     "a",
-     "b",
-     "c"
-    ],
-    "correct": "a"
-   },
-   {
-    "n": 5,
-    "lesson": "6.1",
-    "type": "tf",
-    "correct": "true"
-   },
-   {
-    "n": 6,
-    "lesson": "6.1",
-    "type": "choice",
-    "options": [
-     "a",
-     "b",
-     "c"
-    ],
-    "correct": "a"
-   },
-   {
-    "n": 7,
-    "lesson": "6.1",
     "type": "tap",
     "target": "anyOF",
     "scene": "field9"
    },
    {
-    "n": 8,
+    "n": 4,
     "lesson": "6.1",
+    "type": "tf",
+    "correct": "false"
+   },
+   {
+    "n": 5,
+    "lesson": "6.2",
     "type": "choice",
     "options": [
      "a",
@@ -1615,8 +1582,31 @@ export const LEVELS_V3: Level[] = [
     "correct": "a"
    },
    {
+    "n": 6,
+    "lesson": "6.2",
+    "type": "tf",
+    "correct": "false"
+   },
+   {
+    "n": 7,
+    "lesson": "6.3",
+    "type": "choice",
+    "options": [
+     "a",
+     "b",
+     "c"
+    ],
+    "correct": "a"
+   },
+   {
+    "n": 8,
+    "lesson": "6.3",
+    "type": "tf",
+    "correct": "true"
+   },
+   {
     "n": 9,
-    "lesson": "6.1",
+    "lesson": "6.4",
     "type": "choice",
     "options": [
      "a",
@@ -1627,13 +1617,18 @@ export const LEVELS_V3: Level[] = [
    },
    {
     "n": 10,
-    "lesson": "6.1",
-    "type": "tf",
-    "correct": "false"
+    "lesson": "6.4",
+    "type": "choice",
+    "options": [
+     "a",
+     "b",
+     "c"
+    ],
+    "correct": "a"
    },
    {
     "n": 11,
-    "lesson": "6.1",
+    "lesson": "6.5",
     "type": "choice",
     "options": [
      "a",
@@ -1644,7 +1639,7 @@ export const LEVELS_V3: Level[] = [
    },
    {
     "n": 12,
-    "lesson": "6.1",
+    "lesson": "6.5",
     "type": "choice",
     "options": [
      "a",

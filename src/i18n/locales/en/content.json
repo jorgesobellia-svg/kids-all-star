@@ -7119,69 +7119,64 @@
         }
       },
       "3": {
-        "q": "What do you call a ball hit high in the air?",
-        "opts": {
-          "a": "Fly ball",
-          "b": "Fastball",
-          "c": "Foul ball"
-        }
-      },
-      "4": {
-        "q": "A line drive caught by the third baseman is:",
-        "opts": {
-          "a": "Out",
-          "b": "Hit",
-          "c": "Foul"
-        }
-      },
-      "5": {
-        "q": "True or false: in foul territory you can also catch it for an out"
-      },
-      "6": {
-        "q": "The outfielder drops an easy fly ball and the ball bounces. The batter:",
-        "opts": {
-          "a": "Keeps running, there was no catch",
-          "b": "Is out anyway",
-          "c": "Must go back to the dugout"
-        }
-      },
-      "7": {
         "q": "Tap the player who catches a long fly ball, in the outfield",
         "answer": "An outfielder"
       },
-      "8": {
-        "q": "When can a ball no longer be caught for an out?",
+      "4": {
+        "q": "True or false: if the ball bounces off your glove and falls to the ground, it's still an out"
+      },
+      "5": {
+        "q": "Runner on first and a ground ball. The fielder with the ball steps on second before the runner gets there. What happens?",
         "opts": {
-          "a": "When it bounces on the ground",
-          "b": "When it pops out of the glove and falls",
-          "c": "Never"
+          "a": "Force out",
+          "b": "Safe",
+          "c": "Nothing happens"
         }
       },
-      "9": {
-        "q": "What does the umpire call after a catch in the air?",
+      "6": {
+        "q": "True or false: on a force out, you have to tag the runner with the ball"
+      },
+      "7": {
+        "q": "The runner isn't forced to run. How do you get him out?",
         "opts": {
-          "a": "Out!",
-          "b": "Safe!",
-          "c": "Ball!"
+          "a": "Tag him with the ball",
+          "b": "Step on any base",
+          "c": "Yell \"Out!\""
+        }
+      },
+      "8": {
+        "q": "True or false: if the runner is standing on his base, tagging him doesn't get him out"
+      },
+      "9": {
+        "q": "There's a runner on first and the batter hits a grounder. Is the runner on first forced to run?",
+        "opts": {
+          "a": "Yes, because the batter is coming behind him",
+          "b": "No, never",
+          "c": "Only if he wants to"
         }
       },
       "10": {
-        "q": "True or false: if the ball bounces off your glove and falls to the ground, it's still an out"
+        "q": "Runner only on second, first base empty, and a ground ball. To get him out at third, you have to:",
+        "opts": {
+          "a": "Tag him with the ball",
+          "b": "Step on third",
+          "c": "Step on second"
+        }
       },
       "11": {
-        "q": "A very high fly ball gives the runners time to:",
+        "q": "What is a double play?",
         "opts": {
-          "a": "Get ready and watch the catch",
-          "b": "Run off without looking",
-          "c": "Sit down"
+          "a": "Two outs on one play",
+          "b": "Two hits in a row",
+          "c": "Two strikes"
         }
       },
       "12": {
-        "q": "If they catch your batted ball, how many outs are added?",
+        "q": "The defense chooses to get another runner out, and the batter reaches first. Is it a hit?",
         "opts": {
-          "a": "One",
-          "b": "Two",
-          "c": "Three"
+          "a": "No, it's a fielder's choice",
+          "b": "Yes, it's a hit",
+          "c": "It's an error"
         }
       }
     },

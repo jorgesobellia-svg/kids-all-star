@@ -7119,69 +7119,64 @@
         }
       },
       "3": {
-        "q": "¿Cómo se dice elevado en inglés?",
-        "opts": {
-          "a": "Fly ball",
-          "b": "Fastball",
-          "c": "Foul ball"
-        }
-      },
-      "4": {
-        "q": "Una línea atrapada por el tercera base es:",
-        "opts": {
-          "a": "Out",
-          "b": "Hit",
-          "c": "Foul"
-        }
-      },
-      "5": {
-        "q": "Verdadero o falso: en zona de foul también se puede atrapar para out"
-      },
-      "6": {
-        "q": "El jardinero deja caer un elevado fácil y la bola pica. El bateador:",
-        "opts": {
-          "a": "Sigue corriendo, no hubo atrapada",
-          "b": "Es out igual",
-          "c": "Debe volver al dugout"
-        }
-      },
-      "7": {
         "q": "Toca al jugador que atrapa un elevado lejos, en los jardines",
         "answer": "Un jardinero"
       },
-      "8": {
-        "q": "¿Cuándo deja de poder atraparse una bola para el out?",
+      "4": {
+        "q": "Verdadero o falso: si la bola te rebota en el guante y cae al suelo, igual es out"
+      },
+      "5": {
+        "q": "Corredor en primera y batazo por el suelo. El defensor con la bola pisa segunda antes que el corredor. ¿Qué pasa?",
         "opts": {
-          "a": "Cuando pica en el suelo",
-          "b": "Cuando sale del guante y cae",
-          "c": "Nunca"
+          "a": "Out forzado",
+          "b": "Safe",
+          "c": "No pasa nada"
         }
       },
-      "9": {
-        "q": "¿Qué canta el umpire tras una atrapada en el aire?",
+      "6": {
+        "q": "Verdadero o falso: en un out forzado hay que tocar al corredor con la bola"
+      },
+      "7": {
+        "q": "El corredor no está obligado a correr. ¿Cómo lo sacas out?",
         "opts": {
-          "a": "¡Out!",
-          "b": "¡Safe!",
-          "c": "¡Bola!"
+          "a": "Tocándolo con la bola",
+          "b": "Pisando cualquier base",
+          "c": "Gritando «¡out!»"
+        }
+      },
+      "8": {
+        "q": "Verdadero o falso: si el corredor está parado sobre su base, tocarlo no lo saca out"
+      },
+      "9": {
+        "q": "Hay corredor en primera y batean un rolling. ¿El corredor de primera está forzado a correr?",
+        "opts": {
+          "a": "Sí, porque el bateador viene detrás",
+          "b": "No, nunca",
+          "c": "Solo si él quiere"
         }
       },
       "10": {
-        "q": "Verdadero o falso: si la bola te rebota en el guante y cae al suelo, igual es out"
+        "q": "Corredor solo en segunda, primera vacía, y batean un rolling. Para sacarlo out en tercera hay que:",
+        "opts": {
+          "a": "Tocarlo con la bola",
+          "b": "Pisar tercera",
+          "c": "Pisar segunda"
+        }
       },
       "11": {
-        "q": "Un elevado muy alto da tiempo a los corredores para:",
+        "q": "¿Qué es un doble play?",
         "opts": {
-          "a": "Prepararse y mirar la atrapada",
-          "b": "Salir corriendo sin mirar",
-          "c": "Sentarse"
+          "a": "Dos outs en una sola jugada",
+          "b": "Dos hits seguidos",
+          "c": "Dos strikes"
         }
       },
       "12": {
-        "q": "Si atrapan tu batazo, ¿cuántos outs se suman?",
+        "q": "La defensa elige sacar out a otro corredor y el bateador llega a primera. ¿Es hit?",
         "opts": {
-          "a": "Uno",
-          "b": "Dos",
-          "c": "Tres"
+          "a": "No, es jugada de selección",
+          "b": "Sí, es hit",
+          "c": "Es error"
         }
       }
     },
