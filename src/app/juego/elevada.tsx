@@ -211,7 +211,7 @@ export default function FlyGame() {
     const S = sim.current;
     const { catches } = game.current;
     // La próxima cae más lejos de donde está Pelotín, y el elevado dura menos en el aire.
-    const dist = Math.min(78, 26 + catches * 5) * rand(0.85, 1.1);
+    const dist = Math.min(90, 26 + catches * 6) * rand(0.85, 1.1);
     let L = { X: S.me.X + 20, Y: S.me.Y - 20 };
     for (let i = 0; i < 30; i++) {
       const a = rand(0, Math.PI * 2);
@@ -233,7 +233,8 @@ export default function FlyGame() {
 
   function landed() {
     const S = sim.current;
-    const caught = Math.hypot(S.me.X - S.L.X, S.me.Y - S.L.Y) <= FLY.reach;
+    const reach = Math.max(FLY.minReach, FLY.reach - game.current.catches * FLY.reachStep); // cada atrapada pide llegar más justo
+    const caught = Math.hypot(S.me.X - S.L.X, S.me.Y - S.L.Y) <= reach;
     S.target = null;
     const g = game.current;
     const nx = caught ? { ...g, catches: g.catches + 1 } : { ...g, drops: g.drops + 1 };

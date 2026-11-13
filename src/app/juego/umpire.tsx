@@ -45,15 +45,19 @@ function newPitch(n: number): Pitch {
   let x: number;
   let y: number;
   const r = Math.random();
-  if (r < UMP.edgeRate) {
+  // Cada lanzamiento es un poco más difícil: más bolas rozando la orilla, y más finas.
+  const hard = Math.min(1, n / UMP.hardAfter);
+  const edgeRate = UMP.edgeRate + (UMP.maxEdgeRate - UMP.edgeRate) * hard;
+  const fine = 1 - 0.45 * hard;
+  if (r < edgeRate) {
     // Rozando una orilla: unas tocan la zona y otras no, por muy poquito.
-    const off = rand(-R_PLATE * 0.7, R_PLATE * 1.7);
+    const off = rand(-R_PLATE * 0.7 * fine, R_PLATE * 1.7 * fine);
     const side = Math.floor(Math.random() * 4);
     if (side === 0) [x, y] = [ZONE.l - off, rand(ZONE.t, ZONE.b)];
     else if (side === 1) [x, y] = [ZONE.r + off, rand(ZONE.t, ZONE.b)];
     else if (side === 2) [x, y] = [rand(ZONE.l, ZONE.r), ZONE.t - off];
     else [x, y] = [rand(ZONE.l, ZONE.r), ZONE.b + off];
-  } else if (r < UMP.edgeRate + (1 - UMP.edgeRate) / 2) {
+  } else if (r < edgeRate + (1 - edgeRate) / 2) {
     [x, y] = [rand(ZONE.l + 4, ZONE.r - 4), rand(ZONE.t + 4, ZONE.b - 4)];
   } else {
     const side = Math.floor(Math.random() * 4);

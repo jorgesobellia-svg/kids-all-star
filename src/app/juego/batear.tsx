@@ -172,9 +172,11 @@ export default function BatGame() {
     const dt = Date.now() - (t0.current + pt.ms);
     const a = Math.abs(dt);
     if (pt.isBall) return settle('strike', 'chased');
-    if (a > BAT.foul) return settle('strike', dt < 0 ? 'early' : 'late');
+    // Cada hit sube la dificultad: la bola viene más rápido y el momento justo es más corto.
+    const f = Math.max(BAT.minWindow, 1 - game.current.stats.hits * BAT.windowStep);
+    if (a > BAT.foul * f) return settle('strike', dt < 0 ? 'early' : 'late');
     prog.stopAnimation();
-    const c: Call = a <= BAT.hr ? 'hr' : a <= BAT.hit ? 'hit' : 'foul';
+    const c: Call = a <= BAT.hr * f ? 'hr' : a <= BAT.hit * f ? 'hit' : 'foul';
     playSfx('bat');
     if (c === 'hr') tm.later(() => playSfx('crowd'), 900);
     if (Platform.OS !== 'web') Haptics.impactAsync(c === 'foul' ? Haptics.ImpactFeedbackStyle.Light : Haptics.ImpactFeedbackStyle.Heavy).catch(() => {});

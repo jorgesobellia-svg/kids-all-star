@@ -135,7 +135,8 @@ export default function PitchGame() {
     setPose('boxMid');
     tm.later(() => setPose('boxSwing'), 70);
     tm.later(() => setPose('box'), 650);
-    if (rand(0, 1) >= (middle ? PITCH.hitMiddle : PITCH.hitEdge)) return settle('swingMiss', tip);
+    const better = Math.min(PITCH.maxBetter, game.current.stats.ks * PITCH.betterStep); // el rival mejora con cada ponche
+    if (rand(0, 1) >= (middle ? PITCH.hitMiddle : PITCH.hitEdge) + better) return settle('swingMiss', tip);
     // Le pegó: foul, out o hit.
     playSfx('bat');
     if (Platform.OS !== 'web') Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(() => {});
