@@ -150,22 +150,28 @@ function JumpingPelotin({ avatar, h }: { avatar: Avatar; h: number }) {
 // ------------------------------------------------------------------ Tarjeta dorada
 function CardFrame({ w, children }: { w: number; children: React.ReactNode }) {
   const h = w * 1.4;
+  // Ids únicos: en la web todos los SVG comparten la página y un id repetido deja el panel sin pintar.
+  const uid = React.useId().replace(/[^a-zA-Z0-9]/g, '');
+  const gold = `gcGold${uid}`;
+  const sky = `gcSky${uid}`;
   return (
     <View style={{ width: w, height: h, borderRadius: 16, overflow: 'hidden' }}>
       <Svg width={w} height={h} style={{ position: 'absolute' }}>
         <Defs>
-          <LinearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+          <LinearGradient id={gold} x1="0" y1="0" x2="1" y2="1">
             {GOLD.map((c, i) => (
               <Stop key={i} offset={i / (GOLD.length - 1)} stopColor={c} />
             ))}
           </LinearGradient>
-          <RadialGradient id="sky" cx="0.5" cy="0.4" r="0.7">
+          <RadialGradient id={sky} cx="0.5" cy="0.4" r="0.7">
             <Stop offset="0" stopColor="#1E40AF" />
             <Stop offset="1" stopColor={C.navy} />
           </RadialGradient>
         </Defs>
-        <Rect x={0} y={0} width={w} height={h} fill="url(#gold)" />
-        <Rect x={10} y={10} width={w - 20} height={h * 0.66} rx={10} fill="url(#sky)" stroke="#7C5A06" strokeWidth={2} />
+        <Rect x={0} y={0} width={w} height={h} fill="#E0A100" />
+        <Rect x={0} y={0} width={w} height={h} fill={`url(#${gold})`} />
+        <Rect x={10} y={10} width={w - 20} height={h * 0.66} rx={10} fill={C.navy} />
+        <Rect x={10} y={10} width={w - 20} height={h * 0.66} rx={10} fill={`url(#${sky})`} stroke="#7C5A06" strokeWidth={2} />
         {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
           <Polygon key={i} points={`${w / 2},${h * 0.36} ${w / 2 + Math.cos(i * 0.785) * w},${h * 0.36 + Math.sin(i * 0.785) * w} ${w / 2 + Math.cos(i * 0.785 + 0.2) * w},${h * 0.36 + Math.sin(i * 0.785 + 0.2) * w}`} fill="#FFFFFF" opacity={0.07} />
         ))}
@@ -427,12 +433,13 @@ export default function Graduation() {
           {/* Cielo de noche con estrellas */}
           <Svg width={W} height={H} style={{ position: 'absolute' }}>
             <Defs>
-              <LinearGradient id="night" x1="0" y1="0" x2="0" y2="1">
+              <LinearGradient id="gradNight" x1="0" y1="0" x2="0" y2="1">
                 <Stop offset="0" stopColor="#020617" />
                 <Stop offset="1" stopColor="#0B1E44" />
               </LinearGradient>
             </Defs>
-            <Rect x={0} y={0} width={W} height={H} fill="url(#night)" />
+            <Rect x={0} y={0} width={W} height={H} fill="#050B1F" />
+            <Rect x={0} y={0} width={W} height={H} fill="url(#gradNight)" />
             {Array.from({ length: 40 }, (_, i) => (
               <Circle key={i} cx={(i * 97) % W} cy={(i * 61) % (skyH * 0.9)} r={i % 3 === 0 ? 1.4 : 0.8} fill="#FFFFFF" opacity={0.6} />
             ))}
@@ -481,12 +488,12 @@ export default function Graduation() {
       <View testID="grad-card-screen" style={{ flex: 1, backgroundColor: C.navy, alignItems: 'center' }}>
         <Svg width={winW} height={H} style={{ position: 'absolute' }}>
           <Defs>
-            <RadialGradient id="glow" cx="0.5" cy="0.45" r="0.55">
+            <RadialGradient id="gradGlow" cx="0.5" cy="0.45" r="0.55">
               <Stop offset="0" stopColor="#FFD54A" stopOpacity={0.5} />
               <Stop offset="1" stopColor={C.navy} stopOpacity={0} />
             </RadialGradient>
           </Defs>
-          <Rect x={0} y={0} width={winW} height={H} fill="url(#glow)" />
+          <Rect x={0} y={0} width={winW} height={H} fill="url(#gradGlow)" />
         </Svg>
         <Confetti W={W} H={H} n={24} />
         <ScrollView contentContainerStyle={{ alignItems: 'center', paddingTop: insets.top + 50, paddingBottom: insets.bottom + 24, paddingHorizontal: 24, gap: 10, minHeight: H }}>
