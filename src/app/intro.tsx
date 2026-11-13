@@ -3,7 +3,7 @@
 // el logo del juego justo antes de elegir el idioma. Todo es animación (sin archivo de video).
 import { router } from 'expo-router';
 import React, { useEffect, useRef, useState } from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { Pressable, Text, useWindowDimensions, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Circle, Defs, Ellipse, G, LinearGradient, Path, Polygon, RadialGradient, Rect, Stop } from 'react-native-svg';
 import { MascotFace } from '@/components/Art';
@@ -202,7 +202,7 @@ function Logo({ x, y, size }: { x: number; y: number; size: number }) {
 }
 
 // ------------------------------------------------------------------ escena completa en el segundo t
-function Scene({ t, logoY }: { t: number; logoY: number }) {
+function Scene({ t, logoY, logoSize }: { t: number; logoY: number; logoSize: number }) {
   const fadeIn = span(t, 0, 0.6);
   // Escena 1–2: el bateador. La bola del pitcher viaja al home.
   const pitchK = span(t, 0.95, HIT);
@@ -225,7 +225,7 @@ function Scene({ t, logoY }: { t: number; logoY: number }) {
   // Escena 5: Pelotín se encoge y sube al lugar del logo; el fondo pasa a azul.
   const toLogo = easeInOut(span(t, 5.9, 6.8));
   const navy = span(t, 6.0, 6.8);
-  const faceSize = mix(300, 104, toLogo);
+  const faceSize = mix(300, logoSize * 1.08, toLogo);
   const faceY = mix(400, logoY, toLogo);
   const logoK = span(t, 6.55, 6.95);
   const bounce = t > 5.25 && t < 5.9 ? Math.sin(span(t, 5.25, 5.9) * Math.PI) * 0.06 : 0;
@@ -292,7 +292,7 @@ function Scene({ t, logoY }: { t: number; logoY: number }) {
       ) : null}
       {logoK > 0 ? (
         <G opacity={logoK}>
-          <Logo x={195} y={logoY} size={96} />
+          <Logo x={195} y={logoY} size={logoSize} />
         </G>
       ) : null}
       {/* Entrada desde negro */}
@@ -343,11 +343,15 @@ export default function Intro() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // El logo termina donde lo muestra la pantalla de idioma (arriba, centrado).
-  const logoY = 40 + 48;
+  // El logo termina donde lo muestra la pantalla de idioma (arriba, centrado, 96 px), pasado a
+  // las coordenadas del dibujo, que llena la pantalla recortando lo que sobra.
+  const { width: winW, height: winH } = useWindowDimensions();
+  const k = Math.max(winW / W, winH / H);
+  const logoY = (insets.top + 40 + 48 - (winH - H * k) / 2) / k;
+  const logoSize = 96 / k;
   return (
     <View testID="intro" style={{ flex: 1, backgroundColor: '#000' }}>
-      <Scene t={time} logoY={logoY} />
+      <Scene t={time} logoY={logoY} logoSize={logoSize} />
       <Pressable
         testID="intro-skip"
         accessibilityRole="button"
