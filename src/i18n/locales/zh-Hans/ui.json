@@ -353,6 +353,9 @@
     "drops": "漏接",
     "bestCatches": "你的纪录：接住 {n} 个"
   },
+  "intro": {
+    "skip": "跳过"
+  },
   "grad": {
     "kicker": "毕业啦！",
     "title": "名人堂",

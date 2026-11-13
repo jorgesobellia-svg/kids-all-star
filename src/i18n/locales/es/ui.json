@@ -353,6 +353,9 @@
     "drops": "Se cayeron",
     "bestCatches": "Tu récord: {n} atrapadas"
   },
+  "intro": {
+    "skip": "Saltar"
+  },
   "grad": {
     "kicker": "¡GRADUADO!",
     "title": "SALÓN DE LA FAMA",

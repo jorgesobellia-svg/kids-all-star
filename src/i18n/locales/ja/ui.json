@@ -353,6 +353,9 @@
     "drops": "落とした",
     "bestCatches": "きみの記録：キャッチ{n}回"
   },
+  "intro": {
+    "skip": "スキップ"
+  },
   "grad": {
     "kicker": "卒業！",
     "title": "殿堂入り",

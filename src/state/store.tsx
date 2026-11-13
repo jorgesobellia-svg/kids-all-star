@@ -35,6 +35,8 @@ export interface Progress {
   gameCoins?: { day: string; coins: number };
   /** Fecha (ISO) en que aprobó el examen del nivel 20 y vio la graduación: la tarjeta dorada es suya. */
   graduated?: string;
+  /** Ya vio el video de entrada (sale solo la primera vez). */
+  introSeen?: boolean;
 }
 
 /** Tope diario de pelotas que se pueden ganar en los minijuegos. */
@@ -130,6 +132,8 @@ interface Store {
   finishGame: (id: string, score: number, coins: number) => GameReward;
   /** Guarda la fecha de graduación (solo la primera vez). */
   graduate: () => void;
+  /** Marca el video de entrada como visto. */
+  finishIntro: () => void;
 }
 
 const Ctx = createContext<Store | null>(null);
@@ -285,9 +289,13 @@ export function StoreProvider({ children, fallbackLocale }: { children: React.Re
     setP((s) => (s.graduated ? s : { ...s, graduated: new Date().toISOString() }));
   }, []);
 
+  const finishIntro = useCallback(() => {
+    setP((s) => (s.introSeen ? s : { ...s, introSeen: true }));
+  }, []);
+
   const value = useMemo<Store>(
-    () => ({ ready, p, t, locale, setLocale, setPlayer, setCountry, completeLesson, passExam, setPlus, setReview, reset, buy, equip, setNumber, giftCap, finishShopIntro, finishGame, graduate }),
-    [ready, p, t, locale, setLocale, setPlayer, setCountry, completeLesson, passExam, setPlus, setReview, reset, buy, equip, setNumber, giftCap, finishShopIntro, finishGame, graduate],
+    () => ({ ready, p, t, locale, setLocale, setPlayer, setCountry, completeLesson, passExam, setPlus, setReview, reset, buy, equip, setNumber, giftCap, finishShopIntro, finishGame, graduate, finishIntro }),
+    [ready, p, t, locale, setLocale, setPlayer, setCountry, completeLesson, passExam, setPlus, setReview, reset, buy, equip, setNumber, giftCap, finishShopIntro, finishGame, graduate, finishIntro],
   );
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;

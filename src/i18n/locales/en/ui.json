@@ -353,6 +353,9 @@
     "drops": "Dropped",
     "bestCatches": "Your record: {n} catches"
   },
+  "intro": {
+    "skip": "Skip"
+  },
   "grad": {
     "kicker": "YOU GRADUATED!",
     "title": "HALL OF FAME",

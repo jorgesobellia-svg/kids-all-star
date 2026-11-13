@@ -386,6 +386,9 @@ ui = {
   'drops': T('Se cayeron', 'Dropped', '漏接', '落とした'),
   'bestCatches': T('Tu récord: {n} atrapadas', 'Your record: {n} catches', '你的纪录：接住 {n} 个', 'きみの記録：キャッチ{n}回'),
  },
+ 'intro': {
+  'skip': T('Saltar', 'Skip', '跳过', 'スキップ'),
+ },
  'grad': {
   'kicker': T('¡GRADUADO!', 'YOU GRADUATED!', '毕业啦！', '卒業！'),
   'title': T('SALÓN DE LA FAMA', 'HALL OF FAME', '名人堂', '殿堂入り'),
