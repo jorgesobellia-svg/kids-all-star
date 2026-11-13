@@ -11,7 +11,7 @@ import PelotinBody from '@/components/PelotinBody';
 import type { BatPose } from '@/components/PelotinBat';
 import { tapFeedback } from '@/components/ui';
 import { PITCH } from '@/content/minigames';
-import { playSfx } from '@/services/sfx';
+import { playSfx, preloadUmpireCalls } from '@/services/sfx';
 import { speak, stopSpeaking } from '@/services/speech';
 import { avatarOf, type GameReward, useStore } from '@/state/store';
 import { C } from '@/theme';
@@ -173,7 +173,6 @@ export default function PitchGame() {
         o += 1;
         b = 0;
         s = 0;
-        playSfx('out');
         // El público celebra cada ponche.
         setCheer(true);
         tm.later(() => setCheer(false), 1600);
@@ -192,12 +191,14 @@ export default function PitchGame() {
       o += 1;
       b = 0;
       s = 0;
-      tm.later(() => playSfx('out'), 500);
     } else {
       nx.hits += 1;
       b = 0;
       s = 0;
     }
+    // El umpire canta cada lanzamiento (como en ¡A batear!); los outs en jugada, cuando cae la bola.
+    const voice = { strike: 'umpStrike', swingMiss: 'umpStrike', ball: 'umpBall', foul: 'umpFoul', groundOut: 'out', flyOut: 'out', hitAllowed: 'umpHit', walk: 'umpWalk', k: 'umpK' } as const;
+    tm.later(() => playSfx(voice[shown]), shown === 'groundOut' || shown === 'flyOut' ? 500 : shown === 'foul' || shown === 'hitAllowed' ? 250 : 0);
     game.current = { count: { b, s, o }, stats: nx };
     setCount({ b, s, o });
     setStats(nx);
@@ -214,6 +215,7 @@ export default function PitchGame() {
 
   function restart() {
     tm.clear();
+    preloadUmpireCalls();
     game.current = ZERO;
     setCount(ZERO.count);
     setStats(ZERO.stats);

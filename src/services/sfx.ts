@@ -20,7 +20,7 @@ const SOURCES = {
   out: require('../../assets/sfx/umpire-out.wav'),
   steps: require('../../assets/sfx/pasos.mp3'),
   crowd: require('../../assets/sfx/publico.wav'),
-  // Cantos del umpire en ¡A batear! (Kokoro, voz am_michael, Apache 2.0).
+  // Cantos del umpire en ¡A batear!, ¡A pichar! y Umpire por un día (Kokoro, voz am_michael, Apache 2.0).
   umpHit: require('../../assets/sfx/ump-hit.wav'),
   umpStrike: require('../../assets/sfx/ump-strike.wav'),
   umpBall: require('../../assets/sfx/ump-ball.wav'),

@@ -4,8 +4,10 @@ import { Pressable, ScrollView, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { BadgeMedal, BallBadge, CoinBall, Flame, LockIcon, Mascot, StarIcon } from '@/components/Art';
 import { LEVELS, STAGE_SUFFIX, stageOf } from '@/content/levels';
+import { MINIGAMES } from '@/content/minigames';
 import { content, translate } from '@/i18n';
 import { initials } from '@/services/moderation';
+import { tapFeedback } from '@/components/ui';
 import { useStore } from '@/state/store';
 import { C, F } from '@/theme';
 
@@ -27,7 +29,8 @@ export default function ProfileScreen() {
   const ct = content(locale);
   const levelNow = LEVELS.find((l) => !p.examsPassed[String(l.n)])?.n ?? LEVELS.length;
   const cards = Object.keys(p.completed).length;
-
+  // Solo aparecen los minijuegos ya desbloqueados (examen de su nivel aprobado).
+  const games = MINIGAMES.filter((g) => p.examsPassed[String(g.after)]);
 
   return (
     <ScrollView style={{ flex: 1, backgroundColor: C.bg }} contentContainerStyle={{ paddingTop: insets.top + 20, paddingHorizontal: 20, paddingBottom: 30, gap: 14 }}>
@@ -52,6 +55,34 @@ export default function ProfileScreen() {
         <Stat icon={<StarIcon size={28} color={C.red} stroke={C.red} />} value={t(`ranking.league_${p.league}`)} label={t('profile.league')} />
         <Stat icon={<CoinBall size={28} />} value={String(cards)} label={t('profile.cards')} />
       </View>
+
+      {games.length ? (
+        <View testID="profile-games" style={{ backgroundColor: C.white, borderRadius: 16, padding: 16, gap: 10 }}>
+          <Text style={{ fontFamily: F.bodyHeavy, fontSize: 16, color: C.ink }}>{t('profile.games')}</Text>
+          {games.map((g) => {
+            const best = p.games?.[g.id]?.best ?? 0;
+            return (
+              <Pressable
+                key={g.id}
+                testID={`profile-game-${g.id}`}
+                accessibilityRole="button"
+                accessibilityLabel={`${t('game.label')}: ${t(g.title)}`}
+                onPress={() => {
+                  tapFeedback();
+                  router.push(`/juego/${g.id}` as never);
+                }}
+                style={{ backgroundColor: C.gold, borderRadius: 14, paddingVertical: 10, paddingHorizontal: 14, flexDirection: 'row', alignItems: 'center', gap: 12, minHeight: 56, boxShadow: `0 4px 0 ${C.goldDark}` } as object}
+              >
+                <View style={{ flex: 1 }}>
+                  <Text style={{ fontFamily: F.display, fontSize: 20, color: C.navy }}>{t(g.title)}</Text>
+                  <Text style={{ fontFamily: F.bodyBold, fontSize: 13, color: C.navy }}>{best ? t(g.best, { n: best }) : t('game.play')}</Text>
+                </View>
+                <Text style={{ fontSize: 24, color: C.navy }}>›</Text>
+              </Pressable>
+            );
+          })}
+        </View>
+      ) : null}
 
       <View style={{ backgroundColor: C.white, borderRadius: 16, padding: 16, gap: 12 }}>
         <Text style={{ fontFamily: F.bodyHeavy, fontSize: 16, color: C.ink }}>{t('profile.badges')}</Text>

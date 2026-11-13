@@ -9,7 +9,7 @@ import { HF, stageOf } from '@/components/HighField';
 import PelotinBody from '@/components/PelotinBody';
 import { tapFeedback } from '@/components/ui';
 import { UMP } from '@/content/minigames';
-import { playSfx } from '@/services/sfx';
+import { playSfx, preloadUmpireCalls } from '@/services/sfx';
 import { speak, stopSpeaking } from '@/services/speech';
 import { avatarOf, type GameReward, useStore } from '@/state/store';
 import { C } from '@/theme';
@@ -128,9 +128,13 @@ export default function UmpireGame() {
     tapFeedback();
     const pt = pitch.current;
     const ok = said === pt.strike;
-    playSfx(ok ? 'safe' : 'out');
     const { count: k, stats: sx } = game.current;
     let { b, s } = k;
+    // Se oye la voz del umpire cantando lo que dijo el niño; si se equivocó, después suena el "out" de error.
+    const third = said && pt.strike && k.s >= 2;
+    const fourth = !said && !pt.strike && k.b >= 3;
+    playSfx(third ? 'umpK' : fourth ? 'umpWalk' : said ? 'umpStrike' : 'umpBall');
+    if (!ok) tm.later(() => playSfx('out'), 900);
     if (pt.strike) {
       s += 1;
       if (s >= 3) [b, s] = [0, 0];
@@ -158,6 +162,7 @@ export default function UmpireGame() {
 
   function restart() {
     tm.clear();
+    preloadUmpireCalls();
     game.current = ZERO;
     setCount(ZERO.count);
     setStats(ZERO.stats);

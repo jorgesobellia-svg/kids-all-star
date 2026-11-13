@@ -289,6 +289,7 @@ ui = {
   'league': T('liga actual', 'current league', '当前联赛', '今のリーグ'),
   'cards': T('tarjetas', 'cards', '张卡片', 'まいのカード'),
   'badges': T('Insignias', 'Badges', '徽章', 'バッジ'),
+  'games': T('Mis minijuegos', 'My mini-games', '我的小游戏', 'ミニゲーム'),
   'language': T('Idioma', 'Language', '语言', '言語'),
   'parents': T('Zona de padres', 'Parents area', '家长专区', 'おうちの人へ'),
   'plusActive': T('Plus activo', 'Plus active', 'Plus 已开通', 'Plus 利用中'),
