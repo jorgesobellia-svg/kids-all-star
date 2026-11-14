@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "Kids All Star",
-    "slug": "kids-all-star",
+    "name": "Pelotín",
+    "slug": "pelotin",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.kidsallstar.app",
+      "bundleIdentifier": "com.pelotin.app",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
@@ -21,7 +21,7 @@
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "package": "com.kidsallstar.app"
+      "package": "com.pelotin.app"
     },
     "web": {
       "bundler": "metro",
@@ -49,10 +49,10 @@
       ],
       "expo-audio"
     ],
-    "scheme": "kidsallstar",
+    "scheme": "pelotin",
     "experiments": {
       "typedRoutes": true
     },
-    "description": "Kids All Star: aprende béisbol jugando."
+    "description": "Pelotín: aprende béisbol jugando."
   }
 }

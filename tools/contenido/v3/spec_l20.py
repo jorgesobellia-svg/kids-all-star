@@ -1,4 +1,4 @@
-# Nivel 20 — El gran cierre All Star (todo repaso + ceremonia).
+# Nivel 20 — El gran cierre estelar (todo repaso + ceremonia).
 D = 'diamond'; F9 = 'field9'; Z = 'zone'; M = 'mound'; B = 'board'
 def seg(scene=D, hl=(), **kw):
     d = {'scene': scene, 'highlight': list(hl)}; d.update(kw); return d

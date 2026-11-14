@@ -110,7 +110,7 @@ personal, sin enseñar la misma regla dos veces.
 Nada cambia respecto a la Versión 2 y la Versión Fusionada: la descarga
 es gratis, el Nivel 1 completo es gratis, los primeros niveles de Novato
 sirven de enganche, y todo lo demás — ahora niveles 2 a 20 — se abre con
-Kids All Star Plus, USD 4.99 al mes o USD 39.99 al año, que compra
+Pelotín Plus, USD 4.99 al mes o USD 39.99 al año, que compra
 siempre un adulto detrás de la puerta para papás. Sin anuncios, nunca.
 
 Premios de etapa de este documento: al aprobar el examen del Nivel 16,
@@ -187,11 +187,11 @@ marca Plus en el mapa y se abren solo con suscripción activa.
 | 19 · Cuerpo y mente de un jugador | 19.3 | Respirar ante los nervios | La rutina corta para respirar ante los nervios |
 | 19 · Cuerpo y mente de un jugador | 19.4 | Soltar el error y ser líder con el ejemplo | Cómo soltar el error y liderar con el ejemplo |
 | 19 · Cuerpo y mente de un jugador | 19.5 | Practicar en casa y los límites que protegen | Cómo practicar seguro en casa y para qué son los límites que protegen |
-| 20 · El gran cierre All Star | 20.1 | Repaso Novato: el campo y tu turno | El diamante, las posiciones y el turno al bate de Novato, como repaso |
-| 20 · El gran cierre All Star | 20.2 | Repaso Prospecto: batear, outs y bases | Hit, outs, pisa y corre y el marcador de Prospecto, como repaso |
-| 20 · El gran cierre All Star | 20.3 | Repaso Estrella: reglas especiales y tu brazo | Robo, balk, reglas especiales y cuidado del brazo de Estrella, como repaso |
-| 20 · El gran cierre All Star | 20.4 | Repaso Leyenda y Salón: detalles, orden y carácter | Detalles, organización y seguridad de Leyenda y Salón, como repaso |
-| 20 · El gran cierre All Star | 20.5 | La ceremonia: tu camino completo | El camino completo de las cinco etapas y la ceremonia de cierre |
+| 20 · El gran cierre estelar | 20.1 | Repaso Novato: el campo y tu turno | El diamante, las posiciones y el turno al bate de Novato, como repaso |
+| 20 · El gran cierre estelar | 20.2 | Repaso Prospecto: batear, outs y bases | Hit, outs, pisa y corre y el marcador de Prospecto, como repaso |
+| 20 · El gran cierre estelar | 20.3 | Repaso Estrella: reglas especiales y tu brazo | Robo, balk, reglas especiales y cuidado del brazo de Estrella, como repaso |
+| 20 · El gran cierre estelar | 20.4 | Repaso Leyenda y Salón: detalles, orden y carácter | Detalles, organización y seguridad de Leyenda y Salón, como repaso |
+| 20 · El gran cierre estelar | 20.5 | La ceremonia: tu camino completo | El camino completo de las cinco etapas y la ceremonia de cierre |
 
 # Etapa Leyenda — Niveles 13 a 16
 
@@ -1475,12 +1475,12 @@ lecciones que debe repasar y puede intentarlo de nuevo.
 Al aprobar: insignia Cuerpo y Mente, 50 XP de bono, 10 pelotas y se
 desbloquea el siguiente nivel.
 
-# Nivel 20 — El gran cierre All Star
+# Nivel 20 — El gran cierre estelar
 
 El último nivel no enseña reglas nuevas: las cinco lecciones son un gran
 repaso marcado como repaso, una por etapa del camino — Novato,
 Prospecto, Estrella, Leyenda y Salón de la Fama — y la lección final es
-la ceremonia de cierre de todo Kids All Star. Al aprobar el examen
+la ceremonia de cierre de todo Pelotín. Al aprobar el examen
 final, el niño recibe el diploma del Salón de la Fama y el uniforme del
 Salón de la Fama para Pelotín. Insignia del nivel: Salón de la Fama.
 
@@ -1602,7 +1602,7 @@ por lección perfecta.
 
 ### Lección 20.5 La ceremonia: tu camino completo
 
-Objetivo: Cierre de todo Kids All Star: recordar el camino Novato →
+Objetivo: Cierre de todo Pelotín: recordar el camino Novato →
 Prospecto → Estrella → Leyenda → Salón de la Fama y la promesa que sigue
 fuera de la app: jugar, preguntarle al coach lo que cambia por liga y
 cuidar a compañeros y cuerpo.
@@ -1620,8 +1620,8 @@ la vida: cuida tu cuerpo y levanta a tu compañero. ¡A jugar!»
 
 | # | Tipo | Pregunta / instrucción | Opciones | Correcta | Si acierta / si falla |
 |---|---|---|---|---|---|
-| 1 | Selección simple | El orden completo de las etapas de Kids All Star es: | Novato, Prospecto, Estrella, Leyenda, Salón de la Fama / Estrella, Novato, Leyenda, Prospecto, Salón de la Fama / Leyenda, Novato, Salón de la Fama, Estrella, Prospecto | Novato, Prospecto, Estrella, Leyenda, Salón de la Fama | ¡Eso es! Tu camino entero. / Cinco etapas, una sola estrella: tú. |
-| 2 | Verdadero o falso | Al terminar Kids All Star ya no queda nada por aprender de béisbol | Verdadero / Falso | Falso | ¡Bien! El juego enseña siempre. / Falso: cada partido trae una lección nueva. |
+| 1 | Selección simple | El orden completo de las etapas de Pelotín es: | Novato, Prospecto, Estrella, Leyenda, Salón de la Fama / Estrella, Novato, Leyenda, Prospecto, Salón de la Fama / Leyenda, Novato, Salón de la Fama, Estrella, Prospecto | Novato, Prospecto, Estrella, Leyenda, Salón de la Fama | ¡Eso es! Tu camino entero. / Cinco etapas, una sola estrella: tú. |
+| 2 | Verdadero o falso | Al terminar Pelotín ya no queda nada por aprender de béisbol | Verdadero / Falso | Falso | ¡Bien! El juego enseña siempre. / Falso: cada partido trae una lección nueva. |
 | 3 | Selección simple | Lo que cambia según la liga o la edad, en el campo real, se resuelve: | Preguntándole a tu coach / Adivinándolo / Ignorándolo | Preguntándole a tu coach | ¡Correcto! La pregunta de oro. / Coach primero, siempre. |
 | 4 | Selección con imágenes | ¿Cuál imagen describe tu próxima temporada? | Un jugador en el campo con su equipo, casco puesto y sonrisa / Un jugador solo mirando partidos por televisión / Un trofeo guardado sin jugar más | Un jugador en el campo con su equipo, casco puesto y sonrisa | ¡Eso es! A jugar de verdad. / La app fue el mapa; el campo es el viaje. |
 | 5 | ¿Qué cantaría el umpire? | En tu primer juego real tras completar la app, antes del primer lanzamiento, el umpire canta como en cada partido: | «¡A jugar!» (Play ball) / «¡Examen terminado!» / «¡Fuera todos!» | «¡A jugar!» (Play ball) | ¡A jugar! Así empieza todo. / Play ball: tu nueva temporada comienza. |
@@ -1651,11 +1651,11 @@ lecciones que debe repasar y puede intentarlo de nuevo.
 | 9 | REPASO LEYENDA: la bola que roza el bate y el catcher atrapa directo es: | Foul tip, cuenta como strike / Foul normal siempre / Bola | Foul tip, cuenta como strike |
 | 10 | REPASO SALÓN: el batazo que gana el juego para el equipo de casa en su turno final es un: | Walk-off / Toque / Pickoff | Walk-off |
 | 11 | REPASO SALÓN: con corredores en primera y tercera, el plan de cada equipo empieza por mirar: | Los outs y la carrera que más importa / El público / El cielo | Los outs y la carrera que más importa |
-| 12 | REPASO FINAL: la frase que nunca cambia en todo Kids All Star es: | Lo que cambia por liga o edad se le pregunta al coach / Todas las ligas son iguales / Los números son los mismos en todo el mundo | Lo que cambia por liga o edad se le pregunta al coach |
+| 12 | REPASO FINAL: la frase que nunca cambia en todo Pelotín es: | Lo que cambia por liga o edad se le pregunta al coach / Todas las ligas son iguales / Los números son los mismos en todo el mundo | Lo que cambia por liga o edad se le pregunta al coach |
 
 Al aprobar: insignia Salón de la Fama, 50 XP de bono, 10 pelotas, el
 diploma del Salón de la Fama y el uniforme del Salón de la Fama para
-Pelotín. La app le muestra el mensaje de cierre de todo Kids All Star:
+Pelotín. La app le muestra el mensaje de cierre de todo Pelotín:
 completó las cinco etapas, de Novato a Salón de la Fama, y su béisbol de
 verdad apenas empieza en el campo, con su coach.
 
@@ -1766,7 +1766,7 @@ Nivel 19 — Cuerpo y mente de un jugador
 | Líder | Leader | 领袖 (lǐngxiù) | リーダー | El jugador que anima y ayuda con el ejemplo, sin gritar mandando. |
 | Límites que protegen | Safety limits | 保护限制 (bǎohù xiànzhì) | 安全のための制限 | Las reglas de la liga que cuidan el brazo y el cuerpo de los niños. |
 
-Nivel 20 — El gran cierre All Star
+Nivel 20 — El gran cierre estelar
 
 | Español | Inglés | 中文 | 日本語 | Qué es, en una línea |
 |---|---|---|---|---|
@@ -1924,7 +1924,7 @@ correcta. Termina con el examen de 12 preguntas, aprobación al 80 %.
 
 ### Prompt 20 — Nivel 20
 
-Construye el Nivel 20, El gran cierre All Star, con las lecciones 20.1 a
+Construye el Nivel 20, El gran cierre estelar, con las lecciones 20.1 a
 20.5 del guion: todos los contenidos son repaso de los niveles 1 a 19 y
 deben mostrarse en pantalla como repaso; no introduzcas ninguna regla
 nueva en este nivel. Al aprobar el examen final de 12 preguntas (80 %),

@@ -12,8 +12,8 @@ import { C, F } from '@/theme';
 // Puerta para papás: una multiplicación que un niño de 6 años no resuelve por accidente.
 // Detrás de la puerta está la única pantalla con pagos de toda la app.
 
-const PRIVACY_URL = 'https://kidsallstar.app/privacy';
-const TERMS_URL = 'https://kidsallstar.app/terms';
+const PRIVACY_URL = 'https://pelotin.app/privacy';
+const TERMS_URL = 'https://pelotin.app/terms';
 
 function PlanCard({ id, title, price, per, on, onPick, recommended }: { id: Plan; title: string; price: string; per: string; on: boolean; onPick: (p: Plan) => void; recommended: string }) {
     return (

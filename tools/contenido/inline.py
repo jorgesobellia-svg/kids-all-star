@@ -19,7 +19,7 @@ for s in srcs:
         code = code.replace('"' + full + '"', '(window.__KAS_BASE||"/")+"voice/es/' + name + '.mp3"')
     js.append(code.replace('</script','<\\/script'))
 boot="<script>try{window.__KAS_BASE=location.pathname.replace(/[^/]*$/,'')}catch(e){}try{if(location.pathname!=='/'){history.replaceState(null,'','/'+location.search)}}catch(e){}</script>"
-page=('<title>Kids All Star</title>\n<style>html,body{background:#0C2340;color-scheme:light;height:100%} body{margin:0;overflow:hidden} #root{display:flex;height:100%;flex:1}</style>\n'
+page=('<title>Pelotín</title>\n<style>html,body{background:#0C2340;color-scheme:light;height:100%} body{margin:0;overflow:hidden} #root{display:flex;height:100%;flex:1}</style>\n'
       '<div id="root"></div>'+boot+''.join(f'<script>{c}</script>' for c in js))
 open(out,'w').write(page)
 print(round(len(page)/1e6,2),'MB')

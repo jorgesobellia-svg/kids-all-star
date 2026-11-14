@@ -45,8 +45,8 @@
       "badge": "Braccio d'Acciaio"
     },
     "12": {
-      "title": "Pensare da All Star",
-      "badge": "All Star"
+      "title": "Pensare da campione",
+      "badge": "Campione"
     },
     "13": {
       "title": "Il ricevitore: il generale del campo",
@@ -77,7 +77,7 @@
       "badge": "Corpo e Mente"
     },
     "20": {
-      "title": "Il grande finale All Star",
+      "title": "Il grande finale da campioni",
       "badge": "Hall of Fame"
     }
   },
@@ -141,7 +141,7 @@
     "12.2": "L'uomo di taglio",
     "12.3": "Coprire e fare da rinforzo",
     "12.4": "I segnali del coach e il ripasso finale",
-    "12.5": "Sportività: così si comporta un All Star",
+    "12.5": "Sportività: così si comporta un campione",
     "13.1": "L'attrezzatura del ricevitore",
     "13.2": "I segnali al lanciatore",
     "13.3": "Bloccare la palla a terra",
@@ -3788,16 +3788,16 @@
       "demo": [
         "Hai la palla nel guantone e tutti corrono.",
         "Dove la tiri?",
-        "L'All Star risponde prima che battano: prima di ogni lancio si chiede: se la battono verso di me, cosa faccio?",
+        "Il campione risponde prima che battano: prima di ogni lancio si chiede: se la battono verso di me, cosa faccio?",
         "Quasi sempre conviene fermare il corridore più avanzato, quello più vicino a segnare.",
         "Ma un out sicuro vale più di un tiro impossibile: se il tiro lungo non si può fare, assicurati l'out in prima.",
-        "Pensare prima: questo separa un giocatore qualunque da un All Star."
+        "Pensare prima: questo separa un giocatore qualunque da un campione."
       ],
       "acts": {
         "1": {
           "q": "Quando devi pensare a dove tirerai la palla?",
           "ok": "Esatto! La giocata si pensa prima.",
-          "ko": "L'All Star arriva con il piano già fatto.",
+          "ko": "Il campione arriva con il piano già fatto.",
           "opts": {
             "a": "Prima di ogni lancio",
             "b": "Quando l'hai già nel guantone",
@@ -3982,7 +3982,7 @@
         "Loro vedono tutto il campo e ti dicono se continuare o fermarti: obbedire al tuo coach di terza fa parte del correre bene.",
         "La squadra ha anche dei segnali con le mani per chiedere una smorzata o una rubata: sono segreti e non si raccontano agli avversari.",
         "E prima di chiudere, ripasso lampo di quello che hai imparato in Stella (ripasso, non lezione nuova): se il lanciatore finge e non lascia la palla, è balk; se il terzo strike non viene preso pulito, il battitore può correre quando la regola si applica; e la volata facile con prima e seconda occupate è infield fly.",
-        "Se lo sapevi già, sei pronto a pensare da All Star."
+        "Se lo sapevi già, sei pronto a pensare da campione."
       ],
       "acts": {
         "1": {
@@ -4032,7 +4032,7 @@
         },
         "6": {
           "q": "Non hai capito un segnale dell'allenatore. La cosa migliore è:",
-          "ok": "Bene! Chiedere è da All Star.",
+          "ok": "Bene! Chiedere è da campione.",
           "ko": "Meglio chiedere che indovinare.",
           "opts": {
             "a": "Chiedere time e domandare",
@@ -4043,20 +4043,20 @@
       }
     },
     "12.5": {
-      "title": "Sportività: così si comporta un All Star",
-      "objective": "Chiudere i contenuti con il comportamento dell'All Star: rispettare le decisioni dell'arbitro, incoraggiare il compagno che sbaglia, salutare gli avversari alla fine che si vinca o si perda, e lasciare che sia l'allenatore a parlare con l'arbitro quando c'è una discussione.",
+      "title": "Sportività: così si comporta un campione",
+      "objective": "Chiudere i contenuti con il comportamento del campione: rispettare le decisioni dell'arbitro, incoraggiare il compagno che sbaglia, salutare gli avversari alla fine che si vinca o si perda, e lasciare che sia l'allenatore a parlare con l'arbitro quando c'è una discussione.",
       "demo": [
-        "Un All Star non è solo quello che batte fuoricampo.",
+        "Un Campione non è solo quello che batte fuoricampo.",
         "È quello che rispetta la decisione dell'arbitro anche se non gli piace, quello che incoraggia il compagno quando sbaglia invece di prenderlo in giro, e quello che alla fine della partita stringe la mano agli avversari, che vinca o che perda.",
         "Questa è la sportività, in inglese sportsmanship.",
         "Se la tua squadra non è d'accordo con una giocata, chi parla con l'arbitro è il tuo allenatore, con rispetto.",
         "Giocare bene si allena; comportarsi bene anche.",
-        "Questo è pensare, e agire, da All Star."
+        "Questo è pensare, e agire, da campione."
       ],
       "acts": {
         "1": {
-          "q": "L'arbitro chiama uno strike che a te sembrava ball. Cosa fa un All Star?",
-          "ok": "Questo è un All Star! Decide l'arbitro.",
+          "q": "L'arbitro chiama uno strike che a te sembrava ball. Cosa fa un campione?",
+          "ok": "Questo è un campione! Decide l'arbitro.",
           "ko": "Rispetta e vai avanti: così si gioca.",
           "opts": {
             "a": "Rispetta la decisione e continua a battere",
@@ -4067,7 +4067,7 @@
         "2": {
           "q": "Il tuo compagno ha fatto un errore che è costato un punto. Cosa gli dici?",
           "ok": "Giusto! Incoraggiare è da squadra.",
-          "ko": "Tutti sbagliano: l'All Star tira su il morale.",
+          "ko": "Tutti sbagliano: il campione tira su il morale.",
           "opts": {
             "a": "«Tranquillo, la prossima è tua!»",
             "b": "«Hai sbagliato tutto!»",
@@ -4102,7 +4102,7 @@
         "6": {
           "q": "Come si dice «sportività» in inglese?",
           "ok": "Bene! Sportsmanship.",
-          "ko": "Anche quella parola è da All Star.",
+          "ko": "Anche quella parola è da campione.",
           "opts": {
             "a": "Sportsmanship",
             "b": "Strikeout",
@@ -6592,16 +6592,16 @@
     },
     "20.5": {
       "title": "La cerimonia: il tuo percorso completo",
-      "objective": "Chiusura di tutto Kids All Star: ricordare il percorso Esordiente → Promessa → Stella → Leggenda → Hall of Fame e la promessa che continua fuori dall'app: giocare, chiedere all'allenatore quello che cambia secondo la lega e prendersi cura dei compagni e del corpo.",
+      "objective": "Chiusura di tutto Pelotín: ricordare il percorso Esordiente → Promessa → Stella → Leggenda → Hall of Fame e la promessa che continua fuori dall'app: giocare, chiedere all'allenatore quello che cambia secondo la lega e prendersi cura dei compagni e del corpo.",
       "demo": [
         "Ce l'hai fatta, campione.",
         "Guarda tutto il percorso che hai fatto: da Esordiente, contando ball e strike, a Promessa battendo e leggendo il tabellone; da Stella rubando e proteggendo il tuo braccio, a Leggenda controllando dettagli e campo; e oggi, Hall of Fame, pensando la partita e tirando su la tua squadra.",
-        "Kids All Star finisce qui, ma il tuo baseball è appena cominciato: scendi in campo, continua a imparare in ogni partita, chiedi al tuo allenatore tutto quello che cambia secondo la tua lega e non dimenticare mai le due regole che valgono per tutta la vita: prenditi cura del tuo corpo e tira su il tuo compagno.",
+        "Le lezioni di Pelotín finiscono qui, ma il tuo baseball è appena cominciato: scendi in campo, continua a imparare in ogni partita, chiedi al tuo allenatore tutto quello che cambia secondo la tua lega e non dimenticare mai le due regole che valgono per tutta la vita: prenditi cura del tuo corpo e tira su il tuo compagno.",
         "Si gioca!"
       ],
       "acts": {
         "1": {
-          "q": "L'ordine completo delle fasi di Kids All Star è:",
+          "q": "L'ordine completo delle fasi di Pelotín è:",
           "ok": "Esatto! Il tuo percorso intero.",
           "ko": "Cinque fasi, una sola stella: tu.",
           "opts": {
@@ -6611,7 +6611,7 @@
           }
         },
         "2": {
-          "q": "Finito Kids All Star non resta più niente da imparare sul baseball",
+          "q": "Finito Pelotín non resta più niente da imparare sul baseball",
           "ok": "Bene! Il gioco insegna sempre.",
           "ko": "Falso: ogni partita porta una lezione nuova."
         },
@@ -7678,7 +7678,7 @@
         "q": "Vero o falso: i segnali della squadra si raccontano all'avversario"
       },
       "11": {
-        "q": "Alla fine della partita, che tu vinca o perda, un All Star:",
+        "q": "Alla fine della partita, che tu vinca o perda, un campione:",
         "opts": {
           "a": "Saluta l'avversario",
           "b": "Se ne va senza salutare",
@@ -8470,7 +8470,7 @@
         }
       },
       "12": {
-        "q": "RIPASSO FINALE: la frase che non cambia mai in tutto Kids All Star è:",
+        "q": "RIPASSO FINALE: la frase che non cambia mai in tutto Pelotín è:",
         "opts": {
           "a": "Quello che cambia per lega o età si chiede all'allenatore",
           "b": "Tutte le leghe sono uguali",

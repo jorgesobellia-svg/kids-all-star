@@ -80,12 +80,12 @@
   "t": "日"
  },
  "ui/welcome/appName1": {
-  "es": "KIDS",
-  "t": "KIDS"
+  "es": "PELOTÍN",
+  "t": "PELOTÍN"
  },
  "ui/welcome/appName2": {
-  "es": "ALL STAR",
-  "t": "ALL STAR"
+  "es": "BÉISBOL",
+  "t": "BASEBALL"
  },
  "ui/welcome/tagline": {
   "es": "Aprende béisbol jugando,\n5 minutos al día.",
@@ -360,8 +360,8 @@
   "t": "Divisa Promessa"
  },
  "ui/shop/item/uni-allstar": {
-  "es": "Uniforme All Star",
-  "t": "Divisa All Star"
+  "es": "Uniforme de estrella",
+  "t": "Divisa da campione"
  },
  "ui/shop/item/uni-legend": {
   "es": "Uniforme de Leyenda",
@@ -756,12 +756,12 @@
   "t": "Diploma della fase Stella"
  },
  "ui/exam/stageTextStar": {
-  "es": "Ya sabes batear, correr, defender, lanzar con cuidado y pensar como un All Star.",
-  "t": "Ora sai battere, correre, difendere, lanciare con attenzione e pensare come un All Star."
+  "es": "Ya sabes batear, correr, defender, lanzar con cuidado y pensar como una estrella.",
+  "t": "Ora sai battere, correre, difendere, lanciare con attenzione e pensare come un campione."
  },
  "ui/exam/stageNextStar": {
-  "es": "Pelotín ya tiene su uniforme All Star.",
-  "t": "Pelotín ha già la divisa All Star."
+  "es": "Pelotín ya tiene su uniforme de estrella.",
+  "t": "Pelotín ha già la divisa da campione."
  },
  "ui/exam/stageTitleLegend": {
   "es": "¡Completaste la etapa Leyenda!",
@@ -1292,12 +1292,12 @@
   "t": "HALL OF FAME"
  },
  "ui/grad/text": {
-  "es": "{name}, completaste los 20 niveles de Kids All Star.",
-  "t": "{name}, hai completato i 20 livelli di Kids All Star."
+  "es": "{name}, completaste los 20 niveles de Pelotín.",
+  "t": "{name}, hai completato i 20 livelli di Pelotín."
  },
  "ui/grad/textNoName": {
-  "es": "Completaste los 20 niveles de Kids All Star.",
-  "t": "Hai completato i 20 livelli di Kids All Star."
+  "es": "Completaste los 20 niveles de Pelotín.",
+  "t": "Hai completato i 20 livelli di Pelotín."
  },
  "ui/grad/getCard": {
   "es": "RECIBIR MI TARJETA DORADA",
@@ -1320,8 +1320,8 @@
   "t": "È stata salvata nel tuo album"
  },
  "ui/grad/hof": {
-  "es": "SALÓN DE LA FAMA · KIDS ALL STAR",
-  "t": "HALL OF FAME · KIDS ALL STAR"
+  "es": "SALÓN DE LA FAMA · PELOTÍN",
+  "t": "HALL OF FAME · PELOTÍN"
  },
  "ui/grad/line": {
   "es": "20 niveles · 20 insignias · 4 minijuegos",
@@ -1356,24 +1356,24 @@
   "t": "VEDI IL MIO DIPLOMA"
  },
  "ui/grad/certKicker": {
-  "es": "KIDS ALL STAR",
-  "t": "KIDS ALL STAR"
+  "es": "PELOTÍN",
+  "t": "PELOTÍN"
  },
  "ui/grad/certTitle": {
   "es": "CERTIFICADO",
   "t": "DIPLOMA"
  },
  "ui/grad/certSub": {
-  "es": "DE GRADUACIÓN ALL STAR",
-  "t": "DI DIPLOMA ALL STAR"
+  "es": "DE GRADUACIÓN",
+  "t": "DI DIPLOMA"
  },
  "ui/grad/certTo": {
   "es": "Se otorga a",
   "t": "Assegnato a"
  },
  "ui/grad/certText": {
-  "es": "por completar los 20 niveles y aprobar los 20 exámenes de Kids All Star, y entrar al Salón de la Fama.",
-  "t": "per aver completato i 20 livelli, superato i 20 esami di Kids All Star ed essere entrato nella Hall of Fame."
+  "es": "por completar los 20 niveles y aprobar los 20 exámenes de Pelotín, y entrar al Salón de la Fama.",
+  "t": "per aver completato i 20 livelli, superato i 20 esami di Pelotín ed essere entrato nella Hall of Fame."
  },
  "ui/grad/certDate": {
   "es": "Fecha",
@@ -1424,8 +1424,8 @@
   "t": "ENTRA"
  },
  "ui/parents/title": {
-  "es": "Kids All Star Plus",
-  "t": "Kids All Star Plus"
+  "es": "Pelotín Plus",
+  "t": "Pelotín Plus"
  },
  "ui/parents/intro": {
   "es": "El Nivel 1 es gratis. Con Plus, tu hijo o hija desbloquea todo el contenido.",
@@ -2280,8 +2280,8 @@
   "t": "Ripasso finale"
  },
  "glossary/allStar": {
-  "es": "All Star",
-  "t": "All Star"
+  "es": "Estrella",
+  "t": "Campione"
  },
  "glossary/legacy": {
   "es": "Legado",
@@ -2388,12 +2388,12 @@
   "t": "Braccio d'Acciaio"
  },
  "content/levels/12/title": {
-  "es": "Pensar como All Star",
-  "t": "Pensare da All Star"
+  "es": "Pensar como estrella",
+  "t": "Pensare da campione"
  },
  "content/levels/12/badge": {
-  "es": "All Star",
-  "t": "All Star"
+  "es": "Estrella",
+  "t": "Campione"
  },
  "content/levels/13/title": {
   "es": "El catcher: el general del campo",
@@ -2452,8 +2452,8 @@
   "t": "Corpo e Mente"
  },
  "content/levels/20/title": {
-  "es": "El gran cierre All Star",
-  "t": "Il grande finale All Star"
+  "es": "El gran cierre estelar",
+  "t": "Il grande finale da campioni"
  },
  "content/levels/20/badge": {
   "es": "Salón de la Fama",
@@ -2696,8 +2696,8 @@
   "t": "I segnali del coach e il ripasso finale"
  },
  "content/lessonTitles/12.5": {
-  "es": "Deportividad: así se porta un All Star",
-  "t": "Sportività: così si comporta un All Star"
+  "es": "Deportividad: así se porta una estrella",
+  "t": "Sportività: così si comporta un campione"
  },
  "content/lessonTitles/13.1": {
   "es": "El equipo del catcher",
@@ -11428,8 +11428,8 @@
   "t": "Dove la tiri?"
  },
  "content/lessons/12.1/demo/#2": {
-  "es": "El All Star responde antes de que le bateen: antes de cada lanzamiento se pregunta, si me la batean, ¿qué hago?",
-  "t": "L'All Star risponde prima che battano: prima di ogni lancio si chiede: se la battono verso di me, cosa faccio?"
+  "es": "La estrella responde antes de que le bateen: antes de cada lanzamiento se pregunta, si me la batean, ¿qué hago?",
+  "t": "Il campione risponde prima che battano: prima di ogni lancio si chiede: se la battono verso di me, cosa faccio?"
  },
  "content/lessons/12.1/demo/#3": {
   "es": "Casi siempre conviene frenar al corredor más adelantado, el que está más cerca de anotar.",
@@ -11440,8 +11440,8 @@
   "t": "Ma un out sicuro vale più di un tiro impossibile: se il tiro lungo non si può fare, assicurati l'out in prima."
  },
  "content/lessons/12.1/demo/#5": {
-  "es": "Pensar antes: eso separa a un jugador cualquiera de un All Star.",
-  "t": "Pensare prima: questo separa un giocatore qualunque da un All Star."
+  "es": "Pensar antes: eso separa a un jugador cualquiera de una estrella.",
+  "t": "Pensare prima: questo separa un giocatore qualunque da un campione."
  },
  "content/lessons/12.1/acts/1/q": {
   "es": "¿Cuándo debes pensar a dónde vas a tirar la bola?",
@@ -11452,8 +11452,8 @@
   "t": "Esatto! La giocata si pensa prima."
  },
  "content/lessons/12.1/acts/1/ko": {
-  "es": "El All Star llega con el plan hecho.",
-  "t": "L'All Star arriva con il piano già fatto."
+  "es": "La estrella llega con el plan hecho.",
+  "t": "Il campione arriva con il piano già fatto."
  },
  "content/lessons/12.1/acts/1/opts/a": {
   "es": "Antes de cada lanzamiento",
@@ -11892,8 +11892,8 @@
   "t": "E prima di chiudere, ripasso lampo di quello che hai imparato in Stella (ripasso, non lezione nuova): se il lanciatore finge e non lascia la palla, è balk; se il terzo strike non viene preso pulito, il battitore può correre quando la regola si applica; e la volata facile con prima e seconda occupate è infield fly."
  },
  "content/lessons/12.4/demo/#4": {
-  "es": "Si ya lo sabías, estás listo para pensar como All Star.",
-  "t": "Se lo sapevi già, sei pronto a pensare da All Star."
+  "es": "Si ya lo sabías, estás listo para pensar como estrella.",
+  "t": "Se lo sapevi già, sei pronto a pensare da campione."
  },
  "content/lessons/12.4/acts/1/q": {
   "es": "¿Dónde están los coaches de base?",
@@ -12008,8 +12008,8 @@
   "t": "Non hai capito un segnale dell'allenatore. La cosa migliore è:"
  },
  "content/lessons/12.4/acts/6/ok": {
-  "es": "¡Bien! Preguntar es de All Star.",
-  "t": "Bene! Chiedere è da All Star."
+  "es": "¡Bien! Preguntar es de estrella.",
+  "t": "Bene! Chiedere è da campione."
  },
  "content/lessons/12.4/acts/6/ko": {
   "es": "Mejor preguntar que adivinar.",
@@ -12028,16 +12028,16 @@
   "t": "Andarmene nel dugout"
  },
  "content/lessons/12.5/title": {
-  "es": "Deportividad: así se porta un All Star",
-  "t": "Sportività: così si comporta un All Star"
+  "es": "Deportividad: así se porta una estrella",
+  "t": "Sportività: così si comporta un campione"
  },
  "content/lessons/12.5/objective": {
-  "es": "Cerrar el contenido con la conducta del All Star: respetar las decisiones del umpire, animar al compañero que falla, saludar al rival al final gane o pierda, y dejar que el coach hable con el umpire cuando haya una discusión.",
-  "t": "Chiudere i contenuti con il comportamento dell'All Star: rispettare le decisioni dell'arbitro, incoraggiare il compagno che sbaglia, salutare gli avversari alla fine che si vinca o si perda, e lasciare che sia l'allenatore a parlare con l'arbitro quando c'è una discussione."
+  "es": "Cerrar el contenido con la conducta de una estrella: respetar las decisiones del umpire, animar al compañero que falla, saludar al rival al final gane o pierda, y dejar que el coach hable con el umpire cuando haya una discusión.",
+  "t": "Chiudere i contenuti con il comportamento del campione: rispettare le decisioni dell'arbitro, incoraggiare il compagno che sbaglia, salutare gli avversari alla fine che si vinca o si perda, e lasciare che sia l'allenatore a parlare con l'arbitro quando c'è una discussione."
  },
  "content/lessons/12.5/demo/#0": {
-  "es": "Un All Star no es solo el que batea jonrones.",
-  "t": "Un All Star non è solo quello che batte fuoricampo."
+  "es": "Una estrella no es solo quien batea jonrones.",
+  "t": "Un Campione non è solo quello che batte fuoricampo."
  },
  "content/lessons/12.5/demo/#1": {
   "es": "Es el que respeta la decisión del umpire aunque no le guste, el que anima a su compañero cuando falla en vez de burlarse, y el que al terminar el juego da la mano al rival, gane o pierda.",
@@ -12056,16 +12056,16 @@
   "t": "Giocare bene si allena; comportarsi bene anche."
  },
  "content/lessons/12.5/demo/#5": {
-  "es": "Eso es pensar — y actuar — como un All Star.",
-  "t": "Questo è pensare, e agire, da All Star."
+  "es": "Eso es pensar — y actuar — como una estrella.",
+  "t": "Questo è pensare, e agire, da campione."
  },
  "content/lessons/12.5/acts/1/q": {
-  "es": "El umpire canta un strike que te pareció bola. ¿Qué hace un All Star?",
-  "t": "L'arbitro chiama uno strike che a te sembrava ball. Cosa fa un All Star?"
+  "es": "El umpire canta un strike que te pareció bola. ¿Qué hace una estrella?",
+  "t": "L'arbitro chiama uno strike che a te sembrava ball. Cosa fa un campione?"
  },
  "content/lessons/12.5/acts/1/ok": {
-  "es": "¡Eso es un All Star! El umpire decide.",
-  "t": "Questo è un All Star! Decide l'arbitro."
+  "es": "¡Eso es ser estrella! El umpire decide.",
+  "t": "Questo è un campione! Decide l'arbitro."
  },
  "content/lessons/12.5/acts/1/ko": {
   "es": "Respeta y sigue: así se juega.",
@@ -12092,8 +12092,8 @@
   "t": "Giusto! Incoraggiare è da squadra."
  },
  "content/lessons/12.5/acts/2/ko": {
-  "es": "Todos fallan: el All Star levanta.",
-  "t": "Tutti sbagliano: l'All Star tira su il morale."
+  "es": "Todos fallan: la estrella levanta.",
+  "t": "Tutti sbagliano: il campione tira su il morale."
  },
  "content/lessons/12.5/acts/2/opts/a": {
   "es": "«¡Tranquilo, la próxima es tuya!»",
@@ -12176,8 +12176,8 @@
   "t": "Bene! Sportsmanship."
  },
  "content/lessons/12.5/acts/6/ko": {
-  "es": "Esa palabra también es de All Star.",
-  "t": "Anche quella parola è da All Star."
+  "es": "Esa palabra también es de estrella.",
+  "t": "Anche quella parola è da campione."
  },
  "content/lessons/12.5/acts/6/opts/a": {
   "es": "Sportsmanship",
@@ -18112,8 +18112,8 @@
   "t": "La cerimonia: il tuo percorso completo"
  },
  "content/lessons/20.5/objective": {
-  "es": "Cierre de todo Kids All Star: recordar el camino Novato → Prospecto → Estrella → Leyenda → Salón de la Fama y la promesa que sigue fuera de la app: jugar, preguntarle al coach lo que cambia por liga y cuidar a compañeros y cuerpo.",
-  "t": "Chiusura di tutto Kids All Star: ricordare il percorso Esordiente → Promessa → Stella → Leggenda → Hall of Fame e la promessa che continua fuori dall'app: giocare, chiedere all'allenatore quello che cambia secondo la lega e prendersi cura dei compagni e del corpo."
+  "es": "Cierre de todo Pelotín: recordar el camino Novato → Prospecto → Estrella → Leyenda → Salón de la Fama y la promesa que sigue fuera de la app: jugar, preguntarle al coach lo que cambia por liga y cuidar a compañeros y cuerpo.",
+  "t": "Chiusura di tutto Pelotín: ricordare il percorso Esordiente → Promessa → Stella → Leggenda → Hall of Fame e la promessa che continua fuori dall'app: giocare, chiedere all'allenatore quello che cambia secondo la lega e prendersi cura dei compagni e del corpo."
  },
  "content/lessons/20.5/demo/#0": {
   "es": "Llegaste, campeón.",
@@ -18124,16 +18124,16 @@
   "t": "Guarda tutto il percorso che hai fatto: da Esordiente, contando ball e strike, a Promessa battendo e leggendo il tabellone; da Stella rubando e proteggendo il tuo braccio, a Leggenda controllando dettagli e campo; e oggi, Hall of Fame, pensando la partita e tirando su la tua squadra."
  },
  "content/lessons/20.5/demo/#2": {
-  "es": "Kids All Star se termina aquí, pero tu béisbol apenas empieza: sal al campo, sigue aprendiendo en cada juego, pregúntale a tu coach todo lo que cambia según tu liga y nunca olvides las dos reglas que valen para toda la vida: cuida tu cuerpo y levanta a tu compañero.",
-  "t": "Kids All Star finisce qui, ma il tuo baseball è appena cominciato: scendi in campo, continua a imparare in ogni partita, chiedi al tuo allenatore tutto quello che cambia secondo la tua lega e non dimenticare mai le due regole che valgono per tutta la vita: prenditi cura del tuo corpo e tira su il tuo compagno."
+  "es": "Las lecciones de Pelotín terminan aquí, pero tu béisbol apenas empieza: sal al campo, sigue aprendiendo en cada juego, pregúntale a tu coach todo lo que cambia según tu liga y nunca olvides las dos reglas que valen para toda la vida: cuida tu cuerpo y levanta a tu compañero.",
+  "t": "Le lezioni di Pelotín finiscono qui, ma il tuo baseball è appena cominciato: scendi in campo, continua a imparare in ogni partita, chiedi al tuo allenatore tutto quello che cambia secondo la tua lega e non dimenticare mai le due regole che valgono per tutta la vita: prenditi cura del tuo corpo e tira su il tuo compagno."
  },
  "content/lessons/20.5/demo/#3": {
   "es": "¡A jugar!",
   "t": "Si gioca!"
  },
  "content/lessons/20.5/acts/1/q": {
-  "es": "El orden completo de las etapas de Kids All Star es:",
-  "t": "L'ordine completo delle fasi di Kids All Star è:"
+  "es": "El orden completo de las etapas de Pelotín es:",
+  "t": "L'ordine completo delle fasi di Pelotín è:"
  },
  "content/lessons/20.5/acts/1/ok": {
   "es": "¡Eso es! Tu camino entero.",
@@ -18156,8 +18156,8 @@
   "t": "Leggenda, Esordiente, Hall of Fame, Stella, Promessa"
  },
  "content/lessons/20.5/acts/2/q": {
-  "es": "Al terminar Kids All Star ya no queda nada por aprender de béisbol",
-  "t": "Finito Kids All Star non resta più niente da imparare sul baseball"
+  "es": "Al terminar Pelotín ya no queda nada por aprender de béisbol",
+  "t": "Finito Pelotín non resta più niente da imparare sul baseball"
  },
  "content/lessons/20.5/acts/2/ok": {
   "es": "¡Bien! El juego enseña siempre.",
@@ -20220,8 +20220,8 @@
   "t": "Vero o falso: i segnali della squadra si raccontano all'avversario"
  },
  "content/exams/12/11/q": {
-  "es": "Al terminar el juego, ganes o pierdas, un All Star:",
-  "t": "Alla fine della partita, che tu vinca o perda, un All Star:"
+  "es": "Al terminar el juego, ganes o pierdas, una estrella:",
+  "t": "Alla fine della partita, che tu vinca o perda, un campione:"
  },
  "content/exams/12/11/opts/a": {
   "es": "Saluda al rival",
@@ -21772,8 +21772,8 @@
   "t": "Il cielo"
  },
  "content/exams/20/12/q": {
-  "es": "REPASO FINAL: la frase que nunca cambia en todo Kids All Star es:",
-  "t": "RIPASSO FINALE: la frase che non cambia mai in tutto Kids All Star è:"
+  "es": "REPASO FINAL: la frase que nunca cambia en todo Pelotín es:",
+  "t": "RIPASSO FINALE: la frase che non cambia mai in tutto Pelotín è:"
  },
  "content/exams/20/12/opts/a": {
   "es": "Lo que cambia por liga o edad se le pregunta al coach",

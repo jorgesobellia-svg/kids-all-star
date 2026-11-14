@@ -1,6 +1,6 @@
 import { Linking, Platform } from 'react-native';
 
-// Suscripción Kids All Star Plus.
+// Suscripción Pelotín Plus.
 // Los pagos van SOLO por Apple In-App Purchase y Google Play Billing, a través de RevenueCat
 // (que valida los recibos y avisa si la suscripción sigue activa).
 //

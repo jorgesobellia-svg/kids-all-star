@@ -1,4 +1,4 @@
-# Nivel 12 — Pensar como All Star.
+# Nivel 12 — Pensar como estrella.
 D = 'diamond'; F9 = 'field9'; M = 'mound'
 def seg(scene=D, hl=(), **kw):
     d = {'scene': scene, 'highlight': list(hl)}; d.update(kw); return d

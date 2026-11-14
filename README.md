@@ -1,4 +1,4 @@
-# Kids All Star
+# Pelotín (antes «Kids All Star»)
 
 App tipo Duolingo para que niños de 6 a 13 años aprendan béisbol jugando.
 Fuente única del contenido: `docs/guion-v2.md` (documento "Kids All Star – Contenido Niveles 1-4", Versión 2).
@@ -59,7 +59,7 @@ Ningún texto está escrito en las pantallas: todo sale de los archivos de idiom
 
 ## Conectar la suscripción (Apple y Google)
 
-1. **App Store Connect**: crea la app (`com.kidsallstar.app`), categoría **Kids** (6-8 y 9-11), y un grupo de suscripciones con `kas_plus_monthly` (USD 4.99) y `kas_plus_annual` (USD 39.99). Elige el nivel de precio equivalente para cada país.
+1. **App Store Connect**: crea la app (`com.pelotin.app`), categoría **Kids** (6-8 y 9-11), y un grupo de suscripciones con `kas_plus_monthly` (USD 4.99) y `kas_plus_annual` (USD 39.99). Elige el nivel de precio equivalente para cada país.
 2. **Google Play Console**: crea la app, únete al programa **Designed for Families** y crea las mismas dos suscripciones.
 3. **RevenueCat**: crea el proyecto, conecta las dos tiendas, crea el entitlement `plus` y la offering `default` con los paquetes Monthly y Annual.
 4. Copia `.env.example` como `.env` y pon las claves públicas de RevenueCat.
@@ -85,7 +85,7 @@ eas submit --platform all
 ```
 
 Antes de enviar:
-- **Política de privacidad** publicada. La app la enlaza en `kidsallstar.app/privacy` y los términos en `kidsallstar.app/terms`; cambia esas direcciones en `src/app/papas.tsx` si usas otras.
+- **Política de privacidad** publicada. La app la enlaza en `pelotin.app/privacy` y los términos en `pelotin.app/terms`; cambia esas direcciones en `src/app/papas.tsx` si usas otras.
 - **Formulario de privacidad de Apple y Data safety de Google.** Solo se guarda apodo, país y XP, sin anuncios ni rastreo.
 - **Capturas de tienda** en los 4 idiomas, y los textos de la ficha (Prompt 7).
 

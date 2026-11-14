@@ -187,7 +187,7 @@ function CardFront({ w, name, avatar }: { w: number; name: string; avatar: Avata
   return (
     <CardFrame w={w}>
       <View style={{ position: 'absolute', top: 16, left: 0, right: 0, alignItems: 'center' }}>
-        <Text style={{ fontFamily: F.display, fontSize: w * 0.075, color: C.gold, letterSpacing: 2 }}>★ ALL STAR ★</Text>
+        <Text style={{ fontFamily: F.display, fontSize: w * 0.075, color: C.gold, letterSpacing: 2 }}>★ PELOTÍN ★</Text>
       </View>
       <View style={{ position: 'absolute', top: h * 0.12, left: 0, right: 0, alignItems: 'center' }}>
         <PelotinBody avatar={avatar} height={h * 0.52} holdBat face={{ mood: 'cheer' }} />
@@ -391,7 +391,7 @@ export default function Graduation() {
     title: t('grad.certTitle'),
     sub: t('grad.certSub'),
     to: t('grad.certTo'),
-    name: name || 'All Star',
+    name: name || 'Pelotín',
     text: t('grad.certText'),
     date: dateText(p.graduated, locale),
     dateLabel: t('grad.certDate'),
@@ -501,7 +501,7 @@ export default function Graduation() {
             {t('grad.cardTitle')}
           </Text>
           <Text style={{ fontFamily: F.bodySemi, fontSize: 15, color: '#CBD5E1', textAlign: 'center', marginBottom: 6 }}>{t('grad.cardSub')}</Text>
-          <GoldenCard w={Math.min(270, W - 90, (H - 330) / 1.4)} name={name || 'All Star'} avatar={avatar} />
+          <GoldenCard w={Math.min(270, W - 90, (H - 330) / 1.4)} name={name || 'Pelotín'} avatar={avatar} />
           <Text style={{ fontFamily: F.bodyBold, fontSize: 14, color: C.white, textAlign: 'center', marginTop: 8 }}>{t('grad.flip')}</Text>
           <Text style={{ fontFamily: F.body, fontSize: 13, color: '#CBD5E1', textAlign: 'center' }}>{t('grad.inAlbum')}</Text>
           <View style={{ flex: 1, minHeight: 12 }} />

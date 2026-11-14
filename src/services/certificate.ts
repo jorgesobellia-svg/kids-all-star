@@ -2,7 +2,7 @@ import * as Print from 'expo-print';
 import * as Sharing from 'expo-sharing';
 import { Platform } from 'react-native';
 
-// Certificado de graduación All Star: una página tamaño carta en HTML que se imprime o se
+// Certificado de graduación de Pelotín: una página tamaño carta en HTML que se imprime o se
 // guarda como PDF para compartir. Todo va dentro del HTML (sin imágenes externas), porque
 // en el iPhone la impresión no puede leer archivos locales.
 

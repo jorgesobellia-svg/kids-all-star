@@ -98,14 +98,14 @@ juego, sin enseñar la misma regla dos veces.
 
 Nada cambia respecto a la Versión 2: la descarga es gratis, el Nivel 1
 completo es gratis, los primeros niveles de Novato sirven de enganche, y
-todo lo demás — ahora niveles 2 a 12 — se abre con Kids All Star Plus,
+todo lo demás — ahora niveles 2 a 12 — se abre con Pelotín Plus,
 USD 4.99 al mes o USD 39.99 al año, que compra siempre un adulto detrás
 de la puerta para papás. Sin anuncios, nunca.
 
 Premios de etapa de este documento: al aprobar el examen del Nivel 8, el
 niño recibe el diploma de Prospecto y el uniforme de Prospecto para
 Pelotín, el mismo que la Versión 2 ya anuncia. Al aprobar el examen del
-Nivel 12, recibe el diploma de Estrella y el uniforme All Star para
+Nivel 12, recibe el diploma de Estrella y el uniforme de estrella para
 Pelotín.
 
 # Los 4 idiomas: las reglas también nacen traducidas
@@ -176,11 +176,11 @@ marca Plus en el mapa y se abren solo con suscripción activa.
 | 11 · El brazo del pitcher     | 11.3        | Recta y cambio: los primeros lanzamientos | Recta y cambio primero; las curvas, solo cuando el coach lo decida                         |
 | 11 · El brazo del pitcher     | 11.4        | Cuidar el brazo                           | Conteo y descanso según edad y liga, sin números fijos; si duele, parar y avisar           |
 | 11 · El brazo del pitcher     | 11.5        | El relevo                                 | Abridor, relevista y bullpen: cambiar de pitcher también cuida el brazo                    |
-| 12 · Pensar como All Star     | 12.1        | A dónde tirar la bola                     | Pensar antes del lanzamiento a dónde tirar; el out seguro vale                             |
-| 12 · Pensar como All Star     | 12.2        | El cortador                               | Relevar los tiros largos de los jardines con un defensor del cuadro                        |
-| 12 · Pensar como All Star     | 12.3        | Cubrir y respaldar                        | En cada jugada todos se mueven: cubrir la base vacía y respaldar el tiro                   |
-| 12 · Pensar como All Star     | 12.4        | Las señales del coach y el repaso final   | Coaches de base y señales secretas; repaso breve de balk, strike caído e infield fly       |
-| 12 · Pensar como All Star     | 12.5        | Deportividad: así se porta un All Star    | Respeto al umpire, al rival y al compañero, gane o pierda                                  |
+| 12 · Pensar como estrella     | 12.1        | A dónde tirar la bola                     | Pensar antes del lanzamiento a dónde tirar; el out seguro vale                             |
+| 12 · Pensar como estrella     | 12.2        | El cortador                               | Relevar los tiros largos de los jardines con un defensor del cuadro                        |
+| 12 · Pensar como estrella     | 12.3        | Cubrir y respaldar                        | En cada jugada todos se mueven: cubrir la base vacía y respaldar el tiro                   |
+| 12 · Pensar como estrella     | 12.4        | Las señales del coach y el repaso final   | Coaches de base y señales secretas; repaso breve de balk, strike caído e infield fly       |
+| 12 · Pensar como estrella     | 12.5        | Deportividad: así se porta una estrella    | Respeto al umpire, al rival y al compañero, gane o pierda                                  |
 
 # Etapa Prospecto — Niveles 5 a 8
 
@@ -1438,14 +1438,14 @@ marca las lecciones que debe repasar y puede intentarlo de nuevo.
 Al aprobar: insignia Brazo de Acero, 50 XP de bono, 10 pelotas y se
 desbloquea el siguiente nivel.
 
-# Nivel 12 — Pensar como All Star
+# Nivel 12 — Pensar como estrella
 
 El último nivel no es de reglas nuevas: es de cabeza. El niño combina
 todo lo aprendido: piensa antes del lanzamiento a dónde tirar, relevos
 largos con el cortador, cubrir y respaldar en cada jugada, señales del
 coach, y el repaso breve de las reglas especiales en situaciones
-combinadas. Y cierra como se cierra un All Star: con deportividad.
-Insignia del nivel: All Star.
+combinadas. Y cierra como se cierra una estrella: con deportividad.
+Insignia del nivel: Estrella.
 
 ### Lección 12.1 A dónde tirar la bola
 
@@ -1465,7 +1465,7 @@ Star.»
 
 | **\#** | **Tipo**          | **Pregunta / instrucción**                                                                                        | **Opciones**                                                                              | **Correcta**                                             | **Si acierta / si falla**                                                         |
 |--------|-------------------|-------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|----------------------------------------------------------|-----------------------------------------------------------------------------------|
-| 1      | Selección simple  | ¿Cuándo debes pensar a dónde vas a tirar la bola?                                                                 | Antes de cada lanzamiento / Cuando ya la tengas en el guante / Nunca, se improvisa        | Antes de cada lanzamiento                                | ¡Eso es! La jugada se piensa antes. / El All Star llega con el plan hecho.        |
+| 1      | Selección simple  | ¿Cuándo debes pensar a dónde vas a tirar la bola?                                                                 | Antes de cada lanzamiento / Cuando ya la tengas en el guante / Nunca, se improvisa        | Antes de cada lanzamiento                                | ¡Eso es! La jugada se piensa antes. / La estrella llega con el plan hecho.        |
 | 2      | Selección simple  | Sin corredores, atrapas un rolling. ¿A dónde tiras?                                                               | A primera / A home / A tercera                                                            | A primera                                                | ¡Correcto! El out está en primera. / Sin corredores, primera manda.               |
 | 3      | Verdadero o falso | Un out seguro es mejor que intentar un tiro imposible y no hacer ninguno                                          | Verdadero / Falso                                                                         | Verdadero                                                | ¡Sí! Asegura el out. / Verdadero: un out real vale más que un sueño.              |
 | 4      | Toca en el campo  | Corredor en primera, rolling fácil al campocorto con tiempo. Toca la base donde frenas al corredor más adelantado | — (toca segunda)                                                                          | Segunda base                                             | ¡Bien! Ahí frenas al líder. / El más adelantado se frena en segunda.              |
@@ -1550,7 +1550,7 @@ aprendido en Estrella — repaso, no lección nueva: si el pitcher finge y
 no suelta, es balk; si el tercer strike no se atrapa limpio, el bateador
 puede correr cuando la regla aplica; y el elevado fácil con primera y
 segunda ocupadas es infield fly. Si ya lo sabías, estás listo para
-pensar como All Star.»
+pensar como estrella.»
 
 | **\#** | **Tipo**                 | **Pregunta / instrucción**                                                                      | **Opciones**                                                          | **Correcta**                      | **Si acierta / si falla**                                                         |
 |--------|--------------------------|-------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|-----------------------------------|-----------------------------------------------------------------------------------|
@@ -1559,37 +1559,37 @@ pensar como All Star.»
 | 3      | Verdadero o falso        | Las señales del equipo se le pueden contar al rival si pregunta amable                          | Verdadero / Falso                                                     | Falso                             | ¡Bien! Son secretas. / Falso: las señales son del equipo.                         |
 | 4      | Selección simple         | Repaso: el pitcher fingió tirar a primera y no soltó la bola, con corredor en base. Eso fue:    | Un balk / Un pickoff legal / Un robo                                  | Un balk                           | ¡Bien, repaso logrado! Era balk. / Repaso del Nivel 9: fingir sin soltar es balk. |
 | 5      | ¿Qué cantaría el umpire? | Repaso: elevado fácil al cuadro, corredores en primera y segunda, un out. ¿Qué canta el umpire? | «¡Infield fly! Bateador out» / «¡Safe!» / «¡Bola!»                    | «¡Infield fly! Bateador out»      | ¡Eso es, repaso del Nivel 10! / Infield fly: bateador out cantado en el aire.     |
-| 6      | Selección simple         | No entendiste una señal del coach. Lo mejor es:                                                 | Pedir tiempo y preguntar / Hacer lo que yo quiera / Irme al dugout    | Pedir tiempo y preguntar          | ¡Bien! Preguntar es de All Star. / Mejor preguntar que adivinar.                  |
+| 6      | Selección simple         | No entendiste una señal del coach. Lo mejor es:                                                 | Pedir tiempo y preguntar / Hacer lo que yo quiera / Irme al dugout    | Pedir tiempo y preguntar          | ¡Bien! Preguntar es de estrella. / Mejor preguntar que adivinar.                  |
 
 Cierre: +10 XP por respuesta correcta, +5 XP de bono si termina sin
 errores. Gana 1 pelota (moneda) por respuesta correcta y 3 pelotas extra
 por lección perfecta.
 
-### Lección 12.5 Deportividad: así se porta un All Star
+### Lección 12.5 Deportividad: así se porta una estrella
 
-Objetivo: Cerrar el contenido con la conducta del All Star: respetar las
+Objetivo: Cerrar el contenido con la conducta de una estrella: respetar las
 decisiones del umpire, animar al compañero que falla, saludar al rival
 al final gane o pierda, y dejar que el coach hable con el umpire cuando
 haya una discusión.
 
 Demostración (30-60 segundos) — guion de Pelotín:
 
-«Un All Star no es solo el que batea jonrones. Es el que respeta la
+«Una estrella no es solo quien batea jonrones. Es el que respeta la
 decisión del umpire aunque no le guste, el que anima a su compañero
 cuando falla en vez de burlarse, y el que al terminar el juego da la
 mano al rival, gane o pierda. Eso es deportividad, en inglés
 sportsmanship. Si tu equipo no está de acuerdo con una jugada, el que
 habla con el umpire es tu coach, con respeto. Jugar bien se entrena;
-portarse bien también. Eso es pensar — y actuar — como un All Star.»
+portarse bien también. Eso es pensar — y actuar — como una estrella.»
 
 | **\#** | **Tipo**               | **Pregunta / instrucción**                                                    | **Opciones**                                                                                                     | **Correcta**                            | **Si acierta / si falla**                                                           |
 |--------|------------------------|-------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|-----------------------------------------|-------------------------------------------------------------------------------------|
-| 1      | Selección simple       | El umpire canta un strike que te pareció bola. ¿Qué hace un All Star?         | Respeta la decisión y sigue bateando / Le grita al umpire / Tira el bate                                         | Respeta la decisión y sigue bateando    | ¡Eso es un All Star! El umpire decide. / Respeta y sigue: así se juega.             |
-| 2      | Selección simple       | Tu compañero cometió un error que costó una carrera. ¿Qué le dices?           | «¡Tranquilo, la próxima es tuya!» / «¡Lo hiciste todo mal!» / Nada, y me enojo con él                            | «¡Tranquilo, la próxima es tuya!»       | ¡Correcto! Animar es de equipo. / Todos fallan: el All Star levanta.                |
+| 1      | Selección simple       | El umpire canta un strike que te pareció bola. ¿Qué hace una estrella?         | Respeta la decisión y sigue bateando / Le grita al umpire / Tira el bate                                         | Respeta la decisión y sigue bateando    | ¡Eso es ser estrella! El umpire decide. / Respeta y sigue: así se juega.             |
+| 2      | Selección simple       | Tu compañero cometió un error que costó una carrera. ¿Qué le dices?           | «¡Tranquilo, la próxima es tuya!» / «¡Lo hiciste todo mal!» / Nada, y me enojo con él                            | «¡Tranquilo, la próxima es tuya!»       | ¡Correcto! Animar es de equipo. / Todos fallan: la estrella levanta.                |
 | 3      | Verdadero o falso      | Al terminar el juego se da la mano al rival solo si ganaste                   | Verdadero / Falso                                                                                                | Falso                                   | ¡Bien! Se da la mano siempre. / Falso: gane o pierda, la mano va.                   |
 | 4      | Selección simple       | Si tu equipo no está de acuerdo con una decisión, ¿quién habla con el umpire? | El coach, con respeto / Todos los jugadores gritando / El público                                                | El coach, con respeto                   | ¡Eso es! El coach y con respeto. / Hablar es trabajo del coach.                     |
 | 5      | Selección con imágenes | ¿Cuál imagen muestra deportividad?                                            | Dos equipos dándose la mano al terminar / Un jugador tirando el casco de rabia / Un jugador burlándose del rival | Dos equipos dándose la mano al terminar | ¡Correcto! Respeto al final del juego. / La fila de manos: el cierre de todo juego. |
-| 6      | Selección simple       | ¿Cómo se dice deportividad en inglés?                                         | Sportsmanship / Strikeout / Shortstop                                                                            | Sportsmanship                           | ¡Bien! Sportsmanship. / Esa palabra también es de All Star.                         |
+| 6      | Selección simple       | ¿Cómo se dice deportividad en inglés?                                         | Sportsmanship / Strikeout / Shortstop                                                                            | Sportsmanship                           | ¡Bien! Sportsmanship. / Esa palabra también es de estrella.                         |
 
 Cierre: +10 XP por respuesta correcta, +5 XP de bono si termina sin
 errores. Gana 1 pelota (moneda) por respuesta correcta y 3 pelotas extra
@@ -1613,13 +1613,13 @@ marca las lecciones que debe repasar y puede intentarlo de nuevo.
 | 8 | ¿Para qué sirve respaldar (back up) detrás de una base? | Para frenar la bola si se escapa / Para descansar / Para batear | Para frenar la bola si se escapa |
 | 9 | ¿Quién te dice si sigues corriendo o te frenas en tercera? | El coach de tercera / El rival / El público | El coach de tercera |
 | 10 | Verdadero o falso: las señales del equipo se le cuentan al rival | Verdadero / Falso | Falso |
-| 11 | Al terminar el juego, ganes o pierdas, un All Star: | Saluda al rival / Se va sin saludar / Se burla del rival | Saluda al rival |
+| 11 | Al terminar el juego, ganes o pierdas, una estrella: | Saluda al rival / Se va sin saludar / Se burla del rival | Saluda al rival |
 | 12 | Si no estás de acuerdo con el umpire, ¿qué haces? | Dejo que mi coach hable con él / Le grito / Tiro el casco | Dejo que mi coach hable con él |
 
-Al aprobar: insignia All Star, 50 XP de bono, 10 pelotas, el diploma de
-Estrella y el uniforme All Star para Pelotín. La app le muestra el
+Al aprobar: insignia Estrella, 50 XP de bono, 10 pelotas, el diploma de
+Estrella y el uniforme de estrella para Pelotín. La app le muestra el
 mensaje de cierre: ya sabe batear, correr, defender, lanzar con cuidado
-y pensar como un All Star.
+y pensar como una estrella.
 
 # Glosario en 4 idiomas por nivel
 
@@ -1729,7 +1729,7 @@ para «bola muerta» en chino.
 | Días de descanso    | Rest days              | 休息日 (xiūxírì)                                | 休養日                        | Los días sin lanzar que siguen a una salida, según la edad y la liga |
 | Relevista / bullpen | Reliever / bullpen     | 中继投手 / 牛棚 (zhōngjì tóushǒu / niúpéng)     | リリーフ / ブルペン           | El pitcher que entra a mitad del juego / la zona donde calienta      |
 
-## Nivel 12 — Pensar como All Star
+## Nivel 12 — Pensar como estrella
 
 | **Español**             | **Inglés**      | **中文**                               | **日本語**                    | **Qué es, en una línea**                                                 |
 |-------------------------|-----------------|----------------------------------------|-------------------------------|--------------------------------------------------------------------------|
@@ -1875,12 +1875,12 @@ preguntas, aprobación al 80 %.
 
 ## Prompt 12 — Nivel 12
 
-Construye el Nivel 12, Pensar como All Star, con las lecciones 12.1 a
+Construye el Nivel 12, Pensar como estrella, con las lecciones 12.1 a
 12.5: a dónde tirar la bola, el cortador, cubrir y respaldar, las
 señales del coach (con el repaso breve de balk, tercer strike caído e
 infield fly dentro de la 12.4, marcado como repaso y sin convertirlo en
 lección nueva) y deportividad. Al aprobar el examen de 12 preguntas (80
-%), entrega el diploma de Estrella y aplica el uniforme All Star a
+%), entrega el diploma de Estrella y aplica el uniforme de estrella a
 Pelotín, con la pantalla de cierre de la etapa Estrella y de la app
 completa.
 

@@ -1,6 +1,6 @@
 rules_version = '2';
 
-// Scoreboard de Kids All Star.
+// Scoreboard de Pelotín.
 // Cada documento players/{playerId} guarda SOLO: apodo, país, liga, semana y XP.
 // Nada de nombres reales, correos ni datos del niño (COPPA).
 service cloud.firestore {

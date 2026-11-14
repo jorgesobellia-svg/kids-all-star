@@ -4020,8 +4020,8 @@
  },
  "12": {
   "n": 12,
-  "title": "Pensar como All Star",
-  "intro": "El último nivel no es de reglas nuevas: es de cabeza. El niño combina todo lo aprendido: piensa antes del lanzamiento a dónde tirar, relevos largos con el cortador, cubrir y respaldar en cada jugada, señales del coach, y el repaso breve de las reglas especiales en situaciones combinadas. Y cierra como se cierra un All Star: con deportividad. Insignia del nivel: All Star.",
+  "title": "Pensar como estrella",
+  "intro": "El último nivel no es de reglas nuevas: es de cabeza. El niño combina todo lo aprendido: piensa antes del lanzamiento a dónde tirar, relevos largos con el cortador, cubrir y respaldar en cada jugada, señales del coach, y el repaso breve de las reglas especiales en situaciones combinadas. Y cierra como se cierra una estrella: con deportividad. Insignia del nivel: Estrella.",
   "lessons": [
    {
     "id": "12.1",
@@ -4039,7 +4039,7 @@
       ],
       "correct": "Antes de cada lanzamiento",
       "right": "¡Eso es! La jugada se piensa antes.",
-      "wrong": "El All Star llega con el plan hecho."
+      "wrong": "La estrella llega con el plan hecho."
      },
      {
       "n": 2,
@@ -4110,7 +4110,7 @@
      }
     ],
     "objective": "Pensar antes de cada lanzamiento a dónde irá la bola según los corredores y los outs, buscando primero frenar al corredor más adelantado y aceptando el out seguro cuando el tiro difícil no se puede.",
-    "demoRaw": "«Tienes la bola en el guante y todos corren. ¿A dónde la tiras? El All Star responde antes de que le bateen: antes de cada lanzamiento se pregunta, si me la batean, ¿qué hago? Casi siempre conviene frenar al corredor más adelantado, el que está más cerca de anotar. Pero un out seguro vale más que un tiro imposible: si el tiro largo no se puede, asegura el out en primera. Pensar antes: eso separa a un jugador cualquiera de un All Star.»"
+    "demoRaw": "«Tienes la bola en el guante y todos corren. ¿A dónde la tiras? La estrella responde antes de que le bateen: antes de cada lanzamiento se pregunta, si me la batean, ¿qué hago? Casi siempre conviene frenar al corredor más adelantado, el que está más cerca de anotar. Pero un out seguro vale más que un tiro imposible: si el tiro largo no se puede, asegura el out en primera. Pensar antes: eso separa a un jugador cualquiera de una estrella.»"
    },
    {
     "id": "12.2",
@@ -4374,29 +4374,29 @@
        "Irme al dugout"
       ],
       "correct": "Pedir tiempo y preguntar",
-      "right": "¡Bien! Preguntar es de All Star.",
+      "right": "¡Bien! Preguntar es de estrella.",
       "wrong": "Mejor preguntar que adivinar."
      }
     ],
     "objective": "Conocer a los coaches de primera y tercera, que ven toda la jugada y mandan seguir o frenar, y las señales secretas del equipo; y repasar en situaciones cortas las reglas especiales de los niveles 9 y 10, solo como repaso.",
-    "demoRaw": "«Junto a primera y a tercera están los coaches de base, dentro de sus cuadros. Ellos ven todo el campo y te dicen si sigues o te frenas: obedecer a tu coach de tercera es parte de correr bien. El equipo además tiene señales con las manos para pedir un toque o un robo: son secretas y no se cuentan al rival. Y antes de cerrar, repaso relámpago de lo aprendido en Estrella — repaso, no lección nueva: si el pitcher finge y no suelta, es balk; si el tercer strike no se atrapa limpio, el bateador puede correr cuando la regla aplica; y el elevado fácil con primera y segunda ocupadas es infield fly. Si ya lo sabías, estás listo para pensar como All Star.»"
+    "demoRaw": "«Junto a primera y a tercera están los coaches de base, dentro de sus cuadros. Ellos ven todo el campo y te dicen si sigues o te frenas: obedecer a tu coach de tercera es parte de correr bien. El equipo además tiene señales con las manos para pedir un toque o un robo: son secretas y no se cuentan al rival. Y antes de cerrar, repaso relámpago de lo aprendido en Estrella — repaso, no lección nueva: si el pitcher finge y no suelta, es balk; si el tercer strike no se atrapa limpio, el bateador puede correr cuando la regla aplica; y el elevado fácil con primera y segunda ocupadas es infield fly. Si ya lo sabías, estás listo para pensar como estrella.»"
    },
    {
     "id": "12.5",
-    "title": "Deportividad: así se porta un All Star",
+    "title": "Deportividad: así se porta una estrella",
     "acts": [
      {
       "n": 1,
       "tipo": "Selección simple",
       "type": "choice",
-      "q": "El umpire canta un strike que te pareció bola. ¿Qué hace un All Star?",
+      "q": "El umpire canta un strike que te pareció bola. ¿Qué hace una estrella?",
       "opts": [
        "Respeta la decisión y sigue bateando",
        "Le grita al umpire",
        "Tira el bate"
       ],
       "correct": "Respeta la decisión y sigue bateando",
-      "right": "¡Eso es un All Star! El umpire decide.",
+      "right": "¡Eso es ser estrella! El umpire decide.",
       "wrong": "Respeta y sigue: así se juega."
      },
      {
@@ -4411,7 +4411,7 @@
       ],
       "correct": "«¡Tranquilo, la próxima es tuya!»",
       "right": "¡Correcto! Animar es de equipo.",
-      "wrong": "Todos fallan: el All Star levanta."
+      "wrong": "Todos fallan: la estrella levanta."
      },
      {
       "n": 3,
@@ -4466,11 +4466,11 @@
       ],
       "correct": "Sportsmanship",
       "right": "¡Bien! Sportsmanship.",
-      "wrong": "Esa palabra también es de All Star."
+      "wrong": "Esa palabra también es de estrella."
      }
     ],
-    "objective": "Cerrar el contenido con la conducta del All Star: respetar las decisiones del umpire, animar al compañero que falla, saludar al rival al final gane o pierda, y dejar que el coach hable con el umpire cuando haya una discusión.",
-    "demoRaw": "«Un All Star no es solo el que batea jonrones. Es el que respeta la decisión del umpire aunque no le guste, el que anima a su compañero cuando falla en vez de burlarse, y el que al terminar el juego da la mano al rival, gane o pierda. Eso es deportividad, en inglés sportsmanship. Si tu equipo no está de acuerdo con una jugada, el que habla con el umpire es tu coach, con respeto. Jugar bien se entrena; portarse bien también. Eso es pensar — y actuar — como un All Star.»"
+    "objective": "Cerrar el contenido con la conducta de una estrella: respetar las decisiones del umpire, animar al compañero que falla, saludar al rival al final gane o pierda, y dejar que el coach hable con el umpire cuando haya una discusión.",
+    "demoRaw": "«Una estrella no es solo quien batea jonrones. Es el que respeta la decisión del umpire aunque no le guste, el que anima a su compañero cuando falla en vez de burlarse, y el que al terminar el juego da la mano al rival, gane o pierda. Eso es deportividad, en inglés sportsmanship. Si tu equipo no está de acuerdo con una jugada, el que habla con el umpire es tu coach, con respeto. Jugar bien se entrena; portarse bien también. Eso es pensar — y actuar — como una estrella.»"
    }
   ],
   "exam": [
@@ -4572,7 +4572,7 @@
    },
    {
     "n": 11,
-    "q": "Al terminar el juego, ganes o pierdas, un All Star:",
+    "q": "Al terminar el juego, ganes o pierdas, una estrella:",
     "opts": [
      "Saluda al rival",
      "Se va sin saludar",
@@ -4591,7 +4591,7 @@
     "correct": "Dejo que mi coach hable con él"
    }
   ],
-  "reward": "Al aprobar: insignia All Star, 50 XP de bono, 10 pelotas, el diploma de Estrella y el uniforme All Star para Pelotín. La app le muestra el mensaje de cierre: ya sabe batear, correr, defender, lanzar con cuidado y pensar como un All Star."
+  "reward": "Al aprobar: insignia Estrella, 50 XP de bono, 10 pelotas, el diploma de Estrella y el uniforme de estrella para Pelotín. La app le muestra el mensaje de cierre: ya sabe batear, correr, defender, lanzar con cuidado y pensar como una estrella."
  },
  "13": {
   "n": 13,
@@ -8658,8 +8658,8 @@
  },
  "20": {
   "n": 20,
-  "title": "El gran cierre All Star",
-  "intro": "El último nivel no enseña reglas nuevas: las cinco lecciones son un gran repaso marcado como repaso, una por etapa del camino — Novato, Prospecto, Estrella, Leyenda y Salón de la Fama — y la lección final es la ceremonia de cierre de todo Kids All Star. Al aprobar el examen final, el niño recibe el diploma del Salón de la Fama y el uniforme del Salón de la Fama para Pelotín. Insignia del nivel: Salón de la Fama.",
+  "title": "El gran cierre estelar",
+  "intro": "El último nivel no enseña reglas nuevas: las cinco lecciones son un gran repaso marcado como repaso, una por etapa del camino — Novato, Prospecto, Estrella, Leyenda y Salón de la Fama — y la lección final es la ceremonia de cierre de todo Pelotín. Al aprobar el examen final, el niño recibe el diploma del Salón de la Fama y el uniforme del Salón de la Fama para Pelotín. Insignia del nivel: Salón de la Fama.",
   "lessons": [
    {
     "id": "20.1",
@@ -9023,7 +9023,7 @@
       "n": 1,
       "tipo": "Selección simple",
       "type": "choice",
-      "q": "El orden completo de las etapas de Kids All Star es:",
+      "q": "El orden completo de las etapas de Pelotín es:",
       "opts": [
        "Novato, Prospecto, Estrella, Leyenda, Salón de la Fama",
        "Estrella, Novato, Leyenda, Prospecto, Salón de la Fama",
@@ -9037,7 +9037,7 @@
       "n": 2,
       "tipo": "Verdadero o falso",
       "type": "tf",
-      "q": "Al terminar Kids All Star ya no queda nada por aprender de béisbol",
+      "q": "Al terminar Pelotín ya no queda nada por aprender de béisbol",
       "opts": [
        "Verdadero",
        "Falso"
@@ -9101,8 +9101,8 @@
       "wrong": "Cuerpo cuidado y compañero levantado: eso es un Salón de la Fama."
      }
     ],
-    "objective": "Cierre de todo Kids All Star: recordar el camino Novato → Prospecto → Estrella → Leyenda → Salón de la Fama y la promesa que sigue fuera de la app: jugar, preguntarle al coach lo que cambia por liga y cuidar a compañeros y cuerpo.",
-    "demoRaw": "«Llegaste, campeón. Mira todo el camino que recorriste: de Novato, contando bolas y strikes, a Prospecto bateando y leyendo el marcador; de Estrella robando y cuidando tu brazo, a Leyenda revisando detalles y campo; y hoy, Salón de la Fama, pensando el juego y levantando a tu equipo. Kids All Star se termina aquí, pero tu béisbol apenas empieza: sal al campo, sigue aprendiendo en cada juego, pregúntale a tu coach todo lo que cambia según tu liga y nunca olvides las dos reglas que valen para toda la vida: cuida tu cuerpo y levanta a tu compañero. ¡A jugar!»"
+    "objective": "Cierre de todo Pelotín: recordar el camino Novato → Prospecto → Estrella → Leyenda → Salón de la Fama y la promesa que sigue fuera de la app: jugar, preguntarle al coach lo que cambia por liga y cuidar a compañeros y cuerpo.",
+    "demoRaw": "«Llegaste, campeón. Mira todo el camino que recorriste: de Novato, contando bolas y strikes, a Prospecto bateando y leyendo el marcador; de Estrella robando y cuidando tu brazo, a Leyenda revisando detalles y campo; y hoy, Salón de la Fama, pensando el juego y levantando a tu equipo. Las lecciones de Pelotín terminan aquí, pero tu béisbol apenas empieza: sal al campo, sigue aprendiendo en cada juego, pregúntale a tu coach todo lo que cambia según tu liga y nunca olvides las dos reglas que valen para toda la vida: cuida tu cuerpo y levanta a tu compañero. ¡A jugar!»"
    }
   ],
   "exam": [
@@ -9218,7 +9218,7 @@
    },
    {
     "n": 12,
-    "q": "REPASO FINAL: la frase que nunca cambia en todo Kids All Star es:",
+    "q": "REPASO FINAL: la frase que nunca cambia en todo Pelotín es:",
     "opts": [
      "Lo que cambia por liga o edad se le pregunta al coach",
      "Todas las ligas son iguales",
@@ -9227,6 +9227,6 @@
     "correct": "Lo que cambia por liga o edad se le pregunta al coach"
    }
   ],
-  "reward": "Al aprobar: insignia Salón de la Fama, 50 XP de bono, 10 pelotas, el diploma del Salón de la Fama y el uniforme del Salón de la Fama para Pelotín. La app le muestra el mensaje de cierre de todo Kids All Star: completó las cinco etapas, de Novato a Salón de la Fama, y su béisbol de verdad apenas empieza en el campo, con su coach."
+  "reward": "Al aprobar: insignia Salón de la Fama, 50 XP de bono, 10 pelotas, el diploma del Salón de la Fama y el uniforme del Salón de la Fama para Pelotín. La app le muestra el mensaje de cierre de todo Pelotín: completó las cinco etapas, de Novato a Salón de la Fama, y su béisbol de verdad apenas empieza en el campo, con su coach."
  }
 }

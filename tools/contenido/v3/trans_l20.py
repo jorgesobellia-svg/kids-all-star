@@ -1,7 +1,7 @@
-# Nivel 20 — El gran cierre All Star. Glosario: 名人堂/野球殿堂, 证书/修了証, 总复习/総復習, 全明星/オールスター,
+# Nivel 20 — El gran cierre estelar. Glosario: 名人堂/野球殿堂, 证书/修了証, 总复习/総復習, 明星/スター,
 # 传承/レガシー, 毕业/卒業, 锦标赛/選手権, 开始比赛/プレイボール. Bola muerta en chino: 死球（比赛停止）.
 TR = {
- 'title': ('The big All Star finale', '全明星大结局', 'オールスターのグランドフィナーレ'),
+ 'title': ('The big star finale', '明星大结局', 'スターのグランドフィナーレ'),
  'badge': ('Hall of Fame', '名人堂', '野球殿堂'),
  'lessons': {
   '20.1': {
@@ -160,21 +160,21 @@ TR = {
   },
   '20.5': {
    'title': ('The graduation ceremony: your whole path', '毕业典礼：你走过的整条路', '卒業セレモニー：君の道のり全部'),
-   'obj': ('Closing of all Kids All Star: remember the path Rookie → Prospect → Star → Legend → Hall of Fame and the promise that goes on outside the app: play, ask the coach what changes by league, and look after teammates and your body.',
-           'Kids All Star 全部结束：回想新秀 → 潜力新星 → 明星 → 传奇 → 名人堂这条路，还有在应用之外继续的承诺：去比赛，联赛不同的地方问教练，照顾队友和自己的身体。',
-           'Kids All Star 全部のしめくくり：ルーキー → プロスペクト → スター → レジェンド → 野球殿堂の道を思い出そう。そしてアプリの外でも続く約束：プレーする、リーグでちがうことはコーチに聞く、仲間と体を大事にする。'),
+   'obj': ('Closing of all of Pelotín: remember the path Rookie → Prospect → Star → Legend → Hall of Fame and the promise that goes on outside the app: play, ask the coach what changes by league, and look after teammates and your body.',
+           'Pelotín 全部结束：回想新秀 → 潜力新星 → 明星 → 传奇 → 名人堂这条路，还有在应用之外继续的承诺：去比赛，联赛不同的地方问教练，照顾队友和自己的身体。',
+           'Pelotín 全部のしめくくり：ルーキー → プロスペクト → スター → レジェンド → 野球殿堂の道を思い出そう。そしてアプリの外でも続く約束：プレーする、リーグでちがうことはコーチに聞く、仲間と体を大事にする。'),
    'demo': [
      ('Llegaste, campeón.', 'You made it, champ.', '你做到了，冠军。', 'やったね、チャンピオン。'),
      ('Mira todo el camino que recorriste: de Novato, contando bolas y strikes, a Prospecto bateando y leyendo el marcador; de Estrella robando y cuidando tu brazo, a Leyenda revisando detalles y campo; y hoy, Salón de la Fama, pensando el juego y levantando a tu equipo.', 'Look at the path you walked: from Rookie, counting balls and strikes, to Prospect, hitting and reading the scoreboard; from Star, stealing and looking after your arm, to Legend, checking details and the field; and today, Hall of Fame, thinking the game and lifting up your team.', '看看你走过的路：从数着坏球和好球的新秀，到会打击、会看记分板的潜力新星；从会盗垒、会保护手臂的明星，到会检查细节和球场的传奇；而今天，你是名人堂球员，会思考比赛，会鼓舞你的球队。', '歩いてきた道を見て：ボールとストライクを数えたルーキーから、打ってスコアボードを読むプロスペクトへ。盗塁してうでを大事にしたスターから、細かいことやグラウンドをたしかめるレジェンドへ。そして今日は野球殿堂。試合を考えて、チームを元気づける。'),
-     ('Kids All Star se termina aquí, pero tu béisbol apenas empieza: sal al campo, sigue aprendiendo en cada juego, pregúntale a tu coach todo lo que cambia según tu liga y nunca olvides las dos reglas que valen para toda la vida: cuida tu cuerpo y levanta a tu compañero.', "Kids All Star ends here, but your baseball is just beginning: get out on the field, keep learning in every game, ask your coach everything that changes by league, and never forget the two rules that last a lifetime: look after your body and lift up your teammate.", 'Kids All Star 到这里结束了，但你的棒球才刚刚开始：走上球场，每场比赛都继续学习，联赛不同的地方都问问教练，永远不要忘记一辈子都有用的两条规则：照顾好你的身体，扶起你的队友。', 'Kids All Star はここで終わり。でも君の野球は始まったばかり：グラウンドに出よう。試合ごとに学びつづけよう。リーグでちがうことは全部コーチに聞こう。そして一生大切な2つのルールをわすれないで：自分の体を大事にする、仲間を元気づける。'),
+     ('Las lecciones de Pelotín terminan aquí, pero tu béisbol apenas empieza: sal al campo, sigue aprendiendo en cada juego, pregúntale a tu coach todo lo que cambia según tu liga y nunca olvides las dos reglas que valen para toda la vida: cuida tu cuerpo y levanta a tu compañero.', "Pelotín's lessons end here, but your baseball is just beginning: get out on the field, keep learning in every game, ask your coach everything that changes by league, and never forget the two rules that last a lifetime: look after your body and lift up your teammate.", 'Pelotín 的课程到这里结束了，但你的棒球才刚刚开始：走上球场，每场比赛都继续学习，联赛不同的地方都问问教练，永远不要忘记一辈子都有用的两条规则：照顾好你的身体，扶起你的队友。', 'Pelotín のレッスンはここで終わり。でも君の野球は始まったばかり：グラウンドに出よう。試合ごとに学びつづけよう。リーグでちがうことは全部コーチに聞こう。そして一生大切な2つのルールをわすれないで：自分の体を大事にする、仲間を元気づける。'),
      ('¡A jugar!', 'Play ball!', '开始比赛！', 'プレイボール！'),
    ],
    'acts': {
-    1: {'q': ('The full order of the Kids All Star stages is:', 'Kids All Star 各阶段的完整顺序是：', 'Kids All Star のステージの順番は：'),
+    1: {'q': ('The full order of the Pelotín stages is:', 'Pelotín 各阶段的完整顺序是：', 'Pelotín のステージの順番は：'),
         'o': [('Rookie, Prospect, Star, Legend, Hall of Fame', '新秀、潜力新星、明星、传奇、名人堂', 'ルーキー、プロスペクト、スター、レジェンド、野球殿堂'), ('Star, Rookie, Legend, Prospect, Hall of Fame', '明星、新秀、传奇、潜力新星、名人堂', 'スター、ルーキー、レジェンド、プロスペクト、野球殿堂'), ('Legend, Rookie, Hall of Fame, Star, Prospect', '传奇、新秀、名人堂、明星、潜力新星', 'レジェンド、ルーキー、野球殿堂、スター、プロスペクト')],
         'ok': ("That's it! Your whole path.", '对了！你走过的整条路。', 'そのとおり！君の道のり全部。'),
         'ko': ('Five stages, one single star: you.', '五个阶段，只有一个明星：你。', '5つのステージ、スターはひとり：君だ。')},
-    2: {'q': ("When you finish Kids All Star there's nothing left to learn about baseball", '完成 Kids All Star 后，棒球就没什么可学的了', 'Kids All Star を終えたら、野球で学ぶことはもうない'),
+    2: {'q': ("When you finish Pelotín there's nothing left to learn about baseball", '完成 Pelotín 后，棒球就没什么可学的了', 'Pelotín を終えたら、野球で学ぶことはもうない'),
         'ok': ('Good! The game always teaches.', '很好！比赛永远在教你。', 'いいね！野球はいつも教えてくれる。'),
         'ko': ('False: every game brings a new lesson.', '错：每场比赛都会带来新的一课。', 'まちがい：試合ごとに新しいレッスンがある。')},
     3: {'q': ('What changes by league or age, on the real field, is solved by:', '在真正的球场上，联赛或年龄不同的地方，要靠什么解决：', '本当のグラウンドで、リーグや年れいでちがうことは：'),
@@ -221,14 +221,14 @@ TR = {
        'o': [('Walk-off', '再见安打', 'サヨナラヒット'), ('Bunt', '触击', 'バント'), ('Pickoff', '牵制出局', 'けん制')]},
   11: {'q': ("HALL REVIEW: with runners on first and third, each team's plan starts by looking at:", '名人堂复习：一垒三垒有人时，每支球队的计划都从看什么开始：', '殿堂の復習：一塁と三塁にランナー。どちらのチームも作戦はまず何を見る？'),
        'o': [('The outs and the run that matters most', '出局数和最重要的那一分', 'アウトの数と、いちばん大事な得点'), ('The crowd', '观众', 'お客さん'), ('The sky', '天空', '空')]},
-  12: {'q': ('FINAL REVIEW: the phrase that never changes in all of Kids All Star is:', '总复习：整个 Kids All Star 里永远不变的一句话是：', '総復習：Kids All Star でずっとかわらない言葉は：'),
+  12: {'q': ('FINAL REVIEW: the phrase that never changes in all of Pelotín is:', '总复习：整个 Pelotín 里永远不变的一句话是：', '総復習：Pelotín でずっとかわらない言葉は：'),
        'o': [('What changes by league or age, you ask the coach', '联赛或年龄不同的地方，就问教练', 'リーグや年れいでちがうことは、コーチに聞く'), ('All leagues are the same', '所有联赛都一样', 'どのリーグも同じ'), ('The numbers are the same all over the world', '全世界的数字都一样', '数字は世界中で同じ')]},
  },
  'gloss': {
   'hallOfFame': ('Salón de la Fama', 'Hall of Fame', '名人堂', '野球殿堂'),
   'diploma': ('Diploma', 'Diploma / certificate', '证书', '修了証'),
   'finalReview': ('Repaso final', 'Final review', '总复习', '総復習'),
-  'allStar': ('All Star', 'All-Star', '全明星', 'オールスター'),
+  'allStar': ('Estrella', 'Star', '明星', 'スター'),
   'legacy': ('Legado', 'Legacy', '传承', 'レガシー / 伝統'),
   'graduation': ('Graduación', 'Graduation', '毕业', '卒業'),
   'championship': ('Campeonato', 'Championship', '锦标赛', '選手権 / 優勝'),
