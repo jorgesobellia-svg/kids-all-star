@@ -1,0 +1,27 @@
+:root { --navy: #0E2240; --red: #C8102E; --gold: #FFC72C; --ink: #1B2333; --muted: #5B6577; --bg: #F6F7FB; --card: #FFFFFF; --line: #E2E6EF; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+header { background: var(--navy); color: #fff; padding: 20px 16px; }
+header .in { max-width: 760px; margin: 0 auto; display: flex; align-items: center; gap: 14px; }
+header img { width: 48px; height: 48px; border-radius: 12px; }
+header a { color: #fff; text-decoration: none; font-weight: 800; font-size: 24px; letter-spacing: .5px; }
+nav.lang { max-width: 760px; margin: 16px auto 0; padding: 0 16px; display: flex; gap: 8px; }
+nav.lang a { padding: 6px 14px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); color: var(--navy); font-weight: 700; text-decoration: none; font-size: 15px; }
+main { max-width: 760px; margin: 0 auto; padding: 8px 16px 48px; }
+section { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 8px 22px 20px; margin-top: 16px; }
+h1 { font-size: 28px; line-height: 1.2; color: var(--navy); }
+h2 { font-size: 20px; color: var(--navy); margin-top: 28px; }
+.fecha { color: var(--muted); font-size: 15px; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { text-align: left; vertical-align: top; padding: 8px; border-bottom: 1px solid var(--line); }
+th { color: var(--navy); }
+a { color: var(--red); }
+footer { text-align: center; color: var(--muted); font-size: 14px; padding: 24px 16px 40px; }
+.hero { text-align: center; padding: 48px 16px 24px; }
+.hero img { width: 120px; height: 120px; border-radius: 28px; }
+.hero h1 { font-size: 44px; margin: 16px 0 0; letter-spacing: 1px; }
+.hero .sub { color: var(--red); font-weight: 800; font-size: 22px; margin: 0; }
+.hero p { color: var(--muted); max-width: 520px; margin: 16px auto; }
+.pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 20px 0; }
+.pills span { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: 15px; font-weight: 600; }
+@media (max-width: 520px) { th, td { padding: 6px 4px; font-size: 14px; } section { padding: 4px 14px 16px; } }
