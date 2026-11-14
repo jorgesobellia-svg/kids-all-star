@@ -1,9 +1,11 @@
 # Copia las pistas de voz grabadas (Kokoro) a assets/voice/<idioma> y genera src/content/voice<Idioma>.ts,
 # que dice en qué pista y en qué segundo empieza cada frase.
-# Uso: python3 voice_manifest.py CARPETA_DE_PISTAS [es|en]   (es = em_alex, en = am_echo)
+# Uso: python3 voice_manifest.py CARPETA_DE_PISTAS [es|en|it|pt]
+#   es = em_alex, en = am_echo, it = mezcla em_alex + im_nicola, pt = pm_alex (portugués de Brasil)
 import json, os, shutil, sys
 SRC = sys.argv[1]; LANG = sys.argv[2] if len(sys.argv) > 2 else 'es'
-VOICE = {'es': 'em_alex; términos de béisbol en inglés con pronunciación inglesa', 'en': 'am_echo'}[LANG]
+VOICE = {'es': 'em_alex; términos de béisbol en inglés con pronunciación inglesa', 'en': 'am_echo',
+         'it': '0.6 em_alex + 0.4 im_nicola', 'pt': 'pm_alex (portugués de Brasil)'}[LANG]
 U = LANG.upper(); Cap = LANG.capitalize()
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DST = os.path.join(ROOT, 'assets', 'voice', LANG); os.makedirs(DST, exist_ok=True)

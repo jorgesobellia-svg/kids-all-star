@@ -14,5 +14,7 @@
 
 - `assets/sfx/publico.wav`: público del estadio celebrando (gritos y aplausos). Sintetizado por nosotros con `tools/contenido/gen_publico.py`; no usa grabaciones de terceros.
 - `assets/sfx/ump-*.wav` (hit, strike, ball, foul, home run, strike three, ball four, Welcome to the Hall of Fame): cantos del umpire en los minijuegos y la graduación, generados con Kokoro (voz am_michael, Apache 2.0).
+- `assets/voice/<idioma>/*.mp3`: la voz de Pelotín, generada con Kokoro (Apache 2.0). Español: em_alex; inglés: am_echo;
+  italiano: mezcla 0.6 em_alex + 0.4 im_nicola; portugués de Brasil: pm_alex. Chino y japonés usan la voz del teléfono.
 - `assets/sfx/fuegos.wav`: fuegos artificiales de la graduación, sintetizados con `tools/contenido/gen_fuegos.py` (sin grabaciones de terceros).
 - `assets/music/publico-estadio.mp3`: "Stadium Crowd Stomps & Clapping" de Tomas Herudek (Uppbeat), recortado y hecho bucle. Ambiente de los minijuegos. Revisar en Uppbeat si pide crédito.

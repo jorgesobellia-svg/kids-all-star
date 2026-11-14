@@ -2,6 +2,8 @@ import { createAudioPlayer, type AudioPlayer } from 'expo-audio';
 import * as Speech from 'expo-speech';
 import { VOICE_EN_FILES, VOICE_EN_INDEX } from '@/content/voiceEn';
 import { VOICE_ES_FILES, VOICE_ES_INDEX } from '@/content/voiceEs';
+import { VOICE_IT_FILES, VOICE_IT_INDEX } from '@/content/voiceIt';
+import { VOICE_PT_FILES, VOICE_PT_INDEX } from '@/content/voicePt';
 import { Platform } from 'react-native';
 import { SPEECH_LANG, type Locale } from '@/i18n';
 import { playSfx } from './sfx';
@@ -106,27 +108,31 @@ function speakWeb(s: WebSynth, text: string, locale: Locale, id: number, onDone?
 
 // ------------------------------------------------------------ voz grabada
 type Clip = [number, number, number];
-// Voz grabada por idioma (español: Alex; inglés: Echo). Chino y japonés usan la voz del teléfono.
-type VoiceLang = 'es' | 'en';
+// Voz grabada por idioma (español: Alex; inglés: Echo; italiano: Alex con Nicola; portugués: Alex de Brasil).
+// Chino y japonés usan la voz del teléfono.
+type VoiceLang = 'es' | 'en' | 'it' | 'pt-BR';
 const VOICES: Record<VoiceLang, { files: number[]; index: Record<string, Clip>; hello: RegExp; helloKey: string }> = {
   // El saludo con el nombre ("¡Hola, Claude! ...") no puede ir grabado: suena "¡Hola!" grabado y sigue la frase.
   es: { files: VOICE_ES_FILES, index: VOICE_ES_INDEX, hello: /^¡Hola, [^!]+! /, helloKey: '¡Hola!' },
   en: { files: VOICE_EN_FILES, index: VOICE_EN_INDEX, hello: /^Hi, [^!]+! /, helloKey: 'Hi!' },
+  it: { files: VOICE_IT_FILES, index: VOICE_IT_INDEX, hello: /^Ciao, [^!]+! /, helloKey: 'Ciao!' },
+  'pt-BR': { files: VOICE_PT_FILES, index: VOICE_PT_INDEX, hello: /^Oi, [^!]+! /, helloKey: 'Oi!' },
 };
 const voicePlayers: Record<string, AudioPlayer> = {};
 let activeClip: AudioPlayer | null = null;
 let clipTimer: ReturnType<typeof setTimeout> | null = null;
 
 function clipsFor(text: string, locale: Locale): { lang: VoiceLang; clips: Clip[] } | null {
-  if (locale !== 'es' && locale !== 'en') return null;
-  const v = VOICES[locale];
+  if (!(locale in VOICES)) return null;
+  const lang = locale as VoiceLang;
+  const v = VOICES[lang];
   const whole = v.index[text];
-  if (whole) return { lang: locale, clips: [whole] };
+  if (whole) return { lang, clips: [whole] };
   const m = text.match(v.hello);
   if (m) {
     const hello = v.index[v.helloKey];
     const rest = v.index[text.slice(m[0].length)];
-    if (hello && rest) return { lang: locale, clips: [hello, rest] };
+    if (hello && rest) return { lang, clips: [hello, rest] };
   }
   return null;
 }
