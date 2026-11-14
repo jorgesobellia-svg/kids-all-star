@@ -6,22 +6,50 @@
 <title>Pelotín · Aprende béisbol jugando</title>
 <meta name="description" content="Pelotín: app para que niños de 6 a 12 años aprendan béisbol jugando. Sin anuncios, sin chat.">
 <link rel="icon" href="/icon.png">
-<link rel="stylesheet" href="/estilo.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Barlow:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --navy: #0C2340; --deep: #020B18; --red: #C8102E; --gold: #FFB81C; --ink: #0C2340; --muted: #5B6577; --bg: #F4F6FA; --line: #E2E6EF; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 500 17px/1.55 Barlow, system-ui, sans-serif; text-align: center; }
+  .hero { background: radial-gradient(ellipse at 50% 0%, #17365F 0%, var(--navy) 55%, var(--deep) 100%); color: #fff; padding: 56px 16px 64px; }
+  .hero img { width: 112px; height: 112px; border-radius: 26px; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+  .marca { font: 800 clamp(56px, 12vw, 88px)/0.95 "Barlow Condensed", sans-serif; letter-spacing: 1px; margin: 22px 0 0; }
+  .deporte { font: 800 clamp(34px, 7vw, 52px)/1 "Barlow Condensed", sans-serif; color: var(--gold); margin: 4px 0 0; letter-spacing: 1px; }
+  .lema { font-size: 20px; font-weight: 700; color: #DCE3EE; margin: 20px auto 0; max-width: 560px; }
+  .lema span { display: block; font-size: 16px; font-weight: 500; color: #9FB0C8; margin-top: 2px; }
+  .pronto { display: inline-block; margin-top: 28px; padding: 12px 22px; border-radius: 14px; background: var(--red); font-weight: 800; letter-spacing: .5px; box-shadow: 0 5px 0 #8E0B21; }
+  .pronto span { display: block; font-weight: 500; font-size: 14px; color: #FFD9DF; letter-spacing: 0; }
+  .cards { max-width: 960px; margin: -28px auto 0; padding: 0 16px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 22px 18px; box-shadow: 0 6px 18px rgba(12,35,64,.06); }
+  .card b { display: block; font: 800 24px/1.1 "Barlow Condensed", sans-serif; color: var(--navy); letter-spacing: .5px; }
+  .card p { margin: 8px 0 0; color: var(--muted); font-size: 16px; }
+  .card p span { display: block; font-size: 14px; color: #8A93A5; margin-top: 4px; }
+  .icono { font-size: 30px; line-height: 1; margin-bottom: 10px; }
+  footer { padding: 40px 16px 48px; color: var(--muted); font-size: 15px; }
+  footer a { color: var(--red); font-weight: 700; }
+  footer .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 22px; margin-bottom: 10px; }
+  @media (max-width: 720px) { .cards { grid-template-columns: 1fr; margin-top: -24px; } }
+</style>
 </head>
 <body>
-<main>
-  <div class="hero">
-    <img src="/icon.png" alt="Pelotín">
-    <h1>PELOTÍN</h1>
-    <p class="sub">Aprende béisbol jugando · Learn baseball by playing</p>
-    <p>Lecciones cortas, exámenes y minijuegos para niños de 6 a 12 años, con Pelotín, una pelota de béisbol que habla y lo explica todo.</p>
-    <p>Short lessons, quizzes and mini-games for kids ages 6 to 12, with Pelotín, a talking baseball who explains everything.</p>
-    <div class="pills"><span>Sin anuncios · No ads</span><span>Sin chat · No chat</span><span>6 idiomas · 6 languages</span></div>
-    <p>Muy pronto en Google Play y App Store · Coming soon to Google Play and the App Store</p>
-  </div>
+<header class="hero">
+  <img src="/icon.png" alt="Pelotín">
+  <h1 class="marca">PELOTÍN</h1>
+  <p class="deporte">BÉISBOL</p>
+  <p class="lema">Aprende béisbol jugando, 5 minutos al día.<span>Learn baseball by playing, 5 minutes a day.</span></p>
+  <div class="pronto">Muy pronto en Google Play y App Store<span>Coming soon to Google Play and the App Store</span></div>
+</header>
+
+<main class="cards">
+  <div class="card"><div class="icono">⚾</div><b>20 NIVELES</b><p>Lecciones cortas con voz, exámenes y minijuegos, para niños de 6 a 12 años.<span>Short voiced lessons, quizzes and mini-games for kids 6 to 12.</span></p></div>
+  <div class="card"><div class="icono">🛡️</div><b>SEGURA PARA NIÑOS</b><p>Sin anuncios, sin chat y sin pedir nombre real, correo ni ubicación.<span>No ads, no chat, no real name, email or location.</span></p></div>
+  <div class="card"><div class="icono">🌎</div><b>6 IDIOMAS</b><p>Español, inglés, italiano, portugués, chino y japonés.<span>Spanish, English, Italian, Portuguese, Chinese and Japanese.</span></p></div>
 </main>
+
 <footer>
-  <a href="/privacy/">Política de privacidad · Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms/">Términos de uso · Terms of Use</a><br>
+  <div class="links"><a href="/privacy/">Política de privacidad · Privacy Policy</a><a href="/terms/">Términos de uso · Terms of Use</a></div>
   <a href="mailto:help@pelotin.app">help@pelotin.app</a>
 </footer>
 </body>
