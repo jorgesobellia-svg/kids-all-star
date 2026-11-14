@@ -1,6 +1,6 @@
 # Pelotín (antes «Kids All Star»)
 
-App tipo Duolingo para que niños de 6 a 13 años aprendan béisbol jugando.
+App tipo Duolingo para que niños de 6 a 12 años aprendan béisbol jugando.
 Fuente única del contenido: `docs/guion-v2.md` (documento "Kids All Star – Contenido Niveles 1-4", Versión 2).
 
 Hecha con **React Native + Expo** (SDK 58): un solo código para iPhone, Android y una vista web de prueba.
